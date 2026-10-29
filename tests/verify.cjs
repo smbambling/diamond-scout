@@ -77,7 +77,7 @@ assert.equal(sep12.filter(p=>p.result==='hit_by_pitch').length,5);assert.equal(s
 assert.equal(sep12.at(-1).status,'incomplete');assert.equal(sep12.at(-1).batter_id,'shockers-14u-logan-sumrow');assert.equal(sep12.at(-1).pitches.length,0);
 const fcdp=sep12.find(p=>p.result==='fielders_choice_double_play');assert(fcdp);assert.equal(fcdp.batted_ball.fielding_position,'CF');assert.equal(fcdp.batted_ball.contact_type,'ground_ball');assert.equal(D.battingSummary([fcdp]).ab,1);assert.equal(D.battingSummary([fcdp]).hits,0);assert.equal(D.onBaseStatus(fcdp),true);assert.equal(D.summarize([fcdp]).n,1);assert.equal(D.battingSummary([fcdp]).unclassified,0);
 const buntFC=sep12.find(p=>p.result==='fielders_choice'&&p.batted_ball.contact_type==='bunt');assert(buntFC);assert.equal(buntFC.batted_ball.fielding_position,'P');
-const catcher=stars.plate_appearances.find(p=>p.batted_ball?.fielding_position==='C');assert(catcher);assert.equal(catcher.result,'pop_out');assert.equal(D.summarize([catcher]).unknown,0);assert.equal(D.summarize([catcher]).middle,1);assert.match(D.fieldSvg([catcher]),/data-position="C"/);assert.match(D.fieldSvg([catcher]),/viewBox="0 0 600 535"/);assert.equal((D.fieldSvg([catcher]).match(/class="fielder-marker"/g)||[]).length,9);
+const catcher=stars.plate_appearances.find(p=>p.batted_ball?.fielding_position==='C');assert(catcher);assert.equal(catcher.result,'pop_out');assert.equal(D.summarize([catcher]).unknown,0);assert.equal(D.summarize([catcher]).middle,1);assert.match(D.fieldSvg([catcher]),/data-position="C"/);assert.match(D.fieldSvg([catcher]),/viewBox="0 0 600 470"/);assert.equal((D.fieldSvg([catcher]).match(/class="fielder-marker"/g)||[]).length,9);
 assert.equal(stars.runner_outs.length,1);assert.equal(stars.runner_outs[0].reason,'offensive_interference');assert.equal(stars.runner_outs[0].runner_id,'stars-camarata-14u-mark-trey-poncy');assert(starsGame.source_play_by_play.includes(stars.runner_outs[0].source_text));
 assert.equal(stars.baserunning_entries.length,1);assert.equal(stars.baserunning_entries[0].runner_id,'stars-camarata-14u-logan-pinkerton');assert.equal(D.baserunningSummary(stars,{batter:'stars-camarata-14u-logan-pinkerton',game:'all'}).onBase,2,'Own single plus courtesy trip');
 assert.equal(repositoryHistory.plate_appearances.length,127);assert.equal(D.battingSummary(repositoryHistory.plate_appearances).complete,124);assert.equal(D.pitchSummary(repositoryHistory.plate_appearances).n,426);assert.equal(D.summarize(repositoryHistory.plate_appearances).n,83);assert.equal(D.summarize(repositoryHistory.plate_appearances).hits,30);assert.equal(D.baserunningSummary(repositoryHistory,{batter:'all',game:'all'}).onBase,70);assert.equal(D.baserunningSummary(repositoryHistory,{batter:'all',game:'all'}).attempts,12);
@@ -352,6 +352,9 @@ assert.match(D.fieldSvg([]),/class="contact-total-value"[^>]+>0<\/text>/);
 assert.doesNotMatch(markerSvg,/<path[^>]+fill="var\(--heat-/);
 assert.match(markerSvg,/data-position="P"/);assert.match(markerSvg,/coverage, or ball-path map/);
 assert(D.fielderLayout.P[1]-D.fielderRadius>200,'Pitcher marker stays below the second-base landmark');
+assert.equal(D.fielderLayout.C[0],297,'Catcher marker is centered on home plate');
+assert.equal(D.fielderLayout.C[1],390,'Catcher marker covers home plate');
+assert(D.fielderLayout.C[1]+D.fielderRadius<470,'Catcher stays within the regular field image height');
 for(let i=0;i<D.positions.length;i++)for(let j=i+1;j<D.positions.length;j++){
  const [x,y]=D.fielderLayout[D.positions[i]],[xx,yy]=D.fielderLayout[D.positions[j]];
  assert(Math.hypot(x-xx,y-yy)>2*D.fielderRadius,'Fielder markers must not overlap');

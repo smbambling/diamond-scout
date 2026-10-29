@@ -183,11 +183,11 @@ html[data-scout-only="true"]{scroll-padding-bottom:16px}html[data-scout-only="tr
  }
  // Coordinates align to the original 1536 × 1024 artwork, presented at 600 × 470 for a roomier phone field.
  // These are schematic fielder labels, never inferred ball locations.
- const fielderLayout={LF:[125,110],CF:[300,55],RF:[475,110],'3B':[160,245],SS:[230,180],P:[300,280],'2B':[370,180],'1B':[440,245],C:[300,490]};
+ const fielderLayout={LF:[125,110],CF:[300,55],RF:[475,110],'3B':[160,245],SS:[230,180],P:[300,280],'2B':[370,180],'1B':[440,245],C:[297,390]};
  const fielderRadius=35;
  const heatColor=(count,n)=>'var(--heat-'+(!count||!n?'none':count/n<.25?'low':count/n<.5?'mid':count/n<.75?'warm':'hot')+')';
  function fieldSvg(pas,{compact=false,type='all',label='Contact by recorded fielder'}={}){
-  const s=summarize(pas,type),H=s.counts.C?535:s.n?470:510;
+  const s=summarize(pas,type),H=s.n?470:510;
   let svg='<svg class="field-svg" viewBox="0 0 600 '+H+'" role="img" aria-label="'+esc(label)+'. '+s.n+' fair contacts. '+positions.filter(p=>s.counts[p]).map(p=>names[p]+' '+s.counts[p]+' of '+s.n).join('; ')+'. Unknown fielder: '+s.unknown+'."><title>'+esc(label)+'</title><desc>Colored markers show contact by the recorded fielder, at schematic standard positions. Each circle shows the position, percentage of fair contact, and a smaller contact count; the total is at the lower right. Marker size is fixed. The field is an orientation guide, not a landing-location, coverage, or ball-path map. Unknown fielders remain in the denominator.</desc>';
   svg+='<use class="natural-field" href="#natural-field-artwork" aria-hidden="true"/>';
   for(const pos of positions.filter(pos=>pos!=='C'||s.counts.C)){const [x,y]=fielderLayout[pos],n=s.counts[pos],color=n?'var(--marker-text)':'var(--marker-empty-text)',digits=String(n).length,share=pct(n,s.n),percentSize=share.length>3?23:25;
