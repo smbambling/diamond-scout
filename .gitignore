@@ -1,0 +1,15 @@
+# Local recovery files, reports, previews and hosting output
+/work/
+
+# macOS metadata
+.DS_Store
+._*
+
+# Optional local dependencies and secrets
+node_modules/
+.env
+.env.*
+!.env.example
+
+# Import process lock (never remove while an import is running)
+.import-plays.lock

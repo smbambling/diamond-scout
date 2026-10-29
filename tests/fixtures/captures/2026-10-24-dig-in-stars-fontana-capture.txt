@@ -1,0 +1,238 @@
+Use TEAM-DATA-PROMPT.md to add this game
+Import: both teams (default)
+Date: 2026-10-24
+Start time: 10:10
+Timezone: unknown
+Source: https://web.gc.com/teams/6bKEd4zQDNOb/2026-fall-dig-in-gribbin-14u/schedule/9be829b1-b8d9-4b3a-b037-428d519b22ec/plays
+Capture coverage: loaded browser text only; completeness not verified.
+
+PLAY-BY-PLAY
+Top 7th - Stars Fontana 14U
+Charlie Thurman at bat
+Bottom 6th - Dig In (Gribbin) 14U
+Strikeout
+3 Outs
+Strike 1 looking, Ball 1, Ball 2, Deven Downs steals 2nd, Ball 3, Strike 2 swinging, Strike 3 looking.
+Brian Gribbin strikes out looking, Gavin Baglio pitching.
+Walk
+Strike 1 looking, Ball 1, Ball 2, Ball 3, Ball 4.
+Deven Downs walks, Gavin Baglio pitching.
+Dropped 3rd Strike
+2 Outs
+Strike 1 looking, Ball 1, Ball 2, Strike 2 looking, Strike 3 swinging.
+Declan Class out at first on dropped 3rd strike.
+Ground Out
+1 Out
+In play.
+Wesley Hurt grounds out, shortstop Chris Williams to first baseman Brayden Ray.
+Top 6th - Stars Fontana 14U
+Strikeout
+STRS 10 - DGN( 1 | 3 Outs
+Strike 1 looking, Strike 2 swinging, Levi Heidtke scores on passed ball, Ball 1, Strike 3 swinging.
+William Reckley strikes out swinging, Andres Tecua pitching.
+Ground Out
+STRS 9 - DGN( 1 | 2 Outs
+Strike 1 looking, Levi Heidtke advances to 2nd on defensive indifference, Ball 1, Ball 2, Ball 3, In play.
+Christian Pleisch grounds out, third baseman Trenton to first baseman Brian Gribbin, Brayden Ray scores, Levi Heidtke advances to 3rd.
+Walk
+Foul, Ball 1, Ball 2, Ball 3, Ball 4.
+Levi Heidtke walks, Andres Tecua pitching, Brayden Ray remains at 3rd.
+Line Out
+1 Out
+Pickoff attempt at 1st, Strike 1 swinging, Foul, Ball 1, Ball 2, Brayden Ray advances to 2nd on passed ball, Ball 3, Brayden Ray advances to 3rd on wild pitch, In play.
+Gavin Baglio lines out to shortstop Declan Class, Brayden Ray remains at 3rd.
+Single
+Ball 1, In play.
+Brayden Ray singles on a fly ball to left fielder Joe Carey.
+Bottom 5th - Dig In (Gribbin) 14U
+Ground Out
+3 Outs
+In play.
+Ryan Maloney grounds out to pitcher Gavin Baglio.
+Walk
+Ball 1, Ball 2, Strike 1 looking, Ball 3, Ball 4.
+Trenton walks, Gavin Baglio pitching, Dean Simmons remains at 3rd, Beckett remains at 2nd.
+Pop Out
+2 Outs
+Strike 1 looking, Beckett advances to 2nd on defensive indifference, Strike 2 swinging, Ball 1, In play.
+Joe Carey pops out to second baseman Chase Johnson, Dean Simmons remains at 3rd, Beckett remains at 2nd.
+Error
+Strike 1 looking, In play.
+Beckett hits a ground ball and reaches on an error by shortstop Chris Williams, Dean Simmons advances to 3rd.
+Strikeout
+1 Out
+Ball 1, Dean Simmons steals 2nd, Strike 1 swinging, Strike 2 looking, Strike 3 swinging.
+Jack Wieland strikes out swinging, Gavin Baglio pitching, Dean Simmons remains at 2nd.
+Walk
+Ball 1, Ball 2, Ball 3, Strike 1 looking, Strike 2 looking, Ball 4.
+Dean Simmons walks, Gavin Baglio pitching.
+Top 5th - Stars Fontana 14U
+Line Out
+3 Outs
+Ball 1, Strike 1 looking, Foul, In play.
+Chase Johnson lines out to shortstop Declan Class.
+Ground Out
+2 Outs
+Ball 1, In play.
+Dean Barta grounds out, second baseman Beckett to first baseman Brian Gribbin, Emmitt Schilling advances to 2nd.
+Single
+In play.
+Emmitt Schilling singles on a fly ball to right fielder Deven Downs.
+Strikeout
+1 Out
+Foul, Ball 1, Foul, Strike 3 looking.
+Ryder Delcore strikes out looking, Andres Tecua pitching.
+Bottom 4th - Dig In (Gribbin) 14U
+Ground Out
+3 Outs
+Ball 1, In play.
+Andres Tecua grounds out, third baseman Emmitt Schilling to first baseman Brayden Ray.
+Strikeout
+2 Outs
+Foul, Strike 2 looking, Ball 1, Ball 2, Ball 3, Strike 3 looking.
+Brian Gribbin strikes out looking, Gavin Baglio pitching.
+Pop Out
+1 Out
+Strike 1 looking, Strike 2 swinging, In play.
+Deven Downs pops out to shortstop Chris Williams.
+Top 4th - Stars Fontana 14U
+Strikeout
+3 Outs
+Strike 1 looking, Ball 1, Foul, Strike 3 looking.
+Tucker Walker strikes out looking, Jack Wieland pitching.
+Single
+STRS 8 - DGN( 1
+Ball 1, Ball 2, Christian Pleisch steals 3rd, Charlie Thurman steals 2nd, Strike 1 looking, Strike 2 looking, In play.
+Chris Williams singles on a line drive to left fielder Sam Leshner, Charlie Thurman scores, Christian Pleisch scores.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Charlie Thurman walks, Jack Wieland pitching, Christian Pleisch remains at 2nd.
+Sacrifice Bunt
+STRS 6 - DGN( 1 | 2 Outs
+Gavin Baglio scores on wild pitch, In play.
+William Reckley sacrifices, pitcher Jack Wieland to first baseman Brian Gribbin, William Reckley out advancing to 1st, Christian Pleisch advances to 2nd.
+Walk
+Ball 1, Foul, Ball 2, Ball 3, Strike 2 looking, Ball 4.
+Christian Pleisch walks, Jack Wieland pitching, Gavin Baglio remains at 3rd.
+Ground Out
+1 Out
+Ball 1, Pickoff attempt at 1st, Strike 1 looking, Ball 2, In play.
+Levi Heidtke grounds out, pitcher Jack Wieland to third baseman Andres Tecua to first baseman Brian Gribbin, Gavin Baglio advances to 3rd.
+Error
+Foul, Foul, In play.
+Gavin Baglio hits a ground ball and reaches on an error by shortstop Beckett.
+Bottom 3rd - Dig In (Gribbin) 14U
+Dropped 3rd Strike
+3 Outs
+Strike 1 looking, Foul, Strike 3 swinging.
+Declan Class out at first on dropped 3rd strike.
+Strikeout
+2 Outs
+Lineup changed: Sam Leshner in for batter Wesley Hurt, Ball 1, Strike 1 swinging, Foul, Strike 3 looking.
+Sam Leshner strikes out looking, Gavin Baglio pitching, Ryan Maloney remains at 1st.
+Error
+In play.
+Ryan Maloney hits a ground ball and reaches on an error by third baseman Emmitt Schilling.
+Fly Out
+1 Out
+Strike 1 looking, Ball 1, Strike 2 swinging, In play.
+Trenton flies out to shortstop Chris Williams.
+Top 3rd - Stars Fontana 14U
+Strikeout
+3 Outs
+Foul, Strike 2 swinging, Strike 3 looking.
+Brayden Ray strikes out looking, Jack Wieland pitching.
+Walk
+Ball 1, Dean Barta steals 2nd, Ball 2, Ball 3, Strike 1 looking, Ball 4.
+Chase Johnson walks, Declan Class pitching, Dean Barta remains at 2nd.
+Single
+STRS 5 - DGN( 1
+Ball 1, Ball 2, In play.
+Dean Barta singles on a fly ball to right fielder Deven Downs, Emmitt Schilling scores.
+Triple
+STRS 4 - DGN( 1
+Balk by pitcher Declan Class, Ryder Delcore advances to 2nd, In play.
+Emmitt Schilling triples on a fly ball to left fielder Sam Leshner, Ryder Delcore scores.
+Single
+STRS 3 - DGN( 1
+Ball 1, Ball 2, Ball 3, In play.
+Ryder Delcore singles on a fly ball to left fielder Sam Leshner, Tucker Walker scores.
+Double
+In play.
+Tucker Walker doubles on a line drive to right fielder Deven Downs.
+Pop Out
+2 Outs
+In play.
+Chris Williams pops out to shortstop Beckett.
+Ground Out
+1 Out
+Ball 1, Foul, Strike 2 swinging, Ball 2, Ball 3, In play.
+Charlie Thurman grounds out, third baseman Andres Tecua to first baseman Brian Gribbin.
+Bottom 2nd - Dig In (Gribbin) 14U
+Ground Out
+3 Outs
+Strike 1 looking, Strike 2 swinging, In play.
+Joe Carey grounds out, shortstop Chris Williams to first baseman Brayden Ray.
+Sacrifice Fly
+STRS 2 - DGN( 1 | 2 Outs
+Strike 1 swinging, In play.
+Beckett out on sacrifice fly to center fielder Tucker Walker, Dean Simmons scores.
+Pop Out
+1 Out
+Ball 1, Dean Simmons steals 2nd, Ball 2, Ball 3, Dean Simmons advances to 3rd on wild pitch, Strike 1 looking, In play.
+Jack Wieland pops out to first baseman Brayden Ray, Dean Simmons remains at 3rd.
+Hit By Pitch
+Ball 1, Ball 2, Foul, Foul, Ball 3.
+Dean Simmons is hit by pitch, Gavin Baglio pitching.
+Top 2nd - Stars Fontana 14U
+Strikeout
+3 Outs
+Strike 1 looking, Ball 1, Ball 2, Strike 2 looking, Strike 3 swinging.
+William Reckley strikes out swinging, Declan Class pitching.
+Ground Out
+2 Outs
+Courtesy runner Chase Johnson in for Levi Heidtke, Strike 1 looking, Chase Johnson steals 2nd, In play.
+Christian Pleisch grounds out, second baseman Wesley Hurt to first baseman Brian Gribbin, Chase Johnson advances to 3rd.
+Single
+STRS 2 - DGN( 0
+Ball 1, In play.
+Levi Heidtke singles on a hard ground ball to right fielder Trenton, Gavin Baglio scores, Brayden Ray scores.
+Double
+In play.
+Gavin Baglio doubles on a fly ball to left fielder Joe Carey, Brayden Ray advances to 3rd.
+Single
+Ball 1, Strike 1 swinging, Strike 2 swinging, Ball 2, Ball 3, In play.
+Brayden Ray singles on a ground ball to right fielder Trenton.
+Fly Out
+1 Out
+In play.
+Chase Johnson flies out to center fielder Deven Downs.
+Bottom 1st - Dig In (Gribbin) 14U
+Fly Out
+3 Outs
+Strike 1 looking, In play.
+Andres Tecua flies out to left fielder Dean Barta.
+Line Out
+2 Outs
+Strike 1 looking, Foul, In play.
+Brian Gribbin lines out to shortstop Chris Williams.
+Strikeout
+1 Out
+Strike 1 looking, Ball 1, Strike 2 looking, Foul tip.
+Deven Downs is out on foul tip, Gavin Baglio pitching.
+Top 1st - Stars Fontana 14U
+Ground Out
+3 Outs
+Strike 1 looking, In play.
+Dean Barta grounds out to first baseman Brian Gribbin.
+Ground Out
+2 Outs
+Ball 1, Ryder Delcore steals 2nd, Ball 2, In play.
+Emmitt Schilling grounds out, third baseman Andres Tecua to first baseman Brian Gribbin, Ryder Delcore held up at 2nd.
+Fielder's Choice
+1 Out
+Ball 1, In play.
+Ryder Delcore grounds into fielder's choice, shortstop Dean Simmons to second baseman Wesley Hurt, Tucker Walker out advancing to 2nd.
+Single
+Strike 1 looking, In play.
+Tucker Walker singles on a hard ground ball to second baseman Wesley Hurt.

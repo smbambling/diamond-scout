@@ -1,0 +1,195 @@
+Use TEAM-DATA-PROMPT.md to add this game
+Import: both teams (default)
+Date: 2026-10-17
+Start time: 12:30
+Timezone: ET
+Source: https://web.gc.com/teams/6bKEd4zQDNOb/2026-fall-dig-in-gribbin-14u/schedule/84bc91c5-f765-46d4-bdd1-a0ea8776c4ad/plays
+Capture coverage: loaded browser text only; completeness not verified.
+
+PLAY-BY-PLAY
+Bottom 5th - BOSS Baseball Castro 14U
+Frankie W at bat
+Top 5th - Dig In (Gribbin) 14U
+Strikeout
+3 Outs
+Strike 1 looking, Pickoff attempt at 1st, Strike 2 looking, Brian Gribbin steals 2nd, Strike 3 swinging.
+Andres Tecua strikes out swinging, Kellan V pitching.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Brian Gribbin walks, Kellan V pitching.
+Pop Out
+2 Outs
+Strike 1 swinging, Ball 1, In play.
+Deven Downs pops out to center fielder Marley G.
+Strikeout
+1 Out
+Ball 1, Strike 1 swinging, Strike 2 looking, Ball 2, Strike 3 swinging.
+Tyler strikes out swinging, Kellan V pitching.
+Bottom 4th - BOSS Baseball Castro 14U
+Ground Out
+3 Outs
+Strike 1 looking, Ball 1, In play.
+Cole S grounds out, third baseman Andres Tecua to first baseman Brian Gribbin.
+Intentional Walk
+Strike 1 looking, Marley G advances to 2nd on defensive indifference, Ball 1.
+Jake L is intentionally walked, Deven Downs pitching, Bruce H remains at 3rd, Marley G remains at 2nd.
+Single
+DGN( 2 - BSSB 6 | 2 Outs
+In play.
+Marley G singles on a fly ball, center fielder Tyler to left fielder Joe Carey to second baseman Wesley Hurt, Rocky L out advancing to 2nd, Theo M scores, Bruce H advances to 3rd.
+Walk
+Ball 1, Ball 2, Theo M advances to 3rd on wild pitch, Bruce H advances to 2nd on the same pitch, Ball 3, Ball 4.
+Rocky L walks, Deven Downs pitching, Theo M remains at 3rd, Bruce H remains at 2nd.
+Walk
+Courtesy runner Theo M in for Adriano C, Ball 1, Ball 2, Pickoff attempt at 1st, Ball 3, Theo M advances to 2nd on wild pitch, Ball 4.
+Bruce H walks, Dean Simmons pitching, Theo M remains at 2nd.
+Single
+Strike 1 looking, Ball 1, Strike 2 looking, Ball 2, In play.
+Adriano C singles on a line drive to right fielder Deven Downs.
+Strikeout
+1 Out
+Ball 1, Foul, Foul, Ball 2, Ball 3, Foul, Foul, Strike 3 looking.
+Kaelan B strikes out looking, Dean Simmons pitching.
+Top 4th - Dig In (Gribbin) 14U
+Ground Out
+3 Outs
+Ball 1, Pickoff attempt at 2nd, In play.
+Austin grounds out, shortstop Rocky L to first baseman Cole S.
+Pop Out
+2 Outs
+Ball 1, In play.
+Trenton pops out to first baseman Cole S, Joe Carey remains at 2nd.
+Strikeout
+1 Out
+Pickoff attempt at 1st, Ball 1, Joe Carey steals 2nd, Foul, Strike 2 looking, Strike 3 swinging.
+Wesley Hurt strikes out swinging, Kellan V pitching, Joe Carey remains at 2nd.
+Walk
+Ball 1, Ball 2, Foul, Ball 3, Ball 4.
+Joe Carey walks, Kellan V pitching.
+Bottom 3rd - BOSS Baseball Castro 14U
+Line Out
+3 Outs
+Ball 1, Ball 2, Foul, Strike 2 looking, Ball 3, In play.
+Declan B lines out to third baseman Andres Tecua.
+Strikeout
+2 Outs
+Pickoff attempt at 1st, Strike 1 looking, Pickoff attempt at 1st, Strike 2 looking, Ball 1, Ball 2, Pickoff attempt at 1st, Foul, Frankie W caught stealing 2nd, catcher Trenton to second baseman Wesley Hurt, Strike 3 swinging.
+Kellan V strikes out swinging, Dean Simmons pitching.
+Walk
+Ball 1, Strike 1 looking, Strike 2 looking, Ball 2, Ball 3, Ball 4.
+Frankie W walks, Dean Simmons pitching.
+Top 3rd - Dig In (Gribbin) 14U
+Strikeout
+3 Outs
+Ball 1, Strike 1 swinging, Strike 2 swinging, Pickoff attempt at 2nd, Strike 3 swinging.
+Jack Wieland strikes out swinging, Mason T pitching.
+Walk
+Pickoff attempt at 2nd, Strike 1 looking, Foul, Ball 1, Ball 2, Ball 3, Ball 4.
+Dean Simmons walks, Mason T pitching, Brian Gribbin remains at 2nd.
+Pop Out
+2 Outs
+Ball 1, Ball 2, Pickoff attempt at 2nd, Strike 1 looking, Pickoff attempt at 2nd, Ball 3, Strike 2 looking, In play.
+Andres Tecua pops out to pitcher Mason T, Brian Gribbin remains at 2nd.
+Double
+Ball 1, Ball 2, In play.
+Brian Gribbin doubles on a fly ball to center fielder Bruce H.
+Ground Out
+1 Out
+Ball 1, Strike 1 looking, Strike 2 looking, Ball 2, Ball 3, Foul, In play.
+Deven Downs grounds out to first baseman Cole S.
+Bottom 2nd - BOSS Baseball Castro 14U
+Line Out
+3 Outs
+Ball 1, Strike 1 swinging, Jake L advances to 2nd on passed ball, Strike 2 looking, Ball 2, Ball 3, In play.
+Cole S lines out to first baseman Brian Gribbin.
+Single
+DGN( 2 - BSSB 5
+Ball 1, Marley G steals 2nd, In play.
+Jake L singles on a fly ball to third baseman Andres Tecua, Bruce H scores, Marley G advances to 3rd.
+Single
+DGN( 2 - BSSB 4
+Foul, Ball 1, Ball 2, Ball 3, Jack S scores on passed ball, Theo M advances to 3rd on the same pitch, Bruce H advances to 2nd on the same pitch, Strike 2 looking, In play.
+Marley G singles on a ground ball to pitcher Dean Simmons, Theo M scores, Bruce H advances to 3rd.
+Fly Out
+2 Outs
+Foul, In play.
+Rocky L flies out to shortstop Austin, Jack S remains at 3rd, Theo M remains at 2nd, Bruce H remains at 1st.
+Walk
+DGN( 2 - BSSB 2
+Strike 1 looking, Ball 1, Ball 2, Ball 3, Ball 4.
+Bruce H walks, Joe Carey pitching, Declan B scores, Jack S advances to 3rd, Theo M advances to 2nd.
+Walk
+DGN( 2 - BSSB 1
+Pickoff attempt at 3rd, Ball 1, Strike 1 swinging, Ball 2, Ball 3, Ball 4.
+Theo M walks, Joe Carey pitching, Kellan V scores, Declan B advances to 3rd, Jack S advances to 2nd.
+Walk
+Courtesy runner Declan B in for Mason T, Ball 1, Ball 2, Kellan V steals 3rd, Ball 3, Ball 4.
+Jack S walks, Joe Carey pitching, Kellan V remains at 3rd, Declan B advances to 2nd.
+Single
+In play.
+Mason T singles on a line drive to center fielder Tyler, Kellan V advances to 2nd.
+Hit By Pitch
+Ball 1, Ball 2.
+Kellan V is hit by pitch, Joe Carey pitching.
+Ground Out
+1 Out
+Ball 1, Ball 2, In play.
+Frankie W grounds out, shortstop Austin to first baseman Brian Gribbin.
+Top 2nd - Dig In (Gribbin) 14U
+Strikeout
+3 Outs
+Ball 1, Foul, Strike 2 looking, Strike 3 looking.
+Tyler strikes out looking, Mason T pitching.
+Walk
+Strike 1 looking, Ball 1, Ball 2, Trenton steals 2nd, Ball 3, Strike 2 looking, Ball 4.
+Austin walks, Mason T pitching, Trenton remains at 2nd.
+Single
+DGN( 2 - BSSB 0
+Pickoff attempt at 1st, Wesley Hurt steals 2nd, Strike 1 looking, Ball 1, Ball 2, In play.
+Trenton singles on a fly ball to left fielder Jake L, Wesley Hurt scores, Jack Wieland scores.
+Walk
+Ball 1, Jack Wieland advances to 3rd on passed ball, Strike 1 looking, Ball 2, Ball 3, Ball 4.
+Wesley Hurt walks, Mason T pitching, Jack Wieland remains at 3rd.
+Fly Out
+2 Outs
+Strike 1 looking, Jack Wieland steals 2nd, In play.
+Joe Carey flies out to center fielder Bruce H, Jack Wieland remains at 2nd.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Jack Wieland walks, Mason T pitching.
+Line Out
+1 Out
+Ball 1, Ball 2, In play.
+Dean Simmons lines out to right fielder Kaelan B.
+Bottom 1st - BOSS Baseball Castro 14U
+Ground Out
+3 Outs
+Bruce H steals 3rd, Marley G advances to 2nd on defensive indifference, Strike 1 looking, Ball 1, In play.
+Cole S grounds out, shortstop Austin to first baseman Brian Gribbin.
+Strikeout
+2 Outs
+Ball 1, Foul, Strike 2 looking, Foul, Foul, Strike 3 swinging.
+Jake L strikes out swinging, Joe Carey pitching, Bruce H remains at 2nd, Marley G remains at 1st.
+Walk
+Ball 1, Ball 2, Foul, Ball 3, Strike 2 looking, Ball 4.
+Marley G walks, Joe Carey pitching, Bruce H remains at 2nd.
+Line Out
+1 Out
+Pickoff attempt at 1st, Ball 1, Ball 2, Bruce H advances to 2nd on wild pitch, In play.
+Rocky L lines out to center fielder Dean Simmons, Bruce H remains at 2nd.
+Single
+Ball 1, In play.
+Bruce H singles on a ground ball to shortstop Austin.
+Top 1st - Dig In (Gribbin) 14U
+Ground Out
+3 Outs
+Ball 1, Ball 2, Strike 1 looking, Strike 2 swinging, Ball 3, In play.
+Andres Tecua grounds out, second baseman Declan B to first baseman Cole S.
+Strikeout
+2 Outs
+Ball 1, Ball 2, Strike 1 swinging, Strike 2 swinging, Ball 3, Strike 3 swinging.
+Brian Gribbin strikes out swinging, Mason T pitching.
+Fly Out
+1 Out
+Strike 1 looking, Ball 1, Ball 2, Foul, In play.
+Deven Downs flies out to second baseman Declan B.

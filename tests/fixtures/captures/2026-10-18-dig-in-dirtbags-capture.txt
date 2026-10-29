@@ -1,0 +1,247 @@
+Use TEAM-DATA-PROMPT.md to add this game
+Import: both teams (default)
+Date: 2026-10-18
+Start time: 08:00
+Timezone: ET
+Source: https://web.gc.com/teams/6bKEd4zQDNOb/2026-fall-dig-in-gribbin-14u/schedule/b0912d99-598d-42dc-925c-590f3bdf2328/plays
+Capture coverage: loaded browser text only; completeness not verified.
+
+PLAY-BY-PLAY
+Bottom 7th - Dig In (Gribbin) 14U
+Andres Tecua at bat
+Single
+SBGC 5 - DGN( 6
+Deven Downs gets placed on 2nd, Pickoff attempt at 2nd, Pickoff attempt at 2nd, Ball 1, Deven Downs steals 3rd, In play.
+Brian Gribbin singles on a line drive to center fielder Keegan O’Malley, Deven Downs scores.
+Top 7th - SBGC Dirtbags Mid-Atlantic 14U
+Ground Out
+3 Outs
+Ball 1, Foul, Strike 2 swinging, Ball 2, In play.
+Keegan O’Malley grounds out to pitcher Joe Carey.
+Double Play
+2 Outs
+Ethan Resnick gets placed on 2nd, Ball 1, Ethan Resnick advances to 3rd on wild pitch, Strike 1 looking, Ball 2, In play.
+Colin Nadjibe grounds into a double play, third baseman Trenton to first baseman Brian Gribbin, Ethan Resnick out advancing to home.
+Bottom 6th - Dig In (Gribbin) 14U
+Fly Out
+3 Outs
+Courtesy runner Tyler in for Ryan Maloney, Strike 1 looking, Tyler steals 2nd, In play.
+Deven Downs flies out to center fielder Keegan O’Malley.
+Single
+SBGC 5 - DGN( 5
+Courtesy runner Declan Class in for Trenton, Ball 1, Declan Class advances to 2nd on defensive indifference, Strike 1 looking, Ball 2, In play.
+Ryan Maloney singles on a line drive to right fielder Colin Nadjibe, Declan Class scores, Joe Carey scores.
+Walk
+Balk by pitcher Carter Forrester, Joe Carey advances to 2nd, Strike 1 looking, Ball 1, Ball 2, Joe Carey advances to 3rd on passed ball, Ball 3, Ball 4.
+Trenton walks, Carter Forrester pitching, Joe Carey remains at 3rd.
+Single
+Ball 1, Strike 1 looking, In play.
+Joe Carey singles on a ground ball to left fielder Bryce Nowak.
+Strikeout
+2 Outs
+Ball 1, Strike 1 looking, Ball 2, Strike 2 swinging, Strike 3 swinging.
+Quinn Kasprzak strikes out swinging, Carter Forrester pitching.
+Fly Out
+1 Out
+Strike 1 looking, Foul, Ball 1, In play.
+Jack Wieland flies out to right fielder Colin Nadjibe.
+Top 6th - SBGC Dirtbags Mid-Atlantic 14U
+Ground Out
+3 Outs
+In play.
+Johnny Bartolini grounds out, second baseman Joe Carey to first baseman Brian Gribbin.
+Walk
+SBGC 5 - DGN( 3
+Balk by pitcher Jack Wieland, Carter Forrester scores, William Wright advances to 3rd, Ball 1, Foul, Ball 2, Ball 3, Strike 2 swinging, Balk by pitcher Jack Wieland, William Wright scores, Ball 4.
+Ethan Resnick walks, Jack Wieland pitching.
+Ground Out
+2 Outs
+In play.
+Andrew Becker grounds out, pitcher Jack Wieland to first baseman Brian Gribbin, Carter Forrester advances to 3rd, William Wright advances to 2nd.
+Intentional Walk
+Ball 1.
+William Wright is intentionally walked, Jack Wieland pitching, Carter Forrester remains at 2nd.
+Single
+SBGC 3 - DGN( 3
+Strike 1 swinging, Strike 2 looking, Ball 1, Ball 2, Foul, Ball 3, In play.
+Carter Forrester singles on a line drive to left fielder Quinn Kasprzak, Bryce Nowak scores on the throw, Carter Forrester advances to 2nd on the throw.
+Strikeout
+1 Out
+Strike 1 looking, Bryce Nowak advances to 2nd on passed ball, Strike 2 looking, Strike 3 looking.
+Brett Gjeldum strikes out looking, Jack Wieland pitching, Bryce Nowak remains at 2nd.
+Walk
+Strike 1 looking, Foul, Ball 1, Ball 2, Ball 3, Ball 4.
+Bryce Nowak walks, Jack Wieland pitching.
+Bottom 5th - Dig In (Gribbin) 14U
+Double Play
+3 Outs
+Ball 1, Pickoff attempt at 1st, Strike 1 looking, Andres Tecua steals 2nd, In play.
+Dean Simmons lines into a double play, center fielder Keegan O’Malley to shortstop Brett Gjeldum, Andres Tecua out advancing to 2nd.
+Error
+Strike 1 swinging, In play.
+Andres Tecua hits a ground ball and reaches on an error by shortstop Brett Gjeldum.
+Ground Out
+1 Out
+Ball 1, In play.
+Brian Gribbin grounds out, second baseman Camden Lee to first baseman William Wright.
+Top 5th - SBGC Dirtbags Mid-Atlantic 14U
+Strikeout
+3 Outs
+Strike 1 looking, Foul, Ball 1, Strike 3 looking.
+Caleb Forrester strikes out looking, Jack Wieland pitching.
+Ground Out
+2 Outs
+In play.
+Camden Lee grounds out, second baseman Quinn Kasprzak to first baseman Brian Gribbin.
+Strikeout
+1 Out
+Strike 1 looking, Ball 1, Strike 2 looking, Ball 2, Strike 3 looking.
+Keegan O’Malley strikes out looking, Jack Wieland pitching.
+Bottom 4th - Dig In (Gribbin) 14U
+Single
+SBGC 2 - DGN( 3 | 3 Outs
+Strike 1 looking, Tyler advances to 2nd on defensive indifference, Ball 1, In play.
+Deven Downs singles on a line drive, right fielder Caleb Forrester to second baseman Andrew Becker to catcher Johnny Bartolini, Tyler out advancing to home, Joe Carey scores.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Tyler walks, Carter Forrester pitching, Joe Carey remains at 3rd.
+Ground Out
+2 Outs
+Ball 1, Joe Carey steals 2nd, Ball 2, Strike 1 looking, In play.
+Declan Class grounds out, pitcher Carter Forrester to first baseman William Wright, Joe Carey advances to 3rd.
+Single
+In play.
+Joe Carey singles on a fly ball to third baseman Ethan Resnick.
+Ground Out
+1 Out
+Strike 1 looking, Strike 2 swinging, In play.
+Quinn Kasprzak grounds out, shortstop Brett Gjeldum to first baseman William Wright.
+Top 4th - SBGC Dirtbags Mid-Atlantic 14U
+Double Play
+3 Outs
+Pickoff attempt at 1st, In play.
+Colin Nadjibe grounds into a double play, shortstop Declan Class to first baseman Brian Gribbin, Ethan Resnick out advancing to 2nd.
+Strikeout
+1 Out
+Foul, Strike 2 swinging, Strike 3 looking.
+Johnny Bartolini strikes out looking, Jack Wieland pitching, Ethan Resnick remains at 1st.
+Error
+In play.
+Ethan Resnick hits a ground ball and reaches on an error by shortstop Declan Class.
+Bottom 3rd - Dig In (Gribbin) 14U
+Strikeout
+3 Outs
+Strike 1 looking, Strike 2 looking, Strike 3 swinging.
+Jack Wieland strikes out swinging, Carter Forrester pitching.
+Fly Out
+2 Outs
+Ball 1, In play.
+Dean Simmons flies out to center fielder Keegan O’Malley.
+Strikeout
+1 Out
+Foul, Foul, Strike 3 swinging.
+Andres Tecua strikes out swinging, Carter Forrester pitching.
+Top 3rd - SBGC Dirtbags Mid-Atlantic 14U
+Ground Out
+SBGC 2 - DGN( 2 | 3 Outs
+Balk by pitcher Jack Wieland, Caleb Forrester scores, Bryce Nowak advances to 3rd, William Wright advances to 2nd, Ball 1, Strike 1 looking, In play.
+Andrew Becker grounds out, shortstop Declan Class to first baseman Brian Gribbin.
+Walk
+Ball 1, Strike 1 swinging, Ball 2, Foul, Ball 3, Foul, Ball 4.
+William Wright walks, Jack Wieland pitching, Caleb Forrester advances to 3rd, Bryce Nowak advances to 2nd.
+Line Out
+2 Outs
+In play.
+Carter Forrester lines out to left fielder Tyler, Caleb Forrester remains at 2nd, Bryce Nowak remains at 1st.
+Line Out
+1 Out
+In play.
+Brett Gjeldum lines out to third baseman Trenton, Caleb Forrester remains at 2nd, Bryce Nowak remains at 1st.
+Single
+SBGC 1 - DGN( 2
+In play.
+Bryce Nowak singles on a fly ball to first baseman Brian Gribbin, Camden Lee scores on error by first baseman Brian Gribbin, Caleb Forrester advances to 2nd.
+Walk
+Strike 1 looking, Ball 1, Ball 2, Ball 3, Ball 4.
+Caleb Forrester walks, Quinn Kasprzak pitching, Camden Lee advances to 2nd.
+Walk
+Strike 1 looking, Foul, Foul, Ball 1, Ball 2, Ball 3, Foul, Ball 4.
+Camden Lee walks, Quinn Kasprzak pitching.
+Bottom 2nd - Dig In (Gribbin) 14U
+Strikeout
+3 Outs
+Ball 1, Ball 2, Deven Downs steals 2nd, Ball 3, Strike 1 looking, Foul, Foul, Strike 3 swinging.
+Brian Gribbin strikes out swinging, Carter Forrester pitching.
+Single
+Ball 1, In play.
+Deven Downs singles on a fly ball to shortstop Brett Gjeldum.
+Strikeout
+2 Outs
+Strike 1 swinging, Strike 2 swinging, Strike 3 swinging.
+Ryan Maloney strikes out swinging, Carter Forrester pitching.
+Fly Out
+1 Out
+In play.
+Trenton flies out to left fielder Bryce Nowak.
+Top 2nd - SBGC Dirtbags Mid-Atlantic 14U
+Ground Out
+3 Outs
+Strike 1 looking, Colin Nadjibe steals 2nd, Ball 1, In play.
+Keegan O’Malley grounds out, shortstop Declan Class to first baseman Brian Gribbin.
+Walk
+Strike 1 swinging, Ball 1, Ball 2, Ball 3, Strike 2 looking, Foul, Ball 4.
+Colin Nadjibe walks, Quinn Kasprzak pitching.
+Strikeout
+2 Outs
+Strike 1 looking, Ball 1, Strike 2 swinging, Strike 3 looking.
+Johnny Bartolini strikes out looking, Quinn Kasprzak pitching.
+Ground Out
+1 Out
+Strike 1 looking, Ball 1, Ball 2, Foul, In play.
+Ethan Resnick grounds out, second baseman Joe Carey to first baseman Brian Gribbin.
+Bottom 1st - Dig In (Gribbin) 14U
+Fly Out
+3 Outs
+Courtesy runner Tyler in for Quinn Kasprzak, Ball 1, Tyler advances to 2nd on defensive indifference, In play.
+Joe Carey flies out to center fielder Keegan O’Malley.
+Walk
+SBGC 0 - DGN( 2
+Ball 1, Ball 2, Ball 3, Brian Gribbin scores on wild pitch, Andres Tecua advances to 3rd on the same pitch, Ball 4.
+Quinn Kasprzak walks, Carter Forrester pitching, Andres Tecua remains at 3rd.
+Strikeout
+2 Outs
+Strike 1 looking, Strike 2 swinging, Strike 3 swinging.
+Jack Wieland strikes out swinging, Carter Forrester pitching, Brian Gribbin remains at 3rd, Andres Tecua remains at 2nd.
+Pop Out
+1 Out
+Ball 1, Andres Tecua advances to 2nd on defensive indifference, In play.
+Dean Simmons pops out to second baseman Andrew Becker, Brian Gribbin remains at 3rd, Andres Tecua remains at 2nd.
+Single
+SBGC 0 - DGN( 1
+Deven Downs scores on wild pitch, Pickoff attempt at 1st, Strike 1 looking, Brian Gribbin steals 2nd, Ball 1, Strike 2 looking, In play.
+Andres Tecua singles on a ground ball to first baseman William Wright, Brian Gribbin advances to 3rd.
+Walk
+Deven Downs steals 2nd, Ball 1, Strike 1 looking, Ball 2, Deven Downs advances to 3rd on wild pitch, Ball 3, Foul, Foul, Ball 4.
+Brian Gribbin walks, Carter Forrester pitching, Deven Downs remains at 3rd.
+Walk
+Ball 1, Strike 1 looking, Ball 2, Ball 3, Strike 2 looking, Foul, Foul, Ball 4.
+Deven Downs walks, Carter Forrester pitching.
+Top 1st - SBGC Dirtbags Mid-Atlantic 14U
+Pop Out
+3 Outs
+Strike 1 swinging, Ball 1, Ball 2, In play.
+Andrew Becker pops out in foul territory to first baseman Brian Gribbin.
+Fielder's Choice
+2 Outs
+In play.
+William Wright grounds into fielder's choice, third baseman Andres Tecua to catcher Ryan Maloney, Brett Gjeldum out advancing to home, Carter Forrester advances to 2nd.
+Single
+Ball 1, Brett Gjeldum advances to 2nd on passed ball, Foul, Ball 2, Ball 3, In play.
+Carter Forrester singles on a ground ball to left fielder Jack Wieland, Brett Gjeldum advances to 3rd.
+Hit By Pitch
+Ball 1, Strike 1 swinging, Ball 2, Ball 3.
+Brett Gjeldum is hit by pitch, Quinn Kasprzak pitching.
+Ground Out
+1 Out
+Ball 1, Ball 2, Foul, Ball 3, In play.
+Bryce Nowak grounds out, second baseman Joe Carey to first baseman Brian Gribbin.

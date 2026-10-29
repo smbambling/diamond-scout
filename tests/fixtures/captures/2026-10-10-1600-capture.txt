@@ -1,0 +1,225 @@
+Use TEAM-DATA-PROMPT.md to add this game
+Import: both teams (default)
+Date: 2026-10-10
+Start time: 16:00
+Timezone: ET
+Source: https://web.gc.com/teams/6bKEd4zQDNOb/2026-fall-dig-in-gribbin-14u/schedule/92b45e08-df77-4227-b955-8adaa20070c9/plays
+Capture coverage: loaded browser text only; completeness not verified.
+
+PLAY-BY-PLAY
+Top 7th - Dig In (Gribbin) 14U
+Brayden at bat
+Bottom 6th - In The Dirt Royals 14U
+Pop Out
+3 Outs
+Foul, Ball 1, Foul, In play.
+Brooks Sherman pops out to third baseman Andres Tecua.
+Walk
+Ball 1, Ball 2, Ball 3, Strike 1 looking, Foul, Ball 4.
+Auden Curley walks, Declan Class pitching.
+Pop Out
+2 Outs
+In play.
+Jake Unglesbee pops out to third baseman Andres Tecua.
+Ground Out
+1 Out
+Strike 1 looking, Strike 2 looking, In play.
+Grayson Miller grounds out, shortstop Liam to first baseman Brian Gribbin.
+Top 6th - Dig In (Gribbin) 14U
+Strikeout
+3 Outs
+Strike 1 swinging, Strike 2 looking, Foul, Strike 3 swinging.
+Jack Wieland strikes out swinging, Jake Johnson pitching.
+Strikeout
+2 Outs
+Strike 1 looking, Ball 1, Foul, Ball 2, Foul, Foul, Ball 3, Strike 3 looking.
+Quinn Kasprzak strikes out looking, Jake Johnson pitching.
+Ground Out
+1 Out
+Foul, Ball 1, Strike 2 looking, In play.
+Dean Simmons grounds out, shortstop Ben Stillitano to first baseman Nemo Dewees.
+Bottom 5th - In The Dirt Royals 14U
+Ground Out
+3 Outs
+Courtesy runner Ben Stillitano in for Tanner Harrell, Ball 1, Graham Knotek advances to 3rd on wild pitch, Ben Stillitano advances to 2nd on the same pitch, In play.
+Nemo Dewees grounds out, third baseman Andres Tecua to first baseman Brian Gribbin.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Tanner Harrell walks, Declan Class pitching, Graham Knotek remains at 2nd.
+Ground Out
+2 Outs
+Ball 1, Pickoff attempt at 1st, Ball 2, Strike 1 looking, Ball 3, In play.
+Ben Stillitano grounds out to second baseman Quinn Kasprzak, Graham Knotek advances to 2nd.
+Fly Out
+1 Out
+Ball 1, Foul, In play.
+Jake Johnson flies out to center fielder Dean Simmons, Graham Knotek remains at 1st.
+Single
+Strike 1 looking, In play.
+Graham Knotek singles on a ground ball to shortstop Liam.
+Top 5th - Dig In (Gribbin) 14U
+Fly Out
+3 Outs
+Ball 1, Ball 2, Joe Carey advances to 3rd on wild pitch, Deven Downs advances to 2nd on the same pitch, Ball 3, In play.
+Andres Tecua flies out to center fielder Graham Knotek.
+Strikeout
+2 Outs
+Ball 1, Strike 1 looking, Foul, Strike 3 swinging.
+Brian Gribbin strikes out swinging, Jake Johnson pitching, Joe Carey remains at 2nd, Deven Downs remains at 1st.
+Error
+Strike 1 looking, Ball 1, In play.
+Deven Downs hits a pop fly and reaches on an error by second baseman Brooks Sherman, Joe Carey advances to 2nd.
+Pop Out
+1 Out
+Strike 1 looking, In play.
+Liam pops out to shortstop Ben Stillitano, Joe Carey remains at 1st.
+Hit By Pitch
+Ball 1.
+Joe Carey is hit by pitch, Jake Johnson pitching.
+Bottom 4th - In The Dirt Royals 14U
+Pop Out
+3 Outs
+Strike 1 looking, In play.
+Brooks Sherman pops out to pitcher Wesley Hurt.
+Ground Out
+2 Outs
+Strike 1 looking, Ball 1, In play.
+Auden Curley grounds out to first baseman Deven Downs, Grayson Miller advances to 3rd.
+Strikeout
+1 Out
+Ball 1, Ball 2, Foul, Ball 3, Strike 2 swinging, Strike 3 looking.
+Jake Unglesbee strikes out looking, Wesley Hurt pitching, Grayson Miller remains at 2nd.
+Double
+Ball 1, Foul, In play.
+Grayson Miller doubles on a fly ball to center fielder Dean Simmons.
+Top 4th - Dig In (Gribbin) 14U
+Ground Out
+3 Outs
+Ball 1, Strike 1 swinging, Foul, Foul, Foul, Foul, In play.
+Wesley Hurt grounds out, second baseman Brooks Sherman to first baseman Nemo Dewees.
+Strikeout
+2 Outs
+Ball 1, Ball 2, Strike 1 looking, Strike 2 swinging, Strike 3 swinging.
+Declan Class strikes out swinging, Jake Johnson pitching.
+Ground Out
+1 Out
+Ball 1, In play.
+Brayden grounds out, third baseman Grayson Miller to first baseman Nemo Dewees.
+Bottom 3rd - In The Dirt Royals 14U
+Strikeout
+DGN( 5 - INTH 3 | 3 Outs
+Courtesy runner Brooks Sherman in for Tanner Harrell, Ball 1, Brooks Sherman advances to 2nd on error by shortstop Liam, Jake Johnson scores on the same error, Strike 1 looking, Strike 2 looking, Ball 2, Foul, Ball 3, Strike 3 looking.
+Nemo Dewees strikes out looking, Wesley Hurt pitching.
+Fielder's Choice
+DGN( 5 - INTH 2 | 2 Outs
+Strike 1 looking, Ball 1, Pickoff attempt at 3rd, Foul, In play.
+Tanner Harrell grounds into fielder's choice, second baseman Quinn Kasprzak to shortstop Liam, Ben Stillitano out advancing to 2nd, Graham Knotek scores, Jake Johnson advances to 3rd.
+Walk
+Ball 1, Ball 2, Ball 3, Strike 1 looking, Ball 4.
+Ben Stillitano walks, Wesley Hurt pitching, Graham Knotek advances to 3rd, Jake Johnson advances to 2nd.
+Single
+Strike 1 looking, Foul, In play.
+Jake Johnson singles on a line drive to left fielder Joe Carey, Graham Knotek advances to 2nd.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Graham Knotek walks, Wesley Hurt pitching.
+Ground Out
+1 Out
+In play.
+Brooks Sherman grounds out, pitcher Wesley Hurt to first baseman Brian Gribbin.
+Top 3rd - Dig In (Gribbin) 14U
+Ground Out
+3 Outs
+Dean Simmons advances to 2nd on defensive indifference, Foul, Ball 1, Strike 2 looking, In play.
+Jack Wieland grounds out, pitcher Ben Stillitano to first baseman Nemo Dewees.
+Strikeout
+2 Outs
+Strike 1 swinging, Ball 1, Ball 2, Ball 3, Strike 2 looking, Strike 3 looking.
+Quinn Kasprzak strikes out looking, Ben Stillitano pitching, Dean Simmons remains at 1st.
+Single
+Ball 1, In play.
+Dean Simmons singles on a line drive to left fielder Jake Unglesbee.
+Sacrifice Fly
+DGN( 5 - INTH 1 | 1 Out
+Ball 1, Ball 2, Brian Gribbin advances to 2nd on passed ball, Foul, Foul, Ball 3, Brian Gribbin advances to 3rd on wild pitch, Foul, In play.
+Andres Tecua out on sacrifice fly to center fielder Graham Knotek, Brian Gribbin scores.
+Single
+DGN( 4 - INTH 1
+Strike 1 looking, Deven Downs advances to 2nd on defensive indifference, Ball 1, Strike 2 looking, Foul, Foul, Ball 2, Ball 3, In play.
+Brian Gribbin singles on a ground ball to second baseman Brooks Sherman, Deven Downs scores on the throw, Liam scores.
+Single
+Ball 1, Pickoff attempt at 1st, Liam advances to 2nd on error by catcher Tanner Harrell, Strike 1 looking, In play.
+Deven Downs singles on a line drive to left fielder Jake Unglesbee, Liam advances to 3rd.
+Single
+Ball 1, Strike 1 swinging, Strike 2 swinging, Ball 2, Foul, In play.
+Liam singles on a fly ball to center fielder Graham Knotek.
+Bottom 2nd - In The Dirt Royals 14U
+Ground Out
+3 Outs
+In play.
+Auden Curley grounds out, third baseman Andres Tecua to first baseman Brian Gribbin.
+Strikeout
+2 Outs
+Ball 1, Strike 1 swinging, Foul, Ball 2, Foul, Strike 3 swinging.
+Jake Unglesbee strikes out swinging, Deven Downs pitching, Nemo Dewees remains at 1st.
+Fly Out
+1 Out
+Foul, In play.
+Grayson Miller flies out to left fielder Quinn Kasprzak, Nemo Dewees remains at 1st.
+Error
+Ball 1, In play.
+Nemo Dewees hits a ground ball and reaches on an error by second baseman Wesley Hurt.
+Top 2nd - Dig In (Gribbin) 14U
+Pop Out
+3 Outs
+Ball 1, In play.
+Joe Carey pops out to catcher Tanner Harrell.
+Sacrifice Bunt
+2 Outs
+In play.
+Wesley Hurt sacrifices to pitcher Ben Stillitano, Wesley Hurt out advancing to 1st, Declan Class advances to 2nd.
+Walk
+DGN( 2 - INTH 1
+Strike 1 looking, Brayden advances to 2nd on defensive indifference, Ball 1, Ball 2, Jack Wieland scores on wild pitch, Brayden advances to 3rd on the same pitch, Brayden scores on error by catcher Tanner Harrell, Ball 3, Ball 4.
+Declan Class walks, Ben Stillitano pitching.
+Single
+Foul, Ball 1, Ball 2, Jack Wieland advances to 2nd on wild pitch, Foul, In play.
+Brayden singles on a fly ball to right fielder Auden Curley, Jack Wieland advances to 3rd.
+Fielder's Choice
+1 Out
+Ball 1, Ball 2, Ball 3, Strike 1 looking, In play.
+Jack Wieland grounds into fielder's choice, second baseman Brooks Sherman to shortstop Jake Johnson, Quinn Kasprzak out advancing to 2nd.
+Single
+Ball 1, Ball 2, Strike 1 looking, Ball 3, In play.
+Quinn Kasprzak singles on a ground ball to center fielder Graham Knotek.
+Bottom 1st - In The Dirt Royals 14U
+Ground Out
+3 Outs
+In play.
+Tanner Harrell grounds out, pitcher Deven Downs to first baseman Brian Gribbin.
+Ground Out
+DGN( 0 - INTH 1 | 2 Outs
+Graham Knotek advances to 3rd on passed ball, Strike 1 looking, Jake Johnson caught stealing 2nd, catcher Liam to second baseman Brayden, Foul, Ball 1, Ball 2, In play.
+Ben Stillitano grounds out to first baseman Brian Gribbin, Graham Knotek scores.
+Walk
+Ball 1, Graham Knotek advances to 2nd on wild pitch, Ball 2, Ball 3, Strike 1 looking, Ball 4.
+Jake Johnson walks, Deven Downs pitching, Graham Knotek remains at 2nd.
+Single
+Ball 1, Strike 1 looking, Strike 2 looking, Ball 2, Foul, In play.
+Graham Knotek singles on a fly ball to right fielder Jack Wieland.
+Top 1st - Dig In (Gribbin) 14U
+Strikeout
+3 Outs
+Ball 1, Pickoff attempt at 1st, Strike 1 swinging, Foul, Strike 3 swinging.
+Dean Simmons strikes out swinging, Ben Stillitano pitching.
+Pop Out
+2 Outs
+Ball 1, In play.
+Andres Tecua pops out to first baseman Nemo Dewees, Deven Downs remains at 1st.
+Line Out
+1 Out
+In play.
+Brian Gribbin lines out to right fielder Auden Curley, Deven Downs remains at 1st.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Deven Downs walks, Ben Stillitano pitching.

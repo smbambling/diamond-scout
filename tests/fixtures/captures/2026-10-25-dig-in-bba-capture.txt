@@ -1,0 +1,174 @@
+Use TEAM-DATA-PROMPT.md to add this game
+Import: both teams (default)
+Date: 2026-10-25
+Start time: 10:00
+Timezone: unknown
+Source: https://web.gc.com/teams/6bKEd4zQDNOb/2026-fall-dig-in-gribbin-14u/schedule/bbd7b60b-a503-4abf-8dfe-91e7105aabc5/plays
+Capture coverage: loaded browser text only; completeness not verified.
+
+PLAY-BY-PLAY
+Bottom 4th - BBA 14u East
+Ben Thorn at bat
+Top 4th - Dig In (Gribbin) 14U
+Fly Out
+3 Outs
+Strike 1 looking, Ball 1, Ball 2, In play.
+Quinn Kasprzak flies out to center fielder Ben Thorn.
+Strikeout
+2 Outs
+Ball 1, Strike 1 looking, Strike 2 looking, Foul, Strike 3 looking.
+Ryan Maloney strikes out looking, Teddy Fleszar pitching.
+Ground Out
+1 Out
+Strike 1 looking, Strike 2 swinging, Foul, In play.
+Jack Wieland grounds out, pitcher Teddy Fleszar to first baseman Holden Cassady.
+Bottom 3rd - BBA 14u East
+Strikeout
+3 Outs
+Lineup changed: Liam McDermott in for batter Brady Thomas, Strike 1 swinging, Ball 1, Strike 2 swinging, Ball 2, Foul, Ball 3, Strike 3 swinging.
+Liam McDermott strikes out swinging, Quinn Kasprzak pitching.
+Ground Out
+2 Outs
+Foul, Ball 1, In play.
+Stuart Cox grounds out, shortstop Declan Class to first baseman Brian Gribbin.
+Ground Out
+1 Out
+In play.
+Nicholas Ciliento grounds out, shortstop Declan Class to first baseman Brian Gribbin.
+Top 3rd - Dig In (Gribbin) 14U
+Pop Out
+3 Outs
+Ball 1, Strike 1 swinging, Foul, Foul, Ball 2, In play.
+Dean Simmons pops out to left fielder Teddy Fleszar.
+Walk
+Strike 1 looking, Ball 1, Ball 2, Ball 3, Ball 4.
+Andres Tecua walks, Mateo Maday pitching, Deven Downs remains at 3rd, Brian Gribbin remains at 2nd.
+Line Out
+2 Outs
+Ball 1, Strike 1 swinging, In play.
+Joe Carey lines out to second baseman Jack Conway, Deven Downs remains at 3rd, Brian Gribbin remains at 2nd.
+Single
+DGN( 1 - BB14 11
+Ball 1, Deven Downs steals 2nd, Declan Class scores on steal of home, In play.
+Brian Gribbin singles on a fly ball to left fielder Teddy Fleszar, Brian Gribbin advances to 2nd on the throw, Deven Downs advances to 3rd.
+Single
+Strike 1 looking, Declan Class steals 2nd, Strike 2 looking, Ball 1, Ball 2, In play.
+Deven Downs singles on a line drive to right fielder Nicholas Ciliento, Declan Class advances to 3rd.
+Error
+In play.
+Declan Class hits a ground ball and reaches on an error by shortstop Ellis Myers.
+Ground Out
+1 Out
+Foul, Ball 1, Ball 2, Ball 3, Strike 2 looking, In play.
+Sam Leshner grounds out, pitcher Mateo Maday to first baseman Holden Cassady.
+Bottom 2nd - BBA 14u East
+Line Out
+3 Outs
+Strike 1 looking, In play.
+Ellis Myers lines out to shortstop Declan Class.
+Walk
+DGN( 0 - BB14 11
+Strike 1 looking, Strike 2 swinging, Ball 1, Ball 2, Ball 3, Ball 4.
+Jack Conway walks, Quinn Kasprzak pitching, Holden Cassady scores, Theo West advances to 3rd, Andrew Tiedeman advances to 2nd.
+Walk
+DGN( 0 - BB14 10
+Ball 1, Ball 2, Foul, Ball 3, Ball 4.
+Andrew Tiedeman walks, Quinn Kasprzak pitching, Jack Jameson scores, Holden Cassady advances to 3rd, Theo West advances to 2nd.
+Walk
+DGN( 0 - BB14 9
+Ball 1, Ball 2, Ball 3, Strike 1 looking, Ball 4.
+Theo West walks, Quinn Kasprzak pitching, Teddy Fleszar scores, Jack Jameson advances to 3rd, Holden Cassady advances to 2nd.
+Single
+DGN( 0 - BB14 8
+Foul, Ball 1, Ball 2, Strike 2 looking, Foul, Ball 3, In play.
+Holden Cassady singles on a ground ball to shortstop Declan Class, Ben Thorn scores, Teddy Fleszar advances to 3rd, Jack Jameson advances to 2nd.
+Error
+DGN( 0 - BB14 7
+Ball 1, Strike 1 looking, In play.
+Jack Jameson hits a ground ball and reaches on an error by third baseman Andres Tecua, Brady Thomas scores, Ben Thorn advances to 3rd, Teddy Fleszar advances to 2nd.
+Single
+Ball 1, In play.
+Teddy Fleszar singles on a hard ground ball to left fielder Jack Wieland, Brady Thomas advances to 3rd, Ben Thorn advances to 2nd.
+Single
+DGN( 0 - BB14 6
+Ball 1, In play.
+Ben Thorn singles on a line drive to left fielder Jack Wieland, Nicholas Ciliento scores, Brady Thomas advances to 2nd.
+Walk
+Foul, Ball 1, Ball 2, Foul, Foul, Ball 3, Ball 4.
+Brady Thomas walks, Wesley Hurt pitching, Nicholas Ciliento remains at 2nd.
+Ground Out
+2 Outs
+Pickoff attempt at 1st, In play.
+Stuart Cox grounds out, second baseman Joe Carey to shortstop Declan Class to first baseman Brian Gribbin, Nicholas Ciliento advances to 2nd.
+Single
+DGN( 0 - BB14 5
+Ball 1, Andrew Tiedeman scores on passed ball, Jack Conway advances to 3rd on the same pitch, Ellis Myers advances to 2nd on the same pitch, In play.
+Nicholas Ciliento singles on a line drive to center fielder Dean Simmons, Ellis Myers scores, Jack Conway scores.
+Walk
+DGN( 0 - BB14 2
+Foul, Ball 1, Ball 2, Foul, Ball 3, Ball 4.
+Ellis Myers walks, Wesley Hurt pitching, Theo West scores, Andrew Tiedeman advances to 3rd, Jack Conway advances to 2nd.
+Single
+Foul, In play.
+Jack Conway singles on a ground ball to shortstop Declan Class, Theo West advances to 3rd, Andrew Tiedeman advances to 2nd.
+Single
+In play.
+Andrew Tiedeman singles on a fly ball to center fielder Dean Simmons, Theo West advances to 2nd.
+Walk
+Ball 1, Ball 2, Ball 3, Strike 1 looking, Foul, Ball 4.
+Theo West walks, Wesley Hurt pitching.
+Ground Out
+1 Out
+Foul, Foul, Foul, Ball 1, Ball 2, Foul, Foul, Ball 3, In play.
+Holden Cassady grounds out, shortstop Declan Class to first baseman Brian Gribbin.
+Top 2nd - Dig In (Gribbin) 14U
+Ground Out
+3 Outs
+Strike 1 swinging, In play.
+Wesley Hurt grounds out, second baseman Jack Conway to first baseman Holden Cassady.
+Ground Out
+2 Outs
+Ball 1, Strike 1 looking, Ball 2, Foul, In play.
+Quinn Kasprzak grounds out, pitcher Mateo Maday to first baseman Holden Cassady.
+Fly Out
+1 Out
+Strike 1 looking, In play.
+Ryan Maloney flies out to center fielder Ben Thorn.
+Bottom 1st - BBA 14u East
+Double Play
+3 Outs
+Strike 1 swinging, Ball 1, In play.
+Jack Jameson flies into a double play, right fielder Deven Downs to catcher Ryan Maloney, Teddy Fleszar out at home advancing after tag up.
+Triple
+DGN( 0 - BB14 1
+Ball 1, In play.
+Teddy Fleszar triples on a line drive to right fielder Deven Downs, Ben Thorn scores.
+Single
+In play.
+Ben Thorn singles on a line drive to left fielder Sam Leshner.
+Ground Out
+1 Out
+Ball 1, Strike 1 looking, Foul, Ball 2, In play.
+Brady Thomas grounds out to first baseman Brian Gribbin.
+Top 1st - Dig In (Gribbin) 14U
+Strikeout
+3 Outs
+Strike 1 looking, Strike 2 swinging, Foul, Foul tip.
+Jack Wieland is out on foul tip, Mateo Maday pitching.
+Catcher's Interference
+Ball 1, Ball 2, Strike 1 swinging, Ball 3, Ball 4.
+Dean Simmons reaches on catcher's interference by Andrew Tiedeman, Joe Carey advances to 3rd, Andres Tecua advances to 2nd.
+Single
+2 Outs
+Strike 1 looking, Pickoff attempt at 2nd, In play.
+Andres Tecua singles on a line drive, center fielder Ben Thorn to catcher Andrew Tiedeman, Brian Gribbin out advancing to home, Joe Carey advances to 2nd.
+Error
+Strike 1 looking, Brian Gribbin steals 2nd, Ball 1, Ball 2, Ball 3, Pickoff attempt at 2nd, In play.
+Joe Carey hits a pop fly and reaches on an error by second baseman Jack Conway, Brian Gribbin held up at 2nd.
+Walk
+Ball 1, Ball 2, Strike 1 swinging, Foul, Ball 3, Ball 4.
+Brian Gribbin walks, Mateo Maday pitching.
+Dropped 3rd Strike
+1 Out
+Ball 1, Strike 1 looking, Foul, Strike 3 swinging.
+Deven Downs out at first on dropped 3rd strike.

@@ -1,0 +1,2285 @@
+{
+  "schema_version": 1,
+  "team": {
+    "id": "central-maryland-cyclones-boyd-14u",
+    "name": "Central Maryland Cyclones Boyd 14U"
+  },
+  "players": [
+    {
+      "id": "central-maryland-cyclones-boyd-14u-brooks-steinacker",
+      "name": "Brooks Steinacker",
+      "bats": null
+    },
+    {
+      "id": "central-maryland-cyclones-boyd-14u-jackson-villamor",
+      "name": "Jackson Villamor",
+      "bats": null
+    },
+    {
+      "id": "central-maryland-cyclones-boyd-14u-caleb-mckinney",
+      "name": "Caleb McKinney",
+      "bats": null
+    },
+    {
+      "id": "central-maryland-cyclones-boyd-14u-jameson-mallare",
+      "name": "Jameson Mallare",
+      "bats": null
+    },
+    {
+      "id": "central-maryland-cyclones-boyd-14u-dylan-schatz",
+      "name": "Dylan Schatz",
+      "bats": null
+    },
+    {
+      "id": "central-maryland-cyclones-boyd-14u-ryan-marzano",
+      "name": "Ryan Marzano",
+      "bats": null
+    },
+    {
+      "id": "central-maryland-cyclones-boyd-14u-joey-leise",
+      "name": "Joey Leise",
+      "bats": null
+    },
+    {
+      "id": "central-maryland-cyclones-boyd-14u-tyson-mcfadyen",
+      "name": "Tyson McFadyen",
+      "bats": null
+    },
+    {
+      "id": "central-maryland-cyclones-boyd-14u-lou-cecil",
+      "name": "Lou Cecil",
+      "bats": null
+    },
+    {
+      "id": "central-maryland-cyclones-boyd-14u-camden-corey",
+      "name": "Camden Corey",
+      "bats": null
+    },
+    {
+      "id": "central-maryland-cyclones-boyd-14u-tj-orem",
+      "name": "TJ Orem",
+      "bats": null
+    },
+    {
+      "id": "central-maryland-cyclones-boyd-14u-dylan-fields",
+      "name": "Dylan Fields",
+      "bats": null
+    }
+  ],
+  "games": [
+    {
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "date": "2026-10-18",
+      "start_time": "12:30",
+      "timezone": "ET",
+      "opponent": "Dig In (Gribbin) 14U",
+      "batting_half": "bottom",
+      "label": "vs. Dig In (Gribbin) 14U",
+      "source": "Local GameChanger text converter",
+      "source_url": "https://web.gc.com/teams/6bKEd4zQDNOb/2026-fall-dig-in-gribbin-14u/schedule/2f1e3421-c93b-405f-887e-57052446572a/plays",
+      "source_event_id": "2f1e3421-c93b-405f-887e-57052446572a",
+      "source_capture_coverage": "loaded browser text only; completeness not verified.",
+      "source_scope": "Supplied bottom innings 1, 2, 3, 4, 5 only; completeness not verified",
+      "source_play_by_play": "Top 6th - Dig In (Gribbin) 14U\nDeclan Class at bat\nBottom 5th - Central Maryland Cyclones Boyd 14U\nGround Out\n3 Outs\nIn play.\nCaleb McKinney grounds out, pitcher Joe Carey to first baseman Brian Gribbin.\nWalk\nBall 1, Strike 1 looking, Ball 2, Ball 3, Ball 4.\nJackson Villamor walks, Joe Carey pitching, Brooks Steinacker advances to 2nd.\nFielder's Choice\nDGN( 12 - CNTR 4 | 2 Outs\nBall 1, In play.\nBrooks Steinacker grounds into fielder's choice, second baseman Ryan Maloney to shortstop Dean Simmons, Dylan Fields out advancing to 2nd, Camden Corey scores on error by shortstop Dean Simmons, Tyson McFadyen scores.\nSingle\nDGN( 12 - CNTR 2\nStrike 1 swinging, Strike 2 looking, In play.\nDylan Fields singles on a line drive to center fielder Tyler, Joey Leise scores, Tyson McFadyen advances to 3rd, Camden Corey advances to 2nd.\nWalk\nJoey Leise advances to 3rd on wild pitch, Tyson McFadyen advances to 2nd on the same pitch, Strike 1 looking, Ball 1, Ball 2, Ball 3, Strike 2 looking, Ball 4.\nCamden Corey walks, Joe Carey pitching, Joey Leise remains at 3rd, Tyson McFadyen remains at 2nd.\nStrikeout\n1 Out\nFoul, Strike 2 looking, Strike 3 swinging.\nLou Cecil strikes out swinging, Joe Carey pitching, Joey Leise remains at 2nd, Tyson McFadyen remains at 1st.\nHit By Pitch\nBall 1, Joey Leise steals 2nd, Ball 2.\nTyson McFadyen is hit by pitch, Declan Class pitching, Joey Leise remains at 2nd.\nHit By Pitch\nBall 1.\nJoey Leise is hit by pitch, Declan Class pitching.\nTop 5th - Dig In (Gribbin) 14U\nFly Out\nDGN( 12 - CNTR 1 | 3 Outs\nFoul, Ball 1, Ball 2, Strike 2 looking, Quinn Kasprzak steals 2nd, Dean Simmons scores on steal of home, Ball 3, Foul, In play.\nJoe Carey flies out to left fielder Jameson Mallare.\nSingle\nDGN( 11 - CNTR 1\nBall 1, Andres Tecua steals 3rd, Dean Simmons steals 2nd, Strike 1 looking, Strike 2 swinging, In play.\nQuinn Kasprzak singles on a line drive to left fielder Jameson Mallare, Andres Tecua scores, Dean Simmons advances to 3rd.\nBatter Out\n2 Outs\nStrike 1 looking, In play.\nJack Wieland out (other), Andres Tecua remains at 2nd, Dean Simmons remains at 1st.\nHit By Pitch\nBall 1, Ball 2.\nDean Simmons is hit by pitch, Dylan Fields pitching, Andres Tecua advances to 2nd.\nSingle\nIn play.\nAndres Tecua singles on a ground ball to center fielder Joey Leise.\nPop Out\nDGN( 10 - CNTR 1 | 1 Out\nBall 1, Deven Downs steals 2nd, Ball 2, Deven Downs advances to 3rd on wild pitch, Deven Downs scores on the same pitch, Ball 3, In play.\nBrian Gribbin pops out to shortstop Lou Cecil.\nWalk\nBall 1, Ball 2, Ball 3, Ball 4.\nDeven Downs walks, Dylan Fields pitching.\nBottom 4th - Central Maryland Cyclones Boyd 14U\nGround Out\n3 Outs\nStrike 1 looking, In play.\nRyan Marzano grounds out, pitcher Declan Class to first baseman Brian Gribbin.\nGround Out\n2 Outs\nStrike 1 looking, Ball 1, Jameson Mallare steals 2nd, Strike 2 looking, Foul, In play.\nDylan Schatz grounds out, shortstop Dean Simmons to first baseman Brian Gribbin, Jameson Mallare advances to 3rd.\nWalk\nDGN( 9 - CNTR 1\nBall 1, Strike 1 swinging, Balk by pitcher Declan Class, Jackson Villamor scores, Ball 2, Foul, Ball 3, Ball 4.\nJameson Mallare walks, Declan Class pitching.\nStrikeout\n1 Out\nBall 1, Ball 2, Strike 1 looking, Jackson Villamor steals 3rd, Strike 2 swinging, Strike 3 swinging.\nCaleb McKinney strikes out swinging, Declan Class pitching, Jackson Villamor remains at 3rd.\nError\nBall 1, Ball 2, In play.\nJackson Villamor hits a ground ball and reaches on an error by third baseman Andres Tecua, Jackson Villamor advances to 2nd on the same error.\nTop 4th - Dig In (Gribbin) 14U\nStrikeout\n3 Outs\nFoul, Pickoff attempt at 1st, Pickoff attempt at 1st, Strike 2 swinging, Declan Class steals 2nd, Strike 3 looking.\nTyler strikes out looking, Dylan Fields pitching.\nSingle\nStrike 1 looking, In play.\nDeclan Class singles on a ground ball to first baseman Tyson McFadyen.\nGround Out\nDGN( 9 - CNTR 0 | 2 Outs\nStrike 1 looking, In play.\nJoe Carey grounds out, shortstop Lou Cecil to first baseman Tyson McFadyen, Jack Wieland scores.\nPop Out\n1 Out\nBall 1, Jack Wieland advances to 3rd on wild pitch, Foul, Ball 2, In play.\nQuinn Kasprzak pops out to second baseman Ryan Marzano, Jack Wieland remains at 3rd.\nDouble\nDGN( 8 - CNTR 0\nBall 1, Foul, Strike 2 swinging, Foul, In play.\nJack Wieland doubles on a line drive to right fielder Brooks Steinacker, Dean Simmons scores.\nDouble\nDGN( 7 - CNTR 0\nBall 1, Strike 1 looking, Foul, In play.\nDean Simmons doubles on a line drive to center fielder Joey Leise, Andres Tecua scores.\nWalk\nBall 1, Foul, Foul, Ball 2, Ball 3, Ball 4.\nAndres Tecua walks, Dylan Fields pitching.\nBottom 3rd - Central Maryland Cyclones Boyd 14U\nDouble Play\n3 Outs\nIn play.\nBrooks Steinacker lines into a double play, shortstop Dean Simmons to second baseman Quinn Kasprzak, TJ Orem out advancing to 2nd, Dylan Fields remains at 1st.\nSingle\nStrike 1 looking, Ball 1, Ball 2, Strike 2 swinging, Foul, Ball 3, Foul, In play.\nDylan Fields singles on a fly ball to left fielder Joe Carey, TJ Orem advances to 2nd.\nStrikeout\n1 Out\nCourtesy runner TJ Orem in for Lou Cecil, Ball 1, Foul, Foul, Ball 2, Foul, Strike 3 swinging.\nCamden Corey strikes out swinging, Declan Class pitching, TJ Orem remains at 1st.\nHit By Pitch\nBall 1, Ball 2.\nLou Cecil is hit by pitch, Declan Class pitching.\nTop 3rd - Dig In (Gribbin) 14U\nGround Out\n3 Outs\nBall 1, Ball 2, In play.\nBrian Gribbin grounds out, shortstop Camden Corey to first baseman Tyson McFadyen.\nStrikeout\n2 Outs\nCourtesy runner Tyler in for Ryan Maloney, Strike 1 looking, Tyler advances to 2nd on defensive indifference, Foul, Strike 3 looking.\nDeven Downs strikes out looking, Dylan Fields pitching, Joe Carey remains at 3rd, Tyler remains at 2nd.\nSingle\nDGN( 6 - CNTR 0\nBall 1, Strike 1 looking, Ball 2, Ball 3, Strike 2 looking, In play.\nRyan Maloney singles on a line drive to right fielder Brooks Steinacker, Quinn Kasprzak scores, Joe Carey advances to 3rd.\nGround Out\n1 Out\nIn play.\nTrenton grounds out, shortstop Camden Corey to first baseman Tyson McFadyen, Quinn Kasprzak advances to 3rd, Joe Carey advances to 2nd.\nSingle\nDGN( 5 - CNTR 0\nLineup changed: TJ Orem in at pitcher, Ball 1, In play.\nJoe Carey singles on a fly ball to left fielder Jameson Mallare, Jack Wieland scores, Dean Simmons scores, Quinn Kasprzak advances to 2nd.\nWalk\nStrike 1 looking, Jack Wieland advances to 2nd on defensive indifference, Ball 1, Ball 2, Pickoff attempt at 2nd, Ball 3, Strike 2 looking, Ball 4.\nQuinn Kasprzak walks, TJ Orem pitching, Dean Simmons remains at 3rd, Jack Wieland remains at 2nd.\nDropped 3rd Strike\nDGN( 3 - CNTR 0\nBall 1, Dean Simmons advances to 2nd on defensive indifference, Foul, Strike 2 looking, Strike 3 swinging.\nJack Wieland reaches on dropped 3rd strike (passed ball), Andres Tecua scores, Dean Simmons advances to 3rd.\nError\nBall 1, Ball 2, Strike 1 swinging, In play.\nDean Simmons hits a fly ball and reaches on an error by center fielder Joey Leise, Andres Tecua advances to 3rd.\nDouble\nDGN( 2 - CNTR 0\nIn play.\nAndres Tecua doubles on a line drive to left fielder Jameson Mallare, Brian Gribbin scores.\nError\nStrike 1 looking, Ball 1, Strike 2 swinging, In play.\nBrian Gribbin hits a ground ball and reaches on an error by second baseman Ryan Marzano, Brian Gribbin advances to 2nd on the same error.\nBottom 2nd - Central Maryland Cyclones Boyd 14U\nDouble Play\n3 Outs\nStrike 1 looking, Ball 1, Strike 2 looking, Foul, Ball 2, Foul, In play.\nTyson McFadyen lines into a double play, shortstop Dean Simmons to first baseman Brian Gribbin, Joey Leise out advancing to 1st, Ryan Marzano remains at 2nd.\nHit By Pitch\nStrike 1 looking, Ball 1, Ball 2.\nJoey Leise is hit by pitch, Declan Class pitching, Ryan Marzano advances to 2nd.\nWalk\nBall 1, Ball 2, Ball 3, Ball 4.\nRyan Marzano walks, Declan Class pitching.\nGround Out\n1 Out\nIn play.\nDylan Schatz grounds out, third baseman Andres Tecua to first baseman Brian Gribbin.\nTop 2nd - Dig In (Gribbin) 14U\nFly Out\n3 Outs\nBall 1, Joe Carey caught stealing 3rd, catcher Lou Cecil to third baseman Caleb McKinney, Declan Class advances to 2nd, Strike 1 looking, In play.\nDeven Downs flies out to left fielder Jackson Villamor.\nInfield Fly\n1 Out\nIn play.\nTyler out on infield fly to second baseman Ryan Marzano, Joe Carey remains at 2nd, Declan Class remains at 1st.\nWalk\nPickoff attempt at 1st, Ball 1, Ball 2, Pickoff attempt at 1st, Strike 1 looking, Pickoff attempt at 1st, Strike 2 swinging, Ball 3, Ball 4.\nDeclan Class walks, TJ Orem pitching, Joe Carey advances to 2nd.\nWalk\nBall 1, Foul, Ball 2, Ball 3, Ball 4.\nJoe Carey walks, TJ Orem pitching.\nBottom 1st - Central Maryland Cyclones Boyd 14U\nRunner Out\n3 Outs\nCaleb McKinney caught stealing 2nd, catcher Trenton to second baseman Joe Carey.\nHalf-inning ended by out on the base paths.\nStrikeout\n2 Outs\nStrike 1 looking, Strike 2 swinging, Strike 3 swinging.\nJameson Mallare strikes out swinging, Declan Class pitching, Brooks Steinacker remains at 3rd, Caleb McKinney remains at 1st.\nError\nBall 1, In play.\nCaleb McKinney hits a ground ball and reaches on an error by second baseman Joe Carey, Brooks Steinacker advances to 3rd.\nStrikeout\n1 Out\nFoul, Strike 2 looking, Ball 1, Strike 3 swinging.\nJackson Villamor strikes out swinging, Declan Class pitching, Brooks Steinacker remains at 2nd.\nError\nBall 1, Foul, Foul, Ball 2, Ball 3, In play.\nBrooks Steinacker hits a fly ball and reaches on an error by left fielder Jack Wieland, Brooks Steinacker advances to 2nd on the same error.\nTop 1st - Dig In (Gribbin) 14U\nStrikeout\n3 Outs\nStrike 1 looking, Strike 2 looking, Ball 1, Brian Gribbin advances to 3rd on wild pitch, Jack Wieland advances to 2nd on the same pitch, Ball 2, Ball 3, Strike 3 swinging.\nQuinn Kasprzak strikes out swinging, TJ Orem pitching.\nWalk\nBall 1, Ball 2, Pickoff attempt at 2nd, Strike 1 looking, Ball 3, Ball 4.\nJack Wieland walks, TJ Orem pitching, Brian Gribbin remains at 2nd.\nFly Out\n2 Outs\nBall 1, Strike 1 looking, Ball 2, In play.\nDean Simmons flies out in foul territory to first baseman Dylan Schatz, Brian Gribbin remains at 2nd.\nFly Out\n1 Out\nBall 1, Ball 2, Ball 3, Strike 1 looking, Strike 2 looking, In play.\nAndres Tecua flies out to center fielder Jameson Mallare, Brian Gribbin remains at 2nd.\nDouble\nDGN( 1 - CNTR 0\nStrike 1 looking, Deven Downs steals 2nd, Strike 2 looking, In play.\nBrian Gribbin doubles on a line drive to center fielder Jameson Mallare, Deven Downs scores.\nWalk\nBall 1, Ball 2, Ball 3, Ball 4.\nDeven Downs walks, TJ Orem pitching.",
+      "source_sha256": "62c67de01e4d94ae0a7ba6a44b9f084226fccd7887aca566829b0d415b99e5b2",
+      "source_canonical_sha256": "6547ce38ab9665ba060bcaeef90523b9cccdd2519c5c77666624bf93b26ecf9e",
+      "notes": [
+        "No final score, missing innings or unlisted pitches were inferred. Original capture text retained."
+      ]
+    }
+  ],
+  "plate_appearances": [
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 1,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-1-pa-001",
+      "sequence": 1,
+      "batter_id": "central-maryland-cyclones-boyd-14u-brooks-steinacker",
+      "status": "complete",
+      "result": "reached_on_error",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "fly_ball",
+        "fielding_position": "LF",
+        "location": {
+          "zone": "left_field",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Brooks Steinacker hits a fly ball and reaches on an error by left fielder Jack Wieland, Brooks Steinacker advances to 2nd on the same error."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Brooks Steinacker hits a fly ball and reaches on an error by left fielder Jack Wieland, Brooks Steinacker advances to 2nd on the same error.",
+      "source_pitch_sequence": "Ball 1, Foul, Foul, Ball 2, Ball 3, In play.",
+      "source_events": [
+        "Error",
+        "Ball 1, Foul, Foul, Ball 2, Ball 3, In play.",
+        "Brooks Steinacker hits a fly ball and reaches on an error by left fielder Jack Wieland, Brooks Steinacker advances to 2nd on the same error."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 1,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-1-pa-002",
+      "sequence": 2,
+      "batter_id": "central-maryland-cyclones-boyd-14u-jackson-villamor",
+      "status": "complete",
+      "result": "strikeout_swinging",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 3
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Declan Class",
+        "attribution": "explicit"
+      },
+      "source_text": "Jackson Villamor strikes out swinging, Declan Class pitching, Brooks Steinacker remains at 2nd.",
+      "source_pitch_sequence": "Foul, Strike 2 looking, Ball 1, Strike 3 swinging.",
+      "source_events": [
+        "Strikeout",
+        "1 Out",
+        "Foul, Strike 2 looking, Ball 1, Strike 3 swinging.",
+        "Jackson Villamor strikes out swinging, Declan Class pitching, Brooks Steinacker remains at 2nd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 1,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-1-pa-003",
+      "sequence": 3,
+      "batter_id": "central-maryland-cyclones-boyd-14u-caleb-mckinney",
+      "status": "complete",
+      "result": "reached_on_error",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "2B",
+        "location": {
+          "zone": "second_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Caleb McKinney hits a ground ball and reaches on an error by second baseman Joe Carey, Brooks Steinacker advances to 3rd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Caleb McKinney hits a ground ball and reaches on an error by second baseman Joe Carey, Brooks Steinacker advances to 3rd.",
+      "source_pitch_sequence": "Ball 1, In play.",
+      "source_events": [
+        "Error",
+        "Ball 1, In play.",
+        "Caleb McKinney hits a ground ball and reaches on an error by second baseman Joe Carey, Brooks Steinacker advances to 3rd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 1,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-1-pa-004",
+      "sequence": 4,
+      "batter_id": "central-maryland-cyclones-boyd-14u-jameson-mallare",
+      "status": "complete",
+      "result": "strikeout_swinging",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 3
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Declan Class",
+        "attribution": "explicit"
+      },
+      "source_text": "Jameson Mallare strikes out swinging, Declan Class pitching, Brooks Steinacker remains at 3rd, Caleb McKinney remains at 1st.",
+      "source_pitch_sequence": "Strike 1 looking, Strike 2 swinging, Strike 3 swinging.",
+      "source_events": [
+        "Strikeout",
+        "2 Outs",
+        "Strike 1 looking, Strike 2 swinging, Strike 3 swinging.",
+        "Jameson Mallare strikes out swinging, Declan Class pitching, Brooks Steinacker remains at 3rd, Caleb McKinney remains at 1st."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 2,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-2-pa-005",
+      "sequence": 5,
+      "batter_id": "central-maryland-cyclones-boyd-14u-dylan-schatz",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "3B",
+        "location": {
+          "zone": "third_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Dylan Schatz grounds out, third baseman Andres Tecua to first baseman Brian Gribbin."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Dylan Schatz grounds out, third baseman Andres Tecua to first baseman Brian Gribbin.",
+      "source_pitch_sequence": "In play.",
+      "source_events": [
+        "Ground Out",
+        "1 Out",
+        "In play.",
+        "Dylan Schatz grounds out, third baseman Andres Tecua to first baseman Brian Gribbin."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 2,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-2-pa-006",
+      "sequence": 6,
+      "batter_id": "central-maryland-cyclones-boyd-14u-ryan-marzano",
+      "status": "complete",
+      "result": "walk",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 3,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 4,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Declan Class",
+        "attribution": "explicit"
+      },
+      "source_text": "Ryan Marzano walks, Declan Class pitching.",
+      "source_pitch_sequence": "Ball 1, Ball 2, Ball 3, Ball 4.",
+      "source_events": [
+        "Walk",
+        "Ball 1, Ball 2, Ball 3, Ball 4.",
+        "Ryan Marzano walks, Declan Class pitching."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 2,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-2-pa-007",
+      "sequence": 7,
+      "batter_id": "central-maryland-cyclones-boyd-14u-joey-leise",
+      "status": "complete",
+      "result": "hit_by_pitch",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Declan Class",
+        "attribution": "explicit"
+      },
+      "source_text": "Joey Leise is hit by pitch, Declan Class pitching, Ryan Marzano advances to 2nd.",
+      "source_pitch_sequence": "Strike 1 looking, Ball 1, Ball 2.",
+      "source_events": [
+        "Hit By Pitch",
+        "Strike 1 looking, Ball 1, Ball 2.",
+        "Joey Leise is hit by pitch, Declan Class pitching, Ryan Marzano advances to 2nd."
+      ],
+      "notes": [
+        "HBP ruling has no listed terminal HBP pitch; listed pitches retained."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 2,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-2-pa-008",
+      "sequence": 8,
+      "batter_id": "central-maryland-cyclones-boyd-14u-tyson-mcfadyen",
+      "status": "complete",
+      "result": "double_play",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 7,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "line_drive",
+        "fielding_position": "SS",
+        "location": {
+          "zone": "shortstop_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Tyson McFadyen lines into a double play, shortstop Dean Simmons to first baseman Brian Gribbin, Joey Leise out advancing to 1st, Ryan Marzano remains at 2nd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Tyson McFadyen lines into a double play, shortstop Dean Simmons to first baseman Brian Gribbin, Joey Leise out advancing to 1st, Ryan Marzano remains at 2nd.",
+      "source_pitch_sequence": "Strike 1 looking, Ball 1, Strike 2 looking, Foul, Ball 2, Foul, In play.",
+      "source_events": [
+        "Double Play",
+        "3 Outs",
+        "Strike 1 looking, Ball 1, Strike 2 looking, Foul, Ball 2, Foul, In play.",
+        "Tyson McFadyen lines into a double play, shortstop Dean Simmons to first baseman Brian Gribbin, Joey Leise out advancing to 1st, Ryan Marzano remains at 2nd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 3,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-3-pa-009",
+      "sequence": 9,
+      "batter_id": "central-maryland-cyclones-boyd-14u-lou-cecil",
+      "status": "complete",
+      "result": "hit_by_pitch",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Declan Class",
+        "attribution": "explicit"
+      },
+      "source_text": "Lou Cecil is hit by pitch, Declan Class pitching.",
+      "source_pitch_sequence": "Ball 1, Ball 2.",
+      "source_events": [
+        "Hit By Pitch",
+        "Ball 1, Ball 2.",
+        "Lou Cecil is hit by pitch, Declan Class pitching."
+      ],
+      "notes": [
+        "HBP ruling has no listed terminal HBP pitch; listed pitches retained."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 3,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-3-pa-010",
+      "sequence": 10,
+      "batter_id": "central-maryland-cyclones-boyd-14u-camden-corey",
+      "status": "complete",
+      "result": "strikeout_swinging",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 3
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Declan Class",
+        "attribution": "explicit"
+      },
+      "source_text": "Camden Corey strikes out swinging, Declan Class pitching, TJ Orem remains at 1st.",
+      "source_pitch_sequence": "Courtesy runner TJ Orem in for Lou Cecil, Ball 1, Foul, Foul, Ball 2, Foul, Strike 3 swinging.",
+      "source_events": [
+        "Strikeout",
+        "1 Out",
+        "Courtesy runner TJ Orem in for Lou Cecil, Ball 1, Foul, Foul, Ball 2, Foul, Strike 3 swinging.",
+        "Camden Corey strikes out swinging, Declan Class pitching, TJ Orem remains at 1st."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 3,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-3-pa-011",
+      "sequence": 11,
+      "batter_id": "central-maryland-cyclones-boyd-14u-dylan-fields",
+      "status": "complete",
+      "result": "single",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 7,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 8,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "fly_ball",
+        "fielding_position": "LF",
+        "location": {
+          "zone": "left_field",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Dylan Fields singles on a fly ball to left fielder Joe Carey, TJ Orem advances to 2nd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Dylan Fields singles on a fly ball to left fielder Joe Carey, TJ Orem advances to 2nd.",
+      "source_pitch_sequence": "Strike 1 looking, Ball 1, Ball 2, Strike 2 swinging, Foul, Ball 3, Foul, In play.",
+      "source_events": [
+        "Single",
+        "Strike 1 looking, Ball 1, Ball 2, Strike 2 swinging, Foul, Ball 3, Foul, In play.",
+        "Dylan Fields singles on a fly ball to left fielder Joe Carey, TJ Orem advances to 2nd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 3,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-3-pa-012",
+      "sequence": 12,
+      "batter_id": "central-maryland-cyclones-boyd-14u-brooks-steinacker",
+      "status": "complete",
+      "result": "double_play",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "line_drive",
+        "fielding_position": "SS",
+        "location": {
+          "zone": "shortstop_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Brooks Steinacker lines into a double play, shortstop Dean Simmons to second baseman Quinn Kasprzak, TJ Orem out advancing to 2nd, Dylan Fields remains at 1st."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Brooks Steinacker lines into a double play, shortstop Dean Simmons to second baseman Quinn Kasprzak, TJ Orem out advancing to 2nd, Dylan Fields remains at 1st.",
+      "source_pitch_sequence": "In play.",
+      "source_events": [
+        "Double Play",
+        "3 Outs",
+        "In play.",
+        "Brooks Steinacker lines into a double play, shortstop Dean Simmons to second baseman Quinn Kasprzak, TJ Orem out advancing to 2nd, Dylan Fields remains at 1st."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 4,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-4-pa-013",
+      "sequence": 13,
+      "batter_id": "central-maryland-cyclones-boyd-14u-jackson-villamor",
+      "status": "complete",
+      "result": "reached_on_error",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "3B",
+        "location": {
+          "zone": "third_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Jackson Villamor hits a ground ball and reaches on an error by third baseman Andres Tecua, Jackson Villamor advances to 2nd on the same error."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Jackson Villamor hits a ground ball and reaches on an error by third baseman Andres Tecua, Jackson Villamor advances to 2nd on the same error.",
+      "source_pitch_sequence": "Ball 1, Ball 2, In play.",
+      "source_events": [
+        "Error",
+        "Ball 1, Ball 2, In play.",
+        "Jackson Villamor hits a ground ball and reaches on an error by third baseman Andres Tecua, Jackson Villamor advances to 2nd on the same error."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 4,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-4-pa-014",
+      "sequence": 14,
+      "batter_id": "central-maryland-cyclones-boyd-14u-caleb-mckinney",
+      "status": "complete",
+      "result": "strikeout_swinging",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 3
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Declan Class",
+        "attribution": "explicit"
+      },
+      "source_text": "Caleb McKinney strikes out swinging, Declan Class pitching, Jackson Villamor remains at 3rd.",
+      "source_pitch_sequence": "Ball 1, Ball 2, Strike 1 looking, Jackson Villamor steals 3rd, Strike 2 swinging, Strike 3 swinging.",
+      "source_events": [
+        "Strikeout",
+        "1 Out",
+        "Ball 1, Ball 2, Strike 1 looking, Jackson Villamor steals 3rd, Strike 2 swinging, Strike 3 swinging.",
+        "Caleb McKinney strikes out swinging, Declan Class pitching, Jackson Villamor remains at 3rd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 4,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-4-pa-015",
+      "sequence": 15,
+      "batter_id": "central-maryland-cyclones-boyd-14u-jameson-mallare",
+      "status": "complete",
+      "result": "walk",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 4,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Declan Class",
+        "attribution": "explicit"
+      },
+      "source_text": "Jameson Mallare walks, Declan Class pitching.",
+      "source_pitch_sequence": "Ball 1, Strike 1 swinging, Balk by pitcher Declan Class, Jackson Villamor scores, Ball 2, Foul, Ball 3, Ball 4.",
+      "source_events": [
+        "Walk",
+        "DGN( 9 - CNTR 1",
+        "Ball 1, Strike 1 swinging, Balk by pitcher Declan Class, Jackson Villamor scores, Ball 2, Foul, Ball 3, Ball 4.",
+        "Jameson Mallare walks, Declan Class pitching."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 4,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-4-pa-016",
+      "sequence": 16,
+      "batter_id": "central-maryland-cyclones-boyd-14u-dylan-schatz",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "SS",
+        "location": {
+          "zone": "shortstop_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Dylan Schatz grounds out, shortstop Dean Simmons to first baseman Brian Gribbin, Jameson Mallare advances to 3rd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Dylan Schatz grounds out, shortstop Dean Simmons to first baseman Brian Gribbin, Jameson Mallare advances to 3rd.",
+      "source_pitch_sequence": "Strike 1 looking, Ball 1, Jameson Mallare steals 2nd, Strike 2 looking, Foul, In play.",
+      "source_events": [
+        "Ground Out",
+        "2 Outs",
+        "Strike 1 looking, Ball 1, Jameson Mallare steals 2nd, Strike 2 looking, Foul, In play.",
+        "Dylan Schatz grounds out, shortstop Dean Simmons to first baseman Brian Gribbin, Jameson Mallare advances to 3rd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 4,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-4-pa-017",
+      "sequence": 17,
+      "batter_id": "central-maryland-cyclones-boyd-14u-ryan-marzano",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "P",
+        "location": {
+          "zone": "pitcher_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Ryan Marzano grounds out, pitcher Declan Class to first baseman Brian Gribbin."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Ryan Marzano grounds out, pitcher Declan Class to first baseman Brian Gribbin.",
+      "source_pitch_sequence": "Strike 1 looking, In play.",
+      "source_events": [
+        "Ground Out",
+        "3 Outs",
+        "Strike 1 looking, In play.",
+        "Ryan Marzano grounds out, pitcher Declan Class to first baseman Brian Gribbin."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 5,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-5-pa-018",
+      "sequence": 18,
+      "batter_id": "central-maryland-cyclones-boyd-14u-joey-leise",
+      "status": "complete",
+      "result": "hit_by_pitch",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Declan Class",
+        "attribution": "explicit"
+      },
+      "source_text": "Joey Leise is hit by pitch, Declan Class pitching.",
+      "source_pitch_sequence": "Ball 1.",
+      "source_events": [
+        "Hit By Pitch",
+        "Ball 1.",
+        "Joey Leise is hit by pitch, Declan Class pitching."
+      ],
+      "notes": [
+        "HBP ruling has no listed terminal HBP pitch; listed pitches retained."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 5,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-5-pa-019",
+      "sequence": 19,
+      "batter_id": "central-maryland-cyclones-boyd-14u-tyson-mcfadyen",
+      "status": "complete",
+      "result": "hit_by_pitch",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Declan Class",
+        "attribution": "explicit"
+      },
+      "source_text": "Tyson McFadyen is hit by pitch, Declan Class pitching, Joey Leise remains at 2nd.",
+      "source_pitch_sequence": "Ball 1, Joey Leise steals 2nd, Ball 2.",
+      "source_events": [
+        "Hit By Pitch",
+        "Ball 1, Joey Leise steals 2nd, Ball 2.",
+        "Tyson McFadyen is hit by pitch, Declan Class pitching, Joey Leise remains at 2nd."
+      ],
+      "notes": [
+        "HBP ruling has no listed terminal HBP pitch; listed pitches retained."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 5,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-5-pa-020",
+      "sequence": 20,
+      "batter_id": "central-maryland-cyclones-boyd-14u-lou-cecil",
+      "status": "complete",
+      "result": "strikeout_swinging",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 3
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Joe Carey",
+        "attribution": "explicit"
+      },
+      "source_text": "Lou Cecil strikes out swinging, Joe Carey pitching, Joey Leise remains at 2nd, Tyson McFadyen remains at 1st.",
+      "source_pitch_sequence": "Foul, Strike 2 looking, Strike 3 swinging.",
+      "source_events": [
+        "Strikeout",
+        "1 Out",
+        "Foul, Strike 2 looking, Strike 3 swinging.",
+        "Lou Cecil strikes out swinging, Joe Carey pitching, Joey Leise remains at 2nd, Tyson McFadyen remains at 1st."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 5,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-5-pa-021",
+      "sequence": 21,
+      "batter_id": "central-maryland-cyclones-boyd-14u-camden-corey",
+      "status": "complete",
+      "result": "walk",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 4,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Joe Carey",
+        "attribution": "explicit"
+      },
+      "source_text": "Camden Corey walks, Joe Carey pitching, Joey Leise remains at 3rd, Tyson McFadyen remains at 2nd.",
+      "source_pitch_sequence": "Joey Leise advances to 3rd on wild pitch, Tyson McFadyen advances to 2nd on the same pitch, Strike 1 looking, Ball 1, Ball 2, Ball 3, Strike 2 looking, Ball 4.",
+      "source_events": [
+        "Walk",
+        "Joey Leise advances to 3rd on wild pitch, Tyson McFadyen advances to 2nd on the same pitch, Strike 1 looking, Ball 1, Ball 2, Ball 3, Strike 2 looking, Ball 4.",
+        "Camden Corey walks, Joe Carey pitching, Joey Leise remains at 3rd, Tyson McFadyen remains at 2nd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 5,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-5-pa-022",
+      "sequence": 22,
+      "batter_id": "central-maryland-cyclones-boyd-14u-dylan-fields",
+      "status": "complete",
+      "result": "single",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "line_drive",
+        "fielding_position": "CF",
+        "location": {
+          "zone": "center_field",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Dylan Fields singles on a line drive to center fielder Tyler, Joey Leise scores, Tyson McFadyen advances to 3rd, Camden Corey advances to 2nd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Dylan Fields singles on a line drive to center fielder Tyler, Joey Leise scores, Tyson McFadyen advances to 3rd, Camden Corey advances to 2nd.",
+      "source_pitch_sequence": "Strike 1 swinging, Strike 2 looking, In play.",
+      "source_events": [
+        "Single",
+        "DGN( 12 - CNTR 2",
+        "Strike 1 swinging, Strike 2 looking, In play.",
+        "Dylan Fields singles on a line drive to center fielder Tyler, Joey Leise scores, Tyson McFadyen advances to 3rd, Camden Corey advances to 2nd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 5,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-5-pa-023",
+      "sequence": 23,
+      "batter_id": "central-maryland-cyclones-boyd-14u-brooks-steinacker",
+      "status": "complete",
+      "result": "fielders_choice",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "2B",
+        "location": {
+          "zone": "second_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Brooks Steinacker grounds into fielder's choice, second baseman Ryan Maloney to shortstop Dean Simmons, Dylan Fields out advancing to 2nd, Camden Corey scores on error by shortstop Dean Simmons, Tyson McFadyen scores."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Brooks Steinacker grounds into fielder's choice, second baseman Ryan Maloney to shortstop Dean Simmons, Dylan Fields out advancing to 2nd, Camden Corey scores on error by shortstop Dean Simmons, Tyson McFadyen scores.",
+      "source_pitch_sequence": "Ball 1, In play.",
+      "source_events": [
+        "Fielder's Choice",
+        "DGN( 12 - CNTR 4 | 2 Outs",
+        "Ball 1, In play.",
+        "Brooks Steinacker grounds into fielder's choice, second baseman Ryan Maloney to shortstop Dean Simmons, Dylan Fields out advancing to 2nd, Camden Corey scores on error by shortstop Dean Simmons, Tyson McFadyen scores."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 5,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-5-pa-024",
+      "sequence": 24,
+      "batter_id": "central-maryland-cyclones-boyd-14u-jackson-villamor",
+      "status": "complete",
+      "result": "walk",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 4,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Joe Carey",
+        "attribution": "explicit"
+      },
+      "source_text": "Jackson Villamor walks, Joe Carey pitching, Brooks Steinacker advances to 2nd.",
+      "source_pitch_sequence": "Ball 1, Strike 1 looking, Ball 2, Ball 3, Ball 4.",
+      "source_events": [
+        "Walk",
+        "Ball 1, Strike 1 looking, Ball 2, Ball 3, Ball 4.",
+        "Jackson Villamor walks, Joe Carey pitching, Brooks Steinacker advances to 2nd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 5,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-5-pa-025",
+      "sequence": 25,
+      "batter_id": "central-maryland-cyclones-boyd-14u-caleb-mckinney",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "P",
+        "location": {
+          "zone": "pitcher_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Caleb McKinney grounds out, pitcher Joe Carey to first baseman Brian Gribbin."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Caleb McKinney grounds out, pitcher Joe Carey to first baseman Brian Gribbin.",
+      "source_pitch_sequence": "In play.",
+      "source_events": [
+        "Ground Out",
+        "3 Outs",
+        "In play.",
+        "Caleb McKinney grounds out, pitcher Joe Carey to first baseman Brian Gribbin."
+      ]
+    }
+  ],
+  "baserunning_events": [
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 1,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-attempt-001",
+      "runner_id": "central-maryland-cyclones-boyd-14u-caleb-mckinney",
+      "result": "caught_stealing",
+      "to_base": "2B",
+      "source_text": "Caleb McKinney caught stealing 2nd, catcher Trenton to second baseman Joe Carey.",
+      "reach_pa_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-1-pa-003"
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 4,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-attempt-002",
+      "runner_id": "central-maryland-cyclones-boyd-14u-jackson-villamor",
+      "result": "stolen_base",
+      "to_base": "3B",
+      "source_text": "Jackson Villamor steals 3rd",
+      "source_pa_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-4-pa-014",
+      "reach_pa_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-4-pa-013"
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 4,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-attempt-003",
+      "runner_id": "central-maryland-cyclones-boyd-14u-jameson-mallare",
+      "result": "stolen_base",
+      "to_base": "2B",
+      "source_text": "Jameson Mallare steals 2nd",
+      "source_pa_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-4-pa-016",
+      "reach_pa_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-4-pa-015"
+    },
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 5,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-attempt-004",
+      "runner_id": "central-maryland-cyclones-boyd-14u-joey-leise",
+      "result": "stolen_base",
+      "to_base": "2B",
+      "source_text": "Joey Leise steals 2nd",
+      "source_pa_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-5-pa-019",
+      "reach_pa_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-5-pa-018"
+    }
+  ],
+  "baserunning_entries": [
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 3,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-entry-001",
+      "runner_id": "central-maryland-cyclones-boyd-14u-tj-orem",
+      "replaced_runner_id": "central-maryland-cyclones-boyd-14u-lou-cecil",
+      "entry_type": "courtesy_runner",
+      "source_text": "Courtesy runner TJ Orem in for Lou Cecil",
+      "source_pa_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-3-pa-010",
+      "reach_pa_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-3-pa-009"
+    }
+  ],
+  "runner_outs": [
+    {
+      "game_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93",
+      "inning": 1,
+      "half": "bottom",
+      "id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-runner-out-001",
+      "runner_id": "central-maryland-cyclones-boyd-14u-caleb-mckinney",
+      "reason": "caught_stealing",
+      "source_text": "Caleb McKinney caught stealing 2nd, catcher Trenton to second baseman Joe Carey.",
+      "source_events": [
+        "Runner Out",
+        "3 Outs",
+        "Caleb McKinney caught stealing 2nd, catcher Trenton to second baseman Joe Carey.",
+        "Half-inning ended by out on the base paths."
+      ],
+      "reach_pa_id": "2026-10-18-1230-central-maryland-cyclones-boyd-14u-vs-dig-in-gribbin-14u-8392974e93-bottom-1-pa-003"
+    }
+  ]
+}

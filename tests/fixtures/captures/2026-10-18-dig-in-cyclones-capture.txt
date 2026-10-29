@@ -1,0 +1,238 @@
+Use TEAM-DATA-PROMPT.md to add this game
+Import: both teams (default)
+Date: 2026-10-18
+Start time: 12:30
+Timezone: ET
+Source: https://web.gc.com/teams/6bKEd4zQDNOb/2026-fall-dig-in-gribbin-14u/schedule/2f1e3421-c93b-405f-887e-57052446572a/plays
+Capture coverage: loaded browser text only; completeness not verified.
+
+PLAY-BY-PLAY
+Top 6th - Dig In (Gribbin) 14U
+Declan Class at bat
+Bottom 5th - Central Maryland Cyclones Boyd 14U
+Ground Out
+3 Outs
+In play.
+Caleb McKinney grounds out, pitcher Joe Carey to first baseman Brian Gribbin.
+Walk
+Ball 1, Strike 1 looking, Ball 2, Ball 3, Ball 4.
+Jackson Villamor walks, Joe Carey pitching, Brooks Steinacker advances to 2nd.
+Fielder's Choice
+DGN( 12 - CNTR 4 | 2 Outs
+Ball 1, In play.
+Brooks Steinacker grounds into fielder's choice, second baseman Ryan Maloney to shortstop Dean Simmons, Dylan Fields out advancing to 2nd, Camden Corey scores on error by shortstop Dean Simmons, Tyson McFadyen scores.
+Single
+DGN( 12 - CNTR 2
+Strike 1 swinging, Strike 2 looking, In play.
+Dylan Fields singles on a line drive to center fielder Tyler, Joey Leise scores, Tyson McFadyen advances to 3rd, Camden Corey advances to 2nd.
+Walk
+Joey Leise advances to 3rd on wild pitch, Tyson McFadyen advances to 2nd on the same pitch, Strike 1 looking, Ball 1, Ball 2, Ball 3, Strike 2 looking, Ball 4.
+Camden Corey walks, Joe Carey pitching, Joey Leise remains at 3rd, Tyson McFadyen remains at 2nd.
+Strikeout
+1 Out
+Foul, Strike 2 looking, Strike 3 swinging.
+Lou Cecil strikes out swinging, Joe Carey pitching, Joey Leise remains at 2nd, Tyson McFadyen remains at 1st.
+Hit By Pitch
+Ball 1, Joey Leise steals 2nd, Ball 2.
+Tyson McFadyen is hit by pitch, Declan Class pitching, Joey Leise remains at 2nd.
+Hit By Pitch
+Ball 1.
+Joey Leise is hit by pitch, Declan Class pitching.
+Top 5th - Dig In (Gribbin) 14U
+Fly Out
+DGN( 12 - CNTR 1 | 3 Outs
+Foul, Ball 1, Ball 2, Strike 2 looking, Quinn Kasprzak steals 2nd, Dean Simmons scores on steal of home, Ball 3, Foul, In play.
+Joe Carey flies out to left fielder Jameson Mallare.
+Single
+DGN( 11 - CNTR 1
+Ball 1, Andres Tecua steals 3rd, Dean Simmons steals 2nd, Strike 1 looking, Strike 2 swinging, In play.
+Quinn Kasprzak singles on a line drive to left fielder Jameson Mallare, Andres Tecua scores, Dean Simmons advances to 3rd.
+Batter Out
+2 Outs
+Strike 1 looking, In play.
+Jack Wieland out (other), Andres Tecua remains at 2nd, Dean Simmons remains at 1st.
+Hit By Pitch
+Ball 1, Ball 2.
+Dean Simmons is hit by pitch, Dylan Fields pitching, Andres Tecua advances to 2nd.
+Single
+In play.
+Andres Tecua singles on a ground ball to center fielder Joey Leise.
+Pop Out
+DGN( 10 - CNTR 1 | 1 Out
+Ball 1, Deven Downs steals 2nd, Ball 2, Deven Downs advances to 3rd on wild pitch, Deven Downs scores on the same pitch, Ball 3, In play.
+Brian Gribbin pops out to shortstop Lou Cecil.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Deven Downs walks, Dylan Fields pitching.
+Bottom 4th - Central Maryland Cyclones Boyd 14U
+Ground Out
+3 Outs
+Strike 1 looking, In play.
+Ryan Marzano grounds out, pitcher Declan Class to first baseman Brian Gribbin.
+Ground Out
+2 Outs
+Strike 1 looking, Ball 1, Jameson Mallare steals 2nd, Strike 2 looking, Foul, In play.
+Dylan Schatz grounds out, shortstop Dean Simmons to first baseman Brian Gribbin, Jameson Mallare advances to 3rd.
+Walk
+DGN( 9 - CNTR 1
+Ball 1, Strike 1 swinging, Balk by pitcher Declan Class, Jackson Villamor scores, Ball 2, Foul, Ball 3, Ball 4.
+Jameson Mallare walks, Declan Class pitching.
+Strikeout
+1 Out
+Ball 1, Ball 2, Strike 1 looking, Jackson Villamor steals 3rd, Strike 2 swinging, Strike 3 swinging.
+Caleb McKinney strikes out swinging, Declan Class pitching, Jackson Villamor remains at 3rd.
+Error
+Ball 1, Ball 2, In play.
+Jackson Villamor hits a ground ball and reaches on an error by third baseman Andres Tecua, Jackson Villamor advances to 2nd on the same error.
+Top 4th - Dig In (Gribbin) 14U
+Strikeout
+3 Outs
+Foul, Pickoff attempt at 1st, Pickoff attempt at 1st, Strike 2 swinging, Declan Class steals 2nd, Strike 3 looking.
+Tyler strikes out looking, Dylan Fields pitching.
+Single
+Strike 1 looking, In play.
+Declan Class singles on a ground ball to first baseman Tyson McFadyen.
+Ground Out
+DGN( 9 - CNTR 0 | 2 Outs
+Strike 1 looking, In play.
+Joe Carey grounds out, shortstop Lou Cecil to first baseman Tyson McFadyen, Jack Wieland scores.
+Pop Out
+1 Out
+Ball 1, Jack Wieland advances to 3rd on wild pitch, Foul, Ball 2, In play.
+Quinn Kasprzak pops out to second baseman Ryan Marzano, Jack Wieland remains at 3rd.
+Double
+DGN( 8 - CNTR 0
+Ball 1, Foul, Strike 2 swinging, Foul, In play.
+Jack Wieland doubles on a line drive to right fielder Brooks Steinacker, Dean Simmons scores.
+Double
+DGN( 7 - CNTR 0
+Ball 1, Strike 1 looking, Foul, In play.
+Dean Simmons doubles on a line drive to center fielder Joey Leise, Andres Tecua scores.
+Walk
+Ball 1, Foul, Foul, Ball 2, Ball 3, Ball 4.
+Andres Tecua walks, Dylan Fields pitching.
+Bottom 3rd - Central Maryland Cyclones Boyd 14U
+Double Play
+3 Outs
+In play.
+Brooks Steinacker lines into a double play, shortstop Dean Simmons to second baseman Quinn Kasprzak, TJ Orem out advancing to 2nd, Dylan Fields remains at 1st.
+Single
+Strike 1 looking, Ball 1, Ball 2, Strike 2 swinging, Foul, Ball 3, Foul, In play.
+Dylan Fields singles on a fly ball to left fielder Joe Carey, TJ Orem advances to 2nd.
+Strikeout
+1 Out
+Courtesy runner TJ Orem in for Lou Cecil, Ball 1, Foul, Foul, Ball 2, Foul, Strike 3 swinging.
+Camden Corey strikes out swinging, Declan Class pitching, TJ Orem remains at 1st.
+Hit By Pitch
+Ball 1, Ball 2.
+Lou Cecil is hit by pitch, Declan Class pitching.
+Top 3rd - Dig In (Gribbin) 14U
+Ground Out
+3 Outs
+Ball 1, Ball 2, In play.
+Brian Gribbin grounds out, shortstop Camden Corey to first baseman Tyson McFadyen.
+Strikeout
+2 Outs
+Courtesy runner Tyler in for Ryan Maloney, Strike 1 looking, Tyler advances to 2nd on defensive indifference, Foul, Strike 3 looking.
+Deven Downs strikes out looking, Dylan Fields pitching, Joe Carey remains at 3rd, Tyler remains at 2nd.
+Single
+DGN( 6 - CNTR 0
+Ball 1, Strike 1 looking, Ball 2, Ball 3, Strike 2 looking, In play.
+Ryan Maloney singles on a line drive to right fielder Brooks Steinacker, Quinn Kasprzak scores, Joe Carey advances to 3rd.
+Ground Out
+1 Out
+In play.
+Trenton grounds out, shortstop Camden Corey to first baseman Tyson McFadyen, Quinn Kasprzak advances to 3rd, Joe Carey advances to 2nd.
+Single
+DGN( 5 - CNTR 0
+Lineup changed: TJ Orem in at pitcher, Ball 1, In play.
+Joe Carey singles on a fly ball to left fielder Jameson Mallare, Jack Wieland scores, Dean Simmons scores, Quinn Kasprzak advances to 2nd.
+Walk
+Strike 1 looking, Jack Wieland advances to 2nd on defensive indifference, Ball 1, Ball 2, Pickoff attempt at 2nd, Ball 3, Strike 2 looking, Ball 4.
+Quinn Kasprzak walks, TJ Orem pitching, Dean Simmons remains at 3rd, Jack Wieland remains at 2nd.
+Dropped 3rd Strike
+DGN( 3 - CNTR 0
+Ball 1, Dean Simmons advances to 2nd on defensive indifference, Foul, Strike 2 looking, Strike 3 swinging.
+Jack Wieland reaches on dropped 3rd strike (passed ball), Andres Tecua scores, Dean Simmons advances to 3rd.
+Error
+Ball 1, Ball 2, Strike 1 swinging, In play.
+Dean Simmons hits a fly ball and reaches on an error by center fielder Joey Leise, Andres Tecua advances to 3rd.
+Double
+DGN( 2 - CNTR 0
+In play.
+Andres Tecua doubles on a line drive to left fielder Jameson Mallare, Brian Gribbin scores.
+Error
+Strike 1 looking, Ball 1, Strike 2 swinging, In play.
+Brian Gribbin hits a ground ball and reaches on an error by second baseman Ryan Marzano, Brian Gribbin advances to 2nd on the same error.
+Bottom 2nd - Central Maryland Cyclones Boyd 14U
+Double Play
+3 Outs
+Strike 1 looking, Ball 1, Strike 2 looking, Foul, Ball 2, Foul, In play.
+Tyson McFadyen lines into a double play, shortstop Dean Simmons to first baseman Brian Gribbin, Joey Leise out advancing to 1st, Ryan Marzano remains at 2nd.
+Hit By Pitch
+Strike 1 looking, Ball 1, Ball 2.
+Joey Leise is hit by pitch, Declan Class pitching, Ryan Marzano advances to 2nd.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Ryan Marzano walks, Declan Class pitching.
+Ground Out
+1 Out
+In play.
+Dylan Schatz grounds out, third baseman Andres Tecua to first baseman Brian Gribbin.
+Top 2nd - Dig In (Gribbin) 14U
+Fly Out
+3 Outs
+Ball 1, Joe Carey caught stealing 3rd, catcher Lou Cecil to third baseman Caleb McKinney, Declan Class advances to 2nd, Strike 1 looking, In play.
+Deven Downs flies out to left fielder Jackson Villamor.
+Infield Fly
+1 Out
+In play.
+Tyler out on infield fly to second baseman Ryan Marzano, Joe Carey remains at 2nd, Declan Class remains at 1st.
+Walk
+Pickoff attempt at 1st, Ball 1, Ball 2, Pickoff attempt at 1st, Strike 1 looking, Pickoff attempt at 1st, Strike 2 swinging, Ball 3, Ball 4.
+Declan Class walks, TJ Orem pitching, Joe Carey advances to 2nd.
+Walk
+Ball 1, Foul, Ball 2, Ball 3, Ball 4.
+Joe Carey walks, TJ Orem pitching.
+Bottom 1st - Central Maryland Cyclones Boyd 14U
+Runner Out
+3 Outs
+Caleb McKinney caught stealing 2nd, catcher Trenton to second baseman Joe Carey.
+Half-inning ended by out on the base paths.
+Strikeout
+2 Outs
+Strike 1 looking, Strike 2 swinging, Strike 3 swinging.
+Jameson Mallare strikes out swinging, Declan Class pitching, Brooks Steinacker remains at 3rd, Caleb McKinney remains at 1st.
+Error
+Ball 1, In play.
+Caleb McKinney hits a ground ball and reaches on an error by second baseman Joe Carey, Brooks Steinacker advances to 3rd.
+Strikeout
+1 Out
+Foul, Strike 2 looking, Ball 1, Strike 3 swinging.
+Jackson Villamor strikes out swinging, Declan Class pitching, Brooks Steinacker remains at 2nd.
+Error
+Ball 1, Foul, Foul, Ball 2, Ball 3, In play.
+Brooks Steinacker hits a fly ball and reaches on an error by left fielder Jack Wieland, Brooks Steinacker advances to 2nd on the same error.
+Top 1st - Dig In (Gribbin) 14U
+Strikeout
+3 Outs
+Strike 1 looking, Strike 2 looking, Ball 1, Brian Gribbin advances to 3rd on wild pitch, Jack Wieland advances to 2nd on the same pitch, Ball 2, Ball 3, Strike 3 swinging.
+Quinn Kasprzak strikes out swinging, TJ Orem pitching.
+Walk
+Ball 1, Ball 2, Pickoff attempt at 2nd, Strike 1 looking, Ball 3, Ball 4.
+Jack Wieland walks, TJ Orem pitching, Brian Gribbin remains at 2nd.
+Fly Out
+2 Outs
+Ball 1, Strike 1 looking, Ball 2, In play.
+Dean Simmons flies out in foul territory to first baseman Dylan Schatz, Brian Gribbin remains at 2nd.
+Fly Out
+1 Out
+Ball 1, Ball 2, Ball 3, Strike 1 looking, Strike 2 looking, In play.
+Andres Tecua flies out to center fielder Jameson Mallare, Brian Gribbin remains at 2nd.
+Double
+DGN( 1 - CNTR 0
+Strike 1 looking, Deven Downs steals 2nd, Strike 2 looking, In play.
+Brian Gribbin doubles on a line drive to center fielder Jameson Mallare, Deven Downs scores.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Deven Downs walks, TJ Orem pitching.

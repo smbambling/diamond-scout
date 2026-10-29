@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "app": "Diamond-Scout",
+  "teams": [
+    {
+      "id": "shockers-14u",
+      "name": "Shockers 14U",
+      "data_file": "data/shockers-14u.json"
+    },
+    {
+      "id": "gambrills-athletic-club-14u",
+      "name": "Gambrills Athletic Club 14U",
+      "data_file": "data/gambrills-athletic-club-14u.json"
+    },
+    {
+      "id": "stars-camarata-14u",
+      "name": "Stars Camarata 14U",
+      "data_file": "data/stars-camarata-14u.json"
+    },
+    {
+      "id": "bba-14u-east",
+      "name": "BBA 14u East",
+      "data_file": "data/bba-14u-east.json"
+    },
+    {
+      "id": "dig-in-gribbin-14u",
+      "name": "Dig In (Gribbin) 14U",
+      "data_file": "data/dig-in-gribbin-14u.json"
+    },
+    {
+      "id": "titans-baseball-club-14u",
+      "name": "Titans Baseball Club 14U",
+      "data_file": "data/titans-baseball-club-14u.json"
+    },
+    {
+      "id": "stars-fontana-14u",
+      "name": "Stars Fontana 14U",
+      "data_file": "data/stars-fontana-14u.json"
+    },
+    {
+      "id": "central-maryland-cyclones-boyd-14u",
+      "name": "Central Maryland Cyclones Boyd 14U",
+      "data_file": "data/central-maryland-cyclones-boyd-14u.json"
+    },
+    {
+      "id": "sbgc-dirtbags-mid-atlantic-14u",
+      "name": "SBGC Dirtbags Mid-Atlantic 14U",
+      "data_file": "data/sbgc-dirtbags-mid-atlantic-14u.json"
+    },
+    {
+      "id": "wow-factor-premier",
+      "name": "Wow Factor Premier",
+      "data_file": "data/wow-factor-premier.json"
+    },
+    {
+      "id": "in-the-dirt-royals-14u",
+      "name": "In The Dirt Royals 14U",
+      "data_file": "data/in-the-dirt-royals-14u.json"
+    },
+    {
+      "id": "boss-baseball-castro-14u",
+      "name": "BOSS Baseball Castro 14U",
+      "data_file": "data/boss-baseball-castro-14u.json"
+    },
+    {
+      "id": "vsa-select-dmv-14u",
+      "name": "VSA Select DMV 14U",
+      "data_file": "data/vsa-select-dmv-14u.json"
+    },
+    {
+      "id": "winchester-wildcats-14u",
+      "name": "Winchester Wildcats 14U",
+      "data_file": "data/winchester-wildcats-14u.json"
+    },
+    {
+      "id": "fallprep-jv-2026-15u",
+      "name": "FallPrep JV 2026 15U",
+      "data_file": "data/fallprep-jv-2026-15u.json"
+    }
+  ]
+}

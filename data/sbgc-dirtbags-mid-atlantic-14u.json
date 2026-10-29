@@ -1,0 +1,2767 @@
+{
+  "schema_version": 1,
+  "team": {
+    "id": "sbgc-dirtbags-mid-atlantic-14u",
+    "name": "SBGC Dirtbags Mid-Atlantic 14U"
+  },
+  "players": [
+    {
+      "id": "sbgc-dirtbags-mid-atlantic-14u-bryce-nowak",
+      "name": "Bryce Nowak",
+      "bats": null
+    },
+    {
+      "id": "sbgc-dirtbags-mid-atlantic-14u-brett-gjeldum",
+      "name": "Brett Gjeldum",
+      "bats": null
+    },
+    {
+      "id": "sbgc-dirtbags-mid-atlantic-14u-carter-forrester",
+      "name": "Carter Forrester",
+      "bats": null
+    },
+    {
+      "id": "sbgc-dirtbags-mid-atlantic-14u-william-wright",
+      "name": "William Wright",
+      "bats": null
+    },
+    {
+      "id": "sbgc-dirtbags-mid-atlantic-14u-andrew-becker",
+      "name": "Andrew Becker",
+      "bats": null
+    },
+    {
+      "id": "sbgc-dirtbags-mid-atlantic-14u-ethan-resnick",
+      "name": "Ethan Resnick",
+      "bats": null
+    },
+    {
+      "id": "sbgc-dirtbags-mid-atlantic-14u-johnny-bartolini",
+      "name": "Johnny Bartolini",
+      "bats": null
+    },
+    {
+      "id": "sbgc-dirtbags-mid-atlantic-14u-colin-nadjibe",
+      "name": "Colin Nadjibe",
+      "bats": null
+    },
+    {
+      "id": "sbgc-dirtbags-mid-atlantic-14u-keegan-o-malley",
+      "name": "Keegan O'Malley",
+      "bats": null
+    },
+    {
+      "id": "sbgc-dirtbags-mid-atlantic-14u-camden-lee",
+      "name": "Camden Lee",
+      "bats": null
+    },
+    {
+      "id": "sbgc-dirtbags-mid-atlantic-14u-caleb-forrester",
+      "name": "Caleb Forrester",
+      "bats": null
+    }
+  ],
+  "games": [
+    {
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "date": "2026-10-18",
+      "start_time": "08:00",
+      "timezone": "ET",
+      "opponent": "Dig In (Gribbin) 14U",
+      "batting_half": "top",
+      "label": "vs. Dig In (Gribbin) 14U",
+      "source": "Local GameChanger text converter",
+      "source_url": "https://web.gc.com/teams/6bKEd4zQDNOb/2026-fall-dig-in-gribbin-14u/schedule/b0912d99-598d-42dc-925c-590f3bdf2328/plays",
+      "source_event_id": "b0912d99-598d-42dc-925c-590f3bdf2328",
+      "source_capture_coverage": "loaded browser text only; completeness not verified.",
+      "source_scope": "Supplied top innings 1, 2, 3, 4, 5, 6, 7 only; completeness not verified",
+      "source_play_by_play": "Bottom 7th - Dig In (Gribbin) 14U\nAndres Tecua at bat\nSingle\nSBGC 5 - DGN( 6\nDeven Downs gets placed on 2nd, Pickoff attempt at 2nd, Pickoff attempt at 2nd, Ball 1, Deven Downs steals 3rd, In play.\nBrian Gribbin singles on a line drive to center fielder Keegan O’Malley, Deven Downs scores.\nTop 7th - SBGC Dirtbags Mid-Atlantic 14U\nGround Out\n3 Outs\nBall 1, Foul, Strike 2 swinging, Ball 2, In play.\nKeegan O’Malley grounds out to pitcher Joe Carey.\nDouble Play\n2 Outs\nEthan Resnick gets placed on 2nd, Ball 1, Ethan Resnick advances to 3rd on wild pitch, Strike 1 looking, Ball 2, In play.\nColin Nadjibe grounds into a double play, third baseman Trenton to first baseman Brian Gribbin, Ethan Resnick out advancing to home.\nBottom 6th - Dig In (Gribbin) 14U\nFly Out\n3 Outs\nCourtesy runner Tyler in for Ryan Maloney, Strike 1 looking, Tyler steals 2nd, In play.\nDeven Downs flies out to center fielder Keegan O’Malley.\nSingle\nSBGC 5 - DGN( 5\nCourtesy runner Declan Class in for Trenton, Ball 1, Declan Class advances to 2nd on defensive indifference, Strike 1 looking, Ball 2, In play.\nRyan Maloney singles on a line drive to right fielder Colin Nadjibe, Declan Class scores, Joe Carey scores.\nWalk\nBalk by pitcher Carter Forrester, Joe Carey advances to 2nd, Strike 1 looking, Ball 1, Ball 2, Joe Carey advances to 3rd on passed ball, Ball 3, Ball 4.\nTrenton walks, Carter Forrester pitching, Joe Carey remains at 3rd.\nSingle\nBall 1, Strike 1 looking, In play.\nJoe Carey singles on a ground ball to left fielder Bryce Nowak.\nStrikeout\n2 Outs\nBall 1, Strike 1 looking, Ball 2, Strike 2 swinging, Strike 3 swinging.\nQuinn Kasprzak strikes out swinging, Carter Forrester pitching.\nFly Out\n1 Out\nStrike 1 looking, Foul, Ball 1, In play.\nJack Wieland flies out to right fielder Colin Nadjibe.\nTop 6th - SBGC Dirtbags Mid-Atlantic 14U\nGround Out\n3 Outs\nIn play.\nJohnny Bartolini grounds out, second baseman Joe Carey to first baseman Brian Gribbin.\nWalk\nSBGC 5 - DGN( 3\nBalk by pitcher Jack Wieland, Carter Forrester scores, William Wright advances to 3rd, Ball 1, Foul, Ball 2, Ball 3, Strike 2 swinging, Balk by pitcher Jack Wieland, William Wright scores, Ball 4.\nEthan Resnick walks, Jack Wieland pitching.\nGround Out\n2 Outs\nIn play.\nAndrew Becker grounds out, pitcher Jack Wieland to first baseman Brian Gribbin, Carter Forrester advances to 3rd, William Wright advances to 2nd.\nIntentional Walk\nBall 1.\nWilliam Wright is intentionally walked, Jack Wieland pitching, Carter Forrester remains at 2nd.\nSingle\nSBGC 3 - DGN( 3\nStrike 1 swinging, Strike 2 looking, Ball 1, Ball 2, Foul, Ball 3, In play.\nCarter Forrester singles on a line drive to left fielder Quinn Kasprzak, Bryce Nowak scores on the throw, Carter Forrester advances to 2nd on the throw.\nStrikeout\n1 Out\nStrike 1 looking, Bryce Nowak advances to 2nd on passed ball, Strike 2 looking, Strike 3 looking.\nBrett Gjeldum strikes out looking, Jack Wieland pitching, Bryce Nowak remains at 2nd.\nWalk\nStrike 1 looking, Foul, Ball 1, Ball 2, Ball 3, Ball 4.\nBryce Nowak walks, Jack Wieland pitching.\nBottom 5th - Dig In (Gribbin) 14U\nDouble Play\n3 Outs\nBall 1, Pickoff attempt at 1st, Strike 1 looking, Andres Tecua steals 2nd, In play.\nDean Simmons lines into a double play, center fielder Keegan O’Malley to shortstop Brett Gjeldum, Andres Tecua out advancing to 2nd.\nError\nStrike 1 swinging, In play.\nAndres Tecua hits a ground ball and reaches on an error by shortstop Brett Gjeldum.\nGround Out\n1 Out\nBall 1, In play.\nBrian Gribbin grounds out, second baseman Camden Lee to first baseman William Wright.\nTop 5th - SBGC Dirtbags Mid-Atlantic 14U\nStrikeout\n3 Outs\nStrike 1 looking, Foul, Ball 1, Strike 3 looking.\nCaleb Forrester strikes out looking, Jack Wieland pitching.\nGround Out\n2 Outs\nIn play.\nCamden Lee grounds out, second baseman Quinn Kasprzak to first baseman Brian Gribbin.\nStrikeout\n1 Out\nStrike 1 looking, Ball 1, Strike 2 looking, Ball 2, Strike 3 looking.\nKeegan O’Malley strikes out looking, Jack Wieland pitching.\nBottom 4th - Dig In (Gribbin) 14U\nSingle\nSBGC 2 - DGN( 3 | 3 Outs\nStrike 1 looking, Tyler advances to 2nd on defensive indifference, Ball 1, In play.\nDeven Downs singles on a line drive, right fielder Caleb Forrester to second baseman Andrew Becker to catcher Johnny Bartolini, Tyler out advancing to home, Joe Carey scores.\nWalk\nBall 1, Ball 2, Ball 3, Ball 4.\nTyler walks, Carter Forrester pitching, Joe Carey remains at 3rd.\nGround Out\n2 Outs\nBall 1, Joe Carey steals 2nd, Ball 2, Strike 1 looking, In play.\nDeclan Class grounds out, pitcher Carter Forrester to first baseman William Wright, Joe Carey advances to 3rd.\nSingle\nIn play.\nJoe Carey singles on a fly ball to third baseman Ethan Resnick.\nGround Out\n1 Out\nStrike 1 looking, Strike 2 swinging, In play.\nQuinn Kasprzak grounds out, shortstop Brett Gjeldum to first baseman William Wright.\nTop 4th - SBGC Dirtbags Mid-Atlantic 14U\nDouble Play\n3 Outs\nPickoff attempt at 1st, In play.\nColin Nadjibe grounds into a double play, shortstop Declan Class to first baseman Brian Gribbin, Ethan Resnick out advancing to 2nd.\nStrikeout\n1 Out\nFoul, Strike 2 swinging, Strike 3 looking.\nJohnny Bartolini strikes out looking, Jack Wieland pitching, Ethan Resnick remains at 1st.\nError\nIn play.\nEthan Resnick hits a ground ball and reaches on an error by shortstop Declan Class.\nBottom 3rd - Dig In (Gribbin) 14U\nStrikeout\n3 Outs\nStrike 1 looking, Strike 2 looking, Strike 3 swinging.\nJack Wieland strikes out swinging, Carter Forrester pitching.\nFly Out\n2 Outs\nBall 1, In play.\nDean Simmons flies out to center fielder Keegan O’Malley.\nStrikeout\n1 Out\nFoul, Foul, Strike 3 swinging.\nAndres Tecua strikes out swinging, Carter Forrester pitching.\nTop 3rd - SBGC Dirtbags Mid-Atlantic 14U\nGround Out\nSBGC 2 - DGN( 2 | 3 Outs\nBalk by pitcher Jack Wieland, Caleb Forrester scores, Bryce Nowak advances to 3rd, William Wright advances to 2nd, Ball 1, Strike 1 looking, In play.\nAndrew Becker grounds out, shortstop Declan Class to first baseman Brian Gribbin.\nWalk\nBall 1, Strike 1 swinging, Ball 2, Foul, Ball 3, Foul, Ball 4.\nWilliam Wright walks, Jack Wieland pitching, Caleb Forrester advances to 3rd, Bryce Nowak advances to 2nd.\nLine Out\n2 Outs\nIn play.\nCarter Forrester lines out to left fielder Tyler, Caleb Forrester remains at 2nd, Bryce Nowak remains at 1st.\nLine Out\n1 Out\nIn play.\nBrett Gjeldum lines out to third baseman Trenton, Caleb Forrester remains at 2nd, Bryce Nowak remains at 1st.\nSingle\nSBGC 1 - DGN( 2\nIn play.\nBryce Nowak singles on a fly ball to first baseman Brian Gribbin, Camden Lee scores on error by first baseman Brian Gribbin, Caleb Forrester advances to 2nd.\nWalk\nStrike 1 looking, Ball 1, Ball 2, Ball 3, Ball 4.\nCaleb Forrester walks, Quinn Kasprzak pitching, Camden Lee advances to 2nd.\nWalk\nStrike 1 looking, Foul, Foul, Ball 1, Ball 2, Ball 3, Foul, Ball 4.\nCamden Lee walks, Quinn Kasprzak pitching.\nBottom 2nd - Dig In (Gribbin) 14U\nStrikeout\n3 Outs\nBall 1, Ball 2, Deven Downs steals 2nd, Ball 3, Strike 1 looking, Foul, Foul, Strike 3 swinging.\nBrian Gribbin strikes out swinging, Carter Forrester pitching.\nSingle\nBall 1, In play.\nDeven Downs singles on a fly ball to shortstop Brett Gjeldum.\nStrikeout\n2 Outs\nStrike 1 swinging, Strike 2 swinging, Strike 3 swinging.\nRyan Maloney strikes out swinging, Carter Forrester pitching.\nFly Out\n1 Out\nIn play.\nTrenton flies out to left fielder Bryce Nowak.\nTop 2nd - SBGC Dirtbags Mid-Atlantic 14U\nGround Out\n3 Outs\nStrike 1 looking, Colin Nadjibe steals 2nd, Ball 1, In play.\nKeegan O’Malley grounds out, shortstop Declan Class to first baseman Brian Gribbin.\nWalk\nStrike 1 swinging, Ball 1, Ball 2, Ball 3, Strike 2 looking, Foul, Ball 4.\nColin Nadjibe walks, Quinn Kasprzak pitching.\nStrikeout\n2 Outs\nStrike 1 looking, Ball 1, Strike 2 swinging, Strike 3 looking.\nJohnny Bartolini strikes out looking, Quinn Kasprzak pitching.\nGround Out\n1 Out\nStrike 1 looking, Ball 1, Ball 2, Foul, In play.\nEthan Resnick grounds out, second baseman Joe Carey to first baseman Brian Gribbin.\nBottom 1st - Dig In (Gribbin) 14U\nFly Out\n3 Outs\nCourtesy runner Tyler in for Quinn Kasprzak, Ball 1, Tyler advances to 2nd on defensive indifference, In play.\nJoe Carey flies out to center fielder Keegan O’Malley.\nWalk\nSBGC 0 - DGN( 2\nBall 1, Ball 2, Ball 3, Brian Gribbin scores on wild pitch, Andres Tecua advances to 3rd on the same pitch, Ball 4.\nQuinn Kasprzak walks, Carter Forrester pitching, Andres Tecua remains at 3rd.\nStrikeout\n2 Outs\nStrike 1 looking, Strike 2 swinging, Strike 3 swinging.\nJack Wieland strikes out swinging, Carter Forrester pitching, Brian Gribbin remains at 3rd, Andres Tecua remains at 2nd.\nPop Out\n1 Out\nBall 1, Andres Tecua advances to 2nd on defensive indifference, In play.\nDean Simmons pops out to second baseman Andrew Becker, Brian Gribbin remains at 3rd, Andres Tecua remains at 2nd.\nSingle\nSBGC 0 - DGN( 1\nDeven Downs scores on wild pitch, Pickoff attempt at 1st, Strike 1 looking, Brian Gribbin steals 2nd, Ball 1, Strike 2 looking, In play.\nAndres Tecua singles on a ground ball to first baseman William Wright, Brian Gribbin advances to 3rd.\nWalk\nDeven Downs steals 2nd, Ball 1, Strike 1 looking, Ball 2, Deven Downs advances to 3rd on wild pitch, Ball 3, Foul, Foul, Ball 4.\nBrian Gribbin walks, Carter Forrester pitching, Deven Downs remains at 3rd.\nWalk\nBall 1, Strike 1 looking, Ball 2, Ball 3, Strike 2 looking, Foul, Foul, Ball 4.\nDeven Downs walks, Carter Forrester pitching.\nTop 1st - SBGC Dirtbags Mid-Atlantic 14U\nPop Out\n3 Outs\nStrike 1 swinging, Ball 1, Ball 2, In play.\nAndrew Becker pops out in foul territory to first baseman Brian Gribbin.\nFielder's Choice\n2 Outs\nIn play.\nWilliam Wright grounds into fielder's choice, third baseman Andres Tecua to catcher Ryan Maloney, Brett Gjeldum out advancing to home, Carter Forrester advances to 2nd.\nSingle\nBall 1, Brett Gjeldum advances to 2nd on passed ball, Foul, Ball 2, Ball 3, In play.\nCarter Forrester singles on a ground ball to left fielder Jack Wieland, Brett Gjeldum advances to 3rd.\nHit By Pitch\nBall 1, Strike 1 swinging, Ball 2, Ball 3.\nBrett Gjeldum is hit by pitch, Quinn Kasprzak pitching.\nGround Out\n1 Out\nBall 1, Ball 2, Foul, Ball 3, In play.\nBryce Nowak grounds out, second baseman Joe Carey to first baseman Brian Gribbin.",
+      "source_sha256": "6b8b9d766705995b3cf73cab3a3fea126f9b27bebfd141ad435637a8294b68ee",
+      "source_canonical_sha256": "92956516b2dadf383bf878b1e501bc45e70f6320e8c66a1dc8735868a27c7a13",
+      "notes": [
+        "No final score, missing innings or unlisted pitches were inferred. Original capture text retained."
+      ]
+    }
+  ],
+  "plate_appearances": [
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 1,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-1-pa-001",
+      "sequence": 1,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-bryce-nowak",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "2B",
+        "location": {
+          "zone": "second_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Bryce Nowak grounds out, second baseman Joe Carey to first baseman Brian Gribbin."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Bryce Nowak grounds out, second baseman Joe Carey to first baseman Brian Gribbin.",
+      "source_pitch_sequence": "Ball 1, Ball 2, Foul, Ball 3, In play.",
+      "source_events": [
+        "Ground Out",
+        "1 Out",
+        "Ball 1, Ball 2, Foul, Ball 3, In play.",
+        "Bryce Nowak grounds out, second baseman Joe Carey to first baseman Brian Gribbin."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 1,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-1-pa-002",
+      "sequence": 2,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-brett-gjeldum",
+      "status": "complete",
+      "result": "hit_by_pitch",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Quinn Kasprzak",
+        "attribution": "explicit"
+      },
+      "source_text": "Brett Gjeldum is hit by pitch, Quinn Kasprzak pitching.",
+      "source_pitch_sequence": "Ball 1, Strike 1 swinging, Ball 2, Ball 3.",
+      "source_events": [
+        "Hit By Pitch",
+        "Ball 1, Strike 1 swinging, Ball 2, Ball 3.",
+        "Brett Gjeldum is hit by pitch, Quinn Kasprzak pitching."
+      ],
+      "notes": [
+        "HBP ruling has no listed terminal HBP pitch; listed pitches retained."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 1,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-1-pa-003",
+      "sequence": 3,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-carter-forrester",
+      "status": "complete",
+      "result": "single",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "LF",
+        "location": {
+          "zone": "left_field",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Carter Forrester singles on a ground ball to left fielder Jack Wieland, Brett Gjeldum advances to 3rd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Carter Forrester singles on a ground ball to left fielder Jack Wieland, Brett Gjeldum advances to 3rd.",
+      "source_pitch_sequence": "Ball 1, Brett Gjeldum advances to 2nd on passed ball, Foul, Ball 2, Ball 3, In play.",
+      "source_events": [
+        "Single",
+        "Ball 1, Brett Gjeldum advances to 2nd on passed ball, Foul, Ball 2, Ball 3, In play.",
+        "Carter Forrester singles on a ground ball to left fielder Jack Wieland, Brett Gjeldum advances to 3rd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 1,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-1-pa-004",
+      "sequence": 4,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-william-wright",
+      "status": "complete",
+      "result": "fielders_choice",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "3B",
+        "location": {
+          "zone": "third_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "William Wright grounds into fielder's choice, third baseman Andres Tecua to catcher Ryan Maloney, Brett Gjeldum out advancing to home, Carter Forrester advances to 2nd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "William Wright grounds into fielder's choice, third baseman Andres Tecua to catcher Ryan Maloney, Brett Gjeldum out advancing to home, Carter Forrester advances to 2nd.",
+      "source_pitch_sequence": "In play.",
+      "source_events": [
+        "Fielder's Choice",
+        "2 Outs",
+        "In play.",
+        "William Wright grounds into fielder's choice, third baseman Andres Tecua to catcher Ryan Maloney, Brett Gjeldum out advancing to home, Carter Forrester advances to 2nd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 1,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-1-pa-005",
+      "sequence": 5,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-andrew-becker",
+      "status": "complete",
+      "result": "foul_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "foul_out",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Andrew Becker pops out in foul territory to first baseman Brian Gribbin.",
+      "source_pitch_sequence": "Strike 1 swinging, Ball 1, Ball 2, In play.",
+      "source_events": [
+        "Pop Out",
+        "3 Outs",
+        "Strike 1 swinging, Ball 1, Ball 2, In play.",
+        "Andrew Becker pops out in foul territory to first baseman Brian Gribbin."
+      ],
+      "foul_contact": {
+        "contact_type": "fly_ball",
+        "fielding_position": "1B",
+        "location": {
+          "zone": null,
+          "precision": "unknown",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Andrew Becker pops out in foul territory to first baseman Brian Gribbin."
+      },
+      "notes": [
+        "Listed terminal In play represents the explicit foul catch; stored as foul_out, original pitch text retained."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 2,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-2-pa-006",
+      "sequence": 6,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-ethan-resnick",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "2B",
+        "location": {
+          "zone": "second_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Ethan Resnick grounds out, second baseman Joe Carey to first baseman Brian Gribbin."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Ethan Resnick grounds out, second baseman Joe Carey to first baseman Brian Gribbin.",
+      "source_pitch_sequence": "Strike 1 looking, Ball 1, Ball 2, Foul, In play.",
+      "source_events": [
+        "Ground Out",
+        "1 Out",
+        "Strike 1 looking, Ball 1, Ball 2, Foul, In play.",
+        "Ethan Resnick grounds out, second baseman Joe Carey to first baseman Brian Gribbin."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 2,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-2-pa-007",
+      "sequence": 7,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-johnny-bartolini",
+      "status": "complete",
+      "result": "strikeout_looking",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 3
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Quinn Kasprzak",
+        "attribution": "explicit"
+      },
+      "source_text": "Johnny Bartolini strikes out looking, Quinn Kasprzak pitching.",
+      "source_pitch_sequence": "Strike 1 looking, Ball 1, Strike 2 swinging, Strike 3 looking.",
+      "source_events": [
+        "Strikeout",
+        "2 Outs",
+        "Strike 1 looking, Ball 1, Strike 2 swinging, Strike 3 looking.",
+        "Johnny Bartolini strikes out looking, Quinn Kasprzak pitching."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 2,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-2-pa-008",
+      "sequence": 8,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-colin-nadjibe",
+      "status": "complete",
+      "result": "walk",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 7,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 4,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Quinn Kasprzak",
+        "attribution": "explicit"
+      },
+      "source_text": "Colin Nadjibe walks, Quinn Kasprzak pitching.",
+      "source_pitch_sequence": "Strike 1 swinging, Ball 1, Ball 2, Ball 3, Strike 2 looking, Foul, Ball 4.",
+      "source_events": [
+        "Walk",
+        "Strike 1 swinging, Ball 1, Ball 2, Ball 3, Strike 2 looking, Foul, Ball 4.",
+        "Colin Nadjibe walks, Quinn Kasprzak pitching."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 2,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-2-pa-009",
+      "sequence": 9,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-keegan-o-malley",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "SS",
+        "location": {
+          "zone": "shortstop_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Keegan O’Malley grounds out, shortstop Declan Class to first baseman Brian Gribbin."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Keegan O’Malley grounds out, shortstop Declan Class to first baseman Brian Gribbin.",
+      "source_pitch_sequence": "Strike 1 looking, Colin Nadjibe steals 2nd, Ball 1, In play.",
+      "source_events": [
+        "Ground Out",
+        "3 Outs",
+        "Strike 1 looking, Colin Nadjibe steals 2nd, Ball 1, In play.",
+        "Keegan O’Malley grounds out, shortstop Declan Class to first baseman Brian Gribbin."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 3,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-3-pa-010",
+      "sequence": 10,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-camden-lee",
+      "status": "complete",
+      "result": "walk",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 7,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 8,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 4,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Quinn Kasprzak",
+        "attribution": "explicit"
+      },
+      "source_text": "Camden Lee walks, Quinn Kasprzak pitching.",
+      "source_pitch_sequence": "Strike 1 looking, Foul, Foul, Ball 1, Ball 2, Ball 3, Foul, Ball 4.",
+      "source_events": [
+        "Walk",
+        "Strike 1 looking, Foul, Foul, Ball 1, Ball 2, Ball 3, Foul, Ball 4.",
+        "Camden Lee walks, Quinn Kasprzak pitching."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 3,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-3-pa-011",
+      "sequence": 11,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-caleb-forrester",
+      "status": "complete",
+      "result": "walk",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 4,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Quinn Kasprzak",
+        "attribution": "explicit"
+      },
+      "source_text": "Caleb Forrester walks, Quinn Kasprzak pitching, Camden Lee advances to 2nd.",
+      "source_pitch_sequence": "Strike 1 looking, Ball 1, Ball 2, Ball 3, Ball 4.",
+      "source_events": [
+        "Walk",
+        "Strike 1 looking, Ball 1, Ball 2, Ball 3, Ball 4.",
+        "Caleb Forrester walks, Quinn Kasprzak pitching, Camden Lee advances to 2nd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 3,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-3-pa-012",
+      "sequence": 12,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-bryce-nowak",
+      "status": "complete",
+      "result": "single",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "fly_ball",
+        "fielding_position": "1B",
+        "location": {
+          "zone": "first_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Bryce Nowak singles on a fly ball to first baseman Brian Gribbin, Camden Lee scores on error by first baseman Brian Gribbin, Caleb Forrester advances to 2nd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Bryce Nowak singles on a fly ball to first baseman Brian Gribbin, Camden Lee scores on error by first baseman Brian Gribbin, Caleb Forrester advances to 2nd.",
+      "source_pitch_sequence": "In play.",
+      "source_events": [
+        "Single",
+        "SBGC 1 - DGN( 2",
+        "In play.",
+        "Bryce Nowak singles on a fly ball to first baseman Brian Gribbin, Camden Lee scores on error by first baseman Brian Gribbin, Caleb Forrester advances to 2nd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 3,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-3-pa-013",
+      "sequence": 13,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-brett-gjeldum",
+      "status": "complete",
+      "result": "line_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "line_drive",
+        "fielding_position": "3B",
+        "location": {
+          "zone": "third_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Brett Gjeldum lines out to third baseman Trenton, Caleb Forrester remains at 2nd, Bryce Nowak remains at 1st."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Brett Gjeldum lines out to third baseman Trenton, Caleb Forrester remains at 2nd, Bryce Nowak remains at 1st.",
+      "source_pitch_sequence": "In play.",
+      "source_events": [
+        "Line Out",
+        "1 Out",
+        "In play.",
+        "Brett Gjeldum lines out to third baseman Trenton, Caleb Forrester remains at 2nd, Bryce Nowak remains at 1st."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 3,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-3-pa-014",
+      "sequence": 14,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-carter-forrester",
+      "status": "complete",
+      "result": "line_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "line_drive",
+        "fielding_position": "LF",
+        "location": {
+          "zone": "left_field",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Carter Forrester lines out to left fielder Tyler, Caleb Forrester remains at 2nd, Bryce Nowak remains at 1st."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Carter Forrester lines out to left fielder Tyler, Caleb Forrester remains at 2nd, Bryce Nowak remains at 1st.",
+      "source_pitch_sequence": "In play.",
+      "source_events": [
+        "Line Out",
+        "2 Outs",
+        "In play.",
+        "Carter Forrester lines out to left fielder Tyler, Caleb Forrester remains at 2nd, Bryce Nowak remains at 1st."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 3,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-3-pa-015",
+      "sequence": 15,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-william-wright",
+      "status": "complete",
+      "result": "walk",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 7,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 4,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Jack Wieland",
+        "attribution": "explicit"
+      },
+      "source_text": "William Wright walks, Jack Wieland pitching, Caleb Forrester advances to 3rd, Bryce Nowak advances to 2nd.",
+      "source_pitch_sequence": "Ball 1, Strike 1 swinging, Ball 2, Foul, Ball 3, Foul, Ball 4.",
+      "source_events": [
+        "Walk",
+        "Ball 1, Strike 1 swinging, Ball 2, Foul, Ball 3, Foul, Ball 4.",
+        "William Wright walks, Jack Wieland pitching, Caleb Forrester advances to 3rd, Bryce Nowak advances to 2nd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 3,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-3-pa-016",
+      "sequence": 16,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-andrew-becker",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "SS",
+        "location": {
+          "zone": "shortstop_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Andrew Becker grounds out, shortstop Declan Class to first baseman Brian Gribbin."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Andrew Becker grounds out, shortstop Declan Class to first baseman Brian Gribbin.",
+      "source_pitch_sequence": "Balk by pitcher Jack Wieland, Caleb Forrester scores, Bryce Nowak advances to 3rd, William Wright advances to 2nd, Ball 1, Strike 1 looking, In play.",
+      "source_events": [
+        "Ground Out",
+        "SBGC 2 - DGN( 2 | 3 Outs",
+        "Balk by pitcher Jack Wieland, Caleb Forrester scores, Bryce Nowak advances to 3rd, William Wright advances to 2nd, Ball 1, Strike 1 looking, In play.",
+        "Andrew Becker grounds out, shortstop Declan Class to first baseman Brian Gribbin."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 4,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-4-pa-017",
+      "sequence": 17,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-ethan-resnick",
+      "status": "complete",
+      "result": "reached_on_error",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "SS",
+        "location": {
+          "zone": "shortstop_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Ethan Resnick hits a ground ball and reaches on an error by shortstop Declan Class."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Ethan Resnick hits a ground ball and reaches on an error by shortstop Declan Class.",
+      "source_pitch_sequence": "In play.",
+      "source_events": [
+        "Error",
+        "In play.",
+        "Ethan Resnick hits a ground ball and reaches on an error by shortstop Declan Class."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 4,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-4-pa-018",
+      "sequence": 18,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-johnny-bartolini",
+      "status": "complete",
+      "result": "strikeout_looking",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 3
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Jack Wieland",
+        "attribution": "explicit"
+      },
+      "source_text": "Johnny Bartolini strikes out looking, Jack Wieland pitching, Ethan Resnick remains at 1st.",
+      "source_pitch_sequence": "Foul, Strike 2 swinging, Strike 3 looking.",
+      "source_events": [
+        "Strikeout",
+        "1 Out",
+        "Foul, Strike 2 swinging, Strike 3 looking.",
+        "Johnny Bartolini strikes out looking, Jack Wieland pitching, Ethan Resnick remains at 1st."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 4,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-4-pa-019",
+      "sequence": 19,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-colin-nadjibe",
+      "status": "complete",
+      "result": "double_play",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "SS",
+        "location": {
+          "zone": "shortstop_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Colin Nadjibe grounds into a double play, shortstop Declan Class to first baseman Brian Gribbin, Ethan Resnick out advancing to 2nd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Colin Nadjibe grounds into a double play, shortstop Declan Class to first baseman Brian Gribbin, Ethan Resnick out advancing to 2nd.",
+      "source_pitch_sequence": "Pickoff attempt at 1st, In play.",
+      "source_events": [
+        "Double Play",
+        "3 Outs",
+        "Pickoff attempt at 1st, In play.",
+        "Colin Nadjibe grounds into a double play, shortstop Declan Class to first baseman Brian Gribbin, Ethan Resnick out advancing to 2nd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 5,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-5-pa-020",
+      "sequence": 20,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-keegan-o-malley",
+      "status": "complete",
+      "result": "strikeout_looking",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 3
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Jack Wieland",
+        "attribution": "explicit"
+      },
+      "source_text": "Keegan O’Malley strikes out looking, Jack Wieland pitching.",
+      "source_pitch_sequence": "Strike 1 looking, Ball 1, Strike 2 looking, Ball 2, Strike 3 looking.",
+      "source_events": [
+        "Strikeout",
+        "1 Out",
+        "Strike 1 looking, Ball 1, Strike 2 looking, Ball 2, Strike 3 looking.",
+        "Keegan O’Malley strikes out looking, Jack Wieland pitching."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 5,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-5-pa-021",
+      "sequence": 21,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-camden-lee",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "2B",
+        "location": {
+          "zone": "second_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Camden Lee grounds out, second baseman Quinn Kasprzak to first baseman Brian Gribbin."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Camden Lee grounds out, second baseman Quinn Kasprzak to first baseman Brian Gribbin.",
+      "source_pitch_sequence": "In play.",
+      "source_events": [
+        "Ground Out",
+        "2 Outs",
+        "In play.",
+        "Camden Lee grounds out, second baseman Quinn Kasprzak to first baseman Brian Gribbin."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 5,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-5-pa-022",
+      "sequence": 22,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-caleb-forrester",
+      "status": "complete",
+      "result": "strikeout_looking",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 3
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Jack Wieland",
+        "attribution": "explicit"
+      },
+      "source_text": "Caleb Forrester strikes out looking, Jack Wieland pitching.",
+      "source_pitch_sequence": "Strike 1 looking, Foul, Ball 1, Strike 3 looking.",
+      "source_events": [
+        "Strikeout",
+        "3 Outs",
+        "Strike 1 looking, Foul, Ball 1, Strike 3 looking.",
+        "Caleb Forrester strikes out looking, Jack Wieland pitching."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 6,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-6-pa-023",
+      "sequence": 23,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-bryce-nowak",
+      "status": "complete",
+      "result": "walk",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 4,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Jack Wieland",
+        "attribution": "explicit"
+      },
+      "source_text": "Bryce Nowak walks, Jack Wieland pitching.",
+      "source_pitch_sequence": "Strike 1 looking, Foul, Ball 1, Ball 2, Ball 3, Ball 4.",
+      "source_events": [
+        "Walk",
+        "Strike 1 looking, Foul, Ball 1, Ball 2, Ball 3, Ball 4.",
+        "Bryce Nowak walks, Jack Wieland pitching."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 6,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-6-pa-024",
+      "sequence": 24,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-brett-gjeldum",
+      "status": "complete",
+      "result": "strikeout_looking",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 3
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Jack Wieland",
+        "attribution": "explicit"
+      },
+      "source_text": "Brett Gjeldum strikes out looking, Jack Wieland pitching, Bryce Nowak remains at 2nd.",
+      "source_pitch_sequence": "Strike 1 looking, Bryce Nowak advances to 2nd on passed ball, Strike 2 looking, Strike 3 looking.",
+      "source_events": [
+        "Strikeout",
+        "1 Out",
+        "Strike 1 looking, Bryce Nowak advances to 2nd on passed ball, Strike 2 looking, Strike 3 looking.",
+        "Brett Gjeldum strikes out looking, Jack Wieland pitching, Bryce Nowak remains at 2nd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 6,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-6-pa-025",
+      "sequence": 25,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-carter-forrester",
+      "status": "complete",
+      "result": "single",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 7,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "line_drive",
+        "fielding_position": "LF",
+        "location": {
+          "zone": "left_field",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Carter Forrester singles on a line drive to left fielder Quinn Kasprzak, Bryce Nowak scores on the throw, Carter Forrester advances to 2nd on the throw."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Carter Forrester singles on a line drive to left fielder Quinn Kasprzak, Bryce Nowak scores on the throw, Carter Forrester advances to 2nd on the throw.",
+      "source_pitch_sequence": "Strike 1 swinging, Strike 2 looking, Ball 1, Ball 2, Foul, Ball 3, In play.",
+      "source_events": [
+        "Single",
+        "SBGC 3 - DGN( 3",
+        "Strike 1 swinging, Strike 2 looking, Ball 1, Ball 2, Foul, Ball 3, In play.",
+        "Carter Forrester singles on a line drive to left fielder Quinn Kasprzak, Bryce Nowak scores on the throw, Carter Forrester advances to 2nd on the throw."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 6,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-6-pa-026",
+      "sequence": 26,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-william-wright",
+      "status": "complete",
+      "result": "walk",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Jack Wieland",
+        "attribution": "explicit"
+      },
+      "source_text": "William Wright is intentionally walked, Jack Wieland pitching, Carter Forrester remains at 2nd.",
+      "source_pitch_sequence": "Ball 1.",
+      "source_events": [
+        "Intentional Walk",
+        "Ball 1.",
+        "William Wright is intentionally walked, Jack Wieland pitching, Carter Forrester remains at 2nd."
+      ],
+      "notes": [
+        "Intentional walk award; only explicitly listed pitches retained."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 6,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-6-pa-027",
+      "sequence": 27,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-andrew-becker",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "P",
+        "location": {
+          "zone": "pitcher_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Andrew Becker grounds out, pitcher Jack Wieland to first baseman Brian Gribbin, Carter Forrester advances to 3rd, William Wright advances to 2nd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Andrew Becker grounds out, pitcher Jack Wieland to first baseman Brian Gribbin, Carter Forrester advances to 3rd, William Wright advances to 2nd.",
+      "source_pitch_sequence": "In play.",
+      "source_events": [
+        "Ground Out",
+        "2 Outs",
+        "In play.",
+        "Andrew Becker grounds out, pitcher Jack Wieland to first baseman Brian Gribbin, Carter Forrester advances to 3rd, William Wright advances to 2nd."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 6,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-6-pa-028",
+      "sequence": 28,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-ethan-resnick",
+      "status": "complete",
+      "result": "walk",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 4,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Jack Wieland",
+        "attribution": "explicit"
+      },
+      "source_text": "Ethan Resnick walks, Jack Wieland pitching.",
+      "source_pitch_sequence": "Balk by pitcher Jack Wieland, Carter Forrester scores, William Wright advances to 3rd, Ball 1, Foul, Ball 2, Ball 3, Strike 2 swinging, Balk by pitcher Jack Wieland, William Wright scores, Ball 4.",
+      "source_events": [
+        "Walk",
+        "SBGC 5 - DGN( 3",
+        "Balk by pitcher Jack Wieland, Carter Forrester scores, William Wright advances to 3rd, Ball 1, Foul, Ball 2, Ball 3, Strike 2 swinging, Balk by pitcher Jack Wieland, William Wright scores, Ball 4.",
+        "Ethan Resnick walks, Jack Wieland pitching."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 6,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-6-pa-029",
+      "sequence": 29,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-johnny-bartolini",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "2B",
+        "location": {
+          "zone": "second_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Johnny Bartolini grounds out, second baseman Joe Carey to first baseman Brian Gribbin."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Johnny Bartolini grounds out, second baseman Joe Carey to first baseman Brian Gribbin.",
+      "source_pitch_sequence": "In play.",
+      "source_events": [
+        "Ground Out",
+        "3 Outs",
+        "In play.",
+        "Johnny Bartolini grounds out, second baseman Joe Carey to first baseman Brian Gribbin."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 7,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-7-pa-030",
+      "sequence": 30,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-colin-nadjibe",
+      "status": "complete",
+      "result": "double_play",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "3B",
+        "location": {
+          "zone": "third_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Colin Nadjibe grounds into a double play, third baseman Trenton to first baseman Brian Gribbin, Ethan Resnick out advancing to home."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Colin Nadjibe grounds into a double play, third baseman Trenton to first baseman Brian Gribbin, Ethan Resnick out advancing to home.",
+      "source_pitch_sequence": "Ethan Resnick gets placed on 2nd, Ball 1, Ethan Resnick advances to 3rd on wild pitch, Strike 1 looking, Ball 2, In play.",
+      "source_events": [
+        "Double Play",
+        "2 Outs",
+        "Ethan Resnick gets placed on 2nd, Ball 1, Ethan Resnick advances to 3rd on wild pitch, Strike 1 looking, Ball 2, In play.",
+        "Colin Nadjibe grounds into a double play, third baseman Trenton to first baseman Brian Gribbin, Ethan Resnick out advancing to home."
+      ]
+    },
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 7,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-7-pa-031",
+      "sequence": 31,
+      "batter_id": "sbgc-dirtbags-mid-atlantic-14u-keegan-o-malley",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "P",
+        "location": {
+          "zone": "pitcher_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Keegan O’Malley grounds out to pitcher Joe Carey."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Keegan O’Malley grounds out to pitcher Joe Carey.",
+      "source_pitch_sequence": "Ball 1, Foul, Strike 2 swinging, Ball 2, In play.",
+      "source_events": [
+        "Ground Out",
+        "3 Outs",
+        "Ball 1, Foul, Strike 2 swinging, Ball 2, In play.",
+        "Keegan O’Malley grounds out to pitcher Joe Carey."
+      ]
+    }
+  ],
+  "baserunning_events": [
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 2,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-attempt-001",
+      "runner_id": "sbgc-dirtbags-mid-atlantic-14u-colin-nadjibe",
+      "result": "stolen_base",
+      "to_base": "2B",
+      "source_text": "Colin Nadjibe steals 2nd",
+      "source_pa_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-2-pa-009",
+      "reach_pa_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-2-pa-008"
+    }
+  ],
+  "baserunning_entries": [
+    {
+      "game_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865",
+      "inning": 7,
+      "half": "top",
+      "id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-entry-001",
+      "runner_id": "sbgc-dirtbags-mid-atlantic-14u-ethan-resnick",
+      "replaced_runner_id": null,
+      "entry_type": "placed_runner",
+      "placed_base": "2B",
+      "source_text": "Ethan Resnick gets placed on 2nd",
+      "source_pa_id": "2026-10-18-0800-sbgc-dirtbags-mid-atlantic-14u-vs-dig-in-gribbin-14u-c450c11865-top-7-pa-030"
+    }
+  ]
+}

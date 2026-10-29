@@ -1,0 +1,234 @@
+Use TEAM-DATA-PROMPT.md to add this game
+Import: both teams (default)
+Date: 2026-10-10
+Start time: 14:00
+Timezone: ET
+Source: https://web.gc.com/teams/6bKEd4zQDNOb/2026-fall-dig-in-gribbin-14u/schedule/108c2798-a439-4dfc-898c-f7f585c5c48f/plays
+Capture coverage: loaded browser text only; completeness not verified.
+
+PLAY-BY-PLAY
+Top 8th - Wow Factor Premier
+Brenton at bat
+Bottom 7th - Dig In (Gribbin) 14U
+Pop Out
+3 Outs
+Foul, In play.
+Quinn Kasprzak pops out to second baseman.
+Fly Out
+2 Outs
+Ball 1, Foul, In play.
+Dean Simmons flies out to left fielder Aiden, Brian Gribbin remains at 2nd, Andres Tecua remains at 1st.
+Single
+Ball 1, Pickoff attempt at 1st, In play.
+Andres Tecua singles on a ground ball to shortstop, Brian Gribbin advances to 2nd.
+Walk
+Ball 1, Ball 2, Ball 3, Strike 1 looking, Foul, Ball 4.
+Brian Gribbin walks, Lucas pitching.
+Fly Out
+1 Out
+Strike 1 looking, Ball 1, Ball 2, Strike 2 looking, In play.
+Deven Downs flies out to center fielder Ray.
+Top 7th - Wow Factor Premier
+Fielder's Choice
+3 Outs
+Strike 1 looking, In play.
+Eli grounds into fielder's choice to third baseman Andres Tecua, Lucas out advancing to 3rd, Henry advances to 2nd.
+Hit By Pitch
+Ball 1.
+Henry is hit by pitch, Deven Downs pitching, Lucas advances to 2nd.
+Error
+In play.
+Lucas hits a ground ball and reaches on an error by first baseman Brian Gribbin.
+Double Play
+2 Outs
+In play.
+Ray grounds into a double play, second baseman Brayden to shortstop Declan Class to first baseman Brian Gribbin, Garrett out advancing to 2nd.
+Single
+Strike 1 swinging, Foul, Foul, In play.
+Garrett singles on a line drive to left fielder Joe Carey.
+Bottom 6th - Dig In (Gribbin) 14U
+Ground Out
+3 Outs
+Strike 1 looking, Ball 1, Strike 2 looking, In play.
+Liam grounds out, third baseman Henry to first baseman.
+Fielder's Choice
+2 Outs
+Strike 1 swinging, Pickoff attempt at 1st, In play.
+Joe Carey grounds into fielder's choice, shortstop to second baseman, Wesley Hurt out advancing to 2nd.
+Hit By Pitch
+Foul, Ball 1.
+Wesley Hurt is hit by pitch, Lucas pitching.
+Ground Out
+1 Out
+Strike 1 looking, Strike 2 swinging, In play.
+Declan Class grounds out, third baseman Henry to first baseman.
+Top 6th - Wow Factor Premier
+Ground Out
+3 Outs
+Ball 1, Strike 1 swinging, Foul, Foul, In play.
+Isaac grounds out, third baseman Andres Tecua to first baseman Brian Gribbin.
+Strikeout
+2 Outs
+Ball 1, Strike 1 swinging, Strike 2 looking, Strike 3 looking.
+Aiden strikes out looking, Deven Downs pitching.
+Ground Out
+1 Out
+Lineup changed: Dean Simmons in at pitcher, Strike 1 looking, In play.
+Holden grounds out, shortstop Declan Class to first baseman Brian Gribbin.
+Bottom 5th - Dig In (Gribbin) 14U
+Double Play
+3 Outs
+Ball 1, Strike 1 looking, Pickoff attempt at 1st, In play.
+Brayden pops into a double play to second baseman, Quinn Kasprzak out advancing to 1st.
+Fly Out
+1 Out
+Foul, Strike 2 looking, In play.
+Jack Wieland flies out to center fielder Ray, Quinn Kasprzak remains at 1st.
+Hit By Pitch
+Foul, Ball 1, Foul, Ball 2.
+Quinn Kasprzak is hit by pitch, Lucas pitching.
+Top 5th - Wow Factor Premier
+Strikeout
+3 Outs
+Foul, Ball 1, Foul, Strike 3 swinging.
+Austin strikes out swinging, Dean Simmons pitching.
+Sacrifice Bunt
+WWFC 3 - DGN( 0 | 2 Outs
+In play.
+Brycen sacrifices, pitcher Dean Simmons to first baseman Brian Gribbin, Brycen out advancing to 1st, Henry scores, Brenton advances to 2nd.
+Fielder's Choice
+1 Out
+Strike 1 looking, In play.
+Brenton grounds into fielder's choice, shortstop Declan Class to second baseman Liam, Eli out advancing to 2nd, Henry advances to 3rd.
+Single
+WWFC 2 - DGN( 0
+In play.
+Eli singles on a line drive to left fielder Joe Carey, Garrett scores, Henry advances to 2nd.
+Walk
+Courtesy runner Garrett in for Lucas, Ball 1, Garrett advances to 2nd on wild pitch, Ball 2, Garrett advances to 3rd on wild pitch, Ball 3, Strike 1 looking, Ball 4.
+Henry walks, Dean Simmons pitching, Garrett remains at 3rd.
+Single
+WWFC 1 - DGN( 0
+Strike 1 looking, In play.
+Lucas singles on a line drive to center fielder Quinn Kasprzak, Ray scores.
+Triple
+In play.
+Ray triples on a fly ball to center fielder Quinn Kasprzak.
+Bottom 4th - Dig In (Gribbin) 14U
+Fly Out
+3 Outs
+Ball 1, Brian Gribbin steals 2nd, In play.
+Dean Simmons flies out to center fielder Ray.
+Fly Out
+2 Outs
+Foul, In play.
+Andres Tecua flies out to left fielder Aiden, Brian Gribbin remains at 1st.
+Single
+Ball 1, Ball 2, Foul, Foul, Ball 3, In play.
+Brian Gribbin singles on a hard ground ball to right fielder.
+Ground Out
+1 Out
+Ball 1, Strike 1 looking, In play.
+Deven Downs grounds out to first baseman.
+Top 4th - Wow Factor Premier
+Strikeout
+3 Outs
+Strike 1 swinging, Strike 2 looking, Strike 3 swinging.
+Garrett strikes out swinging, Jack Wieland pitching.
+Ground Out
+2 Outs
+Ball 1, Ball 2, Strike 1 looking, Strike 2 swinging, In play.
+Isaac grounds out, third baseman Andres Tecua to first baseman Brian Gribbin.
+Strikeout
+1 Out
+Ball 1, Strike 1 looking, Strike 2 swinging, Ball 2, Ball 3, Strike 3 swinging.
+Aiden strikes out swinging, Jack Wieland pitching.
+Bottom 3rd - Dig In (Gribbin) 14U
+Strikeout
+3 Outs
+Foul, Strike 2 looking, Ball 1, Ball 2, Ball 3, Strike 3 swinging.
+Liam strikes out swinging, Lucas pitching.
+Strikeout
+2 Outs
+Ball 1, Strike 1 looking, Foul, Ball 2, Ball 3, Strike 3 swinging.
+Joe Carey strikes out swinging, Lucas pitching.
+Dropped 3rd Strike
+1 Out
+Strike 1 swinging, Strike 2 swinging, Ball 1, Strike 3 swinging.
+Wesley Hurt out at first on dropped 3rd strike.
+Top 3rd - Wow Factor Premier
+Runner Out
+3 Outs
+Ball 1, Austin advances to 3rd on wild pitch, Strike 1 looking, Ball 2, Strike 2 looking, Austin picked off at 3rd, catcher Brayden to third baseman Andres Tecua.
+Half-inning ended by out on the base paths.
+Sacrifice Bunt
+2 Outs
+Pickoff attempt at 1st, Pickoff attempt at 1st, In play.
+Holden sacrifices, pitcher Jack Wieland to first baseman Brian Gribbin, Holden out advancing to 1st, Austin advances to 2nd.
+Walk
+Ball 1, Ball 2, Strike 1 looking, Ball 3, Ball 4.
+Austin walks, Jack Wieland pitching.
+Fly Out
+1 Out
+Ball 1, Ball 2, Ball 3, Strike 1 looking, In play.
+Brycen flies out to center fielder Dean Simmons.
+Bottom 2nd - Dig In (Gribbin) 14U
+Ground Out
+3 Outs
+Ball 1, Strike 1 swinging, Pickoff attempt at 2nd, In play.
+Declan Class grounds out, pitcher Lucas to first baseman.
+Line Out
+2 Outs
+Strike 1 looking, Ball 1, In play.
+Brayden lines out to second baseman, Jack Wieland remains at 2nd.
+Double
+In play.
+Jack Wieland doubles on a fly ball to left fielder.
+Ground Out
+1 Out
+Ball 1, Ball 2, In play.
+Quinn Kasprzak grounds out, second baseman to first baseman.
+Top 2nd - Wow Factor Premier
+Double Play
+3 Outs
+Strike 1 looking, In play.
+Brenton grounds into a double play, pitcher Jack Wieland to shortstop Declan Class to first baseman Brian Gribbin, Eli out advancing to 2nd.
+Single
+Strike 1 looking, Ball 1, Strike 2 looking, Ball 2, In play.
+Eli singles on a hard ground ball to center fielder Quinn Kasprzak.
+Fly Out
+1 Out
+Ball 1, In play.
+Henry flies out to center fielder Quinn Kasprzak.
+Bottom 1st - Dig In (Gribbin) 14U
+Strikeout
+3 Outs
+Strike 1 looking, Pickoff attempt at 2nd, Strike 2 looking, Strike 3 swinging.
+Dean Simmons strikes out swinging, Lucas pitching.
+Pop Out
+2 Outs
+Ball 1, Brian Gribbin advances to 2nd on passed ball, Strike 1 swinging, In play.
+Andres Tecua pops out to second baseman, Brian Gribbin remains at 2nd.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Brian Gribbin walks, Lucas pitching.
+Pop Out
+1 Out
+Strike 1 looking, In play.
+Deven Downs pops out to shortstop.
+Top 1st - Wow Factor Premier
+Line Out
+3 Outs
+In play.
+Lucas lines out to center fielder Dean Simmons.
+Strikeout
+2 Outs
+Strike 1 swinging, Strike 2 looking, Ball 1, Pickoff attempt at 1st, Strike 3 looking.
+Ray strikes out looking, Jack Wieland pitching, Garrett remains at 1st.
+Single
+In play.
+Garrett singles on a ground ball to second baseman Wesley Hurt.
+Fly Out
+1 Out
+In play.
+Isaac flies out to left fielder Joe Carey.
