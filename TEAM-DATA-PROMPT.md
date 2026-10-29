@@ -273,3 +273,7 @@ PLAY-BY-PLAY / SOURCE MATERIAL
 - **Correct a record:** “Use TEAM-DATA-PROMPT.md. Correct [team/game/PA ID or identifying description]. The source says […]. Keep its existing ID and all other history.”
 
 The project files already provide the existing history; there is no need to attach a second copy of those JSON files when working in this directory.
+
+### Missing names in Plays text
+
+The local converter supports explicitly unidentified batter/runner placeholders. Preserve every supported nameless PA and its pitches, result and contact. Keep each unidentified appearance separate; never infer that several nameless records are one player. Keep a nameless steal as an attempt without guessing its runner or trip link. Flag missing identities in the import notes and withhold any tendency requiring unresolved links. Only assign or merge identities after source-backed/user-confirmed review; preserve the original source text and an audit of the correction.

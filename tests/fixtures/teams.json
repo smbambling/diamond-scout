@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "teams": [
+    {
+      "id": "shockers-14u",
+      "name": "Shockers 14U",
+      "data_file": "data/shockers-14u.json"
+    },
+    {
+      "id": "gambrills-athletic-club-14u",
+      "name": "Gambrills Athletic Club 14U",
+      "data_file": "data/gambrills-athletic-club-14u.json"
+    },
+    {
+      "id": "stars-camarata-14u",
+      "name": "Stars Camarata 14U",
+      "data_file": "data/stars-camarata-14u.json"
+    },
+    {
+      "id": "bba-14u-east",
+      "name": "BBA 14u East",
+      "data_file": "data/bba-14u-east.json"
+    },
+    {
+      "id": "dig-in-gribbin-14u",
+      "name": "Dig In (Gribbin) 14U",
+      "data_file": "data/dig-in-gribbin-14u.json"
+    }
+  ]
+}

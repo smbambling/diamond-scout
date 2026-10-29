@@ -24,7 +24,13 @@ labels.add('Batter Out');
 labels.add('Inning Ended');
 resultLabels.batter_out=['Batter Out'];
 const otherOutPattern=/^(.+?) out \(other\)(?:,|\.|$)/;
-const batterMatch=text=>text.match(batterPattern)||text.match(otherOutPattern);
+const batterMatch=text=>{
+  const named=text.match(batterPattern)||text.match(otherOutPattern);if(named)return named;
+  // A missing name is not a missing appearance. Mark identity explicitly unknown.
+  const unnamed=('Unidentified '+text).match(batterPattern)||('Unidentified '+text).match(otherOutPattern);
+  return unnamed?Object.assign(unnamed,{identity_unknown:true}):null;
+};
+const unnamedRunnerPattern=/^(?:steals (?:2nd|3rd|home)|scores on steal of home|(?:is )?caught stealing(?: (?:2nd|3rd|home))?|attempts to steal(?: (?:2nd|3rd|home))?)(?:[,.]|$)/i;
 
 function loadCore(root = ROOT) {
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
@@ -166,6 +172,7 @@ function contactFor(text, result, raw) {
 // Non-pitch context is preserved and processed separately; unfamiliar tokens stop the import.
 function splitEvents(text){return text.split(/,(?!\s*(?:Jr\.|Sr\.|II|III|IV)(?=\s|$))\s*/i);}
 function isContext(token) {
+  if(unnamedRunnerPattern.test(token))return true;
   if(/^Score changed to \d+-\d+$/i.test(token)||/^\(Play Edit\) .+ in for .+$/i.test(token))return true;
   if(/^Outs changed to [0-3]$/i.test(token))return true;
   if (/^Balk(?: by pitcher .+)?$/i.test(token)) return true;
@@ -252,8 +259,10 @@ function parseBlock(block, diagnostics=null) {
         return null;
       }
       if (!segment.label) {
-        if (lines.length!==1) fail('Incomplete at-bat has additional unclassified text.');
-        return {...segment, kind:'pa', name:norm(lines[0].raw).replace(/ at bat$/, ''), status:'incomplete', result:'unknown', pitches:[], context:[], warnings, source_text:lines[0].raw, source_pitch_sequence:null};
+        const pitchLines=lines.slice(1).filter(line=>!isScore(norm(line.raw)));
+        const {pitches,context}=parsePitches(pitchLines,'unknown',warnings,diagnostics);
+        if(pitches.length)warnings.push('Unfinished at-bat has listed pitches but no completed result; retained as incomplete.');
+        return {...segment, kind:'pa', name:norm(lines[0].raw).replace(/ at bat$/, ''), status:'incomplete', result:'unknown', pitches, context, warnings, source_text:lines[0].raw, source_pitch_sequence:pitchLines.length?pitchLines.map(line=>line.raw).join('\n'):null};
       }
       if(segment.label==='Inning Ended'){if(lines.some(l=>!['Inning Ended','3 Outs','Half-inning ended by scorekeeper.'].includes(norm(l.raw))))fail('Unrecognized inning-end context.');return {...segment,kind:'administrative',context:[],warnings};}
       if (['Runner Out','Caught Stealing'].includes(segment.label)) {
@@ -273,7 +282,8 @@ function parseBlock(block, diagnostics=null) {
       }
       const descriptions=lines.filter(line => batterMatch(norm(line.raw)));
       if (descriptions.length!==1) fail('Expected exactly one batter-result description; found '+descriptions.length+'.');
-      const description=descriptions[0], m=batterMatch(norm(description.raw)), name=m[1], text=norm(description.raw).slice(name.length+1);
+      const description=descriptions[0], m=batterMatch(norm(description.raw)), name=m.identity_unknown?null:m[1], text=m.identity_unknown?norm(description.raw):norm(description.raw).slice(name.length+1);
+      if(m.identity_unknown)warnings.push('Batter name is missing in the source; appearance retained under a separate unidentified-batter label, without inferring identity.');
       const result=resultFor(text,segment.label);
       if (!resultLabels[result]?.includes(segment.label)) fail('Result heading "'+segment.label+'" conflicts with the batter description.');
       const pitchLines=lines.filter(line => line!==description && norm(line.raw)!==segment.label && !isScore(norm(line.raw)));
@@ -292,7 +302,7 @@ function parseBlock(block, diagnostics=null) {
       if (contact?.contact_type==='unknown') warnings.push('Contact type not supplied; retained as unknown.');
       if (result==='foul_out' && pitches.some(p=>p.outcome==='foul_out')) warnings.push('Listed terminal In play represents the explicit foul catch; stored as foul_out, original pitch text retained.');
       const pitcher=text.match(/(?:^|, )([^,]+) pitching(?:,|\.)/);
-      const record={...segment, kind:'pa', name, status:'complete', result, pitches, context, warnings, batted_ball:result==='foul_out'?null:contact, pitcher:{name:pitcher?.[1]||null, attribution:pitcher?'explicit':'unknown'}, source_text:description.raw, source_pitch_sequence:pitchLines.length?pitchLines.map(line=>line.raw).join('\n'):null};
+      const record={...segment, kind:'pa', name, identity_unknown:!!m.identity_unknown, status:'complete', result, pitches, context, warnings, batted_ball:result==='foul_out'?null:contact, pitcher:{name:pitcher?.[1]||null, attribution:pitcher?'explicit':'unknown'}, source_text:description.raw, source_pitch_sequence:pitchLines.length?pitchLines.map(line=>line.raw).join('\n'):null};
       if (result==='foul_out') record.foul_contact=contact;
       if (result==='batter_out') {
         record.reached_base=false;
@@ -315,6 +325,7 @@ function parseBlock(block, diagnostics=null) {
 
 function runningToken(text) {
   let m;
+  if(unnamedRunnerPattern.test(text))return {...runningToken('Unidentified runner '+text),name:null,identity_unknown:true};
   if ((m=text.match(/^(.+?) gets placed on (1st|2nd|3rd)$/i))) return {kind:'placement',name:m[1],base:{'1st':'1B','2nd':'2B','3rd':'3B'}[m[2].toLowerCase()]};
   if ((m=text.match(/^(Courtesy|Pinch) runner (.+) in for (.+?)[.]?$/i))) return {kind:'entry', name:m[2], replaced:m[3], type:m[1].toLowerCase()==='courtesy'?'courtesy_runner':'pinch_runner'};
   if ((m=text.match(/^(.+?) steals (2nd|3rd|home)(?:[.]|$)/i))) return {kind:'attempt', name:m[1], base:{'2nd':'2B','3rd':'3B',home:'home'}[m[2].toLowerCase()], result:'stolen_base'};
@@ -343,10 +354,15 @@ function buildTeam(capture, teamName, data, gameId, opponent, D) {
     names.set(k,id); data.players.push({id,name,bats:null}); return id;
   }
   let sequence=0, inning=0; const active=new Map(), pas=[], events=[], entries=[], outs=[], warnings=[];
+  function unidentifiedPlayer(role,label){
+    const id=gameId+'-unidentified-'+role+'-'+label;
+    if(data.players.some(p=>p.id===id))fail('Unidentified player ID collision: '+id);
+    data.players.push({id,name:'Unidentified '+role+' ('+(capture.date||'undated')+', '+half+' '+inning+', '+(role==='batter'?'PA ':'event ')+label+', '+hash(gameId).slice(0,8)+')',bats:null,identity_status:'unidentified',source_game_id:gameId});return id;
+  }
   for (const record of timeline) {
     if(record.kind==='administrative')continue;
     if (record.inning!==inning) { active.clear(); inning=record.inning; }
-    const runner=playerId(record.name);
+    const runner=record.identity_unknown?unidentifiedPlayer('batter',String(sequence+1)):playerId(record.name);
     const base={game_id:gameId,inning,half};
     let pa=null;
     if (record.kind==='pa') {
@@ -361,10 +377,11 @@ function buildTeam(capture, teamName, data, gameId, opponent, D) {
     function apply(rawToken, isNarrative=false) {
       const text=norm(rawToken).replace(/\.$/, ''), action=runningToken(text);
       if (action) {
-        const id=playerId(action.name), visit=active.get(id);
         const identity=JSON.stringify(action);
         if (isNarrative && processed.has(identity)) return; // Same event echoed in summary text.
         processed.add(identity);
+        const id=action.identity_unknown?unidentifiedPlayer('runner',String(events.length+1)):playerId(action.name), visit=active.get(id);
+        if(action.identity_unknown)warnings.push('Runner name is missing in the source; attempt retained under a separate unidentified-runner label, without guessing a trip link.');
         if (action.kind==='placement') {
           if(visit)fail('Runner placement conflicts with an active trip for '+action.name+'. Review duplicate placement context.');
           const entry={...base,id:gameId+'-entry-'+String(entries.length+1).padStart(3,'0'),runner_id:id,replaced_runner_id:null,entry_type:'placed_runner',placed_base:action.base,source_text:rawToken};
@@ -384,7 +401,7 @@ function buildTeam(capture, teamName, data, gameId, opponent, D) {
           if (pa) event.source_pa_id=pa.id;
           if (visit?.runner_entry_id) event.runner_entry_id=visit.runner_entry_id;
           else if (visit?.reach_pa_id) event.reach_pa_id=visit.reach_pa_id;
-          else warnings.push('Attempt by '+action.name+' has no known on-base trip; tendency will be withheld.');
+          else warnings.push('Attempt by '+(action.name||'an unidentified runner')+' has no known on-base trip; tendency will be withheld.');
           events.push(event);
           if (action.result==='caught_stealing' || action.base==='home') active.delete(id);
         }

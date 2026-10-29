@@ -1,5 +1,11 @@
 # Diamond-Scout
 
+## Current interface: Scout only
+
+Field, Approach and History navigation is temporarily hidden and disabled, along with the full-field shortcut. Scout remains available with its filters, batting stats, tendencies and contact map. The question-mark help button has been removed. The unused bottom navigation spacing is removed while safe-area spacing remains. All history and secondary-view rendering code is retained; `SCOUT_ONLY` in the app script controls the temporary navigation restriction. The default is `true`; change it to `false` to restore the three tabs and field shortcut. Restoring that flag does not restore the removed help button.
+
+UI checks verify production Scout-only mode and explicitly opt in to retained secondary-view code for historical regression checks. These are DOM-model checks; this change has not had a fresh browser visual review.
+
 ## Repository layout and hosting
 
 - `index.html`, `teams.json`, and `data/`: the complete runtime app. CSS, JavaScript, logo and field artwork are embedded in `index.html`.
@@ -405,3 +411,33 @@ The October 10/17 batch regression adds four preserved captures under `tests/fix
 The October 4 Royals capture (`tests/fixtures/captures/2026-10-04-dig-in-royals-capture.txt`) is a regression for play-edit annotations, score corrections, scorekeeper-ended innings, single-fielder caught-stealing context, and a runner-only caught stealing with a recorded pitch. Raw source text is preserved. A conflicting play edit does not reassign the earlier PA: an affected entry uses `unresolved_trip: true` and the running opportunity denominator is withheld until reviewed. Administrative inning endings are stored in game `source_control_events`. Import/preflight checks pass for this capture; current legacy data/UI checks have fixed Shockers totals that are now stale after additional user imports (162 PAs versus the earlier 127-PA fixture). Those failures are separate from this capture/parser regression and were not resolved by changing historical expected totals. No team data is written by this parser fix.
 
 September 24 and October 6/13 FallPrep captures add regressions for compound runner-only blocks: a caught stealing followed by a different runner's pickoff, a steal of home followed by a pickoff, and a steal of second followed by an out at third. Events are processed in order, each explicit attempt/out is counted once, shared pitches are retained once without an invented PA, and original captures remain unchanged. The requested seven-file Downloads batch passes preflight with zero blocking errors. Import, preflight and capture regression checks pass; older fixed Shockers data/UI expectations remain stale after subsequent imports as noted above. No live history is written by this parser update.
+
+## Steal-tendency review (October 29, 2026)
+
+A dash can mean no recorded on-base opportunities, an unresolved trip, or an attempt without a confirmed trip link. The Scout card now distinguishes **No on-base trips**, **Trip data needs review**, and **Attempt link needs review**. Open the metric for the retained attempts and known evidence. An unresolved opportunity in one game withholds the full-selection percentage; other players and fully linked game selections remain available.
+
+The Dig In October 4, 08:00 Royals source has conflicting seventh-inning identities: Declan Class's single is followed by `(Play Edit) Quinn Kasprzak in for Declan Class` and a courtesy entry for Declan replacing Quinn. The raw source and unresolved flag are retained; no batter identity or denominator is guessed. An older October 17 duplicate courtesy entry had also produced a bogus player name containing pitch and pickoff text. That duplicate and its unused bogus roster record were removed after comparison with the preserved source and current parser. All game records, PAs, pitches, attempts and runner outs remained unchanged; a local recovery copy is under `work/backups/steal-tendency-review-*/`.
+
+`node tests/steals.cjs` checks courtesy-trip deduplication, unresolved-opportunity withholding, unaffected players and all current manifest teams. It and preflight checks pass. The older capture/import/data/UI suites currently depend on removed Shockers/Gambrills runtime files or their old manifest entries and cannot complete with the current two-team dataset. Those test-fixture dependencies need further separation; the removed teams were not restored by this repair. No new visual browser verification was available.
+
+### Confirmed October 4 running-trip correction
+
+The user subsequently confirmed that Declan Class hit the seventh-inning single and was caught stealing second. His caught-stealing event now links directly to that single, without an additional courtesy-runner opportunity. The conflicting source entry is preserved in the game's `data_corrections` audit record and unchanged original capture, rather than counted as a new trip. No PA, pitch, contact or steal attempt was removed or reassigned. At correction time Dig In shows 30% (58/192 trips) and Declan 50% (5/10 trips), with 66 and seven raw attempts respectively. These supersede the unresolved-status note above. Preserve user-confirmed corrections when reviewing future overlaps; parsing the original uncorrected text alone will still flag the conflict. A backup and exact report are under `work/backups/confirmed-declan-trip-*/` and `work/preflight/confirmed-declan-repair.json`.
+
+### Unfinished at-bats with pitches
+
+The converter now accepts listed pitch/context lines after `Name at bat`, keeping the PA incomplete and preserving the source sequence. The August 29, 10:15 Tigers/Vols capture is retained unchanged in `tests/fixtures/captures/2026-08-29-tigers-vols-capture.txt`. Virginia Vols previews with 30 complete plus one incomplete PAs and 117 pitches; Tigers previews with 24 complete PAs and 107 pitches. `node tests/incomplete.cjs`, preflight and steal checks pass. No live team JSON or manifest was written by this fix. The current 13-file Downloads preflight has 12 ready and one blocked capture: September 20 Arlington has three descriptions missing batter names and one steal missing a runner name. Those identities were not invented; review the report at `work/preflight/latest.md`.
+
+### September 20 missing-name support
+
+The importer now retains supported unnamed batter descriptions and explicit unnamed steal attempts using separate, explicitly labeled unidentified placeholders; no real name or shared identity is inferred. All original source text stays unchanged. The September 20 Arlington capture previews as 37 complete plus one incomplete PAs, 137 pitches, 21 fair contacts, one foul catch and 15 attempts, including three unnamed batter appearances and one unnamed runner attempt. The latter has no inferred trip link, so Arlington team tendency remains unavailable pending review. Tigers previews as 31 complete PAs and 108 pitches, including one runner-only pitch.
+
+The original capture is in `tests/fixtures/captures/2026-09-20-tigers-arlington-capture.txt`; verify with `node tests/unidentified.cjs`. The 13-file Downloads batch now preflights with 13 ready, zero blocked, zero errors and retained source notes. This supersedes the missing-name blockers described in the previous update. No live data or manifest was written by this parser fix.
+
+### Tests independent of retained teams
+
+Historical test scenarios now load the isolated mock manifest `tests/fixtures/teams.json` and fixed JSON under `tests/fixtures/teams/`, rather than requiring deleted teams in live `data/`. They do not append fixture teams to the real manifest or restore their live files. Current retained teams are independently schema-validated and exercised by the UI model. This resolves the missing-team test limitations noted above.
+
+All eight checks pass: `verify`, `ui`, `capture`, `import`, `preflight`, `steals`, `incomplete` and `unidentified` (run as `node tests/<name>.cjs`). Live HTML, manifest and team files were verified byte-for-byte unchanged after running the checks. UI checks remain DOM-model tests, not a new browser visual review.
+
+Deleting a team from the app does not establish an import exclusion. A later ordinary `--write` import still adds both captured teams by default; choose `--team "Captured Team Name"` if you only want one team from a capture. This test change does not alter import selection.

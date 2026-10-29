@@ -7,7 +7,7 @@ const installer = fs.readFileSync(path.join(root, 'tools/gamechanger-capture.htm
 const href = installer.match(/id="capture-bookmark" href="([^"]+)"/)[1];
 assert.equal(decodeURIComponent(href.slice('javascript:'.length)), source, 'Installer must contain the current helper');
 
-const history = JSON.parse(fs.readFileSync(path.join(root, 'data/shockers-14u.json')));
+const history = JSON.parse(fs.readFileSync(path.join(root, 'tests/fixtures/teams/shockers-14u.json')));
 for (const game of history.games.filter(game => game.source_play_by_play)) {
   const plays = game.source_play_by_play;
   assert.equal(capture.extractPlays('Team navigation\nSchedule\n' + plays), plays);

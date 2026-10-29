@@ -91,11 +91,6 @@
       "bats": null
     },
     {
-      "id": "dig-in-gribbin-14u-dean-simmons-ball-1-andres-tecua-picked-off-at-1st-catcher-leo-burton-to-first-baseman-quentin-west",
-      "name": "Dean Simmons, Ball 1, Andres Tecua picked off at 1st, catcher Leo Burton to first baseman Quentin West",
-      "bats": null
-    },
-    {
       "id": "dig-in-gribbin-14u-benson",
       "name": "Benson",
       "bats": null
@@ -411,6 +406,28 @@
       "source_canonical_sha256": "84f3103d3c4b1d4be42934182118b82efbd89a6506e51e90c2dfeb0efc6757b9",
       "notes": [
         "No final score, missing innings or unlisted pitches were inferred. Original capture text retained."
+      ],
+      "data_corrections": [
+        {
+          "id": "confirmed-declan-class-seventh-inning-trip",
+          "recorded_at": "2026-10-29T21:26:29.563Z",
+          "basis": "User confirmed the single was by Declan Class and Declan was caught stealing at second.",
+          "action": "Link the caught-stealing event directly to Declan Class single. Exclude conflicting courtesy-runner annotation from separate on-base trips; retain it here and in original source text.",
+          "reach_pa_id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370-bottom-7-pa-034",
+          "attempt_id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370-attempt-010",
+          "original_entry": {
+            "game_id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370",
+            "inning": 7,
+            "half": "bottom",
+            "id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370-entry-002",
+            "runner_id": "dig-in-gribbin-14u-declan-class",
+            "replaced_runner_id": "dig-in-gribbin-14u-quinn-kasprzak",
+            "entry_type": "courtesy_runner",
+            "source_text": "Courtesy runner Declan Class in for Quinn Kasprzak",
+            "source_pa_id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370-bottom-7-pa-035",
+            "unresolved_trip": true
+          }
+        }
       ]
     }
   ],
@@ -37489,7 +37506,7 @@
       "to_base": "2B",
       "source_text": "Declan Class caught stealing 2nd, second baseman Auden Curley",
       "source_pa_id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370-bottom-7-pa-035",
-      "runner_entry_id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370-entry-002"
+      "reach_pa_id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370-bottom-7-pa-034"
     }
   ],
   "baserunning_entries": [
@@ -37589,16 +37606,6 @@
       "reach_pa_id": "2026-10-17-1445-dig-in-gribbin-14u-vs-vsa-select-dmv-14u-c1574c07b4-bottom-6-pa-026"
     },
     {
-      "game_id": "2026-10-17-1445-dig-in-gribbin-14u-vs-vsa-select-dmv-14u-c1574c07b4",
-      "inning": 6,
-      "half": "bottom",
-      "id": "2026-10-17-1445-dig-in-gribbin-14u-vs-vsa-select-dmv-14u-c1574c07b4-entry-003",
-      "runner_id": "dig-in-gribbin-14u-andres-tecua",
-      "replaced_runner_id": "dig-in-gribbin-14u-dean-simmons-ball-1-andres-tecua-picked-off-at-1st-catcher-leo-burton-to-first-baseman-quentin-west",
-      "entry_type": "courtesy_runner",
-      "source_text": "Courtesy runner Andres Tecua in for Dean Simmons, Ball 1, Andres Tecua picked off at 1st, catcher Leo Burton to first baseman Quentin West."
-    },
-    {
       "game_id": "2026-10-04-1545-dig-in-gribbin-14u-vs-shockers-14u-9ed5a407dd",
       "inning": 4,
       "half": "top",
@@ -37648,18 +37655,6 @@
     },
     {
       "game_id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370",
-      "inning": 7,
-      "half": "bottom",
-      "id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370-entry-002",
-      "runner_id": "dig-in-gribbin-14u-declan-class",
-      "replaced_runner_id": "dig-in-gribbin-14u-quinn-kasprzak",
-      "entry_type": "courtesy_runner",
-      "source_text": "Courtesy runner Declan Class in for Quinn Kasprzak",
-      "source_pa_id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370-bottom-7-pa-035",
-      "unresolved_trip": true
-    },
-    {
-      "game_id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370",
       "inning": 10,
       "half": "bottom",
       "id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370-entry-003",
@@ -37703,7 +37698,7 @@
       "id": "2026-10-17-1445-dig-in-gribbin-14u-vs-vsa-select-dmv-14u-c1574c07b4-runner-out-001",
       "runner_id": "dig-in-gribbin-14u-andres-tecua",
       "reason": "picked_off",
-      "source_text": "Courtesy runner Andres Tecua in for Dean Simmons, Ball 1, Andres Tecua picked off at 1st, catcher Leo Burton to first baseman Quentin West.",
+      "source_text": "Andres Tecua picked off at 1st, catcher Leo Burton to first baseman Quentin West",
       "source_events": [
         "Runner Out",
         "3 Outs",
@@ -37740,7 +37735,7 @@
       "id": "2026-10-04-0800-dig-in-gribbin-14u-vs-in-the-dirt-royals-14u-d56319c370-runner-out-001",
       "runner_id": "dig-in-gribbin-14u-deven-downs",
       "reason": "caught_stealing",
-      "source_text": "Ball 1, Deven Downs caught stealing 2nd, second baseman.",
+      "source_text": "Deven Downs caught stealing 2nd, second baseman",
       "source_events": [
         "Runner Out",
         "3 Outs",

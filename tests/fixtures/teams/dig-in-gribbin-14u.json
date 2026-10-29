@@ -1,0 +1,1883 @@
+{
+  "schema_version": 1,
+  "team": {
+    "id": "dig-in-gribbin-14u",
+    "name": "Dig In (Gribbin) 14U"
+  },
+  "players": [
+    {
+      "id": "dig-in-gribbin-14u-deven-downs",
+      "name": "Deven Downs",
+      "bats": null
+    },
+    {
+      "id": "dig-in-gribbin-14u-brian-gribbin",
+      "name": "Brian Gribbin",
+      "bats": null
+    },
+    {
+      "id": "dig-in-gribbin-14u-joe-carey",
+      "name": "Joe Carey",
+      "bats": null
+    },
+    {
+      "id": "dig-in-gribbin-14u-andres-tecua",
+      "name": "Andres Tecua",
+      "bats": null
+    },
+    {
+      "id": "dig-in-gribbin-14u-dean-simmons",
+      "name": "Dean Simmons",
+      "bats": null
+    },
+    {
+      "id": "dig-in-gribbin-14u-jack-wieland",
+      "name": "Jack Wieland",
+      "bats": null
+    },
+    {
+      "id": "dig-in-gribbin-14u-ryan-maloney",
+      "name": "Ryan Maloney",
+      "bats": null
+    },
+    {
+      "id": "dig-in-gribbin-14u-quinn-kasprzak",
+      "name": "Quinn Kasprzak",
+      "bats": null
+    },
+    {
+      "id": "dig-in-gribbin-14u-wesley-hurt",
+      "name": "Wesley Hurt",
+      "bats": null
+    },
+    {
+      "id": "dig-in-gribbin-14u-sam-leshner",
+      "name": "Sam Leshner",
+      "bats": null
+    },
+    {
+      "id": "dig-in-gribbin-14u-declan-class",
+      "name": "Declan Class",
+      "bats": null
+    }
+  ],
+  "games": [
+    {
+      "id": "fixture-dig-in-gribbin-14u",
+      "date": "2026-10-25",
+      "start_time": "10:00",
+      "timezone": null,
+      "opponent": "Fixture opponent",
+      "batting_half": "top",
+      "label": "vs. Fixture opponent",
+      "source": "Local GameChanger text converter",
+      "source_url": "https://web.gc.com/teams/6bKEd4zQDNOb/2026-fall-dig-in-gribbin-14u/schedule/bbd7b60b-a503-4abf-8dfe-91e7105aabc5/plays",
+      "source_event_id": "bbd7b60b-a503-4abf-8dfe-91e7105aabc5",
+      "source_capture_coverage": "loaded browser text only; completeness not verified.",
+      "source_control_events": [],
+      "source_scope": "Supplied top innings 1, 2, 3, 4 only; completeness not verified",
+      "source_play_by_play": "Bottom 4th - BBA 14u East\nBen Thorn at bat\nTop 4th - Dig In (Gribbin) 14U\nFly Out\n3 Outs\nStrike 1 looking, Ball 1, Ball 2, In play.\nQuinn Kasprzak flies out to center fielder Ben Thorn.\nStrikeout\n2 Outs\nBall 1, Strike 1 looking, Strike 2 looking, Foul, Strike 3 looking.\nRyan Maloney strikes out looking, Teddy Fleszar pitching.\nGround Out\n1 Out\nStrike 1 looking, Strike 2 swinging, Foul, In play.\nJack Wieland grounds out, pitcher Teddy Fleszar to first baseman Holden Cassady.\nBottom 3rd - BBA 14u East\nStrikeout\n3 Outs\nLineup changed: Liam McDermott in for batter Brady Thomas, Strike 1 swinging, Ball 1, Strike 2 swinging, Ball 2, Foul, Ball 3, Strike 3 swinging.\nLiam McDermott strikes out swinging, Quinn Kasprzak pitching.\nGround Out\n2 Outs\nFoul, Ball 1, In play.\nStuart Cox grounds out, shortstop Declan Class to first baseman Brian Gribbin.\nGround Out\n1 Out\nIn play.\nNicholas Ciliento grounds out, shortstop Declan Class to first baseman Brian Gribbin.\nTop 3rd - Dig In (Gribbin) 14U\nPop Out\n3 Outs\nBall 1, Strike 1 swinging, Foul, Foul, Ball 2, In play.\nDean Simmons pops out to left fielder Teddy Fleszar.\nWalk\nStrike 1 looking, Ball 1, Ball 2, Ball 3, Ball 4.\nAndres Tecua walks, Mateo Maday pitching, Deven Downs remains at 3rd, Brian Gribbin remains at 2nd.\nLine Out\n2 Outs\nBall 1, Strike 1 swinging, In play.\nJoe Carey lines out to second baseman Jack Conway, Deven Downs remains at 3rd, Brian Gribbin remains at 2nd.\nSingle\nDGN( 1 - BB14 11\nBall 1, Deven Downs steals 2nd, Declan Class scores on steal of home, In play.\nBrian Gribbin singles on a fly ball to left fielder Teddy Fleszar, Brian Gribbin advances to 2nd on the throw, Deven Downs advances to 3rd.\nSingle\nStrike 1 looking, Declan Class steals 2nd, Strike 2 looking, Ball 1, Ball 2, In play.\nDeven Downs singles on a line drive to right fielder Nicholas Ciliento, Declan Class advances to 3rd.\nError\nIn play.\nDeclan Class hits a ground ball and reaches on an error by shortstop Ellis Myers.\nGround Out\n1 Out\nFoul, Ball 1, Ball 2, Ball 3, Strike 2 looking, In play.\nSam Leshner grounds out, pitcher Mateo Maday to first baseman Holden Cassady.\nBottom 2nd - BBA 14u East\nLine Out\n3 Outs\nStrike 1 looking, In play.\nEllis Myers lines out to shortstop Declan Class.\nWalk\nDGN( 0 - BB14 11\nStrike 1 looking, Strike 2 swinging, Ball 1, Ball 2, Ball 3, Ball 4.\nJack Conway walks, Quinn Kasprzak pitching, Holden Cassady scores, Theo West advances to 3rd, Andrew Tiedeman advances to 2nd.\nWalk\nDGN( 0 - BB14 10\nBall 1, Ball 2, Foul, Ball 3, Ball 4.\nAndrew Tiedeman walks, Quinn Kasprzak pitching, Jack Jameson scores, Holden Cassady advances to 3rd, Theo West advances to 2nd.\nWalk\nDGN( 0 - BB14 9\nBall 1, Ball 2, Ball 3, Strike 1 looking, Ball 4.\nTheo West walks, Quinn Kasprzak pitching, Teddy Fleszar scores, Jack Jameson advances to 3rd, Holden Cassady advances to 2nd.\nSingle\nDGN( 0 - BB14 8\nFoul, Ball 1, Ball 2, Strike 2 looking, Foul, Ball 3, In play.\nHolden Cassady singles on a ground ball to shortstop Declan Class, Ben Thorn scores, Teddy Fleszar advances to 3rd, Jack Jameson advances to 2nd.\nError\nDGN( 0 - BB14 7\nBall 1, Strike 1 looking, In play.\nJack Jameson hits a ground ball and reaches on an error by third baseman Andres Tecua, Brady Thomas scores, Ben Thorn advances to 3rd, Teddy Fleszar advances to 2nd.\nSingle\nBall 1, In play.\nTeddy Fleszar singles on a hard ground ball to left fielder Jack Wieland, Brady Thomas advances to 3rd, Ben Thorn advances to 2nd.\nSingle\nDGN( 0 - BB14 6\nBall 1, In play.\nBen Thorn singles on a line drive to left fielder Jack Wieland, Nicholas Ciliento scores, Brady Thomas advances to 2nd.\nWalk\nFoul, Ball 1, Ball 2, Foul, Foul, Ball 3, Ball 4.\nBrady Thomas walks, Wesley Hurt pitching, Nicholas Ciliento remains at 2nd.\nGround Out\n2 Outs\nPickoff attempt at 1st, In play.\nStuart Cox grounds out, second baseman Joe Carey to shortstop Declan Class to first baseman Brian Gribbin, Nicholas Ciliento advances to 2nd.\nSingle\nDGN( 0 - BB14 5\nBall 1, Andrew Tiedeman scores on passed ball, Jack Conway advances to 3rd on the same pitch, Ellis Myers advances to 2nd on the same pitch, In play.\nNicholas Ciliento singles on a line drive to center fielder Dean Simmons, Ellis Myers scores, Jack Conway scores.\nWalk\nDGN( 0 - BB14 2\nFoul, Ball 1, Ball 2, Foul, Ball 3, Ball 4.\nEllis Myers walks, Wesley Hurt pitching, Theo West scores, Andrew Tiedeman advances to 3rd, Jack Conway advances to 2nd.\nSingle\nFoul, In play.\nJack Conway singles on a ground ball to shortstop Declan Class, Theo West advances to 3rd, Andrew Tiedeman advances to 2nd.\nSingle\nIn play.\nAndrew Tiedeman singles on a fly ball to center fielder Dean Simmons, Theo West advances to 2nd.\nWalk\nBall 1, Ball 2, Ball 3, Strike 1 looking, Foul, Ball 4.\nTheo West walks, Wesley Hurt pitching.\nGround Out\n1 Out\nFoul, Foul, Foul, Ball 1, Ball 2, Foul, Foul, Ball 3, In play.\nHolden Cassady grounds out, shortstop Declan Class to first baseman Brian Gribbin.\nTop 2nd - Dig In (Gribbin) 14U\nGround Out\n3 Outs\nStrike 1 swinging, In play.\nWesley Hurt grounds out, second baseman Jack Conway to first baseman Holden Cassady.\nGround Out\n2 Outs\nBall 1, Strike 1 looking, Ball 2, Foul, In play.\nQuinn Kasprzak grounds out, pitcher Mateo Maday to first baseman Holden Cassady.\nFly Out\n1 Out\nStrike 1 looking, In play.\nRyan Maloney flies out to center fielder Ben Thorn.\nBottom 1st - BBA 14u East\nDouble Play\n3 Outs\nStrike 1 swinging, Ball 1, In play.\nJack Jameson flies into a double play, right fielder Deven Downs to catcher Ryan Maloney, Teddy Fleszar out at home advancing after tag up.\nTriple\nDGN( 0 - BB14 1\nBall 1, In play.\nTeddy Fleszar triples on a line drive to right fielder Deven Downs, Ben Thorn scores.\nSingle\nIn play.\nBen Thorn singles on a line drive to left fielder Sam Leshner.\nGround Out\n1 Out\nBall 1, Strike 1 looking, Foul, Ball 2, In play.\nBrady Thomas grounds out to first baseman Brian Gribbin.\nTop 1st - Dig In (Gribbin) 14U\nStrikeout\n3 Outs\nStrike 1 looking, Strike 2 swinging, Foul, Foul tip.\nJack Wieland is out on foul tip, Mateo Maday pitching.\nCatcher's Interference\nBall 1, Ball 2, Strike 1 swinging, Ball 3, Ball 4.\nDean Simmons reaches on catcher's interference by Andrew Tiedeman, Joe Carey advances to 3rd, Andres Tecua advances to 2nd.\nSingle\n2 Outs\nStrike 1 looking, Pickoff attempt at 2nd, In play.\nAndres Tecua singles on a line drive, center fielder Ben Thorn to catcher Andrew Tiedeman, Brian Gribbin out advancing to home, Joe Carey advances to 2nd.\nError\nStrike 1 looking, Brian Gribbin steals 2nd, Ball 1, Ball 2, Ball 3, Pickoff attempt at 2nd, In play.\nJoe Carey hits a pop fly and reaches on an error by second baseman Jack Conway, Brian Gribbin held up at 2nd.\nWalk\nBall 1, Ball 2, Strike 1 swinging, Foul, Ball 3, Ball 4.\nBrian Gribbin walks, Mateo Maday pitching.\nDropped 3rd Strike\n1 Out\nBall 1, Strike 1 looking, Foul, Strike 3 swinging.\nDeven Downs out at first on dropped 3rd strike.",
+      "source_sha256": "25e742c88c74e07787465cc6dcc61b12492130d7e69b7c20b9e6b378ad7b4b5a",
+      "source_canonical_sha256": "8f0e51e11a314fd047fa5c7fe1b434358cf2928aa029ab33b871bbe38119886b",
+      "notes": [
+        "No final score, missing innings or unlisted pitches were inferred. Original capture text retained."
+      ]
+    }
+  ],
+  "plate_appearances": [
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 1,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-1-pa-001",
+      "sequence": 1,
+      "batter_id": "dig-in-gribbin-14u-deven-downs",
+      "status": "complete",
+      "result": "dropped_third_strike",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 3
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Deven Downs out at first on dropped 3rd strike.",
+      "source_pitch_sequence": "Ball 1, Strike 1 looking, Foul, Strike 3 swinging.",
+      "source_events": [
+        "Dropped 3rd Strike",
+        "1 Out",
+        "Ball 1, Strike 1 looking, Foul, Strike 3 swinging.",
+        "Deven Downs out at first on dropped 3rd strike."
+      ],
+      "reached_base": false
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 1,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-1-pa-002",
+      "sequence": 2,
+      "batter_id": "dig-in-gribbin-14u-brian-gribbin",
+      "status": "complete",
+      "result": "walk",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 4,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Mateo Maday",
+        "attribution": "explicit"
+      },
+      "source_text": "Brian Gribbin walks, Mateo Maday pitching.",
+      "source_pitch_sequence": "Ball 1, Ball 2, Strike 1 swinging, Foul, Ball 3, Ball 4.",
+      "source_events": [
+        "Walk",
+        "Ball 1, Ball 2, Strike 1 swinging, Foul, Ball 3, Ball 4.",
+        "Brian Gribbin walks, Mateo Maday pitching."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 1,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-1-pa-003",
+      "sequence": 3,
+      "batter_id": "dig-in-gribbin-14u-joe-carey",
+      "status": "complete",
+      "result": "reached_on_error",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "fly_ball",
+        "fielding_position": "2B",
+        "location": {
+          "zone": "second_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Joe Carey hits a pop fly and reaches on an error by second baseman Jack Conway, Brian Gribbin held up at 2nd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Joe Carey hits a pop fly and reaches on an error by second baseman Jack Conway, Brian Gribbin held up at 2nd.",
+      "source_pitch_sequence": "Strike 1 looking, Brian Gribbin steals 2nd, Ball 1, Ball 2, Ball 3, Pickoff attempt at 2nd, In play.",
+      "source_events": [
+        "Error",
+        "Strike 1 looking, Brian Gribbin steals 2nd, Ball 1, Ball 2, Ball 3, Pickoff attempt at 2nd, In play.",
+        "Joe Carey hits a pop fly and reaches on an error by second baseman Jack Conway, Brian Gribbin held up at 2nd."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 1,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-1-pa-004",
+      "sequence": 4,
+      "batter_id": "dig-in-gribbin-14u-andres-tecua",
+      "status": "complete",
+      "result": "single",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "line_drive",
+        "fielding_position": "CF",
+        "location": {
+          "zone": "center_field",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Andres Tecua singles on a line drive, center fielder Ben Thorn to catcher Andrew Tiedeman, Brian Gribbin out advancing to home, Joe Carey advances to 2nd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Andres Tecua singles on a line drive, center fielder Ben Thorn to catcher Andrew Tiedeman, Brian Gribbin out advancing to home, Joe Carey advances to 2nd.",
+      "source_pitch_sequence": "Strike 1 looking, Pickoff attempt at 2nd, In play.",
+      "source_events": [
+        "Single",
+        "2 Outs",
+        "Strike 1 looking, Pickoff attempt at 2nd, In play.",
+        "Andres Tecua singles on a line drive, center fielder Ben Thorn to catcher Andrew Tiedeman, Brian Gribbin out advancing to home, Joe Carey advances to 2nd."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 1,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-1-pa-005",
+      "sequence": 5,
+      "batter_id": "dig-in-gribbin-14u-dean-simmons",
+      "status": "complete",
+      "result": "catchers_interference",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 2,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 4,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Dean Simmons reaches on catcher's interference by Andrew Tiedeman, Joe Carey advances to 3rd, Andres Tecua advances to 2nd.",
+      "source_pitch_sequence": "Ball 1, Ball 2, Strike 1 swinging, Ball 3, Ball 4.",
+      "source_events": [
+        "Catcher's Interference",
+        "Ball 1, Ball 2, Strike 1 swinging, Ball 3, Ball 4.",
+        "Dean Simmons reaches on catcher's interference by Andrew Tiedeman, Joe Carey advances to 3rd, Andres Tecua advances to 2nd."
+      ],
+      "notes": [
+        "Catcher interference ruling conflicts with listed Ball 4; both retained without a walk reclassification."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 1,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-1-pa-006",
+      "sequence": 6,
+      "batter_id": "dig-in-gribbin-14u-jack-wieland",
+      "status": "complete",
+      "result": "strikeout_foul_tip",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "foul_tip",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 3
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Mateo Maday",
+        "attribution": "explicit"
+      },
+      "source_text": "Jack Wieland is out on foul tip, Mateo Maday pitching.",
+      "source_pitch_sequence": "Strike 1 looking, Strike 2 swinging, Foul, Foul tip.",
+      "source_events": [
+        "Strikeout",
+        "3 Outs",
+        "Strike 1 looking, Strike 2 swinging, Foul, Foul tip.",
+        "Jack Wieland is out on foul tip, Mateo Maday pitching."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 2,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-2-pa-007",
+      "sequence": 7,
+      "batter_id": "dig-in-gribbin-14u-ryan-maloney",
+      "status": "complete",
+      "result": "fly_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "fly_ball",
+        "fielding_position": "CF",
+        "location": {
+          "zone": "center_field",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Ryan Maloney flies out to center fielder Ben Thorn."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Ryan Maloney flies out to center fielder Ben Thorn.",
+      "source_pitch_sequence": "Strike 1 looking, In play.",
+      "source_events": [
+        "Fly Out",
+        "1 Out",
+        "Strike 1 looking, In play.",
+        "Ryan Maloney flies out to center fielder Ben Thorn."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 2,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-2-pa-008",
+      "sequence": 8,
+      "batter_id": "dig-in-gribbin-14u-quinn-kasprzak",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "P",
+        "location": {
+          "zone": "pitcher_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Quinn Kasprzak grounds out, pitcher Mateo Maday to first baseman Holden Cassady."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Quinn Kasprzak grounds out, pitcher Mateo Maday to first baseman Holden Cassady.",
+      "source_pitch_sequence": "Ball 1, Strike 1 looking, Ball 2, Foul, In play.",
+      "source_events": [
+        "Ground Out",
+        "2 Outs",
+        "Ball 1, Strike 1 looking, Ball 2, Foul, In play.",
+        "Quinn Kasprzak grounds out, pitcher Mateo Maday to first baseman Holden Cassady."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 2,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-2-pa-009",
+      "sequence": 9,
+      "batter_id": "dig-in-gribbin-14u-wesley-hurt",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "2B",
+        "location": {
+          "zone": "second_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Wesley Hurt grounds out, second baseman Jack Conway to first baseman Holden Cassady."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Wesley Hurt grounds out, second baseman Jack Conway to first baseman Holden Cassady.",
+      "source_pitch_sequence": "Strike 1 swinging, In play.",
+      "source_events": [
+        "Ground Out",
+        "3 Outs",
+        "Strike 1 swinging, In play.",
+        "Wesley Hurt grounds out, second baseman Jack Conway to first baseman Holden Cassady."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 3,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-3-pa-010",
+      "sequence": 10,
+      "batter_id": "dig-in-gribbin-14u-sam-leshner",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "P",
+        "location": {
+          "zone": "pitcher_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Sam Leshner grounds out, pitcher Mateo Maday to first baseman Holden Cassady."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Sam Leshner grounds out, pitcher Mateo Maday to first baseman Holden Cassady.",
+      "source_pitch_sequence": "Foul, Ball 1, Ball 2, Ball 3, Strike 2 looking, In play.",
+      "source_events": [
+        "Ground Out",
+        "1 Out",
+        "Foul, Ball 1, Ball 2, Ball 3, Strike 2 looking, In play.",
+        "Sam Leshner grounds out, pitcher Mateo Maday to first baseman Holden Cassady."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 3,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-3-pa-011",
+      "sequence": 11,
+      "batter_id": "dig-in-gribbin-14u-declan-class",
+      "status": "complete",
+      "result": "reached_on_error",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "SS",
+        "location": {
+          "zone": "shortstop_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Declan Class hits a ground ball and reaches on an error by shortstop Ellis Myers."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Declan Class hits a ground ball and reaches on an error by shortstop Ellis Myers.",
+      "source_pitch_sequence": "In play.",
+      "source_events": [
+        "Error",
+        "In play.",
+        "Declan Class hits a ground ball and reaches on an error by shortstop Ellis Myers."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 3,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-3-pa-012",
+      "sequence": 12,
+      "batter_id": "dig-in-gribbin-14u-deven-downs",
+      "status": "complete",
+      "result": "single",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "line_drive",
+        "fielding_position": "RF",
+        "location": {
+          "zone": "right_field",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Deven Downs singles on a line drive to right fielder Nicholas Ciliento, Declan Class advances to 3rd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Deven Downs singles on a line drive to right fielder Nicholas Ciliento, Declan Class advances to 3rd.",
+      "source_pitch_sequence": "Strike 1 looking, Declan Class steals 2nd, Strike 2 looking, Ball 1, Ball 2, In play.",
+      "source_events": [
+        "Single",
+        "Strike 1 looking, Declan Class steals 2nd, Strike 2 looking, Ball 1, Ball 2, In play.",
+        "Deven Downs singles on a line drive to right fielder Nicholas Ciliento, Declan Class advances to 3rd."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 3,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-3-pa-013",
+      "sequence": 13,
+      "batter_id": "dig-in-gribbin-14u-brian-gribbin",
+      "status": "complete",
+      "result": "single",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "fly_ball",
+        "fielding_position": "LF",
+        "location": {
+          "zone": "left_field",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Brian Gribbin singles on a fly ball to left fielder Teddy Fleszar, Brian Gribbin advances to 2nd on the throw, Deven Downs advances to 3rd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Brian Gribbin singles on a fly ball to left fielder Teddy Fleszar, Brian Gribbin advances to 2nd on the throw, Deven Downs advances to 3rd.",
+      "source_pitch_sequence": "Ball 1, Deven Downs steals 2nd, Declan Class scores on steal of home, In play.",
+      "source_events": [
+        "Single",
+        "DGN( 1 - BB14 11",
+        "Ball 1, Deven Downs steals 2nd, Declan Class scores on steal of home, In play.",
+        "Brian Gribbin singles on a fly ball to left fielder Teddy Fleszar, Brian Gribbin advances to 2nd on the throw, Deven Downs advances to 3rd."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 3,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-3-pa-014",
+      "sequence": 14,
+      "batter_id": "dig-in-gribbin-14u-joe-carey",
+      "status": "complete",
+      "result": "line_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "line_drive",
+        "fielding_position": "2B",
+        "location": {
+          "zone": "second_base_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Joe Carey lines out to second baseman Jack Conway, Deven Downs remains at 3rd, Brian Gribbin remains at 2nd."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Joe Carey lines out to second baseman Jack Conway, Deven Downs remains at 3rd, Brian Gribbin remains at 2nd.",
+      "source_pitch_sequence": "Ball 1, Strike 1 swinging, In play.",
+      "source_events": [
+        "Line Out",
+        "2 Outs",
+        "Ball 1, Strike 1 swinging, In play.",
+        "Joe Carey lines out to second baseman Jack Conway, Deven Downs remains at 3rd, Brian Gribbin remains at 2nd."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 3,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-3-pa-015",
+      "sequence": 15,
+      "batter_id": "dig-in-gribbin-14u-andres-tecua",
+      "status": "complete",
+      "result": "walk",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 3,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 4,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Mateo Maday",
+        "attribution": "explicit"
+      },
+      "source_text": "Andres Tecua walks, Mateo Maday pitching, Deven Downs remains at 3rd, Brian Gribbin remains at 2nd.",
+      "source_pitch_sequence": "Strike 1 looking, Ball 1, Ball 2, Ball 3, Ball 4.",
+      "source_events": [
+        "Walk",
+        "Strike 1 looking, Ball 1, Ball 2, Ball 3, Ball 4.",
+        "Andres Tecua walks, Mateo Maday pitching, Deven Downs remains at 3rd, Brian Gribbin remains at 2nd."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 3,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-3-pa-016",
+      "sequence": 16,
+      "batter_id": "dig-in-gribbin-14u-dean-simmons",
+      "status": "complete",
+      "result": "pop_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 6,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "fly_ball",
+        "fielding_position": "LF",
+        "location": {
+          "zone": "left_field",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Dean Simmons pops out to left fielder Teddy Fleszar."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Dean Simmons pops out to left fielder Teddy Fleszar.",
+      "source_pitch_sequence": "Ball 1, Strike 1 swinging, Foul, Foul, Ball 2, In play.",
+      "source_events": [
+        "Pop Out",
+        "3 Outs",
+        "Ball 1, Strike 1 swinging, Foul, Foul, Ball 2, In play.",
+        "Dean Simmons pops out to left fielder Teddy Fleszar."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 4,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-4-pa-017",
+      "sequence": 17,
+      "batter_id": "dig-in-gribbin-14u-jack-wieland",
+      "status": "complete",
+      "result": "ground_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "swinging_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "ground_ball",
+        "fielding_position": "P",
+        "location": {
+          "zone": "pitcher_area",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Jack Wieland grounds out, pitcher Teddy Fleszar to first baseman Holden Cassady."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Jack Wieland grounds out, pitcher Teddy Fleszar to first baseman Holden Cassady.",
+      "source_pitch_sequence": "Strike 1 looking, Strike 2 swinging, Foul, In play.",
+      "source_events": [
+        "Ground Out",
+        "1 Out",
+        "Strike 1 looking, Strike 2 swinging, Foul, In play.",
+        "Jack Wieland grounds out, pitcher Teddy Fleszar to first baseman Holden Cassady."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 4,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-4-pa-018",
+      "sequence": 18,
+      "batter_id": "dig-in-gribbin-14u-ryan-maloney",
+      "status": "complete",
+      "result": "strikeout_looking",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "foul",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 5,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 1,
+            "strikes": 2
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 3
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": null,
+      "pitcher": {
+        "name": "Teddy Fleszar",
+        "attribution": "explicit"
+      },
+      "source_text": "Ryan Maloney strikes out looking, Teddy Fleszar pitching.",
+      "source_pitch_sequence": "Ball 1, Strike 1 looking, Strike 2 looking, Foul, Strike 3 looking.",
+      "source_events": [
+        "Strikeout",
+        "2 Outs",
+        "Ball 1, Strike 1 looking, Strike 2 looking, Foul, Strike 3 looking.",
+        "Ryan Maloney strikes out looking, Teddy Fleszar pitching."
+      ]
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 4,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-top-4-pa-019",
+      "sequence": 19,
+      "batter_id": "dig-in-gribbin-14u-quinn-kasprzak",
+      "status": "complete",
+      "result": "fly_out",
+      "pitches": [
+        {
+          "sequence": 1,
+          "outcome": "called_strike",
+          "count_before": {
+            "balls": 0,
+            "strikes": 0
+          },
+          "count_after": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 2,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 0,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 3,
+          "outcome": "ball",
+          "count_before": {
+            "balls": 1,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        },
+        {
+          "sequence": 4,
+          "outcome": "in_play",
+          "count_before": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "count_after": {
+            "balls": 2,
+            "strikes": 1
+          },
+          "pitch_type": null,
+          "velocity_mph": null,
+          "location": null
+        }
+      ],
+      "batted_ball": {
+        "contact_type": "fly_ball",
+        "fielding_position": "CF",
+        "location": {
+          "zone": "center_field",
+          "precision": "fielder_zone",
+          "direction": null,
+          "depth": null
+        },
+        "source_text": "Quinn Kasprzak flies out to center fielder Ben Thorn."
+      },
+      "pitcher": {
+        "name": null,
+        "attribution": "unknown"
+      },
+      "source_text": "Quinn Kasprzak flies out to center fielder Ben Thorn.",
+      "source_pitch_sequence": "Strike 1 looking, Ball 1, Ball 2, In play.",
+      "source_events": [
+        "Fly Out",
+        "3 Outs",
+        "Strike 1 looking, Ball 1, Ball 2, In play.",
+        "Quinn Kasprzak flies out to center fielder Ben Thorn."
+      ]
+    }
+  ],
+  "baserunning_events": [
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 1,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-attempt-001",
+      "runner_id": "dig-in-gribbin-14u-brian-gribbin",
+      "result": "stolen_base",
+      "to_base": "2B",
+      "source_text": "Brian Gribbin steals 2nd",
+      "source_pa_id": "fixture-dig-in-gribbin-14u-top-1-pa-003",
+      "reach_pa_id": "fixture-dig-in-gribbin-14u-top-1-pa-002"
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 3,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-attempt-002",
+      "runner_id": "dig-in-gribbin-14u-declan-class",
+      "result": "stolen_base",
+      "to_base": "2B",
+      "source_text": "Declan Class steals 2nd",
+      "source_pa_id": "fixture-dig-in-gribbin-14u-top-3-pa-012",
+      "reach_pa_id": "fixture-dig-in-gribbin-14u-top-3-pa-011"
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 3,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-attempt-003",
+      "runner_id": "dig-in-gribbin-14u-deven-downs",
+      "result": "stolen_base",
+      "to_base": "2B",
+      "source_text": "Deven Downs steals 2nd",
+      "source_pa_id": "fixture-dig-in-gribbin-14u-top-3-pa-013",
+      "reach_pa_id": "fixture-dig-in-gribbin-14u-top-3-pa-012"
+    },
+    {
+      "game_id": "fixture-dig-in-gribbin-14u",
+      "inning": 3,
+      "half": "top",
+      "id": "fixture-dig-in-gribbin-14u-attempt-004",
+      "runner_id": "dig-in-gribbin-14u-declan-class",
+      "result": "stolen_base",
+      "to_base": "home",
+      "source_text": "Declan Class scores on steal of home",
+      "source_pa_id": "fixture-dig-in-gribbin-14u-top-3-pa-013",
+      "reach_pa_id": "fixture-dig-in-gribbin-14u-top-3-pa-011"
+    }
+  ],
+  "baserunning_entries": []
+}

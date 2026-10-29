@@ -1,0 +1,278 @@
+Use TEAM-DATA-PROMPT.md to add this game
+Import: both teams (default)
+Date: 2026-09-20
+Start time: 17:00
+Timezone: ET
+Source: https://web.gc.com/teams/j3xAFR5V91CE/2026-fall-rawlings-tigers-nova---black-14u/schedule/c3763f68-e3d7-4520-99d6-eb1e8bf6b6e8/plays
+Capture coverage: loaded browser text only; completeness not verified.
+
+PLAY-BY-PLAY
+Top 8th - Arlington United 14U Regional
+Nathan Brunk at bat
+Bottom 7th - Rawlings Tigers NOVA - Black 14U
+Ground Out
+3 Outs
+Strike 1 looking, Ball 1, In play.
+Hainsley Guerrero grounds out to shortstop.
+Fly Out
+2 Outs
+In play.
+Gabriel Amaya flies out to left fielder.
+Ground Out
+1 Out
+Strike 1 looking, Ball 1, In play.
+Henry Bambling grounds out to third baseman.
+Top 7th - Arlington United 14U Regional
+Fly Out
+3 Outs
+In play.
+Northe Johnson flies out to shortstop Alex Medrano.
+Walk
+Strike 1 looking, Strike 2 looking, Ball 1, Foul, Ball 2, Callum McLaren steals 3rd, Johnathan Laver steals 2nd, Foul, Ball 3, Ball 4.
+Tyler Sullivan walks, Maximillian Helchinger pitching, Callum McLaren remains at 3rd, Johnathan Laver remains at 2nd.
+Fly Out
+2 Outs
+In play.
+Adam Aldis flies out in foul territory to third baseman Gabriel Amaya, Callum McLaren remains at 2nd, Johnathan Laver remains at 1st.
+Error
+ARLN 5 - RWLN 3
+In play.
+Johnathan Laver hits a ground ball and reaches on an error by shortstop Alex Medrano, Ethan Morse scores, Callum McLaren advances to 2nd.
+Single
+In play.
+Callum McLaren singles on a ground ball to shortstop Alex Medrano, Ethan Morse advances to 3rd.
+Strikeout
+1 Out
+Ball 1, Ball 2, Ethan Morse steals 2nd, Strike 1 looking, Foul, Foul, Strike 3 looking.
+Austin Qiang strikes out looking, Maximillian Helchinger pitching, Ethan Morse remains at 2nd.
+Walk
+Ball 1, Ball 2, Strike 1 looking, Foul, Ball 3, Ball 4.
+Ethan Morse walks, Maximillian Helchinger pitching.
+Bottom 6th - Rawlings Tigers NOVA - Black 14U
+Fly Out
+3 Outs
+Ball 1, Ball 2, Ball 3, Strike 1 looking, In play.
+Aiden Kim flies out to center fielder.
+Walk
+Ball 1, Ball 2, Ball 3, Strike 1 looking, Foul, Ball 4.
+Alex Medrano walks, Austin Qiang pitching, Niko Branch advances to 3rd, Isaiah Laborce advances to 2nd.
+Infield Fly
+2 Outs
+Strike 1 looking, Ball 1, Ball 2, In play.
+Maximillian Helchinger out on infield fly to shortstop, Niko Branch remains at 2nd, Isaiah Laborce remains at 1st.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Isaiah Laborce walks, Austin Qiang pitching, Niko Branch remains at 2nd.
+Ground Out
+1 Out
+Ball 1, Strike 1 swinging, Strike 2 looking, Foul, In play.
+Miles Warren grounds out to second baseman, Niko Branch advances to 2nd.
+Single
+Strike 1 looking, Strike 2 swinging, Ball 1, Ball 2, Foul, Ball 3, In play.
+Niko Branch singles on a line drive to right fielder.
+Top 6th - Arlington United 14U Regional
+Strikeout
+3 Outs
+Ball 1, Strike 1 looking, Jackson Sieverding steals 2nd, Ball 2, Strike 2 looking, Strike 3 looking.
+strikes out looking, Maximillian Helchinger pitching.
+Walk
+Ball 1, Nathan Brunk steals 2nd, Ball 2, Strike 1 looking, Nathan Brunk steals 3rd, Ball 3, Ball 4.
+Jackson Sieverding walks, Maximillian Helchinger pitching, Nathan Brunk remains at 3rd.
+Single
+ARLN 4 - RWLN 3
+Foul, Ball 1, Tyler Sullivan steals 3rd, Foul, Foul, In play.
+Nathan Brunk singles on a ground ball to right fielder Connor Taylor, Tyler Sullivan scores.
+Fly Out
+2 Outs
+Ball 1, Ball 2, Tyler Sullivan advances to 2nd on wild pitch, Strike 1 swinging, Strike 2 looking, Foul, In play.
+Northe Johnson flies out to pitcher Maximillian Helchinger, Tyler Sullivan remains at 2nd.
+Error
+Ball 1, Ball 2, Ball 3, Strike 1 looking, In play.
+Tyler Sullivan hits a ground ball and reaches on an error by shortstop Alex Medrano.
+Fly Out
+1 Out
+Ball 1, In play.
+Adam Aldis flies out to left fielder Niko Branch.
+Bottom 5th - Rawlings Tigers NOVA - Black 14U
+Fly Out
+3 Outs
+In play.
+Connor Taylor flies out to second baseman.
+Single
+ARLN 3 - RWLN 3
+Ball 1, Hainsley Guerrero advances to 3rd on passed ball, Strike 1 looking, Strike 2 swinging, In play.
+Parker Scisciani singles on a fly ball to center fielder, Hainsley Guerrero scores.
+Fly Out
+2 Outs
+Foul, Ball 1, Hainsley Guerrero steals 2nd, Ball 2, Ball 3, In play.
+Tyler Davidson flies out to left fielder, Hainsley Guerrero remains at 2nd.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Hainsley Guerrero walks, pitching.
+Strikeout
+1 Out
+Ball 1, Strike 1 swinging, Foul, Foul, Ball 2, Strike 3 swinging.
+Gabriel Amaya strikes out swinging, pitching.
+Top 5th - Arlington United 14U Regional
+Ground Out
+3 Outs
+Foul, Ball 1, Strike 2 swinging, In play.
+Johnathan Laver grounds out to third baseman Gabriel Amaya.
+Fly Out
+2 Outs
+Strike 1 looking, Strike 2 swinging, Foul, In play.
+Callum McLaren flies out to right fielder Tyler Davidson.
+Fly Out
+1 Out
+In play.
+Austin Qiang flies out to first baseman Henry Bambling.
+Bottom 4th - Rawlings Tigers NOVA - Black 14U
+Fly Out
+3 Outs
+Strike 1 swinging, In play.
+Henry Bambling flies out in foul territory to first baseman.
+Ground Out
+2 Outs
+Ball 1, Alex Medrano advances to 2nd on wild pitch, In play.
+Aiden Kim grounds out to shortstop, Alex Medrano advances to 3rd.
+Hit By Pitch
+Strike 1 looking, Ball 1.
+Alex Medrano is hit by pitch, pitching.
+Ground Out
+1 Out
+In play.
+Maximillian Helchinger grounds out to second baseman.
+Top 4th - Arlington United 14U Regional
+Strikeout
+3 Outs
+Ball 1, steals 2nd, Ball 2, Ball 3, Strike 1 looking, Strike 2 looking, Strike 3 looking.
+Ethan Morse strikes out looking, Maximillian Helchinger pitching.
+Hit By Pitch
+Ball 1, Strike 1 looking, Ball 2.
+is hit by pitch, Maximillian Helchinger pitching.
+Fly Out
+2 Outs
+Ball 1, Strike 1 looking, Ball 2, In play.
+Jackson Sieverding flies out to center fielder Isaiah Laborce.
+Ground Out
+ARLN 3 - RWLN 2 | 1 Out
+Ball 1, Northe Johnson advances to 2nd on wild pitch, Ball 2, Northe Johnson advances to 3rd on wild pitch, Strike 1 looking, In play.
+Nathan Brunk grounds out to shortstop Hainsley Guerrero, Northe Johnson scores.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Northe Johnson walks, Maximillian Helchinger pitching.
+Bottom 3rd - Rawlings Tigers NOVA - Black 14U
+Strikeout
+ARLN 2 - RWLN 2 | 3 Outs
+Ball 1, Tyler Davidson scores on passed ball, Connor Taylor advances to 3rd on the same pitch, Miles Warren advances to 2nd on the same pitch, Ball 2, Strike 1 looking, Strike 2 swinging, Ball 3, Foul, Strike 3 swinging.
+Isaiah Laborce strikes out swinging, pitching.
+Walk
+Strike 1 swinging, Ball 1, Ball 2, Ball 3, Ball 4.
+Miles Warren walks, pitching, Tyler Davidson remains at 3rd, Connor Taylor remains at 2nd.
+Ground Out
+2 Outs
+In play.
+Niko Branch grounds out to first baseman, Tyler Davidson advances to 3rd, Connor Taylor advances to 2nd.
+Error
+In play.
+Connor Taylor hits a ground ball and reaches on an error by shortstop, Tyler Davidson advances to 2nd.
+Fly Out
+1 Out
+In play.
+Parker Scisciani flies out to first baseman, Tyler Davidson remains at 1st.
+Single
+Strike 1 looking, Ball 1, In play.
+Tyler Davidson singles on a ground ball to center fielder.
+Top 3rd - Arlington United 14U Regional
+Ground Out
+3 Outs
+Austin Qiang steals 3rd, Ball 1, Callum McLaren steals 2nd, Foul, Foul, In play.
+Tyler Sullivan grounds out to pitcher Hainsley Guerrero.
+Strikeout
+2 Outs
+Foul, Strike 2 looking, Foul, Strike 3 swinging.
+Adam Aldis strikes out swinging, Hainsley Guerrero pitching, Austin Qiang remains at 2nd, Callum McLaren remains at 1st.
+Strikeout
+1 Out
+Strike 1 looking, Strike 2 looking, Foul, Strike 3 swinging.
+Johnathan Laver strikes out swinging, Hainsley Guerrero pitching, Austin Qiang remains at 2nd, Callum McLaren remains at 1st.
+Walk
+Ball 1, Ball 2, Ball 3, Austin Qiang steals 2nd, Ball 4.
+Callum McLaren walks, Hainsley Guerrero pitching, Austin Qiang remains at 2nd.
+Single
+Foul, Foul, Ball 1, In play.
+Austin Qiang singles on a line drive to left fielder Niko Branch.
+Bottom 2nd - Rawlings Tigers NOVA - Black 14U
+Runner Out
+3 Outs
+Ball 1, Hainsley Guerrero caught stealing 2nd, pitcher .
+Half-inning ended by out on the base paths.
+Single
+Strike 1 looking, Ball 1, Ball 2, In play.
+Hainsley Guerrero singles on a fly ball to left fielder.
+Ground Out
+2 Outs
+In play.
+Gabriel Amaya grounds out to shortstop.
+Fly Out
+ARLN 2 - RWLN 1 | 1 Out
+Courtesy runner Alex Medrano in for Aiden Kim, Ball 1, Alex Medrano scores on passed ball, Strike 1 looking, In play.
+Henry Bambling flies out to left fielder.
+Triple
+Strike 1 looking, In play.
+Aiden Kim triples on a fly ball to left fielder.
+Top 2nd - Arlington United 14U Regional
+Fly Out
+3 Outs
+Ball 1, In play.
+Ethan Morse flies out to right fielder Tyler Davidson.
+Fielder's Choice
+2 Outs
+Ball 1, In play.
+grounds into fielder's choice to shortstop Parker Scisciani, Jackson Sieverding out advancing to 2nd.
+Single
+ARLN 2 - RWLN 0
+Ball 1, Nathan Brunk steals 2nd, In play.
+Jackson Sieverding singles on a ground ball to center fielder Isaiah Laborce, Nathan Brunk scores, Tyler Sullivan scores.
+Single
+In play.
+Nathan Brunk singles on a ground ball to right fielder Tyler Davidson, Tyler Sullivan advances to 3rd.
+Strikeout
+1 Out
+Foul, Strike 2 looking, Tyler Sullivan steals 2nd, Ball 1, Strike 3 swinging.
+Northe Johnson strikes out swinging, Hainsley Guerrero pitching, Tyler Sullivan remains at 2nd.
+Walk
+Strike 1 looking, Ball 1, Ball 2, Ball 3, Ball 4.
+Tyler Sullivan walks, Hainsley Guerrero pitching.
+Bottom 1st - Rawlings Tigers NOVA - Black 14U
+Dropped 3rd Strike
+3 Outs
+Ball 1, Strike 1 looking, Foul, Strike 3 swinging.
+Alex Medrano out at first on dropped 3rd strike.
+Line Out
+2 Outs
+Foul, Ball 1, Ball 2, Foul, Foul, Ball 3, In play.
+Maximillian Helchinger lines out to shortstop.
+Strikeout
+1 Out
+Strike 1 looking, Strike 2 swinging, Strike 3 swinging.
+Isaiah Laborce strikes out swinging, pitching.
+Top 1st - Arlington United 14U Regional
+Strikeout
+3 Outs
+Strike 1 swinging, Johnathan Laver steals 2nd, Ball 1, Foul, Strike 3 looking.
+Adam Aldis strikes out looking, Hainsley Guerrero pitching.
+Fielder's Choice
+2 Outs
+Ball 1, Foul, Ball 2, In play.
+Johnathan Laver grounds into fielder's choice to shortstop Parker Scisciani, Austin Qiang out advancing to 2nd, Ethan Morse advances to 3rd.
+Fly Out
+1 Out
+Strike 1 swinging, In play.
+Callum McLaren flies out to left fielder Niko Branch, Ethan Morse remains at 2nd, Austin Qiang remains at 1st.
+Walk
+Ball 1, Ball 2, Strike 1 looking, Ethan Morse steals 2nd, Ball 3, Ball 4.
+Austin Qiang walks, Hainsley Guerrero pitching, Ethan Morse remains at 2nd.
+Single
+Foul, Ball 1, Ball 2, In play.
+Ethan Morse singles on a fly ball to center fielder Maximillian Helchinger.

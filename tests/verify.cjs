@@ -24,7 +24,7 @@ for(const palette of [light]){
 assert.equal(new Set(fieldNatural).size,5,'Keep all five heat bands distinct');
 for(const palette of [light])assert(contrast(palette['map-label-text'],palette['map-label-bg'])>=7,'Map label colors must contrast');
 for(const band of heatBands)assert(html.includes('background:var(--heat-'+band+')'),'Legend must share the map scale: '+band);
-const repositoryHistory=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/shockers-four-games.json'))),manifest=JSON.parse(fs.readFileSync(path.join(root,'teams.json')));
+const repositoryHistory=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/shockers-four-games.json'))),manifest=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/teams.json')));
 const september12='2026-09-12-0830-shockers-vs-stars-camarata';
 const history={...repositoryHistory,games:repositoryHistory.games.filter(g=>g.id!==september12),plate_appearances:repositoryHistory.plate_appearances.filter(p=>p.game_id!==september12),baserunning_events:repositoryHistory.baserunning_events.filter(e=>e.game_id!==september12),baserunning_entries:repositoryHistory.baserunning_entries.filter(e=>e.game_id!==september12),runner_outs:[]};
 const originalPAs=history.plate_appearances.filter(p=>p.game_id==='supplied-game-001');
@@ -32,9 +32,9 @@ const originalPlayers=new Set(originalPAs.map(p=>p.batter_id));
 const data={...history,baserunning_events:[],baserunning_entries:[],runner_outs:[],games:history.games.filter(g=>g.id==='supplied-game-001'),players:history.players.filter(p=>originalPlayers.has(p.id)),plate_appearances:originalPAs};
 D.validateData(history);
 // Every manifest entry resolves to a validated, separate team file.
-for(const entry of manifest.teams){const teamData=JSON.parse(fs.readFileSync(path.join(root,entry.data_file)));D.validateData(teamData);assert.equal(teamData.team.id,entry.id);}
+for(const entry of manifest.teams){const teamData=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/teams',path.basename(entry.data_file))));D.validateData(teamData);assert.equal(teamData.team.id,entry.id);}
 const gambrillsEntry=manifest.teams.find(t=>t.id==='gambrills-athletic-club-14u');assert(gambrillsEntry);assert.equal(manifest.teams[0].id,'shockers-14u');
-const gambrills=JSON.parse(fs.readFileSync(path.join(root,gambrillsEntry.data_file))),gambrillsGame=gambrills.games[0],gambrillsPAs=gambrills.plate_appearances;
+const gambrills=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/teams',path.basename(gambrillsEntry.data_file)))),gambrillsGame=gambrills.games[0],gambrillsPAs=gambrills.plate_appearances;
 assert.equal(gambrills.games.length,1);assert.equal(gambrills.players.length,11);assert.equal(gambrillsGame.date,'2026-08-30');assert.equal(gambrillsGame.start_time,'10:00');assert.equal(gambrillsGame.timezone,null);assert.equal(gambrillsGame.batting_half,'top');assert.equal(gambrillsGame.opponent,'Shockers 14U');
 assert.equal(gambrillsPAs.length,27);assert(gambrillsPAs.every(p=>p.status==='complete'&&p.half==='top'));assert.equal(D.pitchSummary(gambrillsPAs).n,81);assert.equal(D.summarize(gambrillsPAs).n,21);assert.equal(D.summarize(gambrillsPAs).hits,9);assert.equal(D.foulSummary(gambrillsPAs).n,0);
 assert.deepEqual([1,2,3,4,5].map(i=>gambrillsPAs.filter(p=>p.inning===i).reduce((n,p)=>n+p.pitches.length,0)),[21,11,12,11,26]);
@@ -53,7 +53,7 @@ const gambrillsDP=gambrillsPAs.find(p=>p.result==='double_play');assert.match(ga
 const gambrillsRunning=D.baserunningSummary(gambrills,{batter:'all',game:'all'});assert.equal(gambrillsRunning.attempts,2);assert.equal(gambrillsRunning.stolen,2);assert.equal(gambrillsRunning.onBase,15);assert.equal(gambrillsRunning.attemptsPerGame,2);
 for(const event of gambrillsRunning.events){const pa=gambrillsPAs.find(p=>p.id===event.source_pa_id);assert(pa.source_pitch_sequence.includes(event.source_text));assert.notEqual(pa.batter_id,event.runner_id);assert.equal(event.to_base,'2B');}
 // Both teams in the September 12 source remain separate, with original regressions above/below.
-const stars=JSON.parse(fs.readFileSync(path.join(root,'data/stars-camarata-14u.json'))),starsGame=stars.games[0];
+const stars=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/teams/stars-camarata-14u.json'))),starsGame=stars.games[0];
 const sep12Game=repositoryHistory.games.find(g=>g.id===september12),sep12=D.filter(repositoryHistory,{batter:'all',game:september12});
 D.validateData(repositoryHistory);D.validateData(stars);
 assert.equal(sep12Game.date,'2026-09-12');assert.equal(sep12Game.start_time,'08:30');assert.equal(sep12Game.timezone,null);assert.equal(D.gameWhen(sep12Game),'2026-09-12 · 8:30 AM');
@@ -94,7 +94,7 @@ const runnerOnlyOut={...stars,plate_appearances:[],baserunning_events:[],baserun
 // October 25 loaded-text capture: preserve raw NBSPs, uncommon results and both teams.
 // Target the original named game, so later imports do not alter its independent expectations.
 function october25History(file){
- const full=JSON.parse(fs.readFileSync(path.join(root,file))),game=full.games.find(g=>g.source_event_id==='bbd7b60b-a503-4abf-8dfe-91e7105aabc5');assert(game,'October 25 source game must remain available');
+ const full=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/teams',path.basename(file)))),game=full.games.find(g=>g.source_event_id==='bbd7b60b-a503-4abf-8dfe-91e7105aabc5');assert(game,'October 25 source game must remain available');
  const scoped={...full,games:[game]};for(const key of ['plate_appearances','baserunning_events','baserunning_entries','runner_outs'])scoped[key]=(full[key]||[]).filter(record=>record.game_id===game.id);
  const ids=new Set(scoped.plate_appearances.map(p=>p.batter_id));for(const record of [...scoped.baserunning_events,...scoped.baserunning_entries,...scoped.runner_outs]){ids.add(record.runner_id);if(record.replaced_runner_id)ids.add(record.replaced_runner_id);}scoped.players=full.players.filter(p=>ids.has(p.id));return scoped;
 }
@@ -401,7 +401,11 @@ for(const mutate of [pa=>{pa.batted_ball=blake.batted_ball},pa=>{pa.foul_contact
  const invalid=JSON.parse(JSON.stringify(withFouls));mutate(invalid.plate_appearances.at(-1));assert.throws(()=>D.validateData(invalid),/foul/i);
 }
 // Every listed history file must exist, validate, and match the manifest identity.
-for(const team of manifest.teams){const d=JSON.parse(fs.readFileSync(path.join(root,team.data_file)));D.validateData(d);assert.equal(d.team.id,team.id);}
+for(const team of manifest.teams){const d=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/teams',path.basename(team.data_file))));D.validateData(d);assert.equal(d.team.id,team.id);}
 for(const player of data.players){const pas=D.filter(data,{batter:player.id,game:'all'});for(const compact of [false,true]){const svg=D.fieldSvg(pas,{compact});assert(!/NaN|Infinity|undefined/.test(svg));assert.match(svg,/role="img"/);}}
 console.log('PASS: source totals, contact counting, pitch denominators, empty states, filtering, multi-game history, detailed zones, unknown data, validation and escaping.');
 console.log(JSON.stringify({plateAppearances:26,fairContact:total.n,hits:total.hits,pitches:pitch.n,firstPitchSwings:pitch.firstSwings,knownFirstPitches:pitch.knownFirst,swings:pitch.swings,whiffs:pitch.whiffs,pitchOutcomes:pitch.outcomes},null,2));
+
+// The real manifest is independent of historical fixtures: only validate teams the user retains.
+const runtimeManifest=JSON.parse(fs.readFileSync(path.join(root,'teams.json')));D.validateManifest(runtimeManifest);
+for(const entry of runtimeManifest.teams){const current=JSON.parse(fs.readFileSync(path.join(root,entry.data_file)));D.validateData(current);assert.equal(current.team.id,entry.id);}

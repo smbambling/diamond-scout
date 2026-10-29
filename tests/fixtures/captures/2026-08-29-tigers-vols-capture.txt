@@ -1,0 +1,219 @@
+Use TEAM-DATA-PROMPT.md to add this game
+Import: both teams (default)
+Date: 2026-08-29
+Start time: 10:15
+Timezone: ET
+Source: https://web.gc.com/teams/j3xAFR5V91CE/2026-fall-rawlings-tigers-nova---black-14u/schedule/ac35a304-c133-4b4d-83fb-f15c8fab4984/plays
+Capture coverage: loaded browser text only; completeness not verified.
+
+PLAY-BY-PLAY
+Bottom 4th - Virginia Vols Nelson 14U
+Liam Clark at bat
+Ball 1, Ball 2.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Cutler Johnson walks, Isaiah Laborce pitching, AJ Williams advances to 2nd.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+AJ Williams walks, Isaiah Laborce pitching.
+Strikeout
+1 Out
+Strike 1 looking, Strike 2 looking, Foul tip.
+Jameson Bridge is out on foul tip, Isaiah Laborce pitching.
+Top 4th - Rawlings Tigers NOVA - Black 14U
+Strikeout
+3 Outs
+Foul, Ball 1, Isaiah Laborce steals 2nd, Strike 2 swinging, Ball 2, Isaiah Laborce advances to 3rd on passed ball, Strike 3 swinging.
+Maximillian Helchinger strikes out swinging, Carlos Herrera pitching.
+Hit By Pitch
+Ball 1, Strike 1 looking, Strike 2 swinging, Ball 2, Ball 3, Ball 4.
+Isaiah Laborce is hit by pitch, Carlos Herrera pitching.
+Strikeout
+2 Outs
+Ball 1, Ball 2, Strike 1 swinging, Strike 2 swinging, Strike 3 looking.
+Miles Warren strikes out looking, Carlos Herrera pitching.
+Ground Out
+1 Out
+Ball 1, Foul, Ball 2, Strike 2 looking, In play.
+Connor Taylor grounds out to pitcher Carlos Herrera.
+Bottom 3rd - Virginia Vols Nelson 14U
+Fly Out
+3 Outs
+Ball 1, Ball 2, Ball 3, Strike 1 looking, Strike 2 looking, In play.
+Carlos Herrera flies out to catcher Aiden Kim.
+Walk
+RWLN 8 - VRGN 12
+Ball 1, Strike 1 looking, Ball 2, Ball 3, Strike 2 looking, Foul, Ball 4.
+Parker Ferguson walks, Henry Bambling pitching, Grey Merritt scores, Christopher Fuchs advances to 3rd, Bristow Huffstetler advances to 2nd.
+Single
+RWLN 8 - VRGN 11
+Ball 1, Ball 2, In play.
+Bristow Huffstetler singles on a ground ball to pitcher Henry Bambling, Tyler Reid scores, Grey Merritt advances to 3rd, Christopher Fuchs advances to 2nd.
+Single
+RWLN 8 - VRGN 10
+Strike 1 swinging, In play.
+Christopher Fuchs singles on a ground ball to shortstop Parker Scisciani, Cannen Waagner scores, Tyler Reid advances to 3rd, Grey Merritt advances to 2nd.
+Single
+RWLN 8 - VRGN 9
+Ball 1, Foul, Ball 2, Ball 3, In play.
+Grey Merritt singles on a ground ball to center fielder Maximillian Helchinger, Liam Clark scores, Cannen Waagner advances to 3rd, Tyler Reid advances to 2nd.
+Strikeout
+2 Outs
+Strike 1 looking, Ball 1, Strike 2 swinging, Strike 3 swinging.
+Will Reilly strikes out swinging, Henry Bambling pitching, Liam Clark remains at 3rd, Cannen Waagner remains at 2nd, Tyler Reid remains at 1st.
+Hit By Pitch
+RWLN 8 - VRGN 8
+Strike 1 swinging, Ball 1, Ball 2.
+Tyler Reid is hit by pitch, Henry Bambling pitching, Cutler Johnson scores, Liam Clark advances to 3rd, Cannen Waagner advances to 2nd.
+Walk
+RWLN 8 - VRGN 7
+Ball 1, Ball 2, Ball 3, Ball 4.
+Cannen Waagner walks, Henry Bambling pitching, Jameson Bridge scores, Cutler Johnson advances to 3rd, Liam Clark advances to 2nd.
+Error
+RWLN 8 - VRGN 6
+Strike 1 looking, In play.
+Liam Clark hits a ground ball and reaches on an error by shortstop Parker Scisciani, Carlos Herrera scores, Jameson Bridge advances to 3rd, Cutler Johnson advances to 2nd.
+Single
+RWLN 8 - VRGN 5
+In play.
+Cutler Johnson singles on a ground ball to left fielder Tyler Davidson, Parker Ferguson scores, Carlos Herrera advances to 3rd, Jameson Bridge advances to 2nd.
+Strikeout
+1 Out
+Strike 1 looking, Ball 1, Strike 2 swinging, Strike 3 looking.
+AJ Williams strikes out looking, Henry Bambling pitching, Parker Ferguson remains at 3rd, Carlos Herrera remains at 2nd, Jameson Bridge remains at 1st.
+Walk
+RWLN 8 - VRGN 4
+Ball 1, Ball 2, Foul, Strike 2 swinging, Ball 3, Foul, Ball 4.
+Jameson Bridge walks, Miles Warren pitching, Bristow Huffstetler scores, Parker Ferguson advances to 3rd, Carlos Herrera advances to 2nd.
+Single
+RWLN 8 - VRGN 3
+Ball 1, Ball 2, Strike 1 swinging, Strike 2 looking, Ball 3, In play.
+Carlos Herrera singles on a fly ball to left fielder Tyler Davidson, Christopher Fuchs scores, Bristow Huffstetler advances to 3rd, Parker Ferguson advances to 2nd.
+Hit By Pitch
+Ball 1, Ball 2.
+Parker Ferguson is hit by pitch, Miles Warren pitching, Christopher Fuchs remains at 3rd, Bristow Huffstetler advances to 2nd.
+Single
+RWLN 8 - VRGN 2
+Ball 1, Ball 2, Foul, In play.
+Bristow Huffstetler singles on a fly ball to right fielder Isaiah Laborce, Grey Merritt scores, Christopher Fuchs advances to 3rd.
+Double
+Foul, In play.
+Christopher Fuchs doubles on a ground ball to left fielder Tyler Davidson, Grey Merritt advances to 3rd.
+Walk
+Ball 1, Ball 2, Foul, Foul, Ball 3, Ball 4.
+Grey Merritt walks, Miles Warren pitching.
+Top 3rd - Rawlings Tigers NOVA - Black 14U
+Strikeout
+RWLN 8 - VRGN 1 | 3 Outs
+Strike 1 looking, Foul, Ball 1, Ball 2, Gabriel Amaya scores on passed ball, Liam Knittel advances to 3rd on the same pitch, Strike 3 swinging.
+Parker Scisciani strikes out swinging, Carlos Herrera pitching.
+Strikeout
+2 Outs
+Strike 1 looking, Strike 2 looking, Ball 1, Balk by pitcher Carlos Herrera, Gabriel Amaya advances to 3rd, Liam Knittel advances to 2nd, Strike 3 looking.
+Tyler Davidson strikes out looking, Carlos Herrera pitching, Gabriel Amaya remains at 3rd, Liam Knittel remains at 2nd.
+Single
+In play.
+Liam Knittel singles on a ground ball to left fielder Cannen Waagner, Gabriel Amaya advances to 2nd.
+Walk
+Ball 1, Ball 2, Ball 3, Ball 4.
+Gabriel Amaya walks, Carlos Herrera pitching.
+Ground Out
+1 Out
+Ball 1, Foul, Ball 2, In play.
+Henry Bambling grounds out to shortstop.
+Bottom 2nd - Virginia Vols Nelson 14U
+Strikeout
+3 Outs
+Strike 1 swinging, Foul, Ball 1, Strike 3 looking.
+Will Reilly strikes out looking, Miles Warren pitching.
+Ground Out
+2 Outs
+In play.
+Tyler Reid grounds out to third baseman Gabriel Amaya, Liam Clark advances to 2nd.
+Strikeout
+1 Out
+Ball 1, Ball 2, Strike 1 swinging, Ball 3, Strike 2 looking, Foul tip.
+Cannen Waagner is out on foul tip, Miles Warren pitching, Liam Clark remains at 1st.
+Hit By Pitch
+Ball 1, Strike 1 looking, Strike 2 looking, Foul, Ball 2.
+Liam Clark is hit by pitch, Miles Warren pitching.
+Top 2nd - Rawlings Tigers NOVA - Black 14U
+Fly Out
+3 Outs
+Strike 1 looking, Ball 1, Ball 2, Ball 3, In play.
+Aiden Kim flies out to third baseman Christopher Fuchs.
+Strikeout
+RWLN 7 - VRGN 1 | 2 Outs
+Ball 1, Strike 1 looking, Ball 2, Isaiah Laborce scores on passed ball, Foul, Strike 3 looking.
+Alex Medrano strikes out looking, Carlos Herrera pitching.
+Ground Out
+1 Out
+Strike 1 looking, Isaiah Laborce steals 2nd, Strike 2 looking, In play.
+Maximillian Helchinger grounds out to second baseman Parker Ferguson, Isaiah Laborce advances to 3rd.
+Walk
+Ball 1, Foul, Ball 2, Ball 3, Strike 2 looking, Ball 4.
+Isaiah Laborce walks, Carlos Herrera pitching.
+Bottom 1st - Virginia Vols Nelson 14U
+Strikeout
+3 Outs
+Strike 1 looking, Strike 2 swinging, Ball 1, Ball 2, Strike 3 swinging.
+Cutler Johnson strikes out swinging, Alex Medrano pitching.
+Double
+Ball 1, Strike 1 looking, In play.
+AJ Williams doubles on a fly ball to right fielder Isaiah Laborce, Jameson Bridge advances to 3rd.
+Single
+RWLN 6 - VRGN 1
+Ball 1, Bristow Huffstetler advances to 3rd on wild pitch, In play.
+Jameson Bridge singles on a line drive to right fielder Isaiah Laborce, Bristow Huffstetler scores.
+Fly Out
+2 Outs
+Strike 1 looking, Ball 1, Strike 2 swinging, Ball 2, Bristow Huffstetler advances to 2nd on passed ball, In play.
+Carlos Herrera flies out to center fielder Maximillian Helchinger, Bristow Huffstetler remains at 2nd.
+Fly Out
+1 Out
+Strike 1 looking, Ball 1, In play.
+Parker Ferguson flies out to first baseman Henry Bambling, Bristow Huffstetler remains at 1st.
+Single
+Foul, In play.
+Bristow Huffstetler singles on a ground ball to shortstop Parker Scisciani.
+Top 1st - Rawlings Tigers NOVA - Black 14U
+Strikeout
+RWLN 6 - VRGN 0 | 3 Outs
+Strike 1 looking, Strike 2 looking, Ball 1, Ball 2, Tyler Davidson scores on passed ball, Parker Scisciani advances to 3rd on the same pitch, Connor Taylor advances to 2nd on the same pitch, Strike 3 swinging.
+Miles Warren strikes out swinging, Carlos Herrera pitching.
+Walk
+RWLN 5 - VRGN 0
+Ball 1, Ball 2, Ball 3, Ball 4.
+Connor Taylor walks, Liam Clark pitching, Liam Knittel scores, Tyler Davidson advances to 3rd, Parker Scisciani advances to 2nd.
+Walk
+Ball 1, Strike 1 looking, Tyler Davidson steals 2nd, Foul, Ball 2, Ball 3, Ball 4.
+Parker Scisciani walks, Liam Clark pitching, Liam Knittel remains at 3rd, Tyler Davidson remains at 2nd.
+Error
+RWLN 4 - VRGN 0
+Ball 1, Strike 1 looking, Foul, In play.
+Tyler Davidson hits a ground ball and reaches on an error by pitcher Liam Clark, Liam Knittel advances to 3rd, Gabriel Amaya scores.
+Walk
+Ball 1, Ball 2, Ball 3, Strike 1 looking, Ball 4.
+Liam Knittel walks, Liam Clark pitching, Gabriel Amaya remains at 3rd.
+Double
+RWLN 3 - VRGN 0
+Strike 1 swinging, Ball 1, Foul, Ball 2, In play.
+Gabriel Amaya doubles on a ground ball to left fielder Cannen Waagner, Henry Bambling scores on the throw, Gabriel Amaya advances to 3rd on the throw.
+Error
+RWLN 2 - VRGN 0
+Strike 1 looking, Courtesy runner Isaiah Laborce in for Aiden Kim, Ball 1, Foul, Ball 2, Isaiah Laborce advances to 3rd on passed ball, Balk by pitcher Liam Clark, Isaiah Laborce scores, In play.
+Henry Bambling hits a ground ball and reaches on an error by shortstop Carlos Herrera.
+Single
+RWLN 1 - VRGN 0 | 2 Outs
+Foul, Ball 1, In play.
+Aiden Kim singles on a ground ball to left fielder Cannen Waagner, Alex Medrano out advancing to 3rd, Maximillian Helchinger scores.
+Single
+Ball 1, Foul, Foul, Ball 2, In play.
+Alex Medrano singles on a line drive to right fielder Tyler Reid, Maximillian Helchinger advances to 3rd.
+Fielder's Choice
+1 Out
+Ball 1, Isaiah Laborce steals 2nd, Strike 1 looking, Ball 2, Isaiah Laborce steals 3rd, In play.
+Maximillian Helchinger grounds into fielder's choice to pitcher Liam Clark, Isaiah Laborce out advancing to home, Maximillian Helchinger advances to 2nd on the throw.
+Hit By Pitch
+Ball 1, Ball 2, Ball 3.
+Isaiah Laborce is hit by pitch, Liam Clark pitching.

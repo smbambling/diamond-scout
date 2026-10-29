@@ -9,7 +9,7 @@ const fontanaCapture=fs.readFileSync(path.join(root,'tests/fixtures/captures/202
 const cyclonesCapture=fs.readFileSync(path.join(root,'tests/fixtures/captures/2026-10-18-dig-in-cyclones-capture.txt'),'utf8');
 const dirtbagsCapture=fs.readFileSync(path.join(root,'tests/fixtures/captures/2026-10-18-dig-in-dirtbags-capture.txt'),'utf8');
 const sep=fs.readFileSync(path.join(root,'tests/fixtures/captures/2026-09-12-shockers-stars.txt'),'utf8');
-const shockers=JSON.parse(fs.readFileSync(path.join(root,'data/shockers-14u.json')));
+const shockers=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/teams/shockers-14u.json')));
 const input=(raw,name='capture.txt')=>({raw,name});
 let next=0;
 function repo() {
@@ -33,9 +33,9 @@ function parseTeam(raw,name) {
 try {
   // Independently audited, existing source games: every listed pitch and contact classification.
   const regressions=[
-    [sep,JSON.parse(fs.readFileSync(path.join(root,'data/stars-camarata-14u.json'))),null],
+    [sep,JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/teams/stars-camarata-14u.json'))),null],
     ...shockers.games.filter(g=>g.source_play_by_play).map(g=>[g.source_play_by_play,shockers,g.id]),
-    [shockers.games.find(g=>g.id.includes('08-30')).source_play_by_play,JSON.parse(fs.readFileSync(path.join(root,'data/gambrills-athletic-club-14u.json'))),null]
+    [shockers.games.find(g=>g.id.includes('08-30')).source_play_by_play,JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/teams/gambrills-athletic-club-14u.json'))),null]
   ];
   for (const [source,old,gameId] of regressions) {
     const {team}=parseTeam(source,old.team.name), oldPas=old.plate_appearances.filter(p=>gameId?p.game_id===gameId:true);
@@ -169,7 +169,7 @@ try {
 
   // Real histories: exact reimport preserves IDs and every existing byte; partial overlap stops.
   const real=repo();
-  for (const teamId of ['shockers-14u','stars-camarata-14u']) fs.copyFileSync(path.join(root,'data',teamId+'.json'),path.join(real,'data',teamId+'.json'));
+  for (const teamId of ['shockers-14u','stars-camarata-14u']) fs.copyFileSync(path.join(root,'tests/fixtures/teams',teamId+'.json'),path.join(real,'data',teamId+'.json'));
   fs.writeFileSync(path.join(real,'teams.json'),JSON.stringify({schema_version:1,teams:['shockers-14u','stars-camarata-14u'].map(id=>({id,name:id==='shockers-14u'?'Shockers 14U':'Stars Camarata 14U',data_file:'data/'+id+'.json'}))}));
   const unchanged=bytes(real), duplicate=I.planImports(real,[input(sep)],{date:'2026-09-12',time:'08:30'});
   assert.equal(duplicate.changes.size,0); assert.deepEqual(bytes(real),unchanged);
