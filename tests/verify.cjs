@@ -23,7 +23,6 @@ for(const palette of [light]){
 }
 assert.equal(new Set(fieldNatural).size,5,'Keep all five heat bands distinct');
 for(const palette of [light])assert(contrast(palette['map-label-text'],palette['map-label-bg'])>=7,'Map label colors must contrast');
-for(const band of heatBands)assert(html.includes('background:var(--heat-'+band+')'),'Legend must share the map scale: '+band);
 const repositoryHistory=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/shockers-four-games.json'))),manifest=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/teams.json')));
 const september12='2026-09-12-0830-shockers-vs-stars-camarata';
 const history={...repositoryHistory,games:repositoryHistory.games.filter(g=>g.id!==september12),plate_appearances:repositoryHistory.plate_appearances.filter(p=>p.game_id!==september12),baserunning_events:repositoryHistory.baserunning_events.filter(e=>e.game_id!==september12),baserunning_entries:repositoryHistory.baserunning_entries.filter(e=>e.game_id!==september12),runner_outs:[]};
@@ -397,9 +396,6 @@ assert.equal(D.foulSummary(withFouls.plate_appearances,'ground_ball').n,0);asser
 assert.equal(D.contacts(withFouls.plate_appearances,'foul_out').length,0);
 const fp=D.pitchSummary(withFouls.plate_appearances);assert.equal(fp.n,108);assert.equal(fp.swings,56);assert.equal(fp.whiffs,16);assert.equal(fp.firstSwings,16);
 assert.equal(fp.knownFirst,30);assert.equal(fp.complete,30);assert.equal(fp.outcomes.foul_out,4);
-assert.match(D.foulSvg(withFouls.plate_appearances),/Unknown area: 1/);assert.match(D.foulSvg(withFouls.plate_appearances),/25%/);
-assert.doesNotMatch(D.foulSvg(withFouls.plate_appearances),/NaN|undefined|Infinity/);
-assert.match(D.foulSvg(data.plate_appearances),/No foul catches/);
 for(const mutate of [pa=>{pa.batted_ball=blake.batted_ball},pa=>{pa.foul_contact.location.zone='left_field'},pa=>{pa.foul_contact.location.zone='left_foul_territory';pa.foul_contact.location.precision='fielder_zone'},pa=>{pa.result='strikeout_foul_tip'},pa=>{pa.status='incomplete'},pa=>{pa.pitches[0].outcome='in_play'}]){
  const invalid=JSON.parse(JSON.stringify(withFouls));mutate(invalid.plate_appearances.at(-1));assert.throws(()=>D.validateData(invalid),/foul/i);
 }

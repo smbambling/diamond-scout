@@ -906,6 +906,103 @@
         "status": "review",
         "conflict_count": 2,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Wesley Hurt",
+            "jersey": "11",
+            "stats": {
+              "IP": "1.2",
+              "H": 6,
+              "R": 8,
+              "ER": 8,
+              "BB": 3,
+              "SO": 0
+            },
+            "bf": 13,
+            "pitches": 47,
+            "strikes": 26,
+            "sample": {
+              "outcomes": {
+                "ball": 21,
+                "called_strike": 2,
+                "swinging_strike": 1,
+                "foul": 13,
+                "in_play": 10,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 13,
+              "first": 13,
+              "first_strikes": 8,
+              "known": 47,
+              "whiffs": 1,
+              "contacts": 10,
+              "ground": 4,
+              "hits": 6,
+              "ab": 10,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 13
+            }
+          },
+          {
+            "name": "Quinn Kasprzak",
+            "jersey": "3",
+            "stats": {
+              "IP": "1.1",
+              "H": 2,
+              "R": 3,
+              "ER": 0,
+              "BB": 3,
+              "SO": 1
+            },
+            "bf": 10,
+            "pitches": 41,
+            "strikes": 20,
+            "sample": {
+              "outcomes": {
+                "ball": 21,
+                "called_strike": 5,
+                "swinging_strike": 4,
+                "foul": 5,
+                "in_play": 6,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 10,
+              "first": 10,
+              "first_strikes": 6,
+              "known": 41,
+              "whiffs": 4,
+              "contacts": 6,
+              "ground": 5,
+              "hits": 2,
+              "ab": 7,
+              "unclassified": 0,
+              "first_sequence": 14,
+              "last_sequence": 23
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -1744,6 +1841,77 @@
         "status": "review",
         "conflict_count": 1,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Dean Simmons",
+            "jersey": "34",
+            "stats": {
+              "IP": "3.0",
+              "H": 1,
+              "R": 0,
+              "ER": 0,
+              "BB": 1,
+              "SO": 1
+            },
+            "bf": 10,
+            "pitches": 43,
+            "strikes": 27,
+            "sample": null
+          },
+          {
+            "name": "Sam Leshner",
+            "jersey": "7",
+            "stats": {
+              "IP": "0.2",
+              "H": 1,
+              "R": 2,
+              "ER": 0,
+              "BB": 2,
+              "SO": 0
+            },
+            "bf": 7,
+            "pitches": 26,
+            "strikes": 10,
+            "sample": null
+          },
+          {
+            "name": "Beckett",
+            "jersey": null,
+            "stats": {
+              "IP": "2.0",
+              "H": 1,
+              "R": 1,
+              "ER": 1,
+              "BB": 1,
+              "SO": 2
+            },
+            "bf": 10,
+            "pitches": 39,
+            "strikes": 19,
+            "sample": null
+          },
+          {
+            "name": "Wesley Hurt",
+            "jersey": "11",
+            "stats": {
+              "IP": "0.1",
+              "H": 0,
+              "R": 0,
+              "ER": 0,
+              "BB": 0,
+              "SO": 0
+            },
+            "bf": null,
+            "pitches": 2,
+            "strikes": 2,
+            "sample": null
+          }
+        ],
+        "status": "summary-only",
+        "reason": "Pitch sequences unavailable until the full opposing batting log reconciles with pitching totals."
       }
     },
     {
@@ -2618,6 +2786,58 @@
         "status": "review",
         "conflict_count": 2,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Wesley Hurt",
+            "jersey": "11",
+            "stats": {
+              "IP": "5.0",
+              "H": 2,
+              "R": 0,
+              "ER": 0,
+              "BB": 1,
+              "SO": 7
+            },
+            "bf": 18,
+            "pitches": 64,
+            "strikes": 39,
+            "sample": {
+              "outcomes": {
+                "ball": 25,
+                "called_strike": 11,
+                "swinging_strike": 10,
+                "foul": 9,
+                "in_play": 9,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 2,
+                "swinging": 5,
+                "unknown": 0
+              },
+              "bf": 18,
+              "first": 18,
+              "first_strikes": 10,
+              "known": 64,
+              "whiffs": 10,
+              "contacts": 9,
+              "ground": 2,
+              "hits": 2,
+              "ab": 16,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 18
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -3430,6 +3650,148 @@
         "status": "matched",
         "conflict_count": 0,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Declan Class",
+            "jersey": "13",
+            "stats": {
+              "IP": "2.2",
+              "H": 8,
+              "R": 5,
+              "ER": 5,
+              "BB": 1,
+              "SO": 1
+            },
+            "bf": 17,
+            "pitches": 47,
+            "strikes": 26,
+            "sample": {
+              "outcomes": {
+                "ball": 21,
+                "called_strike": 6,
+                "swinging_strike": 4,
+                "foul": 1,
+                "in_play": 15,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 17,
+              "first": 17,
+              "first_strikes": 9,
+              "known": 47,
+              "whiffs": 4,
+              "contacts": 15,
+              "ground": 8,
+              "hits": 8,
+              "ab": 16,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 17
+            }
+          },
+          {
+            "name": "Jack Wieland",
+            "jersey": "23",
+            "stats": {
+              "IP": "1.1",
+              "H": 1,
+              "R": 3,
+              "ER": 0,
+              "BB": 2,
+              "SO": 2
+            },
+            "bf": 8,
+            "pitches": 30,
+            "strikes": 17,
+            "sample": {
+              "outcomes": {
+                "ball": 13,
+                "called_strike": 7,
+                "swinging_strike": 1,
+                "foul": 5,
+                "in_play": 4,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 2,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 8,
+              "first": 8,
+              "first_strikes": 4,
+              "known": 30,
+              "whiffs": 1,
+              "contacts": 4,
+              "ground": 2,
+              "hits": 1,
+              "ab": 5,
+              "unclassified": 0,
+              "first_sequence": 18,
+              "last_sequence": 25
+            }
+          },
+          {
+            "name": "Andres Tecua",
+            "jersey": "2",
+            "stats": {
+              "IP": "2.0",
+              "H": 2,
+              "R": 2,
+              "ER": 1,
+              "BB": 1,
+              "SO": 2
+            },
+            "bf": 9,
+            "pitches": 33,
+            "strikes": 18,
+            "sample": {
+              "outcomes": {
+                "ball": 15,
+                "called_strike": 4,
+                "swinging_strike": 3,
+                "foul": 5,
+                "in_play": 6,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 9,
+              "first": 9,
+              "first_strikes": 6,
+              "known": 33,
+              "whiffs": 3,
+              "contacts": 6,
+              "ground": 2,
+              "hits": 2,
+              "ab": 8,
+              "unclassified": 0,
+              "first_sequence": 26,
+              "last_sequence": 34
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -4320,6 +4682,103 @@
         "status": "review",
         "conflict_count": 2,
         "unavailable_count": 2
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Declan Class",
+            "jersey": "13",
+            "stats": {
+              "IP": "4.0",
+              "H": 1,
+              "R": 3,
+              "ER": 2,
+              "BB": 2,
+              "SO": 4
+            },
+            "bf": 19,
+            "pitches": 71,
+            "strikes": 39,
+            "sample": {
+              "outcomes": {
+                "ball": 32,
+                "called_strike": 10,
+                "swinging_strike": 8,
+                "foul": 12,
+                "in_play": 9,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 4,
+                "unknown": 0
+              },
+              "bf": 19,
+              "first": 19,
+              "first_strikes": 9,
+              "known": 71,
+              "whiffs": 8,
+              "contacts": 9,
+              "ground": 5,
+              "hits": 1,
+              "ab": 13,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 19
+            }
+          },
+          {
+            "name": "Joe Carey",
+            "jersey": "27",
+            "stats": {
+              "IP": "1.0",
+              "H": 1,
+              "R": 1,
+              "ER": 0,
+              "BB": 2,
+              "SO": 1
+            },
+            "bf": 6,
+            "pitches": 20,
+            "strikes": 11,
+            "sample": {
+              "outcomes": {
+                "ball": 9,
+                "called_strike": 5,
+                "swinging_strike": 2,
+                "foul": 1,
+                "in_play": 3,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 6,
+              "first": 6,
+              "first_strikes": 4,
+              "known": 20,
+              "whiffs": 2,
+              "contacts": 3,
+              "ground": 2,
+              "hits": 1,
+              "ab": 4,
+              "unclassified": 0,
+              "first_sequence": 20,
+              "last_sequence": 25
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -5142,6 +5601,148 @@
         "status": "review",
         "conflict_count": 1,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Quinn Kasprzak",
+            "jersey": "3",
+            "stats": {
+              "IP": "2.0",
+              "H": 1,
+              "R": 2,
+              "ER": 2,
+              "BB": 3,
+              "SO": 1
+            },
+            "bf": 11,
+            "pitches": 51,
+            "strikes": 24,
+            "sample": {
+              "outcomes": {
+                "ball": 27,
+                "called_strike": 7,
+                "swinging_strike": 4,
+                "foul": 7,
+                "in_play": 5,
+                "foul_tip": 0,
+                "foul_out": 1,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 11,
+              "first": 11,
+              "first_strikes": 8,
+              "known": 51,
+              "whiffs": 4,
+              "contacts": 5,
+              "ground": 5,
+              "hits": 1,
+              "ab": 7,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 11
+            }
+          },
+          {
+            "name": "Jack Wieland",
+            "jersey": "23",
+            "stats": {
+              "IP": "4.0",
+              "H": 2,
+              "R": 3,
+              "ER": 3,
+              "BB": 4,
+              "SO": 4
+            },
+            "bf": 18,
+            "pitches": 53,
+            "strikes": 33,
+            "sample": {
+              "outcomes": {
+                "ball": 20,
+                "called_strike": 12,
+                "swinging_strike": 4,
+                "foul": 7,
+                "in_play": 10,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 4,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 18,
+              "first": 18,
+              "first_strikes": 14,
+              "known": 53,
+              "whiffs": 4,
+              "contacts": 10,
+              "ground": 6,
+              "hits": 2,
+              "ab": 14,
+              "unclassified": 0,
+              "first_sequence": 12,
+              "last_sequence": 29
+            }
+          },
+          {
+            "name": "Joe Carey",
+            "jersey": "27",
+            "stats": {
+              "IP": "1.0",
+              "H": 0,
+              "R": 0,
+              "ER": 0,
+              "BB": 0,
+              "SO": 0
+            },
+            "bf": 2,
+            "pitches": 9,
+            "strikes": 5,
+            "sample": {
+              "outcomes": {
+                "ball": 4,
+                "called_strike": 1,
+                "swinging_strike": 1,
+                "foul": 1,
+                "in_play": 2,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 2,
+              "first": 2,
+              "first_strikes": 0,
+              "known": 9,
+              "whiffs": 1,
+              "contacts": 2,
+              "ground": 2,
+              "hits": 0,
+              "ab": 2,
+              "unclassified": 0,
+              "first_sequence": 30,
+              "last_sequence": 31
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -5935,6 +6536,61 @@
         "status": "review",
         "conflict_count": 1,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Jack Wieland",
+            "jersey": "23",
+            "stats": {
+              "IP": "4.0",
+              "H": 2,
+              "R": 0,
+              "ER": 0,
+              "BB": 1,
+              "SO": 3
+            },
+            "bf": 13,
+            "pitches": 45,
+            "strikes": 27,
+            "sample": null
+          },
+          {
+            "name": "Dean Simmons",
+            "jersey": "34",
+            "stats": {
+              "IP": "1.0",
+              "H": 3,
+              "R": 3,
+              "ER": 3,
+              "BB": 1,
+              "SO": 1
+            },
+            "bf": 7,
+            "pitches": 16,
+            "strikes": 11,
+            "sample": null
+          },
+          {
+            "name": "Deven Downs",
+            "jersey": "22",
+            "stats": {
+              "IP": "2.0",
+              "H": 1,
+              "R": 0,
+              "ER": 0,
+              "BB": 0,
+              "SO": 1
+            },
+            "bf": 8,
+            "pitches": 20,
+            "strikes": 17,
+            "sample": null
+          }
+        ],
+        "status": "summary-only",
+        "reason": "Pitch sequences unavailable until the full opposing batting log reconciles with pitching totals."
       }
     },
     {
@@ -6719,6 +7375,148 @@
         "status": "matched",
         "conflict_count": 0,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Deven Downs",
+            "jersey": "22",
+            "stats": {
+              "IP": "2.0",
+              "H": 1,
+              "R": 1,
+              "ER": 0,
+              "BB": 1,
+              "SO": 1
+            },
+            "bf": 8,
+            "pitches": 28,
+            "strikes": 17,
+            "sample": {
+              "outcomes": {
+                "ball": 11,
+                "called_strike": 4,
+                "swinging_strike": 2,
+                "foul": 5,
+                "in_play": 6,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 8,
+              "first": 8,
+              "first_strikes": 4,
+              "known": 28,
+              "whiffs": 2,
+              "contacts": 6,
+              "ground": 4,
+              "hits": 1,
+              "ab": 7,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 8
+            }
+          },
+          {
+            "name": "Wesley Hurt",
+            "jersey": "11",
+            "stats": {
+              "IP": "2.0",
+              "H": 2,
+              "R": 2,
+              "ER": 1,
+              "BB": 2,
+              "SO": 2
+            },
+            "bf": 10,
+            "pitches": 38,
+            "strikes": 21,
+            "sample": {
+              "outcomes": {
+                "ball": 17,
+                "called_strike": 9,
+                "swinging_strike": 1,
+                "foul": 5,
+                "in_play": 6,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 2,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 10,
+              "first": 10,
+              "first_strikes": 5,
+              "known": 38,
+              "whiffs": 1,
+              "contacts": 6,
+              "ground": 3,
+              "hits": 2,
+              "ab": 8,
+              "unclassified": 0,
+              "first_sequence": 9,
+              "last_sequence": 18
+            }
+          },
+          {
+            "name": "Declan Class",
+            "jersey": "13",
+            "stats": {
+              "IP": "20.0",
+              "H": 1,
+              "R": 0,
+              "ER": 0,
+              "BB": 2,
+              "SO": 0
+            },
+            "bf": 9,
+            "pitches": 30,
+            "strikes": 16,
+            "sample": {
+              "outcomes": {
+                "ball": 14,
+                "called_strike": 5,
+                "swinging_strike": 0,
+                "foul": 4,
+                "in_play": 7,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 9,
+              "first": 9,
+              "first_strikes": 4,
+              "known": 30,
+              "whiffs": 0,
+              "contacts": 7,
+              "ground": 4,
+              "hits": 1,
+              "ab": 7,
+              "unclassified": 0,
+              "first_sequence": 19,
+              "last_sequence": 27
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -7507,6 +8305,148 @@
         "status": "review",
         "conflict_count": 1,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Joe Carey",
+            "jersey": "27",
+            "stats": {
+              "IP": "1.1",
+              "H": 2,
+              "R": 5,
+              "ER": 5,
+              "BB": 4,
+              "SO": 1
+            },
+            "bf": 11,
+            "pitches": 40,
+            "strikes": 15,
+            "sample": {
+              "outcomes": {
+                "ball": 25,
+                "called_strike": 4,
+                "swinging_strike": 2,
+                "foul": 4,
+                "in_play": 5,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 11,
+              "first": 11,
+              "first_strikes": 3,
+              "known": 40,
+              "whiffs": 2,
+              "contacts": 5,
+              "ground": 3,
+              "hits": 2,
+              "ab": 6,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 11
+            }
+          },
+          {
+            "name": "Dean Simmons",
+            "jersey": "34",
+            "stats": {
+              "IP": "2.0",
+              "H": 3,
+              "R": 1,
+              "ER": 1,
+              "BB": 2,
+              "SO": 2
+            },
+            "bf": 10,
+            "pitches": 51,
+            "strikes": 26,
+            "sample": {
+              "outcomes": {
+                "ball": 25,
+                "called_strike": 10,
+                "swinging_strike": 2,
+                "foul": 8,
+                "in_play": 6,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 10,
+              "first": 10,
+              "first_strikes": 4,
+              "known": 51,
+              "whiffs": 2,
+              "contacts": 6,
+              "ground": 1,
+              "hits": 3,
+              "ab": 8,
+              "unclassified": 0,
+              "first_sequence": 12,
+              "last_sequence": 21
+            }
+          },
+          {
+            "name": "Deven Downs",
+            "jersey": "22",
+            "stats": {
+              "IP": "0.2",
+              "H": 1,
+              "R": 0,
+              "ER": 0,
+              "BB": 2,
+              "SO": 0
+            },
+            "bf": 4,
+            "pitches": 10,
+            "strikes": 4,
+            "sample": {
+              "outcomes": {
+                "ball": 6,
+                "called_strike": 2,
+                "swinging_strike": 0,
+                "foul": 0,
+                "in_play": 2,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 4,
+              "first": 4,
+              "first_strikes": 3,
+              "known": 10,
+              "whiffs": 0,
+              "contacts": 2,
+              "ground": 1,
+              "hits": 1,
+              "ab": 2,
+              "unclassified": 0,
+              "first_sequence": 22,
+              "last_sequence": 25
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -8309,6 +9249,77 @@
         "status": "matched",
         "conflict_count": 0,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Wesley Hurt",
+            "jersey": "11",
+            "stats": {
+              "IP": "1.0",
+              "H": 3,
+              "R": 4,
+              "ER": 3,
+              "BB": 1,
+              "SO": 1
+            },
+            "bf": 7,
+            "pitches": 27,
+            "strikes": 14,
+            "sample": null
+          },
+          {
+            "name": "Trenton",
+            "jersey": "11",
+            "stats": {
+              "IP": "2.2",
+              "H": 1,
+              "R": 1,
+              "ER": 1,
+              "BB": 2,
+              "SO": 5
+            },
+            "bf": 13,
+            "pitches": 53,
+            "strikes": 27,
+            "sample": null
+          },
+          {
+            "name": "Deven Downs",
+            "jersey": "22",
+            "stats": {
+              "IP": "1.2",
+              "H": 1,
+              "R": 0,
+              "ER": 0,
+              "BB": 3,
+              "SO": 0
+            },
+            "bf": 9,
+            "pitches": 46,
+            "strikes": 24,
+            "sample": null
+          },
+          {
+            "name": "Quinn Kasprzak",
+            "jersey": "3",
+            "stats": {
+              "IP": "0.1",
+              "H": 0,
+              "R": 0,
+              "ER": 0,
+              "BB": 0,
+              "SO": 0
+            },
+            "bf": null,
+            "pitches": 2,
+            "strikes": 2,
+            "sample": null
+          }
+        ],
+        "status": "summary-only",
+        "reason": "Pitch sequences unavailable until the full opposing batting log reconciles with pitching totals."
       }
     },
     {
@@ -9162,6 +10173,148 @@
         "status": "review",
         "conflict_count": 1,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Jack Wieland",
+            "jersey": "23",
+            "stats": {
+              "IP": "1.1",
+              "H": 2,
+              "R": 2,
+              "ER": 1,
+              "BB": 2,
+              "SO": 1
+            },
+            "bf": 10,
+            "pitches": 45,
+            "strikes": 25,
+            "sample": {
+              "outcomes": {
+                "ball": 20,
+                "called_strike": 5,
+                "swinging_strike": 2,
+                "foul": 11,
+                "in_play": 6,
+                "foul_tip": 1,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 10,
+              "first": 10,
+              "first_strikes": 6,
+              "known": 45,
+              "whiffs": 2,
+              "contacts": 6,
+              "ground": 2,
+              "hits": 2,
+              "ab": 7,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 10
+            }
+          },
+          {
+            "name": "Dean Simmons",
+            "jersey": "34",
+            "stats": {
+              "IP": "2.2",
+              "H": 0,
+              "R": 0,
+              "ER": 0,
+              "BB": 5,
+              "SO": 2
+            },
+            "bf": 13,
+            "pitches": 52,
+            "strikes": 28,
+            "sample": {
+              "outcomes": {
+                "ball": 24,
+                "called_strike": 7,
+                "swinging_strike": 5,
+                "foul": 10,
+                "in_play": 6,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 2,
+                "unknown": 0
+              },
+              "bf": 13,
+              "first": 13,
+              "first_strikes": 8,
+              "known": 52,
+              "whiffs": 5,
+              "contacts": 6,
+              "ground": 2,
+              "hits": 0,
+              "ab": 7,
+              "unclassified": 0,
+              "first_sequence": 11,
+              "last_sequence": 23
+            }
+          },
+          {
+            "name": "Andres Tecua",
+            "jersey": "2",
+            "stats": {
+              "IP": "1.0",
+              "H": 0,
+              "R": 0,
+              "ER": 0,
+              "BB": 0,
+              "SO": 1
+            },
+            "bf": 3,
+            "pitches": 10,
+            "strikes": 9,
+            "sample": {
+              "outcomes": {
+                "ball": 1,
+                "called_strike": 2,
+                "swinging_strike": 3,
+                "foul": 2,
+                "in_play": 2,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 3,
+              "first": 3,
+              "first_strikes": 2,
+              "known": 10,
+              "whiffs": 3,
+              "contacts": 2,
+              "ground": 1,
+              "hits": 0,
+              "ab": 3,
+              "unclassified": 0,
+              "first_sequence": 24,
+              "last_sequence": 26
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -9953,6 +11106,61 @@
         "status": "review",
         "conflict_count": 1,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Andres Tecua",
+            "jersey": "2",
+            "stats": {
+              "IP": "0.2",
+              "H": 2,
+              "R": 5,
+              "ER": 1,
+              "BB": 2,
+              "SO": 1
+            },
+            "bf": 8,
+            "pitches": 35,
+            "strikes": 18,
+            "sample": null
+          },
+          {
+            "name": "Tyler",
+            "jersey": "28",
+            "stats": {
+              "IP": "1.1",
+              "H": 0,
+              "R": 0,
+              "ER": 0,
+              "BB": 3,
+              "SO": 3
+            },
+            "bf": 7,
+            "pitches": 38,
+            "strikes": 17,
+            "sample": null
+          },
+          {
+            "name": "Deven Downs",
+            "jersey": "22",
+            "stats": {
+              "IP": "4.0",
+              "H": 4,
+              "R": 1,
+              "ER": 1,
+              "BB": 3,
+              "SO": 1
+            },
+            "bf": 20,
+            "pitches": 58,
+            "strikes": 38,
+            "sample": null
+          }
+        ],
+        "status": "summary-only",
+        "reason": "Pitching totals and recorded opposing plays do not fully reconcile."
       }
     },
     {
@@ -10739,6 +11947,148 @@
         "status": "review",
         "conflict_count": 5,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Tyler",
+            "jersey": "28",
+            "stats": {
+              "IP": "1.0",
+              "H": 3,
+              "R": 6,
+              "ER": 5,
+              "BB": 3,
+              "SO": 1
+            },
+            "bf": 10,
+            "pitches": 38,
+            "strikes": 19,
+            "sample": {
+              "outcomes": {
+                "ball": 19,
+                "called_strike": 5,
+                "swinging_strike": 2,
+                "foul": 6,
+                "in_play": 6,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 10,
+              "first": 10,
+              "first_strikes": 7,
+              "known": 38,
+              "whiffs": 2,
+              "contacts": 6,
+              "ground": 3,
+              "hits": 3,
+              "ab": 7,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 10
+            }
+          },
+          {
+            "name": "Dean Simmons",
+            "jersey": "34",
+            "stats": {
+              "IP": "1.0",
+              "H": 1,
+              "R": 3,
+              "ER": 1,
+              "BB": 3,
+              "SO": 0
+            },
+            "bf": 9,
+            "pitches": 36,
+            "strikes": 19,
+            "sample": {
+              "outcomes": {
+                "ball": 17,
+                "called_strike": 5,
+                "swinging_strike": 1,
+                "foul": 8,
+                "in_play": 5,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 9,
+              "first": 9,
+              "first_strikes": 5,
+              "known": 36,
+              "whiffs": 1,
+              "contacts": 5,
+              "ground": 2,
+              "hits": 1,
+              "ab": 5,
+              "unclassified": 0,
+              "first_sequence": 11,
+              "last_sequence": 19
+            }
+          },
+          {
+            "name": "Jack Wieland",
+            "jersey": "23",
+            "stats": {
+              "IP": "2.0",
+              "H": 2,
+              "R": 3,
+              "ER": 3,
+              "BB": 3,
+              "SO": 1
+            },
+            "bf": 11,
+            "pitches": 43,
+            "strikes": 19,
+            "sample": {
+              "outcomes": {
+                "ball": 24,
+                "called_strike": 5,
+                "swinging_strike": 4,
+                "foul": 3,
+                "in_play": 7,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 11,
+              "first": 11,
+              "first_strikes": 5,
+              "known": 43,
+              "whiffs": 4,
+              "contacts": 7,
+              "ground": 1,
+              "hits": 2,
+              "ab": 7,
+              "unclassified": 0,
+              "first_sequence": 20,
+              "last_sequence": 30
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -11527,6 +12877,148 @@
         "status": "matched",
         "conflict_count": 0,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Declan Class",
+            "jersey": "13",
+            "stats": {
+              "IP": "4.0",
+              "H": 4,
+              "R": 4,
+              "ER": 2,
+              "BB": 2,
+              "SO": 0
+            },
+            "bf": 18,
+            "pitches": 45,
+            "strikes": 29,
+            "sample": {
+              "outcomes": {
+                "ball": 16,
+                "called_strike": 6,
+                "swinging_strike": 1,
+                "foul": 6,
+                "in_play": 16,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 18,
+              "first": 18,
+              "first_strikes": 12,
+              "known": 45,
+              "whiffs": 1,
+              "contacts": 16,
+              "ground": 8,
+              "hits": 4,
+              "ab": 16,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 18
+            }
+          },
+          {
+            "name": "Andres Tecua",
+            "jersey": "2",
+            "stats": {
+              "IP": "1.1",
+              "H": 1,
+              "R": 1,
+              "ER": 1,
+              "BB": 3,
+              "SO": 1
+            },
+            "bf": 8,
+            "pitches": 30,
+            "strikes": 13,
+            "sample": {
+              "outcomes": {
+                "ball": 17,
+                "called_strike": 6,
+                "swinging_strike": 2,
+                "foul": 1,
+                "in_play": 4,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 8,
+              "first": 8,
+              "first_strikes": 3,
+              "known": 30,
+              "whiffs": 2,
+              "contacts": 4,
+              "ground": 3,
+              "hits": 1,
+              "ab": 5,
+              "unclassified": 0,
+              "first_sequence": 19,
+              "last_sequence": 26
+            }
+          },
+          {
+            "name": "Joe Carey",
+            "jersey": "27",
+            "stats": {
+              "IP": "0.2",
+              "H": 0,
+              "R": 0,
+              "ER": 0,
+              "BB": 0,
+              "SO": 0
+            },
+            "bf": 2,
+            "pitches": 5,
+            "strikes": 3,
+            "sample": {
+              "outcomes": {
+                "ball": 2,
+                "called_strike": 0,
+                "swinging_strike": 0,
+                "foul": 1,
+                "in_play": 2,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 2,
+              "first": 2,
+              "first_strikes": 1,
+              "known": 5,
+              "whiffs": 0,
+              "contacts": 2,
+              "ground": 0,
+              "hits": 0,
+              "ab": 2,
+              "unclassified": 0,
+              "first_sequence": 27,
+              "last_sequence": 28
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -12502,6 +13994,193 @@
         "status": "review",
         "conflict_count": 3,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Joe Carey",
+            "jersey": "27",
+            "stats": {
+              "IP": "2.0",
+              "H": 3,
+              "R": 3,
+              "ER": 2,
+              "BB": 0,
+              "SO": 4
+            },
+            "bf": 11,
+            "pitches": 44,
+            "strikes": 23,
+            "sample": {
+              "outcomes": {
+                "ball": 21,
+                "called_strike": 4,
+                "swinging_strike": 6,
+                "foul": 7,
+                "in_play": 6,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 3,
+                "unknown": 0
+              },
+              "bf": 11,
+              "first": 11,
+              "first_strikes": 3,
+              "known": 44,
+              "whiffs": 6,
+              "contacts": 6,
+              "ground": 4,
+              "hits": 3,
+              "ab": 10,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 11
+            }
+          },
+          {
+            "name": "Deven Downs",
+            "jersey": "22",
+            "stats": {
+              "IP": "0.2",
+              "H": 3,
+              "R": 3,
+              "ER": 3,
+              "BB": 2,
+              "SO": 0
+            },
+            "bf": 8,
+            "pitches": 31,
+            "strikes": 13,
+            "sample": {
+              "outcomes": {
+                "ball": 18,
+                "called_strike": 5,
+                "swinging_strike": 1,
+                "foul": 2,
+                "in_play": 5,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 8,
+              "first": 8,
+              "first_strikes": 2,
+              "known": 31,
+              "whiffs": 1,
+              "contacts": 5,
+              "ground": 3,
+              "hits": 3,
+              "ab": 5,
+              "unclassified": 0,
+              "first_sequence": 12,
+              "last_sequence": 19
+            }
+          },
+          {
+            "name": "Declan Class",
+            "jersey": "13",
+            "stats": {
+              "IP": "5.1",
+              "H": 3,
+              "R": 1,
+              "ER": 0,
+              "BB": 0,
+              "SO": 6
+            },
+            "bf": 22,
+            "pitches": 70,
+            "strikes": 49,
+            "sample": {
+              "outcomes": {
+                "ball": 21,
+                "called_strike": 11,
+                "swinging_strike": 13,
+                "foul": 11,
+                "in_play": 14,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 5,
+                "unknown": 0
+              },
+              "bf": 22,
+              "first": 22,
+              "first_strikes": 13,
+              "known": 70,
+              "whiffs": 13,
+              "contacts": 14,
+              "ground": 6,
+              "hits": 3,
+              "ab": 20,
+              "unclassified": 0,
+              "first_sequence": 20,
+              "last_sequence": 41
+            }
+          },
+          {
+            "name": "Dean Simmons",
+            "jersey": "34",
+            "stats": {
+              "IP": "0.1",
+              "H": 0,
+              "R": 1,
+              "ER": 0,
+              "BB": 1,
+              "SO": 1
+            },
+            "bf": 2,
+            "pitches": 13,
+            "strikes": 6,
+            "sample": {
+              "outcomes": {
+                "ball": 7,
+                "called_strike": 2,
+                "swinging_strike": 1,
+                "foul": 3,
+                "in_play": 0,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 2,
+              "first": 2,
+              "first_strikes": 0,
+              "known": 13,
+              "whiffs": 1,
+              "contacts": 0,
+              "ground": 0,
+              "hits": 0,
+              "ab": 1,
+              "unclassified": 0,
+              "first_sequence": 42,
+              "last_sequence": 43
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -13341,6 +15020,45 @@
         "status": "review",
         "conflict_count": 6,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Jack Wieland",
+            "jersey": "23",
+            "stats": {
+              "IP": "3.2",
+              "H": 3,
+              "R": 4,
+              "ER": 3,
+              "BB": 2,
+              "SO": 1
+            },
+            "bf": 17,
+            "pitches": 49,
+            "strikes": 30,
+            "sample": null
+          },
+          {
+            "name": "Deven Downs",
+            "jersey": "22",
+            "stats": {
+              "IP": "1.1",
+              "H": 2,
+              "R": 0,
+              "ER": 0,
+              "BB": 0,
+              "SO": 1
+            },
+            "bf": 5,
+            "pitches": 22,
+            "strikes": 12,
+            "sample": null
+          }
+        ],
+        "status": "summary-only",
+        "reason": "Pitch sequences unavailable until the full opposing batting log reconciles with pitching totals."
       }
     },
     {
@@ -14134,6 +15852,77 @@
         "status": "matched",
         "conflict_count": 0,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Dean Simmons",
+            "jersey": "34",
+            "stats": {
+              "IP": "0.1",
+              "H": 2,
+              "R": 2,
+              "ER": 2,
+              "BB": 3,
+              "SO": 1
+            },
+            "bf": 6,
+            "pitches": 20,
+            "strikes": 7,
+            "sample": null
+          },
+          {
+            "name": "Jack Wieland",
+            "jersey": "23",
+            "stats": {
+              "IP": "2.1",
+              "H": 2,
+              "R": 5,
+              "ER": 0,
+              "BB": 3,
+              "SO": 1
+            },
+            "bf": 14,
+            "pitches": 50,
+            "strikes": 26,
+            "sample": null
+          },
+          {
+            "name": "Sam Leshner",
+            "jersey": "7",
+            "stats": {
+              "IP": "0.2",
+              "H": 1,
+              "R": 2,
+              "ER": 0,
+              "BB": 1,
+              "SO": 1
+            },
+            "bf": 4,
+            "pitches": 20,
+            "strikes": 11,
+            "sample": null
+          },
+          {
+            "name": "Joe Carey",
+            "jersey": "27",
+            "stats": {
+              "IP": "0.2",
+              "H": 1,
+              "R": 0,
+              "ER": 0,
+              "BB": 0,
+              "SO": 1
+            },
+            "bf": 3,
+            "pitches": 9,
+            "strikes": 6,
+            "sample": null
+          }
+        ],
+        "status": "summary-only",
+        "reason": "Pitch sequences unavailable until the full opposing batting log reconciles with pitching totals."
       }
     },
     {
@@ -14969,6 +16758,93 @@
         "status": "review",
         "conflict_count": 2,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Rowan Tate",
+            "jersey": null,
+            "stats": {
+              "IP": "1.1",
+              "H": 1,
+              "R": 3,
+              "ER": 3,
+              "BB": 5,
+              "SO": 2
+            },
+            "bf": 11,
+            "pitches": 47,
+            "strikes": 21,
+            "sample": null
+          },
+          {
+            "name": "Wesley Hurt",
+            "jersey": "11",
+            "stats": {
+              "IP": "1.1",
+              "H": 1,
+              "R": 3,
+              "ER": 3,
+              "BB": 3,
+              "SO": 0
+            },
+            "bf": 9,
+            "pitches": 41,
+            "strikes": 19,
+            "sample": null
+          },
+          {
+            "name": "Sam Leshner",
+            "jersey": "7",
+            "stats": {
+              "IP": "0.2",
+              "H": 1,
+              "R": 4,
+              "ER": 3,
+              "BB": 4,
+              "SO": 1
+            },
+            "bf": 7,
+            "pitches": 32,
+            "strikes": 11,
+            "sample": null
+          },
+          {
+            "name": "Declan Class",
+            "jersey": "13",
+            "stats": {
+              "IP": "0.2",
+              "H": 1,
+              "R": 1,
+              "ER": 1,
+              "BB": 1,
+              "SO": 0
+            },
+            "bf": 5,
+            "pitches": 20,
+            "strikes": 12,
+            "sample": null
+          },
+          {
+            "name": "Deven Downs",
+            "jersey": "22",
+            "stats": {
+              "IP": "1.0",
+              "H": 3,
+              "R": 4,
+              "ER": 2,
+              "BB": 1,
+              "SO": 1
+            },
+            "bf": 8,
+            "pitches": 43,
+            "strikes": 25,
+            "sample": null
+          }
+        ],
+        "status": "summary-only",
+        "reason": "Pitching totals and recorded opposing plays do not fully reconcile."
       }
     },
     {
@@ -15743,6 +17619,45 @@
         "status": "matched",
         "conflict_count": 0,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Ryan Maloney",
+            "jersey": "33",
+            "stats": {
+              "IP": "1.1",
+              "H": 3,
+              "R": 8,
+              "ER": 2,
+              "BB": 4,
+              "SO": 1
+            },
+            "bf": 14,
+            "pitches": 52,
+            "strikes": 23,
+            "sample": null
+          },
+          {
+            "name": "Declan Class",
+            "jersey": "13",
+            "stats": {
+              "IP": "4.2",
+              "H": 6,
+              "R": 1,
+              "ER": 0,
+              "BB": 2,
+              "SO": 2
+            },
+            "bf": 17,
+            "pitches": 56,
+            "strikes": 35,
+            "sample": null
+          }
+        ],
+        "status": "summary-only",
+        "reason": "Pitch sequences unavailable until the full opposing batting log reconciles with pitching totals."
       }
     },
     {
@@ -16442,6 +18357,148 @@
         "status": "review",
         "conflict_count": 1,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Dean Simmons",
+            "jersey": "34",
+            "stats": {
+              "IP": "1.1",
+              "H": 1,
+              "R": 3,
+              "ER": 3,
+              "BB": 5,
+              "SO": 3
+            },
+            "bf": 10,
+            "pitches": 51,
+            "strikes": 20,
+            "sample": {
+              "outcomes": {
+                "ball": 31,
+                "called_strike": 6,
+                "swinging_strike": 4,
+                "foul": 8,
+                "in_play": 2,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 2,
+                "unknown": 0
+              },
+              "bf": 10,
+              "first": 10,
+              "first_strikes": 4,
+              "known": 51,
+              "whiffs": 4,
+              "contacts": 2,
+              "ground": 1,
+              "hits": 1,
+              "ab": 5,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 10
+            }
+          },
+          {
+            "name": "Brian Gribbin",
+            "jersey": "10",
+            "stats": {
+              "IP": "0.2",
+              "H": 0,
+              "R": 2,
+              "ER": 2,
+              "BB": 4,
+              "SO": 1
+            },
+            "bf": 6,
+            "pitches": 26,
+            "strikes": 9,
+            "sample": {
+              "outcomes": {
+                "ball": 17,
+                "called_strike": 3,
+                "swinging_strike": 3,
+                "foul": 2,
+                "in_play": 1,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 6,
+              "first": 6,
+              "first_strikes": 2,
+              "known": 26,
+              "whiffs": 3,
+              "contacts": 1,
+              "ground": 0,
+              "hits": 0,
+              "ab": 1,
+              "unclassified": 0,
+              "first_sequence": 11,
+              "last_sequence": 16
+            }
+          },
+          {
+            "name": "Andres Tecua",
+            "jersey": "2",
+            "stats": {
+              "IP": "1.1",
+              "H": 3,
+              "R": 3,
+              "ER": 3,
+              "BB": 4,
+              "SO": 1
+            },
+            "bf": 12,
+            "pitches": 47,
+            "strikes": 22,
+            "sample": {
+              "outcomes": {
+                "ball": 25,
+                "called_strike": 5,
+                "swinging_strike": 5,
+                "foul": 5,
+                "in_play": 7,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 12,
+              "first": 12,
+              "first_strikes": 6,
+              "known": 47,
+              "whiffs": 5,
+              "contacts": 7,
+              "ground": 4,
+              "hits": 3,
+              "ab": 8,
+              "unclassified": 0,
+              "first_sequence": 17,
+              "last_sequence": 28
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -17283,6 +19340,148 @@
         "status": "review",
         "conflict_count": 2,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Rowan Tate",
+            "jersey": null,
+            "stats": {
+              "IP": "1.0",
+              "H": 5,
+              "R": 5,
+              "ER": 5,
+              "BB": 1,
+              "SO": 1
+            },
+            "bf": 9,
+            "pitches": 36,
+            "strikes": 19,
+            "sample": {
+              "outcomes": {
+                "ball": 17,
+                "called_strike": 5,
+                "swinging_strike": 2,
+                "foul": 5,
+                "in_play": 7,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 9,
+              "first": 9,
+              "first_strikes": 2,
+              "known": 36,
+              "whiffs": 2,
+              "contacts": 7,
+              "ground": 0,
+              "hits": 5,
+              "ab": 7,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 9
+            }
+          },
+          {
+            "name": "Joe Carey",
+            "jersey": "27",
+            "stats": {
+              "IP": "2.0",
+              "H": 4,
+              "R": 5,
+              "ER": 2,
+              "BB": 1,
+              "SO": 1
+            },
+            "bf": 12,
+            "pitches": 47,
+            "strikes": 26,
+            "sample": {
+              "outcomes": {
+                "ball": 21,
+                "called_strike": 6,
+                "swinging_strike": 1,
+                "foul": 9,
+                "in_play": 10,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 12,
+              "first": 12,
+              "first_strikes": 6,
+              "known": 47,
+              "whiffs": 1,
+              "contacts": 10,
+              "ground": 3,
+              "hits": 4,
+              "ab": 11,
+              "unclassified": 0,
+              "first_sequence": 10,
+              "last_sequence": 21
+            }
+          },
+          {
+            "name": "Quinn Kasprzak",
+            "jersey": "3",
+            "stats": {
+              "IP": "2.0",
+              "H": 1,
+              "R": 2,
+              "ER": 2,
+              "BB": 2,
+              "SO": 3
+            },
+            "bf": 11,
+            "pitches": 52,
+            "strikes": 24,
+            "sample": {
+              "outcomes": {
+                "ball": 28,
+                "called_strike": 8,
+                "swinging_strike": 4,
+                "foul": 9,
+                "in_play": 3,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 3,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 11,
+              "first": 11,
+              "first_strikes": 3,
+              "known": 52,
+              "whiffs": 4,
+              "contacts": 3,
+              "ground": 0,
+              "hits": 1,
+              "ab": 6,
+              "unclassified": 0,
+              "first_sequence": 22,
+              "last_sequence": 32
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -18073,6 +20272,61 @@
         "status": "matched",
         "conflict_count": 0,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Dean Simmons",
+            "jersey": "34",
+            "stats": {
+              "IP": "3.0",
+              "H": 2,
+              "R": 0,
+              "ER": 0,
+              "BB": 3,
+              "SO": 0
+            },
+            "bf": 13,
+            "pitches": 41,
+            "strikes": 21,
+            "sample": null
+          },
+          {
+            "name": "Jack Wieland",
+            "jersey": "23",
+            "stats": {
+              "IP": "2.0",
+              "H": 5,
+              "R": 3,
+              "ER": 2,
+              "BB": 1,
+              "SO": 0
+            },
+            "bf": 12,
+            "pitches": 43,
+            "strikes": 27,
+            "sample": null
+          },
+          {
+            "name": "Declan Class",
+            "jersey": "13",
+            "stats": {
+              "IP": "1.0",
+              "H": 1,
+              "R": 1,
+              "ER": 1,
+              "BB": 1,
+              "SO": 1
+            },
+            "bf": 5,
+            "pitches": 22,
+            "strikes": 11,
+            "sample": null
+          }
+        ],
+        "status": "summary-only",
+        "reason": "Pitch sequences unavailable until the full opposing batting log reconciles with pitching totals."
       }
     },
     {
@@ -18942,6 +21196,103 @@
         "status": "matched",
         "conflict_count": 0,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Declan Class",
+            "jersey": "13",
+            "stats": {
+              "IP": "2.1",
+              "H": 2,
+              "R": 3,
+              "ER": 0,
+              "BB": 3,
+              "SO": 1
+            },
+            "bf": 14,
+            "pitches": 54,
+            "strikes": 32,
+            "sample": {
+              "outcomes": {
+                "ball": 22,
+                "called_strike": 8,
+                "swinging_strike": 3,
+                "foul": 11,
+                "in_play": 10,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 14,
+              "first": 14,
+              "first_strikes": 7,
+              "known": 54,
+              "whiffs": 3,
+              "contacts": 9,
+              "ground": 6,
+              "hits": 2,
+              "ab": 10,
+              "unclassified": 1,
+              "first_sequence": 1,
+              "last_sequence": 14
+            }
+          },
+          {
+            "name": "Ansh",
+            "jersey": null,
+            "stats": {
+              "IP": "1.2",
+              "H": 3,
+              "R": 1,
+              "ER": 1,
+              "BB": 2,
+              "SO": 2
+            },
+            "bf": 9,
+            "pitches": 39,
+            "strikes": 20,
+            "sample": {
+              "outcomes": {
+                "ball": 19,
+                "called_strike": 4,
+                "swinging_strike": 3,
+                "foul": 7,
+                "in_play": 5,
+                "foul_tip": 1,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 2,
+                "unknown": 0
+              },
+              "bf": 9,
+              "first": 9,
+              "first_strikes": 4,
+              "known": 39,
+              "whiffs": 3,
+              "contacts": 5,
+              "ground": 2,
+              "hits": 3,
+              "ab": 7,
+              "unclassified": 0,
+              "first_sequence": 15,
+              "last_sequence": 23
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -19699,6 +22050,103 @@
         "status": "review",
         "conflict_count": 1,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Quinn Kasprzak",
+            "jersey": "3",
+            "stats": {
+              "IP": "4.0",
+              "H": 4,
+              "R": 3,
+              "ER": 2,
+              "BB": 1,
+              "SO": 2
+            },
+            "bf": 19,
+            "pitches": 48,
+            "strikes": 26,
+            "sample": {
+              "outcomes": {
+                "ball": 22,
+                "called_strike": 9,
+                "swinging_strike": 3,
+                "foul": 0,
+                "in_play": 14,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 19,
+              "first": 19,
+              "first_strikes": 11,
+              "known": 48,
+              "whiffs": 3,
+              "contacts": 14,
+              "ground": 6,
+              "hits": 4,
+              "ab": 16,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 19
+            }
+          },
+          {
+            "name": "Braden",
+            "jersey": "25",
+            "stats": {
+              "IP": "3.0",
+              "H": 0,
+              "R": 0,
+              "ER": 0,
+              "BB": 2,
+              "SO": 2
+            },
+            "bf": 12,
+            "pitches": 39,
+            "strikes": 26,
+            "sample": {
+              "outcomes": {
+                "ball": 13,
+                "called_strike": 8,
+                "swinging_strike": 2,
+                "foul": 7,
+                "in_play": 8,
+                "foul_tip": 1,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 2,
+                "unknown": 0
+              },
+              "bf": 12,
+              "first": 12,
+              "first_strikes": 9,
+              "known": 39,
+              "whiffs": 2,
+              "contacts": 8,
+              "ground": 6,
+              "hits": 0,
+              "ab": 10,
+              "unclassified": 0,
+              "first_sequence": 20,
+              "last_sequence": 31
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -20487,6 +22935,103 @@
         "status": "review",
         "conflict_count": 4,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Dean Simmons",
+            "jersey": "34",
+            "stats": {
+              "IP": "3.0",
+              "H": 3,
+              "R": 1,
+              "ER": 1,
+              "BB": 3,
+              "SO": 4
+            },
+            "bf": 15,
+            "pitches": 49,
+            "strikes": 26,
+            "sample": {
+              "outcomes": {
+                "ball": 23,
+                "called_strike": 6,
+                "swinging_strike": 6,
+                "foul": 6,
+                "in_play": 8,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 3,
+                "unknown": 0
+              },
+              "bf": 15,
+              "first": 15,
+              "first_strikes": 7,
+              "known": 49,
+              "whiffs": 6,
+              "contacts": 8,
+              "ground": 5,
+              "hits": 3,
+              "ab": 12,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 15
+            }
+          },
+          {
+            "name": "Andres Tecua",
+            "jersey": "2",
+            "stats": {
+              "IP": "2.0",
+              "H": 4,
+              "R": 3,
+              "ER": 3,
+              "BB": 1,
+              "SO": 2
+            },
+            "bf": 14,
+            "pitches": 53,
+            "strikes": 31,
+            "sample": {
+              "outcomes": {
+                "ball": 22,
+                "called_strike": 11,
+                "swinging_strike": 3,
+                "foul": 8,
+                "in_play": 9,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 14,
+              "first": 14,
+              "first_strikes": 8,
+              "known": 53,
+              "whiffs": 3,
+              "contacts": 9,
+              "ground": 5,
+              "hits": 4,
+              "ab": 11,
+              "unclassified": 0,
+              "first_sequence": 16,
+              "last_sequence": 29
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -21341,6 +23886,148 @@
         "status": "matched",
         "conflict_count": 0,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Wesley Hurt",
+            "jersey": "11",
+            "stats": {
+              "IP": "3.0",
+              "H": 1,
+              "R": 0,
+              "ER": 0,
+              "BB": 2,
+              "SO": 1
+            },
+            "bf": 12,
+            "pitches": 40,
+            "strikes": 24,
+            "sample": {
+              "outcomes": {
+                "ball": 16,
+                "called_strike": 7,
+                "swinging_strike": 3,
+                "foul": 5,
+                "in_play": 8,
+                "foul_tip": 0,
+                "foul_out": 1,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 12,
+              "first": 12,
+              "first_strikes": 8,
+              "known": 40,
+              "whiffs": 3,
+              "contacts": 8,
+              "ground": 2,
+              "hits": 1,
+              "ab": 10,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 12
+            }
+          },
+          {
+            "name": "Sam Leshner",
+            "jersey": "7",
+            "stats": {
+              "IP": "2.2",
+              "H": 4,
+              "R": 5,
+              "ER": 1,
+              "BB": 1,
+              "SO": 0
+            },
+            "bf": 15,
+            "pitches": 45,
+            "strikes": 30,
+            "sample": {
+              "outcomes": {
+                "ball": 15,
+                "called_strike": 3,
+                "swinging_strike": 2,
+                "foul": 11,
+                "in_play": 13,
+                "foul_tip": 0,
+                "foul_out": 1,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 15,
+              "first": 15,
+              "first_strikes": 9,
+              "known": 45,
+              "whiffs": 2,
+              "contacts": 13,
+              "ground": 4,
+              "hits": 4,
+              "ab": 13,
+              "unclassified": 0,
+              "first_sequence": 13,
+              "last_sequence": 27
+            }
+          },
+          {
+            "name": "Andres Tecua",
+            "jersey": "2",
+            "stats": {
+              "IP": "0.1",
+              "H": 1,
+              "R": 1,
+              "ER": 0,
+              "BB": 0,
+              "SO": 1
+            },
+            "bf": 3,
+            "pitches": 18,
+            "strikes": 12,
+            "sample": {
+              "outcomes": {
+                "ball": 6,
+                "called_strike": 5,
+                "swinging_strike": 1,
+                "foul": 4,
+                "in_play": 2,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 3,
+              "first": 3,
+              "first_strikes": 2,
+              "known": 18,
+              "whiffs": 1,
+              "contacts": 2,
+              "ground": 2,
+              "hits": 1,
+              "ab": 3,
+              "unclassified": 0,
+              "first_sequence": 28,
+              "last_sequence": 30
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -22154,6 +24841,148 @@
         "status": "matched",
         "conflict_count": 0,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Jack Wieland",
+            "jersey": "23",
+            "stats": {
+              "IP": "2.0",
+              "H": 5,
+              "R": 4,
+              "ER": 4,
+              "BB": 2,
+              "SO": 0
+            },
+            "bf": 12,
+            "pitches": 51,
+            "strikes": 28,
+            "sample": {
+              "outcomes": {
+                "ball": 23,
+                "called_strike": 9,
+                "swinging_strike": 1,
+                "foul": 8,
+                "in_play": 10,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 12,
+              "first": 12,
+              "first_strikes": 5,
+              "known": 51,
+              "whiffs": 1,
+              "contacts": 10,
+              "ground": 7,
+              "hits": 5,
+              "ab": 10,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 12
+            }
+          },
+          {
+            "name": "Sam Leshner",
+            "jersey": "7",
+            "stats": {
+              "IP": "2.0",
+              "H": 3,
+              "R": 5,
+              "ER": 1,
+              "BB": 2,
+              "SO": 1
+            },
+            "bf": 13,
+            "pitches": 48,
+            "strikes": 25,
+            "sample": {
+              "outcomes": {
+                "ball": 23,
+                "called_strike": 7,
+                "swinging_strike": 3,
+                "foul": 5,
+                "in_play": 10,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 13,
+              "first": 13,
+              "first_strikes": 6,
+              "known": 48,
+              "whiffs": 3,
+              "contacts": 10,
+              "ground": 7,
+              "hits": 3,
+              "ab": 11,
+              "unclassified": 0,
+              "first_sequence": 13,
+              "last_sequence": 25
+            }
+          },
+          {
+            "name": "Rowan Tate",
+            "jersey": null,
+            "stats": {
+              "IP": "1.0",
+              "H": 0,
+              "R": 0,
+              "ER": 0,
+              "BB": 1,
+              "SO": 0
+            },
+            "bf": 4,
+            "pitches": 16,
+            "strikes": 6,
+            "sample": {
+              "outcomes": {
+                "ball": 10,
+                "called_strike": 1,
+                "swinging_strike": 0,
+                "foul": 2,
+                "in_play": 3,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 4,
+              "first": 4,
+              "first_strikes": 0,
+              "known": 16,
+              "whiffs": 0,
+              "contacts": 3,
+              "ground": 1,
+              "hits": 0,
+              "ab": 3,
+              "unclassified": 0,
+              "first_sequence": 26,
+              "last_sequence": 29
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -22914,6 +25743,77 @@
         "status": "matched",
         "conflict_count": 0,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Rowan Tate",
+            "jersey": null,
+            "stats": {
+              "IP": "2.0",
+              "H": 1,
+              "R": 0,
+              "ER": 0,
+              "BB": 2,
+              "SO": 0
+            },
+            "bf": 8,
+            "pitches": 27,
+            "strikes": 14,
+            "sample": null
+          },
+          {
+            "name": "Quinn Kasprzak",
+            "jersey": "3",
+            "stats": {
+              "IP": "1.1",
+              "H": 2,
+              "R": 3,
+              "ER": 2,
+              "BB": 5,
+              "SO": 1
+            },
+            "bf": 12,
+            "pitches": 46,
+            "strikes": 16,
+            "sample": null
+          },
+          {
+            "name": "Andres Tecua",
+            "jersey": "2",
+            "stats": {
+              "IP": "1.2",
+              "H": 2,
+              "R": 2,
+              "ER": 2,
+              "BB": 2,
+              "SO": 2
+            },
+            "bf": 9,
+            "pitches": 35,
+            "strikes": 17,
+            "sample": null
+          },
+          {
+            "name": "Wesley Hurt",
+            "jersey": "11",
+            "stats": {
+              "IP": "1.0",
+              "H": 0,
+              "R": 1,
+              "ER": 0,
+              "BB": 3,
+              "SO": 0
+            },
+            "bf": 5,
+            "pitches": 22,
+            "strikes": 8,
+            "sample": null
+          }
+        ],
+        "status": "summary-only",
+        "reason": "Pitch sequences unavailable until the full opposing batting log reconciles with pitching totals."
       }
     },
     {
@@ -23685,6 +26585,148 @@
         "status": "review",
         "conflict_count": 2,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Ryan Maloney",
+            "jersey": "33",
+            "stats": {
+              "IP": "1.0",
+              "H": 4,
+              "R": 3,
+              "ER": 3,
+              "BB": 1,
+              "SO": 1
+            },
+            "bf": 8,
+            "pitches": 24,
+            "strikes": 14,
+            "sample": {
+              "outcomes": {
+                "ball": 10,
+                "called_strike": 5,
+                "swinging_strike": 1,
+                "foul": 2,
+                "in_play": 6,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 8,
+              "first": 8,
+              "first_strikes": 4,
+              "known": 24,
+              "whiffs": 1,
+              "contacts": 6,
+              "ground": 1,
+              "hits": 4,
+              "ab": 7,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 8
+            }
+          },
+          {
+            "name": "Dean Simmons",
+            "jersey": "34",
+            "stats": {
+              "IP": "3.0",
+              "H": 1,
+              "R": 0,
+              "ER": 0,
+              "BB": 0,
+              "SO": 5
+            },
+            "bf": 11,
+            "pitches": 46,
+            "strikes": 28,
+            "sample": {
+              "outcomes": {
+                "ball": 18,
+                "called_strike": 12,
+                "swinging_strike": 4,
+                "foul": 7,
+                "in_play": 5,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 2,
+                "swinging": 3,
+                "unknown": 0
+              },
+              "bf": 11,
+              "first": 11,
+              "first_strikes": 6,
+              "known": 46,
+              "whiffs": 4,
+              "contacts": 5,
+              "ground": 2,
+              "hits": 1,
+              "ab": 10,
+              "unclassified": 0,
+              "first_sequence": 9,
+              "last_sequence": 19
+            }
+          },
+          {
+            "name": "Joe Carey",
+            "jersey": "27",
+            "stats": {
+              "IP": "2.0",
+              "H": 1,
+              "R": 0,
+              "ER": 0,
+              "BB": 1,
+              "SO": 1
+            },
+            "bf": 8,
+            "pitches": 31,
+            "strikes": 16,
+            "sample": {
+              "outcomes": {
+                "ball": 15,
+                "called_strike": 5,
+                "swinging_strike": 2,
+                "foul": 4,
+                "in_play": 5,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 8,
+              "first": 8,
+              "first_strikes": 4,
+              "known": 31,
+              "whiffs": 2,
+              "contacts": 5,
+              "ground": 3,
+              "hits": 1,
+              "ab": 6,
+              "unclassified": 0,
+              "first_sequence": 20,
+              "last_sequence": 27
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -24564,6 +27606,77 @@
         "status": "review",
         "conflict_count": 1,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Joe Carey",
+            "jersey": "27",
+            "stats": {
+              "IP": "0.2",
+              "H": 1,
+              "R": 2,
+              "ER": 2,
+              "BB": 3,
+              "SO": 1
+            },
+            "bf": 7,
+            "pitches": 20,
+            "strikes": 5,
+            "sample": null
+          },
+          {
+            "name": "Declan Class",
+            "jersey": "13",
+            "stats": {
+              "IP": "3.1",
+              "H": 0,
+              "R": 0,
+              "ER": 0,
+              "BB": 3,
+              "SO": 2
+            },
+            "bf": 12,
+            "pitches": 52,
+            "strikes": 29,
+            "sample": null
+          },
+          {
+            "name": "Wesley Hurt",
+            "jersey": "11",
+            "stats": {
+              "IP": "0.1",
+              "H": 1,
+              "R": 1,
+              "ER": 1,
+              "BB": 3,
+              "SO": 0
+            },
+            "bf": 5,
+            "pitches": 22,
+            "strikes": 10,
+            "sample": null
+          },
+          {
+            "name": "Andres Tecua",
+            "jersey": "2",
+            "stats": {
+              "IP": "1.2",
+              "H": 1,
+              "R": 0,
+              "ER": 0,
+              "BB": 0,
+              "SO": 3
+            },
+            "bf": 7,
+            "pitches": 25,
+            "strikes": 16,
+            "sample": null
+          }
+        ],
+        "status": "summary-only",
+        "reason": "Opposing play log requires review: Line 222 (Alexandria Reds 14U Black, top 1): Unsupported batter result: out on foul bunt, Joe Carey pitching, Nico Spataro remains at 2nd, Leo Lesko-Hebert remains at 1st."
       }
     },
     {
@@ -25383,6 +28496,103 @@
         "status": "matched",
         "conflict_count": 0,
         "unavailable_count": 0
+      },
+      "pitching_scout": {
+        "version": 1,
+        "pitchers": [
+          {
+            "name": "Rowan Tate",
+            "jersey": null,
+            "stats": {
+              "IP": "3.0",
+              "H": 1,
+              "R": 0,
+              "ER": 0,
+              "BB": 2,
+              "SO": 1
+            },
+            "bf": 12,
+            "pitches": 47,
+            "strikes": 25,
+            "sample": {
+              "outcomes": {
+                "ball": 22,
+                "called_strike": 7,
+                "swinging_strike": 4,
+                "foul": 5,
+                "in_play": 9,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 12,
+              "first": 12,
+              "first_strikes": 7,
+              "known": 47,
+              "whiffs": 4,
+              "contacts": 9,
+              "ground": 5,
+              "hits": 1,
+              "ab": 10,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 12
+            }
+          },
+          {
+            "name": "Sam Leshner",
+            "jersey": "7",
+            "stats": {
+              "IP": "2.0",
+              "H": 4,
+              "R": 2,
+              "ER": 1,
+              "BB": 1,
+              "SO": 2
+            },
+            "bf": 11,
+            "pitches": 40,
+            "strikes": 23,
+            "sample": {
+              "outcomes": {
+                "ball": 17,
+                "called_strike": 5,
+                "swinging_strike": 6,
+                "foul": 4,
+                "in_play": 7,
+                "foul_tip": 0,
+                "foul_out": 1,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 2,
+                "unknown": 0
+              },
+              "bf": 11,
+              "first": 11,
+              "first_strikes": 7,
+              "known": 40,
+              "whiffs": 6,
+              "contacts": 7,
+              "ground": 3,
+              "hits": 4,
+              "ab": 10,
+              "unclassified": 0,
+              "first_sequence": 13,
+              "last_sequence": 23
+            }
+          }
+        ],
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     }
   ],

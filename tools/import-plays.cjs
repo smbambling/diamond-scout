@@ -580,6 +580,10 @@ function planWithState(root,inputs,options,state){
       report.push({file:box.file,team:entry.name,team_id:entry.id,status:changed?'box-score-attached':'box-score-duplicate',game_id:game.id,warnings:[...evidence.notes,...evidence.comparisons.filter(c=>c.status==='conflict').map(c=>c.player+' '+c.stat+': plays '+c.plays+', box score '+c.box_score+'. Review needed; plays unchanged.'),'Box-score status: '+evidence.status+'. No play result or pitch sequence was overwritten.']});
     }
   }
+  for (const {data,game,entry} of visited) {
+    const evidence=require('./pitching.cjs').derive(data,game,{readCapture,buildTeam},D);
+    if(evidence && JSON.stringify(evidence)!==JSON.stringify(game.pitching_scout)){game.pitching_scout=evidence;touched.add(entry.id);}
+  }
   D.validateManifest(manifest);
   const changes=new Map();
   for (const id of touched) {
