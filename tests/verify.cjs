@@ -412,3 +412,5 @@ console.log(JSON.stringify({plateAppearances:26,fairContact:total.n,hits:total.h
 // The real manifest is independent of historical fixtures: only validate teams the user retains.
 const runtimeManifest=JSON.parse(fs.readFileSync(path.join(root,'teams.json')));D.validateManifest(runtimeManifest);
 for(const entry of runtimeManifest.teams){const current=JSON.parse(fs.readFileSync(path.join(root,entry.data_file)));D.validateData(current);assert.equal(current.team.id,entry.id);}
+
+assert.equal(D.pct(0,0),'—');assert.equal(D.pct(0,20),'0%');assert.equal(D.pct(1,1000),'0.1%','A nonzero observed rate must not display as zero');

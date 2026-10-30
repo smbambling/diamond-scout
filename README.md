@@ -1,5 +1,25 @@
 # Diamond-Scout
 
+## Full-width metric details
+
+The introductory tap-instruction text is omitted; the information icons identify expandable metrics.
+
+
+AVG, OBP and SLG expand directly below the first batting row, pushing H / AB, BB% and K% down together. BB% and K% expand below the second row. The detail panel remains full-width and only one metric is open at a time.
+
+
+Metric details open in a full-width panel below the approach or batting group, rather than inside individual narrow columns. Only one metric is expanded at a time across these groups. Tap the active metric again to close it. Short labeled count columns keep the cards aligned: Attempts / Stolen / Caught (plus Unknown when recorded), Doubles / Triples / Home runs, or the relevant count and sample. Buttons expose their expanded state and associated panel to assistive technology and retain keyboard focus after switching details. Team, batter and game changes close the panel. No data or calculations changed. UI-model checks cover opening, replacement, closing and count evidence at 320px and 430px; no new visual browser verification was available.
+
+## Quick-glance statistics and details
+
+Expandable metrics use a small circled information icon, keyboard focus styling and a pressed background. Labels and values are not underlined. The full metric button is a touch target of at least 64px. Plain H / AB has no information icon or disclosure.
+
+The approach row contains ground-ball rate, line-drive rate, first-pitch swing and steal tendency in four columns. Ground balls and line drives are plain, non-expandable tiles with contact-count / total-fair-contact fractions beneath the percentages. First-pitch swing is also non-expandable, with swings / tracked-first-pitches underneath. Their information icons are removed. Fair-contact denominators include outs, errors and sacrifices as well as hits, and do not change with the contact-type filter. A zero denominator shows a dash. Steal details contain only total attempts and SB/CS counts, plus explicitly unknown outcomes when supplied. Formulas and attempts/game are omitted from this quick-glance screen; missing trip evidence remains marked for review.
+
+Batting disclosures show count evidence for AVG, OBP, BB% and K%. SLG expands to extra-base-hit counts split into doubles, triples and home runs. Partial-stat asterisks and coverage remain in place when an outcome is unresolved. The batter sample is abbreviated to PA and game counts, with incomplete appearances separately identified. These are recorded observations, not predictions.
+
+Verified with data checks and UI models, including 320px and 430px. No fresh browser rendering review was available for this update.
+
 ## Current interface: Scout only
 
 Field, Approach and History navigation is temporarily hidden and disabled, along with the full-field shortcut. Scout remains available with its filters, batting stats, tendencies and contact map. The question-mark help button has been removed. The unused bottom navigation spacing is removed while safe-area spacing remains. All history and secondary-view rendering code is retained; `SCOUT_ONLY` in the app script controls the temporary navigation restriction. The default is `true`; change it to `false` to restore the three tabs and field shortcut. Restoring that flag does not restore the removed help button.
@@ -441,3 +461,13 @@ Historical test scenarios now load the isolated mock manifest `tests/fixtures/te
 All eight checks pass: `verify`, `ui`, `capture`, `import`, `preflight`, `steals`, `incomplete` and `unidentified` (run as `node tests/<name>.cjs`). Live HTML, manifest and team files were verified byte-for-byte unchanged after running the checks. UI checks remain DOM-model tests, not a new browser visual review.
 
 Deleting a team from the app does not establish an import exclusion. A later ordinary `--write` import still adds both captured teams by default; choose `--team "Captured Team Name"` if you only want one team from a capture. This test change does not alter import selection.
+
+### Simplified batting tiles
+
+AVG no longer expands because H / AB already provides its count evidence. BB% and K% are non-expandable, with walks / completed PAs and strikeouts / completed PAs directly underneath. These three metrics have no information icon. OBP, SLG and steal tendency retain their panels. Partial-stat fractions use the same classified completed PAs as their displayed percentages; zero denominators show a dash.
+
+## Saved selection and missing data
+
+The app remembers the selected team and batter in browser local storage, scoped to the site's directory. It stores only those two IDs, never team JSON or computed stats. Refresh still fetches the current manifest and selected history using `cache: no-store`. A removed saved team falls back to the first available team; a removed saved batter falls back to Entire team. Switching teams starts at Entire team. Game/contact filters and expanded metrics are not restored. If browser storage is blocked or damaged, the app still loads normally.
+
+A dash means unavailable, with compact supporting text such as No fair contact, No first-pitch data, No completed PAs, Unavailable or the existing trip-review reason. Zero denominators never display 0%; an observed zero with a positive denominator does. Tiny positive rates that would round down to 0% retain a significant digit instead. Batting averages continue standard three-decimal formatting. UI tests cover saved selections, fresh fetches, stale/deleted IDs, storage failures and zero-versus-unavailable states.
