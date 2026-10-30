@@ -462,7 +462,26 @@ function inside(root, relative) {
   return destination;
 }
 
+// Expand a single downloaded game bundle into the existing Plays + box-score pipeline.
+function expandInputs(inputs,options={}){
+  const plays=[],boxes=[...(options.boxInputs||[])],bundles=[...(options.bundleInputs||[])];
+  for(const input of inputs){
+    if(input.error||typeof input.raw!=='string'||!/^\s*\{/.test(input.raw)){plays.push(input);continue;}
+    let value;try{value=JSON.parse(input.raw);}catch{fail('Invalid game capture JSON: '+input.name);}
+    if(value.kind==='diamond-scout-box-score'){require('./box-score.cjs').read(input);boxes.push(input);continue;}
+    if(value.schema_version!==1||value.kind!=='diamond-scout-game'||typeof value.plays!=='string'||!value.box_score)fail('Unsupported game capture JSON: '+input.name);
+    const box={name:input.name+' [box score]',raw:json(value.box_score)};require('./box-score.cjs').read(box);
+    const capture=readCapture(value.plays,{});
+    if(!value.source_event_id||capture.eventId!==value.source_event_id||value.box_score.source_event_id!==value.source_event_id)fail('Combined capture has mismatched Plays/Box score game IDs: '+input.name);
+    plays.push({name:input.name,raw:value.plays,captureWarnings:Array.isArray(value.warnings)?value.warnings.filter(w=>typeof w==='string'):[]});boxes.push(box);bundles.push(input);
+  }
+  return {inputs:plays,options:{...options,boxInputs:boxes,bundleInputs:bundles}};
+}
+
 function planImports(root, inputs, options = {}, previousState=null) {
+  const suppliedInputCount=inputs.length;
+  ({inputs,options}=expandInputs(inputs,options));
+  if(suppliedInputCount&&!inputs.length)fail('Box-score-only input needs a matching Plays TXT or combined game JSON capture.');
   if(previousState){
     return {...planWithState(root,inputs,options,{...previousState,manifest:clone(previousState.manifest),dataById:new Map([...previousState.dataById].map(([id,data])=>[id,clone(data)]))}),preflightOnly:true};
   }
@@ -480,7 +499,8 @@ function planImports(root, inputs, options = {}, previousState=null) {
 }
 function planWithState(root,inputs,options,state){
   const {D,manifest,initial,dataById}=state;
-  const report=[], touched=new Set();
+  const report=[], touched=new Set(), visited=[];
+  const B=require('./box-score.cjs'),boxes=(options.boxInputs||[]).map(B.read);
   for (const input of inputs) {
     const capture=readCapture(input.raw,options);
     let selected=0;
@@ -510,7 +530,8 @@ function planWithState(root,inputs,options,state){
         for (const [field,value] of [['date',capture.date],['start_time',capture.time],['timezone',capture.timezone],['source_event_id',capture.eventId]]) if (value!=null && game[field]!=null && game[field]!==value) fail('Same plays have conflicting '+field+' for '+entry.name+'. Use the data-update prompt for corrections.');
         if (game.batting_half && game.batting_half!==half) fail('Same plays have conflicting batting halves for '+entry.name+'.');
         if (other && key(game.opponent)!==key(opponent)) fail('Same plays have conflicting opponents for '+entry.name+'.');
-        report.push({file:input.name,team:entry.name,team_id:entry.id,status:'duplicate',game_id:game.id,warnings:['Identical plays already present; no records or metadata changed.']}); continue;
+        visited.push({data,game,entry});
+        report.push({file:input.name,team:entry.name,team_id:entry.id,status:'duplicate',game_id:game.id,warnings:['Identical plays already present; no records or metadata changed.',...(input.captureWarnings||[])]}); continue;
       }
       const overlap=data.games.find(game=>{
         if (capture.eventId && game.source_event_id) return capture.eventId===game.source_event_id;
@@ -525,6 +546,8 @@ function planWithState(root,inputs,options,state){
       const gameId=[capture.date||'undated',capture.time?.replace(':','')||'unknown-time',entry.id,'vs',slug(opponent),hash(identity).slice(0,10)].join('-');
       if (data.games.some(g=>g.id===gameId)) fail('Generated game ID collision.');
       const built=buildTeam(capture,name,data,gameId,opponent,D);
+      visited.push({data,game:data.games.find(g=>g.id===gameId),entry});
+      built.warnings.push(...(input.captureWarnings||[]));
       if (!other) built.warnings.unshift('Only one batting side supplied; no opponent roster/history created.');
       if (!capture.date) built.warnings.unshift('Game date unknown; no year inferred.');
       if (!capture.time) built.warnings.unshift('Start time unknown.');
@@ -532,13 +555,26 @@ function planWithState(root,inputs,options,state){
     }
     if (!selected) fail('Requested team not found in supplied inning headings: '+capture.onlyTeam);
   }
+  const uniqueBoxes=new Map();
+  for(const box of boxes){const prior=uniqueBoxes.get(box.box.source_event_id);if(prior&&prior.sha256!==box.sha256)fail('Conflicting box-score captures for event '+box.box.source_event_id+'. Review the versions.');uniqueBoxes.set(box.box.source_event_id,box);}
+  for(const box of uniqueBoxes.values()){
+    const matching=visited.filter(v=>v.game.source_event_id===box.box.source_event_id);
+    if(!matching.length){if(!options.preflight&&inputs.length)fail('Box score does not match a supplied plays capture: '+box.file);continue;}
+    for(const {data,game,entry}of matching){
+      const evidence=B.reconcile(data,game,box,D);
+      if(game.box_score&&game.box_score.source_sha256!==box.sha256)fail('A different box score is already attached for '+entry.name+'. Review corrections before replacing it.');
+      const changed=!game.box_score;
+      if(changed){game.box_score=evidence;touched.add(entry.id);}
+      report.push({file:box.file,team:entry.name,team_id:entry.id,status:changed?'box-score-attached':'box-score-duplicate',game_id:game.id,warnings:[...evidence.notes,...evidence.comparisons.filter(c=>c.status==='conflict').map(c=>c.player+' '+c.stat+': plays '+c.plays+', box score '+c.box_score+'. Review needed; plays unchanged.'),'Box-score status: '+evidence.status+'. No play result or pitch sequence was overwritten.']});
+    }
+  }
   D.validateManifest(manifest);
   const changes=new Map();
   for (const id of touched) {
     const entry=manifest.teams.find(t=>t.id===id); D.validateData(dataById.get(id)); changes.set(entry.data_file,Buffer.from(json(dataById.get(id))));
   }
   if (json(manifest)!==json(JSON.parse(initial.get('teams.json')))) changes.set('teams.json',Buffer.from(json(manifest)));
-  return {root,initial,changes,report,inputs,state};
+  return {root,initial,changes,report,inputs:inputs.concat(options.boxInputs||[],options.bundleInputs||[]),state};
 }
 
 function writePlan(plan) {
@@ -589,7 +625,7 @@ function writeUnlocked(plan) {
 
 function parseArgs(args) {
   const options={aliases:{}}, files=[];
-  const names={'--date':'date','--time':'time','--timezone':'timezone','--opponent':'opponent','--source':'source','--event-id':'eventId','--team':'team','--order':'order','--report':'report'};
+  const names={'--date':'date','--time':'time','--timezone':'timezone','--opponent':'opponent','--source':'source','--event-id':'eventId','--team':'team','--order':'order','--report':'report','--box-score':'boxScore'};
   for (let i=0;i<args.length;i++) {
     const arg=args[i];
     if (arg==='--write') options.write=true;
@@ -598,6 +634,7 @@ function parseArgs(args) {
     else if (names[arg]||arg==='--team-alias') {
       const value=args[++i]; if (!value || value.startsWith('--')) fail('Missing value for '+arg);
       if (arg==='--team-alias') { const split=value.lastIndexOf('='); if (split<1 || split===value.length-1) fail('--team-alias must be "Captured Name=existing-team-id".'); options.aliases[value.slice(0,split)]=value.slice(split+1); }
+      else if(arg==='--box-score')(options.boxScoreFiles??=[]).push(value);
       else options[names[arg]]=value;
     } else if (arg==='--') { files.push(...args.slice(i+1)); break; }
     else if (arg.startsWith('-')) fail('Unknown option: '+arg);
@@ -607,6 +644,7 @@ function parseArgs(args) {
 }
 const HELP=`Diamond-Scout local plays → JSON converter (Node.js 18+, no packages)
 
+  node tools/import-plays.cjs /path/to/gamechanger-game.json
   node tools/import-plays.cjs /path/to/gamechanger-plays.txt
   node tools/import-plays.cjs /path/to/gamechanger-plays.txt --write
   node tools/import-plays.cjs /path/to/gamechanger-plays-*.txt --write
@@ -624,6 +662,11 @@ imports data. Optional --report saves .json or .md diagnostics; reports inside
 this project belong under work/preflight/. Exit 1 means an error needs attention;
 exit 0 means ready/duplicate, with any source notes still requiring review.
 
+Optional box-score evidence (repeat for multiple games):
+  --box-score /path/gamechanger-boxscore.json
+Matches game event IDs, checks batting totals, and reports scoring differences.
+Plays are never silently rewritten. Works with --preflight and --write.
+
 Optional metadata overrides (apply to ALL input files):
   --date YYYY-MM-DD        --time HH:MM (or "8:30 AM")
   --timezone ET           --opponent "Team Name" (one-side capture only)
@@ -638,7 +681,8 @@ can omit metadata; those values stay unknown. Read tools/IMPORT-PLAYS.md for lim
 function main(args = process.argv.slice(2)) {
   const {options,files}=parseArgs(args);
   if (options.help) { process.stdout.write(HELP); return; }
-  if (!files.length) fail('Supply one or more captured TXT files. Use --help for examples.');
+  if (!files.length) fail('Supply one or more Plays TXT or game JSON captures. Use --help for examples.');
+  options.boxInputs=(options.boxScoreFiles||[]).map(file=>({name:path.resolve(file),raw:fs.readFileSync(file,'utf8')}));
   if(options.preflight)return require('./preflight-plays.cjs').runCLI(ROOT,files,options);
   if(options.report)fail('--report is available with --preflight only.');
   const inputs=files.map(file=>({name:path.resolve(file),raw:fs.readFileSync(file,'utf8')}));
@@ -653,5 +697,5 @@ function main(args = process.argv.slice(2)) {
   if (backup) console.log('Backup and report: '+backup+'\nRefresh Diamond-Scout to read the updated repository JSON.');
   else if (!options.write && plan.changes.size) console.log('Run the same command with --write to save this import.');
 }
-module.exports={readCapture,parseBlock,parsePitches,buildTeam,planImports,writePlan,loadCore,parseArgs};
+module.exports={expandInputs,readCapture,parseBlock,parsePitches,buildTeam,planImports,writePlan,loadCore,parseArgs};
 if (require.main===module) try { main(); } catch (error) { console.error('\nImport stopped: '+error.message+'\nNo planned imports were saved (write errors include rollback status above).'); process.exitCode=1; }

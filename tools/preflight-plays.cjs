@@ -18,8 +18,8 @@ function collectInputs(paths){
     try{
       if(fs.statSync(name).isDirectory()){
         if(folders.has(name))continue;folders.add(name);
-        const files=fs.readdirSync(name,{withFileTypes:true}).filter(entry=>entry.isFile()&&!entry.name.startsWith('.')&&/\.txt$/i.test(entry.name)).map(entry=>entry.name).sort();
-        if(!files.length)inputs.push({name,error:'Folder contains no regular TXT captures. Subfolders are not scanned.'});
+        const files=fs.readdirSync(name,{withFileTypes:true}).filter(entry=>entry.isFile()&&!entry.name.startsWith('.')&&(/\.txt$/i.test(entry.name)||/^gamechanger-(game|boxscore)-.*\.json$/i.test(entry.name))).map(entry=>entry.name).sort();
+        if(!files.length)inputs.push({name,error:'Folder contains no regular Plays TXT or gamechanger-game/boxscore JSON captures. Subfolders are not scanned.'});
         for(const file of files)read(path.join(name,file));
       }else read(name);
     }catch(error){if(!seen.has(name)){seen.add(name);inputs.push({name,error:error.message});}}
@@ -28,6 +28,9 @@ function collectInputs(paths){
 }
 
 function inspectBatch(root,inputs,options={}){
+  const normalized=[],extraBoxes=[],extraBundles=[];
+  for(const input of inputs){try{const expanded=I.expandInputs([input]);normalized.push(...expanded.inputs);extraBoxes.push(...expanded.options.boxInputs);extraBundles.push(...expanded.options.bundleInputs);}catch(error){normalized.push({...input,error:error.message});}}
+  inputs=normalized;options={...options,boxInputs:[...(options.boxInputs||[]),...extraBoxes],bundleInputs:[...(options.bundleInputs||[]),...extraBundles]};
   const projectIssues=[],files=[];let state;
   try{state=I.planImports(root,[],options).state;}catch(error){projectIssues.push({severity:'error',code:'project_error',message:error.message});}
   for(const input of inputs){
@@ -71,9 +74,8 @@ function inspectBatch(root,inputs,options={}){
         const plan=I.planImports(root,[input],{...options,team},candidate);
         candidate=plan.state;
         const result=plan.report[0];
-        file.teams.push({team:result.team,team_id:result.team_id,status:result.status==='added'?'ready':'duplicate',game_id:result.game_id,data_file:result.data_file,counts:result.counts||null});
-        for(const warning of result.warnings||[]){
-          if(result.status==='duplicate')continue;
+        file.teams.push({team:result.team,team_id:result.team_id,status:result.status==='added'||plan.report.some(r=>r.status==='box-score-attached')?'ready':'duplicate',game_id:result.game_id,data_file:result.data_file,counts:result.counts||null});
+        for(const warning of plan.report.flatMap(r=>r.status==='duplicate'?[]:r.warnings||[])){
           const match=warning.match(/^Line (\d+): (.*)$/),message=match?match[2]:warning;
           add({severity:'warning',code:'plan_notice',line:match?Number(match[1]):null,message},{team});
         }
@@ -84,6 +86,7 @@ function inspectBatch(root,inputs,options={}){
       file.status=file.teams.length&&file.teams.every(team=>team.status==='duplicate')?'duplicate':'ready';
     }
   }
+  for(const input of options.boxInputs||[]){try{const box=require('./box-score.cjs').read(input);if(!files.some(f=>f.metadata?.source_event_id===box.box.source_event_id))projectIssues.push({severity:'error',code:'unmatched_box_score',message:'Box score does not match a supplied plays capture: '+input.name});}catch(error){projectIssues.push({severity:'error',code:'invalid_box_score',message:error.message});}}
   for(const file of files){
     file.issues.sort((a,b)=>(a.severity==='error'?0:1)-(b.severity==='error'?0:1)||(a.line??Infinity)-(b.line??Infinity)||a.message.localeCompare(b.message));
     file.errors=file.issues.filter(issue=>issue.severity==='error').length;file.warnings=file.issues.length-file.errors;

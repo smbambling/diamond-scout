@@ -222,7 +222,7 @@ Data-file paths are relative to the directory containing `index.html`, so hostin
 
 ## Capturing plays from GameChanger
 
-An optional local bookmarklet is available in [tools/gamechanger-capture.html](tools/gamechanger-capture.html). Open it in your browser (or visit `http://127.0.0.1:8000/tools/gamechanger-capture.html` with the local preview running) and drag **Capture GC plays** to your bookmarks bar. Sign into GameChanger normally, open the game's Plays view, load/expand the innings, then use the bookmark to review and download the text or copy an import prompt. Review the prefilled date, start time and displayed timezone. A missing header year can be suggested from the season URL only with an explicit year confirmation before export. Correct or clear uncertain fields. Replace your existing bookmark from the reloaded installer page to receive updates. Both teams are requested by default.
+An optional local bookmarklet is available in [tools/gamechanger-capture.html](tools/gamechanger-capture.html). Open it in your browser (or visit `http://127.0.0.1:8000/tools/gamechanger-capture.html` with the local preview running) and drag **Capture GC plays** to your bookmarks bar. Sign into GameChanger normally, open the game's Plays view, load the plays, then use the bookmark to review and download the text or copy an import prompt. Review the prefilled date, start time and displayed timezone. A missing header year can be suggested from the season URL only with an explicit year confirmation before export. Correct or clear uncertain fields. Replace your existing bookmark from the reloaded installer page to receive updates. Both teams are requested by default.
 
 The helper uses the existing signed-in page and makes no network requests or credential/storage reads. It captures loaded text only; it cannot verify that every inning remains present after scrolling. Review both sides and the first/last supplied plays. Its parser/formatting and screenshot-format date/time detection checks pass, but live authenticated-page detection and browser behavior remain unverified. See [tools/README.md](tools/README.md) for instructions, limits and official GameChanger export references. These optional tools do not add dependencies or a login to the hosted scouting app.
 
@@ -471,3 +471,52 @@ AVG no longer expands because H / AB already provides its count evidence. BB% an
 The app remembers the selected team and batter in browser local storage, scoped to the site's directory. It stores only those two IDs, never team JSON or computed stats. Refresh still fetches the current manifest and selected history using `cache: no-store`. A removed saved team falls back to the first available team; a removed saved batter falls back to Entire team. Switching teams starts at Entire team. Game/contact filters and expanded metrics are not restored. If browser storage is blocked or damaged, the app still loads normally.
 
 A dash means unavailable, with compact supporting text such as No fair contact, No first-pitch data, No completed PAs, Unavailable or the existing trip-review reason. Zero denominators never display 0%; an observed zero with a positive denominator does. Tiny positive rates that would round down to 0% retain a significant digit instead. Batting averages continue standard three-decimal formatting. UI tests cover saved selections, fresh fetches, stale/deleted IDs, storage failures and zero-versus-unavailable states.
+
+
+
+## One-click combined game capture
+
+Replace the bookmark from the reloaded `tools/gamechanger-capture.html` installer. Open the intended signed-in GameChanger game and click **Capture GC data** once. It reads Plays and Box score in a temporary visible same-origin window and downloads one `gamechanger-game-<date>.json` file after review. No inning expansion is required. The current page remains open; no private API, credentials, cookies or browser storage are read. Cancel removes the the temporary window.
+
+```sh
+node tools/import-plays.cjs /path/gamechanger-game-2026-10-25.json
+node tools/import-plays.cjs --preflight /path/gamechanger-game-2026-10-25.json --report work/preflight/combined.md
+node tools/import-plays.cjs /path/gamechanger-game-2026-10-25.json --write
+```
+
+Normal import and preflight accept multiple game JSON captures alongside legacy Plays TXT files. Folder preflight discovers TXT files and `gamechanger-game-*.json` / `gamechanger-boxscore-*.json`, ignoring unrelated JSON. Game IDs, teams and known metadata must agree between screens. The importer routes the combined file through the existing Plays parser and box-score reconciliation without duplicating PAs, changing source results or guessing corrections. Original combined JSON, extracted plays and box-score evidence are included in write backups.
+
+Capture waits for rendered screens to settle, with a bounded timeout per screen, but does not certify completeness. Both first-inning halves, team names, dates and table counts are checked or shown for review. Notes-only/canvas table warnings remain attached. Live capture-window loading and authenticated DOM compatibility are not verified in this environment. If the capture window is blocked, use **Capture current screen only** in the progress dialog and follow the separate-screen fallback below. No automatic full-game success is claimed when a screen cannot be read.
+
+`node tests/combined-capture.cjs` covers sequential capture with simulated readers, wrong-route/event/team/metadata guards, explicit year confirmation, partial warnings, bundle processing, backed-up writes in temporary projects, preflight and duplicate detection. Browser loading, cancellation and rendering still need a live check.
+
+## Separate-screen box-score fallback
+
+Replace the existing bookmark from the reloaded `tools/gamechanger-capture.html` installer. Existing bookmarks retain old code. The updated **Capture GC data** bookmark recognizes `/plays` and `/box-score` automatically.
+
+1. On Plays, load the innings and download the usual TXT capture.
+2. On Box score for the same game, load both teams and click the bookmark. Download the separate `gamechanger-boxscore-<date>.json` file. Date/start time detection and explicit confirmation of a season-suggested year work on both pages.
+3. Review the table counts and warnings. The helper reads rendered HTML/ARIA table cells directly, even when copy/paste omits them. It also captures team note entries. Canvas-drawn or unrecognized tables cannot be recovered as text: a notes-only export is explicitly marked incomplete. It makes no private API calls, reads no cookies/browser storage, and excludes navigation/account text from the box export.
+4. Preview the pair, then use `--write` only when ready:
+
+```sh
+node tools/import-plays.cjs /path/plays.txt --box-score /path/boxscore.json
+node tools/import-plays.cjs --preflight /path/plays.txt --box-score /path/boxscore.json --report work/preflight/with-box.md
+node tools/import-plays.cjs /path/plays.txt --box-score /path/boxscore.json --write
+```
+
+Repeat `--box-score` for multiple games; supply the Plays files as the normal positional arguments. Sidecars are matched by source game event ID, never just filenames or dates. Conflicting known metadata, mismatched games, malformed rows or changed already-attached box scores stop the operation. Both-team and `--team` selection still apply to the Plays capture. The box score does not independently add teams or games.
+
+The converter stores the original box JSON and source digest on the matched game as `box_score`, together with comparisons and review notes. It can attach evidence to an already-imported identical play capture without duplicating PAs. Repeating the same pair changes nothing. The existing locked, backed-up batch write procedure includes sidecar sources.
+
+Batting comparisons cover supported supplied AB, H, BB, SO, HBP, TB, SB, CS and sacrifice/extra-base-hit counts. Player identity must match uniquely after stripping source jersey/position annotations; there is no fuzzy identity matching. Unknown/omitted values are not converted into zeros. Runs, RBI, errors and raw pitching tables/notes are retained as evidence, but are not reconstructed or used to create a pitching tab. Incomplete capture stages can cause legitimate differences; matching supplied totals does not certify completeness.
+
+A scoring conflict is reported for review, without changing PA results, contacts, pitches or current app calculations. Example: the supplied BBA game credits Brian Gribbin with a double in the box score, while the Plays text records a single plus an advance on the throw. The preview flags 2B and TB differences. Resolve such differences through a confirmed correction with an audit trail; do not edit source text or silently manufacture a replacement event.
+
+`node tests/box-score.cjs` exercises DOM table extraction, notes-only/canvas warnings, source scoping, the supplied screenshot transcription, substitutions, sacrifice/steal note formats, paired temporary writes, duplicates, mismatched events, malformed rows and preflight reporting. Live signed-in GameChanger DOM compatibility is not yet verified. If the bookmark finds zero tables, retain the screenshots and provide its JSON output for further layout support; the screenshots alone do not establish GameChanger's DOM structure.
+
+### Capture fixes after live feedback
+
+The capture helper now follows each team heading through lineup/pitching rows and team totals before associating notes, rather than assuming the preceding line is a team name. Known Plays teams and visible team links can anchor box sections. Numeric/stat-heading lines cannot become team names.
+
+Automatic capture no longer uses hidden frames. A temporary visible window opens directly from the bookmark click, loads the normal Plays and Box score pages sequentially, and is closed after capture/cancellation. Keep that window open; permit this capture window if the browser blocks it. Blocked/closed windows are reported immediately, and loading has an 18-second timeout per screen. The original game stays open. Separate-screen capture remains available from the progress dialog. Replace the saved bookmark from the reloaded installer and close any old capture dialog before testing. Live window/session and box-table compatibility still require a browser check; automated tests cover numeric rows between team headings and notes, route/metadata guards, readable simulated windows, blocked/closed/cancelled windows and a bounded timeout.

@@ -1,0 +1,373 @@
+{
+  "schema_version": 1,
+  "kind": "diamond-scout-box-score",
+  "source_url": "https://web.gc.com/teams/6bKEd4zQDNOb/2026-fall-dig-in-gribbin-14u/schedule/bbd7b60b-a503-4abf-8dfe-91e7105aabc5/box-score",
+  "source_event_id": "bbd7b60b-a503-4abf-8dfe-91e7105aabc5",
+  "date": "2026-10-25",
+  "start_time": "10:00",
+  "timezone": null,
+  "coverage": "Manually transcribed from user-supplied screenshot for regression testing; not a verified live DOM capture",
+  "teams": [
+    {
+      "name": "Dig In (Gribbin) 14U",
+      "tables": [
+        {
+          "kind": "batting",
+          "columns": [
+            "LINEUP",
+            "AB",
+            "R",
+            "H",
+            "RBI",
+            "BB",
+            "SO"
+          ],
+          "rows": [
+            [
+              "Deven Downs #22 (RF)",
+              "2",
+              "0",
+              "1",
+              "0",
+              "0",
+              "1"
+            ],
+            [
+              "Brian Gribbin #10 (1B)",
+              "1",
+              "0",
+              "1",
+              "0",
+              "1",
+              "0"
+            ],
+            [
+              "Joe Carey #27 (2B)",
+              "2",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "Andres Tecua #2 (3B)",
+              "1",
+              "0",
+              "1",
+              "0",
+              "1",
+              "0"
+            ],
+            [
+              "Dean Simmons #34 (CF)",
+              "1",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "Jack Wieland #23 (LF)",
+              "2",
+              "0",
+              "0",
+              "0",
+              "0",
+              "1"
+            ],
+            [
+              "Ryan Maloney #33 (C)",
+              "2",
+              "0",
+              "0",
+              "0",
+              "0",
+              "1"
+            ],
+            [
+              "Quinn Kasprzak #3 (2B, P)",
+              "2",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "Wesley Hurt #11 (P)",
+              "1",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "Sam Leshner #7 (LF)",
+              "1",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "Declan Class #13 (SS)",
+              "1",
+              "1",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "TEAM",
+              "16",
+              "1",
+              "3",
+              "0",
+              "2",
+              "3"
+            ]
+          ]
+        },
+        {
+          "kind": "pitching",
+          "columns": [
+            "PITCHING",
+            "IP",
+            "H",
+            "R",
+            "ER",
+            "BB",
+            "SO"
+          ],
+          "rows": [
+            [
+              "Wesley Hurt #11",
+              "1.2",
+              "6",
+              "8",
+              "8",
+              "3",
+              "0"
+            ],
+            [
+              "Quinn Kasprzak #3",
+              "1.1",
+              "2",
+              "3",
+              "0",
+              "3",
+              "1"
+            ],
+            [
+              "TEAM",
+              "3.0",
+              "8",
+              "11",
+              "6",
+              "6",
+              "1"
+            ]
+          ]
+        }
+      ],
+      "notes": [
+        "2B: Brian Gribbin",
+        "TB: Brian Gribbin 2, Andres Tecua 1, Deven Downs 1",
+        "SB: Declan Class 2, Brian Gribbin, Deven Downs",
+        "E: Andres Tecua",
+        "Pitches-Strikes: Wesley Hurt 47-26, Quinn Kasprzak 41-20",
+        "Batters Faced: Wesley Hurt 13, Quinn Kasprzak 10"
+      ]
+    },
+    {
+      "name": "BBA 14u East",
+      "tables": [
+        {
+          "kind": "batting",
+          "columns": [
+            "LINEUP",
+            "AB",
+            "R",
+            "H",
+            "RBI",
+            "BB",
+            "SO"
+          ],
+          "rows": [
+            [
+              "Brady Thomas #8 (SS)",
+              "1",
+              "1",
+              "0",
+              "0",
+              "1",
+              "0"
+            ],
+            [
+              "Liam McDermott #2",
+              "1",
+              "0",
+              "0",
+              "0",
+              "0",
+              "1"
+            ],
+            [
+              "Ben Thorn #3 (CF)",
+              "2",
+              "2",
+              "2",
+              "1",
+              "0",
+              "0"
+            ],
+            [
+              "Teddy Fleszar #23 (LF, P)",
+              "2",
+              "1",
+              "2",
+              "1",
+              "0",
+              "0"
+            ],
+            [
+              "Jack Jameson #6 (DH)",
+              "2",
+              "1",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "Holden Cassady #13 (1B)",
+              "2",
+              "1",
+              "1",
+              "1",
+              "0",
+              "0"
+            ],
+            [
+              "Theo West #15 (3B)",
+              "0",
+              "1",
+              "0",
+              "1",
+              "2",
+              "0"
+            ],
+            [
+              "Andrew Tiedeman #18 (C)",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "0"
+            ],
+            [
+              "Jack Conway #4 (2B)",
+              "1",
+              "1",
+              "1",
+              "1",
+              "1",
+              "0"
+            ],
+            [
+              "Ellis Myers #42 (SS)",
+              "1",
+              "1",
+              "0",
+              "1",
+              "1",
+              "0"
+            ],
+            [
+              "Nicholas Ciliento #5 (RF)",
+              "2",
+              "1",
+              "1",
+              "2",
+              "0",
+              "0"
+            ],
+            [
+              "Stuart Cox #10",
+              "2",
+              "0",
+              "0",
+              "0",
+              "0",
+              "0"
+            ],
+            [
+              "TEAM",
+              "17",
+              "11",
+              "8",
+              "9",
+              "6",
+              "1"
+            ]
+          ]
+        },
+        {
+          "kind": "pitching",
+          "columns": [
+            "PITCHING",
+            "IP",
+            "H",
+            "R",
+            "ER",
+            "BB",
+            "SO"
+          ],
+          "rows": [
+            [
+              "Mateo Maday #45",
+              "3.0",
+              "3",
+              "1",
+              "0",
+              "2",
+              "2"
+            ],
+            [
+              "Teddy Fleszar #23",
+              "1.0",
+              "0",
+              "0",
+              "0",
+              "0",
+              "1"
+            ],
+            [
+              "TEAM",
+              "4.0",
+              "3",
+              "1",
+              "0",
+              "2",
+              "3"
+            ]
+          ]
+        }
+      ],
+      "notes": [
+        "3B: Teddy Fleszar",
+        "TB: Teddy Fleszar 4, Ben Thorn 2, Andrew Tiedeman 1, Holden Cassady 1, Jack Conway 1, Nicholas Ciliento 1",
+        "E: Andrew Tiedeman, Ellis Myers, Jack Conway",
+        "Pitches-Strikes: Mateo Maday 63-36, Teddy Fleszar 13-10",
+        "Batters Faced: Mateo Maday 16, Teddy Fleszar 3"
+      ]
+    }
+  ],
+  "warnings": []
+}

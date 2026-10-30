@@ -277,3 +277,11 @@ The project files already provide the existing history; there is no need to atta
 ### Missing names in Plays text
 
 The local converter supports explicitly unidentified batter/runner placeholders. Preserve every supported nameless PA and its pitches, result and contact. Keep each unidentified appearance separate; never infer that several nameless records are one player. Keep a nameless steal as an attempt without guessing its runner or trip link. Flag missing identities in the import notes and withhold any tendency requiring unresolved links. Only assign or merge identities after source-backed/user-confirmed review; preserve the original source text and an audit of the correction.
+
+### Optional box-score companion
+
+Accept a box-score JSON from the updated Capture GC data bookmark with the matching Plays TXT. Match the source event IDs and supplied metadata. Use `--box-score` for preview, preflight and backed-up writes. Retain original box evidence and report comparisons. Incomplete notes-only/canvas captures must stay marked incomplete; absent categories are unknown, not zero. Use unique source-backed player matches, keeping substitutes separate. Flag conflicts (including single versus double, official AB, TB and SB totals); obtain confirmed corrections before changing play-derived classifications. Preserve all original PAs, pitches and source text. Keep pitching-table evidence for later work; the pitching tab remains paused.
+
+### Combined game JSON (preferred capture workflow)
+
+The Capture GC data bookmark now captures Plays and Box score together, without an inning-expansion step. Accept its `diamond-scout-game` JSON directly in normal import or preflight; match embedded game IDs, teams and metadata before processing. Retain partial-capture/table warnings and keep box-score discrepancies in review. Existing separate Plays TXT plus `--box-score` JSON remains supported if GameChanger blocks automatic capture-window navigation. Do not equate a settled page with verified completeness or infer missing rows from screenshots.

@@ -1,0 +1,43 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),os=require('node:os'),assert=require('node:assert/strict');
+const I=require('../tools/import-plays.cjs'),B=require('../tools/box-score.cjs'),P=require('../tools/preflight-plays.cjs'),C=require('../tools/gamechanger-capture.js');
+const root=path.resolve(__dirname,'..'),raw=fs.readFileSync(path.join(__dirname,'fixtures/box-score/2026-10-25-dig-in-bba.json'),'utf8'),box=B.read({name:'box.json',raw}),plays=fs.readFileSync(path.join(__dirname,'fixtures/captures/2026-10-25-dig-in-bba-capture.txt'),'utf8'),D=I.loadCore();
+const parsed=I.readCapture(plays),data={schema_version:1,team:{id:'dig-in-gribbin-14u',name:'Dig In (Gribbin) 14U'},players:[],games:[],plate_appearances:[]};I.buildTeam(parsed,data.team.name,data,'fixture','BBA 14u East',D);
+const before=JSON.stringify(data),r=B.reconcile(data,data.games[0],box,D);assert.equal(JSON.stringify(data),before,'Reconciliation cannot mutate plays');
+assert.equal(r.status,'review');assert.deepEqual(r.comparisons.filter(c=>c.status==='conflict').map(c=>[c.player,c.stat,c.box_score,c.plays]),[['Brian Gribbin','2B',1,0],['Brian Gribbin','TB',2,1]]);
+assert(r.comparisons.some(c=>c.player==='TEAM'&&c.stat==='AB'&&c.plays===16&&c.status==='match'));
+assert.equal(r.source_capture.teams[0].tables[1].rows[0][1],'1.2','IP is retained as source notation, not decimal arithmetic');
+const partial=structuredClone(box.box);partial.teams.forEach(t=>t.tables=[]);const notesOnly=B.reconcile(data,data.games[0],B.read({name:'notes.json',raw:JSON.stringify(partial)}),D);assert(notesOnly.notes.some(n=>n.includes('limited')));assert(!notesOnly.comparisons.some(c=>c.stat==='AB'));
+const body='Account\nprivate@example.test\nSun Oct 25, 10:00 AM - 12:00 PM ET\nBox score\n'+box.box.teams.map(t=>t.name+'\n'+t.notes.join('\n')).join('\n')+'\nPrivacy';
+assert.equal(C.extractBoxNotes(body).length,2);
+const interleaved='Winchester Wildcats 14U\nDig In (Gribbin)14U\nWinchester Wildcats 14U\nLINEUP\nAB\nSO\nCole Gore #5 (CF, 3B)\n1\n0\nTEAM\n19\n12\n6\n5\n9\n2\n2B: Hunter Brannon\nTB: Hunter Brannon 2\nPITCHING\nIP\nLevi Mandel #1\n1.1\n3\n5\n3\n3\n1\nPitches-Strikes: Levi Mandel 49-23\nDig In (Gribbin)14U\nLINEUP\nAB\nDeven Downs #22 (1B, RF)\n2\n1\n1\n0\n1\n0\nTEAM\n17\n5\n4\n2\n4\n2\nTB: Deven Downs 1\nCS: Joe Carey';
+const tracked=C.extractBoxNotes(interleaved,['Winchester Wildcats 14U','Dig In (Gribbin) 14U']);assert.equal(tracked.length,2);assert(tracked[0].notes.includes('2B: Hunter Brannon'));assert(tracked[0].notes.includes('Pitches-Strikes: Levi Mandel 49-23'));assert(tracked[1].notes.includes('CS: Joe Carey'));assert(!tracked.some(t=>/^\d+$/.test(t.name)));
+const arbitrary=C.extractBoxNotes('Team Alpha\nLINEUP\nTEAM\n0\nSB: Ada Young\nTeam Beta\nPITCHING\n0\nCS: Bea Day',['Team Alpha','Team Beta']);assert.equal(arbitrary.length,2);
+
+const unusual=C.extractBoxNotes('Winchester Wildcats 14U\n2B: Hunter Brannon\nSF: Levi Mandel\nSB: Cole Gore, Killian McDaniel\nDig In (Gribbin) 14U\nTB: Andres Tecua 1, Deven Downs 1, Joe Carey 1, Quinn Kasprzak 1\nSB: Deven Downs, Joe Carey\nCS: Joe Carey\nWP: Dean Simmons 3, Tyler 2, Jack Wieland 2');assert.equal(unusual.length,2);assert(unusual[0].notes.includes('SF: Levi Mandel'));assert(unusual[1].notes.includes('CS: Joe Carey'));
+assert(box.box.teams[1].tables[0].rows.some(row=>row[0].startsWith('Brady Thomas')));assert(box.box.teams[1].tables[0].rows.some(row=>row[0].startsWith('Liam McDermott')));
+const args=I.parseArgs(['plays.txt','--box-score','one.json','--box-score','two.json']);assert.deepEqual(args.options.boxScoreFiles,['one.json','two.json']);
+const rect=(left,top,width=900)=>({left,top,width,height:20});
+const heading=name=>({textContent:name,getBoundingClientRect:()=>rect(name.startsWith('Dig')?0:1000,10)});
+const table=(name,t)=>({getBoundingClientRect:()=>rect(name.startsWith('Dig')?0:1000,50),querySelectorAll:()=>[t.columns,...t.rows].map(cells=>({querySelectorAll:()=>cells.map(textContent=>({textContent}))}))});
+const tables=box.box.teams.flatMap(t=>t.tables.map(x=>table(t.name,x)));
+const doc={body:{innerText:body},querySelectorAll(selector){if(selector.startsWith('table'))return tables;if(selector==='canvas')return [];return box.box.teams.map(t=>heading(t.name));}};
+const domBox=C.extractBoxScore(doc,box.box.source_url);assert(domBox.teams.every(t=>t.tables.length===2));assert(!JSON.stringify(domBox).includes('private@example'));
+assert.equal(JSON.parse(C.formatBoxCapture(domBox,{date:'2026-10-25',time:'10:00',timezone:'ET',url:box.box.source_url})).date,'2026-10-25');
+const canvasDoc={body:doc.body,querySelectorAll:selector=>selector==='canvas'?[{getBoundingClientRect:()=>rect(0,50)}]:[]};const limited=C.extractBoxScore(canvasDoc,box.box.source_url);assert(limited.warnings.some(w=>w.includes('canvas')));assert(limited.warnings.some(w=>w.includes('notes only')));
+const folder=fs.mkdtempSync(path.join(os.tmpdir(),'diamond-box-test-'));try{
+ fs.mkdirSync(path.join(folder,'data'));fs.writeFileSync(path.join(folder,'index.html'),fs.readFileSync(path.join(root,'index.html'),'utf8').match(/<script id="diamond-scout-core">[\s\S]*?<\/script>/)[0]);
+ fs.writeFileSync(path.join(folder,'teams.json'),JSON.stringify({schema_version:1,teams:[{id:'seed',name:'Seed',data_file:'data/seed.json'}]}));fs.writeFileSync(path.join(folder,'data/seed.json'),JSON.stringify({schema_version:1,team:{id:'seed',name:'Seed'},players:[],games:[],plate_appearances:[]}));
+ const input={name:'plays.txt',raw:plays},options={boxInputs:[{name:'box.json',raw}]};
+ const scan=P.inspectBatch(folder,[input],{...options,preflight:true});assert.equal(scan.summary.errors,0);assert(scan.files[0].issues.some(i=>i.message.includes('Brian Gribbin TB')));
+ const plan=I.planImports(folder,[input],options);assert.equal(plan.inputs.length,2);assert(plan.report.some(r=>r.status==='box-score-attached'));assert.equal(plan.changes.size,3);I.writePlan(plan);
+ const stored=JSON.parse(fs.readFileSync(path.join(folder,'data/dig-in-gribbin-14u.json')));assert(stored.games[0].box_score);assert.equal(stored.plate_appearances.find(p=>p.batter_id.endsWith('brian-gribbin')&&p.result==='single').result,'single');
+ assert.equal(I.planImports(folder,[input],options).changes.size,0,'Repeated paired import is idempotent');
+ const altered=JSON.parse(raw);altered.teams[0].notes.push('SB: Brian Gribbin 2');assert.throws(()=>I.planImports(folder,[input],{boxInputs:[{name:'changed.json',raw:JSON.stringify(altered)}]}),/different box score/);
+ const wrong=JSON.parse(raw);wrong.source_event_id='another-game';wrong.source_url=wrong.source_url.replace(box.box.source_event_id,'another-game');assert.throws(()=>I.planImports(folder,[input],{boxInputs:[{name:'wrong.json',raw:JSON.stringify(wrong)}]}),/does not match/);
+ assert.equal(P.inspectBatch(folder,[input],{boxInputs:[{name:'wrong.json',raw:JSON.stringify(wrong)}],preflight:true}).ready_for_import,false);
+ const misaligned=JSON.parse(raw);misaligned.teams[0].tables[0].rows[0].pop();assert.throws(()=>B.read({name:'bad.json',raw:JSON.stringify(misaligned)}),/misaligned/);
+ const stale=JSON.parse(raw);stale.date='2026-10-24';assert.throws(()=>I.planImports(folder,[input],{boxInputs:[{name:'stale.json',raw:JSON.stringify(stale)}]}),/conflicting date/);
+ const noRecreate=I.planImports(folder,[input],{...options,team:'Dig In (Gribbin) 14U'});assert.equal(noRecreate.changes.size,0);
+}finally{fs.rmSync(folder,{recursive:true,force:true});}
+console.log('PASS: rendered table/notes capture, canvas limits, privacy scoping, box metadata, per-player/team reconciliation, source conflicts, paired temporary writes, duplicates, preflight notes and unchanged plays.');

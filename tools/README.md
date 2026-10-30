@@ -1,5 +1,22 @@
 # GameChanger play capture
 
+## One-click combined game capture
+
+Replace the bookmark from the reloaded `tools/gamechanger-capture.html` installer. Open the intended signed-in GameChanger game and click **Capture GC data** once. It reads Plays and Box score in a temporary visible same-origin window and downloads one `gamechanger-game-<date>.json` file after review. No inning expansion is required. The current page remains open; no private API, credentials, cookies or browser storage are read. Cancel removes the the temporary window.
+
+```sh
+node tools/import-plays.cjs /path/gamechanger-game-2026-10-25.json
+node tools/import-plays.cjs --preflight /path/gamechanger-game-2026-10-25.json --report work/preflight/combined.md
+node tools/import-plays.cjs /path/gamechanger-game-2026-10-25.json --write
+```
+
+Normal import and preflight accept multiple game JSON captures alongside legacy Plays TXT files. Folder preflight discovers TXT files and `gamechanger-game-*.json` / `gamechanger-boxscore-*.json`, ignoring unrelated JSON. Game IDs, teams and known metadata must agree between screens. The importer routes the combined file through the existing Plays parser and box-score reconciliation without duplicating PAs, changing source results or guessing corrections. Original combined JSON, extracted plays and box-score evidence are included in write backups.
+
+Capture waits for rendered screens to settle, with a bounded timeout per screen, but does not certify completeness. Both first-inning halves, team names, dates and table counts are checked or shown for review. Notes-only/canvas table warnings remain attached. Live capture-window loading and authenticated DOM compatibility are not verified in this environment. If the capture window is blocked, use **Capture current screen only** in the progress dialog and follow the separate-screen fallback below. No automatic full-game success is claimed when a screen cannot be read.
+
+`node tests/combined-capture.cjs` covers sequential capture with simulated readers, wrong-route/event/team/metadata guards, explicit year confirmation, partial warnings, bundle processing, backed-up writes in temporary projects, preflight and duplicate detection. Browser loading, cancellation and rendering still need a live check.
+
+
 To convert a captured TXT file into the app's team JSON locally, see [IMPORT-PLAYS.md](IMPORT-PLAYS.md): `node tools/import-plays.cjs "/path/to/plays.txt"` previews, and adding `--write` saves both teams with backups. The converter is separate from the browser capture helper described below.
 
 Before a batch import, run `node tools/import-plays.cjs --preflight "/path/to/captures" --report work/preflight/latest.md`. This collects independent source/parser errors across TXT files and plays, with line context, while keeping all team data unchanged. See the converter guide for folder scope, optional JSON reports and import instructions after review.
@@ -9,9 +26,9 @@ This optional bookmarklet helps capture plays you can already view in your own s
 ## Install and use
 
 1. Open `gamechanger-capture.html` from this folder in your browser. With the local preview running, use <http://127.0.0.1:8000/tools/gamechanger-capture.html>.
-2. Show your browser’s bookmarks bar and drag **Capture GC plays** onto it. To update an existing installation, reload the installer page and replace the old bookmark with this new button; bookmarks contain their own copy of the code.
+2. Show your browser’s bookmarks bar and drag **Capture GC data** onto it. To update an existing installation, reload the installer page and replace the old bookmark with this new button; bookmarks contain their own copy of the code.
 3. Sign into <https://web.gc.com/> normally. Open the relevant game and its **Plays** view if available to your account.
-4. Expand innings and load the plays. Click the **Capture GC plays** bookmark while viewing that GameChanger page.
+4. No inning expansion is needed. Click the **Capture GC data** bookmark while viewing that GameChanger page.
 5. Review the captured text and the prefilled game date, start time and timezone. The helper reads the game header from the page even if you selected only the plays. Correct any field or leave missing metadata blank; capture time is never substituted for game time. If the page omits the year, a year from a season URL such as `2026-fall-...` is suggested only when the date/weekday agree, and you must confirm that year before export (or edit/clear the date).
 6. Choose **Download TXT** or **Copy import prompt**. Attach or paste the result in the Diamond-Scout conversation. It already begins with **“Use TEAM-DATA-PROMPT.md to add this game”** and requests both teams by default.
 
@@ -23,7 +40,7 @@ If automatic text detection fails, select the play text, including inning and te
 
 The helper reads the selected text, or searches the loaded main/page text for an inning heading. It retains everything from that heading onward so unfamiliar plays are not silently filtered out. Remove navigation or footer text in the review box before exporting. Selection is useful when the page contains other unrelated game text.
 
-Only text presently available in the page is captured. GameChanger may load plays lazily or remove earlier rows while scrolling. Expand/load both sides and check the earliest and latest supplied plays, pitch sequences and runner events. Finding both first-inning halves is a sanity check, not proof of completeness. Every export is marked **loaded browser text only; completeness not verified**. Partial or unfinished sources remain partial when imported.
+Only text presently available in the page is captured. GameChanger may load plays lazily or remove earlier rows while scrolling. Load both sides and check the earliest and latest supplied plays, pitch sequences and runner events. Finding both first-inning halves is a sanity check, not proof of completeness. Every export is marked **loaded browser text only; completeness not verified**. Partial or unfinished sources remain partial when imported.
 
 Dates and times are editable. A header such as `Sun Oct 18, 5:30 PM - 7:30 PM ET` supplies a 17:30 start time and the literal `ET` timezone; the range end is not used as the start. A visible full year is used directly. A season-URL year is only a suggestion requiring confirmation; no current-year fallback is used. Multiple different date/time candidates or weekday conflicts require review instead of silently choosing a date. No matching header leaves fields unknown. Source URLs retain only origin/path, dropping URL credentials, query strings and fragments. Nothing is uploaded. The generated text file contains player/game information you choose to export, so review it before sharing.
 
@@ -38,3 +55,5 @@ GameChanger documents [season-stat CSV exports for Staff](https://help.gc.com/hc
 - `../tests/capture.cjs`: checks existing play preservation, Unicode, partial captures, screenshot-format metadata detection, year confirmation, unknown/ambiguous metadata, invalid dates, URL sanitization and installer/source consistency.
 
 Run `node tests/capture.cjs`. It does not contact GameChanger or launch a browser. Existing runtime files and deployment instructions are unchanged; the `tools/` folder is optional and is not loaded by `index.html`. 
+
+The capture bookmark now supports Plays TXT and Box score JSON. Replace the saved bookmark from the reloaded installer. Pair files with `node tools/import-plays.cjs plays.txt --box-score boxscore.json` (preview), add `--write` to save, or use `--preflight` with the same flag. Read IMPORT-PLAYS.md for matching, incomplete DOM captures and review-only scoring conflicts. `box-score.cjs` validates sidecar evidence and compares recorded batting counts; it never rewrites play results.
