@@ -167,6 +167,17 @@ try {
   assert.equal(I.writePlan(again),null); assert.deepEqual(bytes(folder),snapshot);
   const batch=I.planImports(repo(),[input(oct),input(oct)]); assert.deepEqual(batch.report.map(r=>r.status),['added','added','duplicate','duplicate']);
 
+  const emptyRepo=repo(), eventMeta='Date: 2026-10-01\nStart time: 10:00\nSource: https://web.gc.com/teams/test/schedule/event-empty/plays';
+  const fullEmpty=capture('Top 2nd - Falcons 14U\nAlex Young at bat\n'+one,eventMeta);
+  I.writePlan(I.planImports(emptyRepo,[input(fullEmpty)]));
+  const emptySnapshot=bytes(emptyRepo);
+  const omitted=I.planImports(emptyRepo,[input(capture(one,eventMeta))]);
+  assert.equal(omitted.changes.size,0); assert.equal(omitted.report[0].status,'duplicate');
+  assert.match(omitted.report[0].warnings[0],/unfinished appearance/);
+  assert.deepEqual(bytes(emptyRepo),emptySnapshot);
+  assert.throws(()=>I.planImports(emptyRepo,[input(capture(one.replace('center fielder','left fielder'),eventMeta))]),/overlap/);
+  assert.throws(()=>I.planImports(emptyRepo,[input(capture(one))]),/overlap/);
+
   // Real histories: exact reimport preserves IDs and every existing byte; partial overlap stops.
   const real=repo();
   for (const teamId of ['shockers-14u','stars-camarata-14u']) fs.copyFileSync(path.join(root,'tests/fixtures/teams',teamId+'.json'),path.join(real,'data',teamId+'.json'));

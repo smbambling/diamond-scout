@@ -262,6 +262,11 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  const unavailable=await openApp({files:{'teams.json':manifest,'data/shockers-14u.json':{...data,plate_appearances:[],baserunning_entries:[],baserunning_events:[],runner_outs:[]}}});
  assert.match(unavailable.elements['quick-read'].innerHTML,/No fair contact/);assert.match(unavailable.elements['quick-read'].innerHTML,/No first-pitch data/);assert.match(unavailable.elements['quick-read'].innerHTML,/Steal tendency: Unavailable/);assert.doesNotMatch(unavailable.elements['quick-read'].innerHTML,/>0%<|0\/0/);
  assert.match(E['quick-read'].innerHTML,/Steal tendency: 0%; 0\/11 trips|Steal tendency: 0%; 0\//);
+ // Jersey prefixes change labels only; selection IDs and saved data remain stable.
+ const numbered=clone(data),numberedPlayer=numbered.players[0];numbered.games[0].box_score={source_capture:{teams:[{name:numbered.team.name,tables:[{kind:'batting',columns:['LINEUP','AB'],rows:[[numberedPlayer.name+' #00 (SS)','1']]}]}]}};
+ const numberedApp=await openApp({files:{'teams.json':manifest,'data/shockers-14u.json':numbered}});
+ assert(numberedApp.elements['batter-select'].innerHTML.includes('value="'+numberedPlayer.id+'">#00 '+numberedPlayer.name+'</option>'));
+ numberedApp.elements['batter-select'].value=numberedPlayer.id;numberedApp.elements['batter-select'].listeners.change();assert.equal(numberedApp.elements['batter-select'].value,numberedPlayer.id);
  // Smoke-test the current retained teams separately from fixed historical expectations.
  const runtimeManifest=JSON.parse(fs.readFileSync(path.join(root,'teams.json'))),runtimeFiles={'teams.json':runtimeManifest};
  for(const team of runtimeManifest.teams)runtimeFiles[team.data_file]=JSON.parse(fs.readFileSync(path.join(root,team.data_file)));

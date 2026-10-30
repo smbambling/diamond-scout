@@ -5,12 +5,25 @@
   const inningHeading = /^(?:Top|Bottom)\s+\d+(?:st|nd|rd|th)\s*[-–—]\s*\S/im;
   const clean = value => String(value || '').replace(/\r\n?/g, '\n').trim();
 
+  function stripPlaysFooter(text){
+    const original=String(text),lines=original.split(/\r?\n/);
+    const allowed=/^(?:Get the App|Status|Visit gc\.com|Privacy|Terms|CA Disclosures|Your Privacy Choices|Dick'?s Sporting Goods logo|GameChanger is a proud member of the DICK'S Sporting Goods Family\.|© GameChanger Media, Inc\..*All rights reserved\..*)$/i;
+    for(let i=0;i<lines.length;i++){
+      if(lines[i].trim()!=='Get the App')continue;
+      const tail=lines.slice(i).map(line=>line.trim()).filter(Boolean);
+      if(tail.length>=5&&tail[1]==='Status'&&tail[2]==='Visit gc.com'&&tail.includes('Privacy')&&tail.includes('Terms')&&tail.every(line=>allowed.test(line))){
+        let start=0;for(let n=0;n<i;n++)start=original.indexOf('\n',start)+1;
+        return {plays:original.slice(0,start).trimEnd(),footer:original.slice(start)};
+      }
+    }
+    return {plays:original,footer:null};
+  }
   function extractPlays(text) {
     const original = clean(text);
     const match = inningHeading.exec(original);
     if (!match) throw new Error('No inning/team heading found. Open Plays, or select the plays including a heading such as “Top 1st - Team Name”, then try again.');
-    // Retain all following text: unfamiliar plays must not be silently discarded.
-    return original.slice(match.index);
+    // Remove only the recognized trailing site footer; unfamiliar play text is retained.
+    return stripPlaysFooter(original.slice(match.index)).plays;
   }
 
   function inspectPlays(text) {
@@ -84,16 +97,17 @@
     }
   }
 
-  function formatCapture({ text, date = '', time = '', timezone = '', url }) {
+  function formatCapture({ text, date = '', time = '', timezone = '', url, team = '' }) {
     const plays = extractPlays(text);
     if (date && (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !Number.isFinite(Date.parse(date)) || new Date(date).toISOString().slice(0, 10) !== date)) {
       throw new Error('Use a full game date, including year, or leave it unknown.');
     }
     if (time && !/^([01]\d|2[0-3]):[0-5]\d$/.test(time)) throw new Error('Use a 24-hour start time, or leave it unknown.');
     if (timezone && (timezone.length > 80 || /[\r\n\u0000]/.test(timezone))) throw new Error('Use a single-line timezone label, or leave it unknown.');
+    if (team && (!inspectPlays(plays).teams.includes(team) || /[\r\n]/.test(team))) throw new Error('Choose a team found in the captured plays.');
     return [
       'Use TEAM-DATA-PROMPT.md to add this game',
-      'Import: both teams (default)',
+      team ? 'Import: only ' + team : 'Import: both teams (default)',
       'Date: ' + (date || 'unknown'),
       'Start time: ' + (time || 'unknown'),
       'Timezone: ' + (timezone || 'unknown'),
@@ -174,10 +188,10 @@
     if(box.data.source_event_id!==urls.eventId)throw Error('Box-score game ID does not match Plays.');
     return {schema_version:1,kind:'diamond-scout-game',source_event_id:urls.eventId,plays:extracted,plays_url:urls.plays,box_score:box.data,coverage:'Loaded rendered game screens only; completeness not verified',warnings:[...box.data.warnings,...(!summary.topFirst||!summary.bottomFirst?['A first-inning half is missing from Plays.']:[])],detected};
   }
-  function formatCombined(bundle,{date='',time='',timezone='',yearConfirmed=false}){
+  function formatCombined(bundle,{date='',time='',timezone='',yearConfirmed=false,team=''}){
     validateDetectedDate(bundle.detected,date,yearConfirmed);
     const {detected,...saved}=bundle;
-    return JSON.stringify({...saved,plays:formatCapture({text:bundle.plays,date,time,timezone,url:bundle.plays_url}),box_score:JSON.parse(formatBoxCapture(bundle.box_score,{date,time,timezone,url:bundle.box_score.source_url}))},null,2);
+    return JSON.stringify({...saved,plays:formatCapture({text:bundle.plays,date,time,timezone,url:bundle.plays_url,team}),box_score:JSON.parse(formatBoxCapture(bundle.box_score,{date,time,timezone,url:bundle.box_score.source_url}))},null,2);
   }
   async function readGameWindow(popup,url,kind,cancelled,knownTeams=[],timing={}){
     if(!popup||popup.closed)throw Error('The capture window was blocked or closed. Allow the game capture window, or capture the current screen only.');
@@ -220,7 +234,7 @@
     }finally{try{if(popup&&!popup.closed)popup.close();}catch{}busy.remove();}
   }
   if (typeof document === 'undefined' && typeof module !== 'undefined' && module.exports) {
-    module.exports = { extractPlays, inspectPlays, sourceUrl, formatCapture, detectGameMetadata, validateDetectedDate, extractBoxNotes, extractBoxScore, formatBoxCapture, gameScreens, captureBoth, formatCombined, readGameWindow };
+    module.exports = { stripPlaysFooter, extractPlays, inspectPlays, sourceUrl, formatCapture, detectGameMetadata, validateDetectedDate, extractBoxNotes, extractBoxScore, formatBoxCapture, gameScreens, captureBoth, formatCombined, readGameWindow };
     return;
   }
 
@@ -257,6 +271,7 @@
       '<label style="display:grid;gap:4px;flex:1">Game date (optional)<input id="diamond-scout-capture-date" type="date" style="font:inherit;min-height:48px;padding:8px;box-sizing:border-box;min-width:0"></label>' +
       '<label style="display:grid;gap:4px;flex:1">Start time (optional)<input id="diamond-scout-capture-time" type="time" style="font:inherit;min-height:48px;padding:8px;box-sizing:border-box;min-width:0"></label>' +
       '<label style="display:grid;gap:4px;flex:1">Timezone (as shown)<input id="diamond-scout-capture-zone" type="text" maxlength="80" placeholder="unknown" style="font:inherit;min-height:48px;padding:8px;box-sizing:border-box;min-width:0"></label></div>' +
+      '<label id="diamond-scout-capture-team-label" style="display:grid;gap:4px;margin-bottom:12px">Teams to import<select id="diamond-scout-capture-team" style="font:inherit;min-height:48px;padding:8px"><option value="">Both teams (default)</option></select></label>' +
       '<label id="diamond-scout-capture-year-label" hidden style="gap:8px;align-items:center;min-height:48px;margin-bottom:12px"><input id="diamond-scout-capture-year-confirm" type="checkbox" style="width:24px;height:24px">I confirm the suggested game year from the season URL.</label>' +
       '<label style="display:grid;gap:4px">Captured data — review before exporting<textarea id="diamond-scout-capture-text" spellcheck="false" style="font:16px/1.4 ui-monospace,monospace;width:100%;min-height:260px;padding:10px;box-sizing:border-box;resize:vertical"></textarea></label>' +
       '<p style="font-size:13px">Dates are never inferred from capture time. No login credentials, cookies or browser storage are read. Nothing is uploaded or imported into team history by this helper.</p>' +
@@ -267,6 +282,12 @@
     field('download').style.background = '#0052CC'; field('download').style.color = '#FFFFFF';
     if(combined){field('title').textContent='Review complete game capture';field('download').textContent='Download game JSON';field('copy').textContent='Copy game JSON';}
     else if(boxMode){field('title').textContent='Review GameChanger box score';field('download').textContent='Download box-score JSON';field('copy').textContent='Copy box-score JSON';}
+    field('team-label').hidden = boxMode && !combined;
+    if (boxMode && !combined) field('team-label').style.display = 'none';
+    const importTeams = combined ? inspectPlays(combined.plays).teams : boxMode ? [] : inspectPlays(text).teams;
+    for (const name of importTeams) {
+      const option = document.createElement('option'); option.value = name; option.textContent = 'Only ' + name; field('team').appendChild(option);
+    }
     field('text').value = text;
     field('date').value = detected.date;
     field('time').value = detected.time;
@@ -289,9 +310,9 @@
     }
     function output() {
       validateDetectedDate(detected, field('date').value, field('year-confirm').checked);
-      if(combined)return formatCombined(JSON.parse(field('text').value),{date:field('date').value,time:field('time').value,timezone:field('zone').value.trim(),yearConfirmed:field('year-confirm').checked});
+      if(combined)return formatCombined(JSON.parse(field('text').value),{date:field('date').value,time:field('time').value,timezone:field('zone').value.trim(),yearConfirmed:field('year-confirm').checked,team:field('team').value});
       if(boxMode)return formatBoxCapture(JSON.parse(field('text').value),{date:field('date').value,time:field('time').value,timezone:field('zone').value.trim(),url});
-      return formatCapture({ text: field('text').value, date: field('date').value, time: field('time').value, timezone: field('zone').value.trim(), url });
+      return formatCapture({ text: field('text').value, date: field('date').value, time: field('time').value, timezone: field('zone').value.trim(), url, team: field('team').value });
     }
     field('text').addEventListener('input', updateSummary);
     field('download').addEventListener('click', () => {

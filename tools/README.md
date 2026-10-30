@@ -2,7 +2,7 @@
 
 ## One-click combined game capture
 
-Replace the bookmark from the reloaded `tools/gamechanger-capture.html` installer. Open the intended signed-in GameChanger game and click **Capture GC data** once. It reads Plays and Box score in a temporary visible same-origin window and downloads one `gamechanger-game-<date>.json` file after review. No inning expansion is required. The current page remains open; no private API, credentials, cookies or browser storage are read. Cancel removes the the temporary window.
+Replace the bookmark from the reloaded `tools/gamechanger-capture.html` installer. Open the intended signed-in GameChanger game and click **Capture GC data** once. It reads Plays and Box score in a temporary visible same-origin window and downloads one `gamechanger-game-<date>.json` file after review. In the review dialog, choose **Teams to import**: **Both teams (default)** or **Only [team name]**. The choice is saved in the export and applies to both plays and box-score reconciliation; all captured source evidence remains available. Plays-only TXT exports support the same choice. Box-score-only exports use the team selection from their paired Plays capture. No inning expansion is required. The current page remains open; no private API, credentials, cookies or browser storage are read. Cancel removes the the temporary window.
 
 ```sh
 node tools/import-plays.cjs /path/gamechanger-game-2026-10-25.json

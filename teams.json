@@ -6,16 +6,6 @@
       "id": "dig-in-gribbin-14u",
       "name": "Dig In (Gribbin) 14U",
       "data_file": "data/dig-in-gribbin-14u.json"
-    },
-    {
-      "id": "fallprep-jv-2026-15u",
-      "name": "FallPrep JV 2026 15U",
-      "data_file": "data/fallprep-jv-2026-15u.json"
-    },
-    {
-      "id": "rawlings-tigers-nova-black-14u",
-      "name": "Rawlings Tigers NOVA - Black 14U",
-      "data_file": "data/rawlings-tigers-nova-black-14u.json"
     }
   ]
 }

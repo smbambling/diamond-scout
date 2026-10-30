@@ -260,7 +260,25 @@ html[data-scout-only="true"]{scroll-padding-bottom:16px}html[data-scout-only="tr
   svg+='<rect x="235" y="170" width="10" height="10" fill="var(--map-line)" transform="rotate(45 240 175)"/></svg>';
   return svg+'<table><thead><tr><th>Foul catch area</th><th>Catches</th><th>Share</th></tr></thead><tbody>'+[...Object.entries(foulZones).map(([z,name])=>[name,s.counts[z]]),['Unknown area',s.unknown]].map(([name,n])=>'<tr><td>'+name+'</td><td>'+n+'</td><td>'+pct(n,s.n)+'</td></tr>').join('')+'</tbody></table><p class="note">'+s.n+' foul catches; percentages use foul catches only. Unknown areas stay in this denominator. Region shading does not indicate exact catch positions or depth.</p>';
  }
- globalThis.DiamondScout={positions,names,zoneToPosition,positionToZone,foulZones,esc,pretty,pct,hit,formatCount,gameWhen,validateDataPath,validateManifest,validateData,filter,contacts,foulContacts,foulSummary,summarize,pitchSummary,describedLocations,fielderLayout,fielderRadius,fieldSvg,foulSvg,battingSummary,baserunningSummary,onBaseStatus,readiness};
+ function playerJerseyNumbers(data){
+  const normalize=value=>String(value).normalize('NFC').replace(/[’‘]/g,"'").replace(/[“”]/g,'"').replace(/\s+/g,' ').replace(/\)\s*(?=\d{1,2}u\b)/gi,') ').trim().toLowerCase();
+  const numbers=new Map();
+  for(const game of data.games){
+   const teams=game.box_score?.source_capture?.teams;if(!Array.isArray(teams))continue;
+   const team=teams.find(t=>normalize(t.name)===normalize(data.team.name));if(!team)continue;
+   for(const table of team.tables||[]){
+    if(!['batting','pitching'].includes(table.kind)||!Array.isArray(table.columns)||!Array.isArray(table.rows))continue;
+    const column=table.columns.findIndex(c=>!['AB','R','H','RBI','BB','SO','IP','ER','HBP','SF','SH','TB','SB','CS'].includes(String(c).toUpperCase()));if(column<0)continue;
+    for(const row of table.rows){
+     const match=String(row[column]||'').match(/^(.*?)\s*#(\d{1,3})(?:\s*\([^)]*\))?\s*$/);if(!match)continue;
+     const matches=data.players.filter(p=>p.identity_status!=='unidentified'&&normalize(p.name)===normalize(match[1]));if(matches.length!==1)continue;
+     const id=matches[0].id;if(!numbers.has(id))numbers.set(id,new Set());numbers.get(id).add(match[2]);
+    }
+   }
+  }
+  return new Map([...numbers].filter(([,values])=>values.size===1).map(([id,values])=>[id,[...values][0]]));
+ }
+ globalThis.DiamondScout={positions,names,zoneToPosition,positionToZone,foulZones,esc,pretty,pct,hit,formatCount,gameWhen,validateDataPath,validateManifest,validateData,filter,contacts,foulContacts,foulSummary,summarize,pitchSummary,playerJerseyNumbers,describedLocations,fielderLayout,fielderRadius,fieldSvg,foulSvg,battingSummary,baserunningSummary,onBaseStatus,readiness};
 })();
 </script>
 <script id="diamond-scout-app">
@@ -282,7 +300,8 @@ html[data-scout-only="true"]{scroll-padding-bottom:16px}html[data-scout-only="tr
  const pitchStats=(pas,game=state.game,batter=state.batter)=>D.pitchSummary(pas,batter==='all'?(data.runner_outs||[]).filter(out=>game==='all'||out.game_id===game).flatMap(out=>out.pitches||[]):[]);
  function status(message,error=false){$('status').className=error?'notice error':'loading';$('status').textContent=message;$('status').hidden=false;}
  function populateFilters(){
-  $('batter-select').innerHTML='<option value="all">Entire team</option>'+data.players.map(p=>'<option value="'+e(p.id)+'">'+e(p.name)+'</option>').join('');
+  const numbers=D.playerJerseyNumbers(data);
+  $('batter-select').innerHTML='<option value="all">Entire team</option>'+data.players.map(p=>'<option value="'+e(p.id)+'">'+e((numbers.has(p.id)?'#'+numbers.get(p.id)+' ':'')+p.name)+'</option>').join('');
   $('game-select').innerHTML='<option value="all">All recorded games</option>'+data.games.map(g=>'<option value="'+e(g.id)+'">'+e(D.gameWhen(g)+' · '+(g.label||'vs. '+g.opponent))+'</option>').join('');
   state.batter='all';state.game='all';state.type='all';$('contact-select').value='all';outcomesExpanded=false;expandedMetric=null;
  }

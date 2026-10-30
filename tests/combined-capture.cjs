@@ -27,6 +27,16 @@ const header='Sun Oct 25, 2026, 10:00 AM - 12:00 PM ET\n';
  try{
   fs.mkdirSync(path.join(folder,'data'));fs.writeFileSync(path.join(folder,'index.html'),fs.readFileSync(path.join(root,'index.html'),'utf8').match(/<script id="diamond-scout-core">[\s\S]*?<\/script>/)[0]);
   fs.writeFileSync(path.join(folder,'teams.json'),JSON.stringify({schema_version:1,teams:[{id:'seed',name:'Seed',data_file:'data/seed.json'}]}));fs.writeFileSync(path.join(folder,'data/seed.json'),JSON.stringify({schema_version:1,team:{id:'seed',name:'Seed'},players:[],games:[],plate_appearances:[]}));
+  for (const team of C.inspectPlays(bundle.plays).teams) {
+   const single={name:input.name,raw:C.formatCombined(bundle,{date:'2026-10-25',team})};
+   const chosen=I.planImports(folder,[single]);
+   assert.equal(chosen.changes.size,2,'Only selected history and manifest change');
+   assert(chosen.report.every(r=>r.team===team),'Plays and box-score reconciliation honor selection');
+   assert.equal(chosen.report.filter(r=>r.status==='added').length,1);
+   assert.equal(P.inspectBatch(folder,[single],{preflight:true}).ready_for_import,true);
+   assert(C.formatCapture({text:bundle.plays,url:bundle.plays_url,team}).includes('Import: only '+team));
+  }
+  assert.throws(()=>C.formatCombined(bundle,{team:'Missing team'}),/Choose a team/);
   const preflight=P.inspectBatch(folder,[input],{preflight:true});assert.equal(preflight.ready_for_import,true);assert(preflight.files[0].issues.some(i=>i.message.includes('Brian Gribbin TB')));
   const plan=I.planImports(folder,[input]);assert.equal(plan.changes.size,3);assert.equal(plan.inputs.length,3);I.writePlan(plan);
   const history=JSON.parse(fs.readFileSync(path.join(folder,'data/dig-in-gribbin-14u.json')));assert(history.games[0].box_score);assert.equal(history.games[0].timezone,'ET');assert.equal(history.plate_appearances.length,19);

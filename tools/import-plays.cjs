@@ -95,9 +95,11 @@ function readCapture(raw, options = {}, diagnostics=null) {
   const original = raw.replace(/^\uFEFF/, '');
   let offset = 0;
   for (let i = 0; i < first; i++) offset = original.indexOf('\n', offset) + 1;
-  const source = original.slice(offset).trim();
+  const pageSource=original.slice(offset).trim();
+  const {plays:source,footer}=require('./gamechanger-capture.js').stripPlaysFooter(pageSource);
+  const parseEnd=footer?first+source.split(/\r?\n/).length:lines.length;
   const blocks = [];
-  for (let i = first; i < lines.length; i++) {
+  for (let i = first; i < parseEnd; i++) {
     const h = heading(lines[i]);
     if (h) blocks.push({half:h[1].toLowerCase(), inning:Number(h[2]), team:h[3].trim(), lines:[], line:i+1});
     else if (norm(lines[i])) blocks.at(-1).lines.push({raw:lines[i], line:i+1});
@@ -116,7 +118,7 @@ function readCapture(raw, options = {}, diagnostics=null) {
   if (!['newest-first','oldest-first'].includes(order)) reject('--order must be newest-first or oldest-first.');
   const rank = block => block.inning * 2 + (block.half === 'bottom' ? 1 : 0);
   for (let i=1; i<blocks.length; i++) if ((rank(blocks[i])-rank(blocks[i-1])) * (order === 'newest-first' ? -1 : 1) < 0) reject('Inning order conflicts with --order ' + order + '. Check the capture or choose --order oldest-first.',{line:blocks[i].line});
-  return {date, time, timezone, url, eventId, onlyTeam, source, raw, sourceHash:hash(source), coverage:meta['capture coverage'] || 'Supplied text only; completeness not verified', blocks, halves, order};
+  return {date, time, timezone, url, eventId, onlyTeam, source, footer, raw, sourceHash:hash(source), coverage:meta['capture coverage'] || 'Supplied text only; completeness not verified', blocks, halves, order};
 }
 
 function resultFor(text, label) {
@@ -442,6 +444,7 @@ function buildTeam(capture, teamName, data, gameId, opponent, D) {
     for (const message of record.warnings) warnings.push('Line '+record.lines[0].line+': '+message);
   }
   const game={id:gameId,date:capture.date,start_time:capture.time,timezone:capture.timezone,opponent,batting_half:half,label:'vs. '+opponent,source:'Local GameChanger text converter',source_url:capture.url,source_event_id:capture.eventId,source_capture_coverage:capture.coverage,source_control_events:timeline.filter(r=>r.kind==='administrative').map(r=>({inning:r.inning,half:r.half,source_events:r.lines.map(l=>l.raw)})),source_scope:'Supplied '+half+' innings '+blocks.map(b=>b.inning).join(', ')+' only; completeness not verified',source_play_by_play:capture.source,source_sha256:capture.sourceHash,source_canonical_sha256:hash(canonical(capture.source)),notes:['No final score, missing innings or unlisted pitches were inferred. Original capture text retained.']};
+  if(capture.footer){game.source_capture_footer=capture.footer;warnings.push('Recognized trailing GameChanger site footer excluded from play parsing; original footer retained.');}
   data.games.push(game); data.plate_appearances.push(...pas);
   data.baserunning_events=(data.baserunning_events||[]).concat(events);
   data.baserunning_entries=(data.baserunning_entries||[]).concat(entries);
@@ -523,7 +526,16 @@ function planWithState(root,inputs,options,state){
       const other=[...capture.halves].find(([h])=>h!==half)?.[1];
       const opponentEntry=other && manifest.teams.find(t=>options.aliases?.[other]?t.id===options.aliases[other]:key(t.name)===key(other));
       const opponent=opponentEntry?.name || other || options.opponent || 'Unknown opponent';
-      const exact=data.games.filter(game=>game.source_play_by_play && canonical(game.source_play_by_play)===canonical(capture.source));
+      // A later capture can omit the empty, newest "at bat" section. Only
+      // accept that precise suffix match for the same event; retain all stored
+      // history, including the unfinished PA. Never skip completed-play changes.
+      const omittedEmptyAtBat=game=>{
+        if (!capture.eventId || game.source_event_id!==capture.eventId || !game.source_play_by_play) return false;
+        const lines=game.source_play_by_play.trim().split(/\r?\n/);
+        if (!/^(Top|Bottom)\s+\d+(?:st|nd|rd|th)\s*-\s*.+$/.test(norm(lines[0]||'')) || !/^.+ at bat$/.test(norm(lines[1]||''))) return false;
+        return canonical(lines.slice(2).join('\n'))===canonical(capture.source);
+      };
+      const exact=data.games.filter(game=>game.source_play_by_play && (canonical(game.source_play_by_play)===canonical(capture.source) || omittedEmptyAtBat(game)));
       if (exact.length) {
         if (exact.length!==1) fail('Multiple existing games share this source; review '+entry.name+'.');
         const game=exact[0];
@@ -531,7 +543,7 @@ function planWithState(root,inputs,options,state){
         if (game.batting_half && game.batting_half!==half) fail('Same plays have conflicting batting halves for '+entry.name+'.');
         if (other && key(game.opponent)!==key(opponent)) fail('Same plays have conflicting opponents for '+entry.name+'.');
         visited.push({data,game,entry});
-        report.push({file:input.name,team:entry.name,team_id:entry.id,status:'duplicate',game_id:game.id,warnings:['Identical plays already present; no records or metadata changed.',...(input.captureWarnings||[])]}); continue;
+        report.push({file:input.name,team:entry.name,team_id:entry.id,status:'duplicate',game_id:game.id,warnings:[omittedEmptyAtBat(game)?'Completed plays already present; capture omits the final empty at-bat section. Stored unfinished appearance and all history retained.':'Identical plays already present; no records or metadata changed.',...(input.captureWarnings||[])]}); continue;
       }
       const overlap=data.games.find(game=>{
         if (capture.eventId && game.source_event_id) return capture.eventId===game.source_event_id;
