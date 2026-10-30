@@ -82,6 +82,8 @@
 @media(max-width:420px){.pitching-title-row{gap:8px}#view-pitching .pitching-title-row h2{font-size:18px}#pitching-avg .pitching-label{font-size:10px}#pitching-avg .pitching-value{font-size:21px}}
 
 #pitching-avg .pitching-metric{display:flex;flex-direction:row;align-items:baseline;gap:5px;white-space:nowrap}#pitching-avg .pitching-count{grid-column:auto}
+
+.pitching-summary-group>#pitching-first-strike-detail{grid-column:1/-1;grid-row:3;margin:0}#pitching-first-strike-detail .metric-counts{grid-template-columns:repeat(3,minmax(0,1fr))}#pitching-first-strike-detail dt{font-size:11px}
 </style>
 </head>
 <body>
@@ -95,7 +97,7 @@
 <p id="filter-context" class="filter-context" role="status" aria-live="polite"></p>
 <div class="batter-header" id="batter-header"><div class="batter-info"><label class="batter-picker"><span class="sr-only">Batter</span><select id="batter-select" aria-label="Batter"></select></label><p class="batter-context" id="batter-context"></p></div><span class="badge" id="sample-label"></span></div>
 <section id="view-scout" role="tabpanel" aria-labelledby="tab-scout"><div class="scout-layout"><article class="panel field-card scout-main"><h2 class="sr-only">Batter scouting summary</h2><div class="scout-stat-block" role="group" aria-label="Scouting statistics"><div class="batting-group hitting-stat-grid"><div id="batting-stats" class="batting-grid batting-strip" role="group" aria-label="Batting statistics"></div><div id="batting-detail" class="metric-detail" role="region" aria-label="Selected metric details" hidden aria-live="polite"></div><div id="quick-read" class="quick-read-strip" aria-label="Batter approach"></div><div id="quick-detail" class="metric-detail" role="region" aria-label="Selected metric details" hidden aria-live="polite"></div></div><details id="batting-note" class="small secondary batting-review" hidden></details></div><div class="scout-map-frame"><div class="field-wrap" id="scout-field"></div></div><p id="scout-foul-info" class="note" hidden></p><section class="hitting-contact-profile" aria-label="Contact profile"><div class="contact-profile-heading"><h3>Contact profile</h3><span id="contact-profile-sample"></span></div><div id="hitting-contact-bars"></div></section></article></div></section>
-<section id="view-pitching" role="tabpanel" aria-labelledby="tab-pitching" hidden><div class="scout-layout"><label class="batter-picker">Pitcher<select id="pitcher-select" aria-label="Pitcher"></select></label><p id="pitcher-context" class="note"></p><section id="pitcher-leaders" class="panel pitcher-leaders" aria-label="Pitcher leaders" hidden></section><article class="panel" style="margin-top:18px"><div class="pitching-title-row"><h2>Pitching summary</h2><div id="pitching-avg" aria-label="Batting average against"></div></div><div class="pitching-summary-group"><div id="pitching-summary" class="batting-grid"></div><div id="pitching-strike-detail" class="metric-detail" role="region" aria-label="Strike details" hidden aria-live="polite"></div><div id="pitching-strikeout-detail" class="metric-detail" role="region" aria-label="Strikeout breakdown" hidden aria-live="polite"></div><div id="pitching-tendencies" class="batting-grid"></div></div><p id="pitching-tracked-context" class="note"></p></article><article class="panel pitching-outcomes" style="margin-top:18px"><h2>Recorded pitch outcomes</h2><p id="pitching-outcome-sample" class="note"></p><div id="pitching-outcome-bars"></div></article></div></section>
+<section id="view-pitching" role="tabpanel" aria-labelledby="tab-pitching" hidden><div class="scout-layout"><label class="batter-picker">Pitcher<select id="pitcher-select" aria-label="Pitcher"></select></label><p id="pitcher-context" class="note"></p><section id="pitcher-leaders" class="panel pitcher-leaders" aria-label="Pitcher leaders" hidden></section><article class="panel" style="margin-top:18px"><div class="pitching-title-row"><h2>Pitching summary</h2><div id="pitching-avg" aria-label="Batting average against"></div></div><div class="pitching-summary-group"><div id="pitching-summary" class="batting-grid"></div><div id="pitching-strike-detail" class="metric-detail" role="region" aria-label="Strike details" hidden aria-live="polite"></div><div id="pitching-strikeout-detail" class="metric-detail" role="region" aria-label="Strikeout breakdown" hidden aria-live="polite"></div><div id="pitching-tendencies" class="batting-grid"></div><div id="pitching-first-strike-detail" class="metric-detail" role="region" aria-label="Results after first-pitch strikes" hidden aria-live="polite"></div></div><p id="pitching-tracked-context" class="note"></p></article><article class="panel pitching-outcomes" style="margin-top:18px"><h2>Recorded pitch outcomes</h2><p id="pitching-outcome-sample" class="note"></p><div id="pitching-outcome-bars"></div></article></div></section>
 <footer class="footer"><span>Diamond-Scout · Read the game</span><span id="coverage-note"></span></footer></div></main></div>
 <script id="diamond-scout-core">
 'use strict';
@@ -346,8 +348,10 @@
   for(const sample of breakdownSamples){strikeoutBreakdown.bf+=sample.bf;for(const kind of ['looking','swinging','unknown']){strikeoutBreakdown[kind]+=sample.strikeouts[kind];strikeoutBreakdown.tracked+=sample.strikeouts[kind];}}
   const pitchOutcomes={};let outcomePitches=0;
   for(const sample of samples){if(!sample.outcomes)continue;for(const [outcome,n] of Object.entries(sample.outcomes)){pitchOutcomes[outcome]=(pitchOutcomes[outcome]||0)+n;outcomePitches+=n;}}
+  const firstStrikeResults={total:0,out:0,walk:0,hit:0,other:0,unknown:0};
+  for(const sample of samples){if(!sample.firstStrikeResults)continue;for(const key of Object.keys(firstStrikeResults))firstStrikeResults[key]+=sample.firstStrikeResults[key];}
   const rates={strike:pair(p=>p.strikes,p=>p.pitches),walk:pair(p=>p.stats.BB,p=>p.bf),strikeout:pair(p=>p.stats.SO,p=>p.bf),efficiency:pair(p=>p.pitches,p=>p.bf)};
-  return {pitchOutcomes,outcomePitches,strikeoutBreakdown,mostUsed,strikeoutLeaders,incompleteStrikeouts,rates,roster,rows:chosen,games:new Set(chosen.map(p=>p.game.id)).size,bf,walks,strikeouts,pitches,strikes,trackedBF:sampleSum('bf'),first:sampleSum('first'),firstStrikes:sampleSum('first_strikes'),known:sampleSum('known'),whiffs:sampleSum('whiffs'),contacts:sampleSum('contacts'),ground:sampleSum('ground'),batting:{hits:sampleSum('hits'),ab:sampleSum('ab'),unclassified:sampleSum('unclassified')}};
+  return {firstStrikeResults,pitchOutcomes,outcomePitches,strikeoutBreakdown,mostUsed,strikeoutLeaders,incompleteStrikeouts,rates,roster,rows:chosen,games:new Set(chosen.map(p=>p.game.id)).size,bf,walks,strikeouts,pitches,strikes,trackedBF:sampleSum('bf'),first:sampleSum('first'),firstStrikes:sampleSum('first_strikes'),known:sampleSum('known'),whiffs:sampleSum('whiffs'),contacts:sampleSum('contacts'),ground:sampleSum('ground'),batting:{hits:sampleSum('hits'),ab:sampleSum('ab'),unclassified:sampleSum('unclassified')}};
  }
  globalThis.DiamondScout={pitchingSummary,positions,names,zoneToPosition,positionToZone,foulZones,esc,pretty,pct,hit,formatCount,gameWhen,validateDataPath,validateManifest,validateData,filter,contacts,foulContacts,foulSummary,summarize,pitchSummary,playerJerseyNumbers,describedLocations,fielderLayout,fielderRadius,fieldSvg,battingSummary,baserunningSummary,onBaseStatus,readiness};
 })();
@@ -357,7 +361,7 @@
 (() => {
  const D=globalThis.DiamondScout,$=id=>document.getElementById(id),e=D.esc;
  const state={view:'scout',batter:'all',game:'all',type:'all',pitcher:'all'},cache=new Map();
- let manifest=null,data=null,loadGeneration=0,expandedMetric=null,pitchingStrikeoutsOpen=false,pitchingStrikesOpen=false;
+ let manifest=null,data=null,loadGeneration=0,expandedMetric=null,pitchingStrikeoutsOpen=false,pitchingStrikesOpen=false,pitchingFirstStrikesOpen=false;
  const metricItems=new Map();
  const selectionKey='diamond-scout:selection:'+new URL('./',location.href).pathname;
  function readSelection(){try{const saved=JSON.parse(localStorage.getItem(selectionKey));return saved&&typeof saved.team==='string'&&typeof saved.batter==='string'?saved:null;}catch{return null;}}
@@ -371,7 +375,7 @@
   const numbers=D.playerJerseyNumbers(data);
   $('batter-select').innerHTML='<option value="all">Entire team</option>'+data.players.map(p=>'<option value="'+e(p.id)+'">'+e((numbers.has(p.id)?'#'+numbers.get(p.id)+' ':'')+p.name)+'</option>').join('');
   $('game-select').innerHTML='<option value="all">All recorded games</option>'+data.games.map(g=>'<option value="'+e(g.id)+'">'+e(D.gameWhen(g)+' · '+(g.label||'vs. '+g.opponent))+'</option>').join('');
-  state.batter='all';state.game='all';state.type='all';state.pitcher='all';pitchingStrikeoutsOpen=false;pitchingStrikesOpen=false;$('contact-select').value='all';expandedMetric=null;
+  state.batter='all';state.game='all';state.type='all';state.pitcher='all';pitchingStrikeoutsOpen=false;pitchingStrikesOpen=false;pitchingFirstStrikesOpen=false;$('contact-select').value='all';expandedMetric=null;
  }
  function renderScout(pas){
   const s=D.summarize(pas,state.type),all=D.summarize(pas),p=pitchStats(pas),b=D.battingSummary(pas),f=D.foulSummary(pas,state.type);
@@ -427,7 +431,10 @@
   $('pitching-strikeout-detail').hidden=!pitchingStrikeoutsOpen;
   $('pitching-strikeout-detail').innerHTML=ks.bf?'<dl class="metric-counts">'+[['Looking',ks.looking],['Swinging',ks.swinging],...(ks.unknown?[['Unclassified',ks.unknown]]:[])].map(([label,n])=>'<div><dt>'+label+'</dt><dd class="num">'+n+'</dd></div>').join('')+'</dl>':'<p class="note">No reconciled strikeout detail available for this selection.</p>';
   $('pitching-tracked-context').textContent='Pitch detail · '+s.trackedBF+' batters faced';
-  $('pitching-tendencies').innerHTML=summaryStat('Pitches / batter',s.rates.efficiency,true)+pitchingMetric('1st-pitch strikes',D.pct(s.firstStrikes,s.first),fraction(s.firstStrikes,s.first))+pitchingMetric('Ground balls',D.pct(s.ground,s.contacts),fraction(s.ground,s.contacts));
+  $('pitching-tendencies').innerHTML=summaryStat('Pitches / batter',s.rates.efficiency,true)+pitchingMetric('1st-pitch strikes',D.pct(s.firstStrikes,s.first),fraction(s.firstStrikes,s.first)).replace('<div class="pitching-metric">','<button type="button" id="pitching-first-strike-toggle" class="pitching-metric pitching-disclosure" aria-controls="pitching-first-strike-detail" aria-expanded="'+pitchingFirstStrikesOpen+'">').replace('1st-pitch strikes</span>','1st-pitch strikes <span class="metric-info" aria-hidden="true">i</span></span>').replace('</div>','</button>')+pitchingMetric('Ground balls',D.pct(s.ground,s.contacts),fraction(s.ground,s.contacts));
+  const fps=s.firstStrikeResults;
+  $('pitching-first-strike-detail').hidden=!pitchingFirstStrikesOpen;
+  $('pitching-first-strike-detail').innerHTML='<dl class="metric-counts">'+[['FPSO%','Outs',fps.out],['FPSW%','Walks',fps.walk],['FPSH%','Hits',fps.hit]].map(([code,label,n])=>'<div><dt>'+code+' · '+label+'</dt><dd class="num">'+(fps.unknown?'—':D.pct(n,fps.total))+'</dd><small class="pitching-count">'+(fps.unknown?'Results need review':fps.total?n+'/'+fps.total:'Unavailable')+'</small></div>').join('')+'</dl>';
   $('pitching-avg').innerHTML=pitchingMetric('AVG against',s.batting.ab&&!s.batting.unclassified?(s.batting.hits/s.batting.ab).toFixed(3).replace(/^0/,''):'—',s.batting.unclassified?'Unclassified results':s.batting.ab?s.batting.hits+'/'+s.batting.ab:'Unavailable');
   $('pitching-outcome-sample').textContent=s.outcomePitches+' tracked pitches';
   const outcomeLabels={ball:'Balls',called_strike:'Called strikes',swinging_strike:'Swinging strikes',foul:'Fouls',in_play:'Balls in play',foul_tip:'Foul tips',foul_out:'Foul catches',hit_by_pitch:'Hit by pitch',unknown:'Unclassified'};
@@ -483,9 +490,11 @@
  $('pitching-summary').addEventListener('click',event=>{
   const strikes=event.target.closest('#pitching-strike-toggle'),strikeouts=event.target.closest('#pitching-strikeout-toggle');
   if(!strikes&&!strikeouts)return;
+  pitchingFirstStrikesOpen=false;
   if(strikes){pitchingStrikesOpen=!pitchingStrikesOpen;pitchingStrikeoutsOpen=false;}else{pitchingStrikeoutsOpen=!pitchingStrikeoutsOpen;pitchingStrikesOpen=false;}
   renderPitching();$('pitching-summary').querySelector?.(strikes?'#pitching-strike-toggle':'#pitching-strikeout-toggle')?.focus();
  });
+ $('pitching-tendencies').addEventListener('click',event=>{if(!event.target.closest('#pitching-first-strike-toggle'))return;pitchingFirstStrikesOpen=!pitchingFirstStrikesOpen;pitchingStrikesOpen=false;pitchingStrikeoutsOpen=false;renderPitching();$('pitching-tendencies').querySelector?.('#pitching-first-strike-toggle')?.focus();});
  $('pitcher-leaders').addEventListener('click',event=>{const button=event.target.closest('[data-pitcher]');if(!button)return;state.pitcher=button.dataset.pitcher;renderPitching();$('pitcher-select').focus();});
  $('pitcher-select').addEventListener('change',()=>{state.pitcher=$('pitcher-select').value;renderPitching();});
  $('team-select').addEventListener('change',()=>loadTeam($('team-select').value));

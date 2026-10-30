@@ -43,6 +43,16 @@ function derive(data,game,I,D){
    const pas=stint.pas,b=D.battingSummary(pas),strike=new Set(['called_strike','swinging_strike','foul','foul_tip','foul_out','in_play']);
    const first=pas.map(a=>a.pitches[0]).filter(p=>p?.count_before?.balls===0&&p.count_before.strikes===0&&p.outcome!=='unknown');
    const known=pas.flatMap(a=>a.pitches).filter(p=>['ball','hit_by_pitch',...strike].includes(p.outcome)),fair=pas.filter(a=>a.batted_ball);
+   const firstStrikeResults={total:0,out:0,walk:0,hit:0,other:0,unknown:0};
+   for(const pa of pas){const pitch=pa.pitches[0];
+    if(pitch?.count_before?.balls!==0||pitch.count_before.strikes!==0||!strike.has(pitch.outcome))continue;
+    firstStrikeResults.total++;
+    if(D.hit(pa))firstStrikeResults.hit++;
+    else if(pa.result==='walk')firstStrikeResults.walk++;
+    else if(D.onBaseStatus(pa)===false)firstStrikeResults.out++;
+    else if(D.onBaseStatus(pa)===null)firstStrikeResults.unknown++;
+    else firstStrikeResults.other++;
+   }
    const strikeouts={looking:0,swinging:0,unknown:0};
    for(const pa of pas){
     if(pa.result==='strikeout_looking')strikeouts.looking++;
@@ -52,7 +62,7 @@ function derive(data,game,I,D){
      strikeouts[terminal==='called_strike'?'looking':['swinging_strike','foul_tip'].includes(terminal)?'swinging':'unknown']++;
     }
    }
-   pitchers[stint.i].sample={outcomes:D.pitchSummary(pas).outcomes,strikeouts,bf:pas.length,first:first.length,first_strikes:first.filter(p=>strike.has(p.outcome)).length,known:known.length,whiffs:known.filter(p=>p.outcome==='swinging_strike').length,contacts:fair.length,ground:fair.filter(a=>a.batted_ball.contact_type==='ground_ball').length,hits:b.hits,ab:b.ab,unclassified:b.unclassified,first_sequence:pas[0].sequence,last_sequence:pas.at(-1).sequence};
+   pitchers[stint.i].sample={firstStrikeResults,outcomes:D.pitchSummary(pas).outcomes,strikeouts,bf:pas.length,first:first.length,first_strikes:first.filter(p=>strike.has(p.outcome)).length,known:known.length,whiffs:known.filter(p=>p.outcome==='swinging_strike').length,contacts:fair.length,ground:fair.filter(a=>a.batted_ball.contact_type==='ground_ball').length,hits:b.hits,ab:b.ab,unclassified:b.unclassified,first_sequence:pas[0].sequence,last_sequence:pas.at(-1).sequence};
   }
   result.status='reconciled';result.reason='Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically.';
  }catch(error){result.reason='Opposing play log requires review: '+error.message;}

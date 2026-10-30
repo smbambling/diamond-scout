@@ -925,6 +925,14 @@
             "pitches": 47,
             "strikes": 26,
             "sample": {
+              "firstStrikeResults": {
+                "total": 8,
+                "out": 3,
+                "walk": 2,
+                "hit": 3,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 21,
                 "called_strike": 2,
@@ -970,6 +978,14 @@
             "pitches": 41,
             "strikes": 20,
             "sample": {
+              "firstStrikeResults": {
+                "total": 6,
+                "out": 4,
+                "walk": 1,
+                "hit": 1,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 21,
                 "called_strike": 5,
@@ -2805,6 +2821,14 @@
             "pitches": 64,
             "strikes": 39,
             "sample": {
+              "firstStrikeResults": {
+                "total": 10,
+                "out": 8,
+                "walk": 0,
+                "hit": 2,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 25,
                 "called_strike": 11,
@@ -3669,6 +3693,14 @@
             "pitches": 47,
             "strikes": 26,
             "sample": {
+              "firstStrikeResults": {
+                "total": 9,
+                "out": 5,
+                "walk": 0,
+                "hit": 4,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 21,
                 "called_strike": 6,
@@ -3714,6 +3746,14 @@
             "pitches": 30,
             "strikes": 17,
             "sample": {
+              "firstStrikeResults": {
+                "total": 4,
+                "out": 3,
+                "walk": 0,
+                "hit": 0,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 13,
                 "called_strike": 7,
@@ -3759,6 +3799,14 @@
             "pitches": 33,
             "strikes": 18,
             "sample": {
+              "firstStrikeResults": {
+                "total": 6,
+                "out": 4,
+                "walk": 1,
+                "hit": 1,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 15,
                 "called_strike": 4,
@@ -4701,6 +4749,14 @@
             "pitches": 71,
             "strikes": 39,
             "sample": {
+              "firstStrikeResults": {
+                "total": 9,
+                "out": 7,
+                "walk": 0,
+                "hit": 1,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 32,
                 "called_strike": 10,
@@ -4746,6 +4802,14 @@
             "pitches": 20,
             "strikes": 11,
             "sample": {
+              "firstStrikeResults": {
+                "total": 4,
+                "out": 2,
+                "walk": 1,
+                "hit": 1,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 9,
                 "called_strike": 5,
@@ -5620,6 +5684,14 @@
             "pitches": 51,
             "strikes": 24,
             "sample": {
+              "firstStrikeResults": {
+                "total": 8,
+                "out": 4,
+                "walk": 3,
+                "hit": 0,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 27,
                 "called_strike": 7,
@@ -5665,6 +5737,14 @@
             "pitches": 53,
             "strikes": 33,
             "sample": {
+              "firstStrikeResults": {
+                "total": 14,
+                "out": 10,
+                "walk": 1,
+                "hit": 2,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 20,
                 "called_strike": 12,
@@ -5710,6 +5790,14 @@
             "pitches": 9,
             "strikes": 5,
             "sample": {
+              "firstStrikeResults": {
+                "total": 0,
+                "out": 0,
+                "walk": 0,
+                "hit": 0,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 4,
                 "called_strike": 1,
@@ -7394,6 +7482,14 @@
             "pitches": 28,
             "strikes": 17,
             "sample": {
+              "firstStrikeResults": {
+                "total": 4,
+                "out": 4,
+                "walk": 0,
+                "hit": 0,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 11,
                 "called_strike": 4,
@@ -7439,6 +7535,14 @@
             "pitches": 38,
             "strikes": 21,
             "sample": {
+              "firstStrikeResults": {
+                "total": 5,
+                "out": 3,
+                "walk": 0,
+                "hit": 1,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 17,
                 "called_strike": 9,
@@ -7484,6 +7588,14 @@
             "pitches": 30,
             "strikes": 16,
             "sample": {
+              "firstStrikeResults": {
+                "total": 4,
+                "out": 3,
+                "walk": 0,
+                "hit": 1,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 14,
                 "called_strike": 5,
@@ -8324,6 +8436,14 @@
             "pitches": 40,
             "strikes": 15,
             "sample": {
+              "firstStrikeResults": {
+                "total": 3,
+                "out": 1,
+                "walk": 1,
+                "hit": 1,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 25,
                 "called_strike": 4,
@@ -8369,6 +8489,14 @@
             "pitches": 51,
             "strikes": 26,
             "sample": {
+              "firstStrikeResults": {
+                "total": 4,
+                "out": 2,
+                "walk": 0,
+                "hit": 2,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 25,
                 "called_strike": 10,
@@ -8414,6 +8542,14 @@
             "pitches": 10,
             "strikes": 4,
             "sample": {
+              "firstStrikeResults": {
+                "total": 3,
+                "out": 1,
+                "walk": 1,
+                "hit": 1,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 6,
                 "called_strike": 2,
@@ -10192,6 +10328,14 @@
             "pitches": 45,
             "strikes": 25,
             "sample": {
+              "firstStrikeResults": {
+                "total": 6,
+                "out": 3,
+                "walk": 2,
+                "hit": 1,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 20,
                 "called_strike": 5,
@@ -10237,6 +10381,14 @@
             "pitches": 52,
             "strikes": 28,
             "sample": {
+              "firstStrikeResults": {
+                "total": 8,
+                "out": 6,
+                "walk": 2,
+                "hit": 0,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 24,
                 "called_strike": 7,
@@ -10282,6 +10434,14 @@
             "pitches": 10,
             "strikes": 9,
             "sample": {
+              "firstStrikeResults": {
+                "total": 2,
+                "out": 2,
+                "walk": 0,
+                "hit": 0,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 1,
                 "called_strike": 2,
@@ -11966,6 +12126,14 @@
             "pitches": 38,
             "strikes": 19,
             "sample": {
+              "firstStrikeResults": {
+                "total": 7,
+                "out": 3,
+                "walk": 2,
+                "hit": 2,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 19,
                 "called_strike": 5,
@@ -12011,6 +12179,14 @@
             "pitches": 36,
             "strikes": 19,
             "sample": {
+              "firstStrikeResults": {
+                "total": 5,
+                "out": 2,
+                "walk": 1,
+                "hit": 0,
+                "other": 2,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 17,
                 "called_strike": 5,
@@ -12056,6 +12232,14 @@
             "pitches": 43,
             "strikes": 19,
             "sample": {
+              "firstStrikeResults": {
+                "total": 5,
+                "out": 3,
+                "walk": 1,
+                "hit": 1,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 24,
                 "called_strike": 5,
@@ -12896,6 +13080,14 @@
             "pitches": 45,
             "strikes": 29,
             "sample": {
+              "firstStrikeResults": {
+                "total": 12,
+                "out": 8,
+                "walk": 0,
+                "hit": 3,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 16,
                 "called_strike": 6,
@@ -12941,6 +13133,14 @@
             "pitches": 30,
             "strikes": 13,
             "sample": {
+              "firstStrikeResults": {
+                "total": 3,
+                "out": 1,
+                "walk": 1,
+                "hit": 0,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 17,
                 "called_strike": 6,
@@ -12986,6 +13186,14 @@
             "pitches": 5,
             "strikes": 3,
             "sample": {
+              "firstStrikeResults": {
+                "total": 1,
+                "out": 1,
+                "walk": 0,
+                "hit": 0,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 2,
                 "called_strike": 0,
@@ -14013,6 +14221,14 @@
             "pitches": 44,
             "strikes": 23,
             "sample": {
+              "firstStrikeResults": {
+                "total": 3,
+                "out": 1,
+                "walk": 0,
+                "hit": 1,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 21,
                 "called_strike": 4,
@@ -14058,6 +14274,14 @@
             "pitches": 31,
             "strikes": 13,
             "sample": {
+              "firstStrikeResults": {
+                "total": 2,
+                "out": 0,
+                "walk": 0,
+                "hit": 2,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 18,
                 "called_strike": 5,
@@ -14103,6 +14327,14 @@
             "pitches": 70,
             "strikes": 49,
             "sample": {
+              "firstStrikeResults": {
+                "total": 13,
+                "out": 10,
+                "walk": 0,
+                "hit": 2,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 21,
                 "called_strike": 11,
@@ -14148,6 +14380,14 @@
             "pitches": 13,
             "strikes": 6,
             "sample": {
+              "firstStrikeResults": {
+                "total": 0,
+                "out": 0,
+                "walk": 0,
+                "hit": 0,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 7,
                 "called_strike": 2,
@@ -18376,6 +18616,14 @@
             "pitches": 51,
             "strikes": 20,
             "sample": {
+              "firstStrikeResults": {
+                "total": 4,
+                "out": 3,
+                "walk": 1,
+                "hit": 0,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 31,
                 "called_strike": 6,
@@ -18421,6 +18669,14 @@
             "pitches": 26,
             "strikes": 9,
             "sample": {
+              "firstStrikeResults": {
+                "total": 2,
+                "out": 2,
+                "walk": 0,
+                "hit": 0,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 17,
                 "called_strike": 3,
@@ -18466,6 +18722,14 @@
             "pitches": 47,
             "strikes": 22,
             "sample": {
+              "firstStrikeResults": {
+                "total": 6,
+                "out": 1,
+                "walk": 2,
+                "hit": 2,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 25,
                 "called_strike": 5,
@@ -19359,6 +19623,14 @@
             "pitches": 36,
             "strikes": 19,
             "sample": {
+              "firstStrikeResults": {
+                "total": 2,
+                "out": 0,
+                "walk": 0,
+                "hit": 2,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 17,
                 "called_strike": 5,
@@ -19404,6 +19676,14 @@
             "pitches": 47,
             "strikes": 26,
             "sample": {
+              "firstStrikeResults": {
+                "total": 6,
+                "out": 3,
+                "walk": 0,
+                "hit": 3,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 21,
                 "called_strike": 6,
@@ -19449,6 +19729,14 @@
             "pitches": 52,
             "strikes": 24,
             "sample": {
+              "firstStrikeResults": {
+                "total": 3,
+                "out": 1,
+                "walk": 2,
+                "hit": 0,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 28,
                 "called_strike": 8,
@@ -21215,6 +21503,14 @@
             "pitches": 54,
             "strikes": 32,
             "sample": {
+              "firstStrikeResults": {
+                "total": 7,
+                "out": 2,
+                "walk": 0,
+                "hit": 2,
+                "other": 3,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 22,
                 "called_strike": 8,
@@ -21260,6 +21556,14 @@
             "pitches": 39,
             "strikes": 20,
             "sample": {
+              "firstStrikeResults": {
+                "total": 4,
+                "out": 2,
+                "walk": 1,
+                "hit": 1,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 19,
                 "called_strike": 4,
@@ -22069,6 +22373,14 @@
             "pitches": 48,
             "strikes": 26,
             "sample": {
+              "firstStrikeResults": {
+                "total": 11,
+                "out": 7,
+                "walk": 1,
+                "hit": 2,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 22,
                 "called_strike": 9,
@@ -22114,6 +22426,14 @@
             "pitches": 39,
             "strikes": 26,
             "sample": {
+              "firstStrikeResults": {
+                "total": 9,
+                "out": 7,
+                "walk": 1,
+                "hit": 0,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 13,
                 "called_strike": 8,
@@ -22954,6 +23274,14 @@
             "pitches": 49,
             "strikes": 26,
             "sample": {
+              "firstStrikeResults": {
+                "total": 7,
+                "out": 4,
+                "walk": 0,
+                "hit": 3,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 23,
                 "called_strike": 6,
@@ -22999,6 +23327,14 @@
             "pitches": 53,
             "strikes": 31,
             "sample": {
+              "firstStrikeResults": {
+                "total": 8,
+                "out": 4,
+                "walk": 0,
+                "hit": 3,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 22,
                 "called_strike": 11,
@@ -23905,6 +24241,14 @@
             "pitches": 40,
             "strikes": 24,
             "sample": {
+              "firstStrikeResults": {
+                "total": 8,
+                "out": 6,
+                "walk": 1,
+                "hit": 1,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 16,
                 "called_strike": 7,
@@ -23950,6 +24294,14 @@
             "pitches": 45,
             "strikes": 30,
             "sample": {
+              "firstStrikeResults": {
+                "total": 9,
+                "out": 5,
+                "walk": 0,
+                "hit": 2,
+                "other": 2,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 15,
                 "called_strike": 3,
@@ -23995,6 +24347,14 @@
             "pitches": 18,
             "strikes": 12,
             "sample": {
+              "firstStrikeResults": {
+                "total": 2,
+                "out": 1,
+                "walk": 0,
+                "hit": 1,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 6,
                 "called_strike": 5,
@@ -24860,6 +25220,14 @@
             "pitches": 51,
             "strikes": 28,
             "sample": {
+              "firstStrikeResults": {
+                "total": 5,
+                "out": 1,
+                "walk": 1,
+                "hit": 3,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 23,
                 "called_strike": 9,
@@ -24905,6 +25273,14 @@
             "pitches": 48,
             "strikes": 25,
             "sample": {
+              "firstStrikeResults": {
+                "total": 6,
+                "out": 2,
+                "walk": 0,
+                "hit": 2,
+                "other": 2,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 23,
                 "called_strike": 7,
@@ -24950,6 +25326,14 @@
             "pitches": 16,
             "strikes": 6,
             "sample": {
+              "firstStrikeResults": {
+                "total": 0,
+                "out": 0,
+                "walk": 0,
+                "hit": 0,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 10,
                 "called_strike": 1,
@@ -26604,6 +26988,14 @@
             "pitches": 24,
             "strikes": 14,
             "sample": {
+              "firstStrikeResults": {
+                "total": 4,
+                "out": 2,
+                "walk": 0,
+                "hit": 2,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 10,
                 "called_strike": 5,
@@ -26649,6 +27041,14 @@
             "pitches": 46,
             "strikes": 28,
             "sample": {
+              "firstStrikeResults": {
+                "total": 6,
+                "out": 5,
+                "walk": 0,
+                "hit": 1,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 18,
                 "called_strike": 12,
@@ -26694,6 +27094,14 @@
             "pitches": 31,
             "strikes": 16,
             "sample": {
+              "firstStrikeResults": {
+                "total": 4,
+                "out": 2,
+                "walk": 0,
+                "hit": 1,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 15,
                 "called_strike": 5,
@@ -28515,6 +28923,14 @@
             "pitches": 47,
             "strikes": 25,
             "sample": {
+              "firstStrikeResults": {
+                "total": 7,
+                "out": 5,
+                "walk": 1,
+                "hit": 0,
+                "other": 1,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 22,
                 "called_strike": 7,
@@ -28560,6 +28976,14 @@
             "pitches": 40,
             "strikes": 23,
             "sample": {
+              "firstStrikeResults": {
+                "total": 7,
+                "out": 4,
+                "walk": 1,
+                "hit": 2,
+                "other": 0,
+                "unknown": 0
+              },
               "outcomes": {
                 "ball": 17,
                 "called_strike": 5,

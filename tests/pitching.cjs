@@ -10,6 +10,7 @@ assert.deepEqual([wesley.bf,wesley.pitches,wesley.sample.first_sequence,wesley.s
 assert.deepEqual([quinn.bf,quinn.pitches,quinn.sample.first_sequence,quinn.sample.last_sequence],[10,41,14,23]);
 assert.deepEqual(wesley.sample.strikeouts,{looking:0,swinging:0,unknown:0});assert.deepEqual(quinn.sample.strikeouts,{looking:0,swinging:1,unknown:0});
 const bba=P.derive({...data,team:{name:'BBA 14u East'}},game,I,D);assert.equal(bba.status,'reconciled');assert.deepEqual(bba.pitchers.find(p=>p.name==='Mateo Maday').sample.strikeouts,{looking:0,swinging:2,unknown:0},'Dropped-third and foul-tip strikeouts count as swinging when explicitly recorded');
+assert.deepEqual(wesley.sample.firstStrikeResults,{total:8,out:3,walk:2,hit:3,other:0,unknown:0});assert.deepEqual(quinn.sample.firstStrikeResults,{total:6,out:4,walk:1,hit:1,other:0,unknown:0});
 assert.equal(wesley.sample.whiffs,1);assert.equal(wesley.sample.first_strikes,8);
 const copy=structuredClone(game),team=copy.box_score.source_capture.teams.find(t=>t.name===data.team.name),table=team.tables.find(t=>t.kind==='pitching');
 table.rows.reverse();assert.equal(P.derive(data,copy,I,D).status,'reconciled','Table order is not pitching order');
@@ -21,6 +22,7 @@ const missing=structuredClone(game);missing.source_play_by_play='Top 1st - Dig I
 assert.equal(P.derive(data,missing,I,D).status,'summary-only');
 const one={...data,games:[{...game,pitching_scout:evidence}]};
 const s=D.pitchingSummary(one);assert.deepEqual([s.bf,s.pitches,s.walks,s.strikeouts,s.trackedBF],[23,88,6,1,23]);
+assert.deepEqual({...s.firstStrikeResults},{total:14,out:7,walk:3,hit:4,other:0,unknown:0});
 assert.equal(s.outcomePitches,88);assert.equal(Object.values(s.pitchOutcomes).reduce((n,x)=>n+x,0),88);assert.equal(s.pitchOutcomes.swinging_strike,5);
 const q=D.pitchingSummary(one,{pitcher:'quinn kasprzak'});assert.deepEqual([q.bf,q.pitches,q.walks,q.strikeouts],[10,41,3,1]);
 assert.equal(D.pitchingSummary(one,{game:'missing'}).bf,null);
