@@ -211,10 +211,11 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  ME['tab-scout'].click();assert.equal(ME['filter-active-badge'].hidden,false);ME['contact-select'].value='all';ME['contact-select'].listeners.change();assert.equal(ME['filter-active-badge'].hidden,true);
  // Player arrows use dropdown order and wrap through players without returning to team totals.
  const navApp=await openApp(),NE=navApp.elements;
- NE['batter-next'].click();assert.equal(NE['batter-select'].value,data.players[0].id);
- NE['batter-previous'].click();assert.equal(NE['batter-select'].value,data.players.at(-1).id);
- NE['batter-next'].click();assert.equal(NE['batter-select'].value,data.players[0].id);
- NE['batter-select'].value=data.players[1].id;NE['batter-select'].listeners.change();NE['batter-next'].click();assert.equal(NE['batter-select'].value,data.players[2].id);
+ const batterIds=[...NE['batter-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]).filter(id=>id!=='all');
+ NE['batter-next'].click();assert.equal(NE['batter-select'].value,batterIds[0]);
+ NE['batter-previous'].click();assert.equal(NE['batter-select'].value,batterIds.at(-1));
+ NE['batter-next'].click();assert.equal(NE['batter-select'].value,batterIds[0]);
+ NE['batter-select'].value=batterIds[1];NE['batter-select'].listeners.change();NE['batter-next'].click();assert.equal(NE['batter-select'].value,batterIds[2]);
  assert.equal(NE.app.lastScroll,undefined,'Player arrows never scroll away from the current field');
  NE['games-clear'].click();assert.equal(NE['batter-select'].value,'all');assert.equal(NE['batter-next'].disabled,true);
  assert.equal(NE['pitcher-next'].disabled,true);assert.equal(NE['pitcher-previous'].disabled,true);
@@ -230,14 +231,18 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  assert.match(PA['batter-select'].innerHTML,/Other Game Only/);assert.doesNotMatch(PA['batter-select'].innerHTML,/Roster Only Bench/);
  PA['batter-select'].value='other-only-player';PA['batter-select'].listeners.change();chooseGames(PA,data.games[0].id);
  assert.equal(PA['batter-select'].value,'all');assert.doesNotMatch(PA['batter-select'].innerHTML,/other-only-player/);
- PA['batter-previous'].click();assert.equal(PA['batter-select'].value,data.players.at(-1).id);PA['batter-next'].click();assert.equal(PA['batter-select'].value,data.players[0].id);
+ PA['batter-previous'].click();assert.equal(PA['batter-select'].value,batterIds.at(-1));PA['batter-next'].click();assert.equal(PA['batter-select'].value,batterIds[0]);
  const activeOptions=PA['batter-select'].innerHTML;PA['contact-select'].value='ground_ball';PA['contact-select'].listeners.change();assert.equal(PA['batter-select'].innerHTML,activeOptions,'Contact type does not change game participation');
  chooseGames(PA,['other-only-game']);assert.equal(PA['batter-select'].value,'all');assert.equal((PA['batter-select'].innerHTML.match(/<option/g)||[]).length,2);PA['batter-next'].click();assert.equal(PA['batter-select'].value,'other-only-player');
  PA['games-all'].click();assert.match(PA['batter-select'].innerHTML,/Other Game Only/);assert.doesNotMatch(PA['batter-select'].innerHTML,/Roster Only Bench/);
  chooseGames(PN,pitchingData.games[0].id);assert.match(PN['pitcher-select'].innerHTML,/Wesley Hurt/);assert.match(PN['pitcher-select'].innerHTML,/Quinn Kasprzak/);assert.doesNotMatch(PN['pitcher-select'].innerHTML,/Dean Simmons/);
- PN['pitcher-next'].click();assert.equal(PN['pitcher-select'].value,'wesley hurt');PN['pitcher-next'].click();assert.equal(PN['pitcher-select'].value,'quinn kasprzak');PN['pitcher-next'].click();assert.equal(PN['pitcher-select'].value,'wesley hurt');
+ PN['pitcher-next'].click();assert.equal(PN['pitcher-select'].value,'quinn kasprzak');PN['pitcher-next'].click();assert.equal(PN['pitcher-select'].value,'wesley hurt');PN['pitcher-next'].click();assert.equal(PN['pitcher-select'].value,'quinn kasprzak');
  PN['pitcher-select'].value='quinn kasprzak';PN['pitcher-select'].listeners.change();chooseGames(PN,pitchingData.games[1].id);assert.equal(PN['pitcher-select'].value,'all');assert.doesNotMatch(PN['pitcher-select'].innerHTML,/Quinn Kasprzak/);
  PN['games-clear'].click();assert.equal((PN['pitcher-select'].innerHTML.match(/<option/g)||[]).length,1);assert.equal(PN['pitcher-next'].disabled,true);
+ const sortedData=clone(data);sortedData.games[0].box_score={source_capture:{teams:[{name:sortedData.team.name,tables:[{kind:'batting',columns:['LINEUP','AB'],rows:sortedData.players.slice(0,4).map((p,i)=>[p.name+' #'+['10','2','0','00'][i],'1'])}]}]}};
+ const sortedApp=await openApp({files:{'teams.json':manifest,'data/shockers-14u.json':sortedData}}),SE=sortedApp.elements;
+ const sortedIds=[...SE['batter-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]);assert.deepEqual(sortedIds.slice(0,5),['all',data.players[2].id,data.players[3].id,data.players[1].id,data.players[0].id]);
+ SE['batter-next'].click();assert.equal(SE['batter-select'].value,data.players[2].id);SE['batter-next'].click();assert.equal(SE['batter-select'].value,data.players[3].id);
  // Full repository history includes September without changing earlier regression fixtures.
  const metroApp=await openApp({files:{'teams.json':manifest,'data/shockers-14u.json':history}}),M=metroApp.elements;
  assert.match(M['scout-field'].innerHTML,/61 fair contacts/);assert.match(M['quick-read'].innerHTML,/Steal tendency: 14%; 7\/50 trips; show details/);

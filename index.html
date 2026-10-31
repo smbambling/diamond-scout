@@ -351,10 +351,19 @@
   }
   return new Map([...numbers].filter(([,values])=>values.size===1).map(([id,values])=>[id,[...values][0]]));
  }
+ function sortPlayersByJersey(players,numberFor=player=>player.jersey){
+  const jersey=player=>{const value=numberFor(player);return value!=null&&/^\d+$/.test(String(value))?String(value):null;};
+  return [...players].sort((a,b)=>{
+   const na=jersey(a),nb=jersey(b);
+   if(na===null&&nb!==null)return 1;if(na!==null&&nb===null)return -1;
+   if(na!==null&&nb!==null){const number=Number(na)-Number(nb);if(number)return number;const label=na.localeCompare(nb);if(label)return label;}
+   return a.name.localeCompare(b.name,'en',{sensitivity:'base',numeric:true})||a.id.localeCompare(b.id);
+  });
+ }
  function pitchingSummary(data,{game='all',pitcher='all'}={}){
   const games=data.games.filter(g=>gameSelected(game,g.id)),rows=games.flatMap(g=>(g.pitching_scout?.pitchers||[]).map(p=>({...p,game:g})));
   const normalize=s=>String(s).normalize('NFC').replace(/[’‘]/g,"'").replace(/\s+/g,' ').trim().toLowerCase();
-  const roster=[...new Map(rows.map(p=>[normalize(p.name),{id:normalize(p.name),name:p.name,jersey:(()=>{const values=new Set(rows.filter(r=>normalize(r.name)===normalize(p.name)).map(r=>r.jersey).filter(Boolean));return values.size===1?[...values][0]:null;})()}])).values()];
+  const roster=sortPlayersByJersey([...new Map(rows.map(p=>[normalize(p.name),{id:normalize(p.name),name:p.name,jersey:(()=>{const values=new Set(rows.filter(r=>normalize(r.name)===normalize(p.name)).map(r=>r.jersey).filter(Boolean));return values.size===1?[...values][0]:null;})()}])).values()]);
   const leaders=roster.map(p=>{
    const outings=rows.filter(r=>normalize(r.name)===p.id),known=outings.filter(r=>r.stats.SO!=null),paired=known.filter(r=>r.bf>0);
    return {...p,games:new Set(outings.map(r=>r.game.id)).size,strikeouts:known.length===outings.length?known.reduce((n,r)=>n+r.stats.SO,0):null,k:paired.reduce((n,r)=>n+r.stats.SO,0),bf:paired.reduce((n,r)=>n+r.bf,0),rateOutings:paired.length,outings:outings.length};
@@ -376,7 +385,7 @@
   const rates={strike:pair(p=>p.strikes,p=>p.pitches),walk:pair(p=>p.stats.BB,p=>p.bf),strikeout:pair(p=>p.stats.SO,p=>p.bf),efficiency:pair(p=>p.pitches,p=>p.bf)};
   return {firstStrikeResults,pitchOutcomes,outcomePitches,strikeoutBreakdown,mostUsed,strikeoutLeaders,incompleteStrikeouts,rates,roster,rows:chosen,games:new Set(chosen.map(p=>p.game.id)).size,bf,walks,strikeouts,pitches,strikes,trackedBF:sampleSum('bf'),first:sampleSum('first'),firstStrikes:sampleSum('first_strikes'),known:sampleSum('known'),whiffs:sampleSum('whiffs'),contacts:sampleSum('contacts'),ground:sampleSum('ground'),batting:{hits:sampleSum('hits'),ab:sampleSum('ab'),unclassified:sampleSum('unclassified')}};
  }
- globalThis.DiamondScout={participatingPlayers,gameSelected,pitchingSummary,positions,names,zoneToPosition,positionToZone,foulZones,esc,pretty,pct,hit,formatCount,gameWhen,validateDataPath,validateManifest,validateData,filter,contacts,foulContacts,foulSummary,summarize,pitchSummary,playerJerseyNumbers,describedLocations,fielderLayout,fielderRadius,fieldSvg,battingSummary,baserunningSummary,onBaseStatus,readiness};
+ globalThis.DiamondScout={sortPlayersByJersey,participatingPlayers,gameSelected,pitchingSummary,positions,names,zoneToPosition,positionToZone,foulZones,esc,pretty,pct,hit,formatCount,gameWhen,validateDataPath,validateManifest,validateData,filter,contacts,foulContacts,foulSummary,summarize,pitchSummary,playerJerseyNumbers,describedLocations,fielderLayout,fielderRadius,fieldSvg,battingSummary,baserunningSummary,onBaseStatus,readiness};
 })();
 </script>
 <script id="diamond-scout-app">
@@ -397,8 +406,12 @@
  function populateFilters(){
   state.batter='all';state.game='all';state.type='all';state.pitcher='all';pitchingStrikeoutsOpen=false;pitchingStrikesOpen=false;pitchingFirstStrikesOpen=false;$('contact-select').value='all';expandedMetric=null;
  }
+ function batterRoster(){
+  const numbers=D.playerJerseyNumbers(data);
+  return {numbers,players:D.sortPlayersByJersey(D.participatingPlayers(data,state.game),p=>numbers.get(p.id))};
+ }
  function renderBatterPicker(){
-  const players=D.participatingPlayers(data,state.game),numbers=D.playerJerseyNumbers(data);
+  const {players,numbers}=batterRoster();
   if(state.batter!=='all'&&!players.some(p=>p.id===state.batter)){state.batter='all';expandedMetric=null;}
   $('batter-select').innerHTML='<option value="all">Entire team</option>'+players.map(p=>'<option value="'+e(p.id)+'">'+e((numbers.has(p.id)?'#'+numbers.get(p.id)+' ':'')+p.name)+'</option>').join('');
   $('batter-select').value=state.batter;
@@ -435,7 +448,7 @@
  }
  function stepPlayer(kind,direction){
   if(!data)return;
-  const players=kind==='batter'?D.participatingPlayers(data,state.game):D.pitchingSummary(data,{game:state.game}).roster,current=state[kind];
+  const players=kind==='batter'?batterRoster().players:D.pitchingSummary(data,{game:state.game}).roster,current=state[kind];
   if(!players.length)return;
   const index=players.findIndex(p=>p.id===current),next=index<0?(direction>0?0:players.length-1):(index+direction+players.length)%players.length;
   state[kind]=players[next].id;

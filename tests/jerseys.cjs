@@ -16,3 +16,7 @@ const actual=JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures/game-captu
 for(const [team,name,expected] of [['Winchester Wildcats 14U','Cole Gore','5'],['Dig In (Gribbin) 14U','Deven Downs','22']]){
  const captured={team:{name:team},players:[{id:'player',name}],games:[{box_score:{source_capture:actual.box_score}}]};assert.equal(D.playerJerseyNumbers(captured).get('player'),expected);
 }
+
+const unsorted=[{id:'ten-z',name:'Zach',jersey:'10'},{id:'unknown-z',name:'Zed'},{id:'two',name:'Two',jersey:'2'},{id:'double-zero',name:'Double zero',jersey:'00'},{id:'zero',name:'Zero',jersey:'0'},{id:'ten-a',name:'Adam',jersey:'10'},{id:'unknown-a',name:'Amy',jersey:null}];
+const beforeOrder=unsorted.map(p=>p.id).join(',');
+assert.deepEqual([...D.sortPlayersByJersey(unsorted)].map(p=>p.id),['zero','double-zero','two','ten-a','ten-z','unknown-a','unknown-z']);assert.equal(unsorted.map(p=>p.id).join(','),beforeOrder,'Sorting never mutates source roster');
