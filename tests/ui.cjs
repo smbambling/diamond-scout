@@ -190,7 +190,7 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  assert.equal(ME['game-selection-summary'].textContent,'2 of 3 games selected');assert.match(ME['scout-field'].innerHTML,/35 fair contacts/);assert.match(ME['batter-context'].textContent,/60 PA · 2 games · 1 incomplete/);
  assert.equal((ME['game-select'].innerHTML.match(/ checked/g)||[]).length,2);
  const listedIds=[...ME['game-select'].innerHTML.matchAll(/data-game-id="([^"]+)"/g)].map(m=>m[1]);const expectedGames=[...history.games].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.start_time||'').localeCompare(a.start_time||''));assert.deepEqual(listedIds,expectedGames.map(g=>g.id));
- ME['tab-pitching'].click();assert.match(ME['filter-context'].textContent,/2 of 3 games selected/);ME['tab-scout'].click();
+ ME['tab-pitching'].click();assert.match(ME['filter-context'].textContent,/2 games · Aug 30, 2026 · 1 undated/);ME['tab-scout'].click();
  const multiRefresh=await openApp({storage:multiStore,files:multiFiles});assert.equal(multiRefresh.elements['game-selection-summary'].textContent,'2 of 3 games selected');assert.equal(multiRefresh.requested.length,2);
  ME['game-select'].listeners.change({target:{dataset:{gameId:'supplied-game-001'},checked:false}});assert.match(ME['scout-field'].innerHTML,/16 fair contacts/);
  ME['games-clear'].click();assert.equal(ME['game-selection-summary'].textContent,'No games selected');assert.match(ME['scout-field'].innerHTML,/0 fair contacts/);assert.doesNotMatch(ME['quick-read'].innerHTML,/>0%<|NaN|Infinity/);
@@ -199,6 +199,20 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  const staleKey=Object.keys(multiStore)[0];multiStore[staleKey]=JSON.stringify({team:history.team.id,batter:'all',games:['deleted-game','supplied-game-001']});
  const partialRestore=await openApp({storage:multiStore,files:multiFiles});assert.match(partialRestore.elements['scout-field'].innerHTML,/19 fair contacts/);
  multiStore[staleKey]=JSON.stringify({team:history.team.id,batter:'all',games:['deleted-game']});assert.equal((await openApp({storage:multiStore,files:multiFiles})).elements['game-selection-summary'].textContent,'All recorded games');
+ // Compact selected-date captions cover month/year boundaries without inventing missing dates.
+ async function dateCaption(first,last){
+  const dated=clone(history);dated.games[0].date=first;dated.games[1].date=last;
+  const datedApp=await openApp({files:{'teams.json':manifest,'data/shockers-14u.json':dated}});
+  chooseGames(datedApp.elements,[dated.games[0].id,dated.games[1].id]);
+  assert.equal(datedApp.elements['filter-context'].attrs.title,datedApp.elements['filter-context'].textContent);
+  return datedApp.elements['filter-context'].textContent;
+ }
+ assert.equal(await dateCaption('2026-10-03','2026-10-17'),'2 games · Oct 3–17, 2026');
+ assert.equal(await dateCaption('2026-10-03','2026-09-30'),'2 games · Sep 30–Oct 3, 2026');
+ assert.equal(await dateCaption('2025-12-31','2026-01-02'),'2 games · Dec 31, 2025–Jan 2, 2026');
+ assert.equal(await dateCaption('2026-10-03','2026-10-03'),'2 games · Oct 3, 2026');
+ assert.equal(await dateCaption(null,null),'2 games · Dates unavailable');
+ assert.match(html,/#filter-context\{white-space:nowrap;overflow:hidden;text-overflow:ellipsis/);
  // Compact active-filter indicator tracks game/contact filters for the current tab.
  assert.equal(ME['filter-toggle'].dataset.active,'false');assert.equal(ME['filter-active-badge'].hidden,true);
  chooseGames(ME,['supplied-game-001','2026-08-30-1000-shockers-vs-gambrills']);

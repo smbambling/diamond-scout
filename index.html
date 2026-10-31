@@ -99,6 +99,8 @@
 .batter-meta{display:flex;align-items:center;justify-content:space-between;gap:3px 8px;flex-wrap:wrap}.batter-header .batter-meta .badge{margin-top:0;padding:3px 8px}.batter-meta .batter-context{margin-top:0}
 
 #filters-done{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:650}#filters-done:hover{background:var(--accent-strong)}
+
+#filter-context{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;line-height:1.5}
 </style>
 </head>
 <body>
@@ -422,6 +424,17 @@
   const games=data.games.filter(g=>D.gameSelected(state.game,g.id));
   return !games.length?'No games selected':games.length===1?D.gameWhen(games[0])+' · '+(games[0].label||'vs. '+games[0].opponent):games.length+' of '+data.games.length+' games selected';
  }
+ function gameSelectionCaption(){
+  const games=data.games.filter(g=>D.gameSelected(state.game,g.id));
+  if(state.game==='all'||games.length<2)return gameSelectionLabel();
+  const dates=games.map(g=>g.date).filter(Boolean).sort(),unknown=games.length-dates.length;
+  if(!dates.length)return games.length+' games · Dates unavailable';
+  const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const parts=date=>{const [year,month,day]=date.split('-');return {year,month:Number(month),day:Number(day)};};
+  const first=parts(dates[0]),last=parts(dates.at(-1)),short=d=>months[d.month-1]+' '+d.day;
+  const range=dates[0]===dates.at(-1)?short(first)+', '+first.year:first.year!==last.year?short(first)+', '+first.year+'–'+short(last)+', '+last.year:first.month===last.month?short(first)+'–'+last.day+', '+first.year:short(first)+'–'+short(last)+', '+first.year;
+  return games.length+' games · '+range+(unknown?' · '+unknown+' undated':'');
+ }
  function renderGamePicker(){
   $('game-selection-summary').textContent=gameSelectionLabel();
   const games=[...data.games].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.start_time||'').localeCompare(a.start_time||''));
@@ -528,8 +541,9 @@
   $('app').dataset.view=state.view;
   const small=b.complete>0&&D.summarize(pas).n<10;$('sample-label').textContent=!b.complete?'No completed PAs':small?'Very small sample':'Recorded history';$('sample-label').className='badge'+(small?' sample-warning':'');$('sample-label').hidden=b.complete>0&&!small;
   $('coverage-note').textContent=data.games.length+' recorded games · '+data.plate_appearances.length+' plate appearances'+(data.games.some(g=>!g.date)?' · some dates unknown':'');
-  const game=gameSelectionLabel();
+  const game=gameSelectionCaption();
   $('filter-context').textContent=game+(state.view==='scout'?(state.type==='all'?'':' · '+D.pretty(state.type)):state.view==='pitching'?' · Pitching summaries':' · All plate appearances');
+  $('filter-context').setAttribute('title',$('filter-context').textContent);
   renderFilterIndicator();
   renderScout(pas);renderPitching();
  }
