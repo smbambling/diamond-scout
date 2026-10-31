@@ -84,6 +84,21 @@
 #pitching-avg .pitching-metric{display:flex;flex-direction:row;align-items:baseline;gap:5px;white-space:nowrap}#pitching-avg .pitching-count{grid-column:auto}
 
 .pitching-summary-group>#pitching-first-strike-detail{grid-column:1/-1;grid-row:3;margin:0}#pitching-first-strike-detail .metric-counts{grid-template-columns:repeat(3,minmax(0,1fr))}#pitching-first-strike-detail dt{font-size:11px}
+
+.game-filter{border:0;margin:0;padding:0;min-width:0}.game-filter legend{padding:0;margin-bottom:6px;font-size:13px;font-weight:600;color:var(--secondary)}
+#game-picker{border:1px solid var(--control-border);border-radius:12px;background:var(--control);overflow:hidden}#game-selection-summary{padding:12px;font-size:14px;line-height:1.5;overflow-wrap:anywhere}
+.game-actions{display:flex;gap:8px;padding:0 10px 8px}.game-actions button{flex:1;min-height:44px;padding:8px;font-size:13px}.game-actions button:disabled{opacity:.5;cursor:default}
+.game-options{max-height:min(40vh,300px);overflow-y:auto;overscroll-behavior:contain;border-top:1px solid var(--border)}
+.game-option{display:flex;align-items:center;gap:10px;min-height:48px;padding:9px 12px;border-bottom:1px solid var(--border);cursor:pointer;font-size:13px;font-weight:400}.game-option:last-child{border-bottom:0}.game-option input{width:20px;height:20px;flex:none;accent-color:var(--accent)}.game-option>span{display:grid;gap:3px;overflow-wrap:anywhere;min-width:0}.game-option strong{font-size:12px;font-weight:600}.game-option input:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+
+#filter-toggle{position:relative}#filter-toggle[data-active="true"]{border-color:var(--accent);background:var(--selected-bg);color:var(--selected-text)}
+.filter-active-badge{position:absolute;top:-5px;right:-5px;display:flex;align-items:center;justify-content:center;min-width:17px;height:17px;padding:0 4px;border-radius:99px;background:var(--accent);color:var(--on-accent);font-size:10px;line-height:1;font-weight:750;border:1px solid var(--panel);pointer-events:none}
+.player-picker-row{display:flex;align-items:center;gap:4px;min-width:0}.player-picker-row>.batter-picker{flex:1;min-width:0;max-width:none}.player-stepper{display:flex;flex:none;gap:0}.player-step{display:flex;align-items:center;justify-content:center;width:44px;min-width:44px;height:44px;min-height:44px;padding:10px;border:0;background:transparent;border-radius:8px;color:var(--accent-strong)}.player-step .icon{width:18px;height:18px}.player-step:disabled{opacity:.35;cursor:default}.player-step:not(:disabled):hover{background:var(--selected-bg)}
+.player-picker-row select{font-size:clamp(20px,5.5vw,30px);min-height:48px}.player-picker-row .batter-picker select{overflow:hidden;text-overflow:ellipsis}.batter-header .batter-info{width:100%}
+
+.batter-meta{display:flex;align-items:center;justify-content:space-between;gap:3px 8px;flex-wrap:wrap}.batter-header .batter-meta .badge{margin-top:0;padding:3px 8px}.batter-meta .batter-context{margin-top:0}
+
+#filters-done{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:650}#filters-done:hover{background:var(--accent-strong)}
 </style>
 </head>
 <body>
@@ -92,12 +107,12 @@
 <div class="shell">
 <header class="appbar"><a class="brand" href="./" aria-label="Diamond-Scout home"><svg class="brand-logo" viewBox="0 0 40 40" aria-hidden="true"><path d="M3.5 18.5 C13 -.5 27 -.5 36.5 18.5 L20 35 Z"/><path d="M12 27.5 17.5 22 Q20 19.5 22.5 22 L28 27.5"/><circle cx="20" cy="14" r="1.6" fill="currentColor" stroke="none"/></svg><span>Diamond-Scout</span></a><div class="header-actions"><!-- Hitting and Pitching icons: Font Awesome Free 6.7.2 by Fonticons, Inc., CC BY 4.0; see THIRD-PARTY-NOTICES.md. --><nav id="view-navigation" class="navigation" hidden role="tablist" aria-label="Scouting views"><button class="nav-item" role="tab" id="tab-scout" data-view="scout" aria-selected="true" aria-controls="view-scout"><svg class="icon" viewBox="0 0 512 512" aria-hidden="true" style="fill:currentColor;stroke:none"><path d="M424 0c-12.4 0-24.2 4.9-33 13.7L233.5 171.2c-10.5 10.5-19.8 22.1-27.7 34.6L132.7 321.6c-7.3 11.5-15.8 22.2-25.5 31.9L69.9 390.7l51.3 51.3 37.3-37.3c9.6-9.6 20.3-18.2 31.9-25.5l115.8-73.1c12.5-7.9 24.1-17.2 34.6-27.7L498.3 121c8.7-8.7 13.7-20.6 13.7-33s-4.9-24.2-13.7-33L457 13.7C448.2 4.9 436.4 0 424 0zm88 432a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM15 399c-9.4 9.4-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9L49 399c-9.4-9.4-24.6-9.4-33.9 0z"/></svg>Hitting</button><button class="nav-item" role="tab" id="tab-pitching" data-view="pitching" aria-selected="false" aria-controls="view-pitching"><svg class="icon" viewBox="0 0 512 512" aria-hidden="true" style="fill:currentColor;stroke:none"><path d="M62.7 223.4c-4.8 .4-9.7 .6-14.7 .6c-15.6 0-30.8-2-45.2-5.9C19.2 107.1 107.1 19.2 218.1 2.8C222 17.2 224 32.4 224 48c0 4.9-.2 9.8-.6 14.7c-.7 8.8 5.8 16.5 14.6 17.3s16.5-5.8 17.3-14.6c.5-5.7 .7-11.5 .7-17.3c0-16.5-1.9-32.6-5.6-47.9c1.8 0 3.7-.1 5.6-.1C397.4 0 512 114.6 512 256c0 1.9 0 3.7-.1 5.6c-15.4-3.6-31.4-5.6-47.9-5.6c-5.8 0-11.6 .2-17.3 .7c-8.8 .7-15.4 8.5-14.6 17.3s8.5 15.4 17.3 14.6c4.8-.4 9.7-.6 14.7-.6c15.6 0 30.8 2 45.2 5.9C492.8 404.9 404.9 492.8 293.9 509.2C290 494.8 288 479.6 288 464c0-4.9 .2-9.8 .6-14.7c.7-8.8-5.8-16.5-14.6-17.3s-16.5 5.8-17.3 14.6c-.5 5.7-.7 11.5-.7 17.3c0 16.5 1.9 32.6 5.6 47.9c-1.8 0-3.7 .1-5.6 .1C114.6 512 0 397.4 0 256c0-1.9 0-3.7 .1-5.6C15.4 254.1 31.5 256 48 256c5.8 0 11.6-.2 17.3-.7c8.8-.7 15.4-8.5 14.6-17.3s-8.5-15.4-17.3-14.6zM121.3 208c-8 3.7-11.6 13.2-7.9 21.2s13.2 11.6 21.2 7.9c45.2-20.8 81.7-57.2 102.5-102.5c3.7-8 .2-17.5-7.9-21.2s-17.5-.2-21.2 7.9c-17.6 38.3-48.5 69.2-86.7 86.7zm277.2 74.7c-3.7-8-13.2-11.6-21.2-7.9c-45.2 20.8-81.7 57.2-102.5 102.5c-3.7 8-.2 17.5 7.9 21.2s17.5 .2 21.2-7.9c17.6-38.3 48.5-69.2 86.7-86.7c8-3.7 11.6-13.2 7.9-21.2z"/></svg>Pitching</button></nav></div></header>
 <main class="page"><div class="heading"><h1 id="page-title">Opponent scouting</h1><p id="page-subtitle"></p></div><div id="status" class="loading" role="status" aria-live="polite">Loading team history…</div><div id="app" hidden>
-<div class="control-row"><label class="team-control"><span class="sr-only">Team</span><select id="team-select" aria-label="Team"></select></label><button class="filter-toggle" id="filter-toggle" aria-label="Filters" title="Filters" aria-expanded="false" aria-controls="filter-panel"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="8" cy="6" r="2" fill="var(--panel)"/><circle cx="16" cy="12" r="2" fill="var(--panel)"/><circle cx="9" cy="18" r="2" fill="var(--panel)"/></svg></button></div>
-<section id="filter-panel" class="filters" aria-label="Scouting filters" hidden><label>Game<select id="game-select"></select></label><label id="contact-filter">Contact type<select id="contact-select"><option value="all">All contact</option><option value="fair_contact">Fair contact only</option><option value="foul_out">Foul catches</option><option value="ground_ball">Ground balls</option><option value="line_drive">Line drives</option><option value="fly_ball">Fly balls</option><option value="bunt">Bunts</option><option value="unknown">Unknown contact type</option></select></label></section>
+<div class="control-row"><label class="team-control"><span class="sr-only">Team</span><select id="team-select" aria-label="Team"></select></label><button class="filter-toggle" id="filter-toggle" aria-label="Filters" title="Filters" aria-expanded="false" aria-controls="filter-panel"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="8" cy="6" r="2" fill="var(--panel)"/><circle cx="16" cy="12" r="2" fill="var(--panel)"/><circle cx="9" cy="18" r="2" fill="var(--panel)"/></svg><span id="filter-active-badge" class="filter-active-badge" hidden aria-hidden="true"></span></button></div>
+<section id="filter-panel" class="filters" aria-label="Scouting filters" hidden><fieldset class="game-filter"><legend>Games</legend><details id="game-picker"><summary id="game-selection-summary">All recorded games</summary><div class="game-actions"><button id="games-all" type="button">All games</button><button id="games-clear" type="button">Clear</button><button id="filters-done" type="button">Done</button></div><div id="game-select" class="game-options" role="group" aria-label="Games to include"></div></details></fieldset><label id="contact-filter">Contact type<select id="contact-select"><option value="all">All contact</option><option value="fair_contact">Fair contact only</option><option value="foul_out">Foul catches</option><option value="ground_ball">Ground balls</option><option value="line_drive">Line drives</option><option value="fly_ball">Fly balls</option><option value="bunt">Bunts</option><option value="unknown">Unknown contact type</option></select></label></section>
 <p id="filter-context" class="filter-context" role="status" aria-live="polite"></p>
-<div class="batter-header" id="batter-header"><div class="batter-info"><label class="batter-picker"><span class="sr-only">Batter</span><select id="batter-select" aria-label="Batter"></select></label><p class="batter-context" id="batter-context"></p></div><span class="badge" id="sample-label"></span></div>
+<div class="batter-header" id="batter-header"><div class="batter-info"><div class="player-picker-row"><label class="batter-picker"><span class="sr-only">Batter</span><select id="batter-select" aria-label="Batter"></select></label><div class="player-stepper" role="group" aria-label="Batter navigation"><button id="batter-previous" class="player-step" type="button" aria-label="Previous batter" title="Previous batter"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><button id="batter-next" class="player-step" type="button" aria-label="Next batter" title="Next batter"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div></div><div class="batter-meta"><p class="batter-context" id="batter-context"></p><span class="badge" id="sample-label"></span></div></div></div>
 <section id="view-scout" role="tabpanel" aria-labelledby="tab-scout"><div class="scout-layout"><article class="panel field-card scout-main"><h2 class="sr-only">Batter scouting summary</h2><div class="scout-stat-block" role="group" aria-label="Scouting statistics"><div class="batting-group hitting-stat-grid"><div id="batting-stats" class="batting-grid batting-strip" role="group" aria-label="Batting statistics"></div><div id="batting-detail" class="metric-detail" role="region" aria-label="Selected metric details" hidden aria-live="polite"></div><div id="quick-read" class="quick-read-strip" aria-label="Batter approach"></div><div id="quick-detail" class="metric-detail" role="region" aria-label="Selected metric details" hidden aria-live="polite"></div></div><details id="batting-note" class="small secondary batting-review" hidden></details></div><div class="scout-map-frame"><div class="field-wrap" id="scout-field"></div></div><p id="scout-foul-info" class="note" hidden></p><section class="hitting-contact-profile" aria-label="Contact profile"><div class="contact-profile-heading"><h3>Contact profile</h3><span id="contact-profile-sample"></span></div><div id="hitting-contact-bars"></div></section></article></div></section>
-<section id="view-pitching" role="tabpanel" aria-labelledby="tab-pitching" hidden><div class="scout-layout"><label class="batter-picker">Pitcher<select id="pitcher-select" aria-label="Pitcher"></select></label><p id="pitcher-context" class="note"></p><section id="pitcher-leaders" class="panel pitcher-leaders" aria-label="Pitcher leaders" hidden></section><article class="panel" style="margin-top:18px"><div class="pitching-title-row"><h2>Pitching summary</h2><div id="pitching-avg" aria-label="Batting average against"></div></div><div class="pitching-summary-group"><div id="pitching-summary" class="batting-grid"></div><div id="pitching-strike-detail" class="metric-detail" role="region" aria-label="Strike details" hidden aria-live="polite"></div><div id="pitching-strikeout-detail" class="metric-detail" role="region" aria-label="Strikeout breakdown" hidden aria-live="polite"></div><div id="pitching-tendencies" class="batting-grid"></div><div id="pitching-first-strike-detail" class="metric-detail" role="region" aria-label="Results after first-pitch strikes" hidden aria-live="polite"></div></div><p id="pitching-tracked-context" class="note"></p></article><article class="panel pitching-outcomes" style="margin-top:18px"><h2>Recorded pitch outcomes</h2><p id="pitching-outcome-sample" class="note"></p><div id="pitching-outcome-bars"></div></article></div></section>
+<section id="view-pitching" role="tabpanel" aria-labelledby="tab-pitching" hidden><div class="scout-layout"><div class="player-picker-row"><label class="batter-picker"><span class="sr-only">Pitcher</span><select id="pitcher-select" aria-label="Pitcher"></select></label><div class="player-stepper" role="group" aria-label="Pitcher navigation"><button id="pitcher-previous" class="player-step" type="button" aria-label="Previous pitcher" title="Previous pitcher"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><button id="pitcher-next" class="player-step" type="button" aria-label="Next pitcher" title="Next pitcher"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div></div><p id="pitcher-context" class="note"></p><section id="pitcher-leaders" class="panel pitcher-leaders" aria-label="Pitcher leaders" hidden></section><article class="panel" style="margin-top:18px"><div class="pitching-title-row"><h2>Pitching summary</h2><div id="pitching-avg" aria-label="Batting average against"></div></div><div class="pitching-summary-group"><div id="pitching-summary" class="batting-grid"></div><div id="pitching-strike-detail" class="metric-detail" role="region" aria-label="Strike details" hidden aria-live="polite"></div><div id="pitching-strikeout-detail" class="metric-detail" role="region" aria-label="Strikeout breakdown" hidden aria-live="polite"></div><div id="pitching-tendencies" class="batting-grid"></div><div id="pitching-first-strike-detail" class="metric-detail" role="region" aria-label="Results after first-pitch strikes" hidden aria-live="polite"></div></div><p id="pitching-tracked-context" class="note"></p></article><article class="panel pitching-outcomes" style="margin-top:18px"><h2>Recorded pitch outcomes</h2><p id="pitching-outcome-sample" class="note"></p><div id="pitching-outcome-bars"></div></article></div></section>
 <footer class="footer"><span>Diamond-Scout · Read the game</span><span id="coverage-note"></span></footer></div></main></div>
 <script id="diamond-scout-core">
 'use strict';
@@ -205,7 +220,15 @@
   }
   return d;
  }
- const filter=(d,state,ignoreBatter=false)=>d.plate_appearances.filter(p=>(state.game==='all'||p.game_id===state.game)&&(ignoreBatter||state.batter==='all'||p.batter_id===state.batter));
+ const gameSelected=(selection,id)=>selection==='all'||(Array.isArray(selection)?selection.includes(id):selection===id);
+ const filter=(d,state,ignoreBatter=false)=>d.plate_appearances.filter(p=>gameSelected(state.game,p.game_id)&&(ignoreBatter||state.batter==='all'||p.batter_id===state.batter));
+ function participatingPlayers(data,game='all'){
+  const ids=new Set(data.plate_appearances.filter(p=>gameSelected(game,p.game_id)).map(p=>p.batter_id));
+  for(const records of [data.baserunning_events||[],data.baserunning_entries||[],data.runner_outs||[]]){
+   for(const record of records){if(!gameSelected(game,record.game_id))continue;ids.add(record.runner_id);if(record.replaced_runner_id)ids.add(record.replaced_runner_id);}
+  }
+  return data.players.filter(p=>ids.has(p.id));
+ }
  function contacts(pas,type='all'){return pas.filter(p=>p.batted_ball&&(type==='all'||type==='fair_contact'||p.batted_ball.contact_type===type));}
  function foulContacts(pas,type='all'){return pas.filter(p=>p.foul_contact&&(type==='all'||type==='foul_out'||p.foul_contact.contact_type===type));}
  function foulSummary(pas,type='all'){
@@ -263,7 +286,7 @@
   return svg+'</svg>';
  }
  function baserunningSummary(data,state={batter:'all',game:'all'}){
-  const inGame=event=>state.game==='all'||event.game_id===state.game;
+  const inGame=event=>gameSelected(state.game,event.game_id);
   const isRunner=event=>state.batter==='all'||event.runner_id===state.batter;
   const pas=data.plate_appearances.filter(pa=>inGame(pa)&&(state.batter==='all'||pa.batter_id===state.batter));
   const events=(data.baserunning_events||[]).filter(event=>inGame(event)&&isRunner(event));
@@ -329,7 +352,7 @@
   return new Map([...numbers].filter(([,values])=>values.size===1).map(([id,values])=>[id,[...values][0]]));
  }
  function pitchingSummary(data,{game='all',pitcher='all'}={}){
-  const games=data.games.filter(g=>game==='all'||g.id===game),rows=games.flatMap(g=>(g.pitching_scout?.pitchers||[]).map(p=>({...p,game:g})));
+  const games=data.games.filter(g=>gameSelected(game,g.id)),rows=games.flatMap(g=>(g.pitching_scout?.pitchers||[]).map(p=>({...p,game:g})));
   const normalize=s=>String(s).normalize('NFC').replace(/[’‘]/g,"'").replace(/\s+/g,' ').trim().toLowerCase();
   const roster=[...new Map(rows.map(p=>[normalize(p.name),{id:normalize(p.name),name:p.name,jersey:(()=>{const values=new Set(rows.filter(r=>normalize(r.name)===normalize(p.name)).map(r=>r.jersey).filter(Boolean));return values.size===1?[...values][0]:null;})()}])).values()];
   const leaders=roster.map(p=>{
@@ -353,7 +376,7 @@
   const rates={strike:pair(p=>p.strikes,p=>p.pitches),walk:pair(p=>p.stats.BB,p=>p.bf),strikeout:pair(p=>p.stats.SO,p=>p.bf),efficiency:pair(p=>p.pitches,p=>p.bf)};
   return {firstStrikeResults,pitchOutcomes,outcomePitches,strikeoutBreakdown,mostUsed,strikeoutLeaders,incompleteStrikeouts,rates,roster,rows:chosen,games:new Set(chosen.map(p=>p.game.id)).size,bf,walks,strikeouts,pitches,strikes,trackedBF:sampleSum('bf'),first:sampleSum('first'),firstStrikes:sampleSum('first_strikes'),known:sampleSum('known'),whiffs:sampleSum('whiffs'),contacts:sampleSum('contacts'),ground:sampleSum('ground'),batting:{hits:sampleSum('hits'),ab:sampleSum('ab'),unclassified:sampleSum('unclassified')}};
  }
- globalThis.DiamondScout={pitchingSummary,positions,names,zoneToPosition,positionToZone,foulZones,esc,pretty,pct,hit,formatCount,gameWhen,validateDataPath,validateManifest,validateData,filter,contacts,foulContacts,foulSummary,summarize,pitchSummary,playerJerseyNumbers,describedLocations,fielderLayout,fielderRadius,fieldSvg,battingSummary,baserunningSummary,onBaseStatus,readiness};
+ globalThis.DiamondScout={participatingPlayers,gameSelected,pitchingSummary,positions,names,zoneToPosition,positionToZone,foulZones,esc,pretty,pct,hit,formatCount,gameWhen,validateDataPath,validateManifest,validateData,filter,contacts,foulContacts,foulSummary,summarize,pitchSummary,playerJerseyNumbers,describedLocations,fielderLayout,fielderRadius,fieldSvg,battingSummary,baserunningSummary,onBaseStatus,readiness};
 })();
 </script>
 <script id="diamond-scout-app">
@@ -365,17 +388,59 @@
  const metricItems=new Map();
  const selectionKey='diamond-scout:selection:'+new URL('./',location.href).pathname;
  function readSelection(){try{const saved=JSON.parse(localStorage.getItem(selectionKey));return saved&&typeof saved.team==='string'&&typeof saved.batter==='string'?saved:null;}catch{return null;}}
- function saveSelection(){try{localStorage.setItem(selectionKey,JSON.stringify({team:data.team.id,batter:state.batter}));}catch{}}
+ function saveSelection(){try{localStorage.setItem(selectionKey,JSON.stringify({team:data.team.id,batter:state.batter,games:state.game}));}catch{}}
 
  const playerName=id=>data.players.find(p=>p.id===id)?.name||'Unknown batter';
  const selected=()=>D.filter(data,state);
- const pitchStats=(pas,game=state.game,batter=state.batter)=>D.pitchSummary(pas,batter==='all'?(data.runner_outs||[]).filter(out=>game==='all'||out.game_id===game).flatMap(out=>out.pitches||[]):[]);
+ const pitchStats=(pas,game=state.game,batter=state.batter)=>D.pitchSummary(pas,batter==='all'?(data.runner_outs||[]).filter(out=>D.gameSelected(game,out.game_id)).flatMap(out=>out.pitches||[]):[]);
  function status(message,error=false){$('status').className=error?'notice error':'loading';$('status').textContent=message;$('status').hidden=false;}
  function populateFilters(){
-  const numbers=D.playerJerseyNumbers(data);
-  $('batter-select').innerHTML='<option value="all">Entire team</option>'+data.players.map(p=>'<option value="'+e(p.id)+'">'+e((numbers.has(p.id)?'#'+numbers.get(p.id)+' ':'')+p.name)+'</option>').join('');
-  $('game-select').innerHTML='<option value="all">All recorded games</option>'+data.games.map(g=>'<option value="'+e(g.id)+'">'+e(D.gameWhen(g)+' · '+(g.label||'vs. '+g.opponent))+'</option>').join('');
   state.batter='all';state.game='all';state.type='all';state.pitcher='all';pitchingStrikeoutsOpen=false;pitchingStrikesOpen=false;pitchingFirstStrikesOpen=false;$('contact-select').value='all';expandedMetric=null;
+ }
+ function renderBatterPicker(){
+  const players=D.participatingPlayers(data,state.game),numbers=D.playerJerseyNumbers(data);
+  if(state.batter!=='all'&&!players.some(p=>p.id===state.batter)){state.batter='all';expandedMetric=null;}
+  $('batter-select').innerHTML='<option value="all">Entire team</option>'+players.map(p=>'<option value="'+e(p.id)+'">'+e((numbers.has(p.id)?'#'+numbers.get(p.id)+' ':'')+p.name)+'</option>').join('');
+  $('batter-select').value=state.batter;
+  updatePlayerArrows('batter',players,state.batter);
+ }
+ function gameSelectionLabel(){
+  if(state.game==='all')return 'All recorded games';
+  const games=data.games.filter(g=>D.gameSelected(state.game,g.id));
+  return !games.length?'No games selected':games.length===1?D.gameWhen(games[0])+' · '+(games[0].label||'vs. '+games[0].opponent):games.length+' of '+data.games.length+' games selected';
+ }
+ function renderGamePicker(){
+  $('game-selection-summary').textContent=gameSelectionLabel();
+  const games=[...data.games].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.start_time||'').localeCompare(a.start_time||''));
+  $('game-select').innerHTML=games.map(g=>'<label class="game-option"><input type="checkbox" data-game-id="'+e(g.id)+'"'+(D.gameSelected(state.game,g.id)?' checked':'')+'><span><strong>'+e(D.gameWhen(g))+'</strong><span>'+e(g.label||'vs. '+g.opponent)+'</span></span></label>').join('');
+  $('games-all').disabled=state.game==='all';$('games-clear').disabled=Array.isArray(state.game)&&state.game.length===0;
+ }
+ function setGames(games){
+  const ids=new Set(games),valid=data.games.filter(g=>ids.has(g.id)).map(g=>g.id);
+  state.game=valid.length===data.games.length?'all':valid;
+  expandedMetric=null;pitchingStrikesOpen=false;pitchingStrikeoutsOpen=false;pitchingFirstStrikesOpen=false;
+  const scrollTop=$('game-select').scrollTop;renderGamePicker();$('game-select').scrollTop=scrollTop;render();
+ }
+ function renderFilterIndicator(){
+  const gameCount=data.games.filter(g=>D.gameSelected(state.game,g.id)).length;
+  const gamesActive=state.game!=='all',contactActive=state.view==='scout'&&state.type!=='all',active=gamesActive||contactActive;
+  $('filter-toggle').dataset.active=String(active);
+  $('filter-active-badge').hidden=!active;$('filter-active-badge').textContent=gamesActive?String(gameCount):'•';
+  const label=active?'Filters active: '+[gamesActive?gameCount+' of '+data.games.length+' games':null,contactActive?D.pretty(state.type):null].filter(Boolean).join(' · '):'Filters';
+  $('filter-toggle').setAttribute('aria-label',label);$('filter-toggle').setAttribute('title',label);
+ }
+ function updatePlayerArrows(kind,players,current){
+  const disabled=!players.length||(players.length===1&&current!=='all');
+  $(kind+'-previous').disabled=disabled;$(kind+'-next').disabled=disabled;
+ }
+ function stepPlayer(kind,direction){
+  if(!data)return;
+  const players=kind==='batter'?D.participatingPlayers(data,state.game):D.pitchingSummary(data,{game:state.game}).roster,current=state[kind];
+  if(!players.length)return;
+  const index=players.findIndex(p=>p.id===current),next=index<0?(direction>0?0:players.length-1):(index+direction+players.length)%players.length;
+  state[kind]=players[next].id;
+  if(kind==='batter'){$('batter-select').value=state.batter;expandedMetric=null;render();}
+  else{pitchingStrikesOpen=false;pitchingStrikeoutsOpen=false;pitchingFirstStrikesOpen=false;renderPitching();}
  }
  function renderScout(pas){
   const s=D.summarize(pas,state.type),all=D.summarize(pas),p=pitchStats(pas),b=D.battingSummary(pas),f=D.foulSummary(pas,state.type);
@@ -414,8 +479,10 @@
  }
  function renderPitching(){
   const s=D.pitchingSummary(data,{game:state.game,pitcher:state.pitcher});
-  if(state.pitcher!=='all'&&!s.roster.some(p=>p.id===state.pitcher)){state.pitcher='all';return renderPitching();}
-  $('pitcher-select').innerHTML='<option value="all">All pitchers</option>'+s.roster.map(p=>'<option value="'+e(p.id)+'">'+e((p.jersey?'#'+p.jersey+' ':'')+p.name)+'</option>').join('');$('pitcher-select').value=state.pitcher;
+  const roster=s.roster;
+  if(state.pitcher!=='all'&&!roster.some(p=>p.id===state.pitcher)){state.pitcher='all';return renderPitching();}
+  $('pitcher-select').innerHTML='<option value="all">All pitchers</option>'+roster.map(p=>'<option value="'+e(p.id)+'">'+e((p.jersey?'#'+p.jersey+' ':'')+p.name)+'</option>').join('');$('pitcher-select').value=state.pitcher;
+  updatePlayerArrows('pitcher',roster,state.pitcher);
   $('pitcher-context').textContent=s.rows.length?s.games+' game'+(s.games===1?'':'s')+(s.bf!==null?' · '+s.bf+' batters faced':'')+(s.pitches!==null?' · '+s.pitches+' pitches':''):'No pitching summary captured for this selection.';
   $('pitcher-leaders').hidden=state.pitcher!=='all'||!s.rows.length;
   const leaderButton=(p,kind)=>'<button class="pitcher-leader" data-pitcher="'+e(p.id)+'"><span class="pitcher-leader-name">'+e((p.jersey?'#'+p.jersey+' ':'')+p.name)+'</span><span class="pitching-count">'+e(kind==='usage'?p.games+' appearance'+(p.games===1?'':'s'):p.strikeouts+' K · '+p.games+' appearance'+(p.games===1?'':'s'))+'</span>'+(kind==='strikeout'?'<span class="pitching-count">'+e(p.bf?D.pct(p.k,p.bf)+' K rate · '+p.k+'/'+p.bf+' BF'+(p.rateOutings<p.outings?' · partial sample':''):'K rate unavailable')+'</span>':'')+'</button>';
@@ -442,14 +509,15 @@
 
 
  }
- function render(){if(!data)return;saveSelection();const pas=selected(),b=D.battingSummary(pas),gameCount=new Set(pas.map(p=>p.game_id)).size;
+ function render(){if(!data)return;renderBatterPicker();saveSelection();const pas=selected(),b=D.battingSummary(pas),gameCount=new Set(pas.map(p=>p.game_id)).size;
   $('page-title').textContent=data.team.name;$('page-subtitle').textContent=state.batter==='all'?'Team history':playerName(state.batter);
   $('batter-context').textContent=b.complete+' PA · '+gameCount+' game'+(gameCount===1?'':'s')+(b.incomplete?' · '+b.incomplete+' incomplete':'');
   $('app').dataset.view=state.view;
   const small=b.complete>0&&D.summarize(pas).n<10;$('sample-label').textContent=!b.complete?'No completed PAs':small?'Very small sample':'Recorded history';$('sample-label').className='badge'+(small?' sample-warning':'');$('sample-label').hidden=b.complete>0&&!small;
   $('coverage-note').textContent=data.games.length+' recorded games · '+data.plate_appearances.length+' plate appearances'+(data.games.some(g=>!g.date)?' · some dates unknown':'');
-  const game=state.game==='all'?'All recorded games':(()=>{const g=data.games.find(g=>g.id===state.game);return g?D.gameWhen(g)+' · '+(g.label||'vs. '+g.opponent):'Selected game';})();
+  const game=gameSelectionLabel();
   $('filter-context').textContent=game+(state.view==='scout'?(state.type==='all'?'':' · '+D.pretty(state.type)):state.view==='pitching'?' · Pitching summaries':' · All plate appearances');
+  renderFilterIndicator();
   renderScout(pas);renderPitching();
  }
  function switchView(view){
@@ -467,14 +535,16 @@
   if(!r.ok)throw Error('Could not load '+path+' (HTTP '+r.status+').');
   return r.json();
  }
- async function loadTeam(id,restoreBatter='all'){
+ async function loadTeam(id,restoreBatter='all',restoreGames='all'){
   const generation=++loadGeneration;status('Loading team history…');$('app').hidden=true;
   try{
    const t=manifest.teams.find(t=>t.id===id);if(!t)throw Error('Unknown team selection.');
    const next=cache.get(id)||D.validateData(await fetchJson(t.data_file));
    if(next.team.id!==id)throw Error('The data file’s team ID does not match the team list.');
    if(generation!==loadGeneration)return;
-   cache.set(id,next);data=next;populateFilters();state.batter=data.players.some(p=>p.id===restoreBatter)?restoreBatter:'all';$('batter-select').value=state.batter;$('status').hidden=true;$('app').hidden=false;render();
+   cache.set(id,next);data=next;populateFilters();state.batter=data.players.some(p=>p.id===restoreBatter)?restoreBatter:'all';$('batter-select').value=state.batter;
+   if(Array.isArray(restoreGames)){const valid=data.games.filter(g=>restoreGames.includes(g.id)).map(g=>g.id);state.game=valid.length===data.games.length?'all':(valid.length||!restoreGames.length?valid:'all');}
+   renderGamePicker();$('status').hidden=true;$('app').hidden=false;render();
   }catch(err){if(generation===loadGeneration){
    if(data){$('app').hidden=false;$('team-select').value=data.team.id;}
    status(err.message+(data?' Still showing '+data.team.name+'. Select another team or refresh the page.':' Check the team JSON file in this project, then refresh the page.'),true);
@@ -497,10 +567,23 @@
  $('pitching-tendencies').addEventListener('click',event=>{if(!event.target.closest('#pitching-first-strike-toggle'))return;pitchingFirstStrikesOpen=!pitchingFirstStrikesOpen;pitchingStrikesOpen=false;pitchingStrikeoutsOpen=false;renderPitching();$('pitching-tendencies').querySelector?.('#pitching-first-strike-toggle')?.focus();});
  $('pitcher-leaders').addEventListener('click',event=>{const button=event.target.closest('[data-pitcher]');if(!button)return;state.pitcher=button.dataset.pitcher;renderPitching();$('pitcher-select').focus();});
  $('pitcher-select').addEventListener('change',()=>{state.pitcher=$('pitcher-select').value;renderPitching();});
+ for(const kind of ['batter','pitcher']){
+  $(kind+'-previous').addEventListener('click',()=>stepPlayer(kind,-1));
+  $(kind+'-next').addEventListener('click',()=>stepPlayer(kind,1));
+ }
  $('team-select').addEventListener('change',()=>loadTeam($('team-select').value));
  $('batter-select').addEventListener('change',()=>{state.batter=$('batter-select').value;expandedMetric=null;render();});
- $('game-select').addEventListener('change',()=>{state.game=$('game-select').value;expandedMetric=null;render();});
+ $('game-select').addEventListener('change',event=>{
+  const id=event.target.dataset.gameId;if(!id||!data.games.some(g=>g.id===id))return;
+  const chosen=new Set(data.games.filter(g=>D.gameSelected(state.game,g.id)).map(g=>g.id));
+  if(event.target.checked)chosen.add(id);else chosen.delete(id);
+  setGames([...chosen]);
+  [...($('game-select').querySelectorAll?.('input[data-game-id]')||[])].find(input=>input.dataset.gameId===id)?.focus({preventScroll:true});
+ });
+ $('games-all').addEventListener('click',()=>setGames(data.games.map(g=>g.id)));
+ $('games-clear').addEventListener('click',()=>setGames([]));
  $('contact-select').addEventListener('change',()=>{state.type=$('contact-select').value;render();});
+ $('filters-done').addEventListener('click',()=>{$('filter-panel').hidden=true;$('filter-toggle').setAttribute('aria-expanded','false');$('filter-toggle').focus();});
  $('filter-toggle').addEventListener('click',()=>{const open=$('filter-panel').hidden;$('filter-panel').hidden=!open;$('filter-toggle').setAttribute('aria-expanded',String(open));});
  $('view-navigation').hidden=false;
  const tabs=[...document.querySelectorAll('[data-view]')];
@@ -523,7 +606,7 @@
    if(generation!==loadGeneration)return;
    const saved=readSelection();
    const id=nextManifest.teams.some(t=>t.id===saved?.team)?saved.team:nextManifest.teams[0].id;
-   cache.clear();setManifest(nextManifest);$('team-select').value=id;await loadTeam(id,saved?.team===id?saved.batter:'all');
+   cache.clear();setManifest(nextManifest);$('team-select').value=id;await loadTeam(id,saved?.team===id?saved.batter:'all',saved?.team===id?saved.games:'all');
   }catch(err){if(generation===loadGeneration)status(err.message+' Check teams.json beside index.html and its listed team files, then refresh the page.',true);}
  }
  initializeData();

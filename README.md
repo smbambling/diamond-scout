@@ -568,3 +568,21 @@ AVG against is displayed beside the Pitching summary title with H/AB beneath it.
 Approach removal also deletes its outcome/count tables, pitch-outcome renderer, disclosure state and obsolete view-restriction flag. The phone navigation uses two columns. Shared pitch summaries and runner-only pitch accounting remain available for Hitting and Pitching.
 
 First-pitch strikes now opens FPSO% (batter outs), FPSW% (walks), and FPSH% (hits), each divided by reconciled completed appearances starting with a confirmed first-pitch strike. Counts/fractions accompany each percentage. Hits/errors/FC/sacrifices retain their actual result; a batter reaching on a dropped third strike is not counted as an out. Other results remain in the denominator, so these percentages need not total 100%; unresolved outcomes withhold the rates. Definitions follow GameChanger: https://gcwpblog.wordpress.com/2010/07/08/stats-stats-stats/ . Existing captures are backfilled and future imports derive the detail automatically.
+
+
+### Select multiple games
+
+Open **Filters → Games** and check the games to combine. The compact picker shows a selected-game count, includes **All games** and **Clear**, and keeps a scrollable list on phones. Every Hitting and Pitching metric, contact map/profile, runner event, leader card and pitch-outcome chart follows the same game selection. Fractions and rates are recomputed from combined underlying records; percentages are never averaged across games. Clearing the selection shows no data rather than reverting to all games.
+
+Team, batter and game selection IDs restore after refresh while the manifest/team JSON still loads fresh. Deleted game IDs are discarded; if every previously selected game was removed, the picker falls back to all available games. A deliberately empty selection stays empty. Changing teams resets games to All games. Player selections remain when the player participated in the selected games; otherwise they fall back to Entire team or All pitchers.
+
+Shared selection accepts `game: "all"`, a single game ID for legacy callers, or an array of game IDs. `node tests/multi-games.cjs` covers aggregate batting/running/pitching samples, selected-game leaders, duplicate IDs and empty selections. UI tests cover the checkbox controls, cross-tab consistency, refresh restoration, removed IDs and unchanged fresh-JSON fetching.
+
+
+### Compact scouting controls
+
+The existing Filters icon stays 44px wide and highlights when game or contact filters affect the active tab. A small overlay shows the selected-game count, including zero for an empty selection; contact-only filtering uses a dot. The accessible label names the active filters. A contact filter retained from Hitting is not indicated as active on Pitching, where it has no effect.
+
+Previous/next arrows sit beside each player dropdown in the same row. They follow dropdown order, wrap between individual players, and enter the first/last player from Entire team or All pitchers. Team totals remain available in the dropdown. Arrows are disabled when no players exist, or after selecting the only player. Player navigation retains game/contact filters and scroll position, and closes that view's metric details. Routine controls add no rows above the field; small-sample badges share the existing context line and can wrap if needed.
+
+Player dropdowns and previous/next arrows now use recorded participation in the selected games. Hitting includes completed/incomplete batting appearances, steal events, courtesy/pinch/placed-runner entries and runner-only outs, preserving existing roster order. Roster-only names are excluded even with All games selected. Pitching uses pitching-summary participants for the selected games. Contact-type filters do not hide participants. Clearing games leaves only the aggregate option and disables the arrows. A player absent from the new selection falls back to the aggregate option.
