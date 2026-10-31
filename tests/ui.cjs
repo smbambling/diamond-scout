@@ -257,6 +257,20 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  const sortedApp=await openApp({files:{'teams.json':manifest,'data/shockers-14u.json':sortedData}}),SE=sortedApp.elements;
  const sortedIds=[...SE['batter-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]);assert.deepEqual(sortedIds.slice(0,5),['all',data.players[2].id,data.players[3].id,data.players[1].id,data.players[0].id]);
  SE['batter-next'].click();assert.equal(SE['batter-select'].value,data.players[2].id);SE['batter-next'].click();assert.equal(SE['batter-select'].value,data.players[3].id);
+ // Changing a player or tab closes every metric panel instead of restoring old disclosures.
+ const detailsApp=await openApp({files:{'teams.json':{schema_version:1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData}}),DE=detailsApp.elements;
+ const assertClosed=()=>{for(const id of ['quick-detail','batting-detail','pitching-strike-detail','pitching-strikeout-detail','pitching-first-strike-detail'])assert.equal(DE[id].hidden,true,id+' closes');assert.doesNotMatch(DE['pitching-summary'].innerHTML,/aria-expanded="true"/);assert.doesNotMatch(DE['pitching-tendencies'].innerHTML,/aria-expanded="true"/);};
+ const togglePitch=id=>DE[id==='pitching-first-strike-toggle'?'pitching-tendencies':'pitching-summary'].listeners.click({target:{closest:selector=>selector==='#'+id?{}:null}});
+ tapMetric(DE,'batting-stats','batting-obp');assert.equal(DE['batting-detail'].hidden,false);DE['batting-note'].open=true;
+ const firstBatter=[...DE['batter-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]).find(id=>id!=='all');DE['batter-select'].value=firstBatter;DE['batter-select'].listeners.change();assertClosed();assert.equal(DE['batting-note'].open,false);
+ tapMetric(DE,'quick-read','quick-stealtendency');assert.equal(DE['quick-detail'].hidden,false);DE['batter-next'].click();assertClosed();
+ tapMetric(DE,'batting-stats','batting-slg');DE['batter-previous'].click();assertClosed();
+ tapMetric(DE,'batting-stats','batting-obp');DE['tab-pitching'].click();assertClosed();DE['tab-scout'].click();assertClosed();DE['tab-pitching'].click();
+ togglePitch('pitching-strike-toggle');assert.equal(DE['pitching-strike-detail'].hidden,false);DE['pitcher-next'].click();assertClosed();
+ togglePitch('pitching-strikeout-toggle');assert.equal(DE['pitching-strikeout-detail'].hidden,false);DE['pitcher-previous'].click();assertClosed();
+ togglePitch('pitching-first-strike-toggle');assert.equal(DE['pitching-first-strike-detail'].hidden,false);DE['pitcher-select'].value='all';DE['pitcher-select'].listeners.change();assertClosed();
+ togglePitch('pitching-first-strike-toggle');const leaderId=DE['pitcher-leaders'].innerHTML.match(/data-pitcher="([^"]+)"/)[1];DE['pitcher-leaders'].listeners.click({target:{closest:()=>({dataset:{pitcher:leaderId}})}});assertClosed();
+ togglePitch('pitching-strikeout-toggle');DE['tab-scout'].click();assertClosed();DE['tab-pitching'].click();assertClosed();
  // Full repository history includes September without changing earlier regression fixtures.
  const metroApp=await openApp({files:{'teams.json':manifest,'data/shockers-14u.json':history}}),M=metroApp.elements;
  assert.match(M['scout-field'].innerHTML,/61 fair contacts/);assert.match(M['quick-read'].innerHTML,/Steal tendency: 14%; 7\/50 trips; show details/);

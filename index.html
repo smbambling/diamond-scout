@@ -405,8 +405,12 @@
  const selected=()=>D.filter(data,state);
  const pitchStats=(pas,game=state.game,batter=state.batter)=>D.pitchSummary(pas,batter==='all'?(data.runner_outs||[]).filter(out=>D.gameSelected(game,out.game_id)).flatMap(out=>out.pitches||[]):[]);
  function status(message,error=false){$('status').className=error?'notice error':'loading';$('status').textContent=message;$('status').hidden=false;}
+ function closeMetricDetails(){
+  expandedMetric=null;pitchingStrikesOpen=false;pitchingStrikeoutsOpen=false;pitchingFirstStrikesOpen=false;
+  $('batting-note').open=false;
+ }
  function populateFilters(){
-  state.batter='all';state.game='all';state.type='all';state.pitcher='all';pitchingStrikeoutsOpen=false;pitchingStrikesOpen=false;pitchingFirstStrikesOpen=false;$('contact-select').value='all';expandedMetric=null;
+  state.batter='all';state.game='all';state.type='all';state.pitcher='all';$('contact-select').value='all';closeMetricDetails();
  }
  function batterRoster(){
   const numbers=D.playerJerseyNumbers(data);
@@ -444,7 +448,7 @@
  function setGames(games){
   const ids=new Set(games),valid=data.games.filter(g=>ids.has(g.id)).map(g=>g.id);
   state.game=valid.length===data.games.length?'all':valid;
-  expandedMetric=null;pitchingStrikesOpen=false;pitchingStrikeoutsOpen=false;pitchingFirstStrikesOpen=false;
+  closeMetricDetails();
   const scrollTop=$('game-select').scrollTop;renderGamePicker();$('game-select').scrollTop=scrollTop;render();
  }
  function renderFilterIndicator(){
@@ -465,8 +469,7 @@
   if(!players.length)return;
   const index=players.findIndex(p=>p.id===current),next=index<0?(direction>0?0:players.length-1):(index+direction+players.length)%players.length;
   state[kind]=players[next].id;
-  if(kind==='batter'){$('batter-select').value=state.batter;expandedMetric=null;render();}
-  else{pitchingStrikesOpen=false;pitchingStrikeoutsOpen=false;pitchingFirstStrikesOpen=false;renderPitching();}
+  closeMetricDetails();render();
  }
  function renderScout(pas){
   const s=D.summarize(pas,state.type),all=D.summarize(pas),p=pitchStats(pas),b=D.battingSummary(pas),f=D.foulSummary(pas,state.type);
@@ -548,6 +551,7 @@
   renderScout(pas);renderPitching();
  }
  function switchView(view){
+  if(state.view!==view)closeMetricDetails();
   state.view=view;
   for(const b of document.querySelectorAll('[data-view]')){const active=b.dataset.view===view;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1;}
   for(const v of ['scout','pitching'])$('view-'+v).hidden=v!==view;
@@ -592,14 +596,14 @@
   renderPitching();$('pitching-summary').querySelector?.(strikes?'#pitching-strike-toggle':'#pitching-strikeout-toggle')?.focus();
  });
  $('pitching-tendencies').addEventListener('click',event=>{if(!event.target.closest('#pitching-first-strike-toggle'))return;pitchingFirstStrikesOpen=!pitchingFirstStrikesOpen;pitchingStrikesOpen=false;pitchingStrikeoutsOpen=false;renderPitching();$('pitching-tendencies').querySelector?.('#pitching-first-strike-toggle')?.focus();});
- $('pitcher-leaders').addEventListener('click',event=>{const button=event.target.closest('[data-pitcher]');if(!button)return;state.pitcher=button.dataset.pitcher;renderPitching();$('pitcher-select').focus();});
- $('pitcher-select').addEventListener('change',()=>{state.pitcher=$('pitcher-select').value;renderPitching();});
+ $('pitcher-leaders').addEventListener('click',event=>{const button=event.target.closest('[data-pitcher]');if(!button)return;state.pitcher=button.dataset.pitcher;closeMetricDetails();render();$('pitcher-select').focus();});
+ $('pitcher-select').addEventListener('change',()=>{state.pitcher=$('pitcher-select').value;closeMetricDetails();render();});
  for(const kind of ['batter','pitcher']){
   $(kind+'-previous').addEventListener('click',()=>stepPlayer(kind,-1));
   $(kind+'-next').addEventListener('click',()=>stepPlayer(kind,1));
  }
  $('team-select').addEventListener('change',()=>loadTeam($('team-select').value));
- $('batter-select').addEventListener('change',()=>{state.batter=$('batter-select').value;expandedMetric=null;render();});
+ $('batter-select').addEventListener('change',()=>{state.batter=$('batter-select').value;closeMetricDetails();render();});
  $('game-select').addEventListener('change',event=>{
   const id=event.target.dataset.gameId;if(!id||!data.games.some(g=>g.id===id))return;
   const chosen=new Set(data.games.filter(g=>D.gameSelected(state.game,g.id)).map(g=>g.id));
