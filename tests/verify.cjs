@@ -331,11 +331,10 @@ const zoneOnly=JSON.parse(JSON.stringify(blake));zoneOnly.batted_ball.fielding_p
 assert.equal(D.summarize([zoneOnly]).unknown,1);
 // Fixed, nonoverlapping symbols replace all data-colored field territories.
 const markerSvg=D.fieldSvg(data.plate_appearances);
-// The unchanged original PNG is embedded once, and every map reuses it.
-const embeddedField=html.match(/id="natural-field-artwork"[^>]+href="data:image\/png;base64,([^"]+)"/);
-assert(embeddedField,'Natural field artwork must be embedded for static hosting');
-assert.equal(require('node:crypto').createHash('sha256').update(Buffer.from(embeddedField[1],'base64')).digest('hex'),'1408a79629f78178ca8e12b47bea53b290ca4469a8bc85b6f1ce2a442c3cef65');
-assert.equal((html.match(/data:image\/png;base64,/g)||[]).length,1);
+// Field artwork is a local asset, reused by every map.
+assert.match(html,/id="natural-field-artwork"[^>]+href="assets\/field\.png"/);
+assert(fs.existsSync(path.join(root,'assets/field.png')));
+assert.equal((html.match(/data:image\/png;base64,/g)||[]).length,0);
 assert.match(markerSvg,/<use class="natural-field" href="#natural-field-artwork"/);
 // Larger future samples show full counts and the shared total without changing the data.
 const largeSample=Array.from({length:456},(_,i)=>({...blake,batted_ball:{...blake.batted_ball,fielding_position:i<123?'LF':'CF'}}));

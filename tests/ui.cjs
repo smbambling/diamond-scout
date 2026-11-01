@@ -11,10 +11,10 @@ const data={...history,baserunning_events:[],baserunning_entries:[],runner_outs:
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/teams.json')));
 const clone=x=>JSON.parse(JSON.stringify(x));
 async function openApp({storage={},storageBlocked=false,href='https://diamond-scout.test/',files={'teams.json':manifest,'data/shockers-14u.json':data}}={}){
- const elements={},requested=[],repository=clone(files),url=new URL(href),base=new URL('./',url),documentRoot={dataset:{}};
+ const windowListeners={},elements={},requested=[],repository=clone(files),url=new URL(href),base=new URL('./',url),documentRoot={dataset:{}};
  for(const [,id]of html.matchAll(/\bid="([^"]+)"/g))elements[id]={id,value:'',hidden:/\bhidden(?:\s|>|=)/.test(html.match(new RegExp('<[^>]*\\bid="'+id+'"[^>]*>'))?.[0]||''),_html:'',textContent:'',attrs:{},dataset:{},listeners:{},addEventListener(k,f){this.listeners[k]=f},setAttribute(k,v){this.attrs[k]=v},scrollIntoView(){},focus(){},click(){return this.listeners.click?.({target:this})},set innerHTML(s){this._html=s;if(this.id.endsWith('-select'))this.value=s.match(/<option value="([^"]+)"/)?.[1]||''},get innerHTML(){return this._html}};
  for(const v of ['scout','pitching'])elements['tab-'+v].dataset.view=v;
- const context=vm.createContext({console,URL,Map,Set,Promise,localStorage:{getItem(key){if(storageBlocked)throw Error('Storage unavailable');return storage[key]??null;},setItem(key,value){if(storageBlocked)throw Error('Storage unavailable');storage[key]=value;}},location:{href:url.href,origin:url.origin,protocol:url.protocol},window:{scrollTo(options){elements.app.lastScroll=options;},innerWidth:Number(process.env.DIAMOND_TEST_WIDTH||1280),addEventListener(){}},matchMedia(){return {matches:true}},document:{documentElement:documentRoot,getElementById(id){assert(elements[id],'Missing DOM element: '+id);return elements[id]},querySelectorAll(s){assert.equal(s,'[data-view]');return ['scout','pitching'].map(v=>elements['tab-'+v])}},fetch:async (target,options)=>{
+ const context=vm.createContext({console,URL,Map,Set,Promise,localStorage:{getItem(key){if(storageBlocked)throw Error('Storage unavailable');return storage[key]??null;},setItem(key,value){if(storageBlocked)throw Error('Storage unavailable');storage[key]=value;}},location:{href:url.href,origin:url.origin,protocol:url.protocol,reload(){elements.app.reloads=(elements.app.reloads||0)+1;}},window:{scrollTo(options){elements.app.lastScroll=options;},innerWidth:Number(process.env.DIAMOND_TEST_WIDTH||1280),addEventListener(type,fn){windowListeners[type]=fn;}},matchMedia(){return {matches:true}},document:{documentElement:documentRoot,getElementById(id){assert(elements[id],'Missing DOM element: '+id);return elements[id]},querySelectorAll(s){assert.equal(s,'[data-view]');return ['scout','pitching'].map(v=>elements['tab-'+v])}},fetch:async (target,options)=>{
   requested.push({url:target.toString(),options});
   assert.equal(target.origin,url.origin);assert(target.pathname.startsWith(base.pathname));
   assert.equal(options.cache,'no-store');assert.equal(options.redirect,'error');
@@ -23,7 +23,7 @@ async function openApp({storage={},storageBlocked=false,href='https://diamond-sc
  }});
  for(const [,code]of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g))vm.runInContext(code,context);
  await new Promise(setImmediate);
- return {elements,requested,repository,documentRoot,storage,context};
+ return {elements,requested,repository,documentRoot,storage,context,windowListeners};
 }
 // Historical summary checks explicitly restore their prior player after changing games.
 function chooseGames(elements,selection){
@@ -408,6 +408,17 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  SE['tab-scout'].click();assert.equal(SE['player-sort-select'].value,'pa');SE['tab-pitching'].click();assert.equal(SE['player-sort-select'].value,'walk');
  const sortRestore=await openApp({storage:sortApp.storage,files:{'teams.json':{'schema_version':1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData}});
  assert.equal(sortRestore.elements['player-sort-select'].value,'pa');sortRestore.elements['tab-pitching'].click();assert.equal(sortRestore.elements['player-sort-select'].value,'walk');
+ }
+ // Pull-to-refresh requires a deliberate top-of-page gesture and release.
+ {
+ const pullApp=await openApp(),L=pullApp.windowListeners,E=pullApp.elements;
+ const target={closest:()=>null},touch=(y,x=0)=>({target,touches:[{clientX:x,clientY:y}],cancelable:true,preventDefault(){this.prevented=true;}});
+ L.touchstart(touch(0));L.touchmove(touch(60));assert.equal(E['pull-refresh'].textContent,'Pull to refresh');L.touchend();assert.equal(E.app.reloads,undefined);assert.equal(E['pull-refresh'].hidden,true);
+ L.touchstart(touch(0));L.touchmove(touch(120));assert.equal(E['pull-refresh'].textContent,'Release to refresh');L.touchcancel();L.touchend();assert.equal(E.app.reloads,undefined);
+ pullApp.context.window.scrollY=30;L.touchstart(touch(0));L.touchmove(touch(120));L.touchend();assert.equal(E.app.reloads,undefined);pullApp.context.window.scrollY=0;
+ L.touchstart({...touch(0),target:{closest:()=>({})}});L.touchmove(touch(120));L.touchend();assert.equal(E.app.reloads,undefined);
+ L.touchstart(touch(0));L.touchmove(touch(120,70));L.touchend();assert.equal(E.app.reloads,undefined);
+ L.touchstart(touch(0));const move=touch(120);L.touchmove(move);assert.equal(move.prevented,true);L.touchend();assert.equal(E.app.reloads,1);L.touchend();assert.equal(E.app.reloads,1);
  }
  // Smoke-test the current retained teams separately from fixed historical expectations.
  const runtimeManifest=JSON.parse(fs.readFileSync(path.join(root,'teams.json'))),runtimeFiles={'teams.json':runtimeManifest};

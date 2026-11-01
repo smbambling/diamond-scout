@@ -28,7 +28,7 @@ UI checks exercise both surviving views, including batter/game/contact filters, 
 
 ## Repository layout and hosting
 
-- `index.html`, `teams.json`, `data/`, `assets/`, and `site.webmanifest`: the complete runtime app. CSS, JavaScript and field artwork are embedded in `index.html`; app icons are in `assets/`.
+- `index.html`, `teams.json`, `data/`, `assets/`, and `site.webmanifest`: the complete runtime app. CSS and JavaScript are embedded in `index.html`; field artwork and app icons are in `assets/`.
 - `tools/`: local capture, conversion and preflight utilities, with their instructions.
 - `tests/`: automated checks; `tests/fixtures/` holds preserved source captures and fixed regression snapshots.
 - `TEAM-DATA-PROMPT.md`: future game-update workflow. Say **“Use TEAM-DATA-PROMPT.md to add this game”** when providing plays.
@@ -53,13 +53,13 @@ The cleanup moved source captures into `tests/fixtures/captures/` and copied the
 The remaining sections include historical development notes. Counts labeled as current in those older notes describe the data at the time of that change, rather than a live inventory.
 
 
-A buildless, field-first baseball scouting app based on the approved Navy & Ice phone mockup. The simple diamond logo and colored fielder circles are inline SVG. The original natural green field PNG from Diamond Defence is embedded once in the HTML, with its colors and image bytes unchanged. Navy & Ice is the only app color scheme. Team history stays in JSON.
+A buildless, field-first baseball scouting app based on the approved Navy & Ice phone mockup. The simple diamond logo and colored fielder circles are inline SVG. The field artwork loads from `assets/field.png`. Navy & Ice is the only app color scheme. Team history stays in JSON.
 
 ## Runtime files
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Hitting and Pitching summaries, and all inline styling, embedded field artwork, vector labels, and JavaScript |
+| `index.html` | Hitting and Pitching summaries, and all inline styling, vector labels, and JavaScript |
 | `teams.json` | Team selector entries and paths to team-history files |
 | `data/shockers-14u.json` | Shockers 14U player and game history |
 | `data/gambrills-athletic-club-14u.json` | Gambrills Athletic Club 14U player and game history |
@@ -408,7 +408,7 @@ These checks do not simulate direct sunlight, physical touch hardware, iOS brows
 
 The app supports 320–430px portrait screens, tablets, desktop, and short landscape windows. At 760px and below, and landscape windows up to 1000px wide and 500px high, **Hitting · Pitching** stay in bottom navigation with safe-area padding. On wider screens the navigation moves to the header. Scout remains one centered column, with the three-column statistics block above the field. The default layout aims to fit the core information on typical portrait phones; opening sample details, filters, or using a shorter screen can require scrolling. The footer is hidden on Scout to save space. Recorded outcomes are available in Approach.
 
-The app logo uses the supplied clipboard/baseball artwork in `assets/`; live field labels are vectors. The field is the unchanged `diamond-defense-soft-field.png` from the local Diamond Defence project, embedded as a data URI once in `index.html` and reused by Scout, Field, and the gallery. No separate image file or dependency on the Diamond Defence project is needed for hosting. The original PNG is about 2.4 MiB; embedding it makes the HTML about 3.3 MiB before HTTP compression. Every marker has a fixed radius of 35 field units. Each circle contains a small position abbreviation, a prominent percentage, and a smaller contact count. Repeated count / total fractions are omitted: the shared total appears beside the field. Position labels use 17 field units, percentages use 25 (23 for 100%), and counts use 18. Five or more count digits fit within a fixed 48-unit width. All labels scale with the field. The total fair-contact count appears in the lower-right space outside the field edge. An unknown-fielder count appears there only when needed. The field and labels share one SVG coordinate system, keeping them aligned as the layout scales. The full field, including home plate, remains visible. A ninth C circle appears only when selected fair contact is explicitly attributed to catcher; it is centered over home plate (center 297,390 in field units). The SVG retains its regular 470-unit height so the catcher does not shrink the rest of the field. Zero-contact selections retain the existing eight circles and field proportions. There is no bottom totals strip. Unknown-fielder counts appear by the total and remain in every denominator. Marker positions are schematic; they do not depict coverage or ball locations. No data-colored field territories are drawn. The pitcher marker stays near the mound, below second base. Circles are informational, not touch controls; navigation, filters, and disclosures retain at least 48px targets.
+The app logo uses the supplied clipboard/baseball artwork in `assets/`; live field labels are vectors. The field loads from `assets/field.png`, which must be included when hosting. Replace this asset to update the artwork; the SVG adds the fielder markers and totals separately. Every marker has a fixed radius of 35 field units. Each circle contains a small position abbreviation, a prominent percentage, and a smaller contact count. Repeated count / total fractions are omitted: the shared total appears beside the field. Position labels use 17 field units, percentages use 25 (23 for 100%), and counts use 18. Five or more count digits fit within a fixed 48-unit width. All labels scale with the field. The total fair-contact count appears in the lower-right space outside the field edge. An unknown-fielder count appears there only when needed. The field and labels share one SVG coordinate system, keeping them aligned as the layout scales. The full field, including home plate, remains visible. A ninth C circle appears only when selected fair contact is explicitly attributed to catcher; it is centered over home plate (center 297,390 in field units). The SVG retains its regular 470-unit height so the catcher does not shrink the rest of the field. Zero-contact selections retain the existing eight circles and field proportions. There is no bottom totals strip. Unknown-fielder counts appear by the total and remain in every denominator. Marker positions are schematic; they do not depict coverage or ball locations. No data-colored field territories are drawn. The pitcher marker stays near the mound, below second base. Circles are informational, not touch controls; navigation, filters, and disclosures retain at least 48px targets.
 
 Buttons, selects, and disclosures have at least 48px touch targets. Form text is at least 16px. Narrow game logs become labeled vertical cards with expandable pitch detail. The last content scrolls clear of the bottom navigation. The app accounts for safe-area insets, preserves pinch zoom, and respects reduced-motion preferences.
 
@@ -600,3 +600,7 @@ The Filters panel offers tab-specific player sorting. Hitting supports jersey nu
 ### Desktop layout
 
 Above 1000px, the header and content share a centered workspace. Hitting places batting metrics and contact profile beside the field; Pitching places its summary beside recorded pitch outcomes. Filters and player selectors align with the same workspace. Phone and tablet layouts retain their existing compact arrangement.
+
+### Home-screen refresh
+
+In standalone home-screen mode, pull downward at least 100px from the top of the page, then release when “Release to refresh” appears. Short or sideways gestures, touches on controls and independently scrolling lists do not trigger it. Normal browser refresh behavior is unchanged. This reloads the page and fetches team JSON without cache; the browser still controls image and asset caching.
