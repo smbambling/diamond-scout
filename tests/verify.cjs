@@ -332,7 +332,7 @@ assert.equal(D.summarize([zoneOnly]).unknown,1);
 // Fixed, nonoverlapping symbols replace all data-colored field territories.
 const markerSvg=D.fieldSvg(data.plate_appearances);
 // Field artwork is a local asset, reused by every map.
-assert.match(html,/id="natural-field-artwork"[^>]+href="assets\/field\.png"/);
+assert.match(html,/id="natural-field-artwork"[^>]+href="assets\/field\.png\?v=[a-f0-9]+"/);
 assert(fs.existsSync(path.join(root,'assets/field.png')));
 assert.equal((html.match(/data:image\/png;base64,/g)||[]).length,0);
 assert.match(markerSvg,/<use class="natural-field" href="#natural-field-artwork"/);

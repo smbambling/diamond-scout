@@ -604,3 +604,25 @@ Above 1000px, the header and content share a centered workspace. Hitting places 
 ### Home-screen refresh
 
 In standalone home-screen mode, pull downward at least 100px from the top of the page, then release when “Release to refresh” appears. Short or sideways gestures, touches on controls and independently scrolling lists do not trigger it. Normal browser refresh behavior is unchanged. This reloads the page and fetches team JSON without cache; the browser still controls image and asset caching.
+
+### GitHub Pages release updates
+
+Before publishing changes, run:
+
+```sh
+node tools/prepare-release.cjs
+```
+
+Publish the resulting `index.html`, `site.webmanifest`, `version.json`, `assets/`, `teams.json`, and team data together. The command assigns content-hashed image URLs and a release ID covering the app, manifest and team data. It is safe to rerun without changing the release ID when runtime contents are unchanged.
+
+The app checks `version.json` without browser caching on initial load, page restoration and return to the foreground (at most once per 30 seconds). A different release shows **Update available — Refresh**. Refresh navigates to the same page with a release query parameter and retains saved selections. Missing version files or network failures do not block the app. GitHub Pages CDN propagation can still delay availability; this cannot override its server cache headers. No service worker or offline cache is introduced.
+
+### Pre-push release hook
+
+Enable the tracked hook once per clone:
+
+```sh
+git config --local core.hooksPath .githooks
+```
+
+Pushes targeting `origin`'s `main` branch run `node tools/prepare-release.cjs`. Other branches/remotes and branch deletions are skipped. The outgoing commit must be checked out so the script prepares the correct release. If generated files or runtime inputs have uncommitted changes, the hook stops the push: review and commit those changes, then push again. It never automatically commits or stages files. This local hook applies to command-line pushes from this clone, not GitHub web edits or other clones.

@@ -11,11 +11,11 @@ const data={...history,baserunning_events:[],baserunning_entries:[],runner_outs:
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/teams.json')));
 const clone=x=>JSON.parse(JSON.stringify(x));
 async function openApp({storage={},storageBlocked=false,href='https://diamond-scout.test/',files={'teams.json':manifest,'data/shockers-14u.json':data}}={}){
- const windowListeners={},elements={},requested=[],repository=clone(files),url=new URL(href),base=new URL('./',url),documentRoot={dataset:{}};
+ const windowListeners={},elements={},releaseRequests=[],requested=[],repository=clone(files),url=new URL(href),base=new URL('./',url),documentRoot={dataset:{}};
  for(const [,id]of html.matchAll(/\bid="([^"]+)"/g))elements[id]={id,value:'',hidden:/\bhidden(?:\s|>|=)/.test(html.match(new RegExp('<[^>]*\\bid="'+id+'"[^>]*>'))?.[0]||''),_html:'',textContent:'',attrs:{},dataset:{},listeners:{},addEventListener(k,f){this.listeners[k]=f},setAttribute(k,v){this.attrs[k]=v},scrollIntoView(){},focus(){},click(){return this.listeners.click?.({target:this})},set innerHTML(s){this._html=s;if(this.id.endsWith('-select'))this.value=s.match(/<option value="([^"]+)"/)?.[1]||''},get innerHTML(){return this._html}};
  for(const v of ['scout','pitching'])elements['tab-'+v].dataset.view=v;
- const context=vm.createContext({console,URL,Map,Set,Promise,localStorage:{getItem(key){if(storageBlocked)throw Error('Storage unavailable');return storage[key]??null;},setItem(key,value){if(storageBlocked)throw Error('Storage unavailable');storage[key]=value;}},location:{href:url.href,origin:url.origin,protocol:url.protocol,reload(){elements.app.reloads=(elements.app.reloads||0)+1;}},window:{scrollTo(options){elements.app.lastScroll=options;},innerWidth:Number(process.env.DIAMOND_TEST_WIDTH||1280),addEventListener(type,fn){windowListeners[type]=fn;}},matchMedia(){return {matches:true}},document:{documentElement:documentRoot,getElementById(id){assert(elements[id],'Missing DOM element: '+id);return elements[id]},querySelectorAll(s){assert.equal(s,'[data-view]');return ['scout','pitching'].map(v=>elements['tab-'+v])}},fetch:async (target,options)=>{
-  requested.push({url:target.toString(),options});
+ const context=vm.createContext({console,URL,Map,Set,Promise,localStorage:{getItem(key){if(storageBlocked)throw Error('Storage unavailable');return storage[key]??null;},setItem(key,value){if(storageBlocked)throw Error('Storage unavailable');storage[key]=value;}},location:{href:url.href,origin:url.origin,protocol:url.protocol,replace(url){elements.app.replacedUrl=url;},reload(){elements.app.reloads=(elements.app.reloads||0)+1;}},window:{scrollTo(options){elements.app.lastScroll=options;},innerWidth:Number(process.env.DIAMOND_TEST_WIDTH||1280),addEventListener(type,fn){windowListeners[type]=fn;}},matchMedia(){return {matches:true}},document:{documentElement:documentRoot,getElementById(id){assert(elements[id],'Missing DOM element: '+id);return elements[id]},querySelectorAll(s){assert.equal(s,'[data-view]');return ['scout','pitching'].map(v=>elements['tab-'+v])}},fetch:async (target,options)=>{
+  (target.pathname.endsWith('/version.json')?releaseRequests:requested).push({url:target.toString(),options});
   assert.equal(target.origin,url.origin);assert(target.pathname.startsWith(base.pathname));
   assert.equal(options.cache,'no-store');assert.equal(options.redirect,'error');
   const key=target.pathname.slice(base.pathname.length),value=repository[key];
@@ -23,7 +23,7 @@ async function openApp({storage={},storageBlocked=false,href='https://diamond-sc
  }});
  for(const [,code]of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g))vm.runInContext(code,context);
  await new Promise(setImmediate);
- return {elements,requested,repository,documentRoot,storage,context,windowListeners};
+ return {elements,requested,repository,documentRoot,storage,context,windowListeners,releaseRequests};
 }
 // Historical summary checks explicitly restore their prior player after changing games.
 function chooseGames(elements,selection){
@@ -419,6 +419,17 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  L.touchstart({...touch(0),target:{closest:()=>({})}});L.touchmove(touch(120));L.touchend();assert.equal(E.app.reloads,undefined);
  L.touchstart(touch(0));L.touchmove(touch(120,70));L.touchend();assert.equal(E.app.reloads,undefined);
  L.touchstart(touch(0));const move=touch(120);L.touchmove(move);assert.equal(move.prevented,true);L.touchend();assert.equal(E.app.reloads,1);L.touchend();assert.equal(E.app.reloads,1);
+ }
+ // Release checks tolerate older/offline deployments and offer an explicit versioned refresh.
+ {
+ const current=html.match(/const releaseVersion='([^']+)'/)[1];
+ const same=await openApp({files:{'version.json':{version:current},'teams.json':manifest,'data/shockers-14u.json':data}});
+ assert.equal(same.elements['release-update'].hidden,true);assert.equal(same.releaseRequests.length,1);
+ const newer=current==='0123456789abcdef'?'abcdef0123456789':'0123456789abcdef';
+ const update=await openApp({href:'https://diamond-scout.test/subdir/?other=keep',files:{'version.json':{version:newer},'teams.json':manifest,'data/shockers-14u.json':data}});
+ assert.equal(update.elements['release-update'].hidden,false);assert.equal(update.elements.app.replacedUrl,undefined);
+ update.elements['release-refresh'].click();const target=new URL(update.elements.app.replacedUrl);assert.equal(target.pathname,'/subdir/');assert.equal(target.searchParams.get('release'),newer);assert.equal(target.searchParams.get('other'),'keep');
+ const missing=await openApp();assert.equal(missing.elements['release-update'].hidden,true);assert.equal(missing.elements.app.hidden,false);
  }
  // Smoke-test the current retained teams separately from fixed historical expectations.
  const runtimeManifest=JSON.parse(fs.readFileSync(path.join(root,'teams.json'))),runtimeFiles={'teams.json':runtimeManifest};
