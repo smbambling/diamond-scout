@@ -70,3 +70,8 @@ assert.equal(capture.detectGameMetadata(screenshotHeader + '\nSun Oct 25, 10:00 
 assert.equal(capture.detectGameMetadata(screenshotHeader + '\n' + screenshotHeader, seasonUrl).time, '17:30', 'Repeated desktop/mobile header text is not ambiguity');
 assert.equal(capture.detectGameMetadata('Top 1st - Team A\nIn play.', seasonUrl).date, '');
 console.log('PASS: loaded-play capture, source preservation, game-header date/time/zone detection, explicit year confirmation, ambiguous/missing metadata, private-URL stripping and bookmarklet packaging. Live authenticated page behavior remains unverified.');
+
+const assignedCapture=capture.formatCapture({text:history.games.find(g=>g.source_play_by_play).source_play_by_play,url:'https://web.gc.com/teams/test/schedule/event/plays',assignTo:['black','orange','black']});
+assert.match(assignedCapture,/Assign to: black, orange/);
+assert.throws(()=>capture.formatCapture({text:history.games.find(g=>g.source_play_by_play).source_play_by_play,url:'https://web.gc.com/teams/test/schedule/event/plays',assignTo:['bad\nvalue']}),/organization team IDs/);
+assert.match(source,/Assign scouting to your teams/);

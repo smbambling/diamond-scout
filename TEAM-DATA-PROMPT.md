@@ -285,3 +285,8 @@ Accept a box-score JSON from the updated Capture GC data bookmark with the match
 ### Combined game JSON (preferred capture workflow)
 
 The Capture GC data bookmark now captures Plays and Box score together, without an inning-expansion step. Accept its `diamond-scout-game` JSON directly in normal import or preflight; match embedded game IDs, teams and metadata before processing. Retain partial-capture/table warnings and keep box-score discrepancies in review. Existing separate Plays TXT plus `--box-score` JSON remains supported if GameChanger blocks automatic capture-window navigation. Do not equate a settled page with verified completeness or infer missing rows from screenshots.
+
+
+## Organization assignments from capture exports
+
+If capture metadata includes `Assign to: organization-id, organization-id`, preserve it when using the import utility. It links each imported scouting record to those configured organization teams in `teams.json`, excluding each team's own record when `scouting_team_id` is configured. Assignments are included in preview, backup and rollback, and require `--write` to persist. Unknown IDs must be corrected explicitly, not guessed. Never create duplicate opponent history just because multiple organization teams share that opponent. Older captures can use repeatable `--assign-to ID` flags.

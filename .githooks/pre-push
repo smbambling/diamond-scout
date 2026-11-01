@@ -22,7 +22,7 @@ fi
 node tools/prepare-release.cjs
 
 # Working-tree changes cannot be included in an already-started push.
-pending=$(git status --porcelain -- index.html site.webmanifest version.json teams.json assets data tools/prepare-release.cjs)
+pending=$(git status --porcelain -- index.html site.webmanifest version.json teams.json assets data tools/prepare-release.cjs tools/gamechanger-capture.js tools/gamechanger-capture.html)
 if [ -n "$pending" ]; then
   echo 'Push stopped: release/runtime files have uncommitted changes.' >&2
   echo 'Review and commit them, then push again. Release files have been prepared.' >&2

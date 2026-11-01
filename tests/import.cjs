@@ -297,5 +297,22 @@ try {
 
   const help=cp.spawnSync(process.execPath,[path.join(root,'tools/import-plays.cjs'),'--help'],{cwd:temp,encoding:'utf8'}); assert.equal(help.status,0); assert.match(help.stdout,/Preview is the default/);
   const rejected=cp.spawnSync(process.execPath,[path.join(root,'tools/import-plays.cjs'),'--typo'],{encoding:'utf8'}); assert.equal(rejected.status,1); assert.match(rejected.stderr,/Unknown option/);
+  {
+  // Capture assignments are previewed, shared across teams, atomic and idempotent even for duplicate games.
+  const assigned=repo(),assignedManifest=JSON.parse(fs.readFileSync(path.join(assigned,'teams.json')));
+  assignedManifest.organization_teams=[{id:'black',name:'Black',opponent_ids:[]},{id:'orange',name:'Orange',opponent_ids:[]},{id:'own',name:'Own',opponent_ids:[],scouting_team_id:'seed'}];
+  fs.writeFileSync(path.join(assigned,'teams.json'),JSON.stringify(assignedManifest));
+  I.writePlan(I.planImports(assigned,[input(capture(one))]));
+  const assignedBefore=bytes(assigned),assignmentText='Assign to: black, orange\n'+capture(one),assignmentPlan=I.planImports(assigned,[input(assignmentText)]);
+  assert.deepEqual(bytes(assigned),assignedBefore,'Preview never writes assignments');
+  assert.equal(assignmentPlan.report.filter(r=>r.status==='opponent-assigned').length,2);
+  assert.equal(assignmentPlan.report.filter(r=>r.status==='duplicate').length,1);
+  assert.deepEqual([...assignmentPlan.changes.keys()],['teams.json'],'Existing game history is not duplicated');
+  I.writePlan(assignmentPlan);const linkedManifest=JSON.parse(fs.readFileSync(path.join(assigned,'teams.json')));
+  for(const team of linkedManifest.organization_teams.slice(0,2))assert.deepEqual(team.opponent_ids,['falcons-14u']);
+  const again=I.planImports(assigned,[input(assignmentText)]);assert.equal(again.changes.size,0);assert.equal(again.report.filter(r=>r.status==='assignment-duplicate').length,2);
+  assert.throws(()=>I.planImports(assigned,[input('Assign to: missing\n'+capture(one))]),/Unknown organization team/);
+  const ownPlan=I.planImports(assigned,[input('Assign to: own\n'+capture(one.replace('Falcons 14U','Existing Team')))]);assert(!ownPlan.report.some(r=>r.status==='opponent-assigned'),'Do not assign a team its own scouting record');
+  }
   console.log('PASS: real-game source/pitch/contact reconciliation, both-team batch imports, trip links, uncommon results, dry-run, duplicates, rematches, aliases, schema validation, backups, rollback and malformed-input rejection. All writes were confined to temporary test projects.');
 } finally { fs.rmSync(temp,{recursive:true,force:true}); }

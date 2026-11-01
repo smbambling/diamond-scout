@@ -449,10 +449,28 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  Q['search-toggle'].click();Q['filter-toggle'].click();assert.equal(Q['search-panel'].hidden,true);assert.equal(Q['filter-panel'].hidden,false);
  Q['search-toggle'].click();assert.equal(Q['filter-panel'].hidden,true);Q['search-done'].click();assert.equal(Q['search-panel'].hidden,true);
  }
+ // Organization teams filter both opponent navigation and search, sharing the same opponent data.
+ {
+ const orgManifest={schema_version:1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'},{id:gambrills.team.id,name:gambrills.team.name,data_file:'data/gambrills.json'}],organization_teams:[{id:'black',name:'14U Black',opponent_ids:[pitchingData.team.id]},{id:'orange',name:'14U Orange',opponent_ids:[pitchingData.team.id,gambrills.team.id]},{id:'empty',name:'Not scheduled',opponent_ids:[]}]};
+ const files={'teams.json':orgManifest,'data/pitching.json':pitchingData,'data/gambrills.json':gambrills};
+ const first=await openApp({files}),F=first.elements;assert.equal(F.app.hidden,false);assert.equal(F['organization-control'].hidden,false);assert.equal(F['organization-select'].value,'all');assert.match(F['team-select'].innerHTML,/Gambrills/);
+ F['organization-select'].value='black';await F['organization-select'].listeners.change();assert.equal(F.app.hidden,false);assert.match(F['team-select'].innerHTML,/Gribbin/);assert.doesNotMatch(F['team-select'].innerHTML,/Gambrills/);
+ F['search-toggle'].click();F['team-search'].value='gambr';F['team-search'].listeners.input();assert.match(F['team-search-results'].innerHTML,/No matching teams/);
+ F['team-select'].value=gambrills.team.id;await F['team-select'].listeners.change();assert.equal(F['page-title'].textContent,pitchingData.team.name);assert.match(F.status.textContent,/not assigned/);
+ F['organization-select'].value='orange';await F['organization-select'].listeners.change();assert.match(F['team-select'].innerHTML,/Gambrills/);assert.equal(F['page-title'].textContent,pitchingData.team.name,'Shared opponent uses same history');
+ F['organization-select'].value='black';await F['organization-select'].listeners.change();
+ const remembered=await openApp({files,storage:first.storage});assert.equal(remembered.elements['organization-select'].value,'black');assert.doesNotMatch(remembered.elements['team-select'].innerHTML,/Gambrills/);
+ const linked=await openApp({files,storage:first.storage,href:'https://diamond-scout.test/sub/?team=orange'});assert.equal(linked.elements['organization-select'].value,'orange');assert.match(linked.elements['team-select'].innerHTML,/Gambrills/);
+ F['organization-select'].value='empty';await F['organization-select'].listeners.change();assert.equal(F.app.hidden,true);assert.match(F.status.textContent,/No opponents are assigned/);assert.equal(F['team-select'].innerHTML,'');
+ F['organization-select'].value='all';await F['organization-select'].listeners.change();assert.equal(F.app.hidden,false);assert.match(F['team-select'].innerHTML,/Gambrills/);
+ const invalid=clone(orgManifest);invalid.organization_teams[0].opponent_ids=['missing'];assert.throws(()=>first.context.DiamondScout.validateManifest(invalid),/opponent_ids/);
+ invalid.organization_teams[0].opponent_ids=[pitchingData.team.id,pitchingData.team.id];assert.throws(()=>first.context.DiamondScout.validateManifest(invalid),/opponent_ids/);
+ const duplicate=clone(orgManifest);duplicate.organization_teams.push(clone(duplicate.organization_teams[0]));assert.throws(()=>first.context.DiamondScout.validateManifest(duplicate),/unique ID/);
+ }
  // Smoke-test the current retained teams separately from fixed historical expectations.
  const runtimeManifest=JSON.parse(fs.readFileSync(path.join(root,'teams.json'))),runtimeFiles={'teams.json':runtimeManifest};
  for(const team of runtimeManifest.teams)runtimeFiles[team.data_file]=JSON.parse(fs.readFileSync(path.join(root,team.data_file)));
- const runtimeApp=await openApp({files:runtimeFiles});assert.equal(runtimeApp.elements.app.hidden,false);
+ const runtimeApp=await openApp({href:'https://diamond-scout.test/?team=all',files:runtimeFiles});assert.equal(runtimeApp.elements.app.hidden,false);
  for(const team of runtimeManifest.teams){runtimeApp.elements['team-select'].value=team.id;await runtimeApp.elements['team-select'].listeners.change();assert.equal(runtimeApp.elements['page-title'].textContent,team.name);assert.equal(runtimeApp.elements.app.hidden,false);}
  console.log('PASS ('+(process.env.DIAMOND_TEST_WIDTH||1280)+'px viewport model): automatic repository JSON loading, subdirectory hosting, file-protocol guidance, page-refresh recovery, pitch summaries, filters, navigation, and safe missing-data rendering.');
 })();

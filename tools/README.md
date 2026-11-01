@@ -57,3 +57,18 @@ GameChanger documents [season-stat CSV exports for Staff](https://help.gc.com/hc
 Run `node tests/capture.cjs`. It does not contact GameChanger or launch a browser. Existing runtime files and deployment instructions are unchanged; the `tools/` folder is optional and is not loaded by `index.html`. 
 
 The capture bookmark now supports Plays TXT and Box score JSON. Replace the saved bookmark from the reloaded installer. Pair files with `node tools/import-plays.cjs plays.txt --box-score boxscore.json` (preview), add `--write` to save, or use `--preflight` with the same flag. Read IMPORT-PLAYS.md for matching, incomplete DOM captures and review-only scoring conflicts. `box-score.cjs` validates sidecar evidence and compares recorded batting counts; it never rewrites play results.
+
+
+### Assign captured scouting to organization teams
+
+Reload `tools/gamechanger-capture.html` and replace your **Capture GC data** bookmark to get the new controls. In the review dialog, use **Assign scouting to your teams (optional)** to check one or more organization teams. Keep **Teams to import** set to the captured teams whose scouting you want to retain. No assignment is selected by default.
+
+Plays TXT and combined game JSON exports include an `Assign to: id, id` directive. Run the usual import command: preview shows `OPPONENT-ASSIGNED` entries; `--write` saves assignments together with the import and its backup. The same captured opponent can be assigned to several organization teams without duplicating history. Existing/duplicate games can add assignments too. Unknown organization IDs stop the import instead of creating a new internal team. Box-score-only exports use assignments from their paired Plays export.
+
+For an older capture, the equivalent repeatable CLI flag is:
+
+```sh
+node tools/import-plays.cjs /path/gamechanger-game.json --assign-to 14u-black
+```
+
+Add `--write` after reviewing the preview. Capture metadata and CLI assignments are combined. Configure organization teams in `teams.json`; optional `scouting_team_id` identifies an internal team's own scouting record, which is excluded from its opponent assignments. A record can still be assigned to another internal team. Run `node tools/prepare-release.cjs` after configuration changes: it embeds current organization choices into the self-contained capture helper and rebuilds its installer. Reinstall the bookmark to receive the updated list; no cross-site fetch or browser storage is used.

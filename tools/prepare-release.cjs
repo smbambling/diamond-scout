@@ -12,6 +12,12 @@ const manifestText=JSON.stringify(manifest,null,2)+'\n';
 html=html.replace(/site\.webmanifest(?:\?v=[a-f0-9]+)?/g,'site.webmanifest?v='+hash(manifestText));
 const canonical=html.replace(/const releaseVersion='[^']*';/,"const releaseVersion='RELEASE';");
 const teams=JSON.parse(fs.readFileSync(path.join(root,'teams.json'),'utf8'));
+// The bookmark is self-contained: embed current organization names without cross-site requests.
+const capturePath=path.join(root,'tools/gamechanger-capture.js'),installerPath=path.join(root,'tools/gamechanger-capture.html');
+let capture=fs.readFileSync(capturePath,'utf8');
+capture=capture.replace(/  const organizationTeams = .*;/,()=> '  const organizationTeams = '+JSON.stringify((teams.organization_teams||[]).map(({id,name})=>({id,name})))+';');
+const installer=fs.readFileSync(installerPath,'utf8').replace(/(id="capture-bookmark" href=")[^"]+"/,(_,prefix)=>prefix+'javascript:'+encodeURIComponent(capture)+'"');
+fs.writeFileSync(capturePath,capture);fs.writeFileSync(installerPath,installer);
 const runtime=[canonical,manifestText,fs.readFileSync(path.join(root,'teams.json')),...teams.teams.map(t=>fs.readFileSync(path.join(root,t.data_file)))];
 const version=hash(Buffer.concat(runtime.map(x=>Buffer.from(x))));
 html=html.replace(/const releaseVersion='[^']*';/,"const releaseVersion='"+version+"';");

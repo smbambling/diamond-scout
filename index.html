@@ -179,6 +179,7 @@
 .search-toggle{display:flex;align-items:center;justify-content:center;width:44px;min-width:44px;height:44px;min-height:44px;padding:10px;border-radius:10px;background:var(--control);color:var(--accent-strong)}.search-toggle .icon{width:22px;height:22px}.search-toggle[aria-expanded="true"]{background:var(--selected-bg)}
 .search-panel{display:grid;grid-template-columns:1fr 1fr;gap:12px 16px;margin:12px 0;padding:14px;border:1px solid var(--border);border-radius:var(--radius);background:var(--panel)}.search-panel input{display:block;width:100%;min-width:0;min-height:44px;margin-top:6px;padding:10px 12px;border:1px solid var(--control-border);border-radius:10px;background:var(--control);color:var(--text);font-size:16px}.search-panel input:focus-visible{outline:3px solid var(--focus);outline-offset:2px}.search-results{max-height:220px;overflow-y:auto;overscroll-behavior:contain}.search-results button{display:block;width:100%;min-height:44px;margin-top:6px;padding:9px 12px;text-align:left;font-size:14px;overflow-wrap:anywhere}.search-results button[aria-current="true"]{background:var(--selected-bg);border-color:var(--accent)}.search-results p{font-size:13px;color:var(--secondary);padding-top:10px}
 @media(max-width:760px){.search-panel{grid-template-columns:1fr}.control-row{gap:8px}}
+.organization-control{display:flex;align-items:center;gap:10px;margin-bottom:12px;max-width:620px}.organization-control label{flex:none;font-size:12px}.organization-control select{min-height:44px;font-size:14px;padding:8px 32px 8px 10px}.organization-control select:focus-visible{outline:3px solid var(--focus)}
 </style>
 </head>
 <body>
@@ -187,7 +188,7 @@
 <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;overflow:hidden"><defs><image id="natural-field-artwork" width="600" height="470" preserveAspectRatio="none" href="assets/field.png?v=675b7404f7857c56"/></defs></svg>
 <div class="shell">
 <header class="appbar"><a class="brand" href="./" aria-label="Diamond Scout home"><img class="brand-logo" src="assets/brand-clipboard.png?v=a0435e740fa085a4" width="36" height="36" alt=""><span>Diamond Scout</span></a><div class="header-actions"><nav id="view-navigation" class="navigation" hidden role="tablist" aria-label="Scouting views"><button class="nav-item" role="tab" id="tab-scout" data-view="scout" aria-selected="true" aria-controls="view-scout"><img class="icon nav-image" src="assets/baseballbat.png?v=9862a205df47301e" width="25" height="25" alt=""><span class="sr-only">Hitting</span></button><button class="nav-item" role="tab" id="tab-pitching" data-view="pitching" aria-selected="false" aria-controls="view-pitching"><img class="icon nav-image" src="assets/baseball.png?v=4ed3c21bc71daf8f" width="25" height="25" alt=""><span class="sr-only">Pitching</span></button></nav></div></header>
-<main class="page"><div class="heading"><h1 id="page-title">Opponent scouting</h1><p id="page-subtitle"></p></div><div id="status" class="loading" role="status" aria-live="polite">Loading team history…</div><div id="app" hidden>
+<main class="page"><div class="heading"><h1 id="page-title">Opponent scouting</h1><p id="page-subtitle"></p></div><div id="status" class="loading" role="status" aria-live="polite">Loading team history…</div><div id="organization-control" class="organization-control" hidden><label for="organization-select">Your team</label><select id="organization-select" aria-label="Your organization team"></select></div><div id="app" hidden>
 <div id="release-update" class="release-update" role="status" hidden><span>Update available</span><button id="release-refresh" type="button">Refresh</button></div>
 <div class="control-row"><label class="team-control"><span class="sr-only">Team</span><select id="team-select" aria-label="Team"></select></label><button id="search-toggle" class="search-toggle" type="button" aria-label="Search teams and players" title="Search teams and players" aria-expanded="false" aria-controls="search-panel"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="filter-toggle" id="filter-toggle" aria-label="Filters" title="Filters" aria-expanded="false" aria-controls="filter-panel"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="8" cy="6" r="2" fill="var(--panel)"/><circle cx="16" cy="12" r="2" fill="var(--panel)"/><circle cx="9" cy="18" r="2" fill="var(--panel)"/></svg><span id="filter-active-badge" class="filter-active-badge" hidden aria-hidden="true"></span></button></div>
 <section id="search-panel" class="search-panel" aria-label="Search teams and players" hidden><div class="filters-heading"><span>Search</span><button id="search-done" type="button">Done</button></div><div><label for="team-search">Team name</label><input id="team-search" type="search" placeholder="Find a team" autocomplete="off" aria-controls="team-search-results"><div id="team-search-results" class="search-results"></div></div><div><label id="player-search-label" for="player-search">Batter name or jersey number</label><input id="player-search" type="search" placeholder="Name or #" autocomplete="off" aria-controls="player-search-results"><div id="player-search-results" class="search-results"></div></div></section>
@@ -220,7 +221,18 @@
   if(typeof path!=='string'||!path.endsWith('.json')||/[:\\%?#\u0000-\u001f\u007f]/.test(path)||path.split('/').some(part=>!part||part==='.'||part==='..'))throw Error('JSON paths must be relative files inside this project, such as data/shockers-14u.json.');
   return path;
  }
- function validateManifest(m){if(m?.schema_version!==1||!Array.isArray(m.teams)||!m.teams.length)throw Error('The team list must use schema_version 1 and contain at least one team.');const ids=new Set();for(const t of m.teams){if(!t.id||!t.name||typeof t.data_file!=='string'||ids.has(t.id))throw Error('Each team needs a unique ID, name and data_file.');validateDataPath(t.data_file);ids.add(t.id);}return m;}
+ function validateManifest(m){if(m?.schema_version!==1||!Array.isArray(m.teams)||!m.teams.length)throw Error('The team list must use schema_version 1 and contain at least one team.');const ids=new Set();for(const t of m.teams){if(!t.id||!t.name||typeof t.data_file!=='string'||ids.has(t.id))throw Error('Each team needs a unique ID, name and data_file.');validateDataPath(t.data_file);ids.add(t.id);}
+  if(m.organization_teams!==undefined){
+   if(!Array.isArray(m.organization_teams))throw Error('organization_teams must be a list.');
+   const organizationIds=new Set();
+   for(const team of m.organization_teams){
+    if(typeof team.id!=='string'||!/^[a-z0-9][a-z0-9-]*$/.test(team.id)||team.id==='all'||organizationIds.has(team.id)||typeof team.name!=='string'||!team.name.trim()||!Array.isArray(team.opponent_ids))throw Error('Each organization team needs a unique ID, name and opponent_ids list.');
+    organizationIds.add(team.id);
+    if(team.scouting_team_id!==undefined&&!ids.has(team.scouting_team_id))throw Error('Organization scouting_team_id must reference a team in the scouting list.');
+    if(new Set(team.opponent_ids).size!==team.opponent_ids.length||team.opponent_ids.some(id=>!ids.has(id)))throw Error('Organization opponent_ids must reference unique teams in the scouting list.');
+   }
+  }
+  return m;}
  const reachResults=new Set(['single','double','triple','walk','hit_by_pitch','reached_on_error','fielders_choice','fielders_choice_double_play','catchers_interference']);
  const noReachResults=new Set(['home_run','ground_out','fly_out','line_out','pop_out','strikeout_swinging','strikeout_looking','strikeout_foul_tip','infield_fly','double_play','sacrifice_fly','sacrifice_bunt','foul_out']);
  function onBaseStatus(pa){
@@ -482,11 +494,12 @@
 'use strict';
 (() => {
  const D=globalThis.DiamondScout,$=id=>document.getElementById(id),e=D.esc;
- const releaseVersion='79a1a9f1fc807b38';
- const state={view:'scout',batter:'all',game:'all',type:'all',pitcher:'all',sorts:{scout:'jersey',pitching:'jersey'}},cache=new Map();
+ const releaseVersion='721a8d0312dfc22f';
+ const state={view:'scout',batter:'all',game:'all',type:'all',pitcher:'all',organizationTeam:'all',sorts:{scout:'jersey',pitching:'jersey'}},cache=new Map();
  let manifest=null,data=null,loadGeneration=0,expandedMetric=null,pitchingStrikeoutsOpen=false,pitchingStrikesOpen=false,pitchingFirstStrikesOpen=false;
  const metricItems=new Map();
  const selectionKey='diamond-scout:selection:'+new URL('./',location.href).pathname;
+ const organizationKey=selectionKey+':organization';
  function readSelection(){try{const saved=JSON.parse(localStorage.getItem(selectionKey));return saved&&typeof saved.team==='string'&&typeof saved.batter==='string'?saved:null;}catch{return null;}}
  function saveSelection(){try{localStorage.setItem(selectionKey,JSON.stringify({team:data.team.id,batter:state.batter,games:state.game,sorts:state.sorts}));}catch{}}
 
@@ -541,7 +554,7 @@
  }
  const searchText=value=>String(value).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/#/g,'').trim();
  function searchItems(kind){
-  if(kind==='team')return manifest.teams.map(t=>({id:t.id,label:t.name}));
+  if(kind==='team')return availableTeams().map(t=>({id:t.id,label:t.name}));
   if(state.view==='pitching')return pitcherRoster().map(p=>({id:p.id,label:(p.jersey?'#'+p.jersey+' ':'')+p.name}));
   const {players,numbers}=batterRoster();
   return players.map(p=>({id:p.id,label:(numbers.has(p.id)?'#'+numbers.get(p.id)+' ':'')+p.name}));
@@ -716,7 +729,7 @@
  async function loadTeam(id,restoreBatter='all',restoreGames='all'){
   const generation=++loadGeneration;status('Loading team history…');$('app').hidden=true;
   try{
-   const t=manifest.teams.find(t=>t.id===id);if(!t)throw Error('Unknown team selection.');
+   const t=availableTeams().find(t=>t.id===id);if(!t)throw Error('Team is not assigned to this organization team.');
    const next=cache.get(id)||D.validateData(await fetchJson(t.data_file));
    if(next.team.id!==id)throw Error('The data file’s team ID does not match the team list.');
    if(generation!==loadGeneration)return;
@@ -728,7 +741,34 @@
    status(err.message+(data?' Still showing '+data.team.name+'. Select another team or refresh the page.':' Check the team JSON file in this project, then refresh the page.'),true);
   }}
  }
- function setManifest(m){manifest=D.validateManifest(m);$('team-select').innerHTML=manifest.teams.map(t=>'<option value="'+e(t.id)+'">'+e(t.name)+'</option>').join('');}
+ function availableTeams(){
+  if(state.organizationTeam==='all')return manifest.teams;
+  const team=manifest.organization_teams?.find(t=>t.id===state.organizationTeam),ids=new Set(team?.opponent_ids||[]);
+  return manifest.teams.filter(t=>ids.has(t.id));
+ }
+ function setManifest(m){manifest=D.validateManifest(m);renderOpponentPicker();}
+ function renderOpponentPicker(){
+  $('team-select').innerHTML=availableTeams().map(t=>'<option value="'+e(t.id)+'">'+e(t.name)+'</option>').join('');
+  $('team-select').setAttribute('aria-label',manifest.organization_teams?.length?'Opponent':'Team');
+ }
+ function saveOrganization(){
+  try{localStorage.setItem(organizationKey,state.organizationTeam);}catch{}
+  const url=new URL(location.href);url.searchParams.set('team',state.organizationTeam);
+  window.history?.replaceState(null,'',url.href);
+ }
+ async function selectOrganization(id,restore=null){
+  if(id!=='all'&&!manifest.organization_teams?.some(t=>t.id===id))return;
+  ++loadGeneration;state.organizationTeam=id;$('organization-select').value=id;saveOrganization();closeSearch();closeMetricDetails();renderOpponentPicker();
+  const teams=availableTeams();data=null;$('app').hidden=true;
+  if(!teams.length){
+   data=null;$('app').hidden=true;
+   status('No opponents are assigned to '+manifest.organization_teams.find(t=>t.id===id).name+' yet. Add opponent IDs in teams.json, or choose All scouting teams.');return;
+  }
+  const opponent=teams.some(t=>t.id===restore?.team)?restore.team:teams[0].id;
+  $('team-select').value=opponent;
+  await loadTeam(opponent,restore?.team===opponent?restore.batter:'all',restore?.team===opponent?restore.games:'all');
+ }
+
  for(const id of ['quick-read','batting-stats'])$(id).addEventListener('click',event=>{
   const button=event.target.closest('[data-metric]');if(!button)return;
   const key=button.dataset.metric;expandedMetric=expandedMetric===key?null:key;
@@ -761,6 +801,7 @@
   $(kind+'-search').addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();const first=searchMatches(kind)[0];if(first)pickSearch(kind,first.id);}});
   $(kind+'-search-results').addEventListener('click',event=>{const button=event.target.closest('[data-search-id]');if(button)return pickSearch(kind,button.dataset.searchId);});
  }
+ $('organization-select').addEventListener('change',()=>selectOrganization($('organization-select').value));
  $('team-select').addEventListener('change',()=>loadTeam($('team-select').value));
  $('batter-select').addEventListener('change',()=>{state.batter=$('batter-select').value;closeMetricDetails();render();});
  $('game-select').addEventListener('change',event=>{
@@ -797,8 +838,19 @@
    if(generation!==loadGeneration)return;
    const saved=readSelection();
    for(const view of ['scout','pitching'])if(sortOptions[view].some(([value])=>value===saved?.sorts?.[view]))state.sorts[view]=saved.sorts[view];
-   const id=nextManifest.teams.some(t=>t.id===saved?.team)?saved.team:nextManifest.teams[0].id;
-   cache.clear();setManifest(nextManifest);$('team-select').value=id;await loadTeam(id,saved?.team===id?saved.batter:'all',saved?.team===id?saved.games:'all');
+   cache.clear();setManifest(nextManifest);
+   const internal=manifest.organization_teams||[];
+   if(internal.length){
+    $('organization-control').hidden=false;
+    $('organization-select').innerHTML='<option value="all">All scouting teams</option>'+internal.map(t=>'<option value="'+e(t.id)+'">'+e(t.name)+'</option>').join('');
+    let remembered=null;try{remembered=localStorage.getItem(organizationKey);}catch{}
+    const linked=new URL(location.href).searchParams.get('team'),valid=id=>id==='all'||internal.some(t=>t.id===id);
+    const choice=valid(linked)?linked:valid(remembered)?remembered:'all';
+    await selectOrganization(choice,saved);
+   }else{
+    const id=manifest.teams.some(t=>t.id===saved?.team)?saved.team:manifest.teams[0].id;
+    $('team-select').value=id;await loadTeam(id,saved?.team===id?saved.batter:'all',saved?.team===id?saved.games:'all');
+   }
   }catch(err){if(generation===loadGeneration)status(err.message+' Check teams.json beside index.html and its listed team files, then refresh the page.',true);}
  }
  let nextRelease=null,releaseCheckRunning=false,lastReleaseCheck=0;

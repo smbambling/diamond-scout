@@ -2,6 +2,8 @@
 (async function () {
   'use strict';
 
+  const organizationTeams = [{"id":"14u-black","name":"Rawlings Tigers NOVA — 14U Black"}];
+
   const inningHeading = /^(?:Top|Bottom)\s+\d+(?:st|nd|rd|th)\s*[-–—]\s*\S/im;
   const clean = value => String(value || '').replace(/\r\n?/g, '\n').trim();
 
@@ -97,7 +99,7 @@
     }
   }
 
-  function formatCapture({ text, date = '', time = '', timezone = '', url, team = '' }) {
+  function formatCapture({ text, date = '', time = '', timezone = '', url, team = '', assignTo = [] }) {
     const plays = extractPlays(text);
     if (date && (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !Number.isFinite(Date.parse(date)) || new Date(date).toISOString().slice(0, 10) !== date)) {
       throw new Error('Use a full game date, including year, or leave it unknown.');
@@ -105,9 +107,11 @@
     if (time && !/^([01]\d|2[0-3]):[0-5]\d$/.test(time)) throw new Error('Use a 24-hour start time, or leave it unknown.');
     if (timezone && (timezone.length > 80 || /[\r\n\u0000]/.test(timezone))) throw new Error('Use a single-line timezone label, or leave it unknown.');
     if (team && (!inspectPlays(plays).teams.includes(team) || /[\r\n]/.test(team))) throw new Error('Choose a team found in the captured plays.');
+    if(!Array.isArray(assignTo)||assignTo.some(id=>typeof id!=='string'||!/^[a-z0-9][a-z0-9-]*$/.test(id)))throw Error('Choose valid organization team IDs.');
     return [
       'Use TEAM-DATA-PROMPT.md to add this game',
       team ? 'Import: only ' + team : 'Import: both teams (default)',
+      ...(assignTo.length?['Assign to: '+[...new Set(assignTo)].join(', ')]:[]),
       'Date: ' + (date || 'unknown'),
       'Start time: ' + (time || 'unknown'),
       'Timezone: ' + (timezone || 'unknown'),
@@ -188,10 +192,10 @@
     if(box.data.source_event_id!==urls.eventId)throw Error('Box-score game ID does not match Plays.');
     return {schema_version:1,kind:'diamond-scout-game',source_event_id:urls.eventId,plays:extracted,plays_url:urls.plays,box_score:box.data,coverage:'Loaded rendered game screens only; completeness not verified',warnings:[...box.data.warnings,...(!summary.topFirst||!summary.bottomFirst?['A first-inning half is missing from Plays.']:[])],detected};
   }
-  function formatCombined(bundle,{date='',time='',timezone='',yearConfirmed=false,team=''}){
+  function formatCombined(bundle,{date='',time='',timezone='',yearConfirmed=false,team='',assignTo=[]}){
     validateDetectedDate(bundle.detected,date,yearConfirmed);
     const {detected,...saved}=bundle;
-    return JSON.stringify({...saved,plays:formatCapture({text:bundle.plays,date,time,timezone,url:bundle.plays_url,team}),box_score:JSON.parse(formatBoxCapture(bundle.box_score,{date,time,timezone,url:bundle.box_score.source_url}))},null,2);
+    return JSON.stringify({...saved,plays:formatCapture({text:bundle.plays,date,time,timezone,url:bundle.plays_url,team,assignTo}),box_score:JSON.parse(formatBoxCapture(bundle.box_score,{date,time,timezone,url:bundle.box_score.source_url}))},null,2);
   }
   async function readGameWindow(popup,url,kind,cancelled,knownTeams=[],timing={}){
     if(!popup||popup.closed)throw Error('The capture window was blocked or closed. Allow the game capture window, or capture the current screen only.');
@@ -272,6 +276,7 @@
       '<label style="display:grid;gap:4px;flex:1">Start time (optional)<input id="diamond-scout-capture-time" type="time" style="font:inherit;min-height:48px;padding:8px;box-sizing:border-box;min-width:0"></label>' +
       '<label style="display:grid;gap:4px;flex:1">Timezone (as shown)<input id="diamond-scout-capture-zone" type="text" maxlength="80" placeholder="unknown" style="font:inherit;min-height:48px;padding:8px;box-sizing:border-box;min-width:0"></label></div>' +
       '<label id="diamond-scout-capture-team-label" style="display:grid;gap:4px;margin-bottom:12px">Teams to import<select id="diamond-scout-capture-team" style="font:inherit;min-height:48px;padding:8px"><option value="">Both teams (default)</option></select></label>' +
+      '<fieldset id="diamond-scout-capture-assign-label" style="margin:0 0 12px;padding:12px;border:1px solid #8B9BAF;border-radius:10px"><legend>Assign scouting to your teams (optional)</legend><div id="diamond-scout-capture-assign-options"></div><small>Links the teams you import as opponents. Shared scouting data is stored once.</small></fieldset>' +
       '<label id="diamond-scout-capture-year-label" hidden style="gap:8px;align-items:center;min-height:48px;margin-bottom:12px"><input id="diamond-scout-capture-year-confirm" type="checkbox" style="width:24px;height:24px">I confirm the suggested game year from the season URL.</label>' +
       '<label style="display:grid;gap:4px">Captured data — review before exporting<textarea id="diamond-scout-capture-text" spellcheck="false" style="font:16px/1.4 ui-monospace,monospace;width:100%;min-height:260px;padding:10px;box-sizing:border-box;resize:vertical"></textarea></label>' +
       '<p style="font-size:13px">Dates are never inferred from capture time. No login credentials, cookies or browser storage are read. Nothing is uploaded or imported into team history by this helper.</p>' +
@@ -287,6 +292,15 @@
     const importTeams = combined ? inspectPlays(combined.plays).teams : boxMode ? [] : inspectPlays(text).teams;
     for (const name of importTeams) {
       const option = document.createElement('option'); option.value = name; option.textContent = 'Only ' + name; field('team').appendChild(option);
+    }
+    field('assign-label').hidden=boxMode&&!combined;
+    if(boxMode&&!combined)field('assign-label').style.display='none';
+    if(!organizationTeams.length)field('assign-options').textContent='No organization teams configured. Update teams.json and reinstall the capture bookmark.';
+    for(const team of organizationTeams){
+      const label=document.createElement('label'),checkbox=document.createElement('input');
+      label.style.cssText='display:flex;gap:10px;align-items:center;min-height:44px';
+      checkbox.type='checkbox';checkbox.value=team.id;checkbox.style.cssText='width:22px;height:22px';
+      label.appendChild(checkbox);label.appendChild(document.createTextNode(team.name));field('assign-options').appendChild(label);
     }
     field('text').value = text;
     field('date').value = detected.date;
@@ -309,10 +323,11 @@
         (!summary.topFirst || !summary.bottomFirst ? '. A first-inning half is missing; check for a partial capture.' : '. Both first-inning halves found; this does not prove the capture is complete.');
     }
     function output() {
+      const assignTo=[...field('assign-options').querySelectorAll('input:checked')].map(input=>input.value);
       validateDetectedDate(detected, field('date').value, field('year-confirm').checked);
-      if(combined)return formatCombined(JSON.parse(field('text').value),{date:field('date').value,time:field('time').value,timezone:field('zone').value.trim(),yearConfirmed:field('year-confirm').checked,team:field('team').value});
+      if(combined)return formatCombined(JSON.parse(field('text').value),{date:field('date').value,time:field('time').value,timezone:field('zone').value.trim(),yearConfirmed:field('year-confirm').checked,team:field('team').value,assignTo});
       if(boxMode)return formatBoxCapture(JSON.parse(field('text').value),{date:field('date').value,time:field('time').value,timezone:field('zone').value.trim(),url});
-      return formatCapture({ text: field('text').value, date: field('date').value, time: field('time').value, timezone: field('zone').value.trim(), url, team: field('team').value });
+      return formatCapture({ text: field('text').value, date: field('date').value, time: field('time').value, timezone: field('zone').value.trim(), url, team: field('team').value, assignTo });
     }
     field('text').addEventListener('input', updateSummary);
     field('download').addEventListener('click', () => {

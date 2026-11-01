@@ -245,3 +245,18 @@ Automatic capture no longer uses hidden frames. A temporary visible window opens
 Plays capture now excludes the exact trailing GameChanger footer beginning `Get the App`, `Status`, `Visit gc.com`, followed by recognized privacy/legal links. The importer also handles that footer in already-downloaded TXT and combined JSON captures, so recapturing is not required. Only a fully recognized terminal footer is excluded; unknown trailing text or any later play still blocks review rather than being discarded. Original downloaded files are not edited. For newly added games, the original footer is retained separately in `source_capture_footer`, while the play-source fingerprint excludes footer text so it cannot create a duplicate game. Backups retain the full input capture.
 
 `node tests/footer.cjs` covers the actual supplied October 3 combined JSON, all 31 Winchester appearances and 117 pitches, fingerprint equivalence, original footer retention, CRLF and rejection of unfamiliar text. Import now previews successfully; separate box-score discrepancies remain review notes and do not alter play results automatically. Replace the bookmark to prevent footer inclusion in future captures.
+
+
+### Assign captured scouting to organization teams
+
+Reload `tools/gamechanger-capture.html` and replace your **Capture GC data** bookmark to get the new controls. In the review dialog, use **Assign scouting to your teams (optional)** to check one or more organization teams. Keep **Teams to import** set to the captured teams whose scouting you want to retain. No assignment is selected by default.
+
+Plays TXT and combined game JSON exports include an `Assign to: id, id` directive. Run the usual import command: preview shows `OPPONENT-ASSIGNED` entries; `--write` saves assignments together with the import and its backup. The same captured opponent can be assigned to several organization teams without duplicating history. Existing/duplicate games can add assignments too. Unknown organization IDs stop the import instead of creating a new internal team. Box-score-only exports use assignments from their paired Plays export.
+
+For an older capture, the equivalent repeatable CLI flag is:
+
+```sh
+node tools/import-plays.cjs /path/gamechanger-game.json --assign-to 14u-black
+```
+
+Add `--write` after reviewing the preview. Capture metadata and CLI assignments are combined. Configure organization teams in `teams.json`; optional `scouting_team_id` identifies an internal team's own scouting record, which is excluded from its opponent assignments. A record can still be assigned to another internal team. Run `node tools/prepare-release.cjs` after configuration changes: it embeds current organization choices into the self-contained capture helper and rebuilds its installer. Reinstall the bookmark to receive the updated list; no cross-site fetch or browser storage is used.

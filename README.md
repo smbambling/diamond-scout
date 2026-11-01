@@ -634,3 +634,27 @@ Fielder circles use a smooth light-green → green → yellow → orange → cor
 ### Team and player search
 
 The magnifying-glass button beside Filters opens a compact search panel. Search teams by name, or search the current team’s batters/pitchers by name or recorded jersey number. Matching ignores case and accents; results retain the active sort order and player participation in the selected games. The active tab determines whether batters or pitchers are searched. Tap a result or press Enter to select the first match. Selection closes search without opening a native dropdown; Done or Escape dismisses it. Search and Filters open separately to keep the phone screen compact. Search queries are temporary and do not change the dropdowns or saved game filters.
+
+### Organization teams and assigned opponents
+
+`teams.json` can contain an optional `organization_teams` list. Each internal team has its own ID, display name and `opponent_ids`, referring to records in the existing `teams` list. Multiple internal teams may list the same opponent ID: that opponent's players, games and scouting history remain in one shared JSON file. All of its recorded games are available to both teams.
+
+For example, to assign the existing Dig In record to 14U Black:
+
+```json
+"organization_teams": [
+  {
+    "id": "14u-black",
+    "name": "Rawlings Tigers NOVA — 14U Black",
+    "opponent_ids": ["dig-in-gribbin-14u"]
+  }
+]
+```
+
+This is an assignment example, not an inferred schedule. The initial checked-in Black configuration has an empty opponent list pending confirmation. Add other organization teams and their actual opponent IDs through the repository. Imports add scouting records and apply explicit capture/CLI organization assignments; they do not infer assignments from schedules. Unknown opponent IDs and duplicate assignments within one team are rejected; sharing an opponent across teams is supported.
+
+On first use, **All scouting teams** is selected automatically to show every retained scouting record. Choose **Your team** to narrow the opponent list. The choice is remembered on that device. The opponent dropdown and team search both show only the selected team's assignments; player search continues to respect the selected games and Hitting/Pitching tab. Changing organization teams resets the opponent/game/player selection to the first assigned opponent and all recorded games. Teams with no assignments show an empty-state message instead of another team's data.
+
+Direct links such as `https://smbambling.github.io/diamond-scout/?team=14u-black` preselect an organization team and take precedence over remembered preferences. Selecting another team updates the link for bookmarking; `?team=all` opens the full scouting list. Manifests without organization configuration retain the previous app behavior.
+
+These are viewing preferences, not access controls. Coaches can switch organization teams or use All scouting teams. GitHub Pages data remains public, and editing still requires repository access. Run release preparation after changing assignments and publish `teams.json` with the rest of the release.

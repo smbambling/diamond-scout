@@ -12,5 +12,16 @@
       "name": "Rawlings Tigers NOVA - Black 14U",
       "data_file": "data/rawlings-tigers-nova-black-14u.json"
     }
+  ],
+  "organization_teams": [
+    {
+      "id": "14u-black",
+      "name": "Rawlings Tigers NOVA — 14U Black",
+      "opponent_ids": [
+        "dig-in-gribbin-14u",
+        "rawlings-tigers-nova-black-14u"
+      ],
+      "scouting_team_id": "rawlings-tigers-nova-black-14u"
+    }
   ]
 }

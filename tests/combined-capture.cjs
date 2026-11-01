@@ -14,6 +14,7 @@ const header='Sun Oct 25, 2026, 10:00 AM - 12:00 PM ET\n';
  assert.deepEqual(calls,['plays','box']);assert.equal(bundle.source_event_id,box.source_event_id);assert.equal(bundle.detected.date,'2026-10-25');
  const raw=C.formatCombined(bundle,{date:'2026-10-25',time:'10:00',timezone:'ET'}),saved=JSON.parse(raw);assert.equal(saved.detected,undefined);assert.equal(saved.box_score.timezone,'ET');assert(saved.plays.includes('PLAY-BY-PLAY'));assert.equal(saved.plays.includes('Back to Schedule'),false);
  const input={name:'gamechanger-game-2026-10-25.json',raw},expanded=I.expandInputs([input]);assert.equal(expanded.inputs.length,1);assert.equal(expanded.options.boxInputs.length,1);assert.equal(expanded.options.bundleInputs.length,1);
+ assert.match(JSON.parse(C.formatCombined(bundle,{date:'2026-10-25',assignTo:['black','orange']})).plays,/Assign to: black, orange/);
  const suggested={...bundle,detected:{...bundle.detected,needsYearConfirmation:true}};assert.throws(()=>C.formatCombined(suggested,{date:'2026-10-25'}),/Confirm/);
  assert.doesNotThrow(()=>C.formatCombined(suggested,{date:'2026-10-25',yearConfirmed:true}));
  const limited=structuredClone(bundle);limited.box_score.teams.forEach(t=>t.tables=[]);limited.box_score.warnings=['Notes only; table unavailable'];

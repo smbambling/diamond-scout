@@ -70,7 +70,7 @@ function readCapture(raw, options = {}, diagnostics=null) {
   const prefix = lines.slice(0, first).join('\n');
   const meta = {},metaLines={};
   for (const [index,line] of prefix.split('\n').entries()) {
-    const m = norm(line).match(/^(Date|Start time|Timezone|Source|Capture coverage|Import):\s*(.*)$/i);
+    const m = norm(line).match(/^(Date|Start time|Timezone|Source|Capture coverage|Import|Assign to):\s*(.*)$/i);
     if (m) {
       const field = m[1].toLowerCase();
       if (meta[field] !== undefined && meta[field] !== m[2]) reject('Conflicting capture metadata: ' + m[1],{line:index+1});
@@ -91,6 +91,8 @@ function readCapture(raw, options = {}, diagnostics=null) {
     if (!m) reject('Unrecognized Import directive. Use "both teams" or "only Team Name", or --team.',{line:metaLines.import});
     else onlyTeam = m[1];
   }
+  const assignTo=[...new Set([...(options.assignTo||[]),...(meta['assign to']?meta['assign to'].split(',').map(id=>id.trim()):[])])];
+  if(assignTo.some(id=>typeof id!=='string'||!/^[a-z0-9][a-z0-9-]*$/.test(id)))reject('Assign to must contain organization team IDs separated by commas.',{line:metaLines['assign to']});
   // Retain original source bytes (including NBSP/CRLF) separately from parsing normalization.
   const original = raw.replace(/^\uFEFF/, '');
   let offset = 0;
@@ -118,7 +120,7 @@ function readCapture(raw, options = {}, diagnostics=null) {
   if (!['newest-first','oldest-first'].includes(order)) reject('--order must be newest-first or oldest-first.');
   const rank = block => block.inning * 2 + (block.half === 'bottom' ? 1 : 0);
   for (let i=1; i<blocks.length; i++) if ((rank(blocks[i])-rank(blocks[i-1])) * (order === 'newest-first' ? -1 : 1) < 0) reject('Inning order conflicts with --order ' + order + '. Check the capture or choose --order oldest-first.',{line:blocks[i].line});
-  return {date, time, timezone, url, eventId, onlyTeam, source, footer, raw, sourceHash:hash(source), coverage:meta['capture coverage'] || 'Supplied text only; completeness not verified', blocks, halves, order};
+  return {date, time, timezone, url, eventId, onlyTeam, assignTo, source, footer, raw, sourceHash:hash(source), coverage:meta['capture coverage'] || 'Supplied text only; completeness not verified', blocks, halves, order};
 }
 
 function resultFor(text, label) {
@@ -506,6 +508,11 @@ function planWithState(root,inputs,options,state){
   const B=require('./box-score.cjs'),boxes=(options.boxInputs||[]).map(B.read);
   for (const input of inputs) {
     const capture=readCapture(input.raw,options);
+    const assignmentTeams=capture.assignTo.map(id=>{
+      const team=manifest.organization_teams?.find(t=>t.id===id);
+      if(!team)fail('Unknown organization team '+id+'. Update teams.json or recapture with the current bookmark.');
+      return team;
+    });
     let selected=0;
     for (const [half,name] of capture.halves) {
       const alias=options.aliases?.[name];
@@ -521,6 +528,12 @@ function planWithState(root,inputs,options,state){
         if (fs.existsSync(inside(root,entry.data_file))) fail('Unregistered team file already exists: '+entry.data_file+'. Review it before importing.');
         manifest.teams.push(entry);
         dataById.set(id,{schema_version:1,team:{id,name},players:[],games:[],plate_appearances:[],baserunning_events:[],baserunning_entries:[]});
+      }
+      for(const team of assignmentTeams){
+        if(team.scouting_team_id===entry.id||team.id===entry.id)continue;
+        const exists=team.opponent_ids.includes(entry.id);
+        if(!exists)team.opponent_ids.push(entry.id);
+        report.push({file:input.name,team:entry.name,team_id:entry.id,status:exists?'assignment-duplicate':'opponent-assigned',organization_team_id:team.id,warnings:[(exists?'Already assigned to ':'Assigned to ')+team.name+'. Shared scouting history is not duplicated.']});
       }
       const data=dataById.get(entry.id);
       const other=[...capture.halves].find(([h])=>h!==half)?.[1];
@@ -647,9 +660,10 @@ function parseArgs(args) {
     if (arg==='--write') options.write=true;
     else if (arg==='--preflight') options.preflight=true;
     else if (arg==='--help'||arg==='-h') options.help=true;
-    else if (names[arg]||arg==='--team-alias') {
+    else if (names[arg]||arg==='--team-alias'||arg==='--assign-to') {
       const value=args[++i]; if (!value || value.startsWith('--')) fail('Missing value for '+arg);
       if (arg==='--team-alias') { const split=value.lastIndexOf('='); if (split<1 || split===value.length-1) fail('--team-alias must be "Captured Name=existing-team-id".'); options.aliases[value.slice(0,split)]=value.slice(split+1); }
+      else if(arg==='--assign-to')(options.assignTo??=[]).push(value);
       else if(arg==='--box-score')(options.boxScoreFiles??=[]).push(value);
       else options[names[arg]]=value;
     } else if (arg==='--') { files.push(...args.slice(i+1)); break; }
@@ -687,6 +701,7 @@ Optional metadata overrides (apply to ALL input files):
   --date YYYY-MM-DD        --time HH:MM (or "8:30 AM")
   --timezone ET           --opponent "Team Name" (one-side capture only)
   --source URL            --event-id ID
+  --assign-to ID         Assign imported scouting to an organization team (repeatable)
   --team "Team Name"      Import only this captured team or existing team ID
   --team-alias "Captured Name=existing-team-id"  Reuse a differently named team
   --order oldest-first    Default: newest-first, as in GameChanger Plays
