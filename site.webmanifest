@@ -1,6 +1,6 @@
 {
-  "name": "Diamond-Scout",
-  "short_name": "Diamond-Scout",
+  "name": "Diamond Scout",
+  "short_name": "Diamond Scout",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

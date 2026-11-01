@@ -587,8 +587,16 @@ Previous/next arrows sit beside each player dropdown in the same row. They follo
 
 Player dropdowns and previous/next arrows now use recorded participation in the selected games. Hitting includes completed/incomplete batting appearances, steal events, courtesy/pinch/placed-runner entries and runner-only outs, preserving existing roster order. Roster-only names are excluded even with All games selected. Pitching uses pitching-summary participants for the selected games. Contact-type filters do not hide participants. Clearing games leaves only the aggregate option and disables the arrows. A player absent from the new selection falls back to the aggregate option.
 
-Both player dropdowns sort numerically by confirmed jersey number, with players lacking a confirmed number afterward alphabetically. Players sharing a number sort by name; 0 and 00 retain their displayed forms. Entire team / All pitchers stay first. Previous/next arrows follow the same sorted list and selected-game participation rules. Source rosters and captured jersey evidence are not modified.
+By default, both player dropdowns sort numerically by confirmed jersey number, with players lacking a confirmed number afterward alphabetically. Players sharing a number sort by name; 0 and 00 retain their displayed forms. Entire team / All pitchers stay first. Previous/next arrows follow the same sorted list and selected-game participation rules. Source rosters and captured jersey evidence are not modified.
 
 The existing filter caption now shows selected-game count and a compact date range for multi-game subsets (for example, `3 games · Oct 3–17, 2026`). It stays on one line with ellipsis overflow and the complete caption in its title. Single-game and All games captions retain their existing wording. Missing dates are labeled explicitly rather than inferred. The checkbox-picker summary still shows the selected/total game count.
 
 Expanded metric details close consistently on player changes through dropdowns, arrows or leader cards, and when switching Hitting/Pitching tabs. Batting-review disclosures also close. Game changes continue closing metric panels. Switching back to a tab does not reopen prior details.
+
+### Player sorting
+
+The Filters panel offers tab-specific player sorting. Hitting supports jersey number, AVG, OBP, SLG, steal tendency and completed plate appearances. Pitching supports jersey number, appearances, batters faced, strikeout rate, total strikeouts, strike rate, walk rate and AVG against. Metrics sort highest first except walk rate and AVG against (lowest first). Calculations use selected games; batting rates with unclassified results are treated as unavailable for ranking, while pitching rates use the available sample shown in the summary; contact-type filters do not affect player ranking. Unavailable values sort last; ties retain jersey/name order. Each tab remembers its own sort choice in local storage, with jersey number as the default. Dropdowns and previous/next arrows follow the same order. Changing the sort or game selection automatically selects the first eligible player on the active tab and closes expanded metric details; an empty roster keeps the aggregate selection.
+
+### Desktop layout
+
+Above 1000px, the header and content share a centered workspace. Hitting places batting metrics and contact profile beside the field; Pitching places its summary beside recorded pitch outcomes. Filters and player selectors align with the same workspace. Phone and tablet layouts retain their existing compact arrangement.

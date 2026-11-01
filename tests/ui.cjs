@@ -23,9 +23,15 @@ async function openApp({storage={},storageBlocked=false,href='https://diamond-sc
  }});
  for(const [,code]of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g))vm.runInContext(code,context);
  await new Promise(setImmediate);
- return {elements,requested,repository,documentRoot,storage};
+ return {elements,requested,repository,documentRoot,storage,context};
 }
+// Historical summary checks explicitly restore their prior player after changing games.
 function chooseGames(elements,selection){
+ const previous=['batter','pitcher'].map(kind=>[kind,elements[kind+'-select'].value]);
+ changeGames(elements,selection);
+ for(const [kind,id] of previous){const select=elements[kind+'-select'];select.value=select.innerHTML.includes('value="'+id+'"')?id:'all';select.listeners.change();}
+}
+function changeGames(elements,selection){
  if(selection==='all'){elements['games-all'].click();return;}
  const wanted=new Set(Array.isArray(selection)?selection:[selection]);
  if(!wanted.size){elements['games-clear'].click();return;}
@@ -192,10 +198,10 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  const listedIds=[...ME['game-select'].innerHTML.matchAll(/data-game-id="([^"]+)"/g)].map(m=>m[1]);const expectedGames=[...history.games].sort((a,b)=>(b.date||'').localeCompare(a.date||'')||(b.start_time||'').localeCompare(a.start_time||''));assert.deepEqual(listedIds,expectedGames.map(g=>g.id));
  ME['tab-pitching'].click();assert.match(ME['filter-context'].textContent,/2 games · Aug 30, 2026 · 1 undated/);ME['tab-scout'].click();
  const multiRefresh=await openApp({storage:multiStore,files:multiFiles});assert.equal(multiRefresh.elements['game-selection-summary'].textContent,'2 of 3 games selected');assert.equal(multiRefresh.requested.length,2);
- ME['game-select'].listeners.change({target:{dataset:{gameId:'supplied-game-001'},checked:false}});assert.match(ME['scout-field'].innerHTML,/16 fair contacts/);
+ ME['game-select'].listeners.change({target:{dataset:{gameId:'supplied-game-001'},checked:false}});ME['batter-select'].value='all';ME['batter-select'].listeners.change();assert.match(ME['scout-field'].innerHTML,/16 fair contacts/);
  ME['games-clear'].click();assert.equal(ME['game-selection-summary'].textContent,'No games selected');assert.match(ME['scout-field'].innerHTML,/0 fair contacts/);assert.doesNotMatch(ME['quick-read'].innerHTML,/>0%<|NaN|Infinity/);
  const emptyRefresh=await openApp({storage:multiStore,files:multiFiles});assert.equal(emptyRefresh.elements['game-selection-summary'].textContent,'No games selected');
- ME['games-all'].click();assert.equal(ME['game-selection-summary'].textContent,'All recorded games');assert.match(ME['scout-field'].innerHTML,/61 fair contacts/);
+ chooseGames(ME,'all');assert.equal(ME['game-selection-summary'].textContent,'All recorded games');assert.match(ME['scout-field'].innerHTML,/61 fair contacts/);
  const staleKey=Object.keys(multiStore)[0];multiStore[staleKey]=JSON.stringify({team:history.team.id,batter:'all',games:['deleted-game','supplied-game-001']});
  const partialRestore=await openApp({storage:multiStore,files:multiFiles});assert.match(partialRestore.elements['scout-field'].innerHTML,/19 fair contacts/);
  multiStore[staleKey]=JSON.stringify({team:history.team.id,batter:'all',games:['deleted-game']});assert.equal((await openApp({storage:multiStore,files:multiFiles})).elements['game-selection-summary'].textContent,'All recorded games');
@@ -379,6 +385,30 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  const numberedApp=await openApp({files:{'teams.json':manifest,'data/shockers-14u.json':numbered}});
  assert(numberedApp.elements['batter-select'].innerHTML.includes('value="'+numberedPlayer.id+'">#00 '+numberedPlayer.name+'</option>'));
  numberedApp.elements['batter-select'].value=numberedPlayer.id;numberedApp.elements['batter-select'].listeners.change();assert.equal(numberedApp.elements['batter-select'].value,numberedPlayer.id);
+ {
+ // Sort menus are tab-specific; metric order and arrows use the same selected-game sample.
+ const sortApp=await openApp({files:{'teams.json':{'schema_version':1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData}}),SE=sortApp.elements,SD=sortApp.context.DiamondScout;
+ const optionIds=id=>[...SE[id].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]).filter(id=>id!=='all');
+ const setSort=value=>{SE['player-sort-select'].value=value;SE['player-sort-select'].listeners.change();};
+ assert.equal(SE['player-sort-select'].value,'jersey');assert.match(SE['player-sort-select'].innerHTML,/Steal tendency/);assert.doesNotMatch(SE['player-sort-select'].innerHTML,/Batters faced/);
+ setSort('avg');
+ let ids=optionIds('batter-select'),values=ids.map(id=>SD.battingSummary(SD.filter(pitchingData,{game:'all',batter:id,type:'all'})).avg);
+ for(let i=1;i<values.length;i++)assert(values[i]===null||(values[i-1]!==null&&values[i-1]>=values[i]));
+ assert.equal(SE['batter-select'].value,ids[0]);SE['batter-next'].click();assert.equal(SE['batter-select'].value,ids[1]);setSort('pa');assert.equal(SE['batter-select'].value,optionIds('batter-select')[0]);
+ SE['tab-pitching'].click();assert.equal(SE['player-sort-select'].value,'jersey');assert.match(SE['player-sort-select'].innerHTML,/Walk %/);assert.doesNotMatch(SE['player-sort-select'].innerHTML,/Steal tendency|OBP/);
+ setSort('walk');ids=optionIds('pitcher-select');values=ids.map(id=>{const r=SD.pitchingSummary(pitchingData,{pitcher:id}).rates.walk;return r.d?r.n/r.d:null;});
+ for(let i=1;i<values.length;i++)assert(values[i]===null||(values[i-1]!==null&&values[i-1]<=values[i]));
+ assert.equal(SE['pitcher-select'].value,ids[0]);SE['pitcher-next'].click();assert.equal(SE['pitcher-select'].value,ids[1]);
+ changeGames(SE,pitchingData.games[0].id);assert.equal(SE['player-sort-select'].value,'walk');assert.equal(SE['pitcher-select'].value,optionIds('pitcher-select')[0]);
+ changeGames(SE,'all');assert.equal(SE['pitcher-select'].value,optionIds('pitcher-select')[0]);
+ changeGames(SE,[]);assert.equal(SE['pitcher-select'].value,'all');
+ SE['tab-scout'].click();changeGames(SE,pitchingData.games[0].id);assert.equal(SE['batter-select'].value,optionIds('batter-select')[0]);
+ changeGames(SE,'all');assert.equal(SE['batter-select'].value,optionIds('batter-select')[0]);
+ SE['tab-pitching'].click();
+ SE['tab-scout'].click();assert.equal(SE['player-sort-select'].value,'pa');SE['tab-pitching'].click();assert.equal(SE['player-sort-select'].value,'walk');
+ const sortRestore=await openApp({storage:sortApp.storage,files:{'teams.json':{'schema_version':1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData}});
+ assert.equal(sortRestore.elements['player-sort-select'].value,'pa');sortRestore.elements['tab-pitching'].click();assert.equal(sortRestore.elements['player-sort-select'].value,'walk');
+ }
  // Smoke-test the current retained teams separately from fixed historical expectations.
  const runtimeManifest=JSON.parse(fs.readFileSync(path.join(root,'teams.json'))),runtimeFiles={'teams.json':runtimeManifest};
  for(const team of runtimeManifest.teams)runtimeFiles[team.data_file]=JSON.parse(fs.readFileSync(path.join(root,team.data_file)));
