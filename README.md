@@ -630,3 +630,7 @@ Pushes targeting `origin`'s `main` branch run `node tools/prepare-release.cjs`. 
 ### Relative contact colors
 
 Fielder circles use a smooth light-green → green → yellow → orange → coral scale relative to the highest recorded fielder count in the current player/game/contact selection. Zero remains pale gray. Tied counts share colors and highest positions retain purple rings. Percentages still include unknown fielders in their denominator; colors compare positions within the selection, not absolute percentages between different players.
+
+### Team and player search
+
+The magnifying-glass button beside Filters opens a compact search panel. Search teams by name, or search the current team’s batters/pitchers by name or recorded jersey number. Matching ignores case and accents; results retain the active sort order and player participation in the selected games. The active tab determines whether batters or pitchers are searched. Tap a result or press Enter to select the first match. Selection closes search without opening a native dropdown; Done or Escape dismisses it. Search and Filters open separately to keep the phone screen compact. Search queries are temporary and do not change the dropdowns or saved game filters.

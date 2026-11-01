@@ -431,6 +431,24 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  update.elements['release-refresh'].click();const target=new URL(update.elements.app.replacedUrl);assert.equal(target.pathname,'/subdir/');assert.equal(target.searchParams.get('release'),newer);assert.equal(target.searchParams.get('other'),'keep');
  const missing=await openApp();assert.equal(missing.elements['release-update'].hidden,true);assert.equal(missing.elements.app.hidden,false);
  }
+ // Compact search works across both tabs, respects game participation and never opens native selects.
+ {
+ const searchManifest={schema_version:1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'},{id:gambrills.team.id,name:gambrills.team.name,data_file:'data/gambrills.json'}]};
+ const searchApp=await openApp({files:{'teams.json':searchManifest,'data/pitching.json':pitchingData,'data/gambrills.json':gambrills}}),Q=searchApp.elements;
+ const query=(kind,value)=>{Q[kind+'-search'].value=value;Q[kind+'-search'].listeners.input();};
+ const pick=(kind,id)=>Q[kind+'-search-results'].listeners.click({target:{closest:()=>({dataset:{searchId:id}})}});
+ assert.equal(Q['search-panel'].hidden,true);Q['search-toggle'].click();assert.equal(Q['search-panel'].hidden,false);assert.equal(Q.app.focusedId,'player-search');
+ query('team','GAMBR');assert.match(Q['team-search-results'].innerHTML,/Gambrills/);assert.doesNotMatch(Q['team-search-results'].innerHTML,/Gribbin/);
+ query('player','dOwNs');assert.match(Q['player-search-results'].innerHTML,/Deven Downs/);
+ const hitterId=Q['player-search-results'].innerHTML.match(/data-search-id="([^"]+)"/)[1];await pick('player',hitterId);assert.equal(Q['batter-select'].value,hitterId);assert.equal(Q['search-panel'].hidden,true);assert.equal(Q.app.focusedId,'search-toggle');
+ Q['search-toggle'].click();Q['tab-pitching'].click();assert.match(Q['player-search-label'].textContent,/Pitcher/);query('player','#34');assert.match(Q['player-search-results'].innerHTML,/Dean Simmons/);
+ query('player','simmons');changeGames(Q,pitchingData.games[0].id);assert.match(Q['player-search-results'].innerHTML,/No matching pitchers/);await pick('player','dean simmons');assert.notEqual(Q['pitcher-select'].value,'dean simmons');
+ changeGames(Q,'all');assert.match(Q['player-search-results'].innerHTML,/Dean Simmons/);await pick('player','dean simmons');assert.equal(Q['pitcher-select'].value,'dean simmons');assert.equal(Q['search-panel'].hidden,true);assert.equal(Q.app.focusedId,'search-toggle');
+ Q['search-toggle'].click();query('player','<img src=x onerror=alert(1)>');assert.match(Q['player-search-results'].innerHTML,/No matching/);assert.doesNotMatch(Q['player-search-results'].innerHTML,/<img/);
+ query('team','gambr');await pick('team',gambrills.team.id);assert.equal(Q['page-title'].textContent,gambrills.team.name);assert.equal(Q['search-panel'].hidden,true);assert.equal(Q['team-search'].value,'');
+ Q['search-toggle'].click();Q['filter-toggle'].click();assert.equal(Q['search-panel'].hidden,true);assert.equal(Q['filter-panel'].hidden,false);
+ Q['search-toggle'].click();assert.equal(Q['filter-panel'].hidden,true);Q['search-done'].click();assert.equal(Q['search-panel'].hidden,true);
+ }
  // Smoke-test the current retained teams separately from fixed historical expectations.
  const runtimeManifest=JSON.parse(fs.readFileSync(path.join(root,'teams.json'))),runtimeFiles={'teams.json':runtimeManifest};
  for(const team of runtimeManifest.teams)runtimeFiles[team.data_file]=JSON.parse(fs.readFileSync(path.join(root,team.data_file)));
