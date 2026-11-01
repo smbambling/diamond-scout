@@ -173,6 +173,7 @@
 }
 #pull-refresh{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:60;padding:9px 16px;border:1px solid var(--border);border-radius:24px;background:var(--panel);color:var(--accent-strong);box-shadow:0 3px 12px #0a192f22;font-size:13px;font-weight:650;pointer-events:none}
 .release-update{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;padding:8px 12px;background:var(--selected-bg);border-radius:12px;font-size:13px}.release-update button{min-height:44px;padding:8px 14px;background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+#pitching-first-strike-toggle .pitching-label{display:block}#pitching-first-strike-toggle .metric-label-tail{white-space:nowrap}#pitching-first-strike-toggle .metric-info{vertical-align:middle;margin-left:2px}
 </style>
 </head>
 <body>
@@ -468,7 +469,7 @@
 'use strict';
 (() => {
  const D=globalThis.DiamondScout,$=id=>document.getElementById(id),e=D.esc;
- const releaseVersion='9c9eefe28cd6dc4b';
+ const releaseVersion='6f57c63a637abe6b';
  const state={view:'scout',batter:'all',game:'all',type:'all',pitcher:'all',sorts:{scout:'jersey',pitching:'jersey'}},cache=new Map();
  let manifest=null,data=null,loadGeneration=0,expandedMetric=null,pitchingStrikeoutsOpen=false,pitchingStrikesOpen=false,pitchingFirstStrikesOpen=false;
  const metricItems=new Map();
@@ -631,7 +632,7 @@
   $('pitching-strikeout-detail').hidden=!pitchingStrikeoutsOpen;
   $('pitching-strikeout-detail').innerHTML=ks.bf?'<dl class="metric-counts">'+[['Looking',ks.looking],['Swinging',ks.swinging],...(ks.unknown?[['Unclassified',ks.unknown]]:[])].map(([label,n])=>'<div><dt>'+label+'</dt><dd class="num">'+n+'</dd></div>').join('')+'</dl>':'<p class="note">No reconciled strikeout detail available for this selection.</p>';
   $('pitching-tracked-context').textContent='Pitch detail · '+s.trackedBF+' batters faced';
-  $('pitching-tendencies').innerHTML=summaryStat('Pitches / batter',s.rates.efficiency,true)+pitchingMetric('1st-pitch strikes',D.pct(s.firstStrikes,s.first),fraction(s.firstStrikes,s.first)).replace('<div class="pitching-metric">','<button type="button" id="pitching-first-strike-toggle" class="pitching-metric pitching-disclosure" aria-controls="pitching-first-strike-detail" aria-expanded="'+pitchingFirstStrikesOpen+'">').replace('1st-pitch strikes</span>','1st-pitch strikes <span class="metric-info" aria-hidden="true">i</span></span>').replace('</div>','</button>')+pitchingMetric('Ground balls',D.pct(s.ground,s.contacts),fraction(s.ground,s.contacts));
+  $('pitching-tendencies').innerHTML=summaryStat('Pitches / batter',s.rates.efficiency,true)+pitchingMetric('1st-pitch strikes',D.pct(s.firstStrikes,s.first),fraction(s.firstStrikes,s.first)).replace('<div class="pitching-metric">','<button type="button" id="pitching-first-strike-toggle" class="pitching-metric pitching-disclosure" aria-controls="pitching-first-strike-detail" aria-expanded="'+pitchingFirstStrikesOpen+'">').replace('1st-pitch strikes</span>','1st-pitch <span class="metric-label-tail">strikes <span class="metric-info" aria-hidden="true">i</span></span></span>').replace('</div>','</button>')+pitchingMetric('Ground balls',D.pct(s.ground,s.contacts),fraction(s.ground,s.contacts));
   const fps=s.firstStrikeResults;
   $('pitching-first-strike-detail').hidden=!pitchingFirstStrikesOpen;
   $('pitching-first-strike-detail').innerHTML='<dl class="metric-counts">'+[['FPSO%','Outs',fps.out],['FPSW%','Walks',fps.walk],['FPSH%','Hits',fps.hit]].map(([code,label,n])=>'<div><dt>'+code+' · '+label+'</dt><dd class="num">'+(fps.unknown?'—':D.pct(n,fps.total))+'</dd><small class="pitching-count">'+(fps.unknown?'Results need review':fps.total?n+'/'+fps.total:'Unavailable')+'</small></div>').join('')+'</dl>';
