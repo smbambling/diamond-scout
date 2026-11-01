@@ -304,11 +304,6 @@ assert.equal(gluck.pitches[2].count_before.strikes,2);assert.equal(gluck.pitches
 assert.equal(gluck.pitches.at(-1).count_before.strikes,2);
 // The first pitch can itself be fair contact; exclude unclassified first pitches.
 const blake=data.plate_appearances[0];assert.equal(D.pitchSummary([blake]).firstSwings,1);
-// The same CSS scale drives both map families; thresholds and denominators stay unchanged.
-for(const [count,n,band]of [[0,8,'none'],[1,8,'low'],[2,8,'mid'],[4,8,'warm'],[6,8,'hot']]){
- const sample=Array.from({length:n},(_,i)=>{const pa=JSON.parse(JSON.stringify(blake));pa.batted_ball.fielding_position=i<count?'LF':'CF';pa.batted_ball.location.zone=i<count?'left_field':'center_field';return pa;});
- const svg=D.fieldSvg(sample);assert(svg.includes('fill="var(--heat-'+band+')"'));assert(!svg.includes('fill="#697537"'));
-}
 const incomplete=JSON.parse(JSON.stringify(blake));incomplete.status='incomplete';
 assert.equal(D.pitchSummary([incomplete]).complete,0);
 const missing=JSON.parse(JSON.stringify(blake));missing.pitches=[];assert.equal(D.pitchSummary([missing]).complete,0);
@@ -336,6 +331,13 @@ assert.match(html,/id="natural-field-artwork"[^>]+href="assets\/field\.png\?v=[a
 assert(fs.existsSync(path.join(root,'assets/field.png')));
 assert.equal((html.match(/data:image\/png;base64,/g)||[]).length,0);
 assert.match(markerSvg,/<use class="natural-field" href="#natural-field-artwork"/);
+// Relative colors distinguish low, middle and high shares while preserving zero and ties.
+const heatPAs=['LF','LF','LF','LF','LF','LF','SS','SS','SS','SS','SS','SS','CF','CF','CF','RF','RF','3B','3B','P','P','2B'].map((position,i)=>({...data.plate_appearances.find(p=>p.batted_ball),id:'heat-'+i,batted_ball:{...blake.batted_ball,type:'ground_ball',fielding_position:position}}));
+const heatSvg=D.fieldSvg(heatPAs),fills=Object.fromEntries([...heatSvg.matchAll(/data-position="([^"]+)"[^>]*>.*?<circle[^>]*fill="([^"]+)"/g)].map(m=>[m[1],m[2]]));
+assert.equal(fills.LF,fills.SS,'Equal leaders share a color');assert.equal(fills.RF,fills.P,'Equal shares share a color');
+assert.equal(fills['1B'],'var(--heat-none)');assert.equal(new Set([fills['2B'],fills.RF,fills.CF,fills.LF]).size,4,'1, 2, 3 and 6 contacts use distinct colors');
+assert.match(heatSvg,/relative contact concentration/);
+for(const color of Object.values(fills).filter(c=>c.startsWith('#')))assert(contrast(light['marker-text'],color)>=4.5,'Readable marker text on '+color);
 // Larger future samples show full counts and the shared total without changing the data.
 const largeSample=Array.from({length:456},(_,i)=>({...blake,batted_ball:{...blake.batted_ball,fielding_position:i<123?'LF':'CF'}}));
 assert.equal(D.summarize(largeSample).n,456);

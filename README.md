@@ -626,3 +626,7 @@ git config --local core.hooksPath .githooks
 ```
 
 Pushes targeting `origin`'s `main` branch run `node tools/prepare-release.cjs`. Other branches/remotes and branch deletions are skipped. The outgoing commit must be checked out so the script prepares the correct release. If generated files or runtime inputs have uncommitted changes, the hook stops the push: review and commit those changes, then push again. It never automatically commits or stages files. This local hook applies to command-line pushes from this clone, not GitHub web edits or other clones.
+
+### Relative contact colors
+
+Fielder circles use a smooth light-green → green → yellow → orange → coral scale relative to the highest recorded fielder count in the current player/game/contact selection. Zero remains pale gray. Tied counts share colors and highest positions retain purple rings. Percentages still include unknown fielders in their denominator; colors compare positions within the selection, not absolute percentages between different players.

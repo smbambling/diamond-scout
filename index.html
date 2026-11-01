@@ -348,14 +348,21 @@
  // These are schematic fielder labels, never inferred ball locations.
  const fielderLayout={LF:[155,130],CF:[300,95],RF:[445,130],'3B':[160,245],SS:[230,180],P:[300,280],'2B':[370,180],'1B':[440,245],C:[297,390]};
  const fielderRadius=35;
- const heatColor=(count,n)=>'var(--heat-'+(!count||!n?'none':count/n<.25?'low':count/n<.5?'mid':count/n<.75?'warm':'hot')+')';
+ // Relative contact concentration within this selection; percentages keep their original denominator.
+ function heatColor(count,maximum){
+  if(!count||!maximum)return 'var(--heat-none)';
+  const stops=[[0,[204,232,204]],[.33,[145,199,154]],[.5,[242,216,120]],[.75,[237,172,114]],[1,[233,142,135]]];
+  const t=Math.min(1,count/maximum),i=stops.findIndex(([at])=>at>=t),[lo,a]=stops[Math.max(0,i-1)],[hi,b]=stops[i];
+  const f=hi===lo?0:(t-lo)/(hi-lo);
+  return '#'+a.map((v,j)=>Math.round(v+(b[j]-v)*f).toString(16).padStart(2,'0')).join('');
+ }
  function fieldSvg(pas,{compact=false,type='all',label='Contact by recorded fielder'}={}){
-  const s=summarize(pas,type),H=s.n?470:510;
-  let svg='<svg class="field-svg" viewBox="0 0 600 '+H+'" role="img" aria-label="'+esc(label)+'. '+s.n+' fair contacts. '+positions.filter(p=>s.counts[p]).map(p=>names[p]+' '+s.counts[p]+' of '+s.n).join('; ')+'. Unknown fielder: '+s.unknown+'."><title>'+esc(label)+'</title><desc>Colored markers show contact by the recorded fielder, at schematic standard positions. Each circle shows the position, percentage of fair contact, and a smaller contact count; the total is at the lower right. Marker size is fixed. The field is an orientation guide, not a landing-location, coverage, or ball-path map. Unknown fielders remain in the denominator.</desc>';
+  const s=summarize(pas,type),H=s.n?470:510,maximum=Math.max(0,...positions.map(pos=>s.counts[pos]));
+  let svg='<svg class="field-svg" viewBox="0 0 600 '+H+'" role="img" aria-label="'+esc(label)+'. '+s.n+' fair contacts. '+positions.filter(p=>s.counts[p]).map(p=>names[p]+' '+s.counts[p]+' of '+s.n).join('; ')+'. Unknown fielder: '+s.unknown+'."><title>'+esc(label)+'</title><desc>Colors show relative contact concentration within this selection: light green through yellow to coral for the highest share; gray means zero. Markers show recorded fielders at schematic standard positions. Each circle shows the position, percentage of fair contact, and a smaller contact count; the total is at the lower right. Marker size is fixed. The field is an orientation guide, not a landing-location, coverage, or ball-path map. Unknown fielders remain in the denominator.</desc>';
   svg+='<use class="natural-field" href="#natural-field-artwork" transform="translate(-46.5 0) scale(1.155 1)" aria-hidden="true"/>';
   for(const pos of positions.filter(pos=>pos!=='C'||s.counts.C)){const [baseX,y]=fielderLayout[pos],x=300+(baseX-300)*1.155,n=s.counts[pos],color=n?'var(--marker-text)':'var(--marker-empty-text)',digits=String(n).length,share=pct(n,s.n),percentSize=share.length>3?23:25;
    if(n>0&&s.leaders.includes(pos))svg+='<circle class="fielder-leader-ring" cx="'+x+'" cy="'+y+'" r="'+(fielderRadius+6)+'" fill="none" stroke="var(--accent-strong)" stroke-width="3.5"><title>Most recorded fielder'+(s.leaders.length>1?' (tied)':'')+': '+names[pos]+'</title></circle>';
-   svg+='<g class="fielder-marker" data-position="'+pos+'" data-leader="'+(n>0&&s.leaders.includes(pos))+'" data-observed="'+(n>0)+'"><title>'+names[pos]+': '+n+' of '+s.n+' fair contacts ('+pct(n,s.n)+'). Schematic position, not a catch or landing point.</title><circle cx="'+x+'" cy="'+y+'" r="'+fielderRadius+'" fill="'+heatColor(n,s.n)+'" stroke="var(--map-grid)" stroke-width="2.2"/>';
+   svg+='<g class="fielder-marker" data-position="'+pos+'" data-leader="'+(n>0&&s.leaders.includes(pos))+'" data-observed="'+(n>0)+'"><title>'+names[pos]+': '+n+' of '+s.n+' fair contacts ('+pct(n,s.n)+'). Schematic position, not a catch or landing point.</title><circle cx="'+x+'" cy="'+y+'" r="'+fielderRadius+'" fill="'+heatColor(n,maximum)+'" stroke="var(--map-grid)" stroke-width="2.2"/>';
    svg+='<text class="fielder-position" x="'+x+'" y="'+(y-19)+'" text-anchor="middle" fill="'+color+'" font-size="17" font-weight="600">'+pos+'</text><text class="fielder-percent" x="'+x+'" y="'+(y+4)+'" text-anchor="middle" fill="'+color+'" font-size="'+percentSize+'" font-weight="750">'+share+'</text><text class="fielder-count" x="'+x+'" y="'+(y+24)+'" text-anchor="middle" fill="'+color+'"'+(digits>4?' textLength="48" lengthAdjust="spacingAndGlyphs"':'')+' font-size="18" font-weight="500">'+n+'</text></g>';
   }
   svg+='<g class="contact-total"><title>Total fair contact, including hits, outs, errors and sacrifices. Unknown fielders remain in this total.</title><text class="contact-total-value" x="495" y="402" text-anchor="middle" fill="var(--text)" font-size="38" font-weight="750">'+s.n+'</text><text x="495" y="428" text-anchor="middle" fill="var(--secondary)" font-size="21">Fair contacts</text>'+(s.unknown?'<text x="495" y="451" text-anchor="middle" fill="var(--secondary)" font-size="18">'+s.unknown+' unknown fielder</text>':'')+'</g>';
@@ -469,7 +476,7 @@
 'use strict';
 (() => {
  const D=globalThis.DiamondScout,$=id=>document.getElementById(id),e=D.esc;
- const releaseVersion='6f57c63a637abe6b';
+ const releaseVersion='b8dc8b755f2d5d6e';
  const state={view:'scout',batter:'all',game:'all',type:'all',pitcher:'all',sorts:{scout:'jersey',pitching:'jersey'}},cache=new Map();
  let manifest=null,data=null,loadGeneration=0,expandedMetric=null,pitchingStrikeoutsOpen=false,pitchingStrikesOpen=false,pitchingFirstStrikesOpen=false;
  const metricItems=new Map();
