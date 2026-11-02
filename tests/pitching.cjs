@@ -38,3 +38,11 @@ const missingK=structuredClone(one);missingK.games[0].pitching_scout.pitchers[1]
 assert.equal(D.pitchingSummary(missingK).strikeoutLeaders.length,0);assert.equal(D.pitchingSummary(missingK).incompleteStrikeouts,true);
 assert.equal(D.pitchingSummary(one,{game:'missing'}).mostUsed.length,0);
 console.log('PASS: own-team pitching, unique stint reconciliation, table reordering, missing/conflicting data, source preservation, player/game filters and distinct metric denominators.');
+
+for(const pitcher of evidence.pitchers){
+ assert(pitcher.sample.innings.length>0);
+ assert.equal(pitcher.sample.innings.reduce((n,r)=>n+r.pitches,0),pitcher.pitches);
+ assert.equal(pitcher.sample.innings.reduce((n,r)=>n+r.first,0),pitcher.sample.first);
+ assert.equal(pitcher.sample.innings.reduce((n,r)=>n+r.first_strikes,0),pitcher.sample.first_strikes);
+ assert(pitcher.sample.innings.every(r=>Number.isInteger(r.inning)&&r.inning>0));
+}

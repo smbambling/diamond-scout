@@ -62,16 +62,20 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  PE['pitching-summary'].listeners.click({target:{closest:selector=>selector==='#pitching-strikeout-toggle'?{}:null}});assert.equal(PE['pitching-strikeout-detail'].hidden,true);
  PE['pitching-summary'].listeners.click({target:{closest:selector=>selector==='#pitching-strike-toggle'?{}:null}});assert.equal(PE['pitching-strike-detail'].hidden,false);assert.equal(PE['pitching-strikeout-detail'].hidden,true);assert.match(PE['pitching-strike-detail'].innerHTML,/Swinging strikes/);assert.doesNotMatch(PE['pitching-tendencies'].innerHTML,/Swinging strikes/);
  assert.match(PE['pitching-avg'].innerHTML,/AVG against/);assert.doesNotMatch(PE['pitching-tendencies'].innerHTML,/AVG against/);assert.equal((PE['pitching-tendencies'].innerHTML.match(/class="pitching-metric(?: pitching-disclosure)?"/g)||[]).length,3);
- assert.match(PE['pitching-outcome-bars'].innerHTML,/Called strikes/);assert.match(PE['pitching-outcome-bars'].innerHTML,/Swinging strikes/);assert.match(PE['pitching-outcome-sample'].textContent,/tracked pitches/);
- chooseGames(PE,pitchingData.games[0].id);assert.match(PE['pitcher-context'].textContent,/1 game · 13 batters faced · 47 pitches/);
+ assert.match(PE['pitching-outcome-bars'].innerHTML,/Called strikes/);assert.match(PE['pitching-outcome-bars'].innerHTML,/Swing and miss/);assert.match(PE['pitching-outcome-overview'].innerHTML,/conic-gradient/);assert.match(PE['pitching-outcome-overview'].innerHTML,/Strikes/);assert.doesNotMatch(PE['pitching-outcome-bars'].innerHTML,/>Balls</);assert.match(PE['pitching-outcome-sample'].textContent,/tracked pitches/);
+ assert.equal(PE['pitching-innings'].hidden,true);assert.match(PE['pitcher-leaders'].innerHTML,/<summary>Pitcher leaders<\/summary>/);
+ chooseGames(PE,pitchingData.games[0].id);assert.equal(PE['pitching-innings'].hidden,false);assert.match(PE['pitching-inning-table'].innerHTML,/Strike %/);assert.match(PE['pitching-inning-table'].innerHTML,/FPS %/);assert.match(PE['pitcher-context'].textContent,/1 game · 13 batters faced · 47 pitches/);
  PE['pitcher-select'].value='all';PE['pitcher-select'].listeners.change();assert.equal(PE['pitcher-leaders'].hidden,false);assert.match(PE['pitcher-leaders'].innerHTML,/Most used/);assert.match(PE['pitcher-leaders'].innerHTML,/Strikeout leader/);
+ assert.match(PE['pitching-inning-pitchers'].innerHTML,/Quinn Kasprzak/);assert.match(PE['pitching-inning-pitchers'].innerHTML,/data-pitcher="quinn kasprzak"/);
+ PE['pitching-innings'].listeners.click({target:{closest:()=>({dataset:{pitcher:'quinn kasprzak'}})}});assert.equal(PE['pitcher-select'].value,'quinn kasprzak');assert.match(PE['pitching-inning-pitchers'].innerHTML,/Quinn Kasprzak/);assert.doesNotMatch(PE['pitching-inning-pitchers'].innerHTML,/Wesley Hurt/);
+ PE['pitcher-select'].value='all';PE['pitcher-select'].listeners.change();
  PE['pitcher-leaders'].listeners.click({target:{closest:()=>({dataset:{pitcher:'quinn kasprzak'}})}});assert.equal(PE['pitcher-select'].value,'quinn kasprzak');assert.equal(PE['pitcher-leaders'].hidden,true);assert.equal(PE.app.focusedId,'pitcher-context','Leader selection must not focus and open the native select');
- assert.equal(PE['pitching-outcome-sample'].textContent,'41 tracked pitches');
+ assert.equal(PE['pitching-outcome-sample'].textContent,'41 tracked pitches');assert.match(PE['pitching-outcome-overview'].innerHTML,/>41<\/strong>/);
  PE['pitching-tendencies'].listeners.click({target:{closest:()=>({})}});assert.equal(PE['pitching-first-strike-detail'].hidden,false);assert.equal(PE['pitching-strike-detail'].hidden,true);assert.match(PE['pitching-first-strike-detail'].innerHTML,/FPSO% · Outs/);assert.match(PE['pitching-first-strike-detail'].innerHTML,/FPSW% · Walks/);assert.match(PE['pitching-first-strike-detail'].innerHTML,/FPSH% · Hits/);assert.match(PE['pitching-first-strike-detail'].innerHTML,/4\/6/);PE['pitching-tendencies'].listeners.click({target:{closest:()=>({})}});assert.equal(PE['pitching-first-strike-detail'].hidden,true);
  const twoPitchGames=[pitchingData.games[0].id,pitchingData.games[1].id];
  chooseGames(PE,twoPitchGames);assert.equal(PE['pitcher-select'].value,'quinn kasprzak');assert.match(PE['game-selection-summary'].textContent,/2 of 31 games selected/);
  PE['pitcher-select'].value='all';PE['pitcher-select'].listeners.change();assert.match(PE['pitcher-context'].textContent,/2 games/);
- assert.equal(PE['pitching-outcome-sample'].textContent,'88 tracked pitches');
+ assert.equal(PE['pitching-innings'].hidden,true);assert.equal(PE['pitching-inning-table'].innerHTML,'');assert.equal(PE['pitching-outcome-sample'].textContent,'88 tracked pitches');assert.match(PE['pitching-outcome-overview'].innerHTML,/>88<\/strong>/);
  chooseGames(PE,'all');
  PE['tab-scout'].click();assert.equal(PE['batter-header'].hidden,false);
 
@@ -408,11 +412,16 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  SE['minimum-sample-select'].value='0';SE['minimum-sample-select'].listeners.change();setSort('walk');ids=optionIds('pitcher-select');values=ids.map(id=>{const r=SD.pitchingSummary(pitchingData,{pitcher:id}).rates.walk;return r.d?r.n/r.d:null;});
  for(let i=1;i<values.length;i++)assert(values[i]===null||(values[i-1]!==null&&values[i-1]<=values[i]));
  assert.equal(SE['pitcher-select'].value,ids[0]);SE['pitcher-next'].click();assert.equal(SE['pitcher-select'].value,ids[1]);
- changeGames(SE,pitchingData.games[0].id);assert.equal(SE['player-sort-select'].value,'walk');assert.equal(SE['pitcher-select'].value,optionIds('pitcher-select')[0]);
- changeGames(SE,'all');assert.equal(SE['pitcher-select'].value,optionIds('pitcher-select')[0]);
+ const priorPitcher=SE['pitcher-select'].value;
+ changeGames(SE,pitchingData.games[0].id);assert.equal(SE['player-sort-select'].value,'walk');assert.equal(SE['pitcher-select'].value,optionIds('pitcher-select').includes(priorPitcher)?priorPitcher:'all');
+ SE['pitcher-select'].value=optionIds('pitcher-select')[0];SE['pitcher-select'].listeners.change();const retainedPitcher=SE['pitcher-select'].value;
+ changeGames(SE,'all');assert.equal(SE['pitcher-select'].value,retainedPitcher);
+ SE['pitcher-select'].value='all';SE['pitcher-select'].listeners.change();changeGames(SE,pitchingData.games[0].id);assert.equal(SE['pitcher-select'].value,'all');changeGames(SE,'all');assert.equal(SE['pitcher-select'].value,'all');
  changeGames(SE,[]);assert.equal(SE['pitcher-select'].value,'all');
- SE['tab-scout'].click();changeGames(SE,pitchingData.games[0].id);assert.equal(SE['batter-select'].value,optionIds('batter-select')[0]);
- changeGames(SE,'all');assert.equal(SE['batter-select'].value,optionIds('batter-select')[0]);
+ SE['tab-scout'].click();SE['batter-select'].value='all';SE['batter-select'].listeners.change();changeGames(SE,pitchingData.games[0].id);assert.equal(SE['batter-select'].value,'all');
+ SE['batter-select'].value=optionIds('batter-select')[0];SE['batter-select'].listeners.change();const retainedBatter=SE['batter-select'].value;
+ changeGames(SE,'all');assert.equal(SE['batter-select'].value,retainedBatter);
+ changeGames(SE,[]);assert.equal(SE['batter-select'].value,'all');changeGames(SE,'all');assert.equal(SE['batter-select'].value,'all');
  SE['tab-pitching'].click();
  SE['tab-scout'].click();assert.equal(SE['player-sort-select'].value,'pa');SE['tab-pitching'].click();assert.equal(SE['player-sort-select'].value,'walk');
  const sortRestore=await openApp({storage:sortApp.storage,files:{'teams.json':{'schema_version':1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData}});
@@ -435,7 +444,7 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  E['tab-pitching'].click();assert.equal(E['minimum-sample-select'].value,'10');E['tab-scout'].click();assert.equal(E['minimum-sample-select'].value,'10');
  minimum(0);const anyRestored=await openApp({files,storage:clone(minApp.storage)});assert.equal(anyRestored.elements['minimum-sample-select'].value,'0');minimum(10);
  const restored=await openApp({files,storage:minApp.storage});assert.equal(restored.elements['minimum-sample-select'].value,'10');assert.equal(restored.elements['batter-select'].value,'regular-a');
- changeGames(E,[]);assert.deepEqual(ids(),[]);assert.equal(E['batter-select'].value,'all');changeGames(E,'all');assert.equal(E['batter-select'].value,'regular-a');
+ changeGames(E,[]);assert.deepEqual(ids(),[]);assert.equal(E['batter-select'].value,'all');changeGames(E,'all');assert.equal(E['batter-select'].value,'all');
  }
  {
  const files={'teams.json':{schema_version:1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData};

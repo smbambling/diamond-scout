@@ -1810,6 +1810,29 @@
             "pitches": 59,
             "strikes": 28,
             "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 16,
+                  "strikes": 9,
+                  "first": 4,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 2,
+                  "pitches": 30,
+                  "strikes": 14,
+                  "first": 7,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 3,
+                  "pitches": 13,
+                  "strikes": 5,
+                  "first": 4,
+                  "first_strikes": 2
+                }
+              ],
               "firstStrikeResults": {
                 "total": 4,
                 "out": 2,
@@ -1863,6 +1886,15 @@
             "pitches": 25,
             "strikes": 14,
             "sample": {
+              "innings": [
+                {
+                  "inning": 4,
+                  "pitches": 25,
+                  "strikes": 14,
+                  "first": 8,
+                  "first_strikes": 4
+                }
+              ],
               "firstStrikeResults": {
                 "total": 4,
                 "out": 1,
@@ -2796,6 +2828,29 @@
             "pitches": 63,
             "strikes": 28,
             "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 17,
+                  "strikes": 6,
+                  "first": 5,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 2,
+                  "pitches": 28,
+                  "strikes": 13,
+                  "first": 8,
+                  "first_strikes": 4
+                },
+                {
+                  "inning": 3,
+                  "pitches": 18,
+                  "strikes": 9,
+                  "first": 4,
+                  "first_strikes": 0
+                }
+              ],
               "firstStrikeResults": {
                 "total": 5,
                 "out": 3,
@@ -2849,6 +2904,22 @@
             "pitches": 32,
             "strikes": 14,
             "sample": {
+              "innings": [
+                {
+                  "inning": 4,
+                  "pitches": 22,
+                  "strikes": 9,
+                  "first": 6,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 5,
+                  "pitches": 10,
+                  "strikes": 5,
+                  "first": 3,
+                  "first_strikes": 1
+                }
+              ],
               "firstStrikeResults": {
                 "total": 3,
                 "out": 2,
@@ -2902,6 +2973,29 @@
             "pitches": 33,
             "strikes": 22,
             "sample": {
+              "innings": [
+                {
+                  "inning": 5,
+                  "pitches": 11,
+                  "strikes": 7,
+                  "first": 3,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 6,
+                  "pitches": 9,
+                  "strikes": 5,
+                  "first": 3,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 7,
+                  "pitches": 13,
+                  "strikes": 10,
+                  "first": 4,
+                  "first_strikes": 4
+                }
+              ],
               "firstStrikeResults": {
                 "total": 6,
                 "out": 5,
@@ -3785,6 +3879,36 @@
             "pitches": 68,
             "strikes": 43,
             "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 16,
+                  "strikes": 10,
+                  "first": 5,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 2,
+                  "pitches": 17,
+                  "strikes": 13,
+                  "first": 5,
+                  "first_strikes": 4
+                },
+                {
+                  "inning": 3,
+                  "pitches": 16,
+                  "strikes": 10,
+                  "first": 5,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 4,
+                  "pitches": 19,
+                  "strikes": 10,
+                  "first": 6,
+                  "first_strikes": 3
+                }
+              ],
               "firstStrikeResults": {
                 "total": 10,
                 "out": 4,
@@ -3838,6 +3962,22 @@
             "pitches": 38,
             "strikes": 20,
             "sample": {
+              "innings": [
+                {
+                  "inning": 5,
+                  "pitches": 14,
+                  "strikes": 8,
+                  "first": 5,
+                  "first_strikes": 4
+                },
+                {
+                  "inning": 6,
+                  "pitches": 24,
+                  "strikes": 12,
+                  "first": 7,
+                  "first_strikes": 1
+                }
+              ],
               "firstStrikeResults": {
                 "total": 5,
                 "out": 1,
@@ -4704,6 +4844,22 @@
             "pitches": 60,
             "strikes": 30,
             "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 30,
+                  "strikes": 17,
+                  "first": 10,
+                  "first_strikes": 7
+                },
+                {
+                  "inning": 2,
+                  "pitches": 30,
+                  "strikes": 13,
+                  "first": 7,
+                  "first_strikes": 2
+                }
+              ],
               "firstStrikeResults": {
                 "total": 9,
                 "out": 5,
@@ -4757,6 +4913,22 @@
             "pitches": 33,
             "strikes": 20,
             "sample": {
+              "innings": [
+                {
+                  "inning": 3,
+                  "pitches": 17,
+                  "strikes": 10,
+                  "first": 6,
+                  "first_strikes": 6
+                },
+                {
+                  "inning": 4,
+                  "pitches": 16,
+                  "strikes": 10,
+                  "first": 6,
+                  "first_strikes": 6
+                }
+              ],
               "firstStrikeResults": {
                 "total": 12,
                 "out": 3,
@@ -5654,6 +5826,29 @@
             "pitches": 55,
             "strikes": 32,
             "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 19,
+                  "strikes": 10,
+                  "first": 5,
+                  "first_strikes": 3
+                },
+                {
+                  "inning": 2,
+                  "pitches": 16,
+                  "strikes": 8,
+                  "first": 6,
+                  "first_strikes": 3
+                },
+                {
+                  "inning": 3,
+                  "pitches": 20,
+                  "strikes": 14,
+                  "first": 5,
+                  "first_strikes": 3
+                }
+              ],
               "firstStrikeResults": {
                 "total": 9,
                 "out": 5,
@@ -5707,6 +5902,36 @@
             "pitches": 82,
             "strikes": 45,
             "sample": {
+              "innings": [
+                {
+                  "inning": 4,
+                  "pitches": 21,
+                  "strikes": 8,
+                  "first": 5,
+                  "first_strikes": 0
+                },
+                {
+                  "inning": 5,
+                  "pitches": 9,
+                  "strikes": 8,
+                  "first": 3,
+                  "first_strikes": 3
+                },
+                {
+                  "inning": 6,
+                  "pitches": 28,
+                  "strikes": 15,
+                  "first": 6,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 7,
+                  "pitches": 24,
+                  "strikes": 14,
+                  "first": 7,
+                  "first_strikes": 5
+                }
+              ],
               "firstStrikeResults": {
                 "total": 9,
                 "out": 5,
@@ -6536,6 +6761,29 @@
             "pitches": 63,
             "strikes": 37,
             "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 16,
+                  "strikes": 12,
+                  "first": 5,
+                  "first_strikes": 4
+                },
+                {
+                  "inning": 2,
+                  "pitches": 40,
+                  "strikes": 20,
+                  "first": 9,
+                  "first_strikes": 3
+                },
+                {
+                  "inning": 3,
+                  "pitches": 7,
+                  "strikes": 5,
+                  "first": 3,
+                  "first_strikes": 2
+                }
+              ],
               "firstStrikeResults": {
                 "total": 9,
                 "out": 5,
@@ -7412,6 +7660,22 @@
             "pitches": 62,
             "strikes": 32,
             "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 19,
+                  "strikes": 11,
+                  "first": 5,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 2,
+                  "pitches": 43,
+                  "strikes": 21,
+                  "first": 11,
+                  "first_strikes": 7
+                }
+              ],
               "firstStrikeResults": {
                 "total": 8,
                 "out": 2,
@@ -7465,6 +7729,22 @@
             "pitches": 45,
             "strikes": 26,
             "sample": {
+              "innings": [
+                {
+                  "inning": 3,
+                  "pitches": 16,
+                  "strikes": 10,
+                  "first": 4,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 4,
+                  "pitches": 29,
+                  "strikes": 16,
+                  "first": 8,
+                  "first_strikes": 6
+                }
+              ],
               "firstStrikeResults": {
                 "total": 8,
                 "out": 5,
@@ -8371,6 +8651,29 @@
             "pitches": 57,
             "strikes": 33,
             "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 22,
+                  "strikes": 13,
+                  "first": 7,
+                  "first_strikes": 5
+                },
+                {
+                  "inning": 2,
+                  "pitches": 17,
+                  "strikes": 10,
+                  "first": 3,
+                  "first_strikes": 0
+                },
+                {
+                  "inning": 3,
+                  "pitches": 18,
+                  "strikes": 10,
+                  "first": 6,
+                  "first_strikes": 3
+                }
+              ],
               "firstStrikeResults": {
                 "total": 8,
                 "out": 4,
@@ -8424,6 +8727,22 @@
             "pitches": 58,
             "strikes": 25,
             "sample": {
+              "innings": [
+                {
+                  "inning": 4,
+                  "pitches": 35,
+                  "strikes": 15,
+                  "first": 8,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 5,
+                  "pitches": 23,
+                  "strikes": 10,
+                  "first": 5,
+                  "first_strikes": 1
+                }
+              ],
               "firstStrikeResults": {
                 "total": 3,
                 "out": 2,
@@ -8477,6 +8796,15 @@
             "pitches": 14,
             "strikes": 9,
             "sample": {
+              "innings": [
+                {
+                  "inning": 6,
+                  "pitches": 14,
+                  "strikes": 9,
+                  "first": 3,
+                  "first_strikes": 3
+                }
+              ],
               "firstStrikeResults": {
                 "total": 3,
                 "out": 3,
@@ -9350,6 +9678,29 @@
             "pitches": 73,
             "strikes": 34,
             "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 24,
+                  "strikes": 16,
+                  "first": 6,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 2,
+                  "pitches": 22,
+                  "strikes": 8,
+                  "first": 5,
+                  "first_strikes": 3
+                },
+                {
+                  "inning": 3,
+                  "pitches": 27,
+                  "strikes": 10,
+                  "first": 7,
+                  "first_strikes": 2
+                }
+              ],
               "firstStrikeResults": {
                 "total": 7,
                 "out": 4,
@@ -9403,6 +9754,29 @@
             "pitches": 39,
             "strikes": 22,
             "sample": {
+              "innings": [
+                {
+                  "inning": 3,
+                  "pitches": 2,
+                  "strikes": 2,
+                  "first": 1,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 4,
+                  "pitches": 25,
+                  "strikes": 14,
+                  "first": 7,
+                  "first_strikes": 4
+                },
+                {
+                  "inning": 5,
+                  "pitches": 12,
+                  "strikes": 6,
+                  "first": 4,
+                  "first_strikes": 1
+                }
+              ],
               "firstStrikeResults": {
                 "total": 6,
                 "out": 4,
@@ -10337,6 +10711,36 @@
             "pitches": 71,
             "strikes": 38,
             "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 32,
+                  "strikes": 14,
+                  "first": 9,
+                  "first_strikes": 3
+                },
+                {
+                  "inning": 2,
+                  "pitches": 20,
+                  "strikes": 11,
+                  "first": 4,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 3,
+                  "pitches": 7,
+                  "strikes": 5,
+                  "first": 3,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 4,
+                  "pitches": 12,
+                  "strikes": 8,
+                  "first": 3,
+                  "first_strikes": 2
+                }
+              ],
               "firstStrikeResults": {
                 "total": 9,
                 "out": 6,
@@ -10390,6 +10794,15 @@
             "pitches": 19,
             "strikes": 12,
             "sample": {
+              "innings": [
+                {
+                  "inning": 4,
+                  "pitches": 19,
+                  "strikes": 12,
+                  "first": 7,
+                  "first_strikes": 5
+                }
+              ],
               "firstStrikeResults": {
                 "total": 5,
                 "out": 2,
@@ -11319,6 +11732,36 @@
             "pitches": 73,
             "strikes": 39,
             "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 20,
+                  "strikes": 9,
+                  "first": 5,
+                  "first_strikes": 0
+                },
+                {
+                  "inning": 2,
+                  "pitches": 11,
+                  "strikes": 6,
+                  "first": 3,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 3,
+                  "pitches": 14,
+                  "strikes": 8,
+                  "first": 4,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 4,
+                  "pitches": 28,
+                  "strikes": 16,
+                  "first": 6,
+                  "first_strikes": 3
+                }
+              ],
               "firstStrikeResults": {
                 "total": 6,
                 "out": 4,
@@ -11372,6 +11815,15 @@
             "pitches": 28,
             "strikes": 16,
             "sample": {
+              "innings": [
+                {
+                  "inning": 5,
+                  "pitches": 28,
+                  "strikes": 16,
+                  "first": 7,
+                  "first_strikes": 3
+                }
+              ],
               "firstStrikeResults": {
                 "total": 3,
                 "out": 2,
@@ -12298,6 +12750,36 @@
             "pitches": 71,
             "strikes": 42,
             "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 20,
+                  "strikes": 12,
+                  "first": 5,
+                  "first_strikes": 4
+                },
+                {
+                  "inning": 2,
+                  "pitches": 14,
+                  "strikes": 10,
+                  "first": 3,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 3,
+                  "pitches": 27,
+                  "strikes": 14,
+                  "first": 5,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 4,
+                  "pitches": 10,
+                  "strikes": 6,
+                  "first": 3,
+                  "first_strikes": 2
+                }
+              ],
               "firstStrikeResults": {
                 "total": 9,
                 "out": 6,
@@ -12351,6 +12833,29 @@
             "pitches": 33,
             "strikes": 21,
             "sample": {
+              "innings": [
+                {
+                  "inning": 5,
+                  "pitches": 9,
+                  "strikes": 8,
+                  "first": 3,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 6,
+                  "pitches": 8,
+                  "strikes": 5,
+                  "first": 3,
+                  "first_strikes": 0
+                },
+                {
+                  "inning": 7,
+                  "pitches": 16,
+                  "strikes": 8,
+                  "first": 4,
+                  "first_strikes": 3
+                }
+              ],
               "firstStrikeResults": {
                 "total": 5,
                 "out": 4,

@@ -188,6 +188,41 @@
 :is(.hitting-stat-grid .batting-stat:has(>.stat-label[data-sort-active="true"]),.hitting-stat-grid .scout-metric:has(>.stat-label[data-sort-active="true"]),.pitching-metric:has(>.pitching-label[data-sort-active="true"]))::before{content:"";position:absolute;inset:-5px -6px;z-index:-1;pointer-events:none;background:var(--selected-bg);border:1px solid #0052cc25;border-radius:10px}
 .hitting-stat-grid :is(.batting-stat,.scout-metric):has(>.stat-label[data-sort-active="true"])::before{inset:-3px -2px}
 .filter-actions{display:flex;align-items:center;gap:8px}.share-feedback{grid-column:1/-1;font-size:13px;color:var(--secondary)}.share-feedback input{width:100%;min-height:44px;margin-top:6px;padding:8px;font-size:16px;border:1px solid var(--control-border);border-radius:8px;color:var(--text);background:var(--control)}
+
+/* Compact pitching grid and tracked-pitch overview. */
+#view-pitching .pitching-summary-group{column-gap:0;row-gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+#view-pitching .pitching-summary-group .pitching-metric{padding:10px 8px;min-width:0;border-radius:0;align-self:stretch}
+#pitching-summary>.pitching-metric:not(:last-child),#pitching-tendencies>.pitching-metric:not(:last-child){border-right:1px solid var(--border)}
+#pitching-tendencies>.pitching-metric{border-top:1px solid var(--border)}
+#view-pitching .pitching-summary-group .pitching-label{min-height:34px;display:block}
+#view-pitching .pitching-summary-group .pitching-value{margin-top:auto}
+.pitching-summary-group .pitching-metric:has(>.pitching-label[data-sort-active="true"])::before{inset:4px;border-radius:8px}
+.pitching-summary-group>.metric-detail{padding:10px 8px;border-top:1px solid var(--border)}
+.outcome-overview{display:flex;align-items:center;gap:22px;padding:14px 0;border-bottom:1px solid var(--border);margin-bottom:12px}
+.outcome-donut{width:112px;height:112px;flex:0 0 112px;border-radius:50%;display:grid;place-items:center}
+.outcome-donut>div{width:78px;height:78px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.outcome-donut strong{font-size:25px;line-height:1.15}.outcome-donut span{font-size:10px;color:var(--secondary)}
+.outcome-legend{display:grid;gap:12px;flex:1;min-width:0}.outcome-legend-item{display:flex;gap:8px;align-items:baseline}.outcome-legend-item>div{flex:1;min-width:0}
+.outcome-dot{width:10px;height:10px;border-radius:50%;flex:0 0 10px}.outcome-legend-value{display:flex;justify-content:space-between;gap:8px;font-size:14px;font-weight:600}.outcome-legend-value strong{font-size:21px}
+.pitching-outcome-row{grid-template-columns:100px minmax(15px,1fr) 70px;gap:8px;margin:9px 0}
+@media(min-width:1000px){.outcome-donut{width:136px;height:136px;flex-basis:136px}.outcome-donut>div{width:94px;height:94px}.outcome-donut strong{font-size:29px}.outcome-overview{gap:28px}.outcome-legend-value{font-size:16px}}
+@media(max-width:360px){#view-pitching .pitching-summary-group .pitching-metric{padding:9px 5px}.outcome-overview{gap:14px}.outcome-donut{width:96px;height:96px;flex-basis:96px}.outcome-donut>div{width:68px;height:68px}.outcome-donut strong{font-size:22px}.pitching-outcome-row{grid-template-columns:92px minmax(10px,1fr) 63px;gap:5px;font-size:11px}}
+
+/* Match the pitching summary grid without increasing the mobile footprint. */
+#view-scout .hitting-stat-grid{gap:0;padding:0;border-top:1px solid var(--border);align-items:stretch}
+#view-scout .hitting-stat-grid :is(.batting-stat,.scout-metric){padding:4px 2px;border-radius:0;align-self:stretch}
+.hitting-stat-grid>#batting-stats>:not(:nth-child(3)),.hitting-stat-grid>#quick-read>:nth-child(-n+2){border-right:1px solid var(--border)}
+.hitting-stat-grid>#quick-read>*,.hitting-stat-grid>#batting-stats>:nth-child(n+4){border-top:1px solid var(--border)}
+#view-scout .hitting-stat-grid :is(.batting-stat,.scout-metric):has(>.stat-label[data-sort-active="true"])::before{inset:3px;border-radius:8px}
+.hitting-stat-grid>.metric-detail{margin:0;padding:10px 8px;border-top:1px solid var(--border);border-radius:0}
+@media(min-width:1000px){#view-scout .hitting-stat-grid :is(.batting-stat,.scout-metric){padding:10px 4px}}
+
+#pitcher-leaders>summary{font-size:18px;font-weight:700;min-height:48px;padding:10px 0}
+#pitcher-leaders:not([open]){padding-top:4px;padding-bottom:4px}
+#pitching-innings{grid-column:1/-1}.inning-table{margin-top:10px;table-layout:fixed;font-size:12px}.inning-table caption{text-align:left;color:var(--secondary);font-size:11px;margin-bottom:6px}.inning-table th,.inning-table td{padding:9px 4px;vertical-align:middle}.inning-table thead,.inning-table tfoot{background:var(--raised)}.inning-table :is(td,th):not(:first-child){text-align:right}.inning-table .inning-pitcher{text-align:left;overflow-wrap:anywhere}.inning-table .pitcher-change>*{border-top:2px solid var(--border)}.inning-table tfoot{font-weight:700}.inning-table abbr{text-decoration:none}.inning-table th:first-child{width:12%}
+@media(min-width:1000px){.inning-table{font-size:14px}.inning-table th,.inning-table td{padding:10px}}
+
+.inning-pitcher-links{display:flex;flex-wrap:wrap;gap:0 12px;margin-top:4px}.inning-pitcher-link{border:0;background:transparent;color:var(--accent);padding:4px 0;min-height:48px;font-size:12px;text-align:left;text-decoration:underline;text-underline-offset:3px}.inning-pitcher-link:hover{background:transparent;color:var(--accent-strong)}
 </style>
 </head>
 <body>
@@ -204,7 +239,7 @@
 <p id="filter-context" class="filter-context" role="status" aria-live="polite"></p>
 <div class="batter-header" id="batter-header"><div class="batter-info"><div class="player-picker-row"><label class="batter-picker"><span class="sr-only">Batter</span><select id="batter-select" aria-label="Batter"></select></label><div class="player-stepper" role="group" aria-label="Batter navigation"><button id="batter-previous" class="player-step" type="button" aria-label="Previous batter" title="Previous batter"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><button id="batter-next" class="player-step" type="button" aria-label="Next batter" title="Next batter"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div></div><div class="batter-meta"><p class="batter-context" id="batter-context"></p><span class="badge" id="sample-label"></span></div></div></div>
 <section id="view-scout" role="tabpanel" aria-labelledby="tab-scout"><div class="scout-layout"><article class="panel field-card scout-main"><h2 class="sr-only">Batter scouting summary</h2><div class="scout-stat-block" role="group" aria-label="Scouting statistics"><div class="batting-group hitting-stat-grid"><div id="batting-stats" class="batting-grid batting-strip" role="group" aria-label="Batting statistics"></div><div id="batting-detail" class="metric-detail" role="region" aria-label="Selected metric details" hidden aria-live="polite"></div><div id="quick-read" class="quick-read-strip" aria-label="Batter approach"></div><div id="quick-detail" class="metric-detail" role="region" aria-label="Selected metric details" hidden aria-live="polite"></div></div><details id="batting-note" class="small secondary batting-review" hidden></details></div><div class="scout-map-frame"><div class="field-wrap" id="scout-field"></div></div><p id="scout-foul-info" class="note" hidden></p><section class="hitting-contact-profile" aria-label="Contact profile"><div class="contact-profile-heading"><h3>Contact profile</h3><span id="contact-profile-sample"></span></div><div id="hitting-contact-bars"></div></section></article></div></section>
-<section id="view-pitching" role="tabpanel" aria-labelledby="tab-pitching" hidden><div class="scout-layout"><div class="player-picker-row"><label class="batter-picker"><span class="sr-only">Pitcher</span><select id="pitcher-select" aria-label="Pitcher"></select></label><div class="player-stepper" role="group" aria-label="Pitcher navigation"><button id="pitcher-previous" class="player-step" type="button" aria-label="Previous pitcher" title="Previous pitcher"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><button id="pitcher-next" class="player-step" type="button" aria-label="Next pitcher" title="Next pitcher"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div></div><p id="pitcher-context" class="note" tabindex="-1"></p><section id="pitcher-leaders" class="panel pitcher-leaders" aria-label="Pitcher leaders" hidden></section><article class="panel" style="margin-top:18px"><div class="pitching-title-row"><h2>Pitching summary</h2><div id="pitching-avg" aria-label="Batting average against"></div></div><div class="pitching-summary-group"><div id="pitching-summary" class="batting-grid"></div><div id="pitching-strike-detail" class="metric-detail" role="region" aria-label="Strike details" hidden aria-live="polite"></div><div id="pitching-strikeout-detail" class="metric-detail" role="region" aria-label="Strikeout breakdown" hidden aria-live="polite"></div><div id="pitching-tendencies" class="batting-grid"></div><div id="pitching-first-strike-detail" class="metric-detail" role="region" aria-label="Results after first-pitch strikes" hidden aria-live="polite"></div></div><p id="pitching-tracked-context" class="note"></p></article><article class="panel pitching-outcomes" style="margin-top:18px"><h2>Recorded pitch outcomes</h2><p id="pitching-outcome-sample" class="note"></p><div id="pitching-outcome-bars"></div></article></div></section>
+<section id="view-pitching" role="tabpanel" aria-labelledby="tab-pitching" hidden><div class="scout-layout"><div class="player-picker-row"><label class="batter-picker"><span class="sr-only">Pitcher</span><select id="pitcher-select" aria-label="Pitcher"></select></label><div class="player-stepper" role="group" aria-label="Pitcher navigation"><button id="pitcher-previous" class="player-step" type="button" aria-label="Previous pitcher" title="Previous pitcher"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><button id="pitcher-next" class="player-step" type="button" aria-label="Next pitcher" title="Next pitcher"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div></div><p id="pitcher-context" class="note" tabindex="-1"></p><details id="pitcher-leaders" class="panel pitcher-leaders" hidden></details><article class="panel" style="margin-top:18px"><div class="pitching-title-row"><h2>Pitching summary</h2><div id="pitching-avg" aria-label="Batting average against"></div></div><div class="pitching-summary-group"><div id="pitching-summary" class="batting-grid"></div><div id="pitching-strike-detail" class="metric-detail" role="region" aria-label="Strike details" hidden aria-live="polite"></div><div id="pitching-strikeout-detail" class="metric-detail" role="region" aria-label="Strikeout breakdown" hidden aria-live="polite"></div><div id="pitching-tendencies" class="batting-grid"></div><div id="pitching-first-strike-detail" class="metric-detail" role="region" aria-label="Results after first-pitch strikes" hidden aria-live="polite"></div></div><p id="pitching-tracked-context" class="note"></p></article><article class="panel pitching-outcomes" style="margin-top:18px"><h2>Recorded pitch outcomes</h2><p id="pitching-outcome-sample" class="sr-only"></p><div id="pitching-outcome-overview"></div><div id="pitching-outcome-bars"></div></article><article id="pitching-innings" class="panel pitching-innings" style="margin-top:18px" hidden><h2>Performance by inning</h2><div id="pitching-inning-pitchers" class="inning-pitcher-links"></div><div id="pitching-inning-table"></div></article></div></section>
 <footer class="footer"><span>Diamond Scout · Read the game</span><span id="coverage-note"></span></footer></div></main></div>
 <script id="diamond-scout-core">
 'use strict';
@@ -503,7 +538,7 @@
 'use strict';
 (() => {
  const D=globalThis.DiamondScout,$=id=>document.getElementById(id),e=D.esc;
- const releaseVersion='75d365b97bf7764b';
+ const releaseVersion='45e853b8b10e391e';
  const state={view:'scout',batter:'all',game:'all',type:'all',pitcher:'all',organizationTeam:'all',minimumSamples:{scout:10,pitching:10},sorts:{scout:'avg',pitching:'avg'}},cache=new Map();
  let manifest=null,data=null,loadGeneration=0,expandedMetric=null,pitchingStrikeoutsOpen=false,pitchingStrikesOpen=false,pitchingFirstStrikesOpen=false;
  const metricItems=new Map();
@@ -678,8 +713,6 @@
  function setGames(games){
   const ids=new Set(games),valid=data.games.filter(g=>ids.has(g.id)).map(g=>g.id);
   state.game=valid.length===data.games.length?'all':valid;
-  const hitting=state.view==='scout',players=hitting?batterRoster().players:pitcherRoster();
-  state[hitting?'batter':'pitcher']=players[0]?.id||'all';
   closeMetricDetails();
   const scrollTop=$('game-select').scrollTop;renderGamePicker();$('game-select').scrollTop=scrollTop;render();
  }
@@ -747,7 +780,21 @@
   $('pitcher-context').textContent=s.rows.length?s.games+' game'+(s.games===1?'':'s')+(s.bf!==null?' · '+s.bf+' batters faced':'')+(s.pitches!==null?' · '+s.pitches+' pitches':''):'No pitching summary captured for this selection.';
   $('pitcher-leaders').hidden=state.pitcher!=='all'||!s.rows.length;
   const leaderButton=(p,kind)=>'<button class="pitcher-leader" data-pitcher="'+e(p.id)+'"><span class="pitcher-leader-name">'+e((p.jersey?'#'+p.jersey+' ':'')+p.name)+'</span><span class="pitching-count">'+e(kind==='usage'?p.games+' appearance'+(p.games===1?'':'s'):p.strikeouts+' K · '+p.games+' appearance'+(p.games===1?'':'s'))+'</span>'+(kind==='strikeout'?'<span class="pitching-count">'+e(p.bf?D.pct(p.k,p.bf)+' K rate · '+p.k+'/'+p.bf+' BF'+(p.rateOutings<p.outings?' · partial sample':''):'K rate unavailable')+'</span>':'')+'</button>';
-  $('pitcher-leaders').innerHTML='<h2>Pitcher leaders</h2><p class="note">Selected recorded games</p><h3>Most used'+(s.mostUsed.length>1?' · tied':'')+'</h3>'+s.mostUsed.map(p=>leaderButton(p,'usage')).join('')+'<h3>Strikeout leader'+(s.strikeoutLeaders.length>1?'s · tied':'')+'</h3>'+(s.strikeoutLeaders.length?s.strikeoutLeaders.map(p=>leaderButton(p,'strikeout')).join(''):'<p class="note">No positive complete strikeout totals available.</p>')+(s.incompleteStrikeouts?'<p class="note">Pitchers with missing strikeout totals are excluded from the strikeout leaders.</p>':'');
+  $('pitcher-leaders').innerHTML='<summary>Pitcher leaders</summary><p class="note">Selected recorded games</p><h3>Most used'+(s.mostUsed.length>1?' · tied':'')+'</h3>'+s.mostUsed.map(p=>leaderButton(p,'usage')).join('')+'<h3>Strikeout leader'+(s.strikeoutLeaders.length>1?'s · tied':'')+'</h3>'+(s.strikeoutLeaders.length?s.strikeoutLeaders.map(p=>leaderButton(p,'strikeout')).join(''):'<p class="note">No positive complete strikeout totals available.</p>')+(s.incompleteStrikeouts?'<p class="note">Pitchers with missing strikeout totals are excluded from the strikeout leaders.</p>':'');
+  const singleGame=data.games.filter(g=>D.gameSelected(state.game,g.id)).length===1;
+  $('pitching-innings').hidden=!singleGame;
+  if(singleGame){
+   const inningRows=s.rows.flatMap(p=>(p.sample?.innings||[]).map(row=>({...row,name:p.name,jersey:p.jersey,order:p.sample.first_sequence}))).sort((a,b)=>a.inning-b.inning||a.order-b.order);
+   const allPitchers=state.pitcher==='all',incomplete=s.rows.some(p=>!p.sample?.innings);
+   const pitcherLink=p=>{const roster=s.roster.find(r=>r.name===p.name);return '<button type="button" class="inning-pitcher-link" data-pitcher="'+e(roster?.id||state.pitcher)+'" aria-label="View pitching stats for '+e(p.name)+'">'+e((p.jersey?'#'+p.jersey+' ':'')+p.name)+'</button>';};
+   $('pitching-inning-pitchers').innerHTML=[...new Map(s.rows.map(p=>[p.name,p])).values()].map(pitcherLink).join('');
+
+   const cellRate=(n,d)=>n===null||!d?'—':D.pct(n,d);
+   const total={pitches:0,strikes:0,first:0,first_strikes:0};
+   for(const row of inningRows){total.pitches+=row.pitches;total.strikes=total.strikes===null||row.strikes===null?null:total.strikes+row.strikes;total.first+=row.first;total.first_strikes+=row.first_strikes;}
+   const numbers=row=>'<td class="num">'+row.pitches+'</td><td class="num">'+cellRate(row.strikes,row.pitches)+'</td><td class="num">'+cellRate(row.first_strikes,row.first)+'</td>';
+   $('pitching-inning-table').innerHTML=inningRows.length?'<table class="inning-table"><caption>Linked pitches'+(incomplete?' · some pitcher detail unavailable':'')+'</caption><thead><tr><th scope="col">Inn</th>'+(allPitchers?'<th scope="col">Pitcher</th>':'')+'<th scope="col">Pitches</th><th scope="col">Strike %</th><th scope="col"><abbr title="First-pitch strike percentage">FPS %</abbr></th></tr></thead><tbody>'+inningRows.map((row,i)=>'<tr'+(i&&row.name!==inningRows[i-1].name?' class="pitcher-change"':'')+'><th scope="row">'+row.inning+'</th>'+(allPitchers?'<td class="inning-pitcher">'+pitcherLink(row)+'</td>':'')+numbers(row)+'</tr>').join('')+'</tbody><tfoot><tr><th scope="row"'+(allPitchers?' colspan="2"':'')+'>'+(incomplete?'Tracked total':'Total')+'</th>'+numbers(total)+'</tr></tfoot></table>':'<p class="note">Inning detail unavailable for this selection.</p>';
+  }else {$('pitching-inning-table').innerHTML='';$('pitching-inning-pitchers').innerHTML='';}
   const fraction=(n,d)=>n===null||d===null||!d?'Unavailable':n+'/'+d;
   const rate=(n,d)=>n===null||d===null?'—':D.pct(n,d);
   const pitchingMetric=(label,value,caption,coverage='')=>'<div class="pitching-metric"><span class="pitching-label"'+sortMetricAttributes('pitching',label)+'>'+e(label)+'</span><strong class="pitching-value num">'+e(value)+'</strong><span class="pitching-count num">'+e(caption)+'</span><span class="pitching-coverage">'+e(coverage)+'</span></div>';
@@ -765,8 +812,14 @@
   $('pitching-first-strike-detail').innerHTML='<dl class="metric-counts">'+[['FPSO%','Outs',fps.out],['FPSW%','Walks',fps.walk],['FPSH%','Hits',fps.hit]].map(([code,label,n])=>'<div><dt>'+code+' · '+label+'</dt><dd class="num">'+(fps.unknown?'—':D.pct(n,fps.total))+'</dd><small class="pitching-count">'+(fps.unknown?'Results need review':fps.total?n+'/'+fps.total:'Unavailable')+'</small></div>').join('')+'</dl>';
   $('pitching-avg').innerHTML=pitchingMetric('AVG against',s.batting.ab&&!s.batting.unclassified?(s.batting.hits/s.batting.ab).toFixed(3).replace(/^0/,''):'—',s.batting.unclassified?'Unclassified results':s.batting.ab?s.batting.hits+'/'+s.batting.ab:'Unavailable');
   $('pitching-outcome-sample').textContent=s.outcomePitches+' tracked pitches';
-  const outcomeLabels={ball:'Balls',called_strike:'Called strikes',swinging_strike:'Swinging strikes',foul:'Fouls',in_play:'Balls in play',foul_tip:'Foul tips',foul_out:'Foul catches',hit_by_pitch:'Hit by pitch',unknown:'Unclassified'};
-  $('pitching-outcome-bars').innerHTML=s.outcomePitches?Object.entries(s.pitchOutcomes).filter(([,n])=>n>0).map(([key,n])=>'<div class="pitching-outcome-row"><span>'+e(outcomeLabels[key]||'Unclassified')+'</span><div class="track" aria-hidden="true"><div class="fill" style="width:'+n/s.outcomePitches*100+'%"></div></div><span class="num">'+n+' · '+D.pct(n,s.outcomePitches)+'</span></div>').join(''):'<p class="note">No tracked pitch outcomes available.</p>';
+  const strikeKeys=['called_strike','swinging_strike','foul','in_play','foul_tip','foul_out'];
+  const outcomeStrikes=strikeKeys.reduce((total,key)=>total+(s.pitchOutcomes[key]||0),0),outcomeBalls=s.pitchOutcomes.ball||0;
+  const otherPitches=s.outcomePitches-outcomeStrikes-outcomeBalls;
+  const outcomeLegend=(label,n,color)=>'<div class="outcome-legend-item"><span class="outcome-dot" style="background:'+color+'" aria-hidden="true"></span><div><div class="outcome-legend-value">'+label+' <strong class="num">'+D.pct(n,s.outcomePitches)+'</strong></div><span class="pitching-count num">'+n+' pitches</span></div></div>';
+  const strikeEnd=s.outcomePitches?outcomeStrikes/s.outcomePitches*100:0,ballEnd=s.outcomePitches?(outcomeStrikes+outcomeBalls)/s.outcomePitches*100:0;
+  $('pitching-outcome-overview').innerHTML=s.outcomePitches?'<div class="outcome-overview"><div class="outcome-donut" aria-hidden="true" style="background:conic-gradient(#0052CC 0% '+strikeEnd+'%,#0A192F '+strikeEnd+'% '+ballEnd+'%,#94a3b8 '+ballEnd+'% 100%)"><div><strong class="num">'+s.outcomePitches+'</strong><span>tracked pitches</span></div></div><div class="outcome-legend">'+outcomeLegend('Strikes',outcomeStrikes,'#0052CC')+outcomeLegend('Balls',outcomeBalls,'#0A192F')+(otherPitches?outcomeLegend('Other',otherPitches,'#94a3b8'):'')+'</div></div>':'';
+  const outcomeLabels={called_strike:'Called strikes',swinging_strike:'Swing and miss',foul:'Fouls',in_play:'In play',foul_tip:'Foul tips',foul_out:'Foul catches',hit_by_pitch:'Hit by pitch',unknown:'Unclassified'};
+  $('pitching-outcome-bars').innerHTML=s.outcomePitches?Object.entries(outcomeLabels).filter(([key])=>(s.pitchOutcomes[key]||0)>0).map(([key,label])=>{const n=s.pitchOutcomes[key];return '<div class="pitching-outcome-row"><span>'+e(label)+'</span><div class="track" aria-hidden="true"><div class="fill" style="width:'+n/s.outcomePitches*100+'%"></div></div><span class="num">'+D.pct(n,s.outcomePitches)+' · '+n+'</span></div>';}).join(''):'<p class="note">No tracked pitch outcomes available.</p>';
 
 
  }
@@ -859,7 +912,9 @@
   renderPitching();$('pitching-summary').querySelector?.(strikes?'#pitching-strike-toggle':'#pitching-strikeout-toggle')?.focus();
  });
  $('pitching-tendencies').addEventListener('click',event=>{if(!event.target.closest('#pitching-first-strike-toggle'))return;pitchingFirstStrikesOpen=!pitchingFirstStrikesOpen;pitchingStrikesOpen=false;pitchingStrikeoutsOpen=false;renderPitching();$('pitching-tendencies').querySelector?.('#pitching-first-strike-toggle')?.focus();});
- $('pitcher-leaders').addEventListener('click',event=>{const button=event.target.closest('[data-pitcher]');if(!button)return;state.pitcher=button.dataset.pitcher;closeMetricDetails();render();$('pitcher-context').focus({preventScroll:true});});
+ const selectPitcherFromCard=event=>{const button=event.target.closest('[data-pitcher]');if(!button)return;state.pitcher=button.dataset.pitcher;closeMetricDetails();render();$('pitcher-context').focus({preventScroll:true});};
+ $('pitcher-leaders').addEventListener('click',selectPitcherFromCard);
+ $('pitching-innings').addEventListener('click',selectPitcherFromCard);
  $('pitcher-select').addEventListener('change',()=>{state.pitcher=$('pitcher-select').value;closeMetricDetails();render();});
  for(const kind of ['batter','pitcher']){
   $(kind+'-previous').addEventListener('click',()=>stepPlayer(kind,-1));

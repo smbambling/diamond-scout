@@ -62,7 +62,12 @@ function derive(data,game,I,D){
      strikeouts[terminal==='called_strike'?'looking':['swinging_strike','foul_tip'].includes(terminal)?'swinging':'unknown']++;
     }
    }
-   pitchers[stint.i].sample={firstStrikeResults,outcomes:D.pitchSummary(pas).outcomes,strikeouts,bf:pas.length,first:first.length,first_strikes:first.filter(p=>strike.has(p.outcome)).length,known:known.length,whiffs:known.filter(p=>p.outcome==='swinging_strike').length,contacts:fair.length,ground:fair.filter(a=>a.batted_ball.contact_type==='ground_ball').length,hits:b.hits,ab:b.ab,unclassified:b.unclassified,first_sequence:pas[0].sequence,last_sequence:pas.at(-1).sequence};
+   const innings=[...new Set(pas.map(a=>a.inning))].sort((a,b)=>a-b).map(inning=>{
+    const appearances=pas.filter(a=>a.inning===inning),pitches=appearances.flatMap(a=>a.pitches);
+    const first=appearances.map(a=>a.pitches[0]).filter(p=>p?.count_before?.balls===0&&p.count_before.strikes===0&&p.outcome!=='unknown');
+    return {inning,pitches:pitches.length,strikes:pitches.some(p=>!['ball','hit_by_pitch',...strike].includes(p.outcome))?null:pitches.filter(p=>strike.has(p.outcome)).length,first:first.length,first_strikes:first.filter(p=>strike.has(p.outcome)).length};
+   });
+   pitchers[stint.i].sample={innings,firstStrikeResults,outcomes:D.pitchSummary(pas).outcomes,strikeouts,bf:pas.length,first:first.length,first_strikes:first.filter(p=>strike.has(p.outcome)).length,known:known.length,whiffs:known.filter(p=>p.outcome==='swinging_strike').length,contacts:fair.length,ground:fair.filter(a=>a.batted_ball.contact_type==='ground_ball').length,hits:b.hits,ab:b.ab,unclassified:b.unclassified,first_sequence:pas[0].sequence,last_sequence:pas.at(-1).sequence};
   }
   result.status='reconciled';result.reason='Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically.';
  }catch(error){result.reason='Opposing play log requires review: '+error.message;}
