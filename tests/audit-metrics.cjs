@@ -1,0 +1,12 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),I=require('../tools/import-plays.cjs'),{metricIssues}=require('../tools/audit-metrics.cjs'),D=I.loadCore();
+const team=JSON.parse(fs.readFileSync('data/stars-baseball-higgins-14u.json')),game=team.games.find(g=>g.date==='2026-10-03'&&g.start_time==='16:50');
+assert(game);const before=JSON.stringify(team);
+assert(!metricIssues(team,game,D).some(s=>s.includes('Steal tendency unavailable')));
+const altered=structuredClone(team),attempt=altered.baserunning_events.find(e=>e.game_id===game.id);delete attempt.reach_pa_id;delete attempt.runner_entry_id;
+assert(metricIssues(altered,game,D).some(s=>s.includes('Steal tendency unavailable')&&s.includes('trip links')));
+const pa=altered.plate_appearances.find(p=>p.game_id===game.id&&p.status==='complete');pa.pitches=[];
+assert(metricIssues(altered,game,D).some(s=>s.includes('no recorded pitches')));
+assert(metricIssues(team,{...game,box_score:null},D).some(s=>s.includes('no paired Box score')));
+assert.equal(JSON.stringify(team),before,'Audit never mutates source data');
+console.log('PASS: missing metric diagnostics, actionable trip/pitch/box-score warnings, recovered steal links, and read-only auditing.');

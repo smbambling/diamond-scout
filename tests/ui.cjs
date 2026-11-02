@@ -436,12 +436,12 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  const ids=()=>[...E['batter-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]).filter(id=>id!=='all');
  const sort=value=>{E['player-sort-select'].value=value;E['player-sort-select'].listeners.change();};
  const minimum=value=>{E['minimum-sample-select'].value=String(value);E['minimum-sample-select'].listeners.change();};
- assert.equal(E['minimum-sample-filter'].hidden,false);sort('avg');assert.equal(E['minimum-sample-filter'].hidden,false);assert.match(E['minimum-sample-select'].innerHTML,/10 AB/);assert.equal(E['minimum-sample-select'].value,'10');assert.equal(ids()[0],'regular-a');minimum(0);assert.equal(ids()[0],'tiny');
+ assert.equal(E['minimum-sample-filter'].hidden,false);sort('avg');assert.equal(E['minimum-sample-filter'].hidden,false);assert.match(E['minimum-sample-select'].innerHTML,/10 AB/);assert.equal(E['minimum-sample-select'].value,'0');assert.equal(E['minimum-ranking-label'].textContent,'Minimum AB for ranking');assert.match(E['minimum-sample-select'].innerHTML,/Any size/);assert.equal(ids()[0],'tiny');
  minimum(10);assert.deepEqual(ids(),['regular-a','regular-b','tiny']);assert.equal(E['batter-select'].value,'regular-a');assert.match(E['filter-toggle'].attrs['aria-label'],/Minimum 10 AB/);
  E['batter-next'].click();assert.equal(E['batter-select'].value,'regular-b');E['batter-next'].click();assert.equal(E['batter-select'].value,'tiny');
  minimum(30);assert.equal(ids()[0],'tiny','If nobody qualifies, retain metric order');minimum(10);sort('obp');assert.match(E['minimum-sample-select'].innerHTML,/OBP opportunities/);sort('steal');assert.match(E['minimum-sample-select'].innerHTML,/trips on base/);
  sort('jersey');assert.equal(E['minimum-sample-filter'].hidden,true);assert.deepEqual(ids(),['regular-a','regular-b','tiny']);sort('avg');
- E['tab-pitching'].click();assert.equal(E['minimum-sample-select'].value,'10');E['tab-scout'].click();assert.equal(E['minimum-sample-select'].value,'10');
+ E['tab-pitching'].click();assert.equal(E['minimum-sample-select'].value,'0');E['tab-scout'].click();assert.equal(E['minimum-sample-select'].value,'10');
  minimum(0);const anyRestored=await openApp({files,storage:clone(minApp.storage)});assert.equal(anyRestored.elements['minimum-sample-select'].value,'0');minimum(10);
  const restored=await openApp({files,storage:minApp.storage});assert.equal(restored.elements['minimum-sample-select'].value,'10');assert.equal(restored.elements['batter-select'].value,'regular-a');
  changeGames(E,[]);assert.deepEqual(ids(),[]);assert.equal(E['batter-select'].value,'all');changeGames(E,'all');assert.equal(E['batter-select'].value,'all');

@@ -147,6 +147,13 @@ try {
   assert.equal(replacedPlaced.report.counts.on_base_trips,2,'Placed trip plus the actual batter single; replacement does not add another team trip');
   const replacement=replacedPlaced.team.baserunning_entries[1];assert.equal(replacement.replaced_entry_id,replacedPlaced.team.baserunning_entries[0].id);
   const replacementSummary=D.baserunningSummary(replacedPlaced.team,{game:'all',batter:replacement.runner_id});assert.equal(replacementSummary.onBase,1);assert.equal(replacementSummary.stealTendency,1);
+  const lineupReplacement=parseTeam(capture(one.replace('In play.','Riley Lane gets placed on 2nd, Lineup changed: Pinch runner Other Runner in for extra hitter Riley Lane, Other Runner steals 3rd, In play.')),'Falcons 14U');
+  const lineupSummary=D.baserunningSummary(lineupReplacement.team,{batter:'all',game:'all'});
+  assert.equal(lineupReplacement.team.baserunning_entries.length,2);
+  assert.equal(lineupReplacement.team.baserunning_entries[1].replaced_runner_id,lineupReplacement.team.baserunning_entries[0].runner_id);
+  assert.equal(lineupSummary.unlinkedAttempts,0);assert.equal(lineupSummary.onBase,2);assert.equal(lineupSummary.stealTendency,.5);
+  assert(!lineupReplacement.team.players.some(p=>p.name.startsWith('extra hitter')));
+  assert.equal(lineupReplacement.team.plate_appearances[0].pitches.length,1);
   for(const change of [e=>{e.placed_base='home'},e=>{e.replaced_runner_id=e.runner_id},e=>{e.reach_pa_id=placedSourcePA.id},e=>{e.replaced_entry_id=e.id},e=>{e.source_pa_id='missing'},e=>{e.inning=6}]){
     const invalid=JSON.parse(JSON.stringify(dirtDig.team));change(invalid.baserunning_entries.find(e=>e.id===placed.id));assert.throws(()=>D.validateData(invalid),/baserunning entry/);
   }

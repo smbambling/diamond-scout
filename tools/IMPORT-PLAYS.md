@@ -278,3 +278,15 @@ If Plays and Box score provide only a season-derived year or no full date, combi
 A conflicting game date or redirected Recap stops capture for review. If Recap cannot be loaded or has no unique full-date heading, capture retains its existing manual date/year-confirmation flow with a warning. Captures already carrying an explicit year do not need the extra navigation. Reinstall the bookmark from the updated installer to receive this behavior. Authenticated live-site compatibility still needs verification.
 
 Capture exports now include a capture-version fingerprint, retained on newly imported games as `source_capture_version`. Identical attached box scores remain duplicates when only their capture-version field differs; changes to captured scoring data still require correction review. For failed imports, retain the original export and the error report rather than manually reviewing the whole captured text.
+
+### Missing metric checks
+
+Imports automatically report missing or partial metric coverage, including unlinked steal attempts, unknown reach status, unclassified batting results, missing pitches, unverified first-pitch counts, missing pitching tables and unreconciled pitching sequences. Warnings identify the affected metric and suggest a source check or recapture. Valid records remain importable; unknown values are never replaced with invented zeros.
+
+Audit all existing histories without changing files:
+
+```sh
+node tools/audit-metrics.cjs
+```
+
+The audit lists affected team/game records and reasons. A warning is not proof of a capture failure: the scorekeeper may not have recorded the missing information.

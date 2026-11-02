@@ -7093,7 +7093,67 @@
             "bf": 15,
             "pitches": 60,
             "strikes": 32,
-            "sample": null
+            "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 20,
+                  "strikes": 11,
+                  "first": 5,
+                  "first_strikes": 3
+                },
+                {
+                  "inning": 2,
+                  "pitches": 21,
+                  "strikes": 11,
+                  "first": 5,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 3,
+                  "pitches": 19,
+                  "strikes": 10,
+                  "first": 5,
+                  "first_strikes": 4
+                }
+              ],
+              "firstStrikeResults": {
+                "total": 8,
+                "out": 3,
+                "walk": 1,
+                "hit": 1,
+                "other": 3,
+                "unknown": 0
+              },
+              "outcomes": {
+                "ball": 28,
+                "called_strike": 16,
+                "swinging_strike": 3,
+                "foul": 7,
+                "in_play": 6,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 3,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 15,
+              "first": 15,
+              "first_strikes": 8,
+              "known": 60,
+              "whiffs": 3,
+              "contacts": 6,
+              "ground": 4,
+              "hits": 2,
+              "ab": 9,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 15
+            }
           },
           {
             "name": "Finn Doyle",
@@ -7109,7 +7169,67 @@
             "bf": 15,
             "pitches": 72,
             "strikes": 33,
-            "sample": null
+            "sample": {
+              "innings": [
+                {
+                  "inning": 4,
+                  "pitches": 25,
+                  "strikes": 12,
+                  "first": 5,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 5,
+                  "pitches": 20,
+                  "strikes": 10,
+                  "first": 5,
+                  "first_strikes": 3
+                },
+                {
+                  "inning": 6,
+                  "pitches": 27,
+                  "strikes": 11,
+                  "first": 5,
+                  "first_strikes": 3
+                }
+              ],
+              "firstStrikeResults": {
+                "total": 8,
+                "out": 4,
+                "walk": 2,
+                "hit": 2,
+                "other": 0,
+                "unknown": 0
+              },
+              "outcomes": {
+                "ball": 39,
+                "called_strike": 12,
+                "swinging_strike": 5,
+                "foul": 11,
+                "in_play": 4,
+                "foul_tip": 0,
+                "foul_out": 1,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 3,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 15,
+              "first": 15,
+              "first_strikes": 8,
+              "known": 72,
+              "whiffs": 5,
+              "contacts": 4,
+              "ground": 0,
+              "hits": 3,
+              "ab": 9,
+              "unclassified": 0,
+              "first_sequence": 16,
+              "last_sequence": 30
+            }
           },
           {
             "name": "Elias Rosario",
@@ -7125,7 +7245,53 @@
             "bf": 7,
             "pitches": 27,
             "strikes": 15,
-            "sample": null
+            "sample": {
+              "innings": [
+                {
+                  "inning": 6,
+                  "pitches": 27,
+                  "strikes": 15,
+                  "first": 7,
+                  "first_strikes": 6
+                }
+              ],
+              "firstStrikeResults": {
+                "total": 6,
+                "out": 1,
+                "walk": 2,
+                "hit": 3,
+                "other": 0,
+                "unknown": 0
+              },
+              "outcomes": {
+                "ball": 12,
+                "called_strike": 8,
+                "swinging_strike": 0,
+                "foul": 4,
+                "in_play": 3,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 7,
+              "first": 7,
+              "first_strikes": 6,
+              "known": 27,
+              "whiffs": 0,
+              "contacts": 3,
+              "ground": 1,
+              "hits": 3,
+              "ab": 4,
+              "unclassified": 0,
+              "first_sequence": 31,
+              "last_sequence": 37
+            }
           },
           {
             "name": "Chase Gallamore",
@@ -7141,11 +7307,57 @@
             "bf": 3,
             "pitches": 11,
             "strikes": 6,
-            "sample": null
+            "sample": {
+              "innings": [
+                {
+                  "inning": 6,
+                  "pitches": 11,
+                  "strikes": 6,
+                  "first": 3,
+                  "first_strikes": 1
+                }
+              ],
+              "firstStrikeResults": {
+                "total": 1,
+                "out": 0,
+                "walk": 0,
+                "hit": 0,
+                "other": 1,
+                "unknown": 0
+              },
+              "outcomes": {
+                "ball": 5,
+                "called_strike": 3,
+                "swinging_strike": 1,
+                "foul": 0,
+                "in_play": 2,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 3,
+              "first": 3,
+              "first_strikes": 1,
+              "known": 11,
+              "whiffs": 1,
+              "contacts": 2,
+              "ground": 1,
+              "hits": 0,
+              "ab": 2,
+              "unclassified": 0,
+              "first_sequence": 38,
+              "last_sequence": 40
+            }
           }
         ],
-        "status": "summary-only",
-        "reason": "Opposing play log requires review: Line 68 (Blasters - 14U, top 6): Unsupported pitch/context token: \"Finn Doyle in for pitcher Elias Rosario\". No pitches were dropped."
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -8143,7 +8355,81 @@
             "bf": 22,
             "pitches": 72,
             "strikes": 43,
-            "sample": null
+            "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 13,
+                  "strikes": 9,
+                  "first": 3,
+                  "first_strikes": 3
+                },
+                {
+                  "inning": 2,
+                  "pitches": 11,
+                  "strikes": 6,
+                  "first": 4,
+                  "first_strikes": 3
+                },
+                {
+                  "inning": 3,
+                  "pitches": 16,
+                  "strikes": 8,
+                  "first": 5,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 4,
+                  "pitches": 13,
+                  "strikes": 7,
+                  "first": 5,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 5,
+                  "pitches": 19,
+                  "strikes": 13,
+                  "first": 5,
+                  "first_strikes": 2
+                }
+              ],
+              "firstStrikeResults": {
+                "total": 11,
+                "out": 8,
+                "walk": 0,
+                "hit": 3,
+                "other": 0,
+                "unknown": 0
+              },
+              "outcomes": {
+                "ball": 29,
+                "called_strike": 9,
+                "swinging_strike": 4,
+                "foul": 14,
+                "in_play": 15,
+                "foul_tip": 0,
+                "foul_out": 1,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 2,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 22,
+              "first": 22,
+              "first_strikes": 11,
+              "known": 72,
+              "whiffs": 4,
+              "contacts": 15,
+              "ground": 10,
+              "hits": 4,
+              "ab": 18,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 22
+            }
           },
           {
             "name": "Chase Gallamore",
@@ -8159,11 +8445,57 @@
             "bf": 5,
             "pitches": 20,
             "strikes": 11,
-            "sample": null
+            "sample": {
+              "innings": [
+                {
+                  "inning": 6,
+                  "pitches": 20,
+                  "strikes": 11,
+                  "first": 5,
+                  "first_strikes": 4
+                }
+              ],
+              "firstStrikeResults": {
+                "total": 4,
+                "out": 2,
+                "walk": 0,
+                "hit": 2,
+                "other": 0,
+                "unknown": 0
+              },
+              "outcomes": {
+                "ball": 9,
+                "called_strike": 5,
+                "swinging_strike": 0,
+                "foul": 1,
+                "in_play": 5,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 0,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 5,
+              "first": 5,
+              "first_strikes": 4,
+              "known": 20,
+              "whiffs": 0,
+              "contacts": 5,
+              "ground": 0,
+              "hits": 2,
+              "ab": 5,
+              "unclassified": 0,
+              "first_sequence": 23,
+              "last_sequence": 27
+            }
           }
         ],
-        "status": "summary-only",
-        "reason": "Opposing play log requires review: Line 22 (5 Star Mafia - NOVA 14U, top 6): Unsupported pitch/context token: \"Chase Gallamore in for pitcher James Oare\". No pitches were dropped."
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -16308,7 +16640,81 @@
             "bf": 20,
             "pitches": 72,
             "strikes": 36,
-            "sample": null
+            "sample": {
+              "innings": [
+                {
+                  "inning": 1,
+                  "pitches": 11,
+                  "strikes": 6,
+                  "first": 3,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 2,
+                  "pitches": 15,
+                  "strikes": 6,
+                  "first": 5,
+                  "first_strikes": 3
+                },
+                {
+                  "inning": 3,
+                  "pitches": 27,
+                  "strikes": 14,
+                  "first": 7,
+                  "first_strikes": 4
+                },
+                {
+                  "inning": 4,
+                  "pitches": 12,
+                  "strikes": 7,
+                  "first": 4,
+                  "first_strikes": 1
+                },
+                {
+                  "inning": 5,
+                  "pitches": 7,
+                  "strikes": 3,
+                  "first": 1,
+                  "first_strikes": 1
+                }
+              ],
+              "firstStrikeResults": {
+                "total": 11,
+                "out": 6,
+                "walk": 2,
+                "hit": 2,
+                "other": 1,
+                "unknown": 0
+              },
+              "outcomes": {
+                "ball": 36,
+                "called_strike": 8,
+                "swinging_strike": 10,
+                "foul": 6,
+                "in_play": 11,
+                "foul_tip": 0,
+                "foul_out": 1,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 2,
+                "unknown": 0
+              },
+              "bf": 20,
+              "first": 20,
+              "first_strikes": 11,
+              "known": 72,
+              "whiffs": 10,
+              "contacts": 11,
+              "ground": 4,
+              "hits": 2,
+              "ab": 14,
+              "unclassified": 0,
+              "first_sequence": 1,
+              "last_sequence": 20
+            }
           },
           {
             "name": "Mason Todaro",
@@ -16324,7 +16730,53 @@
             "bf": 7,
             "pitches": 26,
             "strikes": 13,
-            "sample": null
+            "sample": {
+              "innings": [
+                {
+                  "inning": 5,
+                  "pitches": 26,
+                  "strikes": 13,
+                  "first": 7,
+                  "first_strikes": 5
+                }
+              ],
+              "firstStrikeResults": {
+                "total": 5,
+                "out": 2,
+                "walk": 1,
+                "hit": 2,
+                "other": 0,
+                "unknown": 0
+              },
+              "outcomes": {
+                "ball": 13,
+                "called_strike": 5,
+                "swinging_strike": 0,
+                "foul": 3,
+                "in_play": 5,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 0,
+                "unknown": 0
+              },
+              "bf": 7,
+              "first": 7,
+              "first_strikes": 5,
+              "known": 26,
+              "whiffs": 0,
+              "contacts": 5,
+              "ground": 2,
+              "hits": 4,
+              "ab": 6,
+              "unclassified": 0,
+              "first_sequence": 21,
+              "last_sequence": 27
+            }
           },
           {
             "name": "Mason Porter",
@@ -16340,11 +16792,64 @@
             "bf": 6,
             "pitches": 16,
             "strikes": 11,
-            "sample": null
+            "sample": {
+              "innings": [
+                {
+                  "inning": 5,
+                  "pitches": 6,
+                  "strikes": 6,
+                  "first": 2,
+                  "first_strikes": 2
+                },
+                {
+                  "inning": 6,
+                  "pitches": 10,
+                  "strikes": 5,
+                  "first": 4,
+                  "first_strikes": 2
+                }
+              ],
+              "firstStrikeResults": {
+                "total": 4,
+                "out": 3,
+                "walk": 0,
+                "hit": 0,
+                "other": 1,
+                "unknown": 0
+              },
+              "outcomes": {
+                "ball": 5,
+                "called_strike": 4,
+                "swinging_strike": 2,
+                "foul": 2,
+                "in_play": 3,
+                "foul_tip": 0,
+                "foul_out": 0,
+                "hit_by_pitch": 0,
+                "unknown": 0
+              },
+              "strikeouts": {
+                "looking": 1,
+                "swinging": 1,
+                "unknown": 0
+              },
+              "bf": 6,
+              "first": 6,
+              "first_strikes": 4,
+              "known": 16,
+              "whiffs": 2,
+              "contacts": 3,
+              "ground": 1,
+              "hits": 0,
+              "ab": 5,
+              "unclassified": 0,
+              "first_sequence": 28,
+              "last_sequence": 33
+            }
           }
         ],
-        "status": "summary-only",
-        "reason": "Opposing play log requires review: Line 86 (Ironbridge North Bradford 14U, bottom 5): Unsupported pitch/context token: \"Colton Gibney in for pitcher Mason Todaro\". No pitches were dropped."
+        "status": "reconciled",
+        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
       }
     },
     {
@@ -81420,52 +81925,6 @@
       "reach_pa_id": "2026-10-03-1500-stars-baseball-higgins-14u-vs-loudoun-south-eagles-14u-427973b55d-top-3-pa-016"
     },
     {
-      "game_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74",
-      "inning": 2,
-      "half": "bottom",
-      "id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-attempt-001",
-      "runner_id": "stars-baseball-higgins-14u-makai-laster",
-      "result": "stolen_base",
-      "to_base": "2B",
-      "source_text": "Makai Laster steals 2nd",
-      "source_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-2-pa-009",
-      "reach_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-2-pa-008"
-    },
-    {
-      "game_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74",
-      "inning": 3,
-      "half": "bottom",
-      "id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-attempt-002",
-      "runner_id": "stars-baseball-higgins-14u-tyler-arnoto",
-      "result": "stolen_base",
-      "to_base": "2B",
-      "source_text": "Tyler Arnoto steals 2nd",
-      "source_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-3-pa-012"
-    },
-    {
-      "game_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74",
-      "inning": 3,
-      "half": "bottom",
-      "id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-attempt-003",
-      "runner_id": "stars-baseball-higgins-14u-mason-todaro",
-      "result": "stolen_base",
-      "to_base": "2B",
-      "source_text": "Mason Todaro steals 2nd",
-      "source_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-3-pa-013"
-    },
-    {
-      "game_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74",
-      "inning": 3,
-      "half": "bottom",
-      "id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-attempt-004",
-      "runner_id": "stars-baseball-higgins-14u-james-oare",
-      "result": "stolen_base",
-      "to_base": "2B",
-      "source_text": "James Oare steals 2nd",
-      "source_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-3-pa-023",
-      "reach_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-3-pa-022"
-    },
-    {
       "game_id": "2026-10-10-1730-stars-baseball-higgins-14u-vs-prime-time-aces-supple-fs-14u-134ced0181",
       "inning": 3,
       "half": "bottom",
@@ -82074,6 +82533,54 @@
       "source_text": "Adrian Torres steals 2nd",
       "source_pa_id": "2026-09-05-1500-stars-baseball-higgins-14u-vs-encore-select-14u-01c705f627-bottom-6-pa-028",
       "reach_pa_id": "2026-09-05-1500-stars-baseball-higgins-14u-vs-encore-select-14u-01c705f627-bottom-6-pa-027"
+    },
+    {
+      "game_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74",
+      "inning": 2,
+      "half": "bottom",
+      "id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-attempt-001",
+      "runner_id": "stars-baseball-higgins-14u-makai-laster",
+      "result": "stolen_base",
+      "to_base": "2B",
+      "source_text": "Makai Laster steals 2nd",
+      "source_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-2-pa-009",
+      "reach_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-2-pa-008"
+    },
+    {
+      "game_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74",
+      "inning": 3,
+      "half": "bottom",
+      "id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-attempt-002",
+      "runner_id": "stars-baseball-higgins-14u-tyler-arnoto",
+      "result": "stolen_base",
+      "to_base": "2B",
+      "source_text": "Tyler Arnoto steals 2nd",
+      "source_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-3-pa-012",
+      "runner_entry_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-entry-002"
+    },
+    {
+      "game_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74",
+      "inning": 3,
+      "half": "bottom",
+      "id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-attempt-003",
+      "runner_id": "stars-baseball-higgins-14u-mason-todaro",
+      "result": "stolen_base",
+      "to_base": "2B",
+      "source_text": "Mason Todaro steals 2nd",
+      "source_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-3-pa-013",
+      "runner_entry_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-entry-003"
+    },
+    {
+      "game_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74",
+      "inning": 3,
+      "half": "bottom",
+      "id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-attempt-004",
+      "runner_id": "stars-baseball-higgins-14u-james-oare",
+      "result": "stolen_base",
+      "to_base": "2B",
+      "source_text": "James Oare steals 2nd",
+      "source_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-3-pa-023",
+      "reach_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-3-pa-022"
     }
   ],
   "baserunning_entries": [
@@ -82243,18 +82750,6 @@
       "source_text": "Courtesy runner Mason Todaro in for Trent Robey",
       "source_pa_id": "2026-10-03-1500-stars-baseball-higgins-14u-vs-loudoun-south-eagles-14u-427973b55d-top-6-pa-031",
       "reach_pa_id": "2026-10-03-1500-stars-baseball-higgins-14u-vs-loudoun-south-eagles-14u-427973b55d-top-6-pa-030"
-    },
-    {
-      "game_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74",
-      "inning": 1,
-      "half": "bottom",
-      "id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-entry-001",
-      "runner_id": "stars-baseball-higgins-14u-tyler-arnoto",
-      "replaced_runner_id": "stars-baseball-higgins-14u-finn-doyle",
-      "entry_type": "courtesy_runner",
-      "source_text": "Courtesy runner Tyler Arnoto in for Finn Doyle",
-      "source_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-1-pa-005",
-      "reach_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-1-pa-004"
     },
     {
       "game_id": "2026-10-10-1730-stars-baseball-higgins-14u-vs-prime-time-aces-supple-fs-14u-134ced0181",
@@ -82519,6 +83014,42 @@
       "source_text": "Courtesy runner Micah Higgins in for Wyatt Peyton",
       "source_pa_id": "2026-09-05-1500-stars-baseball-higgins-14u-vs-encore-select-14u-01c705f627-bottom-5-pa-022",
       "reach_pa_id": "2026-09-05-1500-stars-baseball-higgins-14u-vs-encore-select-14u-01c705f627-bottom-5-pa-021"
+    },
+    {
+      "game_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74",
+      "inning": 1,
+      "half": "bottom",
+      "id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-entry-001",
+      "runner_id": "stars-baseball-higgins-14u-tyler-arnoto",
+      "replaced_runner_id": "stars-baseball-higgins-14u-finn-doyle",
+      "entry_type": "courtesy_runner",
+      "source_text": "Courtesy runner Tyler Arnoto in for Finn Doyle",
+      "source_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-1-pa-005",
+      "reach_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-1-pa-004"
+    },
+    {
+      "game_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74",
+      "inning": 3,
+      "half": "bottom",
+      "id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-entry-002",
+      "runner_id": "stars-baseball-higgins-14u-tyler-arnoto",
+      "replaced_runner_id": "stars-baseball-higgins-14u-chase-gallamore",
+      "entry_type": "pinch_runner",
+      "source_text": "Lineup changed: Pinch runner Tyler Arnoto in for extra hitter Chase Gallamore",
+      "source_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-3-pa-012",
+      "reach_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-3-pa-011"
+    },
+    {
+      "game_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74",
+      "inning": 3,
+      "half": "bottom",
+      "id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-entry-003",
+      "runner_id": "stars-baseball-higgins-14u-mason-todaro",
+      "replaced_runner_id": "stars-baseball-higgins-14u-wyatt-peyton",
+      "entry_type": "pinch_runner",
+      "source_text": "Lineup changed: Pinch runner Mason Todaro in for extra hitter Wyatt Peyton",
+      "source_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-3-pa-013",
+      "reach_pa_id": "2026-10-03-1650-stars-baseball-higgins-14u-vs-5-star-mafia-nova-14u-11b8a52d74-bottom-3-pa-012"
     }
   ],
   "runner_outs": [

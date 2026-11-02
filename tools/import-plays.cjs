@@ -334,6 +334,7 @@ function runningToken(text) {
   let m;
   if(unnamedRunnerPattern.test(text))return {...runningToken('Unidentified runner '+text),name:null,identity_unknown:true};
   if ((m=text.match(/^(.+?) gets placed on (1st|2nd|3rd)$/i))) return {kind:'placement',name:m[1],base:{'1st':'1B','2nd':'2B','3rd':'3B'}[m[2].toLowerCase()]};
+  if ((m=text.match(/^Lineup changed: (Courtesy|Pinch) runner (.+?) in for (?:extra hitter|designated hitter|pitcher|catcher|first baseman|second baseman|third baseman|shortstop|left fielder|center fielder|right fielder) (.+?)[.]?$/i))) return {kind:'entry',name:m[2],replaced:m[3],type:m[1].toLowerCase()==='courtesy'?'courtesy_runner':'pinch_runner'};
   if ((m=text.match(/^(Courtesy|Pinch) runner (.+) in for (.+?)[.]?$/i))) return {kind:'entry', name:m[2], replaced:m[3], type:m[1].toLowerCase()==='courtesy'?'courtesy_runner':'pinch_runner'};
   if ((m=text.match(/^(.+?) steals (2nd|3rd|home)(?:[.]|$)/i))) return {kind:'attempt', name:m[1], base:{'2nd':'2B','3rd':'3B',home:'home'}[m[2].toLowerCase()], result:'stolen_base'};
   if ((m=text.match(/^(.+?) scores on steal of home(?:[.]|$)/i))) return {kind:'attempt', name:m[1], base:'home', result:'stolen_base'};
@@ -604,6 +605,11 @@ function planWithState(root,inputs,options,state){
   for (const {data,game,entry} of visited) {
     const evidence=require('./pitching.cjs').derive(data,game,{readCapture,buildTeam},D);
     if(evidence && JSON.stringify(evidence)!==JSON.stringify(game.pitching_scout)){game.pitching_scout=evidence;touched.add(entry.id);}
+  }
+  for(const {data,game,entry} of visited){
+    const issues=require('./audit-metrics.cjs').metricIssues(data,game,D);
+    const item=report.find(r=>r.team_id===entry.id&&r.game_id===game.id&&['added','duplicate'].includes(r.status));
+    if(item)item.warnings=[...new Set([...item.warnings,...issues])];
   }
   D.validateManifest(manifest);
   const changes=new Map();
