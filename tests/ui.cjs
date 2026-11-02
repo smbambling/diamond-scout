@@ -26,6 +26,10 @@ async function openApp({storage={},storageBlocked=false,href='https://diamond-sc
  return {elements,requested,repository,documentRoot,storage,context,windowListeners,releaseRequests};
 }
 // Historical summary checks explicitly restore their prior player after changing games.
+function useJerseyOrder(E){
+ for(const [tab,kind] of [['scout','batter'],['pitching','pitcher']]){E['tab-'+tab].click();E['player-sort-select'].value='jersey';E['player-sort-select'].listeners.change();E[kind+'-select'].value='all';E[kind+'-select'].listeners.change();}
+ E['tab-scout'].click();delete E.app.lastScroll;
+}
 function chooseGames(elements,selection){
  const previous=['batter','pitcher'].map(kind=>[kind,elements[kind+'-select'].value]);
  changeGames(elements,selection);
@@ -219,6 +223,7 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  assert.equal(await dateCaption('2026-10-03','2026-10-03'),'2 games · Oct 3, 2026');
  assert.equal(await dateCaption(null,null),'2 games · Dates unavailable');
  assert.match(html,/#filter-context\{white-space:nowrap;overflow:hidden;text-overflow:ellipsis/);
+ useJerseyOrder(ME);
  // Compact active-filter indicator tracks game/contact filters for the current tab.
  assert.equal(ME['filter-toggle'].dataset.active,'false');assert.equal(ME['filter-active-badge'].hidden,true);
  chooseGames(ME,['supplied-game-001','2026-08-30-1000-shockers-vs-gambrills']);
@@ -231,6 +236,7 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  ME['tab-scout'].click();assert.equal(ME['filter-active-badge'].hidden,false);ME['contact-select'].value='all';ME['contact-select'].listeners.change();assert.equal(ME['filter-active-badge'].hidden,true);
  // Player arrows use dropdown order and wrap through players without returning to team totals.
  const navApp=await openApp(),NE=navApp.elements;
+ useJerseyOrder(NE);
  const batterIds=[...NE['batter-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]).filter(id=>id!=='all');
  NE['batter-next'].click();assert.equal(NE['batter-select'].value,batterIds[0]);
  NE['batter-previous'].click();assert.equal(NE['batter-select'].value,batterIds.at(-1));
@@ -242,12 +248,14 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  const singlePlayer={...data,players:[data.players[0]],plate_appearances:data.plate_appearances.filter(p=>p.batter_id===data.players[0].id)};
  const onePlayer=await openApp({files:{'teams.json':manifest,'data/shockers-14u.json':singlePlayer}});onePlayer.elements['batter-next'].click();assert.equal(onePlayer.elements['batter-next'].disabled,true);assert.equal(onePlayer.elements['batter-previous'].disabled,true);
  const pitchNav=await openApp({files:{'teams.json':{schema_version:1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData}}),PN=pitchNav.elements;
+ useJerseyOrder(PN);
  const pitcherIds=[...PN['pitcher-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]).filter(id=>id!=='all');
  PN['pitcher-next'].click();assert.equal(PN['pitcher-select'].value,pitcherIds[0]);PN['pitcher-previous'].click();assert.equal(PN['pitcher-select'].value,pitcherIds.at(-1));PN['pitcher-next'].click();assert.equal(PN['pitcher-select'].value,pitcherIds[0]);
  chooseGames(PN,[]);assert.equal(PN['pitcher-select'].value,'all');assert.equal(PN['pitcher-next'].disabled,true);assert.equal(PN['pitcher-previous'].disabled,true);
  // Player options follow recorded participation across all selected games.
  const participantData=clone(data);participantData.players.push({id:'other-only-player',name:'Other Game Only'},{id:'roster-only-bench',name:'Roster Only Bench'});participantData.games.push({id:'other-only-game',opponent:'Other opponent',date:'2026-09-01'});participantData.plate_appearances.push({...clone(data.plate_appearances[0]),id:'other-only-pa',game_id:'other-only-game',batter_id:'other-only-player'});
  const participantApp=await openApp({files:{'teams.json':manifest,'data/shockers-14u.json':participantData}}),PA=participantApp.elements;
+ useJerseyOrder(PA);
  assert.match(PA['batter-select'].innerHTML,/Other Game Only/);assert.doesNotMatch(PA['batter-select'].innerHTML,/Roster Only Bench/);
  PA['batter-select'].value='other-only-player';PA['batter-select'].listeners.change();chooseGames(PA,data.games[0].id);
  assert.equal(PA['batter-select'].value,'all');assert.doesNotMatch(PA['batter-select'].innerHTML,/other-only-player/);
@@ -261,6 +269,7 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  PN['games-clear'].click();assert.equal((PN['pitcher-select'].innerHTML.match(/<option/g)||[]).length,1);assert.equal(PN['pitcher-next'].disabled,true);
  const sortedData=clone(data);sortedData.games[0].box_score={source_capture:{teams:[{name:sortedData.team.name,tables:[{kind:'batting',columns:['LINEUP','AB'],rows:sortedData.players.slice(0,4).map((p,i)=>[p.name+' #'+['10','2','0','00'][i],'1'])}]}]}};
  const sortedApp=await openApp({files:{'teams.json':manifest,'data/shockers-14u.json':sortedData}}),SE=sortedApp.elements;
+ useJerseyOrder(SE);
  const sortedIds=[...SE['batter-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]);assert.deepEqual(sortedIds.slice(0,5),['all',data.players[2].id,data.players[3].id,data.players[1].id,data.players[0].id]);
  SE['batter-next'].click();assert.equal(SE['batter-select'].value,data.players[2].id);SE['batter-next'].click();assert.equal(SE['batter-select'].value,data.players[3].id);
  // Changing a player or tab closes every metric panel instead of restoring old disclosures.
@@ -390,13 +399,13 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  const sortApp=await openApp({files:{'teams.json':{'schema_version':1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData}}),SE=sortApp.elements,SD=sortApp.context.DiamondScout;
  const optionIds=id=>[...SE[id].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]).filter(id=>id!=='all');
  const setSort=value=>{SE['player-sort-select'].value=value;SE['player-sort-select'].listeners.change();};
- assert.equal(SE['player-sort-select'].value,'jersey');assert.match(SE['player-sort-select'].innerHTML,/Steal tendency/);assert.doesNotMatch(SE['player-sort-select'].innerHTML,/Batters faced/);
- setSort('avg');
+ assert.equal(SE['player-sort-select'].value,'avg');assert.match(SE['player-sort-select'].innerHTML,/Steal tendency/);assert.doesNotMatch(SE['player-sort-select'].innerHTML,/Batters faced/);
+ SE['minimum-sample-select'].value='0';SE['minimum-sample-select'].listeners.change();setSort('avg');
  let ids=optionIds('batter-select'),values=ids.map(id=>SD.battingSummary(SD.filter(pitchingData,{game:'all',batter:id,type:'all'})).avg);
  for(let i=1;i<values.length;i++)assert(values[i]===null||(values[i-1]!==null&&values[i-1]>=values[i]));
  assert.equal(SE['batter-select'].value,ids[0]);SE['batter-next'].click();assert.equal(SE['batter-select'].value,ids[1]);setSort('pa');assert.equal(SE['batter-select'].value,optionIds('batter-select')[0]);
- SE['tab-pitching'].click();assert.equal(SE['player-sort-select'].value,'jersey');assert.match(SE['player-sort-select'].innerHTML,/Walk %/);assert.doesNotMatch(SE['player-sort-select'].innerHTML,/Steal tendency|OBP/);
- setSort('walk');ids=optionIds('pitcher-select');values=ids.map(id=>{const r=SD.pitchingSummary(pitchingData,{pitcher:id}).rates.walk;return r.d?r.n/r.d:null;});
+ SE['tab-pitching'].click();assert.equal(SE['player-sort-select'].value,'avg');assert.match(SE['player-sort-select'].innerHTML,/Walk %/);assert.doesNotMatch(SE['player-sort-select'].innerHTML,/Steal tendency|OBP/);
+ SE['minimum-sample-select'].value='0';SE['minimum-sample-select'].listeners.change();setSort('walk');ids=optionIds('pitcher-select');values=ids.map(id=>{const r=SD.pitchingSummary(pitchingData,{pitcher:id}).rates.walk;return r.d?r.n/r.d:null;});
  for(let i=1;i<values.length;i++)assert(values[i]===null||(values[i-1]!==null&&values[i-1]<=values[i]));
  assert.equal(SE['pitcher-select'].value,ids[0]);SE['pitcher-next'].click();assert.equal(SE['pitcher-select'].value,ids[1]);
  changeGames(SE,pitchingData.games[0].id);assert.equal(SE['player-sort-select'].value,'walk');assert.equal(SE['pitcher-select'].value,optionIds('pitcher-select')[0]);
@@ -408,6 +417,44 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  SE['tab-scout'].click();assert.equal(SE['player-sort-select'].value,'pa');SE['tab-pitching'].click();assert.equal(SE['player-sort-select'].value,'walk');
  const sortRestore=await openApp({storage:sortApp.storage,files:{'teams.json':{'schema_version':1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData}});
  assert.equal(sortRestore.elements['player-sort-select'].value,'pa');sortRestore.elements['tab-pitching'].click();assert.equal(sortRestore.elements['player-sort-select'].value,'walk');
+ }
+ // A tiny perfect AVG follows qualified regular players; no one disappears from the roster.
+ {
+ const sample=clone(data),base=clone(data.plate_appearances[0]);sample.players=[{id:'regular-a',name:'Regular A'},{id:'regular-b',name:'Regular B'},{id:'tiny',name:'Tiny'}];sample.plate_appearances=[];sample.baserunning_events=[];sample.baserunning_entries=[];sample.runner_outs=[];
+ for(const [id,total,hits] of [['regular-a',10,4],['regular-b',10,3],['tiny',1,1]])for(let i=0;i<total;i++)sample.plate_appearances.push({...clone(base),id:'min-'+sample.plate_appearances.length,sequence:sample.plate_appearances.length+1,batter_id:id,status:'complete',result:i<hits?'single':'ground_out'});
+ const files={'teams.json':{schema_version:1,teams:[{id:sample.team.id,name:sample.team.name,data_file:'data/sample.json'}]},'data/sample.json':sample};
+ const minApp=await openApp({files}),E=minApp.elements;
+ const ids=()=>[...E['batter-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]).filter(id=>id!=='all');
+ const sort=value=>{E['player-sort-select'].value=value;E['player-sort-select'].listeners.change();};
+ const minimum=value=>{E['minimum-sample-select'].value=String(value);E['minimum-sample-select'].listeners.change();};
+ assert.equal(E['minimum-sample-filter'].hidden,false);sort('avg');assert.equal(E['minimum-sample-filter'].hidden,false);assert.match(E['minimum-sample-select'].innerHTML,/10 AB/);assert.equal(E['minimum-sample-select'].value,'10');assert.equal(ids()[0],'regular-a');minimum(0);assert.equal(ids()[0],'tiny');
+ minimum(10);assert.deepEqual(ids(),['regular-a','regular-b','tiny']);assert.equal(E['batter-select'].value,'regular-a');assert.match(E['filter-toggle'].attrs['aria-label'],/Minimum 10 AB/);
+ E['batter-next'].click();assert.equal(E['batter-select'].value,'regular-b');E['batter-next'].click();assert.equal(E['batter-select'].value,'tiny');
+ minimum(30);assert.equal(ids()[0],'tiny','If nobody qualifies, retain metric order');minimum(10);sort('obp');assert.match(E['minimum-sample-select'].innerHTML,/OBP opportunities/);sort('steal');assert.match(E['minimum-sample-select'].innerHTML,/trips on base/);
+ sort('jersey');assert.equal(E['minimum-sample-filter'].hidden,true);assert.deepEqual(ids(),['regular-a','regular-b','tiny']);sort('avg');
+ E['tab-pitching'].click();assert.equal(E['minimum-sample-select'].value,'10');E['tab-scout'].click();assert.equal(E['minimum-sample-select'].value,'10');
+ minimum(0);const anyRestored=await openApp({files,storage:clone(minApp.storage)});assert.equal(anyRestored.elements['minimum-sample-select'].value,'0');minimum(10);
+ const restored=await openApp({files,storage:minApp.storage});assert.equal(restored.elements['minimum-sample-select'].value,'10');assert.equal(restored.elements['batter-select'].value,'regular-a');
+ changeGames(E,[]);assert.deepEqual(ids(),[]);assert.equal(E['batter-select'].value,'all');changeGames(E,'all');assert.equal(E['batter-select'].value,'regular-a');
+ }
+ {
+ const files={'teams.json':{schema_version:1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData};
+ const app=await openApp({files}),E=app.elements,D=app.context.DiamondScout;E['tab-pitching'].click();E['player-sort-select'].value='walk';E['player-sort-select'].listeners.change();E['minimum-sample-select'].value='30';E['minimum-sample-select'].listeners.change();
+ const ids=[...E['pitcher-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]).filter(id=>id!=='all');let small=false;
+ for(const id of ids){const r=D.pitchingSummary(pitchingData,{pitcher:id}).rates.walk;if(r.d<30)small=true;else assert.equal(small,false,'Qualified pitchers precede smaller samples');}
+ assert.equal(E['pitcher-select'].value,ids[0]);assert.match(E['minimum-sample-select'].innerHTML,/batters faced/);
+ E['player-sort-select'].value='strike';E['player-sort-select'].listeners.change();assert.match(E['minimum-sample-select'].innerHTML,/pitches/);E['player-sort-select'].value='avg';E['player-sort-select'].listeners.change();assert.match(E['minimum-sample-select'].innerHTML,/AB against/);
+ }
+ // The displayed sort metric is highlighted without changing player names or layout.
+ {
+ const app=await openApp(),E=app.elements;
+ assert.match(E['batting-stats'].innerHTML,/data-sort-active="true"[^>]*>AVG/);
+ E['player-sort-select'].value='obp';E['player-sort-select'].listeners.change();assert.match(E['batting-stats'].innerHTML,/data-sort-active="true"[^>]*>OBP/);assert.equal((E['batting-stats'].innerHTML.match(/data-sort-active="true"/g)||[]).length,1);
+ E['player-sort-select'].value='steal';E['player-sort-select'].listeners.change();assert.match(E['quick-read'].innerHTML,/data-sort-active="true"[^>]*>Steal tendency/);assert.doesNotMatch(E['batting-stats'].innerHTML,/data-sort-active/);
+ E['player-sort-select'].value='jersey';E['player-sort-select'].listeners.change();assert.doesNotMatch(E['quick-read'].innerHTML+E['batting-stats'].innerHTML,/data-sort-active/);
+ E['tab-pitching'].click();assert.match(E['pitching-avg'].innerHTML,/data-sort-active="true"/);
+ E['player-sort-select'].value='strikeout';E['player-sort-select'].listeners.change();assert.match(E['pitching-summary'].innerHTML,/data-sort-active="true"[^>]*>Strikeout %/);assert.doesNotMatch(E['pitching-avg'].innerHTML,/data-sort-active/);
+ E['pitching-summary'].listeners.click({target:{closest:selector=>selector==='#pitching-strikeout-toggle'?{}:null}});assert.match(E['pitching-summary'].innerHTML,/data-sort-active="true"[^>]*>Strikeout %/);
  }
  // Pull-to-refresh requires a deliberate top-of-page gesture and release.
  {
@@ -453,8 +500,8 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  {
  const orgManifest={schema_version:1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'},{id:gambrills.team.id,name:gambrills.team.name,data_file:'data/gambrills.json'}],organization_teams:[{id:'black',name:'14U Black',opponent_ids:[pitchingData.team.id]},{id:'orange',name:'14U Orange',opponent_ids:[pitchingData.team.id,gambrills.team.id]},{id:'empty',name:'Not scheduled',opponent_ids:[]}]};
  const files={'teams.json':orgManifest,'data/pitching.json':pitchingData,'data/gambrills.json':gambrills};
- const first=await openApp({files}),F=first.elements;assert.equal(F.app.hidden,false);assert.equal(F['organization-control'].hidden,false);assert.equal(F['organization-select'].value,'all');assert.match(F['team-select'].innerHTML,/Gambrills/);
- F['organization-select'].value='black';await F['organization-select'].listeners.change();assert.equal(F.app.hidden,false);assert.match(F['team-select'].innerHTML,/Gribbin/);assert.doesNotMatch(F['team-select'].innerHTML,/Gambrills/);
+ const first=await openApp({files}),F=first.elements;assert.equal(F.app.hidden,false);assert.equal(F['organization-control'].hidden,false);assert.equal(F['organization-select'].value,'all');assert.equal(F['organization-current'].textContent,'All teams');assert.match(F['team-select'].innerHTML,/Gambrills/);
+ F['organization-select'].value='black';await F['organization-select'].listeners.change();assert.equal(F.app.hidden,false);assert.equal(F['organization-current'].textContent,'14U Black');assert.match(F['team-select'].innerHTML,/Gribbin/);assert.doesNotMatch(F['team-select'].innerHTML,/Gambrills/);
  F['search-toggle'].click();F['team-search'].value='gambr';F['team-search'].listeners.input();assert.match(F['team-search-results'].innerHTML,/No matching teams/);
  F['team-select'].value=gambrills.team.id;await F['team-select'].listeners.change();assert.equal(F['page-title'].textContent,pitchingData.team.name);assert.match(F.status.textContent,/not assigned/);
  F['organization-select'].value='orange';await F['organization-select'].listeners.change();assert.match(F['team-select'].innerHTML,/Gambrills/);assert.equal(F['page-title'].textContent,pitchingData.team.name,'Shared opponent uses same history');
