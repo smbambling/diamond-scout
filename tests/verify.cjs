@@ -411,3 +411,19 @@ const runtimeManifest=JSON.parse(fs.readFileSync(path.join(root,'teams.json')));
 for(const entry of runtimeManifest.teams){const current=JSON.parse(fs.readFileSync(path.join(root,entry.data_file)));D.validateData(current);assert.equal(current.team.id,entry.id);}
 
 assert.equal(D.pct(0,0),'—');assert.equal(D.pct(0,20),'0%');assert.equal(D.pct(1,1000),'0.1%','A nonzero observed rate must not display as zero');
+// Eligibility uses distinct games across full history, independently for hitting and pitching.
+{
+ const sample={players:[{id:'regular',name:'Regular'},{id:'guest',name:'Guest'}],games:[{id:'one',pitching_scout:{pitchers:[{name:'Regular'},{name:'Guest'}]}},{id:'two',pitching_scout:{pitchers:[{name:'Regular'}]}}],plate_appearances:[{game_id:'one',batter_id:'regular'},{game_id:'one',batter_id:'regular'},{game_id:'two',batter_id:'regular'},{game_id:'one',batter_id:'guest'}],baserunning_events:[{game_id:'one',runner_id:'guest'}]};
+ const before=JSON.stringify(sample),filtered=D.minimumGamesData(sample,2);
+ assert.equal(filtered.players.length,1);assert.equal(filtered.players[0].id,'regular');assert.equal(filtered.plate_appearances.length,3);assert.equal(filtered.baserunning_events.length,0);assert.equal(filtered.games[0].pitching_scout.pitchers.length,1);
+ assert.equal(D.filter(filtered,{game:['one'],batter:'all',type:'all'}).length,2,'Game filtering does not change full-history eligibility');
+ assert.equal(D.minimumGamesData(sample,0),sample);assert.equal(D.minimumGamesData(sample,100).plate_appearances.length,0);assert.equal(JSON.stringify(sample),before);
+}
+// Opposing scorebooks of Oct 18 Higgins must contribute only one Rawlings game.
+{
+ const team=JSON.parse(fs.readFileSync(path.join(root,'data/rawlings-tigers-nova-black-14u.json')));
+ assert.equal(team.games.filter(g=>g.date==='2026-10-18'&&g.start_time==='10:00'&&g.opponent==='Stars Baseball Higgins 14U').length,1);
+ for(const [name,pa,ab,hits] of [['Henry Bambling',29,24,7],['Alex Medrano',26,17,7],['Maximillian Helchinger',32,31,8],['Hainsley Guerrero',20,17,5]]){
+  const player=team.players.find(p=>p.name===name),stats=D.battingSummary(team.plate_appearances.filter(p=>p.batter_id===player.id));assert.deepEqual([stats.complete,stats.ab,stats.hits],[pa,ab,hits],name+' matches audited GameChanger totals');
+ }
+}

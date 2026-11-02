@@ -177,6 +177,11 @@ try {
   assert.deepEqual(bytes(emptyRepo),emptySnapshot);
   assert.throws(()=>I.planImports(emptyRepo,[input(capture(one.replace('center fielder','left fielder'),eventMeta))]),/overlap/);
   assert.throws(()=>I.planImports(emptyRepo,[input(capture(one))]),/overlap/);
+  const opponentBook=eventMeta.replace('/teams/test/','/teams/opponent/').replace('event-empty','opponent-event');
+  assert.throws(()=>I.planImports(emptyRepo,[input(capture(one.replace('center fielder','left fielder'),opponentBook))]),/overlap/,'Different scorebook event ID cannot bypass matching date/time/opponent');
+  const rematch=I.planImports(emptyRepo,[input(capture(one.replace('center fielder','left fielder'),opponentBook.replace('10:00','14:00')))]);
+  assert.equal(rematch.report[0].status,'added','Distinct-time rematches remain supported');
+
 
   // Real histories: exact reimport preserves IDs and every existing byte; partial overlap stops.
   const real=repo();

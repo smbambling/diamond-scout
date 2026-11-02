@@ -7786,7 +7786,814 @@
         ],
         "status": "reconciled",
         "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
-      }
+      },
+      "alternate_source_captures": [
+        {
+          "reason": "Opposing-team scorebook for the same game; excluded from counted history after duplicate audit.",
+          "source_event_id": "7dcb7ecd-4b5f-4f50-bb01-90b4f879b246",
+          "source_url": "https://web.gc.com/teams/dpFAZeEeDHNn/2026-fall-stars-baseball-higgins-14u/schedule/7dcb7ecd-4b5f-4f50-bb01-90b4f879b246/plays",
+          "source_play_by_play": "Bottom 5th - Stars Baseball Higgins 14U\nEnrique Torres at bat\nTop 5th - Rawlings Tigers NOVA - Black 14U\nDouble Play\n3 Outs\nIn play.\nConnor Taylor lines into a double play to shortstop Trent Robey, Hainsley Guerrero out at 2nd, failing to tag up.\nFly Out\n1 Out\nBall 1, Strike 1 looking, Ball 2, In play.\nParker Scisciani flies out to center fielder Makai Laster, Hainsley Guerrero remains at 2nd.\nDouble\nBall 1, Foul, Foul, Ball 2, In play.\nHainsley Guerrero doubles on a line drive to center fielder Makai Laster.\nBottom 4th - Stars Baseball Higgins 14U\nFly Out\n3 Outs\nIn play.\nMason Porter flies out in foul territory to left fielder Gabriel Amaya.\nSingle\nRWLN 1 - STRS 9\nStrike 1 looking, Foul, Ball 1, In play.\nColton Gibney singles on a fly ball to right fielder Tyler Davidson, Adrian Torres scores, Mason Todaro scores.\nGround Out\nRWLN 1 - STRS 7 | 2 Outs\nFoul, In play.\nGarrett Maines grounds out, second baseman Connor Taylor to first baseman Henry Bambling, Elias Rosario scores, Mason Todaro advances to 3rd, Adrian Torres advances to 2nd.\nWalk\nRWLN 1 - STRS 6\nJames Oare scores on wild pitch, Elias Rosario advances to 3rd on the same pitch, Ball 1, Mason Todaro advances to 2nd on defensive indifference, Strike 1 swinging, Ball 2, Ball 3, Ball 4.\nAdrian Torres walks, Miles Warren pitching, Elias Rosario remains at 3rd, Mason Todaro remains at 2nd.\nWalk\nBall 1, Ball 2, Ball 3, Strike 1 looking, Ball 4.\nMason Todaro walks, Miles Warren pitching, James Oare remains at 3rd, Elias Rosario remains at 2nd.\nGround Out\n1 Out\nLineup changed: Pinch runner Elias Rosario in for first baseman Chase Gallamore, Strike 1 looking, Elias Rosario advances to 2nd on defensive indifference, In play.\nWyatt Peyton grounds out, pitcher Miles Warren to first baseman Henry Bambling, Elias Rosario held up at 2nd, James Oare held up at 3rd.\nSingle\nStrike 1 looking, James Oare steals 2nd, In play.\nChase Gallamore singles on a line drive to center fielder Maximillian Helchinger, James Oare advances to 3rd.\nWalk\nFoul, Foul, Ball 1, Ball 2, Foul, Ball 3, Foul, Ball 4.\nJames Oare walks, Miles Warren pitching.\nTop 4th - Rawlings Tigers NOVA - Black 14U\nGround Out\n3 Outs\nIn play.\nTyler Davidson grounds out, pitcher Colton Gibney to first baseman Chase Gallamore.\nWalk\nBall 1, Ball 2, Alex Medrano steals 3rd, Ball 3, Ball 4.\nLiam Knittel walks, Colton Gibney pitching, Alex Medrano remains at 3rd.\nStrikeout\n2 Outs\nFoul, Foul, Ball 1, Strike 3 looking.\nGabriel Amaya strikes out looking, Colton Gibney pitching, Alex Medrano remains at 2nd.\nStrikeout\n1 Out\nStrike 1 swinging, Strike 2 looking, Alex Medrano steals 2nd, Strike 3 looking.\nHenry Bambling strikes out looking, Colton Gibney pitching, Alex Medrano remains at 2nd.\nWalk\nStrike 1 looking, Ball 1, Ball 2, Strike 2 looking, Ball 3, Ball 4.\nAlex Medrano walks, Colton Gibney pitching.\nBottom 3rd - Stars Baseball Higgins 14U\nFly Out\n3 Outs\nBall 1, Ball 2, Trent Robey advances to 3rd on wild pitch, In play.\nMakai Laster flies out to left fielder Gabriel Amaya.\nStrikeout\n2 Outs\nFoul, Ball 1, Trent Robey steals 2nd, Foul, Strike 3 swinging.\nMicah Higgins strikes out swinging, Miles Warren pitching, Trent Robey remains at 2nd.\nSingle\nBall 1, Strike 1 looking, Ball 2, In play.\nTrent Robey singles on a line drive to center fielder Maximillian Helchinger.\nGround Out\n1 Out\nFoul, Foul, Ball 1, Foul, In play.\nEnrique Torres grounds out, second baseman Connor Taylor to first baseman Henry Bambling.\nTop 3rd - Rawlings Tigers NOVA - Black 14U\nDouble Play\n3 Outs\nFoul, Ball 1, In play.\nMaximillian Helchinger flies into a double play, second baseman Adrian Torres to first baseman Chase Gallamore, Aaron Biddle out at 1st, failing to tag up.\nHit By Pitch\nBall 1.\nAaron Biddle is hit by pitch, Colton Gibney pitching.\nGround Out\n1 Out\nBall 1, In play.\nMiles Warren grounds out, shortstop Trent Robey to first baseman Chase Gallamore.\nBottom 2nd - Stars Baseball Higgins 14U\nStrikeout\n3 Outs\nBall 1, Strike 1 looking, Strike 2 swinging, Foul, Ball 2, Strike 3 swinging.\nMason Porter strikes out swinging, Liam Knittel pitching.\nInfield Fly\n2 Outs\nIn play.\nColton Gibney out on infield fly to second baseman Miles Warren, Mason Todaro remains at 3rd, Adrian Torres remains at 2nd, Garrett Maines remains at 1st.\nWalk\nRWLN 1 - STRS 5\nBall 1, Strike 1 swinging, Foul, Ball 2, Ball 3, Ball 4.\nGarrett Maines walks, Liam Knittel pitching, Tyler Arnoto scores, Mason Todaro advances to 3rd, Adrian Torres advances to 2nd.\nSingle\nRWLN 1 - STRS 4\nStrike 1 looking, Ball 1, Ball 2, Ball 3, In play.\nAdrian Torres singles on a fly ball to right fielder Tyler Davidson, Chase Gallamore scores, Tyler Arnoto advances to 3rd, Mason Todaro advances to 2nd.\nFielder's Choice\n1 Out\nCourtesy runner Tyler Arnoto in for Wyatt Peyton, In play.\nMason Todaro grounds into fielder's choice, third baseman Gabriel Amaya to catcher Parker Scisciani, James Oare out advancing to home, Chase Gallamore advances to 3rd, Tyler Arnoto advances to 2nd.\nSingle\nRWLN 1 - STRS 3\nStrike 1 looking, In play.\nWyatt Peyton singles on a fly ball to right fielder Tyler Davidson, Makai Laster scores, James Oare advances to 3rd, Chase Gallamore advances to 2nd.\nHit By Pitch\nRWLN 1 - STRS 2\nStrike 1 swinging, Foul, Ball 1, Foul, Ball 2.\nChase Gallamore is hit by pitch, Liam Knittel pitching, Micah Higgins scores, Makai Laster advances to 3rd, James Oare advances to 2nd.\nSingle\nRWLN 1 - STRS 1\nBall 1, Ball 2, Strike 1 looking, Ball 3, Strike 2 looking, In play.\nJames Oare singles on a fly ball to left fielder Hainsley Guerrero, Trent Robey scores, Micah Higgins advances to 3rd, Makai Laster advances to 2nd.\nWalk\nStrike 1 looking, Ball 1, Trent Robey advances to 3rd on wild pitch, Micah Higgins advances to 2nd on the same pitch, Ball 2, Strike 2 looking, Ball 3, Ball 4.\nMakai Laster walks, Liam Knittel pitching, Trent Robey remains at 3rd, Micah Higgins remains at 2nd.\nSingle\nIn play.\nMicah Higgins singles on a hard ground ball to left fielder Hainsley Guerrero, Trent Robey advances to 2nd.\nWalk\nBall 1, Ball 2, Ball 3, Ball 4.\nTrent Robey walks, Liam Knittel pitching.\nTop 2nd - Rawlings Tigers NOVA - Black 14U\nStrikeout\n3 Outs\nFoul, Strike 2 looking, Ball 1, Strike 3 swinging.\nConnor Taylor strikes out swinging, Colton Gibney pitching.\nGround Out\n2 Outs\nFoul, Ball 1, Foul, In play.\nParker Scisciani grounds out, shortstop Trent Robey to first baseman Chase Gallamore.\nGround Out\n1 Out\nIn play.\nHainsley Guerrero grounds out, second baseman Adrian Torres to first baseman Chase Gallamore.\nBottom 1st - Stars Baseball Higgins 14U\nFly Out\n3 Outs\nBall 1, Foul, Foul, Ball 2, Adrian Torres steals 3rd, Mason Porter steals 2nd, Foul, Foul, In play.\nEnrique Torres flies out in foul territory to first baseman Henry Bambling.\nHit By Pitch\nBall 1.\nMason Porter is hit by pitch, Liam Knittel pitching, Adrian Torres remains at 2nd.\nLine Out\n2 Outs\nIn play.\nColton Gibney lines out to second baseman Miles Warren, Adrian Torres remains at 2nd.\nLine Out\n1 Out\nBall 1, Adrian Torres advances to 2nd on passed ball, Strike 1 swinging, In play.\nGarrett Maines lines out to left fielder Hainsley Guerrero, Adrian Torres remains at 2nd.\nWalk\nBall 1, Strike 1 swinging, Strike 2 looking, Ball 2, Ball 3, Foul, Ball 4.\nAdrian Torres walks, Liam Knittel pitching.\nTop 1st - Rawlings Tigers NOVA - Black 14U\nGround Out\n3 Outs\nIn play.\nTyler Davidson grounds out, shortstop Trent Robey to first baseman Chase Gallamore.\nStrikeout\n2 Outs\nFoul, Ball 1, Strike 2 looking, Strike 3 looking.\nLiam Knittel strikes out looking, Colton Gibney pitching, Alex Medrano remains at 3rd, Henry Bambling remains at 1st.\nStrikeout\n1 Out\nBall 1, Strike 1 looking, Strike 2 swinging, Strike 3 swinging.\nGabriel Amaya strikes out swinging, Colton Gibney pitching, Alex Medrano remains at 3rd, Henry Bambling remains at 1st.\nSingle\nRWLN 1 - STRS 0\nBall 1, Strike 1 looking, In play.\nHenry Bambling singles on a line drive to left fielder Garrett Maines, Maximillian Helchinger scores, Alex Medrano advances to 3rd.\nDouble\nIn play.\nAlex Medrano doubles on a line drive to left fielder Garrett Maines, Maximillian Helchinger advances to 3rd.\nSingle\nBall 1, Foul, In play.\nMaximillian Helchinger singles on a line drive to right fielder Mason Todaro.",
+          "source_sha256": "2fb4f440555797043bf3d8182918759ae4596d2ba8f9788bdddc01ef348ac689",
+          "box_score": {
+            "source_url": "https://web.gc.com/teams/dpFAZeEeDHNn/2026-fall-stars-baseball-higgins-14u/schedule/7dcb7ecd-4b5f-4f50-bb01-90b4f879b246/box-score",
+            "source_event_id": "7dcb7ecd-4b5f-4f50-bb01-90b4f879b246",
+            "source_sha256": "1fc8f0599064be5e480bcf9a2df659e2e74da06e02e66c52c6bfbee361563e63",
+            "coverage": "Rendered DOM tables and team notes only; completeness not verified",
+            "source_capture": {
+              "schema_version": 1,
+              "capture_version": "1cf08f23d294caf3",
+              "kind": "diamond-scout-box-score",
+              "source_url": "https://web.gc.com/teams/dpFAZeEeDHNn/2026-fall-stars-baseball-higgins-14u/schedule/7dcb7ecd-4b5f-4f50-bb01-90b4f879b246/box-score",
+              "source_event_id": "7dcb7ecd-4b5f-4f50-bb01-90b4f879b246",
+              "coverage": "Rendered DOM tables and team notes only; completeness not verified",
+              "teams": [
+                {
+                  "name": "Rawlings Tigers NOVA - Black 14U",
+                  "notes": [
+                    "2B: Alex Medrano, Hainsley Guerrero",
+                    "TB: Alex Medrano 2, Hainsley Guerrero 2, Henry Bambling 1, Maximillian Helchinger 1",
+                    "HBP: Aaron Biddle",
+                    "SB: Alex Medrano 2",
+                    "WP: Miles Warren 2, Liam Knittel",
+                    "HBP: Liam Knittel 2",
+                    "Pitches-Strikes: Liam Knittel 62-32, Miles Warren 45-26",
+                    "Batters Faced: Liam Knittel 16, Miles Warren 12"
+                  ],
+                  "tables": [
+                    {
+                      "kind": "batting",
+                      "columns": [
+                        "LINEUP",
+                        "AB",
+                        "R",
+                        "H",
+                        "RBI",
+                        "BB",
+                        "SO"
+                      ],
+                      "rows": [
+                        [
+                          "Maximillian Helchinger#3 (CF)",
+                          "2",
+                          "1",
+                          "1",
+                          "0",
+                          "0",
+                          "0"
+                        ],
+                        [
+                          "Alex Medrano#22 (SS)",
+                          "1",
+                          "0",
+                          "1",
+                          "0",
+                          "1",
+                          "0"
+                        ],
+                        [
+                          "Henry Bambling#94 (1B)",
+                          "2",
+                          "0",
+                          "1",
+                          "1",
+                          "0",
+                          "1"
+                        ],
+                        [
+                          "Gabriel Amaya#18 (3B, LF)",
+                          "2",
+                          "0",
+                          "0",
+                          "0",
+                          "0",
+                          "2"
+                        ],
+                        [
+                          "Liam Knittel#11 (P, 3B)",
+                          "1",
+                          "0",
+                          "0",
+                          "0",
+                          "1",
+                          "1"
+                        ],
+                        [
+                          "Tyler Davidson#8 (RF)",
+                          "2",
+                          "0",
+                          "0",
+                          "0",
+                          "0",
+                          "0"
+                        ],
+                        [
+                          "Hainsley Guerrero#9 (LF)",
+                          "2",
+                          "0",
+                          "1",
+                          "0",
+                          "0",
+                          "0"
+                        ],
+                        [
+                          "Parker Scisciani#6 (C)",
+                          "2",
+                          "0",
+                          "0",
+                          "0",
+                          "0",
+                          "0"
+                        ],
+                        [
+                          "Connor Taylor#24 (2B)",
+                          "2",
+                          "0",
+                          "0",
+                          "0",
+                          "0",
+                          "1"
+                        ],
+                        [
+                          "Miles Warren#17 (2B, P)",
+                          "1",
+                          "0",
+                          "0",
+                          "0",
+                          "0",
+                          "0"
+                        ],
+                        [
+                          "Aaron Biddle#13 (C)",
+                          "0",
+                          "0",
+                          "0",
+                          "0",
+                          "0",
+                          "0"
+                        ],
+                        [
+                          "TEAM",
+                          "17",
+                          "1",
+                          "4",
+                          "1",
+                          "2",
+                          "5"
+                        ]
+                      ]
+                    },
+                    {
+                      "kind": "pitching",
+                      "columns": [
+                        "PITCHING",
+                        "IP",
+                        "H",
+                        "R",
+                        "ER",
+                        "BB",
+                        "SO"
+                      ],
+                      "rows": [
+                        [
+                          "Liam Knittel#11",
+                          "2.0",
+                          "4",
+                          "5",
+                          "5",
+                          "4",
+                          "1"
+                        ],
+                        [
+                          "Miles Warren#17",
+                          "2.0",
+                          "3",
+                          "4",
+                          "4",
+                          "3",
+                          "1"
+                        ],
+                        [
+                          "TEAM",
+                          "4.0",
+                          "7",
+                          "9",
+                          "9",
+                          "7",
+                          "2"
+                        ]
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Stars Baseball Higgins 14U",
+                  "notes": [
+                    "TB: Adrian Torres 1, Chase Gallamore 1, Colton Gibney 1, James Oare 1, Micah Higgins 1, Trent Robey 1, Wyatt Peyton 1",
+                    "HBP: Chase Gallamore, Mason Porter",
+                    "SB: Adrian Torres, James Oare, Mason Porter, Trent Robey",
+                    "HBP: Colton Gibney",
+                    "Pitches-Strikes: Colton Gibney 49-31, Mason Porter 10-6",
+                    "Batters Faced: Colton Gibney 17, Mason Porter 3"
+                  ],
+                  "tables": [
+                    {
+                      "kind": "batting",
+                      "columns": [
+                        "LINEUP",
+                        "AB",
+                        "R",
+                        "H",
+                        "RBI",
+                        "BB",
+                        "SO"
+                      ],
+                      "rows": [
+                        [
+                          "Adrian Torres#1 (2B, 3B)",
+                          "1",
+                          "1",
+                          "1",
+                          "1",
+                          "2",
+                          "0"
+                        ],
+                        [
+                          "Garrett Maines#55 (LF)",
+                          "2",
+                          "0",
+                          "0",
+                          "2",
+                          "1",
+                          "0"
+                        ],
+                        [
+                          "Colton Gibney#7 (P)",
+                          "3",
+                          "0",
+                          "1",
+                          "2",
+                          "0",
+                          "0"
+                        ],
+                        [
+                          "Mason Porter#17 (RF, P)",
+                          "2",
+                          "0",
+                          "0",
+                          "0",
+                          "0",
+                          "1"
+                        ],
+                        [
+                          "Enrique Torres#77",
+                          "2",
+                          "0",
+                          "0",
+                          "0",
+                          "0",
+                          "0"
+                        ],
+                        [
+                          "Trent Robey#57 (SS)",
+                          "1",
+                          "1",
+                          "1",
+                          "0",
+                          "1",
+                          "0"
+                        ],
+                        [
+                          "Micah Higgins#9 (3B, 1B)",
+                          "2",
+                          "1",
+                          "1",
+                          "0",
+                          "0",
+                          "1"
+                        ],
+                        [
+                          "Makai Laster#24 (CF)",
+                          "1",
+                          "1",
+                          "0",
+                          "0",
+                          "1",
+                          "0"
+                        ],
+                        [
+                          "James Oare#5",
+                          "1",
+                          "1",
+                          "1",
+                          "1",
+                          "1",
+                          "0"
+                        ],
+                        [
+                          "Chase Gallamore#44 (1B)",
+                          "1",
+                          "1",
+                          "1",
+                          "1",
+                          "0",
+                          "0"
+                        ],
+                        [
+                          "Elias Rosario#3 (RF)",
+                          "0",
+                          "1",
+                          "0",
+                          "0",
+                          "0",
+                          "0"
+                        ],
+                        [
+                          "Wyatt Peyton#96 (C)",
+                          "2",
+                          "0",
+                          "1",
+                          "1",
+                          "0",
+                          "0"
+                        ],
+                        [
+                          "Mason Todaro#19 (RF)",
+                          "1",
+                          "1",
+                          "0",
+                          "0",
+                          "1",
+                          "0"
+                        ],
+                        [
+                          "TEAM",
+                          "19",
+                          "9",
+                          "7",
+                          "8",
+                          "7",
+                          "2"
+                        ]
+                      ]
+                    },
+                    {
+                      "kind": "pitching",
+                      "columns": [
+                        "PITCHING",
+                        "IP",
+                        "H",
+                        "R",
+                        "ER",
+                        "BB",
+                        "SO"
+                      ],
+                      "rows": [
+                        [
+                          "Colton Gibney#7 (W)",
+                          "4.0",
+                          "3",
+                          "1",
+                          "1",
+                          "2",
+                          "5"
+                        ],
+                        [
+                          "Mason Porter#17",
+                          "1.0",
+                          "1",
+                          "0",
+                          "0",
+                          "0",
+                          "0"
+                        ],
+                        [
+                          "TEAM",
+                          "5.0",
+                          "4",
+                          "1",
+                          "1",
+                          "2",
+                          "5"
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "warnings": [],
+              "date": "2026-10-18",
+              "start_time": "10:00",
+              "timezone": "ET"
+            },
+            "source_json": "{\n  \"schema_version\": 1,\n  \"capture_version\": \"1cf08f23d294caf3\",\n  \"kind\": \"diamond-scout-box-score\",\n  \"source_url\": \"https://web.gc.com/teams/dpFAZeEeDHNn/2026-fall-stars-baseball-higgins-14u/schedule/7dcb7ecd-4b5f-4f50-bb01-90b4f879b246/box-score\",\n  \"source_event_id\": \"7dcb7ecd-4b5f-4f50-bb01-90b4f879b246\",\n  \"coverage\": \"Rendered DOM tables and team notes only; completeness not verified\",\n  \"teams\": [\n    {\n      \"name\": \"Rawlings Tigers NOVA - Black 14U\",\n      \"notes\": [\n        \"2B: Alex Medrano, Hainsley Guerrero\",\n        \"TB: Alex Medrano 2, Hainsley Guerrero 2, Henry Bambling 1, Maximillian Helchinger 1\",\n        \"HBP: Aaron Biddle\",\n        \"SB: Alex Medrano 2\",\n        \"WP: Miles Warren 2, Liam Knittel\",\n        \"HBP: Liam Knittel 2\",\n        \"Pitches-Strikes: Liam Knittel 62-32, Miles Warren 45-26\",\n        \"Batters Faced: Liam Knittel 16, Miles Warren 12\"\n      ],\n      \"tables\": [\n        {\n          \"kind\": \"batting\",\n          \"columns\": [\n            \"LINEUP\",\n            \"AB\",\n            \"R\",\n            \"H\",\n            \"RBI\",\n            \"BB\",\n            \"SO\"\n          ],\n          \"rows\": [\n            [\n              \"Maximillian Helchinger#3 (CF)\",\n              \"2\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Alex Medrano#22 (SS)\",\n              \"1\",\n              \"0\",\n              \"1\",\n              \"0\",\n              \"1\",\n              \"0\"\n            ],\n            [\n              \"Henry Bambling#94 (1B)\",\n              \"2\",\n              \"0\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"1\"\n            ],\n            [\n              \"Gabriel Amaya#18 (3B, LF)\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"2\"\n            ],\n            [\n              \"Liam Knittel#11 (P, 3B)\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"1\",\n              \"1\"\n            ],\n            [\n              \"Tyler Davidson#8 (RF)\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Hainsley Guerrero#9 (LF)\",\n              \"2\",\n              \"0\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Parker Scisciani#6 (C)\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Connor Taylor#24 (2B)\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"1\"\n            ],\n            [\n              \"Miles Warren#17 (2B, P)\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Aaron Biddle#13 (C)\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"TEAM\",\n              \"17\",\n              \"1\",\n              \"4\",\n              \"1\",\n              \"2\",\n              \"5\"\n            ]\n          ]\n        },\n        {\n          \"kind\": \"pitching\",\n          \"columns\": [\n            \"PITCHING\",\n            \"IP\",\n            \"H\",\n            \"R\",\n            \"ER\",\n            \"BB\",\n            \"SO\"\n          ],\n          \"rows\": [\n            [\n              \"Liam Knittel#11\",\n              \"2.0\",\n              \"4\",\n              \"5\",\n              \"5\",\n              \"4\",\n              \"1\"\n            ],\n            [\n              \"Miles Warren#17\",\n              \"2.0\",\n              \"3\",\n              \"4\",\n              \"4\",\n              \"3\",\n              \"1\"\n            ],\n            [\n              \"TEAM\",\n              \"4.0\",\n              \"7\",\n              \"9\",\n              \"9\",\n              \"7\",\n              \"2\"\n            ]\n          ]\n        }\n      ]\n    },\n    {\n      \"name\": \"Stars Baseball Higgins 14U\",\n      \"notes\": [\n        \"TB: Adrian Torres 1, Chase Gallamore 1, Colton Gibney 1, James Oare 1, Micah Higgins 1, Trent Robey 1, Wyatt Peyton 1\",\n        \"HBP: Chase Gallamore, Mason Porter\",\n        \"SB: Adrian Torres, James Oare, Mason Porter, Trent Robey\",\n        \"HBP: Colton Gibney\",\n        \"Pitches-Strikes: Colton Gibney 49-31, Mason Porter 10-6\",\n        \"Batters Faced: Colton Gibney 17, Mason Porter 3\"\n      ],\n      \"tables\": [\n        {\n          \"kind\": \"batting\",\n          \"columns\": [\n            \"LINEUP\",\n            \"AB\",\n            \"R\",\n            \"H\",\n            \"RBI\",\n            \"BB\",\n            \"SO\"\n          ],\n          \"rows\": [\n            [\n              \"Adrian Torres#1 (2B, 3B)\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"2\",\n              \"0\"\n            ],\n            [\n              \"Garrett Maines#55 (LF)\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"2\",\n              \"1\",\n              \"0\"\n            ],\n            [\n              \"Colton Gibney#7 (P)\",\n              \"3\",\n              \"0\",\n              \"1\",\n              \"2\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Mason Porter#17 (RF, P)\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"1\"\n            ],\n            [\n              \"Enrique Torres#77\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Trent Robey#57 (SS)\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"1\",\n              \"0\"\n            ],\n            [\n              \"Micah Higgins#9 (3B, 1B)\",\n              \"2\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"1\"\n            ],\n            [\n              \"Makai Laster#24 (CF)\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"1\",\n              \"0\"\n            ],\n            [\n              \"James Oare#5\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"0\"\n            ],\n            [\n              \"Chase Gallamore#44 (1B)\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Elias Rosario#3 (RF)\",\n              \"0\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Wyatt Peyton#96 (C)\",\n              \"2\",\n              \"0\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Mason Todaro#19 (RF)\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"1\",\n              \"0\"\n            ],\n            [\n              \"TEAM\",\n              \"19\",\n              \"9\",\n              \"7\",\n              \"8\",\n              \"7\",\n              \"2\"\n            ]\n          ]\n        },\n        {\n          \"kind\": \"pitching\",\n          \"columns\": [\n            \"PITCHING\",\n            \"IP\",\n            \"H\",\n            \"R\",\n            \"ER\",\n            \"BB\",\n            \"SO\"\n          ],\n          \"rows\": [\n            [\n              \"Colton Gibney#7 (W)\",\n              \"4.0\",\n              \"3\",\n              \"1\",\n              \"1\",\n              \"2\",\n              \"5\"\n            ],\n            [\n              \"Mason Porter#17\",\n              \"1.0\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"TEAM\",\n              \"5.0\",\n              \"4\",\n              \"1\",\n              \"1\",\n              \"2\",\n              \"5\"\n            ]\n          ]\n        }\n      ]\n    }\n  ],\n  \"warnings\": [],\n  \"date\": \"2026-10-18\",\n  \"start_time\": \"10:00\",\n  \"timezone\": \"ET\"\n}\n",
+            "comparisons": [
+              {
+                "player": "Maximillian Helchinger",
+                "stat": "AB",
+                "box_score": 2,
+                "plays": 2,
+                "status": "match"
+              },
+              {
+                "player": "Maximillian Helchinger",
+                "stat": "H",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Maximillian Helchinger",
+                "stat": "BB",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Maximillian Helchinger",
+                "stat": "SO",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Alex Medrano",
+                "stat": "AB",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Alex Medrano",
+                "stat": "H",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Alex Medrano",
+                "stat": "BB",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Alex Medrano",
+                "stat": "SO",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Henry Bambling",
+                "stat": "AB",
+                "box_score": 2,
+                "plays": 2,
+                "status": "match"
+              },
+              {
+                "player": "Henry Bambling",
+                "stat": "H",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Henry Bambling",
+                "stat": "BB",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Henry Bambling",
+                "stat": "SO",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Gabriel Amaya",
+                "stat": "AB",
+                "box_score": 2,
+                "plays": 2,
+                "status": "match"
+              },
+              {
+                "player": "Gabriel Amaya",
+                "stat": "H",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Gabriel Amaya",
+                "stat": "BB",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Gabriel Amaya",
+                "stat": "SO",
+                "box_score": 2,
+                "plays": 2,
+                "status": "match"
+              },
+              {
+                "player": "Liam Knittel",
+                "stat": "AB",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Liam Knittel",
+                "stat": "H",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Liam Knittel",
+                "stat": "BB",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Liam Knittel",
+                "stat": "SO",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Tyler Davidson",
+                "stat": "AB",
+                "box_score": 2,
+                "plays": 2,
+                "status": "match"
+              },
+              {
+                "player": "Tyler Davidson",
+                "stat": "H",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Tyler Davidson",
+                "stat": "BB",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Tyler Davidson",
+                "stat": "SO",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Hainsley Guerrero",
+                "stat": "AB",
+                "box_score": 2,
+                "plays": 2,
+                "status": "match"
+              },
+              {
+                "player": "Hainsley Guerrero",
+                "stat": "H",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Hainsley Guerrero",
+                "stat": "BB",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Hainsley Guerrero",
+                "stat": "SO",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Parker Scisciani",
+                "stat": "AB",
+                "box_score": 2,
+                "plays": 2,
+                "status": "match"
+              },
+              {
+                "player": "Parker Scisciani",
+                "stat": "H",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Parker Scisciani",
+                "stat": "BB",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Parker Scisciani",
+                "stat": "SO",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Connor Taylor",
+                "stat": "AB",
+                "box_score": 2,
+                "plays": 2,
+                "status": "match"
+              },
+              {
+                "player": "Connor Taylor",
+                "stat": "H",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Connor Taylor",
+                "stat": "BB",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Connor Taylor",
+                "stat": "SO",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Miles Warren",
+                "stat": "AB",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Miles Warren",
+                "stat": "H",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Miles Warren",
+                "stat": "BB",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Miles Warren",
+                "stat": "SO",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Aaron Biddle",
+                "stat": "AB",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Aaron Biddle",
+                "stat": "H",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Aaron Biddle",
+                "stat": "BB",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "Aaron Biddle",
+                "stat": "SO",
+                "box_score": 0,
+                "plays": 0,
+                "status": "match"
+              },
+              {
+                "player": "TEAM",
+                "stat": "AB",
+                "box_score": 17,
+                "plays": 17,
+                "status": "match"
+              },
+              {
+                "player": "TEAM",
+                "stat": "H",
+                "box_score": 4,
+                "plays": 4,
+                "status": "match"
+              },
+              {
+                "player": "TEAM",
+                "stat": "BB",
+                "box_score": 2,
+                "plays": 2,
+                "status": "match"
+              },
+              {
+                "player": "TEAM",
+                "stat": "SO",
+                "box_score": 5,
+                "plays": 5,
+                "status": "match"
+              },
+              {
+                "player": "Alex Medrano",
+                "stat": "2B",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Hainsley Guerrero",
+                "stat": "2B",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Alex Medrano",
+                "stat": "TB",
+                "box_score": 2,
+                "plays": 2,
+                "status": "match"
+              },
+              {
+                "player": "Hainsley Guerrero",
+                "stat": "TB",
+                "box_score": 2,
+                "plays": 2,
+                "status": "match"
+              },
+              {
+                "player": "Henry Bambling",
+                "stat": "TB",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Maximillian Helchinger",
+                "stat": "TB",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Aaron Biddle",
+                "stat": "HBP",
+                "box_score": 1,
+                "plays": 1,
+                "status": "match"
+              },
+              {
+                "player": "Alex Medrano",
+                "stat": "SB",
+                "box_score": 2,
+                "plays": 2,
+                "status": "match"
+              },
+              {
+                "player": "Liam Knittel",
+                "stat": "HBP",
+                "box_score": 2,
+                "plays": 0,
+                "status": "conflict"
+              }
+            ],
+            "notes": [],
+            "status": "review",
+            "conflict_count": 1,
+            "unavailable_count": 0
+          }
+        }
+      ]
     },
     {
       "id": "2026-10-18-1200-rawlings-tigers-nova-black-14u-vs-stars-baseball-hooker-14u-b6c8e5f07d",
@@ -12892,971 +13699,6 @@
               "unclassified": 0,
               "first_sequence": 17,
               "last_sequence": 26
-            }
-          }
-        ],
-        "status": "reconciled",
-        "reason": "Unique contiguous stints match batters faced, pitch totals, hits, walks, strikeouts and explicit pitcher names. Mid-appearance changes cannot be resolved automatically."
-      }
-    },
-    {
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "date": "2026-10-18",
-      "start_time": "10:00",
-      "timezone": "ET",
-      "opponent": "Stars Baseball Higgins 14U",
-      "batting_half": "top",
-      "label": "vs. Stars Baseball Higgins 14U",
-      "source": "Local GameChanger text converter",
-      "source_url": "https://web.gc.com/teams/dpFAZeEeDHNn/2026-fall-stars-baseball-higgins-14u/schedule/7dcb7ecd-4b5f-4f50-bb01-90b4f879b246/plays",
-      "source_event_id": "7dcb7ecd-4b5f-4f50-bb01-90b4f879b246",
-      "source_capture_coverage": "loaded browser text only; completeness not verified.",
-      "source_capture_version": "1cf08f23d294caf3",
-      "source_control_events": [],
-      "source_scope": "Supplied top innings 1, 2, 3, 4, 5 only; completeness not verified",
-      "source_play_by_play": "Bottom 5th - Stars Baseball Higgins 14U\nEnrique Torres at bat\nTop 5th - Rawlings Tigers NOVA - Black 14U\nDouble Play\n3 Outs\nIn play.\nConnor Taylor lines into a double play to shortstop Trent Robey, Hainsley Guerrero out at 2nd, failing to tag up.\nFly Out\n1 Out\nBall 1, Strike 1 looking, Ball 2, In play.\nParker Scisciani flies out to center fielder Makai Laster, Hainsley Guerrero remains at 2nd.\nDouble\nBall 1, Foul, Foul, Ball 2, In play.\nHainsley Guerrero doubles on a line drive to center fielder Makai Laster.\nBottom 4th - Stars Baseball Higgins 14U\nFly Out\n3 Outs\nIn play.\nMason Porter flies out in foul territory to left fielder Gabriel Amaya.\nSingle\nRWLN 1 - STRS 9\nStrike 1 looking, Foul, Ball 1, In play.\nColton Gibney singles on a fly ball to right fielder Tyler Davidson, Adrian Torres scores, Mason Todaro scores.\nGround Out\nRWLN 1 - STRS 7 | 2 Outs\nFoul, In play.\nGarrett Maines grounds out, second baseman Connor Taylor to first baseman Henry Bambling, Elias Rosario scores, Mason Todaro advances to 3rd, Adrian Torres advances to 2nd.\nWalk\nRWLN 1 - STRS 6\nJames Oare scores on wild pitch, Elias Rosario advances to 3rd on the same pitch, Ball 1, Mason Todaro advances to 2nd on defensive indifference, Strike 1 swinging, Ball 2, Ball 3, Ball 4.\nAdrian Torres walks, Miles Warren pitching, Elias Rosario remains at 3rd, Mason Todaro remains at 2nd.\nWalk\nBall 1, Ball 2, Ball 3, Strike 1 looking, Ball 4.\nMason Todaro walks, Miles Warren pitching, James Oare remains at 3rd, Elias Rosario remains at 2nd.\nGround Out\n1 Out\nLineup changed: Pinch runner Elias Rosario in for first baseman Chase Gallamore, Strike 1 looking, Elias Rosario advances to 2nd on defensive indifference, In play.\nWyatt Peyton grounds out, pitcher Miles Warren to first baseman Henry Bambling, Elias Rosario held up at 2nd, James Oare held up at 3rd.\nSingle\nStrike 1 looking, James Oare steals 2nd, In play.\nChase Gallamore singles on a line drive to center fielder Maximillian Helchinger, James Oare advances to 3rd.\nWalk\nFoul, Foul, Ball 1, Ball 2, Foul, Ball 3, Foul, Ball 4.\nJames Oare walks, Miles Warren pitching.\nTop 4th - Rawlings Tigers NOVA - Black 14U\nGround Out\n3 Outs\nIn play.\nTyler Davidson grounds out, pitcher Colton Gibney to first baseman Chase Gallamore.\nWalk\nBall 1, Ball 2, Alex Medrano steals 3rd, Ball 3, Ball 4.\nLiam Knittel walks, Colton Gibney pitching, Alex Medrano remains at 3rd.\nStrikeout\n2 Outs\nFoul, Foul, Ball 1, Strike 3 looking.\nGabriel Amaya strikes out looking, Colton Gibney pitching, Alex Medrano remains at 2nd.\nStrikeout\n1 Out\nStrike 1 swinging, Strike 2 looking, Alex Medrano steals 2nd, Strike 3 looking.\nHenry Bambling strikes out looking, Colton Gibney pitching, Alex Medrano remains at 2nd.\nWalk\nStrike 1 looking, Ball 1, Ball 2, Strike 2 looking, Ball 3, Ball 4.\nAlex Medrano walks, Colton Gibney pitching.\nBottom 3rd - Stars Baseball Higgins 14U\nFly Out\n3 Outs\nBall 1, Ball 2, Trent Robey advances to 3rd on wild pitch, In play.\nMakai Laster flies out to left fielder Gabriel Amaya.\nStrikeout\n2 Outs\nFoul, Ball 1, Trent Robey steals 2nd, Foul, Strike 3 swinging.\nMicah Higgins strikes out swinging, Miles Warren pitching, Trent Robey remains at 2nd.\nSingle\nBall 1, Strike 1 looking, Ball 2, In play.\nTrent Robey singles on a line drive to center fielder Maximillian Helchinger.\nGround Out\n1 Out\nFoul, Foul, Ball 1, Foul, In play.\nEnrique Torres grounds out, second baseman Connor Taylor to first baseman Henry Bambling.\nTop 3rd - Rawlings Tigers NOVA - Black 14U\nDouble Play\n3 Outs\nFoul, Ball 1, In play.\nMaximillian Helchinger flies into a double play, second baseman Adrian Torres to first baseman Chase Gallamore, Aaron Biddle out at 1st, failing to tag up.\nHit By Pitch\nBall 1.\nAaron Biddle is hit by pitch, Colton Gibney pitching.\nGround Out\n1 Out\nBall 1, In play.\nMiles Warren grounds out, shortstop Trent Robey to first baseman Chase Gallamore.\nBottom 2nd - Stars Baseball Higgins 14U\nStrikeout\n3 Outs\nBall 1, Strike 1 looking, Strike 2 swinging, Foul, Ball 2, Strike 3 swinging.\nMason Porter strikes out swinging, Liam Knittel pitching.\nInfield Fly\n2 Outs\nIn play.\nColton Gibney out on infield fly to second baseman Miles Warren, Mason Todaro remains at 3rd, Adrian Torres remains at 2nd, Garrett Maines remains at 1st.\nWalk\nRWLN 1 - STRS 5\nBall 1, Strike 1 swinging, Foul, Ball 2, Ball 3, Ball 4.\nGarrett Maines walks, Liam Knittel pitching, Tyler Arnoto scores, Mason Todaro advances to 3rd, Adrian Torres advances to 2nd.\nSingle\nRWLN 1 - STRS 4\nStrike 1 looking, Ball 1, Ball 2, Ball 3, In play.\nAdrian Torres singles on a fly ball to right fielder Tyler Davidson, Chase Gallamore scores, Tyler Arnoto advances to 3rd, Mason Todaro advances to 2nd.\nFielder's Choice\n1 Out\nCourtesy runner Tyler Arnoto in for Wyatt Peyton, In play.\nMason Todaro grounds into fielder's choice, third baseman Gabriel Amaya to catcher Parker Scisciani, James Oare out advancing to home, Chase Gallamore advances to 3rd, Tyler Arnoto advances to 2nd.\nSingle\nRWLN 1 - STRS 3\nStrike 1 looking, In play.\nWyatt Peyton singles on a fly ball to right fielder Tyler Davidson, Makai Laster scores, James Oare advances to 3rd, Chase Gallamore advances to 2nd.\nHit By Pitch\nRWLN 1 - STRS 2\nStrike 1 swinging, Foul, Ball 1, Foul, Ball 2.\nChase Gallamore is hit by pitch, Liam Knittel pitching, Micah Higgins scores, Makai Laster advances to 3rd, James Oare advances to 2nd.\nSingle\nRWLN 1 - STRS 1\nBall 1, Ball 2, Strike 1 looking, Ball 3, Strike 2 looking, In play.\nJames Oare singles on a fly ball to left fielder Hainsley Guerrero, Trent Robey scores, Micah Higgins advances to 3rd, Makai Laster advances to 2nd.\nWalk\nStrike 1 looking, Ball 1, Trent Robey advances to 3rd on wild pitch, Micah Higgins advances to 2nd on the same pitch, Ball 2, Strike 2 looking, Ball 3, Ball 4.\nMakai Laster walks, Liam Knittel pitching, Trent Robey remains at 3rd, Micah Higgins remains at 2nd.\nSingle\nIn play.\nMicah Higgins singles on a hard ground ball to left fielder Hainsley Guerrero, Trent Robey advances to 2nd.\nWalk\nBall 1, Ball 2, Ball 3, Ball 4.\nTrent Robey walks, Liam Knittel pitching.\nTop 2nd - Rawlings Tigers NOVA - Black 14U\nStrikeout\n3 Outs\nFoul, Strike 2 looking, Ball 1, Strike 3 swinging.\nConnor Taylor strikes out swinging, Colton Gibney pitching.\nGround Out\n2 Outs\nFoul, Ball 1, Foul, In play.\nParker Scisciani grounds out, shortstop Trent Robey to first baseman Chase Gallamore.\nGround Out\n1 Out\nIn play.\nHainsley Guerrero grounds out, second baseman Adrian Torres to first baseman Chase Gallamore.\nBottom 1st - Stars Baseball Higgins 14U\nFly Out\n3 Outs\nBall 1, Foul, Foul, Ball 2, Adrian Torres steals 3rd, Mason Porter steals 2nd, Foul, Foul, In play.\nEnrique Torres flies out in foul territory to first baseman Henry Bambling.\nHit By Pitch\nBall 1.\nMason Porter is hit by pitch, Liam Knittel pitching, Adrian Torres remains at 2nd.\nLine Out\n2 Outs\nIn play.\nColton Gibney lines out to second baseman Miles Warren, Adrian Torres remains at 2nd.\nLine Out\n1 Out\nBall 1, Adrian Torres advances to 2nd on passed ball, Strike 1 swinging, In play.\nGarrett Maines lines out to left fielder Hainsley Guerrero, Adrian Torres remains at 2nd.\nWalk\nBall 1, Strike 1 swinging, Strike 2 looking, Ball 2, Ball 3, Foul, Ball 4.\nAdrian Torres walks, Liam Knittel pitching.\nTop 1st - Rawlings Tigers NOVA - Black 14U\nGround Out\n3 Outs\nIn play.\nTyler Davidson grounds out, shortstop Trent Robey to first baseman Chase Gallamore.\nStrikeout\n2 Outs\nFoul, Ball 1, Strike 2 looking, Strike 3 looking.\nLiam Knittel strikes out looking, Colton Gibney pitching, Alex Medrano remains at 3rd, Henry Bambling remains at 1st.\nStrikeout\n1 Out\nBall 1, Strike 1 looking, Strike 2 swinging, Strike 3 swinging.\nGabriel Amaya strikes out swinging, Colton Gibney pitching, Alex Medrano remains at 3rd, Henry Bambling remains at 1st.\nSingle\nRWLN 1 - STRS 0\nBall 1, Strike 1 looking, In play.\nHenry Bambling singles on a line drive to left fielder Garrett Maines, Maximillian Helchinger scores, Alex Medrano advances to 3rd.\nDouble\nIn play.\nAlex Medrano doubles on a line drive to left fielder Garrett Maines, Maximillian Helchinger advances to 3rd.\nSingle\nBall 1, Foul, In play.\nMaximillian Helchinger singles on a line drive to right fielder Mason Todaro.",
-      "source_sha256": "2fb4f440555797043bf3d8182918759ae4596d2ba8f9788bdddc01ef348ac689",
-      "source_canonical_sha256": "2c031be9272d1f4428024424d4de9db6b7a467ccf61a2870c8ac8079552cb9d5",
-      "notes": [
-        "No final score, missing innings or unlisted pitches were inferred. Original capture text retained."
-      ],
-      "box_score": {
-        "source_url": "https://web.gc.com/teams/dpFAZeEeDHNn/2026-fall-stars-baseball-higgins-14u/schedule/7dcb7ecd-4b5f-4f50-bb01-90b4f879b246/box-score",
-        "source_event_id": "7dcb7ecd-4b5f-4f50-bb01-90b4f879b246",
-        "source_sha256": "1fc8f0599064be5e480bcf9a2df659e2e74da06e02e66c52c6bfbee361563e63",
-        "coverage": "Rendered DOM tables and team notes only; completeness not verified",
-        "source_capture": {
-          "schema_version": 1,
-          "capture_version": "1cf08f23d294caf3",
-          "kind": "diamond-scout-box-score",
-          "source_url": "https://web.gc.com/teams/dpFAZeEeDHNn/2026-fall-stars-baseball-higgins-14u/schedule/7dcb7ecd-4b5f-4f50-bb01-90b4f879b246/box-score",
-          "source_event_id": "7dcb7ecd-4b5f-4f50-bb01-90b4f879b246",
-          "coverage": "Rendered DOM tables and team notes only; completeness not verified",
-          "teams": [
-            {
-              "name": "Rawlings Tigers NOVA - Black 14U",
-              "notes": [
-                "2B: Alex Medrano, Hainsley Guerrero",
-                "TB: Alex Medrano 2, Hainsley Guerrero 2, Henry Bambling 1, Maximillian Helchinger 1",
-                "HBP: Aaron Biddle",
-                "SB: Alex Medrano 2",
-                "WP: Miles Warren 2, Liam Knittel",
-                "HBP: Liam Knittel 2",
-                "Pitches-Strikes: Liam Knittel 62-32, Miles Warren 45-26",
-                "Batters Faced: Liam Knittel 16, Miles Warren 12"
-              ],
-              "tables": [
-                {
-                  "kind": "batting",
-                  "columns": [
-                    "LINEUP",
-                    "AB",
-                    "R",
-                    "H",
-                    "RBI",
-                    "BB",
-                    "SO"
-                  ],
-                  "rows": [
-                    [
-                      "Maximillian Helchinger#3 (CF)",
-                      "2",
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "0"
-                    ],
-                    [
-                      "Alex Medrano#22 (SS)",
-                      "1",
-                      "0",
-                      "1",
-                      "0",
-                      "1",
-                      "0"
-                    ],
-                    [
-                      "Henry Bambling#94 (1B)",
-                      "2",
-                      "0",
-                      "1",
-                      "1",
-                      "0",
-                      "1"
-                    ],
-                    [
-                      "Gabriel Amaya#18 (3B, LF)",
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "2"
-                    ],
-                    [
-                      "Liam Knittel#11 (P, 3B)",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "1",
-                      "1"
-                    ],
-                    [
-                      "Tyler Davidson#8 (RF)",
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ],
-                    [
-                      "Hainsley Guerrero#9 (LF)",
-                      "2",
-                      "0",
-                      "1",
-                      "0",
-                      "0",
-                      "0"
-                    ],
-                    [
-                      "Parker Scisciani#6 (C)",
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ],
-                    [
-                      "Connor Taylor#24 (2B)",
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "1"
-                    ],
-                    [
-                      "Miles Warren#17 (2B, P)",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ],
-                    [
-                      "Aaron Biddle#13 (C)",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ],
-                    [
-                      "TEAM",
-                      "17",
-                      "1",
-                      "4",
-                      "1",
-                      "2",
-                      "5"
-                    ]
-                  ]
-                },
-                {
-                  "kind": "pitching",
-                  "columns": [
-                    "PITCHING",
-                    "IP",
-                    "H",
-                    "R",
-                    "ER",
-                    "BB",
-                    "SO"
-                  ],
-                  "rows": [
-                    [
-                      "Liam Knittel#11",
-                      "2.0",
-                      "4",
-                      "5",
-                      "5",
-                      "4",
-                      "1"
-                    ],
-                    [
-                      "Miles Warren#17",
-                      "2.0",
-                      "3",
-                      "4",
-                      "4",
-                      "3",
-                      "1"
-                    ],
-                    [
-                      "TEAM",
-                      "4.0",
-                      "7",
-                      "9",
-                      "9",
-                      "7",
-                      "2"
-                    ]
-                  ]
-                }
-              ]
-            },
-            {
-              "name": "Stars Baseball Higgins 14U",
-              "notes": [
-                "TB: Adrian Torres 1, Chase Gallamore 1, Colton Gibney 1, James Oare 1, Micah Higgins 1, Trent Robey 1, Wyatt Peyton 1",
-                "HBP: Chase Gallamore, Mason Porter",
-                "SB: Adrian Torres, James Oare, Mason Porter, Trent Robey",
-                "HBP: Colton Gibney",
-                "Pitches-Strikes: Colton Gibney 49-31, Mason Porter 10-6",
-                "Batters Faced: Colton Gibney 17, Mason Porter 3"
-              ],
-              "tables": [
-                {
-                  "kind": "batting",
-                  "columns": [
-                    "LINEUP",
-                    "AB",
-                    "R",
-                    "H",
-                    "RBI",
-                    "BB",
-                    "SO"
-                  ],
-                  "rows": [
-                    [
-                      "Adrian Torres#1 (2B, 3B)",
-                      "1",
-                      "1",
-                      "1",
-                      "1",
-                      "2",
-                      "0"
-                    ],
-                    [
-                      "Garrett Maines#55 (LF)",
-                      "2",
-                      "0",
-                      "0",
-                      "2",
-                      "1",
-                      "0"
-                    ],
-                    [
-                      "Colton Gibney#7 (P)",
-                      "3",
-                      "0",
-                      "1",
-                      "2",
-                      "0",
-                      "0"
-                    ],
-                    [
-                      "Mason Porter#17 (RF, P)",
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "1"
-                    ],
-                    [
-                      "Enrique Torres#77",
-                      "2",
-                      "0",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ],
-                    [
-                      "Trent Robey#57 (SS)",
-                      "1",
-                      "1",
-                      "1",
-                      "0",
-                      "1",
-                      "0"
-                    ],
-                    [
-                      "Micah Higgins#9 (3B, 1B)",
-                      "2",
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "1"
-                    ],
-                    [
-                      "Makai Laster#24 (CF)",
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "1",
-                      "0"
-                    ],
-                    [
-                      "James Oare#5",
-                      "1",
-                      "1",
-                      "1",
-                      "1",
-                      "1",
-                      "0"
-                    ],
-                    [
-                      "Chase Gallamore#44 (1B)",
-                      "1",
-                      "1",
-                      "1",
-                      "1",
-                      "0",
-                      "0"
-                    ],
-                    [
-                      "Elias Rosario#3 (RF)",
-                      "0",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ],
-                    [
-                      "Wyatt Peyton#96 (C)",
-                      "2",
-                      "0",
-                      "1",
-                      "1",
-                      "0",
-                      "0"
-                    ],
-                    [
-                      "Mason Todaro#19 (RF)",
-                      "1",
-                      "1",
-                      "0",
-                      "0",
-                      "1",
-                      "0"
-                    ],
-                    [
-                      "TEAM",
-                      "19",
-                      "9",
-                      "7",
-                      "8",
-                      "7",
-                      "2"
-                    ]
-                  ]
-                },
-                {
-                  "kind": "pitching",
-                  "columns": [
-                    "PITCHING",
-                    "IP",
-                    "H",
-                    "R",
-                    "ER",
-                    "BB",
-                    "SO"
-                  ],
-                  "rows": [
-                    [
-                      "Colton Gibney#7 (W)",
-                      "4.0",
-                      "3",
-                      "1",
-                      "1",
-                      "2",
-                      "5"
-                    ],
-                    [
-                      "Mason Porter#17",
-                      "1.0",
-                      "1",
-                      "0",
-                      "0",
-                      "0",
-                      "0"
-                    ],
-                    [
-                      "TEAM",
-                      "5.0",
-                      "4",
-                      "1",
-                      "1",
-                      "2",
-                      "5"
-                    ]
-                  ]
-                }
-              ]
-            }
-          ],
-          "warnings": [],
-          "date": "2026-10-18",
-          "start_time": "10:00",
-          "timezone": "ET"
-        },
-        "source_json": "{\n  \"schema_version\": 1,\n  \"capture_version\": \"1cf08f23d294caf3\",\n  \"kind\": \"diamond-scout-box-score\",\n  \"source_url\": \"https://web.gc.com/teams/dpFAZeEeDHNn/2026-fall-stars-baseball-higgins-14u/schedule/7dcb7ecd-4b5f-4f50-bb01-90b4f879b246/box-score\",\n  \"source_event_id\": \"7dcb7ecd-4b5f-4f50-bb01-90b4f879b246\",\n  \"coverage\": \"Rendered DOM tables and team notes only; completeness not verified\",\n  \"teams\": [\n    {\n      \"name\": \"Rawlings Tigers NOVA - Black 14U\",\n      \"notes\": [\n        \"2B: Alex Medrano, Hainsley Guerrero\",\n        \"TB: Alex Medrano 2, Hainsley Guerrero 2, Henry Bambling 1, Maximillian Helchinger 1\",\n        \"HBP: Aaron Biddle\",\n        \"SB: Alex Medrano 2\",\n        \"WP: Miles Warren 2, Liam Knittel\",\n        \"HBP: Liam Knittel 2\",\n        \"Pitches-Strikes: Liam Knittel 62-32, Miles Warren 45-26\",\n        \"Batters Faced: Liam Knittel 16, Miles Warren 12\"\n      ],\n      \"tables\": [\n        {\n          \"kind\": \"batting\",\n          \"columns\": [\n            \"LINEUP\",\n            \"AB\",\n            \"R\",\n            \"H\",\n            \"RBI\",\n            \"BB\",\n            \"SO\"\n          ],\n          \"rows\": [\n            [\n              \"Maximillian Helchinger#3 (CF)\",\n              \"2\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Alex Medrano#22 (SS)\",\n              \"1\",\n              \"0\",\n              \"1\",\n              \"0\",\n              \"1\",\n              \"0\"\n            ],\n            [\n              \"Henry Bambling#94 (1B)\",\n              \"2\",\n              \"0\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"1\"\n            ],\n            [\n              \"Gabriel Amaya#18 (3B, LF)\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"2\"\n            ],\n            [\n              \"Liam Knittel#11 (P, 3B)\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"1\",\n              \"1\"\n            ],\n            [\n              \"Tyler Davidson#8 (RF)\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Hainsley Guerrero#9 (LF)\",\n              \"2\",\n              \"0\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Parker Scisciani#6 (C)\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Connor Taylor#24 (2B)\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"1\"\n            ],\n            [\n              \"Miles Warren#17 (2B, P)\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Aaron Biddle#13 (C)\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"TEAM\",\n              \"17\",\n              \"1\",\n              \"4\",\n              \"1\",\n              \"2\",\n              \"5\"\n            ]\n          ]\n        },\n        {\n          \"kind\": \"pitching\",\n          \"columns\": [\n            \"PITCHING\",\n            \"IP\",\n            \"H\",\n            \"R\",\n            \"ER\",\n            \"BB\",\n            \"SO\"\n          ],\n          \"rows\": [\n            [\n              \"Liam Knittel#11\",\n              \"2.0\",\n              \"4\",\n              \"5\",\n              \"5\",\n              \"4\",\n              \"1\"\n            ],\n            [\n              \"Miles Warren#17\",\n              \"2.0\",\n              \"3\",\n              \"4\",\n              \"4\",\n              \"3\",\n              \"1\"\n            ],\n            [\n              \"TEAM\",\n              \"4.0\",\n              \"7\",\n              \"9\",\n              \"9\",\n              \"7\",\n              \"2\"\n            ]\n          ]\n        }\n      ]\n    },\n    {\n      \"name\": \"Stars Baseball Higgins 14U\",\n      \"notes\": [\n        \"TB: Adrian Torres 1, Chase Gallamore 1, Colton Gibney 1, James Oare 1, Micah Higgins 1, Trent Robey 1, Wyatt Peyton 1\",\n        \"HBP: Chase Gallamore, Mason Porter\",\n        \"SB: Adrian Torres, James Oare, Mason Porter, Trent Robey\",\n        \"HBP: Colton Gibney\",\n        \"Pitches-Strikes: Colton Gibney 49-31, Mason Porter 10-6\",\n        \"Batters Faced: Colton Gibney 17, Mason Porter 3\"\n      ],\n      \"tables\": [\n        {\n          \"kind\": \"batting\",\n          \"columns\": [\n            \"LINEUP\",\n            \"AB\",\n            \"R\",\n            \"H\",\n            \"RBI\",\n            \"BB\",\n            \"SO\"\n          ],\n          \"rows\": [\n            [\n              \"Adrian Torres#1 (2B, 3B)\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"2\",\n              \"0\"\n            ],\n            [\n              \"Garrett Maines#55 (LF)\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"2\",\n              \"1\",\n              \"0\"\n            ],\n            [\n              \"Colton Gibney#7 (P)\",\n              \"3\",\n              \"0\",\n              \"1\",\n              \"2\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Mason Porter#17 (RF, P)\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"1\"\n            ],\n            [\n              \"Enrique Torres#77\",\n              \"2\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Trent Robey#57 (SS)\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"1\",\n              \"0\"\n            ],\n            [\n              \"Micah Higgins#9 (3B, 1B)\",\n              \"2\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"1\"\n            ],\n            [\n              \"Makai Laster#24 (CF)\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"1\",\n              \"0\"\n            ],\n            [\n              \"James Oare#5\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"0\"\n            ],\n            [\n              \"Chase Gallamore#44 (1B)\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Elias Rosario#3 (RF)\",\n              \"0\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Wyatt Peyton#96 (C)\",\n              \"2\",\n              \"0\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"Mason Todaro#19 (RF)\",\n              \"1\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"1\",\n              \"0\"\n            ],\n            [\n              \"TEAM\",\n              \"19\",\n              \"9\",\n              \"7\",\n              \"8\",\n              \"7\",\n              \"2\"\n            ]\n          ]\n        },\n        {\n          \"kind\": \"pitching\",\n          \"columns\": [\n            \"PITCHING\",\n            \"IP\",\n            \"H\",\n            \"R\",\n            \"ER\",\n            \"BB\",\n            \"SO\"\n          ],\n          \"rows\": [\n            [\n              \"Colton Gibney#7 (W)\",\n              \"4.0\",\n              \"3\",\n              \"1\",\n              \"1\",\n              \"2\",\n              \"5\"\n            ],\n            [\n              \"Mason Porter#17\",\n              \"1.0\",\n              \"1\",\n              \"0\",\n              \"0\",\n              \"0\",\n              \"0\"\n            ],\n            [\n              \"TEAM\",\n              \"5.0\",\n              \"4\",\n              \"1\",\n              \"1\",\n              \"2\",\n              \"5\"\n            ]\n          ]\n        }\n      ]\n    }\n  ],\n  \"warnings\": [],\n  \"date\": \"2026-10-18\",\n  \"start_time\": \"10:00\",\n  \"timezone\": \"ET\"\n}\n",
-        "comparisons": [
-          {
-            "player": "Maximillian Helchinger",
-            "stat": "AB",
-            "box_score": 2,
-            "plays": 2,
-            "status": "match"
-          },
-          {
-            "player": "Maximillian Helchinger",
-            "stat": "H",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Maximillian Helchinger",
-            "stat": "BB",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Maximillian Helchinger",
-            "stat": "SO",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Alex Medrano",
-            "stat": "AB",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Alex Medrano",
-            "stat": "H",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Alex Medrano",
-            "stat": "BB",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Alex Medrano",
-            "stat": "SO",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Henry Bambling",
-            "stat": "AB",
-            "box_score": 2,
-            "plays": 2,
-            "status": "match"
-          },
-          {
-            "player": "Henry Bambling",
-            "stat": "H",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Henry Bambling",
-            "stat": "BB",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Henry Bambling",
-            "stat": "SO",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Gabriel Amaya",
-            "stat": "AB",
-            "box_score": 2,
-            "plays": 2,
-            "status": "match"
-          },
-          {
-            "player": "Gabriel Amaya",
-            "stat": "H",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Gabriel Amaya",
-            "stat": "BB",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Gabriel Amaya",
-            "stat": "SO",
-            "box_score": 2,
-            "plays": 2,
-            "status": "match"
-          },
-          {
-            "player": "Liam Knittel",
-            "stat": "AB",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Liam Knittel",
-            "stat": "H",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Liam Knittel",
-            "stat": "BB",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Liam Knittel",
-            "stat": "SO",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Tyler Davidson",
-            "stat": "AB",
-            "box_score": 2,
-            "plays": 2,
-            "status": "match"
-          },
-          {
-            "player": "Tyler Davidson",
-            "stat": "H",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Tyler Davidson",
-            "stat": "BB",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Tyler Davidson",
-            "stat": "SO",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Hainsley Guerrero",
-            "stat": "AB",
-            "box_score": 2,
-            "plays": 2,
-            "status": "match"
-          },
-          {
-            "player": "Hainsley Guerrero",
-            "stat": "H",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Hainsley Guerrero",
-            "stat": "BB",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Hainsley Guerrero",
-            "stat": "SO",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Parker Scisciani",
-            "stat": "AB",
-            "box_score": 2,
-            "plays": 2,
-            "status": "match"
-          },
-          {
-            "player": "Parker Scisciani",
-            "stat": "H",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Parker Scisciani",
-            "stat": "BB",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Parker Scisciani",
-            "stat": "SO",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Connor Taylor",
-            "stat": "AB",
-            "box_score": 2,
-            "plays": 2,
-            "status": "match"
-          },
-          {
-            "player": "Connor Taylor",
-            "stat": "H",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Connor Taylor",
-            "stat": "BB",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Connor Taylor",
-            "stat": "SO",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Miles Warren",
-            "stat": "AB",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Miles Warren",
-            "stat": "H",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Miles Warren",
-            "stat": "BB",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Miles Warren",
-            "stat": "SO",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Aaron Biddle",
-            "stat": "AB",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Aaron Biddle",
-            "stat": "H",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Aaron Biddle",
-            "stat": "BB",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "Aaron Biddle",
-            "stat": "SO",
-            "box_score": 0,
-            "plays": 0,
-            "status": "match"
-          },
-          {
-            "player": "TEAM",
-            "stat": "AB",
-            "box_score": 17,
-            "plays": 17,
-            "status": "match"
-          },
-          {
-            "player": "TEAM",
-            "stat": "H",
-            "box_score": 4,
-            "plays": 4,
-            "status": "match"
-          },
-          {
-            "player": "TEAM",
-            "stat": "BB",
-            "box_score": 2,
-            "plays": 2,
-            "status": "match"
-          },
-          {
-            "player": "TEAM",
-            "stat": "SO",
-            "box_score": 5,
-            "plays": 5,
-            "status": "match"
-          },
-          {
-            "player": "Alex Medrano",
-            "stat": "2B",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Hainsley Guerrero",
-            "stat": "2B",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Alex Medrano",
-            "stat": "TB",
-            "box_score": 2,
-            "plays": 2,
-            "status": "match"
-          },
-          {
-            "player": "Hainsley Guerrero",
-            "stat": "TB",
-            "box_score": 2,
-            "plays": 2,
-            "status": "match"
-          },
-          {
-            "player": "Henry Bambling",
-            "stat": "TB",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Maximillian Helchinger",
-            "stat": "TB",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Aaron Biddle",
-            "stat": "HBP",
-            "box_score": 1,
-            "plays": 1,
-            "status": "match"
-          },
-          {
-            "player": "Alex Medrano",
-            "stat": "SB",
-            "box_score": 2,
-            "plays": 2,
-            "status": "match"
-          },
-          {
-            "player": "Liam Knittel",
-            "stat": "HBP",
-            "box_score": 2,
-            "plays": 0,
-            "status": "conflict"
-          }
-        ],
-        "notes": [],
-        "status": "review",
-        "conflict_count": 1,
-        "unavailable_count": 0
-      },
-      "pitching_scout": {
-        "version": 1,
-        "pitchers": [
-          {
-            "name": "Liam Knittel",
-            "jersey": "11",
-            "stats": {
-              "IP": "2.0",
-              "H": 4,
-              "R": 5,
-              "ER": 5,
-              "BB": 4,
-              "SO": 1
-            },
-            "bf": 16,
-            "pitches": 62,
-            "strikes": 32,
-            "sample": {
-              "innings": [
-                {
-                  "inning": 1,
-                  "pitches": 19,
-                  "strikes": 11,
-                  "first": 5,
-                  "first_strikes": 1
-                },
-                {
-                  "inning": 2,
-                  "pitches": 43,
-                  "strikes": 21,
-                  "first": 11,
-                  "first_strikes": 7
-                }
-              ],
-              "firstStrikeResults": {
-                "total": 8,
-                "out": 2,
-                "walk": 1,
-                "hit": 3,
-                "other": 2,
-                "unknown": 0
-              },
-              "outcomes": {
-                "ball": 30,
-                "called_strike": 8,
-                "swinging_strike": 6,
-                "foul": 9,
-                "in_play": 8,
-                "foul_tip": 0,
-                "foul_out": 1,
-                "hit_by_pitch": 0,
-                "unknown": 0
-              },
-              "strikeouts": {
-                "looking": 0,
-                "swinging": 1,
-                "unknown": 0
-              },
-              "bf": 16,
-              "first": 16,
-              "first_strikes": 8,
-              "known": 62,
-              "whiffs": 6,
-              "contacts": 8,
-              "ground": 2,
-              "hits": 4,
-              "ab": 10,
-              "unclassified": 0,
-              "first_sequence": 1,
-              "last_sequence": 16
-            }
-          },
-          {
-            "name": "Miles Warren",
-            "jersey": "17",
-            "stats": {
-              "IP": "2.0",
-              "H": 3,
-              "R": 4,
-              "ER": 4,
-              "BB": 3,
-              "SO": 1
-            },
-            "bf": 12,
-            "pitches": 45,
-            "strikes": 26,
-            "sample": {
-              "innings": [
-                {
-                  "inning": 3,
-                  "pitches": 16,
-                  "strikes": 10,
-                  "first": 4,
-                  "first_strikes": 2
-                },
-                {
-                  "inning": 4,
-                  "pitches": 29,
-                  "strikes": 16,
-                  "first": 8,
-                  "first_strikes": 6
-                }
-              ],
-              "firstStrikeResults": {
-                "total": 8,
-                "out": 5,
-                "walk": 1,
-                "hit": 2,
-                "other": 0,
-                "unknown": 0
-              },
-              "outcomes": {
-                "ball": 19,
-                "called_strike": 5,
-                "swinging_strike": 2,
-                "foul": 11,
-                "in_play": 7,
-                "foul_tip": 0,
-                "foul_out": 1,
-                "hit_by_pitch": 0,
-                "unknown": 0
-              },
-              "strikeouts": {
-                "looking": 0,
-                "swinging": 1,
-                "unknown": 0
-              },
-              "bf": 12,
-              "first": 12,
-              "first_strikes": 8,
-              "known": 45,
-              "whiffs": 2,
-              "contacts": 7,
-              "ground": 3,
-              "hits": 3,
-              "ab": 9,
-              "unclassified": 0,
-              "first_sequence": 17,
-              "last_sequence": 28
             }
           }
         ],
@@ -40513,1508 +40355,6 @@
       "source_events": [
         "Aiden Kim at bat"
       ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 1,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-1-pa-001",
-      "sequence": 1,
-      "batter_id": "rawlings-tigers-nova-black-14u-maximillian-helchinger",
-      "status": "complete",
-      "result": "single",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "foul",
-          "count_before": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 3,
-          "outcome": "in_play",
-          "count_before": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": {
-        "contact_type": "line_drive",
-        "fielding_position": "RF",
-        "location": {
-          "zone": "right_field",
-          "precision": "fielder_zone",
-          "direction": null,
-          "depth": null
-        },
-        "source_text": "Maximillian Helchinger singles on a line drive to right fielder Mason Todaro."
-      },
-      "pitcher": {
-        "name": null,
-        "attribution": "unknown"
-      },
-      "source_text": "Maximillian Helchinger singles on a line drive to right fielder Mason Todaro.",
-      "source_pitch_sequence": "Ball 1, Foul, In play.",
-      "source_events": [
-        "Single",
-        "Ball 1, Foul, In play.",
-        "Maximillian Helchinger singles on a line drive to right fielder Mason Todaro."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 1,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-1-pa-002",
-      "sequence": 2,
-      "batter_id": "rawlings-tigers-nova-black-14u-alex-medrano",
-      "status": "complete",
-      "result": "double",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "in_play",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": {
-        "contact_type": "line_drive",
-        "fielding_position": "LF",
-        "location": {
-          "zone": "left_field",
-          "precision": "fielder_zone",
-          "direction": null,
-          "depth": null
-        },
-        "source_text": "Alex Medrano doubles on a line drive to left fielder Garrett Maines, Maximillian Helchinger advances to 3rd."
-      },
-      "pitcher": {
-        "name": null,
-        "attribution": "unknown"
-      },
-      "source_text": "Alex Medrano doubles on a line drive to left fielder Garrett Maines, Maximillian Helchinger advances to 3rd.",
-      "source_pitch_sequence": "In play.",
-      "source_events": [
-        "Double",
-        "In play.",
-        "Alex Medrano doubles on a line drive to left fielder Garrett Maines, Maximillian Helchinger advances to 3rd."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 1,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-1-pa-003",
-      "sequence": 3,
-      "batter_id": "rawlings-tigers-nova-black-14u-henry-bambling",
-      "status": "complete",
-      "result": "single",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "called_strike",
-          "count_before": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 3,
-          "outcome": "in_play",
-          "count_before": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": {
-        "contact_type": "line_drive",
-        "fielding_position": "LF",
-        "location": {
-          "zone": "left_field",
-          "precision": "fielder_zone",
-          "direction": null,
-          "depth": null
-        },
-        "source_text": "Henry Bambling singles on a line drive to left fielder Garrett Maines, Maximillian Helchinger scores, Alex Medrano advances to 3rd."
-      },
-      "pitcher": {
-        "name": null,
-        "attribution": "unknown"
-      },
-      "source_text": "Henry Bambling singles on a line drive to left fielder Garrett Maines, Maximillian Helchinger scores, Alex Medrano advances to 3rd.",
-      "source_pitch_sequence": "Ball 1, Strike 1 looking, In play.",
-      "source_events": [
-        "Single",
-        "RWLN 1 - STRS 0",
-        "Ball 1, Strike 1 looking, In play.",
-        "Henry Bambling singles on a line drive to left fielder Garrett Maines, Maximillian Helchinger scores, Alex Medrano advances to 3rd."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 1,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-1-pa-004",
-      "sequence": 4,
-      "batter_id": "rawlings-tigers-nova-black-14u-gabriel-amaya",
-      "status": "complete",
-      "result": "strikeout_swinging",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "called_strike",
-          "count_before": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 3,
-          "outcome": "swinging_strike",
-          "count_before": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 4,
-          "outcome": "swinging_strike",
-          "count_before": {
-            "balls": 1,
-            "strikes": 2
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 3
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": null,
-      "pitcher": {
-        "name": "Colton Gibney",
-        "attribution": "explicit"
-      },
-      "source_text": "Gabriel Amaya strikes out swinging, Colton Gibney pitching, Alex Medrano remains at 3rd, Henry Bambling remains at 1st.",
-      "source_pitch_sequence": "Ball 1, Strike 1 looking, Strike 2 swinging, Strike 3 swinging.",
-      "source_events": [
-        "Strikeout",
-        "1 Out",
-        "Ball 1, Strike 1 looking, Strike 2 swinging, Strike 3 swinging.",
-        "Gabriel Amaya strikes out swinging, Colton Gibney pitching, Alex Medrano remains at 3rd, Henry Bambling remains at 1st."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 1,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-1-pa-005",
-      "sequence": 5,
-      "batter_id": "rawlings-tigers-nova-black-14u-liam-knittel",
-      "status": "complete",
-      "result": "strikeout_looking",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "foul",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 3,
-          "outcome": "called_strike",
-          "count_before": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 4,
-          "outcome": "called_strike",
-          "count_before": {
-            "balls": 1,
-            "strikes": 2
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 3
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": null,
-      "pitcher": {
-        "name": "Colton Gibney",
-        "attribution": "explicit"
-      },
-      "source_text": "Liam Knittel strikes out looking, Colton Gibney pitching, Alex Medrano remains at 3rd, Henry Bambling remains at 1st.",
-      "source_pitch_sequence": "Foul, Ball 1, Strike 2 looking, Strike 3 looking.",
-      "source_events": [
-        "Strikeout",
-        "2 Outs",
-        "Foul, Ball 1, Strike 2 looking, Strike 3 looking.",
-        "Liam Knittel strikes out looking, Colton Gibney pitching, Alex Medrano remains at 3rd, Henry Bambling remains at 1st."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 1,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-1-pa-006",
-      "sequence": 6,
-      "batter_id": "rawlings-tigers-nova-black-14u-tyler-davidson",
-      "status": "complete",
-      "result": "ground_out",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "in_play",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": {
-        "contact_type": "ground_ball",
-        "fielding_position": "SS",
-        "location": {
-          "zone": "shortstop_area",
-          "precision": "fielder_zone",
-          "direction": null,
-          "depth": null
-        },
-        "source_text": "Tyler Davidson grounds out, shortstop Trent Robey to first baseman Chase Gallamore."
-      },
-      "pitcher": {
-        "name": null,
-        "attribution": "unknown"
-      },
-      "source_text": "Tyler Davidson grounds out, shortstop Trent Robey to first baseman Chase Gallamore.",
-      "source_pitch_sequence": "In play.",
-      "source_events": [
-        "Ground Out",
-        "3 Outs",
-        "In play.",
-        "Tyler Davidson grounds out, shortstop Trent Robey to first baseman Chase Gallamore."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 2,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-2-pa-007",
-      "sequence": 7,
-      "batter_id": "rawlings-tigers-nova-black-14u-hainsley-guerrero",
-      "status": "complete",
-      "result": "ground_out",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "in_play",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": {
-        "contact_type": "ground_ball",
-        "fielding_position": "2B",
-        "location": {
-          "zone": "second_base_area",
-          "precision": "fielder_zone",
-          "direction": null,
-          "depth": null
-        },
-        "source_text": "Hainsley Guerrero grounds out, second baseman Adrian Torres to first baseman Chase Gallamore."
-      },
-      "pitcher": {
-        "name": null,
-        "attribution": "unknown"
-      },
-      "source_text": "Hainsley Guerrero grounds out, second baseman Adrian Torres to first baseman Chase Gallamore.",
-      "source_pitch_sequence": "In play.",
-      "source_events": [
-        "Ground Out",
-        "1 Out",
-        "In play.",
-        "Hainsley Guerrero grounds out, second baseman Adrian Torres to first baseman Chase Gallamore."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 2,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-2-pa-008",
-      "sequence": 8,
-      "batter_id": "rawlings-tigers-nova-black-14u-parker-scisciani",
-      "status": "complete",
-      "result": "ground_out",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "foul",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 3,
-          "outcome": "foul",
-          "count_before": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 4,
-          "outcome": "in_play",
-          "count_before": {
-            "balls": 1,
-            "strikes": 2
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": {
-        "contact_type": "ground_ball",
-        "fielding_position": "SS",
-        "location": {
-          "zone": "shortstop_area",
-          "precision": "fielder_zone",
-          "direction": null,
-          "depth": null
-        },
-        "source_text": "Parker Scisciani grounds out, shortstop Trent Robey to first baseman Chase Gallamore."
-      },
-      "pitcher": {
-        "name": null,
-        "attribution": "unknown"
-      },
-      "source_text": "Parker Scisciani grounds out, shortstop Trent Robey to first baseman Chase Gallamore.",
-      "source_pitch_sequence": "Foul, Ball 1, Foul, In play.",
-      "source_events": [
-        "Ground Out",
-        "2 Outs",
-        "Foul, Ball 1, Foul, In play.",
-        "Parker Scisciani grounds out, shortstop Trent Robey to first baseman Chase Gallamore."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 2,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-2-pa-009",
-      "sequence": 9,
-      "batter_id": "rawlings-tigers-nova-black-14u-connor-taylor",
-      "status": "complete",
-      "result": "strikeout_swinging",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "foul",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "called_strike",
-          "count_before": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 3,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 2
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 4,
-          "outcome": "swinging_strike",
-          "count_before": {
-            "balls": 1,
-            "strikes": 2
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 3
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": null,
-      "pitcher": {
-        "name": "Colton Gibney",
-        "attribution": "explicit"
-      },
-      "source_text": "Connor Taylor strikes out swinging, Colton Gibney pitching.",
-      "source_pitch_sequence": "Foul, Strike 2 looking, Ball 1, Strike 3 swinging.",
-      "source_events": [
-        "Strikeout",
-        "3 Outs",
-        "Foul, Strike 2 looking, Ball 1, Strike 3 swinging.",
-        "Connor Taylor strikes out swinging, Colton Gibney pitching."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 3,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-3-pa-010",
-      "sequence": 10,
-      "batter_id": "rawlings-tigers-nova-black-14u-miles-warren",
-      "status": "complete",
-      "result": "ground_out",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "in_play",
-          "count_before": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": {
-        "contact_type": "ground_ball",
-        "fielding_position": "SS",
-        "location": {
-          "zone": "shortstop_area",
-          "precision": "fielder_zone",
-          "direction": null,
-          "depth": null
-        },
-        "source_text": "Miles Warren grounds out, shortstop Trent Robey to first baseman Chase Gallamore."
-      },
-      "pitcher": {
-        "name": null,
-        "attribution": "unknown"
-      },
-      "source_text": "Miles Warren grounds out, shortstop Trent Robey to first baseman Chase Gallamore.",
-      "source_pitch_sequence": "Ball 1, In play.",
-      "source_events": [
-        "Ground Out",
-        "1 Out",
-        "Ball 1, In play.",
-        "Miles Warren grounds out, shortstop Trent Robey to first baseman Chase Gallamore."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 3,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-3-pa-011",
-      "sequence": 11,
-      "batter_id": "rawlings-tigers-nova-black-14u-aaron-biddle",
-      "status": "complete",
-      "result": "hit_by_pitch",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": null,
-      "pitcher": {
-        "name": "Colton Gibney",
-        "attribution": "explicit"
-      },
-      "source_text": "Aaron Biddle is hit by pitch, Colton Gibney pitching.",
-      "source_pitch_sequence": "Ball 1.",
-      "source_events": [
-        "Hit By Pitch",
-        "Ball 1.",
-        "Aaron Biddle is hit by pitch, Colton Gibney pitching."
-      ],
-      "notes": [
-        "HBP ruling has no listed terminal HBP pitch; listed pitches retained."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 3,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-3-pa-012",
-      "sequence": 12,
-      "batter_id": "rawlings-tigers-nova-black-14u-maximillian-helchinger",
-      "status": "complete",
-      "result": "double_play",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "foul",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 3,
-          "outcome": "in_play",
-          "count_before": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": {
-        "contact_type": "fly_ball",
-        "fielding_position": "2B",
-        "location": {
-          "zone": "second_base_area",
-          "precision": "fielder_zone",
-          "direction": null,
-          "depth": null
-        },
-        "source_text": "Maximillian Helchinger flies into a double play, second baseman Adrian Torres to first baseman Chase Gallamore, Aaron Biddle out at 1st, failing to tag up."
-      },
-      "pitcher": {
-        "name": null,
-        "attribution": "unknown"
-      },
-      "source_text": "Maximillian Helchinger flies into a double play, second baseman Adrian Torres to first baseman Chase Gallamore, Aaron Biddle out at 1st, failing to tag up.",
-      "source_pitch_sequence": "Foul, Ball 1, In play.",
-      "source_events": [
-        "Double Play",
-        "3 Outs",
-        "Foul, Ball 1, In play.",
-        "Maximillian Helchinger flies into a double play, second baseman Adrian Torres to first baseman Chase Gallamore, Aaron Biddle out at 1st, failing to tag up."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 4,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-4-pa-013",
-      "sequence": 13,
-      "batter_id": "rawlings-tigers-nova-black-14u-alex-medrano",
-      "status": "complete",
-      "result": "walk",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "called_strike",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 3,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 2,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 4,
-          "outcome": "called_strike",
-          "count_before": {
-            "balls": 2,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 2,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 5,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 2,
-            "strikes": 2
-          },
-          "count_after": {
-            "balls": 3,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 6,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 3,
-            "strikes": 2
-          },
-          "count_after": {
-            "balls": 4,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": null,
-      "pitcher": {
-        "name": "Colton Gibney",
-        "attribution": "explicit"
-      },
-      "source_text": "Alex Medrano walks, Colton Gibney pitching.",
-      "source_pitch_sequence": "Strike 1 looking, Ball 1, Ball 2, Strike 2 looking, Ball 3, Ball 4.",
-      "source_events": [
-        "Walk",
-        "Strike 1 looking, Ball 1, Ball 2, Strike 2 looking, Ball 3, Ball 4.",
-        "Alex Medrano walks, Colton Gibney pitching."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 4,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-4-pa-014",
-      "sequence": 14,
-      "batter_id": "rawlings-tigers-nova-black-14u-henry-bambling",
-      "status": "complete",
-      "result": "strikeout_looking",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "swinging_strike",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "called_strike",
-          "count_before": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 3,
-          "outcome": "called_strike",
-          "count_before": {
-            "balls": 0,
-            "strikes": 2
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 3
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": null,
-      "pitcher": {
-        "name": "Colton Gibney",
-        "attribution": "explicit"
-      },
-      "source_text": "Henry Bambling strikes out looking, Colton Gibney pitching, Alex Medrano remains at 2nd.",
-      "source_pitch_sequence": "Strike 1 swinging, Strike 2 looking, Alex Medrano steals 2nd, Strike 3 looking.",
-      "source_events": [
-        "Strikeout",
-        "1 Out",
-        "Strike 1 swinging, Strike 2 looking, Alex Medrano steals 2nd, Strike 3 looking.",
-        "Henry Bambling strikes out looking, Colton Gibney pitching, Alex Medrano remains at 2nd."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 4,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-4-pa-015",
-      "sequence": 15,
-      "batter_id": "rawlings-tigers-nova-black-14u-gabriel-amaya",
-      "status": "complete",
-      "result": "strikeout_looking",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "foul",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "foul",
-          "count_before": {
-            "balls": 0,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 3,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 2
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 4,
-          "outcome": "called_strike",
-          "count_before": {
-            "balls": 1,
-            "strikes": 2
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 3
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": null,
-      "pitcher": {
-        "name": "Colton Gibney",
-        "attribution": "explicit"
-      },
-      "source_text": "Gabriel Amaya strikes out looking, Colton Gibney pitching, Alex Medrano remains at 2nd.",
-      "source_pitch_sequence": "Foul, Foul, Ball 1, Strike 3 looking.",
-      "source_events": [
-        "Strikeout",
-        "2 Outs",
-        "Foul, Foul, Ball 1, Strike 3 looking.",
-        "Gabriel Amaya strikes out looking, Colton Gibney pitching, Alex Medrano remains at 2nd."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 4,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-4-pa-016",
-      "sequence": 16,
-      "batter_id": "rawlings-tigers-nova-black-14u-liam-knittel",
-      "status": "complete",
-      "result": "walk",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 2,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 3,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 2,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 3,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 4,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 3,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 4,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": null,
-      "pitcher": {
-        "name": "Colton Gibney",
-        "attribution": "explicit"
-      },
-      "source_text": "Liam Knittel walks, Colton Gibney pitching, Alex Medrano remains at 3rd.",
-      "source_pitch_sequence": "Ball 1, Ball 2, Alex Medrano steals 3rd, Ball 3, Ball 4.",
-      "source_events": [
-        "Walk",
-        "Ball 1, Ball 2, Alex Medrano steals 3rd, Ball 3, Ball 4.",
-        "Liam Knittel walks, Colton Gibney pitching, Alex Medrano remains at 3rd."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 4,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-4-pa-017",
-      "sequence": 17,
-      "batter_id": "rawlings-tigers-nova-black-14u-tyler-davidson",
-      "status": "complete",
-      "result": "ground_out",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "in_play",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": {
-        "contact_type": "ground_ball",
-        "fielding_position": "P",
-        "location": {
-          "zone": "pitcher_area",
-          "precision": "fielder_zone",
-          "direction": null,
-          "depth": null
-        },
-        "source_text": "Tyler Davidson grounds out, pitcher Colton Gibney to first baseman Chase Gallamore."
-      },
-      "pitcher": {
-        "name": null,
-        "attribution": "unknown"
-      },
-      "source_text": "Tyler Davidson grounds out, pitcher Colton Gibney to first baseman Chase Gallamore.",
-      "source_pitch_sequence": "In play.",
-      "source_events": [
-        "Ground Out",
-        "3 Outs",
-        "In play.",
-        "Tyler Davidson grounds out, pitcher Colton Gibney to first baseman Chase Gallamore."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 5,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-5-pa-018",
-      "sequence": 18,
-      "batter_id": "rawlings-tigers-nova-black-14u-hainsley-guerrero",
-      "status": "complete",
-      "result": "double",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "foul",
-          "count_before": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 3,
-          "outcome": "foul",
-          "count_before": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 4,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 1,
-            "strikes": 2
-          },
-          "count_after": {
-            "balls": 2,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 5,
-          "outcome": "in_play",
-          "count_before": {
-            "balls": 2,
-            "strikes": 2
-          },
-          "count_after": {
-            "balls": 2,
-            "strikes": 2
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": {
-        "contact_type": "line_drive",
-        "fielding_position": "CF",
-        "location": {
-          "zone": "center_field",
-          "precision": "fielder_zone",
-          "direction": null,
-          "depth": null
-        },
-        "source_text": "Hainsley Guerrero doubles on a line drive to center fielder Makai Laster."
-      },
-      "pitcher": {
-        "name": null,
-        "attribution": "unknown"
-      },
-      "source_text": "Hainsley Guerrero doubles on a line drive to center fielder Makai Laster.",
-      "source_pitch_sequence": "Ball 1, Foul, Foul, Ball 2, In play.",
-      "source_events": [
-        "Double",
-        "Ball 1, Foul, Foul, Ball 2, In play.",
-        "Hainsley Guerrero doubles on a line drive to center fielder Makai Laster."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 5,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-5-pa-019",
-      "sequence": 19,
-      "batter_id": "rawlings-tigers-nova-black-14u-parker-scisciani",
-      "status": "complete",
-      "result": "fly_out",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 2,
-          "outcome": "called_strike",
-          "count_before": {
-            "balls": 1,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 3,
-          "outcome": "ball",
-          "count_before": {
-            "balls": 1,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 2,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        },
-        {
-          "sequence": 4,
-          "outcome": "in_play",
-          "count_before": {
-            "balls": 2,
-            "strikes": 1
-          },
-          "count_after": {
-            "balls": 2,
-            "strikes": 1
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": {
-        "contact_type": "fly_ball",
-        "fielding_position": "CF",
-        "location": {
-          "zone": "center_field",
-          "precision": "fielder_zone",
-          "direction": null,
-          "depth": null
-        },
-        "source_text": "Parker Scisciani flies out to center fielder Makai Laster, Hainsley Guerrero remains at 2nd."
-      },
-      "pitcher": {
-        "name": null,
-        "attribution": "unknown"
-      },
-      "source_text": "Parker Scisciani flies out to center fielder Makai Laster, Hainsley Guerrero remains at 2nd.",
-      "source_pitch_sequence": "Ball 1, Strike 1 looking, Ball 2, In play.",
-      "source_events": [
-        "Fly Out",
-        "1 Out",
-        "Ball 1, Strike 1 looking, Ball 2, In play.",
-        "Parker Scisciani flies out to center fielder Makai Laster, Hainsley Guerrero remains at 2nd."
-      ]
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 5,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-5-pa-020",
-      "sequence": 20,
-      "batter_id": "rawlings-tigers-nova-black-14u-connor-taylor",
-      "status": "complete",
-      "result": "double_play",
-      "pitches": [
-        {
-          "sequence": 1,
-          "outcome": "in_play",
-          "count_before": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "count_after": {
-            "balls": 0,
-            "strikes": 0
-          },
-          "pitch_type": null,
-          "velocity_mph": null,
-          "location": null
-        }
-      ],
-      "batted_ball": {
-        "contact_type": "line_drive",
-        "fielding_position": "SS",
-        "location": {
-          "zone": "shortstop_area",
-          "precision": "fielder_zone",
-          "direction": null,
-          "depth": null
-        },
-        "source_text": "Connor Taylor lines into a double play to shortstop Trent Robey, Hainsley Guerrero out at 2nd, failing to tag up."
-      },
-      "pitcher": {
-        "name": null,
-        "attribution": "unknown"
-      },
-      "source_text": "Connor Taylor lines into a double play to shortstop Trent Robey, Hainsley Guerrero out at 2nd, failing to tag up.",
-      "source_pitch_sequence": "In play.",
-      "source_events": [
-        "Double Play",
-        "3 Outs",
-        "In play.",
-        "Connor Taylor lines into a double play to shortstop Trent Robey, Hainsley Guerrero out at 2nd, failing to tag up."
-      ]
     }
   ],
   "baserunning_events": [
@@ -42399,30 +40739,6 @@
       "source_text": "Connor Taylor steals 2nd",
       "source_pa_id": "2026-10-25-1000-rawlings-tigers-nova-black-14u-vs-shockers-14u-6d3d04d1cf-bottom-5-pa-022",
       "reach_pa_id": "2026-10-25-1000-rawlings-tigers-nova-black-14u-vs-shockers-14u-6d3d04d1cf-bottom-5-pa-021"
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 4,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-attempt-001",
-      "runner_id": "rawlings-tigers-nova-black-14u-alex-medrano",
-      "result": "stolen_base",
-      "to_base": "2B",
-      "source_text": "Alex Medrano steals 2nd",
-      "source_pa_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-4-pa-014",
-      "reach_pa_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-4-pa-013"
-    },
-    {
-      "game_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469",
-      "inning": 4,
-      "half": "top",
-      "id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-attempt-002",
-      "runner_id": "rawlings-tigers-nova-black-14u-alex-medrano",
-      "result": "stolen_base",
-      "to_base": "3B",
-      "source_text": "Alex Medrano steals 3rd",
-      "source_pa_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-4-pa-016",
-      "reach_pa_id": "2026-10-18-1000-rawlings-tigers-nova-black-14u-vs-stars-baseball-higgins-14u-b488e55469-top-4-pa-013"
     }
   ],
   "baserunning_entries": [

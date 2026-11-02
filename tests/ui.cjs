@@ -10,7 +10,7 @@ const originalPAs=history.plate_appearances.filter(p=>p.game_id==='supplied-game
 const data={...history,baserunning_events:[],baserunning_entries:[],runner_outs:[],games:history.games.filter(g=>g.id==='supplied-game-001'),players:history.players.filter(p=>originalPlayers.has(p.id)),plate_appearances:originalPAs};
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'tests/fixtures/teams.json')));
 const clone=x=>JSON.parse(JSON.stringify(x));
-async function openApp({browserNavigator,storage={},storageBlocked=false,href='https://diamond-scout.test/',files={'teams.json':manifest,'data/shockers-14u.json':data}}={}){
+async function openApp({defaultMinimumGames=0,browserNavigator,storage={},storageBlocked=false,href='https://diamond-scout.test/',files={'teams.json':manifest,'data/shockers-14u.json':data}}={}){
  const windowListeners={},elements={},releaseRequests=[],requested=[],repository=clone(files),url=new URL(href),base=new URL('./',url),documentRoot={dataset:{}};
  for(const [,id]of html.matchAll(/\bid="([^"]+)"/g))elements[id]={id,value:'',hidden:/\bhidden(?:\s|>|=)/.test(html.match(new RegExp('<[^>]*\\bid="'+id+'"[^>]*>'))?.[0]||''),_html:'',textContent:'',attrs:{},dataset:{},listeners:{},addEventListener(k,f){this.listeners[k]=f},setAttribute(k,v){this.attrs[k]=v},scrollIntoView(){},focus(){elements.app.focusedId=this.id;},click(){return this.listeners.click?.({target:this})},set innerHTML(s){this._html=s;if(this.id.endsWith('-select'))this.value=s.match(/<option value="([^"]+)"/)?.[1]||''},get innerHTML(){return this._html}};
  for(const v of ['scout','pitching'])elements['tab-'+v].dataset.view=v;
@@ -21,7 +21,7 @@ async function openApp({browserNavigator,storage={},storageBlocked=false,href='h
   const key=target.pathname.slice(base.pathname.length),value=repository[key];
   return {ok:value!==undefined,status:value===undefined?404:200,json:async()=>clone(value)};
  }});
- for(const [,code]of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g))vm.runInContext(code,context);
+ for(const [,code]of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g))vm.runInContext(code.replace('minimumGames:5,minimumSamples:', 'minimumGames:'+defaultMinimumGames+',minimumSamples:'),context);
  await new Promise(setImmediate);
  return {elements,requested,repository,documentRoot,storage,context,windowListeners,releaseRequests};
 }
@@ -556,5 +556,18 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  for(const team of runtimeManifest.teams)runtimeFiles[team.data_file]=JSON.parse(fs.readFileSync(path.join(root,team.data_file)));
  const runtimeApp=await openApp({href:'https://diamond-scout.test/?team=all',files:runtimeFiles});assert.equal(runtimeApp.elements.app.hidden,false);
  for(const team of runtimeManifest.teams){runtimeApp.elements['team-select'].value=team.id;await runtimeApp.elements['team-select'].listeners.change();assert.equal(runtimeApp.elements['page-title'].textContent,team.name);assert.equal(runtimeApp.elements.app.hidden,false);}
+ {
+ const app=await openApp({defaultMinimumGames:5}),E=app.elements;
+ assert.equal(E['minimum-games'].value,'5');assert.equal(E['batter-select'].value,'all');
+ const options=()=>[...E['batter-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]);
+ assert.deepEqual(options(),['all'],'Single-game history has no five-game players');
+ assert.match(E['batter-context'].textContent,/0 PA/);assert.match(E['filter-context'].textContent,/excluded/);
+ E['minimum-games'].value='0';E['minimum-games'].listeners.change();assert(options().length>1);assert.match(E['batter-context'].textContent,/26 PA/);
+ E['minimum-games'].value='2';E['minimum-games'].listeners.change();assert.deepEqual(options(),['all']);
+ E['minimum-games'].value='1.5';E['minimum-games'].listeners.change();assert.equal(E['minimum-games'].value,'2');
+ const restored=await openApp({storage:app.storage});assert.equal(restored.elements['minimum-games'].value,'2');
+ E['minimum-games'].value='0';E['minimum-games'].listeners.change();await E['share-view'].click();
+ assert(new URL(E['share-link'].value).searchParams.has('minGames'));
+ }
  console.log('PASS ('+(process.env.DIAMOND_TEST_WIDTH||1280)+'px viewport model): automatic repository JSON loading, subdirectory hosting, file-protocol guidance, page-refresh recovery, pitch summaries, filters, navigation, and safe missing-data rendering.');
 })();

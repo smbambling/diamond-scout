@@ -564,14 +564,16 @@ function planWithState(root,inputs,options,state){
         report.push({file:input.name,team:entry.name,team_id:entry.id,status:'duplicate',game_id:game.id,warnings:[omittedEmptyAtBat(game)?'Completed plays already present; capture omits the final empty at-bat section. Stored unfinished appearance and all history retained.':tournamentAdded?'Identical plays already present; tournament label added without changing plays.':'Identical plays already present; no records or metadata changed.',...(input.captureWarnings||[])]}); continue;
       }
       const overlap=data.games.find(game=>{
-        if (capture.eventId && game.source_event_id) return capture.eventId===game.source_event_id;
+        if (capture.eventId && game.source_event_id===capture.eventId) return true;
+        // Opposing GameChanger scorebooks can assign different event IDs to the same game.
+        // A different ID must not bypass the date/time/opponent overlap checks.
         // Identical partial appearance text can reveal overlap even when dates/opponents are missing.
         // Do not use individual PA text to deduplicate: separate identical PAs remain separate.
         if (game.source_play_by_play && (!capture.date || !game.date) && (canonical(game.source_play_by_play).includes(canonical(capture.source)) || canonical(capture.source).includes(canonical(game.source_play_by_play)))) return true;
         if (key(game.opponent)!==key(opponent)) return false;
         return (!capture.date || !game.date || capture.date===game.date) && (!capture.time || !game.start_time || capture.time===game.start_time);
       });
-      if (overlap) fail('Possible overlap/correction for '+entry.name+' ('+overlap.id+'). Different/partial plays must be merged with TEAM-DATA-PROMPT.md, not appended as a new game. Supply distinct date/time or event IDs for rematches.');
+      if (overlap) fail('Possible overlap/correction for '+entry.name+' ('+overlap.id+'). Different/partial plays must be merged with TEAM-DATA-PROMPT.md, not appended as a new game. Supply distinct date/time for rematches; opposing scorebooks may use different event IDs for the same game.');
       const identity=capture.eventId || [capture.date,capture.time,opponent,capture.sourceHash].join('|');
       const gameId=[capture.date||'undated',capture.time?.replace(':','')||'unknown-time',entry.id,'vs',slug(opponent),hash(identity).slice(0,10)].join('-');
       if (data.games.some(g=>g.id===gameId)) fail('Generated game ID collision.');
