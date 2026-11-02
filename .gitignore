@@ -13,3 +13,6 @@ node_modules/
 
 # Import process lock (never remove while an import is running)
 .import-plays.lock
+
+# Local design mockups
+/generated_images/
