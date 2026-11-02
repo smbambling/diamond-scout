@@ -225,6 +225,12 @@
 .inning-pitcher-links{display:flex;flex-wrap:wrap;gap:0 12px;margin-top:4px}.inning-pitcher-link{border:0;background:transparent;color:var(--accent);padding:4px 0;min-height:48px;font-size:12px;text-align:left;text-decoration:underline;text-underline-offset:3px}.inning-pitcher-link:hover{background:transparent;color:var(--accent-strong)}
 
 #minimum-games{min-height:48px;width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--control-border);border-radius:12px;background:var(--control);color:var(--text)}
+
+.metric-sort-toggle{margin-right:5px}.metric-sort-toggle[aria-pressed="true"]{background:transparent;color:var(--accent-strong);outline:1px dashed var(--accent);outline-offset:-4px}.metric-sort-toggle[aria-pressed="true"]:hover,.metric-sort-toggle[aria-pressed="true"]:focus-visible{background:var(--selected-bg);color:var(--accent-strong)}.player-step .jersey-icon{width:24px;height:24px;stroke-width:1.7}
+#app[data-metric-sort="true"] [data-sort-key]{outline:1px dashed var(--accent);outline-offset:-4px;cursor:pointer;border-radius:8px}
+#app[data-metric-sort="true"] [data-sort-key]:hover,#app[data-metric-sort="true"] [data-sort-key]:focus-visible{background:var(--selected-bg);outline:2px solid var(--accent);outline-offset:-3px}
+
+#app[data-metric-sort="true"] #pitching-avg [data-sort-key]{min-height:44px;align-items:center}
 </style>
 </head>
 <body>
@@ -237,11 +243,11 @@
 <div id="release-update" class="release-update" role="status" hidden><span>Update available</span><button id="release-refresh" type="button">Refresh</button></div>
 <div class="control-row"><label class="team-control"><span class="sr-only">Team</span><select id="team-select" aria-label="Team"></select></label><button id="search-toggle" class="search-toggle" type="button" aria-label="Search teams and players" title="Search teams and players" aria-expanded="false" aria-controls="search-panel"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg></button><button class="filter-toggle" id="filter-toggle" aria-label="Filters" title="Filters" aria-expanded="false" aria-controls="filter-panel"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/><circle cx="8" cy="6" r="2" fill="var(--panel)"/><circle cx="16" cy="12" r="2" fill="var(--panel)"/><circle cx="9" cy="18" r="2" fill="var(--panel)"/></svg><span id="filter-active-badge" class="filter-active-badge" hidden aria-hidden="true"></span></button></div>
 <section id="search-panel" class="search-panel" aria-label="Search teams and players" hidden><div class="filters-heading"><span>Search</span><button id="search-done" type="button">Done</button></div><div><label for="team-search">Team name</label><input id="team-search" type="search" placeholder="Find a team" autocomplete="off" aria-controls="team-search-results"><div id="team-search-results" class="search-results"></div></div><div><label id="player-search-label" for="player-search">Batter name or jersey number</label><input id="player-search" type="search" placeholder="Name or #" autocomplete="off" aria-controls="player-search-results"><div id="player-search-results" class="search-results"></div></div></section>
-<section id="filter-panel" class="filters" aria-label="Scouting filters" hidden><div class="filters-heading"><span>Filters</span><div class="filter-actions"><button id="share-view" type="button">Share view</button><button id="filters-done" type="button">Done</button></div></div><div id="share-feedback" class="share-feedback" hidden><p id="share-status" role="status" aria-live="polite"></p><label id="share-link-label" hidden>Current view link<input id="share-link" type="text" readonly></label></div><fieldset class="game-filter"><legend>Games</legend><details id="game-picker"><summary id="game-selection-summary">All recorded games</summary><div class="game-actions"><button id="games-all" type="button">All games</button><button id="games-clear" type="button">Clear</button></div><div id="game-select" class="game-options" role="group" aria-label="Games to include"></div></details></fieldset><label id="contact-filter">Contact type<select id="contact-select"><option value="all">All contact</option><option value="fair_contact">Fair contact only</option><option value="foul_out">Foul catches</option><option value="ground_ball">Ground balls</option><option value="line_drive">Line drives</option><option value="fly_ball">Fly balls</option><option value="bunt">Bunts</option><option value="unknown">Unknown contact type</option></select></label><label>Sort players by<select id="player-sort-select" aria-label="Sort players by"></select></label><label>Minimum games played<input id="minimum-games" type="number" min="0" step="1" value="5" inputmode="numeric" aria-describedby="minimum-games-help"><span id="minimum-games-help" class="small">Full team history · 0 includes everyone</span></label><label id="minimum-sample-filter" hidden><span id="minimum-ranking-label">Minimum AB for ranking</span><select id="minimum-sample-select" aria-label="Minimum AB for ranking" title="Players meeting the minimum rank first; all players remain selectable."></select></label></section>
+<section id="filter-panel" class="filters" aria-label="Scouting filters" hidden><div class="filters-heading"><span>Filters</span><div class="filter-actions"><button id="share-view" type="button">Share view</button><button id="filters-done" type="button">Done</button></div></div><div id="share-feedback" class="share-feedback" hidden><p id="share-status" role="status" aria-live="polite"></p><label id="share-link-label" hidden>Current view link<input id="share-link" type="text" readonly></label></div><fieldset class="game-filter"><legend>Games</legend><details id="game-picker"><summary id="game-selection-summary">All recorded games</summary><div class="game-actions"><button id="games-all" type="button">All games</button><button id="games-clear" type="button">Clear</button></div><div id="game-select" class="game-options" role="group" aria-label="Games to include"></div></details></fieldset><label id="contact-filter">Contact type<select id="contact-select"><option value="all">All contact</option><option value="fair_contact">Fair contact only</option><option value="foul_out">Foul catches</option><option value="ground_ball">Ground balls</option><option value="line_drive">Line drives</option><option value="fly_ball">Fly balls</option><option value="bunt">Bunts</option><option value="unknown">Unknown contact type</option></select></label><label>Minimum games played<input id="minimum-games" type="number" min="0" step="1" value="5" inputmode="numeric" aria-describedby="minimum-games-help"><span id="minimum-games-help" class="small">Full team history · 0 includes everyone</span></label><label id="minimum-sample-filter" hidden><span id="minimum-ranking-label">Minimum AB for ranking</span><select id="minimum-sample-select" aria-label="Minimum AB for ranking" title="Players meeting the minimum rank first; all players remain selectable."></select></label></section>
 <p id="filter-context" class="filter-context" role="status" aria-live="polite"></p>
-<div class="batter-header" id="batter-header"><div class="batter-info"><div class="player-picker-row"><label class="batter-picker"><span class="sr-only">Batter</span><select id="batter-select" aria-label="Batter"></select></label><div class="player-stepper" role="group" aria-label="Batter navigation"><button id="batter-previous" class="player-step" type="button" aria-label="Previous batter" title="Previous batter"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><button id="batter-next" class="player-step" type="button" aria-label="Next batter" title="Next batter"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div></div><div class="batter-meta"><p class="batter-context" id="batter-context"></p><span class="badge" id="sample-label"></span></div></div></div>
+<div class="batter-header" id="batter-header"><div class="batter-info"><div class="player-picker-row"><label class="batter-picker"><span class="sr-only">Batter</span><select id="batter-select" aria-label="Batter"></select></label><div class="player-stepper" role="group" aria-label="Batter navigation"><button id="batter-sort-toggle" class="player-step metric-sort-toggle" type="button" aria-label="Tap a metric to sort players" title="Tap a metric to sort players" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v16m-4-4 4 4 4-4M16 20V4m-4 4 4-4 4 4"/></svg></button><button id="batter-previous" class="player-step" type="button" aria-label="Previous batter" title="Previous batter"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><button id="batter-next" class="player-step" type="button" aria-label="Next batter" title="Next batter"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div></div><div class="batter-meta"><p class="batter-context" id="batter-context" aria-live="polite"></p><span class="badge" id="sample-label"></span></div></div></div>
 <section id="view-scout" role="tabpanel" aria-labelledby="tab-scout"><div class="scout-layout"><article class="panel field-card scout-main"><h2 class="sr-only">Batter scouting summary</h2><div class="scout-stat-block" role="group" aria-label="Scouting statistics"><div class="batting-group hitting-stat-grid"><div id="batting-stats" class="batting-grid batting-strip" role="group" aria-label="Batting statistics"></div><div id="batting-detail" class="metric-detail" role="region" aria-label="Selected metric details" hidden aria-live="polite"></div><div id="quick-read" class="quick-read-strip" aria-label="Batter approach"></div><div id="quick-detail" class="metric-detail" role="region" aria-label="Selected metric details" hidden aria-live="polite"></div></div><details id="batting-note" class="small secondary batting-review" hidden></details></div><div class="scout-map-frame"><div class="field-wrap" id="scout-field"></div></div><p id="scout-foul-info" class="note" hidden></p><section class="hitting-contact-profile" aria-label="Contact profile"><div class="contact-profile-heading"><h3>Contact profile</h3><span id="contact-profile-sample"></span></div><div id="hitting-contact-bars"></div></section></article></div></section>
-<section id="view-pitching" role="tabpanel" aria-labelledby="tab-pitching" hidden><div class="scout-layout"><div class="player-picker-row"><label class="batter-picker"><span class="sr-only">Pitcher</span><select id="pitcher-select" aria-label="Pitcher"></select></label><div class="player-stepper" role="group" aria-label="Pitcher navigation"><button id="pitcher-previous" class="player-step" type="button" aria-label="Previous pitcher" title="Previous pitcher"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><button id="pitcher-next" class="player-step" type="button" aria-label="Next pitcher" title="Next pitcher"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div></div><p id="pitcher-context" class="note" tabindex="-1"></p><details id="pitcher-leaders" class="panel pitcher-leaders" hidden></details><article class="panel" style="margin-top:18px"><div class="pitching-title-row"><h2>Pitching summary</h2><div id="pitching-avg" aria-label="Batting average against"></div></div><div class="pitching-summary-group"><div id="pitching-summary" class="batting-grid"></div><div id="pitching-strike-detail" class="metric-detail" role="region" aria-label="Strike details" hidden aria-live="polite"></div><div id="pitching-strikeout-detail" class="metric-detail" role="region" aria-label="Strikeout breakdown" hidden aria-live="polite"></div><div id="pitching-tendencies" class="batting-grid"></div><div id="pitching-first-strike-detail" class="metric-detail" role="region" aria-label="Results after first-pitch strikes" hidden aria-live="polite"></div></div><p id="pitching-tracked-context" class="note"></p></article><article class="panel pitching-outcomes" style="margin-top:18px"><h2>Recorded pitch outcomes</h2><p id="pitching-outcome-sample" class="sr-only"></p><div id="pitching-outcome-overview"></div><div id="pitching-outcome-bars"></div></article><article id="pitching-innings" class="panel pitching-innings" style="margin-top:18px" hidden><h2>Performance by inning</h2><div id="pitching-inning-pitchers" class="inning-pitcher-links"></div><div id="pitching-inning-table"></div></article></div></section>
+<section id="view-pitching" role="tabpanel" aria-labelledby="tab-pitching" hidden><div class="scout-layout"><div class="player-picker-row"><label class="batter-picker"><span class="sr-only">Pitcher</span><select id="pitcher-select" aria-label="Pitcher"></select></label><div class="player-stepper" role="group" aria-label="Pitcher navigation"><button id="pitcher-sort-toggle" class="player-step metric-sort-toggle" type="button" aria-label="Tap a metric to sort players" title="Tap a metric to sort players" aria-pressed="false"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v16m-4-4 4 4 4-4M16 20V4m-4 4 4-4 4 4"/></svg></button><button id="pitcher-previous" class="player-step" type="button" aria-label="Previous pitcher" title="Previous pitcher"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><button id="pitcher-next" class="player-step" type="button" aria-label="Next pitcher" title="Next pitcher"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div></div><p id="pitcher-context" class="note" tabindex="-1" aria-live="polite"></p><details id="pitcher-leaders" class="panel pitcher-leaders" hidden></details><article class="panel" style="margin-top:18px"><div class="pitching-title-row"><h2>Pitching summary</h2><div id="pitching-avg" aria-label="Batting average against"></div></div><div class="pitching-summary-group"><div id="pitching-summary" class="batting-grid"></div><div id="pitching-strike-detail" class="metric-detail" role="region" aria-label="Strike details" hidden aria-live="polite"></div><div id="pitching-strikeout-detail" class="metric-detail" role="region" aria-label="Strikeout breakdown" hidden aria-live="polite"></div><div id="pitching-tendencies" class="batting-grid"></div><div id="pitching-first-strike-detail" class="metric-detail" role="region" aria-label="Results after first-pitch strikes" hidden aria-live="polite"></div></div><p id="pitching-tracked-context" class="note"></p></article><article class="panel pitching-outcomes" style="margin-top:18px"><h2>Recorded pitch outcomes</h2><p id="pitching-outcome-sample" class="sr-only"></p><div id="pitching-outcome-overview"></div><div id="pitching-outcome-bars"></div></article><article id="pitching-innings" class="panel pitching-innings" style="margin-top:18px" hidden><h2>Performance by inning</h2><div id="pitching-inning-pitchers" class="inning-pitcher-links"></div><div id="pitching-inning-table"></div></article></div></section>
 <footer class="footer"><span>Diamond Scout · Read the game</span><span id="coverage-note"></span></footer></div></main></div>
 <script id="diamond-scout-core">
 'use strict';
@@ -552,8 +558,9 @@
 'use strict';
 (() => {
  const D=globalThis.DiamondScout,$=id=>document.getElementById(id),e=D.esc;
- const releaseVersion='0f500b7f8c45f4c5';
+ const releaseVersion='3792c1ab8e02c47b';
  const state={view:'scout',batter:'all',game:'all',type:'all',pitcher:'all',organizationTeam:'all',minimumGames:5,minimumSamples:{scout:0,pitching:0},sorts:{scout:'avg',pitching:'avg'}},cache=new Map();
+ let metricSortMode=false;
  let manifest=null,data=null,loadGeneration=0,expandedMetric=null,pitchingStrikeoutsOpen=false,pitchingStrikesOpen=false,pitchingFirstStrikesOpen=false;
  const metricItems=new Map();
  const selectionKey='diamond-scout:selection:'+new URL('./',location.href).pathname;
@@ -609,6 +616,7 @@
  const pitchStats=(pas,game=state.game,batter=state.batter)=>D.pitchSummary(pas,batter==='all'?(filteredData().runner_outs||[]).filter(out=>D.gameSelected(game,out.game_id)).flatMap(out=>out.pitches||[]):[]);
  function status(message,error=false){$('status').className=error?'notice error':'loading';$('status').textContent=message;$('status').hidden=false;}
  function closeMetricDetails(){
+  metricSortMode=false;
   expandedMetric=null;pitchingStrikesOpen=false;pitchingStrikeoutsOpen=false;pitchingFirstStrikesOpen=false;
   $('batting-note').open=false;
  }
@@ -616,22 +624,38 @@
   state.batter='all';state.game='all';state.type='all';state.pitcher='all';$('contact-select').value='all';closeMetricDetails();
  }
  const sortOptions={
-  scout:[['jersey','Jersey number'],['avg','AVG'],['obp','OBP'],['slg','SLG'],['steal','Steal tendency'],['pa','Plate appearances']],
-  pitching:[['jersey','Jersey number'],['games','Appearances'],['bf','Batters faced'],['strikeout','Strikeout %'],['strikeouts','Total strikeouts'],['strike','Strike %'],['walk','Walk % (lowest first)'],['avg','AVG against (lowest first)']]
+  scout:[['jersey','Jersey number'],['avg','AVG'],['obp','OBP'],['slg','SLG'],['steal','Steal tendency'],['pa','Plate appearances'],['firstSwing','1st-pitch swing'],['whiff','Whiff rate (lowest first)'],['pitchesPA','Pitches / PA'],['bb','BB%'],['k','K% (lowest first)']],
+  pitching:[['jersey','Jersey number'],['games','Appearances'],['bf','Batters faced'],['strikeout','Strikeout %'],['strikeouts','Total strikeouts'],['strike','Strike %'],['walk','Walk % (lowest first)'],['avg','AVG against (lowest first)'],['efficiency','Pitches / batter (lowest first)'],['firstStrike','1st-pitch strikes'],['ground','Ground balls']]
  };
+ function metricSortKey(view,label){
+  const keys=view==='scout'?{AVG:'avg',OBP:'obp',SLG:'slg','Steal tendency':'steal','1st-pitch swing':'firstSwing','Whiff rate':'whiff','Pitches / PA':'pitchesPA','BB%':'bb','K%':'k'}:{'AVG against':'avg','Strike %':'strike','Walk %':'walk','Strikeout %':'strikeout','Pitches / batter':'efficiency','1st-pitch strikes':'firstStrike','Ground balls':'ground'};
+  return keys[label.replace(/\*$/, '')];
+ }
+ function sortTileAttributes(view,label){const key=metricSortKey(view,label);return key?' data-sort-key="'+key+'"'+(metricSortMode?' tabindex="0" role="button" title="Sort players by '+label+'"':''):'';}
  function sortMetricAttributes(view,label){
-  const keys=view==='scout'?{AVG:'avg',OBP:'obp',SLG:'slg','Steal tendency':'steal'}:{'AVG against':'avg','Strike %':'strike','Walk %':'walk','Strikeout %':'strikeout'};
-  return keys[label.replace(/\*$/, '')]===state.sorts[view]?' data-sort-active="true" title="Current player sort metric"':'';
+  return metricSortKey(view,label)===state.sorts[view]?' data-sort-active="true" title="Current player sort metric"':'';
+ }
+ function selectMetricSort(event){
+  if(!metricSortMode)return false;
+  const tile=event.target.closest('[data-sort-key]');if(!tile)return true;
+  const key=tile.dataset.sortKey;if(!sortOptions[state.view].some(([id])=>id===key))return true;
+  state.sorts[state.view]=key;const hitting=state.view==='scout';state[hitting?'batter':'pitcher']='all';closeMetricDetails();render();$(hitting?'batter-sort-toggle':'pitcher-sort-toggle').focus({preventScroll:true});return true;
+ }
+ function renderMetricSortMode(){
+  $('app').dataset.metricSort=String(metricSortMode);
+  const arrow='<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v16m-4-4 4 4 4-4M16 20V4m-4 4 4-4 4 4"/></svg>';
+  const jersey='<svg class="icon jersey-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3 3 6l2 5 3-1v11h8V10l3 1 2-5-5-3Q12 8 8 3Z"/></svg>';
+  for(const kind of ['batter','pitcher']){const button=$(kind+'-sort-toggle'),key=state.sorts[kind==='batter'?'scout':'pitching'];button.dataset.sort=key;button.innerHTML=metricSortMode?jersey:arrow;button.setAttribute('aria-pressed',String(metricSortMode));const label=metricSortMode?'Sort by jersey number':'Tap a metric to sort players';button.setAttribute('aria-label',label);button.setAttribute('title',label);}
+
+  if(metricSortMode)$(state.view==='scout'?'batter-context':'pitcher-context').textContent='Tap a metric to sort · tap jersey for number order';
  }
  const minimumOptions=[0,5,10,20,30];
  function sampleUnit(){
   const key=state.sorts[state.view];
-  if(state.view==='scout')return {avg:'AB',slg:'AB',obp:'OBP opportunities',steal:'trips on base',pa:'completed PAs'}[key];
-  return {strike:'pitches',avg:'AB against',games:'appearances'}[key]||'batters faced';
+  if(state.view==='scout')return {avg:'AB',slg:'AB',obp:'OBP opportunities',steal:'trips on base',pa:'completed PAs',firstSwing:'tracked first pitches',whiff:'swings',pitchesPA:'completed PAs',bb:'completed PAs',k:'completed PAs'}[key];
+  return {strike:'pitches',avg:'AB against',games:'appearances',efficiency:'batters faced',firstStrike:'tracked first pitches',ground:'fair contacts'}[key]||'batters faced';
  }
  function renderSortPicker(){
-  $('player-sort-select').innerHTML=sortOptions[state.view].map(([value,label])=>'<option value="'+value+'">'+label+'</option>').join('');
-  $('player-sort-select').value=state.sorts[state.view];
   $('minimum-sample-filter').hidden=state.sorts[state.view]==='jersey';
   const rankingLabel='Minimum '+(sampleUnit()||'sample')+' for ranking';$('minimum-ranking-label').textContent=rankingLabel;$('minimum-sample-select').setAttribute('aria-label',rankingLabel);
   $('minimum-sample-select').innerHTML=minimumOptions.map(n=>'<option value="'+n+'">'+(n?n+' '+sampleUnit():'Any size')+'</option>').join('');
@@ -656,18 +680,25 @@
   const players=D.sortPlayersByJersey(D.participatingPlayers(filteredData(),state.game),p=>numbers.get(p.id));
   return {numbers,players:rankPlayers(players,key,p=>{
    if(key==='steal'){const r=D.baserunningSummary(data,{batter:p.id,game:state.game});return {value:r.stealTendency,sample:r.onBase??0};}
-   const b=D.battingSummary(D.filter(data,{batter:p.id,game:state.game,type:'all'}));
+   const pas=D.filter(data,{batter:p.id,game:state.game,type:'all'}),pitches=D.pitchSummary(pas);
+   if(key==='firstSwing')return {value:pitches.knownFirst?pitches.firstSwings/pitches.knownFirst:null,sample:pitches.knownFirst};
+   if(key==='whiff')return {value:pitches.swings?pitches.whiffs/pitches.swings:null,sample:pitches.swings};
+   if(key==='pitchesPA')return {value:pitches.pitchesPerPA,sample:pitches.complete};
+   const b=D.battingSummary(pas);
+   if(key==='bb'||key==='k')return {value:!b.unclassified&&b.complete?(key==='bb'?b.walks:b.strikeouts)/b.complete:null,sample:b.complete};
    return {value:key==='pa'?b.complete:b[key],sample:key==='obp'?b.obpDenominator:key==='pa'?b.complete:b.ab};
-  },false,state.minimumSamples.scout)};
+  },['whiff','k'].includes(key),state.minimumSamples.scout)};
  }
  function pitcherRoster(roster=D.pitchingSummary(filteredData(),{game:state.game}).roster){
   const key=state.sorts.pitching;
   return rankPlayers(roster,key,p=>{
    const s=D.pitchingSummary(filteredData(),{game:state.game,pitcher:p.id});
    if(key==='avg')return {value:s.batting.ab&&!s.batting.unclassified?s.batting.hits/s.batting.ab:null,sample:s.batting.ab};
+   if(key==='firstStrike')return {value:s.first?s.firstStrikes/s.first:null,sample:s.first};
+   if(key==='ground')return {value:s.contacts?s.ground/s.contacts:null,sample:s.contacts};
    if(s.rates[key]){const r=s.rates[key];return {value:r.d?r.n/r.d:null,sample:r.d};}
    return {value:s[key],sample:key==='games'?s.games:s.bf??0};
-  },key==='walk'||key==='avg',state.minimumSamples.pitching);
+  },['walk','avg','efficiency'].includes(key),state.minimumSamples.pitching);
  }
  function renderBatterPicker(){
   const {players,numbers}=batterRoster();
@@ -762,9 +793,9 @@
   const metric=(label,value,items,supporting='',group='quick')=>{
    const key=group+'-'+label.replace(/[^a-z0-9]/gi,'').toLowerCase();
    metricItems.set(key,{label,items,group});
-   return '<button type="button" class="scout-metric" data-metric="'+key+'" aria-controls="'+group+'-detail" aria-expanded="'+(expandedMetric===key)+'" aria-label="'+e(label+': '+(value==='—'?'Unavailable':value)+(supporting?'; '+supporting:'')+'; show details')+'"><span class="stat-label"'+sortMetricAttributes('scout',label)+'>'+e(label)+info+'</span><strong class="num stat-value">'+e(value)+'</strong>'+(supporting?'<small class="metric-subcount">'+e(supporting)+'</small>':'')+'</button>';
+   return '<button type="button" class="scout-metric"'+sortTileAttributes('scout',label)+' data-metric="'+key+'" aria-controls="'+group+'-detail" aria-expanded="'+(expandedMetric===key)+'" aria-label="'+e(label+': '+(value==='—'?'Unavailable':value)+(supporting?'; '+supporting:'')+(metricSortMode?'; sort players':'; show details'))+'"><span class="stat-label"'+sortMetricAttributes('scout',label)+'>'+e(label)+info+'</span><strong class="num stat-value">'+e(value)+'</strong>'+(supporting?'<small class="metric-subcount">'+e(supporting)+'</small>':'')+'</button>';
   };
-  const staticMetric=(label,value,count,total,sample)=>'<div class="scout-metric metric-static" aria-label="'+e(label+': '+(value==='—'?'Unavailable':value)+'; '+count+' of '+total+' '+sample)+'"><span class="stat-label"'+sortMetricAttributes('scout',label)+'>'+e(label)+'</span><strong class="num stat-value">'+e(value)+'</strong><small class="metric-subcount">'+(total?count+'/'+total+(sample==='recorded swings'?' swings':sample==='PAs with pitch data'?' PA':''):sample==='fair contacts'?'No fair contact':sample==='tracked first pitches'?'No first-pitch data':sample==='recorded swings'?'No recorded swings':sample==='PAs with pitch data'?'No completed pitch data':'No completed PAs')+'</small></div>';
+  const staticMetric=(label,value,count,total,sample)=>'<div class="scout-metric metric-static"'+sortTileAttributes('scout',label)+' aria-label="'+e(label+': '+(value==='—'?'Unavailable':value)+'; '+count+' of '+total+' '+sample)+'"><span class="stat-label"'+sortMetricAttributes('scout',label)+'>'+e(label)+'</span><strong class="num stat-value">'+e(value)+'</strong><small class="metric-subcount">'+(total?count+'/'+total+(sample==='recorded swings'?' swings':sample==='PAs with pitch data'?' PA':''):sample==='fair contacts'?'No fair contact':sample==='tracked first pitches'?'No first-pitch data':sample==='recorded swings'?'No recorded swings':sample==='PAs with pitch data'?'No completed pitch data':'No completed PAs')+'</small></div>';
   $('quick-read').innerHTML=staticMetric('1st-pitch swing',D.pct(p.firstSwings,p.knownFirst),p.firstSwings,p.knownFirst,'tracked first pitches')+staticMetric('Whiff rate',D.pct(p.whiffs,p.swings),p.whiffs,p.swings,'recorded swings')+staticMetric('Pitches / PA',p.pitchesPerPA===null?'—':p.pitchesPerPA.toFixed(1),pas.filter(pa=>pa.status==='complete'&&pa.pitches.length>0).reduce((n,pa)=>n+pa.pitches.length,0),p.complete,'PAs with pitch data');
   $('contact-profile-sample').textContent=all.n?all.n+' fair contacts':'No fair contact';
   const profile=[['Ground balls','ground_ball'],['Line drives','line_drive'],['Fly balls','fly_ball'],...(all.types.bunt?[['Bunts','bunt']]:[]),...(all.types.unknown?[['Unknown','unknown']]:[])];
@@ -776,7 +807,7 @@
   $('quick-read').innerHTML+=metric('Steal tendency',runningValue,runningEvidence,runningSupport);
   const rate=x=>x===null?'—':x.toFixed(3).replace(/^0/,'');
   const partial=b.unclassified>0,display=partial?b.classified:b;
-  const tile=(label,value,evidence,count,total)=>evidence?metric(label+(partial?'*':''),value,evidence,value==='—'?'Unavailable':'','batting'):total!==undefined?staticMetric(label+(partial?'*':''),value,count,total,'completed PAs'):'<div class="batting-stat"><span class="stat-label"'+sortMetricAttributes('scout',label)+'>'+e(label+(partial?'*':''))+'</span><strong class="num stat-value">'+e(value)+'</strong>'+(value==='—'?'<small class="metric-subcount">Unavailable</small>':'')+'</div>';
+  const tile=(label,value,evidence,count,total)=>evidence?metric(label+(partial?'*':''),value,evidence,value==='—'?'Unavailable':'','batting'):total!==undefined?staticMetric(label+(partial?'*':''),value,count,total,'completed PAs'):'<div class="batting-stat"'+sortTileAttributes('scout',label)+'><span class="stat-label"'+sortMetricAttributes('scout',label)+'>'+e(label+(partial?'*':''))+'</span><strong class="num stat-value">'+e(value)+'</strong>'+(value==='—'?'<small class="metric-subcount">Unavailable</small>':'')+'</div>';
   const classified=pas.filter(pa=>pa.status==='complete'&&['double','triple','home_run'].includes(pa.result));
   const doubles=classified.filter(pa=>pa.result==='double').length,triples=classified.filter(pa=>pa.result==='triple').length,homers=classified.filter(pa=>pa.result==='home_run').length;
   $('batting-stats').innerHTML=tile('AVG',rate(display.avg)).replace('</div>','<small class="metric-subcount">'+(display.ab?display.hits+'/'+display.ab:'No recorded AB')+'</small></div>')+tile('OBP',rate(display.obp),[['Hits',display.hits],['Walks',display.walks],['HBP',display.hbp]])+tile('SLG',rate(display.slg),[['Doubles',doubles],['Triples',triples],['Home runs',homers]])+tile('BB%',D.pct(display.walks,display.complete),null,display.walks,display.complete)+tile('K%',D.pct(display.strikeouts,display.complete),null,display.strikeouts,display.complete);
@@ -814,16 +845,16 @@
   }else {$('pitching-inning-table').innerHTML='';$('pitching-inning-pitchers').innerHTML='';}
   const fraction=(n,d)=>n===null||d===null||!d?'Unavailable':n+'/'+d;
   const rate=(n,d)=>n===null||d===null?'—':D.pct(n,d);
-  const pitchingMetric=(label,value,caption,coverage='')=>'<div class="pitching-metric"><span class="pitching-label"'+sortMetricAttributes('pitching',label)+'>'+e(label)+'</span><strong class="pitching-value num">'+e(value)+'</strong><span class="pitching-count num">'+e(caption)+'</span><span class="pitching-coverage">'+e(coverage)+'</span></div>';
+  const pitchingMetric=(label,value,caption,coverage='')=>'<div class="pitching-metric"'+sortTileAttributes('pitching',label)+'><span class="pitching-label"'+sortMetricAttributes('pitching',label)+'>'+e(label)+'</span><strong class="pitching-value num">'+e(value)+'</strong><span class="pitching-count num">'+e(caption)+'</span><span class="pitching-coverage">'+e(coverage)+'</span></div>';
   const summaryStat=(label,r,decimal=false)=>pitchingMetric(label,decimal?(r.d?(r.n/r.d).toFixed(1):'—'):rate(r.n,r.d),fraction(r.n,r.d),r.outings<s.rows.length?r.outings+'/'+s.rows.length+' outings':'');
-  $('pitching-summary').innerHTML=summaryStat('Strike %',s.rates.strike).replace('<div class="pitching-metric">','<button type="button" id="pitching-strike-toggle" class="pitching-metric pitching-disclosure" aria-controls="pitching-strike-detail" aria-expanded="'+pitchingStrikesOpen+'">').replace('Strike %</span>','Strike % <span class="metric-info" aria-hidden="true">i</span></span>').replace('</div>','</button>')+summaryStat('Walk %',s.rates.walk)+summaryStat('Strikeout %',s.rates.strikeout).replace('<div class="pitching-metric">','<button type="button" id="pitching-strikeout-toggle" class="pitching-metric pitching-disclosure" aria-controls="pitching-strikeout-detail" aria-expanded="'+pitchingStrikeoutsOpen+'">').replace('Strikeout %</span>','Strikeout % <span class="metric-info" aria-hidden="true">i</span></span>').replace('</div>','</button>');
+  $('pitching-summary').innerHTML=summaryStat('Strike %',s.rates.strike).replace('<div class="pitching-metric"','<button type="button" id="pitching-strike-toggle" class="pitching-metric pitching-disclosure" aria-controls="pitching-strike-detail" aria-expanded="'+pitchingStrikesOpen+'"').replace('Strike %</span>','Strike % <span class="metric-info" aria-hidden="true">i</span></span>').replace('</div>','</button>')+summaryStat('Walk %',s.rates.walk)+summaryStat('Strikeout %',s.rates.strikeout).replace('<div class="pitching-metric"','<button type="button" id="pitching-strikeout-toggle" class="pitching-metric pitching-disclosure" aria-controls="pitching-strikeout-detail" aria-expanded="'+pitchingStrikeoutsOpen+'"').replace('Strikeout %</span>','Strikeout % <span class="metric-info" aria-hidden="true">i</span></span>').replace('</div>','</button>');
   $('pitching-strike-detail').hidden=!pitchingStrikesOpen;
   $('pitching-strike-detail').innerHTML='<dl class="metric-counts"><div><dt>Swinging strikes</dt><dd class="num">'+D.pct(s.whiffs,s.known)+'</dd></div></dl><small class="pitching-count">'+(s.known?s.whiffs+'/'+s.known+' pitches':'No tracked pitches')+'</small>';
   const ks=s.strikeoutBreakdown;
   $('pitching-strikeout-detail').hidden=!pitchingStrikeoutsOpen;
   $('pitching-strikeout-detail').innerHTML=ks.bf?'<dl class="metric-counts">'+[['Looking',ks.looking],['Swinging',ks.swinging],...(ks.unknown?[['Unclassified',ks.unknown]]:[])].map(([label,n])=>'<div><dt>'+label+'</dt><dd class="num">'+n+'</dd></div>').join('')+'</dl>':'<p class="note">No reconciled strikeout detail available for this selection.</p>';
   $('pitching-tracked-context').textContent='Pitch detail · '+s.trackedBF+' batters faced';
-  $('pitching-tendencies').innerHTML=summaryStat('Pitches / batter',s.rates.efficiency,true)+pitchingMetric('1st-pitch strikes',D.pct(s.firstStrikes,s.first),fraction(s.firstStrikes,s.first)).replace('<div class="pitching-metric">','<button type="button" id="pitching-first-strike-toggle" class="pitching-metric pitching-disclosure" aria-controls="pitching-first-strike-detail" aria-expanded="'+pitchingFirstStrikesOpen+'">').replace('1st-pitch strikes</span>','1st-pitch <span class="metric-label-tail">strikes <span class="metric-info" aria-hidden="true">i</span></span></span>').replace('</div>','</button>')+pitchingMetric('Ground balls',D.pct(s.ground,s.contacts),fraction(s.ground,s.contacts));
+  $('pitching-tendencies').innerHTML=summaryStat('Pitches / batter',s.rates.efficiency,true)+pitchingMetric('1st-pitch strikes',D.pct(s.firstStrikes,s.first),fraction(s.firstStrikes,s.first)).replace('<div class="pitching-metric"','<button type="button" id="pitching-first-strike-toggle" class="pitching-metric pitching-disclosure" aria-controls="pitching-first-strike-detail" aria-expanded="'+pitchingFirstStrikesOpen+'"').replace('1st-pitch strikes</span>','1st-pitch <span class="metric-label-tail">strikes <span class="metric-info" aria-hidden="true">i</span></span></span>').replace('</div>','</button>')+pitchingMetric('Ground balls',D.pct(s.ground,s.contacts),fraction(s.ground,s.contacts));
   const fps=s.firstStrikeResults;
   $('pitching-first-strike-detail').hidden=!pitchingFirstStrikesOpen;
   $('pitching-first-strike-detail').innerHTML='<dl class="metric-counts">'+[['FPSO%','Outs',fps.out],['FPSW%','Walks',fps.walk],['FPSH%','Hits',fps.hit]].map(([code,label,n])=>'<div><dt>'+code+' · '+label+'</dt><dd class="num">'+(fps.unknown?'—':D.pct(n,fps.total))+'</dd><small class="pitching-count">'+(fps.unknown?'Results need review':fps.total?n+'/'+fps.total:'Unavailable')+'</small></div>').join('')+'</dl>';
@@ -851,7 +882,7 @@
   if(state.minimumGames>0){const full=state.view==='scout'?D.participatingPlayers(data,state.game).length:D.pitchingSummary(data,{game:state.game}).roster.length;const shown=state.view==='scout'?batterRoster().players.length:pitcherRoster().length;const excluded=full-shown;if(excluded>0)$('filter-context').textContent+=' · '+excluded+' excluded';}
   $('filter-context').setAttribute('title',$('filter-context').textContent);
   renderFilterIndicator();
-  renderScout(pas);renderPitching();renderSearch();saveSelection();
+  renderScout(pas);renderPitching();renderMetricSortMode();renderSearch();saveSelection();
  }
  function switchView(view){
   if(state.view!==view)closeMetricDetails();
@@ -917,24 +948,32 @@
  }
 
  for(const id of ['quick-read','batting-stats'])$(id).addEventListener('click',event=>{
+  if(selectMetricSort(event))return;
   const button=event.target.closest('[data-metric]');if(!button)return;
   const key=button.dataset.metric;expandedMetric=expandedMetric===key?null:key;
   if(data)renderScout(selected());
   $(id).querySelector?.('[data-metric="'+key+'"]')?.focus();
  });
  $('pitching-summary').addEventListener('click',event=>{
+  if(selectMetricSort(event))return;
   const strikes=event.target.closest('#pitching-strike-toggle'),strikeouts=event.target.closest('#pitching-strikeout-toggle');
   if(!strikes&&!strikeouts)return;
   pitchingFirstStrikesOpen=false;
   if(strikes){pitchingStrikesOpen=!pitchingStrikesOpen;pitchingStrikeoutsOpen=false;}else{pitchingStrikeoutsOpen=!pitchingStrikeoutsOpen;pitchingStrikesOpen=false;}
   renderPitching();$('pitching-summary').querySelector?.(strikes?'#pitching-strike-toggle':'#pitching-strikeout-toggle')?.focus();
  });
- $('pitching-tendencies').addEventListener('click',event=>{if(!event.target.closest('#pitching-first-strike-toggle'))return;pitchingFirstStrikesOpen=!pitchingFirstStrikesOpen;pitchingStrikesOpen=false;pitchingStrikeoutsOpen=false;renderPitching();$('pitching-tendencies').querySelector?.('#pitching-first-strike-toggle')?.focus();});
+ $('pitching-tendencies').addEventListener('click',event=>{if(selectMetricSort(event))return;if(!event.target.closest('#pitching-first-strike-toggle'))return;pitchingFirstStrikesOpen=!pitchingFirstStrikesOpen;pitchingStrikesOpen=false;pitchingStrikeoutsOpen=false;renderPitching();$('pitching-tendencies').querySelector?.('#pitching-first-strike-toggle')?.focus();});
  const selectPitcherFromCard=event=>{const button=event.target.closest('[data-pitcher]');if(!button)return;state.pitcher=button.dataset.pitcher;closeMetricDetails();render();$('pitcher-context').focus({preventScroll:true});};
  $('pitcher-leaders').addEventListener('click',selectPitcherFromCard);
  $('pitching-innings').addEventListener('click',selectPitcherFromCard);
  $('pitcher-select').addEventListener('change',()=>{state.pitcher=$('pitcher-select').value;closeMetricDetails();render();});
+ $('pitching-avg').addEventListener('click',event=>{selectMetricSort(event);});
+ for(const id of ['quick-read','batting-stats','pitching-summary','pitching-tendencies','pitching-avg'])$(id).addEventListener('keydown',event=>{
+  if(!metricSortMode)return;if(event.key==='Escape'){closeMetricDetails();render();$(state.view==='scout'?'batter-sort-toggle':'pitcher-sort-toggle').focus();return;}
+  if(event.key==='Enter'||event.key===' '){event.preventDefault();selectMetricSort(event);}
+ });
  for(const kind of ['batter','pitcher']){
+  $(kind+'-sort-toggle').addEventListener('click',()=>{if(metricSortMode){state.sorts[state.view]='jersey';state[state.view==='scout'?'batter':'pitcher']='all';closeMetricDetails();}else{closeMetricDetails();metricSortMode=true;}render();});
   $(kind+'-previous').addEventListener('click',()=>stepPlayer(kind,-1));
   $(kind+'-next').addEventListener('click',()=>stepPlayer(kind,1));
  }
@@ -970,7 +1009,7 @@
   const hitting=state.view==='scout',players=hitting?batterRoster().players:pitcherRoster();
   state[hitting?'batter':'pitcher']=players[0]?.id||'all';closeMetricDetails();render();
  });
- $('player-sort-select').addEventListener('change',()=>{const key=$('player-sort-select').value;if(!sortOptions[state.view].some(([value])=>value===key))return;state.sorts[state.view]=key;const hitting=state.view==='scout',players=hitting?batterRoster().players:pitcherRoster();state[hitting?'batter':'pitcher']=players[0]?.id||'all';closeMetricDetails();render();});
+
  $('contact-select').addEventListener('change',()=>{state.type=$('contact-select').value;render();});
  $('filters-done').addEventListener('click',()=>{$('filter-panel').hidden=true;$('filter-toggle').setAttribute('aria-expanded','false');$('filter-toggle').focus();});
  $('filter-toggle').addEventListener('click',()=>{closeSearch();const open=$('filter-panel').hidden;$('filter-panel').hidden=!open;$('filter-toggle').setAttribute('aria-expanded',String(open));});

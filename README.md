@@ -21,7 +21,9 @@ Open <http://127.0.0.1:8000/>. Use HTTP rather than opening `index.html` directl
 - **Filters** supports multiple games, contact type, tab-specific player sorting, and participation/ranking thresholds. Games appear newest first. Done closes the panel.
 - **Share view** inside Filters shares the current team, tab, player, games, and filters. A shared link uses the latest published data, rather than freezing a snapshot.
 
-Changing games preserves Entire team / All pitchers or the current player. A player absent from the new selection falls back to the team view. Changing the sort or ranking-sample threshold selects the top eligible player. Expanded metric details close when the player or tab changes.
+Tap **⇅** to the left of the player arrows to enter metric-sort mode. Select an outlined metric to rank players and display Entire team / All pitchers; the mode then turns off. In sort mode, ⇅ becomes a jersey icon of the same size. Tap the jersey to restore jersey-number order and Entire team / All pitchers, or press Escape on a metric to cancel without changing the sort. In normal mode, information-marked metrics still expand their details. Sorting is controlled directly from the grid; there is no Sort players by dropdown in Filters.
+
+Changing games preserves Entire team / All pitchers or the current player. A player absent from the new selection falls back to the team view. Changing the sort displays Entire team / All pitchers while ordering the player list by the chosen metric. Changing the ranking-sample threshold selects the top eligible player. Expanded metric details close when the player or tab changes.
 
 The app remembers team, tab, player, game selection, sort, and filters in the browser. Valid shared-view settings override remembered settings.
 

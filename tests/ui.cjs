@@ -26,8 +26,16 @@ async function openApp({defaultMinimumGames=0,browserNavigator,storage={},storag
  return {elements,requested,repository,documentRoot,storage,context,windowListeners,releaseRequests};
 }
 // Historical summary checks explicitly restore their prior player after changing games.
+function currentSort(E){return E[(E.app.dataset.view==='pitching'?'pitcher':'batter')+'-sort-toggle'].dataset.sort;}
+function sortFromGrid(E,key){
+ const pitching=E.app.dataset.view==='pitching',kind=pitching?'pitcher':'batter';
+ if(E[kind+'-sort-toggle'].attrs['aria-pressed']!=='true')E[kind+'-sort-toggle'].click();
+ if(key==='jersey'){E[kind+'-sort-toggle'].click();return;}
+ const id=pitching?(key==='avg'?'pitching-avg':['firstStrike','ground','efficiency'].includes(key)?'pitching-tendencies':'pitching-summary'):['avg','obp','slg','bb','k'].includes(key)?'batting-stats':'quick-read';
+ E[id].listeners.click({target:{closest:selector=>selector==='[data-sort-key]'?{dataset:{sortKey:key}}:null}});
+}
 function useJerseyOrder(E){
- for(const [tab,kind] of [['scout','batter'],['pitching','pitcher']]){E['tab-'+tab].click();E['player-sort-select'].value='jersey';E['player-sort-select'].listeners.change();E[kind+'-select'].value='all';E[kind+'-select'].listeners.change();}
+ for(const [tab,kind] of [['scout','batter'],['pitching','pitcher']]){E['tab-'+tab].click();sortFromGrid(E,'jersey');E[kind+'-select'].value='all';E[kind+'-select'].listeners.change();}
  E['tab-scout'].click();delete E.app.lastScroll;
 }
 function chooseGames(elements,selection){
@@ -402,18 +410,18 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  // Sort menus are tab-specific; metric order and arrows use the same selected-game sample.
  const sortApp=await openApp({files:{'teams.json':{'schema_version':1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData}}),SE=sortApp.elements,SD=sortApp.context.DiamondScout;
  const optionIds=id=>[...SE[id].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]).filter(id=>id!=='all');
- const setSort=value=>{SE['player-sort-select'].value=value;SE['player-sort-select'].listeners.change();};
- assert.equal(SE['player-sort-select'].value,'avg');assert.match(SE['player-sort-select'].innerHTML,/Steal tendency/);assert.doesNotMatch(SE['player-sort-select'].innerHTML,/Batters faced/);
+ const setSort=value=>sortFromGrid(SE,value);
+ assert.equal(currentSort(SE),'avg');assert.match(SE['quick-read'].innerHTML,/data-sort-key="steal"/);assert(!html.includes('id="player-sort-select"'));
  SE['minimum-sample-select'].value='0';SE['minimum-sample-select'].listeners.change();setSort('avg');
  let ids=optionIds('batter-select'),values=ids.map(id=>SD.battingSummary(SD.filter(pitchingData,{game:'all',batter:id,type:'all'})).avg);
  for(let i=1;i<values.length;i++)assert(values[i]===null||(values[i-1]!==null&&values[i-1]>=values[i]));
- assert.equal(SE['batter-select'].value,ids[0]);SE['batter-next'].click();assert.equal(SE['batter-select'].value,ids[1]);setSort('pa');assert.equal(SE['batter-select'].value,optionIds('batter-select')[0]);
- SE['tab-pitching'].click();assert.equal(SE['player-sort-select'].value,'avg');assert.match(SE['player-sort-select'].innerHTML,/Walk %/);assert.doesNotMatch(SE['player-sort-select'].innerHTML,/Steal tendency|OBP/);
+ assert.equal(SE['batter-select'].value,'all');SE['batter-select'].value=ids[0];SE['batter-select'].listeners.change();SE['batter-next'].click();assert.equal(SE['batter-select'].value,ids[1]);setSort('bb');assert.equal(SE['batter-select'].value,'all');
+ SE['tab-pitching'].click();assert.equal(currentSort(SE),'avg');assert.match(SE['pitching-summary'].innerHTML,/data-sort-key="walk"/);
  SE['minimum-sample-select'].value='0';SE['minimum-sample-select'].listeners.change();setSort('walk');ids=optionIds('pitcher-select');values=ids.map(id=>{const r=SD.pitchingSummary(pitchingData,{pitcher:id}).rates.walk;return r.d?r.n/r.d:null;});
  for(let i=1;i<values.length;i++)assert(values[i]===null||(values[i-1]!==null&&values[i-1]<=values[i]));
- assert.equal(SE['pitcher-select'].value,ids[0]);SE['pitcher-next'].click();assert.equal(SE['pitcher-select'].value,ids[1]);
+ assert.equal(SE['pitcher-select'].value,'all');SE['pitcher-select'].value=ids[0];SE['pitcher-select'].listeners.change();SE['pitcher-next'].click();assert.equal(SE['pitcher-select'].value,ids[1]);
  const priorPitcher=SE['pitcher-select'].value;
- changeGames(SE,pitchingData.games[0].id);assert.equal(SE['player-sort-select'].value,'walk');assert.equal(SE['pitcher-select'].value,optionIds('pitcher-select').includes(priorPitcher)?priorPitcher:'all');
+ changeGames(SE,pitchingData.games[0].id);assert.equal(currentSort(SE),'walk');assert.equal(SE['pitcher-select'].value,optionIds('pitcher-select').includes(priorPitcher)?priorPitcher:'all');
  SE['pitcher-select'].value=optionIds('pitcher-select')[0];SE['pitcher-select'].listeners.change();const retainedPitcher=SE['pitcher-select'].value;
  changeGames(SE,'all');assert.equal(SE['pitcher-select'].value,retainedPitcher);
  SE['pitcher-select'].value='all';SE['pitcher-select'].listeners.change();changeGames(SE,pitchingData.games[0].id);assert.equal(SE['pitcher-select'].value,'all');changeGames(SE,'all');assert.equal(SE['pitcher-select'].value,'all');
@@ -423,9 +431,9 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  changeGames(SE,'all');assert.equal(SE['batter-select'].value,retainedBatter);
  changeGames(SE,[]);assert.equal(SE['batter-select'].value,'all');changeGames(SE,'all');assert.equal(SE['batter-select'].value,'all');
  SE['tab-pitching'].click();
- SE['tab-scout'].click();assert.equal(SE['player-sort-select'].value,'pa');SE['tab-pitching'].click();assert.equal(SE['player-sort-select'].value,'walk');
+ SE['tab-scout'].click();assert.equal(currentSort(SE),'bb');SE['tab-pitching'].click();assert.equal(currentSort(SE),'walk');
  const sortRestore=await openApp({storage:sortApp.storage,files:{'teams.json':{'schema_version':1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData}});
- assert.equal(sortRestore.elements['player-sort-select'].value,'walk');sortRestore.elements['tab-scout'].click();assert.equal(sortRestore.elements['player-sort-select'].value,'pa');sortRestore.elements['tab-pitching'].click();assert.equal(sortRestore.elements['player-sort-select'].value,'walk');
+ assert.equal(currentSort(sortRestore.elements),'walk');sortRestore.elements['tab-scout'].click();assert.equal(currentSort(sortRestore.elements),'bb');sortRestore.elements['tab-pitching'].click();assert.equal(currentSort(sortRestore.elements),'walk');
  }
  // A tiny perfect AVG follows qualified regular players; no one disappears from the roster.
  {
@@ -434,7 +442,7 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  const files={'teams.json':{schema_version:1,teams:[{id:sample.team.id,name:sample.team.name,data_file:'data/sample.json'}]},'data/sample.json':sample};
  const minApp=await openApp({files}),E=minApp.elements;
  const ids=()=>[...E['batter-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]).filter(id=>id!=='all');
- const sort=value=>{E['player-sort-select'].value=value;E['player-sort-select'].listeners.change();};
+ const sort=value=>sortFromGrid(E,value);
  const minimum=value=>{E['minimum-sample-select'].value=String(value);E['minimum-sample-select'].listeners.change();};
  assert.equal(E['minimum-sample-filter'].hidden,false);sort('avg');assert.equal(E['minimum-sample-filter'].hidden,false);assert.match(E['minimum-sample-select'].innerHTML,/10 AB/);assert.equal(E['minimum-sample-select'].value,'0');assert.equal(E['minimum-ranking-label'].textContent,'Minimum AB for ranking');assert.match(E['minimum-sample-select'].innerHTML,/Any size/);assert.equal(ids()[0],'tiny');
  minimum(10);assert.deepEqual(ids(),['regular-a','regular-b','tiny']);assert.equal(E['batter-select'].value,'regular-a');assert.match(E['filter-toggle'].attrs['aria-label'],/Minimum 10 AB/);
@@ -448,30 +456,30 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  }
  {
  const files={'teams.json':{schema_version:1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData};
- const app=await openApp({files}),E=app.elements,D=app.context.DiamondScout;E['tab-pitching'].click();E['player-sort-select'].value='walk';E['player-sort-select'].listeners.change();E['minimum-sample-select'].value='30';E['minimum-sample-select'].listeners.change();
+ const app=await openApp({files}),E=app.elements,D=app.context.DiamondScout;E['tab-pitching'].click();sortFromGrid(E,'walk');E['minimum-sample-select'].value='30';E['minimum-sample-select'].listeners.change();
  const ids=[...E['pitcher-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]).filter(id=>id!=='all');let small=false;
  for(const id of ids){const r=D.pitchingSummary(pitchingData,{pitcher:id}).rates.walk;if(r.d<30)small=true;else assert.equal(small,false,'Qualified pitchers precede smaller samples');}
  assert.equal(E['pitcher-select'].value,ids[0]);assert.match(E['minimum-sample-select'].innerHTML,/batters faced/);
- E['player-sort-select'].value='strike';E['player-sort-select'].listeners.change();assert.match(E['minimum-sample-select'].innerHTML,/pitches/);E['player-sort-select'].value='avg';E['player-sort-select'].listeners.change();assert.match(E['minimum-sample-select'].innerHTML,/AB against/);
+ sortFromGrid(E,'strike');assert.match(E['minimum-sample-select'].innerHTML,/pitches/);sortFromGrid(E,'avg');assert.match(E['minimum-sample-select'].innerHTML,/AB against/);
  }
  // The displayed sort metric is highlighted without changing player names or layout.
  {
  const app=await openApp(),E=app.elements;
  assert.match(E['batting-stats'].innerHTML,/data-sort-active="true"[^>]*>AVG/);
- E['player-sort-select'].value='obp';E['player-sort-select'].listeners.change();assert.match(E['batting-stats'].innerHTML,/data-sort-active="true"[^>]*>OBP/);assert.equal((E['batting-stats'].innerHTML.match(/data-sort-active="true"/g)||[]).length,1);
- E['player-sort-select'].value='steal';E['player-sort-select'].listeners.change();assert.match(E['quick-read'].innerHTML,/data-sort-active="true"[^>]*>Steal tendency/);assert.doesNotMatch(E['batting-stats'].innerHTML,/data-sort-active/);
- E['player-sort-select'].value='jersey';E['player-sort-select'].listeners.change();assert.doesNotMatch(E['quick-read'].innerHTML+E['batting-stats'].innerHTML,/data-sort-active/);
+ sortFromGrid(E,'obp');assert.match(E['batting-stats'].innerHTML,/data-sort-active="true"[^>]*>OBP/);assert.equal((E['batting-stats'].innerHTML.match(/data-sort-active="true"/g)||[]).length,1);
+ sortFromGrid(E,'steal');assert.match(E['quick-read'].innerHTML,/data-sort-active="true"[^>]*>Steal tendency/);assert.doesNotMatch(E['batting-stats'].innerHTML,/data-sort-active/);
+ sortFromGrid(E,'jersey');assert.doesNotMatch(E['quick-read'].innerHTML+E['batting-stats'].innerHTML,/data-sort-active/);
  E['tab-pitching'].click();assert.match(E['pitching-avg'].innerHTML,/data-sort-active="true"/);
- E['player-sort-select'].value='strikeout';E['player-sort-select'].listeners.change();assert.match(E['pitching-summary'].innerHTML,/data-sort-active="true"[^>]*>Strikeout %/);assert.doesNotMatch(E['pitching-avg'].innerHTML,/data-sort-active/);
+ sortFromGrid(E,'strikeout');assert.match(E['pitching-summary'].innerHTML,/data-sort-active="true"[^>]*>Strikeout %/);assert.doesNotMatch(E['pitching-avg'].innerHTML,/data-sort-active/);
  E['pitching-summary'].listeners.click({target:{closest:selector=>selector==='#pitching-strikeout-toggle'?{}:null}});assert.match(E['pitching-summary'].innerHTML,/data-sort-active="true"[^>]*>Strikeout %/);
  }
  // Share links round-trip exact view state and avoid stale release URLs or unrelated query parameters.
  {
  const files={'teams.json':{schema_version:1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData};
  let nativeShare=null;const app=await openApp({files,href:'https://diamond-scout.test/sub/?release=old&private=discard#old',browserNavigator:{share:async value=>{nativeShare=value;}}}),E=app.elements;
- const games=pitchingData.games.slice(0,2).map(g=>g.id);changeGames(E,games);E['player-sort-select'].value='obp';E['player-sort-select'].listeners.change();E['minimum-sample-select'].value='5';E['minimum-sample-select'].listeners.change();E['contact-select'].value='ground_ball';E['contact-select'].listeners.change();
+ const games=pitchingData.games.slice(0,2).map(g=>g.id);changeGames(E,games);sortFromGrid(E,'obp');E['minimum-sample-select'].value='5';E['minimum-sample-select'].listeners.change();E['contact-select'].value='ground_ball';E['contact-select'].listeners.change();
  const batter=E['batter-select'].value;await E['share-view'].click();assert(nativeShare);const link=new URL(nativeShare.url);assert.equal(link.pathname,'/sub/');assert.equal(link.searchParams.get('private'),null);assert.equal(link.searchParams.get('release'),null);assert.deepEqual(link.searchParams.getAll('game'),games);assert.equal(link.searchParams.get('sort'),'obp');assert.equal(link.searchParams.get('min'),'5');
- const recipient=await openApp({files,href:link.href}),R=recipient.elements;assert.equal(R['batter-select'].value,batter);assert.equal(R['player-sort-select'].value,'obp');assert.equal(R['minimum-sample-select'].value,'5');assert.equal(R['contact-select'].value,'ground_ball');assert.equal(R['game-selection-summary'].textContent,E['game-selection-summary'].textContent);
+ const recipient=await openApp({files,href:link.href}),R=recipient.elements;assert.equal(R['batter-select'].value,batter);assert.equal(currentSort(R),'obp');assert.equal(R['minimum-sample-select'].value,'5');assert.equal(R['contact-select'].value,'ground_ball');assert.equal(R['game-selection-summary'].textContent,E['game-selection-summary'].textContent);
  E['tab-pitching'].click();const pitcher=[...E['pitcher-select'].innerHTML.matchAll(/<option value="([^"]+)"/g)].map(m=>m[1]).find(id=>id!=='all');E['pitcher-select'].value=pitcher;E['pitcher-select'].listeners.change();await E['share-view'].click();
  const pitchingRecipient=await openApp({files,href:nativeShare.url});assert.equal(pitchingRecipient.elements['tab-pitching'].attrs['aria-selected'],'true');assert.equal(pitchingRecipient.elements['pitcher-select'].value,pitcher);
  changeGames(E,[]);await E['share-view'].click();const empty=await openApp({files,href:nativeShare.url});assert.equal(empty.elements['game-selection-summary'].textContent,'No games selected');assert.equal(empty.elements['pitcher-select'].value,'all');
@@ -568,6 +576,20 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  const restored=await openApp({storage:app.storage});assert.equal(restored.elements['minimum-games'].value,'2');
  E['minimum-games'].value='0';E['minimum-games'].listeners.change();await E['share-view'].click();
  assert(new URL(E['share-link'].value).searchParams.has('minGames'));
+ }
+ {
+ const app=await openApp({files:{'teams.json':{schema_version:1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData}}),E=app.elements;
+ const pick=(container,key)=>E[container].listeners.click({target:{closest:selector=>selector==='[data-sort-key]'?{dataset:{sortKey:key}}:null}});
+ E['batter-sort-toggle'].click();assert.equal(E['batter-sort-toggle'].attrs['aria-pressed'],'true');assert.match(E['batter-context'].textContent,/Tap a metric to sort/);assert.match(E['quick-read'].innerHTML,/data-sort-key="whiff" tabindex="0" role="button"/);
+ pick('batting-stats','obp');assert.equal(currentSort(E),'obp');assert.equal(E['batter-sort-toggle'].attrs['aria-pressed'],'false');assert.equal(E['batter-select'].value,'all');assert.equal(E['batting-detail'].hidden,true);
+ E['batter-sort-toggle'].click();pick('quick-read','whiff');assert.equal(currentSort(E),'whiff');
+ E['batter-sort-toggle'].click();assert.equal(E['batter-sort-toggle'].attrs['aria-label'],'Sort by jersey number');assert.match(E['batter-sort-toggle'].innerHTML,/jersey-icon/);E['batter-sort-toggle'].click();assert.equal(E.app.dataset.metricSort,'false');assert.equal(currentSort(E),'jersey');assert.equal(E['batter-select'].value,'all');
+ E['batter-sort-toggle'].click();E['tab-pitching'].click();assert.equal(E.app.dataset.metricSort,'false');
+ E['pitcher-sort-toggle'].click();assert.match(E['pitcher-context'].textContent,/Tap a metric/);pick('pitching-tendencies','efficiency');assert.equal(currentSort(E),'efficiency');assert.equal(E['pitcher-select'].value,'all');assert.equal(E['pitcher-sort-toggle'].attrs['aria-pressed'],'false');assert.equal(E['pitching-first-strike-detail'].hidden,true);
+ E['pitcher-sort-toggle'].click();E['pitching-avg'].listeners.keydown({key:'Enter',preventDefault(){},target:{closest:()=>({dataset:{sortKey:'avg'}})}});assert.equal(currentSort(E),'avg');assert.equal(E.app.focusedId,'pitcher-sort-toggle');
+ E['pitcher-sort-toggle'].click();E['pitching-summary'].listeners.keydown({key:'Escape',preventDefault(){}});assert.equal(E.app.dataset.metricSort,'false');
+ E['pitcher-sort-toggle'].click();assert.equal(E['pitcher-sort-toggle'].attrs['aria-label'],'Sort by jersey number');E['pitcher-sort-toggle'].click();assert.equal(currentSort(E),'jersey');assert.equal(E['pitcher-select'].value,'all');
+ assert.match(E['pitching-summary'].innerHTML,/<button[^>]*data-sort-key="strike"[^>]*>/,'Disclosure button retains sorting metadata');
  }
  console.log('PASS ('+(process.env.DIAMOND_TEST_WIDTH||1280)+'px viewport model): automatic repository JSON loading, subdirectory hosting, file-protocol guidance, page-refresh recovery, pitch summaries, filters, navigation, and safe missing-data rendering.');
 })();
