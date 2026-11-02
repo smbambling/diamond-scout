@@ -75,3 +75,26 @@ const assignedCapture=capture.formatCapture({text:history.games.find(g=>g.source
 assert.match(assignedCapture,/Assign to: black, orange/);
 assert.throws(()=>capture.formatCapture({text:history.games.find(g=>g.source_play_by_play).source_play_by_play,url:'https://web.gc.com/teams/test/schedule/event/plays',assignTo:['bad\nvalue']}),/organization team IDs/);
 assert.match(source,/Assign scouting to your teams/);
+
+const tournamentPlays=history.games.find(g=>g.source_play_by_play).source_play_by_play;
+const tournamentExport=capture.formatCapture({text:tournamentPlays,url:'https://web.gc.com/teams/test/schedule/event/plays',tournament:'  Halloween Havoc 2026  '});
+assert.match(tournamentExport,/Tournament: Halloween Havoc 2026\n/);assert(tournamentExport.endsWith(tournamentPlays));
+assert.throws(()=>capture.formatCapture({text:tournamentPlays,url:'https://web.gc.com/teams/test/schedule/event/plays',tournament:'Event\nDate: 2027-01-01'}),/single-line tournament/);
+assert(!capture.formatCapture({text:tournamentPlays,url:'https://web.gc.com/teams/test/schedule/event/plays',tournament:'   '}).includes('Tournament:'));
+
+assert.equal(capture.detectRecapDate('August 23, 2025 vs. RISE 13U').date,'2025-08-23');
+assert.equal(capture.detectRecapDate('August 23, 2025 vs. RISE 13U').monthDay,'8/23');
+assert.throws(()=>capture.detectRecapDate('February 30, 2025 vs. RISE 13U'),/No explicit/);
+assert.throws(()=>capture.detectRecapDate('August 23, 2025 vs. RISE 13U\nAugust 24, 2025 vs. Other'),/Multiple/);
+assert.throws(()=>capture.detectRecapDate('Published August 23, 2025 at 10:00 AM'),/No explicit/);
+
+assert.match(capture.captureVersion,/^[a-f0-9]{16}$/);
+assert.deepEqual(capture.tableWarnings([{name:'Dig In',tables:[{kind:'batting'}]}]),['Pitching table missing for Dig In. Retry capture after both Box score sections finish loading.']);
+assert.deepEqual(capture.tableWarnings([{name:'Dig In',tables:[{kind:'batting'},{kind:'pitching'}]}]),[]);
+const filenameOptions={date:'2026-10-25',time:'10:30',teams:['Dig In (Gribbin)','RISE / 14U'],eventId:'event-123456789012'};
+assert.equal(capture.captureFilename(filenameOptions),'gamechanger-game-2026-10-25-1030-dig-in-gribbin-vs-rise-14u-123456789012.json');
+assert.notEqual(capture.captureFilename(filenameOptions),capture.captureFilename({...filenameOptions,time:'12:00'}));
+assert.notEqual(capture.captureFilename(filenameOptions),capture.captureFilename({...filenameOptions,eventId:'different-event'}));
+assert.match(capture.captureFilename({kind:'plays'}),/unknown-date-unknown-time-unknown-teams\.txt$/);
+assert(capture.formatCapture({text:tournamentPlays,url:'https://web.gc.com/teams/test/schedule/event/plays'}).includes('Capture version: '+capture.captureVersion));
+assert(source.includes('<details id="diamond-scout-capture-raw">'),'Troubleshooting data starts collapsed');

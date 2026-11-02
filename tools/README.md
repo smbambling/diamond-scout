@@ -29,8 +29,8 @@ This optional bookmarklet helps capture plays you can already view in your own s
 2. Show your browser’s bookmarks bar and drag **Capture GC data** onto it. To update an existing installation, reload the installer page and replace the old bookmark with this new button; bookmarks contain their own copy of the code.
 3. Sign into <https://web.gc.com/> normally. Open the relevant game and its **Plays** view if available to your account.
 4. No inning expansion is needed. Click the **Capture GC data** bookmark while viewing that GameChanger page.
-5. Review the captured text and the prefilled game date, start time and timezone. The helper reads the game header from the page even if you selected only the plays. Correct any field or leave missing metadata blank; capture time is never substituted for game time. If the page omits the year, a year from a season URL such as `2026-fall-...` is suggested only when the date/weekday agree, and you must confirm that year before export (or edit/clear the date).
-6. Choose **Download TXT** or **Copy import prompt**. Attach or paste the result in the Diamond-Scout conversation. It already begins with **“Use TEAM-DATA-PROMPT.md to add this game”** and requests both teams by default.
+5. Check the prefilled game date, start time and timezone, select teams to import and optional organization assignments. Raw captured data stays collapsed under **Captured data (troubleshooting)**; routine captures do not require reading it. The helper reads the game header from the page even if you selected only the plays. Correct any field or leave missing metadata blank; capture time is never substituted for game time. If the page omits the year, a year from a season URL such as `2026-fall-...` is suggested only when the date/weekday agree, and you must confirm that year before export (or edit/clear the date).
+6. Resolve visible warnings with **Retry capture** if a table failed to load, then choose **Download game JSON** (or TXT for a single Plays screen) or **Copy**. Attach or paste the result in the Diamond-Scout conversation. It already begins with **“Use TEAM-DATA-PROMPT.md to add this game”** and requests both teams by default.
 
 If automatic text detection fails, select the play text, including inning and team headings, then click the bookmark again. If the browser or site blocks the bookmarklet, normal copy/paste remains available; browser security settings do not need to be changed.
 
@@ -72,3 +72,25 @@ node tools/import-plays.cjs /path/gamechanger-game.json --assign-to 14u-black
 ```
 
 Add `--write` after reviewing the preview. Capture metadata and CLI assignments are combined. Configure organization teams in `teams.json`; optional `scouting_team_id` identifies an internal team's own scouting record, which is excluded from its opponent assignments. A record can still be assigned to another internal team. Run `node tools/prepare-release.cjs` after configuration changes: it embeds current organization choices into the self-contained capture helper and rebuilds its installer. Reinstall the bookmark to receive the updated list; no cross-site fetch or browser storage is used.
+
+
+### Optional tournament label
+
+The capture review dialog includes **Tournament (optional)** for Plays and combined Plays + Box score captures. Enter a consistent name including the year, for example `Halloween Havoc 2026`, or leave it blank. The export carries a `Tournament:` metadata line; imports save it as `game.tournament` on each imported team's game. Nothing is inferred from dates or consecutive games, and the app does not yet expose tournament search/filtering.
+
+For existing captures, use `--tournament "Halloween Havoc 2026"` with the import command. Duplicate plays may add a previously missing label without duplicating the game or changing its plays. Conflicting existing labels stop the import for explicit review; a blank field does not erase a saved label. Labels must be single-line text of at most 160 characters. Box-score-only captures continue to use the label supplied with their paired Plays capture.
+
+Reload the capture installer and replace the bookmark to receive the new field.
+
+
+### Full dates from Recap
+
+If Plays and Box score provide only a season-derived year or no full date, combined capture also opens the same game's `/recap` screen. It reads a game heading such as `August 23, 2025 vs. RISE 13U`, validates the calendar date and checks its month/day against the other screens. An explicit matching Recap date replaces a season-year hint and removes the year-confirmation requirement. Start time and timezone still come from Plays/Box score; none are inferred from the recap date. The exported bundle retains the recap heading, date and source URL as `recap_date` evidence.
+
+A conflicting game date or redirected Recap stops capture for review. If Recap cannot be loaded or has no unique full-date heading, capture retains its existing manual date/year-confirmation flow with a warning. Captures already carrying an explicit year do not need the extra navigation. Reinstall the bookmark from the updated installer to receive this behavior. Authenticated live-site compatibility still needs verification.
+
+## Capture diagnostics
+
+Loading failures offer **Retry capture**, current-screen capture, or Cancel. The result also has a Retry button; cancelling that retry retains the previous capture. Missing batting and pitching tables name the affected team. Warnings do not certify completeness or replace import validation: the importer checks game identity and reconciles supported box-score totals before saving.
+
+Downloads include game date, start time, both team names, and an event-ID suffix to distinguish games. Unknown metadata is named explicitly. Exports include a capture-version fingerprint for diagnosing problems; keep the original export if an import fails. Updating the bookmark requires replacing it from the refreshed installer page.

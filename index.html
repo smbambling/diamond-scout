@@ -254,7 +254,7 @@
   const unique=(xs,label)=>{const set=new Set();for(const x of xs){if(!x.id||set.has(x.id))throw Error('Missing or duplicate '+label+' ID.');set.add(x.id);}return set;};
   const players=unique(d.players,'player'),games=unique(d.games,'game');unique(d.plate_appearances,'plate appearance');
   for(const p of d.players)if(!p.name)throw Error('A player is missing a name.');
-  for(const g of d.games){if(typeof g.opponent!=='string'||!g.opponent.trim())throw Error('A game is missing its opponent.');if(g.date!=null&&(!/^\d{4}-\d{2}-\d{2}$/.test(g.date)||!Number.isFinite(Date.parse(g.date))||new Date(g.date).toISOString().slice(0,10)!==g.date))throw Error('Game date must be a real YYYY-MM-DD date or null.');if(g.start_time!=null&&(typeof g.start_time!=='string'||!/^([01]\d|2[0-3]):[0-5]\d$/.test(g.start_time)))throw Error('Game start_time must be HH:MM in 24-hour format or null.');}
+  for(const g of d.games){if(g.tournament!=null&&(typeof g.tournament!=='string'||!g.tournament.trim()||g.tournament.length>160||/[\x00-\x1f\x7f]/.test(g.tournament)))throw Error('Game tournament must be a single-line name of up to 160 characters.');if(typeof g.opponent!=='string'||!g.opponent.trim())throw Error('A game is missing its opponent.');if(g.date!=null&&(!/^\d{4}-\d{2}-\d{2}$/.test(g.date)||!Number.isFinite(Date.parse(g.date))||new Date(g.date).toISOString().slice(0,10)!==g.date))throw Error('Game date must be a real YYYY-MM-DD date or null.');if(g.start_time!=null&&(typeof g.start_time!=='string'||!/^([01]\d|2[0-3]):[0-5]\d$/.test(g.start_time)))throw Error('Game start_time must be HH:MM in 24-hour format or null.');}
   const types=['ground_ball','fly_ball','line_drive','bunt','unknown'];
   for(const pa of d.plate_appearances){
    if(!players.has(pa.batter_id)||!games.has(pa.game_id)||!Number.isInteger(pa.inning)||pa.inning<1||!['top','bottom'].includes(pa.half)||!['complete','incomplete'].includes(pa.status)||!Array.isArray(pa.pitches))throw Error('Invalid plate appearance: '+pa.id);
@@ -503,7 +503,7 @@
 'use strict';
 (() => {
  const D=globalThis.DiamondScout,$=id=>document.getElementById(id),e=D.esc;
- const releaseVersion='893f4c30d712efba';
+ const releaseVersion='75d365b97bf7764b';
  const state={view:'scout',batter:'all',game:'all',type:'all',pitcher:'all',organizationTeam:'all',minimumSamples:{scout:10,pitching:10},sorts:{scout:'avg',pitching:'avg'}},cache=new Map();
  let manifest=null,data=null,loadGeneration=0,expandedMetric=null,pitchingStrikeoutsOpen=false,pitchingStrikesOpen=false,pitchingFirstStrikesOpen=false;
  const metricItems=new Map();
@@ -542,8 +542,16 @@
   if(view==='pitching'){const id=params.get('player');state.pitcher=pitcherRoster().some(p=>p.id===id)?id:'all';}
   switchView(view);
  }
+ function applyRememberedView(saved){
+  if(!saved||!data)return;
+  if(saved.team===data.team.id){
+   if(['all','fair_contact','foul_out','ground_ball','line_drive','fly_ball','bunt','unknown'].includes(saved.type)){state.type=saved.type;$('contact-select').value=state.type;}
+   state.pitcher=pitcherRoster().some(p=>p.id===saved.pitcher)?saved.pitcher:'all';
+  }
+  switchView(saved.view==='pitching'?'pitching':'scout');
+ }
  function readSelection(){try{const saved=JSON.parse(localStorage.getItem(selectionKey));return saved&&typeof saved.team==='string'&&typeof saved.batter==='string'?saved:null;}catch{return null;}}
- function saveSelection(){try{localStorage.setItem(selectionKey,JSON.stringify({team:data.team.id,batter:state.batter,games:state.game,sorts:state.sorts,minimumSamples:state.minimumSamples}));}catch{}}
+ function saveSelection(){try{localStorage.setItem(selectionKey,JSON.stringify({team:data.team.id,batter:state.batter,games:state.game,sorts:state.sorts,minimumSamples:state.minimumSamples,view:state.view,pitcher:state.pitcher,type:state.type}));}catch{}}
 
  const playerName=id=>data.players.find(p=>p.id===id)?.name||'Unknown batter';
  const selected=()=>D.filter(data,state);
@@ -762,7 +770,7 @@
 
 
  }
- function render(){if(!data)return;$('share-feedback').hidden=true;$('share-link-label').hidden=true;renderSortPicker();renderBatterPicker();saveSelection();const pas=selected(),b=D.battingSummary(pas),gameCount=new Set(pas.map(p=>p.game_id)).size;
+ function render(){if(!data)return;$('share-feedback').hidden=true;$('share-link-label').hidden=true;renderSortPicker();renderBatterPicker();const pas=selected(),b=D.battingSummary(pas),gameCount=new Set(pas.map(p=>p.game_id)).size;
   $('page-title').textContent=data.team.name;$('page-subtitle').textContent=state.batter==='all'?'Team history':playerName(state.batter);
   $('batter-context').textContent=b.complete+' PA · '+gameCount+' game'+(gameCount===1?'':'s')+(b.incomplete?' · '+b.incomplete+' incomplete':'');
   $('app').dataset.view=state.view;
@@ -772,7 +780,7 @@
   $('filter-context').textContent=game+(state.view==='scout'?(state.type==='all'?'':' · '+D.pretty(state.type)):state.view==='pitching'?' · Pitching summaries':' · All plate appearances');
   $('filter-context').setAttribute('title',$('filter-context').textContent);
   renderFilterIndicator();
-  renderScout(pas);renderPitching();renderSearch();
+  renderScout(pas);renderPitching();renderSearch();saveSelection();
  }
  function switchView(view){
   if(state.view!==view)closeMetricDetails();
@@ -927,7 +935,7 @@
     const id=manifest.teams.some(t=>t.id===restore?.team)?restore.team:manifest.teams[0].id;
     $('team-select').value=id;await loadTeam(id,restore?.team===id?restore.batter:'all',restore?.team===id?restore.games:'all');
    }
-   applySharedView(shared);
+   if(shared)applySharedView(shared);else applyRememberedView(saved);
   }catch(err){if(generation===loadGeneration)status(err.message+' Check teams.json beside index.html and its listed team files, then refresh the page.',true);}
  }
  let nextRelease=null,releaseCheckRunning=false,lastReleaseCheck=0;

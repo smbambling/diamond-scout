@@ -314,5 +314,15 @@ try {
   assert.throws(()=>I.planImports(assigned,[input('Assign to: missing\n'+capture(one))]),/Unknown organization team/);
   const ownPlan=I.planImports(assigned,[input('Assign to: own\n'+capture(one.replace('Falcons 14U','Existing Team')))]);assert(!ownPlan.report.some(r=>r.status==='opponent-assigned'),'Do not assign a team its own scouting record');
   }
+  {
+   const tournamentRepo=repo(),plain=capture(one),tagged='Tournament: Halloween Havoc 2026\n'+plain;
+   const first=I.planImports(tournamentRepo,[input(tagged)]);assert.equal(first.state.dataById.get('falcons-14u').games[0].tournament,'Halloween Havoc 2026');I.writePlan(first);
+   const repeated=I.planImports(tournamentRepo,[input(tagged)]);assert.equal(repeated.changes.size,0);
+   assert.throws(()=>I.planImports(tournamentRepo,[input('Tournament: Other event\n'+plain)]),/conflicting tournament/);
+   const older=repo();I.writePlan(I.planImports(older,[input(plain)]));const added=I.planImports(older,[input(tagged)]);
+   assert(added.report.some(r=>r.status==='tournament-tagged'));assert.equal(added.state.dataById.get('falcons-14u').games.length,1);I.writePlan(added);
+   assert.equal(JSON.parse(fs.readFileSync(path.join(older,'data/falcons-14u.json'))).games[0].tournament,'Halloween Havoc 2026');
+   assert.throws(()=>I.planImports(older,[input(plain)],{tournament:'bad\nlabel'}),/Tournament must/);
+  }
   console.log('PASS: real-game source/pitch/contact reconciliation, both-team batch imports, trip links, uncommon results, dry-run, duplicates, rematches, aliases, schema validation, backups, rollback and malformed-input rejection. All writes were confined to temporary test projects.');
 } finally { fs.rmSync(temp,{recursive:true,force:true}); }

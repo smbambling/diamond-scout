@@ -70,7 +70,7 @@ function readCapture(raw, options = {}, diagnostics=null) {
   const prefix = lines.slice(0, first).join('\n');
   const meta = {},metaLines={};
   for (const [index,line] of prefix.split('\n').entries()) {
-    const m = norm(line).match(/^(Date|Start time|Timezone|Source|Capture coverage|Import|Assign to):\s*(.*)$/i);
+    const m = norm(line).match(/^(Date|Start time|Timezone|Source|Capture coverage|Capture version|Import|Assign to|Tournament):\s*(.*)$/i);
     if (m) {
       const field = m[1].toLowerCase();
       if (meta[field] !== undefined && meta[field] !== m[2]) reject('Conflicting capture metadata: ' + m[1],{line:index+1});
@@ -91,6 +91,8 @@ function readCapture(raw, options = {}, diagnostics=null) {
     if (!m) reject('Unrecognized Import directive. Use "both teams" or "only Team Name", or --team.',{line:metaLines.import});
     else onlyTeam = m[1];
   }
+  let tournament=options.tournament??meta.tournament??null;
+  if(tournament!==null){if(typeof tournament!=='string'||tournament.length>160||/[\x00-\x1f\x7f]/.test(tournament))reject('Tournament must be a single-line name of up to 160 characters.',{line:metaLines.tournament});else tournament=tournament.trim()||null;}
   const assignTo=[...new Set([...(options.assignTo||[]),...(meta['assign to']?meta['assign to'].split(',').map(id=>id.trim()):[])])];
   if(assignTo.some(id=>typeof id!=='string'||!/^[a-z0-9][a-z0-9-]*$/.test(id)))reject('Assign to must contain organization team IDs separated by commas.',{line:metaLines['assign to']});
   // Retain original source bytes (including NBSP/CRLF) separately from parsing normalization.
@@ -120,7 +122,7 @@ function readCapture(raw, options = {}, diagnostics=null) {
   if (!['newest-first','oldest-first'].includes(order)) reject('--order must be newest-first or oldest-first.');
   const rank = block => block.inning * 2 + (block.half === 'bottom' ? 1 : 0);
   for (let i=1; i<blocks.length; i++) if ((rank(blocks[i])-rank(blocks[i-1])) * (order === 'newest-first' ? -1 : 1) < 0) reject('Inning order conflicts with --order ' + order + '. Check the capture or choose --order oldest-first.',{line:blocks[i].line});
-  return {date, time, timezone, url, eventId, onlyTeam, assignTo, source, footer, raw, sourceHash:hash(source), coverage:meta['capture coverage'] || 'Supplied text only; completeness not verified', blocks, halves, order};
+  return {date, time, timezone, url, eventId, onlyTeam, assignTo, tournament, captureVersion:meta['capture version']||null, source, footer, raw, sourceHash:hash(source), coverage:meta['capture coverage'] || 'Supplied text only; completeness not verified', blocks, halves, order};
 }
 
 function resultFor(text, label) {
@@ -445,7 +447,7 @@ function buildTeam(capture, teamName, data, gameId, opponent, D) {
     }
     for (const message of record.warnings) warnings.push('Line '+record.lines[0].line+': '+message);
   }
-  const game={id:gameId,date:capture.date,start_time:capture.time,timezone:capture.timezone,opponent,batting_half:half,label:'vs. '+opponent,source:'Local GameChanger text converter',source_url:capture.url,source_event_id:capture.eventId,source_capture_coverage:capture.coverage,source_control_events:timeline.filter(r=>r.kind==='administrative').map(r=>({inning:r.inning,half:r.half,source_events:r.lines.map(l=>l.raw)})),source_scope:'Supplied '+half+' innings '+blocks.map(b=>b.inning).join(', ')+' only; completeness not verified',source_play_by_play:capture.source,source_sha256:capture.sourceHash,source_canonical_sha256:hash(canonical(capture.source)),notes:['No final score, missing innings or unlisted pitches were inferred. Original capture text retained.']};
+  const game={id:gameId,...(capture.tournament?{tournament:capture.tournament}:{}),date:capture.date,start_time:capture.time,timezone:capture.timezone,opponent,batting_half:half,label:'vs. '+opponent,source:'Local GameChanger text converter',source_url:capture.url,source_event_id:capture.eventId,source_capture_coverage:capture.coverage,...(capture.captureVersion?{source_capture_version:capture.captureVersion}:{}),source_control_events:timeline.filter(r=>r.kind==='administrative').map(r=>({inning:r.inning,half:r.half,source_events:r.lines.map(l=>l.raw)})),source_scope:'Supplied '+half+' innings '+blocks.map(b=>b.inning).join(', ')+' only; completeness not verified',source_play_by_play:capture.source,source_sha256:capture.sourceHash,source_canonical_sha256:hash(canonical(capture.source)),notes:['No final score, missing innings or unlisted pitches were inferred. Original capture text retained.']};
   if(capture.footer){game.source_capture_footer=capture.footer;warnings.push('Recognized trailing GameChanger site footer excluded from play parsing; original footer retained.');}
   data.games.push(game); data.plate_appearances.push(...pas);
   data.baserunning_events=(data.baserunning_events||[]).concat(events);
@@ -552,11 +554,13 @@ function planWithState(root,inputs,options,state){
       if (exact.length) {
         if (exact.length!==1) fail('Multiple existing games share this source; review '+entry.name+'.');
         const game=exact[0];
-        for (const [field,value] of [['date',capture.date],['start_time',capture.time],['timezone',capture.timezone],['source_event_id',capture.eventId]]) if (value!=null && game[field]!=null && game[field]!==value) fail('Same plays have conflicting '+field+' for '+entry.name+'. Use the data-update prompt for corrections.');
+        for (const [field,value] of [['date',capture.date],['start_time',capture.time],['timezone',capture.timezone],['source_event_id',capture.eventId],['tournament',capture.tournament]]) if (value!=null && game[field]!=null && game[field]!==value) fail('Same plays have conflicting '+field+' for '+entry.name+'. Use the data-update prompt for corrections.');
         if (game.batting_half && game.batting_half!==half) fail('Same plays have conflicting batting halves for '+entry.name+'.');
         if (other && key(game.opponent)!==key(opponent)) fail('Same plays have conflicting opponents for '+entry.name+'.');
+        const tournamentAdded=!!capture.tournament&&!game.tournament;
+        if(tournamentAdded){game.tournament=capture.tournament;touched.add(entry.id);report.push({file:input.name,team:entry.name,team_id:entry.id,status:'tournament-tagged',game_id:game.id,warnings:['Tournament: '+capture.tournament+'. Existing plays retained.']});}
         visited.push({data,game,entry});
-        report.push({file:input.name,team:entry.name,team_id:entry.id,status:'duplicate',game_id:game.id,warnings:[omittedEmptyAtBat(game)?'Completed plays already present; capture omits the final empty at-bat section. Stored unfinished appearance and all history retained.':'Identical plays already present; no records or metadata changed.',...(input.captureWarnings||[])]}); continue;
+        report.push({file:input.name,team:entry.name,team_id:entry.id,status:'duplicate',game_id:game.id,warnings:[omittedEmptyAtBat(game)?'Completed plays already present; capture omits the final empty at-bat section. Stored unfinished appearance and all history retained.':tournamentAdded?'Identical plays already present; tournament label added without changing plays.':'Identical plays already present; no records or metadata changed.',...(input.captureWarnings||[])]}); continue;
       }
       const overlap=data.games.find(game=>{
         if (capture.eventId && game.source_event_id) return capture.eventId===game.source_event_id;
@@ -572,6 +576,7 @@ function planWithState(root,inputs,options,state){
       if (data.games.some(g=>g.id===gameId)) fail('Generated game ID collision.');
       const built=buildTeam(capture,name,data,gameId,opponent,D);
       visited.push({data,game:data.games.find(g=>g.id===gameId),entry});
+      if(capture.tournament)built.warnings.push('Tournament: '+capture.tournament);
       built.warnings.push(...(input.captureWarnings||[]));
       if (!other) built.warnings.unshift('Only one batting side supplied; no opponent roster/history created.');
       if (!capture.date) built.warnings.unshift('Game date unknown; no year inferred.');
@@ -587,7 +592,7 @@ function planWithState(root,inputs,options,state){
     if(!matching.length){if(!options.preflight&&inputs.length)fail('Box score does not match a supplied plays capture: '+box.file);continue;}
     for(const {data,game,entry}of matching){
       const evidence=B.reconcile(data,game,box,D);
-      if(game.box_score&&game.box_score.source_sha256!==box.sha256)fail('A different box score is already attached for '+entry.name+'. Review corrections before replacing it.');
+      if(game.box_score&&game.box_score.source_sha256!==box.sha256&&!require('node:util').isDeepStrictEqual((({capture_version,...rest})=>rest)(game.box_score.source_capture||{}),(({capture_version,...rest})=>rest)(box.box)))fail('A different box score is already attached for '+entry.name+'. Review corrections before replacing it.');
       const changed=!game.box_score;
       if(changed){game.box_score=evidence;touched.add(entry.id);}
       report.push({file:box.file,team:entry.name,team_id:entry.id,status:changed?'box-score-attached':'box-score-duplicate',game_id:game.id,warnings:[...evidence.notes,...evidence.comparisons.filter(c=>c.status==='conflict').map(c=>c.player+' '+c.stat+': plays '+c.plays+', box score '+c.box_score+'. Review needed; plays unchanged.'),'Box-score status: '+evidence.status+'. No play result or pitch sequence was overwritten.']});
@@ -654,7 +659,7 @@ function writeUnlocked(plan) {
 
 function parseArgs(args) {
   const options={aliases:{}}, files=[];
-  const names={'--date':'date','--time':'time','--timezone':'timezone','--opponent':'opponent','--source':'source','--event-id':'eventId','--team':'team','--order':'order','--report':'report','--box-score':'boxScore'};
+  const names={'--tournament':'tournament','--date':'date','--time':'time','--timezone':'timezone','--opponent':'opponent','--source':'source','--event-id':'eventId','--team':'team','--order':'order','--report':'report','--box-score':'boxScore'};
   for (let i=0;i<args.length;i++) {
     const arg=args[i];
     if (arg==='--write') options.write=true;
@@ -701,6 +706,7 @@ Optional metadata overrides (apply to ALL input files):
   --date YYYY-MM-DD        --time HH:MM (or "8:30 AM")
   --timezone ET           --opponent "Team Name" (one-side capture only)
   --source URL            --event-id ID
+  --tournament "Name"    Optional tournament label (no grouping inferred)
   --assign-to ID         Assign imported scouting to an organization team (repeatable)
   --team "Team Name"      Import only this captured team or existing team ID
   --team-alias "Captured Name=existing-team-id"  Reuse a differently named team

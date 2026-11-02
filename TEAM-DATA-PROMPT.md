@@ -290,3 +290,5 @@ The Capture GC data bookmark now captures Plays and Box score together, without 
 ## Organization assignments from capture exports
 
 If capture metadata includes `Assign to: organization-id, organization-id`, preserve it when using the import utility. It links each imported scouting record to those configured organization teams in `teams.json`, excluding each team's own record when `scouting_team_id` is configured. Assignments are included in preview, backup and rollback, and require `--write` to persist. Unknown IDs must be corrected explicitly, not guessed. Never create duplicate opponent history just because multiple organization teams share that opponent. Older captures can use repeatable `--assign-to ID` flags.
+
+Optional `Tournament:` capture metadata is retained as `game.tournament`. Do not infer tournament membership from dates. Duplicate captures may fill a missing label, but a conflicting existing label requires explicit correction review. Keep names consistent for future grouping and search.

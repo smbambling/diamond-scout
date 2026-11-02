@@ -260,3 +260,21 @@ node tools/import-plays.cjs /path/gamechanger-game.json --assign-to 14u-black
 ```
 
 Add `--write` after reviewing the preview. Capture metadata and CLI assignments are combined. Configure organization teams in `teams.json`; optional `scouting_team_id` identifies an internal team's own scouting record, which is excluded from its opponent assignments. A record can still be assigned to another internal team. Run `node tools/prepare-release.cjs` after configuration changes: it embeds current organization choices into the self-contained capture helper and rebuilds its installer. Reinstall the bookmark to receive the updated list; no cross-site fetch or browser storage is used.
+
+
+### Optional tournament label
+
+The capture review dialog includes **Tournament (optional)** for Plays and combined Plays + Box score captures. Enter a consistent name including the year, for example `Halloween Havoc 2026`, or leave it blank. The export carries a `Tournament:` metadata line; imports save it as `game.tournament` on each imported team's game. Nothing is inferred from dates or consecutive games, and the app does not yet expose tournament search/filtering.
+
+For existing captures, use `--tournament "Halloween Havoc 2026"` with the import command. Duplicate plays may add a previously missing label without duplicating the game or changing its plays. Conflicting existing labels stop the import for explicit review; a blank field does not erase a saved label. Labels must be single-line text of at most 160 characters. Box-score-only captures continue to use the label supplied with their paired Plays capture.
+
+Reload the capture installer and replace the bookmark to receive the new field.
+
+
+### Full dates from Recap
+
+If Plays and Box score provide only a season-derived year or no full date, combined capture also opens the same game's `/recap` screen. It reads a game heading such as `August 23, 2025 vs. RISE 13U`, validates the calendar date and checks its month/day against the other screens. An explicit matching Recap date replaces a season-year hint and removes the year-confirmation requirement. Start time and timezone still come from Plays/Box score; none are inferred from the recap date. The exported bundle retains the recap heading, date and source URL as `recap_date` evidence.
+
+A conflicting game date or redirected Recap stops capture for review. If Recap cannot be loaded or has no unique full-date heading, capture retains its existing manual date/year-confirmation flow with a warning. Captures already carrying an explicit year do not need the extra navigation. Reinstall the bookmark from the updated installer to receive this behavior. Authenticated live-site compatibility still needs verification.
+
+Capture exports now include a capture-version fingerprint, retained on newly imported games as `source_capture_version`. Identical attached box scores remain duplicates when only their capture-version field differs; changes to captured scoring data still require correction review. For failed imports, retain the original export and the error report rather than manually reviewing the whole captured text.

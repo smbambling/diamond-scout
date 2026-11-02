@@ -16,6 +16,7 @@ const teams=JSON.parse(fs.readFileSync(path.join(root,'teams.json'),'utf8'));
 const capturePath=path.join(root,'tools/gamechanger-capture.js'),installerPath=path.join(root,'tools/gamechanger-capture.html');
 let capture=fs.readFileSync(capturePath,'utf8');
 capture=capture.replace(/  const organizationTeams = .*;/,()=> '  const organizationTeams = '+JSON.stringify((teams.organization_teams||[]).map(({id,name})=>({id,name})))+';');
+capture=capture.replace(/  const captureVersion = '[^']*';/,"  const captureVersion = '"+hash(capture.replace(/  const captureVersion = '[^']*';/,"  const captureVersion = 'CAPTURE';"))+"';");
 const installer=fs.readFileSync(installerPath,'utf8').replace(/(id="capture-bookmark" href=")[^"]+"/,(_,prefix)=>prefix+'javascript:'+encodeURIComponent(capture)+'"');
 fs.writeFileSync(capturePath,capture);fs.writeFileSync(installerPath,installer);
 const runtime=[canonical,manifestText,fs.readFileSync(path.join(root,'teams.json')),...teams.teams.map(t=>fs.readFileSync(path.join(root,t.data_file)))];

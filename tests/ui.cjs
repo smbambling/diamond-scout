@@ -416,7 +416,7 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  SE['tab-pitching'].click();
  SE['tab-scout'].click();assert.equal(SE['player-sort-select'].value,'pa');SE['tab-pitching'].click();assert.equal(SE['player-sort-select'].value,'walk');
  const sortRestore=await openApp({storage:sortApp.storage,files:{'teams.json':{'schema_version':1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData}});
- assert.equal(sortRestore.elements['player-sort-select'].value,'pa');sortRestore.elements['tab-pitching'].click();assert.equal(sortRestore.elements['player-sort-select'].value,'walk');
+ assert.equal(sortRestore.elements['player-sort-select'].value,'walk');sortRestore.elements['tab-scout'].click();assert.equal(sortRestore.elements['player-sort-select'].value,'pa');sortRestore.elements['tab-pitching'].click();assert.equal(sortRestore.elements['player-sort-select'].value,'walk');
  }
  // A tiny perfect AVG follows qualified regular players; no one disappears from the roster.
  {
@@ -469,6 +469,19 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  let copied=null;const clipboard=await openApp({files,browserNavigator:{clipboard:{writeText:async value=>{copied=value;}}}});await clipboard.elements['share-view'].click();assert(copied.includes('opponent='));assert.equal(clipboard.elements['share-status'].textContent,'Link copied.');
  const manual=await openApp({files,browserNavigator:{clipboard:{writeText:async()=>{throw Error('blocked');}}}});await manual.elements['share-view'].click();assert.equal(manual.elements['share-link-label'].hidden,false);assert.match(manual.elements['share-link'].value,/opponent=/);
  const cancelled=await openApp({files,browserNavigator:{share:async()=>{throw Object.assign(Error('cancelled'),{name:'AbortError'});}}});await cancelled.elements['share-view'].click();assert.equal(cancelled.elements['share-feedback'].hidden,true);
+ }
+ // Reopening restores the tab, pitcher and contact filter, but leaves transient panels closed.
+ {
+ const files={'teams.json':{schema_version:1,teams:[{id:pitchingData.team.id,name:pitchingData.team.name,data_file:'data/pitching.json'}]},'data/pitching.json':pitchingData};
+ const app=await openApp({files}),E=app.elements;changeGames(E,pitchingData.games[0].id);E['contact-select'].value='ground_ball';E['contact-select'].listeners.change();E['tab-pitching'].click();E['pitcher-select'].value='quinn kasprzak';E['pitcher-select'].listeners.change();
+ E['pitching-summary'].listeners.click({target:{closest:s=>s==='#pitching-strikeout-toggle'?{}:null}});E['filter-toggle'].click();
+ const reopened=await openApp({files,storage:clone(app.storage)}),R=reopened.elements;
+ assert.equal(R['tab-pitching'].attrs['aria-selected'],'true');assert.equal(R['pitcher-select'].value,'quinn kasprzak');assert.equal(R['contact-select'].value,'ground_ball');assert.equal(R['pitching-strikeout-detail'].hidden,true);assert.equal(R['filter-panel'].hidden,true);assert.equal(R['search-panel'].hidden,true);
+ R['tab-scout'].click();const hittingReopened=await openApp({files,storage:clone(reopened.storage)});assert.equal(hittingReopened.elements['tab-scout'].attrs['aria-selected'],'true');hittingReopened.elements['tab-pitching'].click();assert.equal(hittingReopened.elements['pitcher-select'].value,'quinn kasprzak');
+ const link=new URL('https://diamond-scout.test/');link.searchParams.set('opponent',pitchingData.team.id);link.searchParams.set('view','scout');link.searchParams.set('player','all');link.searchParams.set('contact','fly_ball');
+ const shared=await openApp({files,storage:clone(app.storage),href:link.href});assert.equal(shared.elements['tab-scout'].attrs['aria-selected'],'true');assert.equal(shared.elements['contact-select'].value,'fly_ball');
+ const stale=clone(app.storage),key=Object.keys(stale).find(k=>!k.endsWith(':organization')),selection=JSON.parse(stale[key]);selection.pitcher='removed-pitcher';selection.type='invalid';selection.view='invalid';stale[key]=JSON.stringify(selection);
+ const safe=await openApp({files,storage:stale});assert.equal(safe.elements['pitcher-select'].value,'all');assert.equal(safe.elements['contact-select'].value,'all');assert.equal(safe.elements['tab-scout'].attrs['aria-selected'],'true');assert.equal(JSON.parse(safe.storage[key]).pitcher,'all');
  }
  // Pull-to-refresh requires a deliberate top-of-page gesture and release.
  {
