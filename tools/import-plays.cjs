@@ -181,6 +181,7 @@ function isContext(token) {
   if(unnamedRunnerPattern.test(token))return true;
   if(/^Score changed to \d+-\d+$/i.test(token)||/^\(Play Edit\) .+ in for .+$/i.test(token))return true;
   if(/^Outs changed to [0-3]$/i.test(token))return true;
+  if(/^\S(?:.*\S)? in for pitcher(?: \S(?:.*\S)?)?$/i.test(token))return true;
   if (/^Balk(?: by pitcher .+)?$/i.test(token)) return true;
   if (/^.+ gets placed on (?:1st|2nd|3rd)$/i.test(token)) return true;
   return /^(?:Pickoff attempt at (?:1st|2nd|3rd)|Lineup changed: .+|(?:Courtesy|Pinch) runner .+ in for .+|.+ (?:advances to |remains at |held up at |did not score|scores\b|steals\b|caught stealing\b|is caught stealing\b|out (?:at |advancing |due to )|attempts to steal\b|picked off\b))/i.test(token);

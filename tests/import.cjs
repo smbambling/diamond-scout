@@ -228,6 +228,16 @@ try {
     if(date==='2026-10-06')assert.equal(attempts[0].to_base,'home');
     D.validateData(parsed.team);
   }
+  for(const sequence of ['Luke Flaherty in for pitcher Aidan Brennan, Ball 1, In play.','Ball 1, Luke Flaherty in for pitcher Aidan Brennan, In play.','Ben Gannon in for pitcher, Ball 1, In play.','Ball 1, Ben Gannon in for pitcher, In play.']){
+    const changed=parseTeam(capture(one.replace('In play.',sequence)),'Falcons 14U');
+    const pa=changed.team.plate_appearances[0];
+    assert.deepEqual(pa.pitches.map(p=>p.outcome),['ball','in_play']);
+    assert.deepEqual(pa.pitches[1].count_before,{balls:1,strikes:0});
+    assert(pa.source_pitch_sequence.includes(sequence.includes('Ben Gannon')?'Ben Gannon in for pitcher':'Luke Flaherty in for pitcher Aidan Brennan'));
+    assert(!changed.team.players.some(p=>/Flaherty|Brennan|Gannon/.test(p.name)),'Pitching substitutions do not create batting or running players');
+    assert.equal(pa.pitcher.name,null,'Substitution text alone does not assign an entire PA to a pitcher');
+    D.validateData(changed.team);
+  }
   const editedCapture=fs.readFileSync(path.join(root,'tests/fixtures/captures/2026-10-04-dig-in-royals-capture.txt'),'utf8');
   const edited=parseTeam(editedCapture,'Dig In (Gribbin) 14U');
   assert.equal(edited.team.games[0].source_control_events.length,1);assert(edited.team.games[0].source_control_events[0].source_events.includes('Half-inning ended by scorekeeper.'));

@@ -11,6 +11,11 @@
       "id": "rawlings-tigers-nova-black-14u",
       "name": "Rawlings Tigers NOVA - Black 14U",
       "data_file": "data/rawlings-tigers-nova-black-14u.json"
+    },
+    {
+      "id": "stars-baseball-higgins-14u",
+      "name": "Stars Baseball Higgins 14U",
+      "data_file": "data/stars-baseball-higgins-14u.json"
     }
   ],
   "organization_teams": [
@@ -19,7 +24,8 @@
       "name": "Rawlings Tigers NOVA — 14U Black",
       "opponent_ids": [
         "dig-in-gribbin-14u",
-        "rawlings-tigers-nova-black-14u"
+        "rawlings-tigers-nova-black-14u",
+        "stars-baseball-higgins-14u"
       ],
       "scouting_team_id": "rawlings-tigers-nova-black-14u",
       "short_name": "14U Black"
