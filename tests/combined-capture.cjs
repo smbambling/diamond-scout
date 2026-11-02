@@ -43,6 +43,7 @@ const header='Sun Oct 25, 2026, 10:00 AM - 12:00 PM ET\n';
   for (const team of C.inspectPlays(bundle.plays).teams) {
    const single={name:input.name,raw:C.formatCombined(bundle,{date:'2026-10-25',team})};
    const chosen=I.planImports(folder,[single]);
+   const teamOnlyBatch=I.planImports(folder,[{name:'schedule-team-only.json',raw:JSON.stringify({schema_version:1,kind:'diamond-scout-schedule',games:[JSON.parse(single.raw)],failures:[]})}]);assert.equal(teamOnlyBatch.changes.size,2);assert(teamOnlyBatch.report.every(r=>r.team===team),'Schedule team-only checkbox excludes opponents from import');
    assert.equal(chosen.changes.size,2,'Only selected history and manifest change');
    assert(chosen.report.every(r=>r.team===team),'Plays and box-score reconciliation honor selection');
    assert.equal(chosen.report.filter(r=>r.status==='added').length,1);
@@ -51,11 +52,16 @@ const header='Sun Oct 25, 2026, 10:00 AM - 12:00 PM ET\n';
   }
   assert.throws(()=>C.formatCombined(bundle,{team:'Missing team'}),/Choose a team/);
   const preflight=P.inspectBatch(folder,[input],{preflight:true});assert.equal(preflight.ready_for_import,true);assert(preflight.files[0].issues.some(i=>i.message.includes('Brian Gribbin TB')));
+  const schedulePlan=I.planImports(folder,[{name:'gamechanger-game-schedule-fresh.json',raw:JSON.stringify({schema_version:1,kind:'diamond-scout-schedule',games:[JSON.parse(raw)],failures:[]})}]);
+  assert.equal(schedulePlan.changes.size,3,'Fresh batch plans both teams and manifest');
   const plan=I.planImports(folder,[input]);assert.equal(plan.changes.size,3);assert.equal(plan.inputs.length,3);I.writePlan(plan);
   const history=JSON.parse(fs.readFileSync(path.join(folder,'data/dig-in-gribbin-14u.json')));assert(history.games[0].box_score);assert.equal(history.games[0].timezone,'ET');assert.equal(history.plate_appearances.length,19);
   assert.equal(history.games[0].source_capture_version,C.captureVersion);
   const newer=JSON.parse(raw);newer.capture_version='new-version';newer.box_score.capture_version='new-version';
   assert.equal(I.planImports(folder,[{name:'newer.json',raw:JSON.stringify(newer)}]).changes.size,0,'Version-only recapture remains a duplicate');
+  const scheduleInput={name:'gamechanger-game-schedule-test.json',raw:JSON.stringify({schema_version:1,kind:'diamond-scout-schedule',games:[JSON.parse(raw)],failures:[]})};
+  assert.equal(I.planImports(folder,[scheduleInput]).changes.size,0,'Batch reimports use existing duplicate protection');
+  assert.equal(P.inspectBatch(folder,[scheduleInput],{preflight:true}).ready_for_import,true,'Batch files support preflight');
   assert.equal(I.planImports(folder,[input]).changes.size,0);assert.equal(P.inspectBatch(folder,[input],{preflight:true}).summary.duplicates,1);
   assert.throws(()=>I.planImports(folder,[{name:'box.json',raw:JSON.stringify(box)}]),/Box-score-only/);
   const captures=path.join(folder,'captures');fs.mkdirSync(captures);fs.writeFileSync(path.join(captures,input.name),raw);fs.writeFileSync(path.join(captures,'unrelated.json'),'{}');assert.equal(P.collectInputs([captures]).length,1);

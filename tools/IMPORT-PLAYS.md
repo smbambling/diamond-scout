@@ -290,3 +290,7 @@ node tools/audit-metrics.cjs
 ```
 
 The audit lists affected team/game records and reasons. A warning is not proof of a capture failure: the scorekeeper may not have recorded the missing information.
+
+### Schedule batches
+
+The bookmark's schedule scanner exports `diamond-scout-schedule` JSON with a `games` array of standard combined captures. Use the file as a normal input, including with `--preflight` or folder discovery. The importer validates and expands every game before saving; duplicate IDs within one schedule bundle are rejected. Existing game identity, overlap, box-score and atomic-write checks remain in effect. The original schedule bundle is backed up alongside individual capture evidence when changes are written. Capture failures remain outside imported history and generate warnings so the missing games can be retried.

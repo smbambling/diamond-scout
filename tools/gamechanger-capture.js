@@ -2,7 +2,7 @@
 (async function () {
   'use strict';
 
-  const captureVersion = '1cf08f23d294caf3';
+  const captureVersion = '1a09c9315faaf685';
   const organizationTeams = [{"id":"14u-black","name":"Rawlings Tigers NOVA — 14U Black"}];
 
   function tableWarnings(teams){
@@ -295,15 +295,104 @@
       }
     }finally{try{if(popup&&!popup.closed)popup.close();}catch{}busy.remove();}
   }
+  function scheduleUrl(value){
+    const url=new URL(sourceUrl(value));
+    if(url.hostname!=='web.gc.com'||!/^\/teams\/[^/]+\/[^/]+\/schedule\/?$/.test(url.pathname))throw Error('Use a team schedule URL from web.gc.com.');
+    return url.origin+url.pathname.replace(/\/$/,'');
+  }
+  function extractSchedule(doc,value){
+    const url=scheduleUrl(value),games=[],skipped=[],seen=new Set(),months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const text=node=>clean(node?.textContent||'').replace(/\s+/g,' ');
+    for(const month of doc.querySelectorAll('.ScheduleListByMonth__eventMonth')){
+      const header=text(month.previousElementSibling?.querySelector('[data-testid="schedule-section-title"]'));
+      const m=header.match(/^([A-Za-z]+) (\d{4})$/),monthIndex=m?months.findIndex(name=>name.toLowerCase()===m[1].toLowerCase()):-1;
+      for(const row of month.querySelectorAll('.ScheduleListByMonth__dayRow'))for(const link of row.querySelectorAll('a.ScheduleListByMonth__event')){
+        let target;try{target=new URL(link.getAttribute('href'),url);}catch{continue;}
+        const prefix=new URL(url).pathname+'/',suffix=target.pathname.slice(prefix.length);
+        if(target.origin!==new URL(url).origin||!target.pathname.startsWith(prefix)||!suffix||suffix.includes('/'))continue;
+        if(seen.has(suffix))continue;seen.add(suffix);
+        const titleNode=link.querySelector('.ScheduleListByMonth__title'),title=text(titleNode),score=text(link.querySelector('.ScheduleListByMonth__scoreOrTimeText'));
+        const day=Number(text(row.querySelector('.ScheduleListByMonth__dateText'))),date=m&&monthIndex>=0&&day>0?m[2]+'-'+String(monthIndex+1).padStart(2,'0')+'-'+String(day).padStart(2,'0'):'';
+        const validDate=date&&Number.isFinite(Date.parse(date))&&new Date(date).toISOString().slice(0,10)===date;
+        const completed=/^(?:W|L|T)\s+\d+\s*[-–]\s*\d+$/i.test(score),opponent=/^(?:@|vs\.)\s+\S/.test(title);
+        const item={eventId:suffix,url:target.origin+target.pathname,title,date:validDate?date:'',score};
+        if(!opponent||/\b(?:cancelled|canceled|postponed|suspended|in progress|live)\b/i.test(title+' '+score)){skipped.push({...item,reason:'Not an eligible completed game'});continue;}
+        if(!completed){skipped.push({...item,reason:'No final W/L/T result'});continue;}
+        if(!validDate){skipped.push({...item,reason:'Schedule date unavailable'});continue;}
+        games.push(item);
+      }
+    }
+    return {url,team:text(doc.querySelector('.NewTeamNavBar__teamName')),games:games.sort((a,b)=>b.date.localeCompare(a.date)),skipped};
+  }
+  async function captureScheduleGames(games,readScreen,options={},onProgress=()=>{},cancelled=()=>false){
+    const successes=[],failures=[];
+    for(const [index,game] of games.entries()){
+      if(cancelled())break;
+      try{
+        onProgress('Game '+(index+1)+' of '+games.length+' · '+game.title);
+        const bundle=await captureBoth(game.url,readScreen,message=>onProgress('Game '+(index+1)+' of '+games.length+' · '+game.title+' · '+message));
+        if(cancelled())break;
+        if(bundle.source_event_id!==game.eventId)throw Error('Captured game ID differs from the selected schedule game.');
+        if(bundle.detected.date&&!bundle.detected.needsYearConfirmation&&bundle.detected.date!==game.date)throw Error('Schedule and game screen disagree on date.');
+        if(bundle.detected.monthDay&&bundle.detected.monthDay!==Number(game.date.slice(5,7))+'/'+Number(game.date.slice(8,10)))throw Error('Schedule and game screen disagree on date.');
+        const team=options.onlyTeam?inspectPlays(bundle.plays).teams.find(name=>name.normalize('NFC').replace(/\s+/g,' ').trim().toLowerCase()===options.onlyTeam.normalize('NFC').replace(/\s+/g,' ').trim().toLowerCase()):'';
+        if(options.onlyTeam&&!team)throw Error('The schedule team was not found in captured Plays.');
+        const saved=JSON.parse(formatCombined(bundle,{date:game.date,time:bundle.detected.time,timezone:bundle.detected.timezone,yearConfirmed:true,team,assignTo:options.assignTo||[],tournament:options.tournament||''}));
+        saved.schedule_evidence={date:game.date,title:game.title,result:game.score};successes.push(saved);
+      }catch(error){if(cancelled())break;failures.push({...game,error:error.message});}
+    }
+    return {successes,failures,cancelled:cancelled()};
+  }
+  async function showScheduleScanner(initialUrl){
+    const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+    const dialog=document.createElement('dialog');dialog.id='diamond-scout-schedule-dialog';dialog.style.cssText='width:680px;max-width:94vw;max-height:90vh;overflow:auto;padding:22px;border:1px solid #cbd5e1;border-radius:16px;background:#F4F6F8;color:#0A192F;font:15px/1.5 system-ui';
+    dialog.innerHTML='<h2>Capture team schedule</h2><label>Schedule URL<input id="ds-schedule-url" type="url" style="display:block;width:100%;box-sizing:border-box"></label><button id="ds-schedule-load">Load / rescan schedule</button><p id="ds-schedule-info"></p><div id="ds-schedule-list" style="max-height:230px;overflow:auto"></div><div id="ds-schedule-settings"><fieldset><legend>Teams to import</legend><label style="display:flex;align-items:center;gap:8px;min-height:48px"><input id="ds-schedule-only" type="checkbox" aria-describedby="ds-schedule-only-help"><span id="ds-schedule-only-label">Only import the schedule team</span></label><p id="ds-schedule-only-help" style="margin:4px 0;font-size:13px">Checked: import this team only. Unchecked: import both teams from each game.</p></fieldset><fieldset><legend>Assign scouting to your teams (optional)</legend>'+organizationTeams.map(t=>'<label style="display:block"><input type="checkbox" data-assign="'+escape(t.id)+'"> '+escape(t.name)+'</label>').join('')+'</fieldset><label>Tournament (optional; applies to all selected games)<input id="ds-schedule-tournament" maxlength="160" style="display:block;width:100%;box-sizing:border-box"></label></div><p id="ds-schedule-status" role="status" aria-live="polite"></p><div id="ds-schedule-results"></div><div style="display:flex;flex-wrap:wrap;gap:8px"><button id="ds-schedule-start">Capture selected games</button><button id="ds-schedule-retry" hidden>Retry failed games</button><button id="ds-schedule-download" disabled>Download captured games</button><button id="ds-schedule-cancel" hidden>Stop capture</button><button id="ds-schedule-close">Close</button></div>';
+    document.body.appendChild(dialog);dialog.showModal();const field=id=>dialog.querySelector('#ds-schedule-'+id);
+    for(const button of dialog.querySelectorAll('button'))button.style.cssText='min-height:48px;padding:8px 12px;font:inherit';
+    field('url').value=initialUrl;let schedule=null,popup=null,busy=false,stopped=false,successes=new Map(),failures=[],batchOptions=null,batchSchedule=null,wasCancelled=false;
+    const closePopup=()=>{try{if(popup&&!popup.closed)popup.close();}catch{}popup=null;};
+    const summary=()=>{field('results').textContent=successes.size+' captured · '+failures.length+' failed'+(wasCancelled?' · stopped early':'')+([...successes.values()].some(g=>g.warnings?.length)?'\n'+[...successes.values()].filter(g=>g.warnings?.length).map(g=>g.schedule_evidence.date+' '+g.schedule_evidence.title+': '+g.warnings.join(' ')).join('\n'):'')+(failures.length?'\n'+failures.map(f=>f.date+' '+f.title+': '+f.error).join('\n'):'');field('results').style.whiteSpace='pre-line';field('download').disabled=!successes.size;field('retry').hidden=!failures.length;};
+    const setBusy=value=>{busy=value;for(const id of ['start','load','url','only','tournament','close'])field(id).disabled=value;for(const input of dialog.querySelectorAll('input[type="checkbox"]'))input.disabled=value;field('retry').disabled=value;field('download').disabled=value||!successes.size;field('cancel').hidden=!value;};
+    function showList(next){schedule=next;field('only-label').textContent=next.team?'Only import '+next.team:'Only import the schedule team';field('list').innerHTML=next.games.map(g=>'<label style="display:flex;gap:8px;padding:7px"><input type="checkbox" data-event="'+escape(g.eventId)+'" checked><span>'+escape(g.date+' · '+g.title+' · '+g.score)+'</span></label>').join('');field('info').textContent=next.team+' · '+next.games.length+' completed games · '+next.skipped.length+' other events skipped. Only loaded schedule rows are included; scroll the schedule to load older events and rescan if needed.';field('start').disabled=!next.games.length;}
+    field('load').addEventListener('click',async()=>{
+      if(busy)return;
+      try{const target=scheduleUrl(field('url').value);stopped=false;
+        if(target===scheduleUrl(initialUrl)){showList(extractSchedule(document,target));return;}
+        popup=window.open(target,'diamond-scout-game-capture','popup,width=1400,height=1000');setBusy(true);const started=Date.now();let last='',stable=0;
+        while(Date.now()-started<18000){if(stopped)throw Error('Schedule loading stopped.');if(!popup||popup.closed)throw Error('Allow the schedule capture window, then retry.');try{if(popup.document.readyState==='complete'&&sourceUrl(popup.location.href)===target){const next=extractSchedule(popup.document,target),signature=JSON.stringify(next);stable=signature===last?stable+1:0;last=signature;if(stable>=3&&(next.games.length||next.skipped.length)){showList(next);return;}}}catch(error){if(error.message.includes('Allow'))throw error;}await new Promise(resolve=>setTimeout(resolve,500));}
+        throw Error('Schedule did not load. Open it directly and run the bookmark there.');
+      }catch(error){field('status').textContent=error.message;}finally{closePopup();setBusy(false);}
+    });
+    async function run(games,options){
+      if(busy||!games.length)return;stopped=false;setBusy(true);
+      try{const result=await captureScheduleGames(games,(url,kind,teams)=>readGameWindow(popup,url,kind,()=>stopped,teams,kind==='recap'?{timeout:8000}:{}),options,message=>{field('status').textContent=message;},()=>stopped);
+        for(const game of result.successes)successes.set(game.source_event_id,game);failures=result.failures;wasCancelled=wasCancelled||result.cancelled;
+        if(result.cancelled){const finished=new Set([...result.successes.map(g=>g.source_event_id),...result.failures.map(g=>g.eventId)]);failures.push(...games.filter(g=>!finished.has(g.eventId)).map(g=>({...g,error:'Not completed because capture was stopped.'})));}
+        field('status').textContent=result.cancelled?'Stopped. Completed captures are available to download.':'Capture finished. Warnings remain inside each game export.';
+      }finally{closePopup();setBusy(false);summary();}
+    }
+    field('start').addEventListener('click',()=>{
+      if(busy||!schedule)return;const selected=new Set([...dialog.querySelectorAll('input[data-event]:checked')].map(i=>i.dataset.event)),games=schedule.games.filter(g=>selected.has(g.eventId));if(!games.length){field('status').textContent='Select at least one completed game.';return;}
+      if(field('only').checked&&!schedule.team){field('status').textContent='Schedule team name unavailable. Reload the schedule before choosing team-only capture.';return;}
+      popup=window.open(gameScreens(games[0].url).plays,'diamond-scout-game-capture','popup,width=1400,height=1000');successes.clear();failures=[];wasCancelled=false;batchSchedule=schedule.url;batchOptions={onlyTeam:field('only').checked?schedule.team:'',assignTo:[...dialog.querySelectorAll('input[data-assign]:checked')].map(i=>i.dataset.assign),tournament:field('tournament').value};void run(games,batchOptions);
+    });
+    field('retry').addEventListener('click',()=>{if(busy||!failures.length)return;popup=window.open(gameScreens(failures[0].url).plays,'diamond-scout-game-capture','popup,width=1400,height=1000');void run([...failures],batchOptions);});
+    field('cancel').addEventListener('click',()=>{stopped=true;});
+    field('close').addEventListener('click',()=>{if(!busy){closePopup();dialog.remove();}});
+    dialog.addEventListener('cancel',event=>{event.preventDefault();if(busy)stopped=true;else{closePopup();dialog.remove();}});
+    field('download').addEventListener('click',()=>{if(busy||!successes.size)return;const value={schema_version:1,kind:'diamond-scout-schedule',capture_version:captureVersion,source_url:batchSchedule,games:[...successes.values()],failures,cancelled:wasCancelled};const blob=new Blob([JSON.stringify(value,null,2)+'\n'],{type:'application/json'}),objectUrl=URL.createObjectURL(blob),link=document.createElement('a');link.href=objectUrl;link.download='gamechanger-game-schedule-'+new URL(batchSchedule).pathname.split('/')[2]+'-'+new Date().toISOString().replace(/[:.]/g,'-')+'.json';link.click();setTimeout(()=>URL.revokeObjectURL(objectUrl),1000);});
+    showList(extractSchedule(document,initialUrl));
+  }
   if (typeof document === 'undefined' && typeof module !== 'undefined' && module.exports) {
-    module.exports = { captureVersion, captureFilename, tableWarnings, collectGame, stripPlaysFooter, extractPlays, inspectPlays, sourceUrl, formatCapture, detectGameMetadata, detectRecapDate, validateDetectedDate, extractBoxNotes, extractBoxScore, formatBoxCapture, gameScreens, captureBoth, formatCombined, readGameWindow };
+    module.exports = { scheduleUrl, extractSchedule, captureScheduleGames, captureVersion, captureFilename, tableWarnings, collectGame, stripPlaysFooter, extractPlays, inspectPlays, sourceUrl, formatCapture, detectGameMetadata, detectRecapDate, validateDetectedDate, extractBoxNotes, extractBoxScore, formatBoxCapture, gameScreens, captureBoth, formatCombined, readGameWindow };
     return;
   }
 
   try {
     const url = sourceUrl(location.href);
-    const existing = document.getElementById('diamond-scout-capture-dialog')||document.getElementById('diamond-scout-capture-progress-dialog');
+    const existing = document.getElementById('diamond-scout-capture-dialog')||document.getElementById('diamond-scout-capture-progress-dialog')||document.getElementById('diamond-scout-schedule-dialog');
     if (existing) { existing.focus(); return; }
+    if(/\/teams\/[^/]+\/[^/]+\/schedule\/?$/.test(new URL(url).pathname)){await showScheduleScanner(url);return;}
     let combined=await collectGame(url);
     let detected = combined?combined.detected:detectGameMetadata(document.body.innerText, location.href);
     const boxMode=/\/box-score\/?$/.test(new URL(url).pathname);

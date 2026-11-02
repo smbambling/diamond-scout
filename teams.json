@@ -16,6 +16,11 @@
       "id": "stars-baseball-higgins-14u",
       "name": "Stars Baseball Higgins 14U",
       "data_file": "data/stars-baseball-higgins-14u.json"
+    },
+    {
+      "id": "shockers-14u",
+      "name": "Shockers 14U",
+      "data_file": "data/shockers-14u.json"
     }
   ],
   "organization_teams": [
@@ -25,7 +30,8 @@
       "opponent_ids": [
         "dig-in-gribbin-14u",
         "rawlings-tigers-nova-black-14u",
-        "stars-baseball-higgins-14u"
+        "stars-baseball-higgins-14u",
+        "shockers-14u"
       ],
       "scouting_team_id": "rawlings-tigers-nova-black-14u",
       "short_name": "14U Black"

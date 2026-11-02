@@ -94,3 +94,22 @@ A conflicting game date or redirected Recap stops capture for review. If Recap c
 Loading failures offer **Retry capture**, current-screen capture, or Cancel. The result also has a Retry button; cancelling that retry retains the previous capture. Missing batting and pitching tables name the affected team. Warnings do not certify completeness or replace import validation: the importer checks game identity and reconciles supported box-score totals before saving.
 
 Downloads include game date, start time, both team names, and an event-ID suffix to distinguish games. Unknown metadata is named explicitly. Exports include a capture-version fingerprint for diagnosing problems; keep the original export if an import fails. Updating the bookmark requires replacing it from the refreshed installer page.
+
+## Capture a team schedule
+
+Replace your capture bookmark using the refreshed `gamechanger-capture.html` installer. While signed into GameChanger, open the team's **Schedule** and run the bookmark. The scanner lists completed games, selected by default; deselect any games you do not want. Practices, other events, upcoming games and events without a final W/L/T score are excluded. Games sharing a date remain separate entries.
+
+Choose both teams or schedule-team only, optional scouting assignments, and an optional tournament label for the batch. Click **Capture selected games**. One visible capture window reads each game's Plays, Box score and (when needed) Recap sequentially. Keep that window open. The schedule's full calendar date is checked against the game screens and used to resolve the year.
+
+Failures are listed and do not stop the remaining games. **Retry failed games** retains prior successes. **Stop capture** preserves completed captures for download; **Download captured games** produces one `gamechanger-game-schedule-*.json` file containing successful game captures and the failure summary. Warnings from captured games appear in the results. No repository data changes until you run the importer.
+
+The scanner reads only loaded schedule rows. Scroll the schedule to load any older events, then use **Load / rescan schedule**. You can also paste another team's schedule URL and load it through the signed-in capture window; for lazy-loaded schedules, open that schedule directly and load its rows before scanning. Unknown page layouts are not treated as complete schedules. Live authenticated browser behavior still requires verification.
+
+Import the downloaded batch normally:
+
+```sh
+node tools/import-plays.cjs ~/Downloads/gamechanger-game-schedule-*.json --preflight
+node tools/import-plays.cjs ~/Downloads/gamechanger-game-schedule-*.json --write
+```
+
+Existing duplicate/overlap checks and all-or-nothing saving apply to every game. Failed captures are not imported; the importer warns when the batch was stopped or contains failures. A successful capture is not a guarantee of complete scorekeeping data.

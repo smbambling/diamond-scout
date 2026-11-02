@@ -250,6 +250,8 @@ try {
     assert.equal(pa.pitcher.name,null,'Substitution text alone does not assign an entire PA to a pitcher');
     D.validateData(changed.team);
   }
+  const otherToCatcher=parseTeam(capture('Top 1st - Falcons 14U\nBatter Out\n1 Out\nFoul, In play.\nLogan Sumrow out (other) to catcher Landon Mulder.'),'Falcons 14U');
+  const otherPA=otherToCatcher.team.plate_appearances[0];assert.equal(otherPA.result,'batter_out');assert.equal(otherPA.reached_base,false);assert.equal(otherPA.batted_ball,null);assert.deepEqual(otherPA.pitches.map(p=>p.outcome),['foul','in_play']);assert.equal(D.battingSummary([otherPA]).unclassified,1);assert(otherPA.source_text.includes('to catcher Landon Mulder'));
   const editedCapture=fs.readFileSync(path.join(root,'tests/fixtures/captures/2026-10-04-dig-in-royals-capture.txt'),'utf8');
   const edited=parseTeam(editedCapture,'Dig In (Gribbin) 14U');
   assert.equal(edited.team.games[0].source_control_events.length,1);assert(edited.team.games[0].source_control_events[0].source_events.includes('Half-inning ended by scorekeeper.'));

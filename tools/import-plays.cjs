@@ -23,7 +23,7 @@ const batterPattern = /^(.+?) (walks\b|is intentionally walked\b|is hit by pitch
 labels.add('Batter Out');
 labels.add('Inning Ended');
 resultLabels.batter_out=['Batter Out'];
-const otherOutPattern=/^(.+?) out \(other\)(?:,|\.|$)/;
+const otherOutPattern=/^(.+?) out \(other\)(?: to [^,.]+)?(?:,|\.|$)/;
 const batterMatch=text=>{
   const named=text.match(batterPattern)||text.match(otherOutPattern);if(named)return named;
   // A missing name is not a missing appearance. Mark identity explicitly unknown.
@@ -126,7 +126,7 @@ function readCapture(raw, options = {}, diagnostics=null) {
 }
 
 function resultFor(text, label) {
-  if (/^out \(other\)(?:,|\.|$)/i.test(text)) return 'batter_out';
+  if (/^out \(other\)(?: to [^,.]+)?(?:,|\.|$)/i.test(text)) return 'batter_out';
   if (/^(?:is out on foul tip|strikes out.*foul tip)/i.test(text)) return 'strikeout_foul_tip';
   if (/dropped (?:3rd|third) strike/i.test(text)) return 'dropped_third_strike';
   if (/^reaches on catcher'?s interference/i.test(text)) return 'catchers_interference';
@@ -474,9 +474,16 @@ function inside(root, relative) {
 // Expand a single downloaded game bundle into the existing Plays + box-score pipeline.
 function expandInputs(inputs,options={}){
   const plays=[],boxes=[...(options.boxInputs||[])],bundles=[...(options.bundleInputs||[])];
-  for(const input of inputs){
+  const queue=[...inputs];
+  for(const input of queue){
     if(input.error||typeof input.raw!=='string'||!/^\s*\{/.test(input.raw)){plays.push(input);continue;}
     let value;try{value=JSON.parse(input.raw);}catch{fail('Invalid game capture JSON: '+input.name);}
+    if(value.kind==='diamond-scout-schedule'){
+      if(value.schema_version!==1||!Array.isArray(value.games)||!value.games.length||value.games.length>1000||value.games.some(g=>g?.kind!=='diamond-scout-game')||new Set(value.games.map(g=>g.source_event_id)).size!==value.games.length)fail('Invalid or repeated games in schedule capture: '+input.name);
+      const warnings=[...(Array.isArray(value.failures)&&value.failures.length?['Schedule capture has '+value.failures.length+' failed or unfinished game(s). Retry them in the scanner.']:[]),...(value.cancelled?['Schedule scan was stopped early; only completed captures are included.']:[])];
+      bundles.push(input);
+      queue.push(...value.games.map((g,i)=>({name:input.name+' [game '+(i+1)+']',raw:json({...g,warnings:[...(g.warnings||[]),...warnings]})})));continue;
+    }
     if(value.kind==='diamond-scout-box-score'){require('./box-score.cjs').read(input);boxes.push(input);continue;}
     if(value.schema_version!==1||value.kind!=='diamond-scout-game'||typeof value.plays!=='string'||!value.box_score)fail('Unsupported game capture JSON: '+input.name);
     const box={name:input.name+' [box score]',raw:json(value.box_score)};require('./box-score.cjs').read(box);

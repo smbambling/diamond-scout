@@ -1,0 +1,23 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),C=require('../tools/gamechanger-capture.js'),I=require('../tools/import-plays.cjs');
+const base='https://web.gc.com/teams/j3xAFR5V91CE/2026-fall-rawlings-tigers-nova---black-14u/schedule';
+// Minimal DOM-shaped fixtures use the exact classes/structure supplied from GameChanger.
+function doc(records){return {querySelector:()=>({textContent:'Rawlings Tigers NOVA - Black 14U'}),querySelectorAll:selector=>{assert.equal(selector,'.ScheduleListByMonth__eventMonth');return [{previousElementSibling:{querySelector:()=>({textContent:'August 2026'})},querySelectorAll:()=>records.map(r=>({querySelector:()=>({textContent:String(r.day||29)}),querySelectorAll:()=>[{getAttribute:()=>r.href||base+'/'+r.id,querySelector:selector=>({textContent:selector==='.ScheduleListByMonth__title'?r.title:r.score})}]}))}];}};}
+const list=C.extractSchedule(doc([{id:'practice',title:'Practice',score:'6:00 PM'},{id:'party',title:'End of 13u Celebration & Awards',score:'12:00 PM'},{id:'game1',title:'@ Virginia Vols Nelson 14U',score:'L 8-12'},{id:'game2',title:'@ VA Vols - 14u - West',score:'L 1-10'},{id:'game1',title:'@ Virginia Vols Nelson 14U',score:'L 8-12'},{id:'future',title:'vs. Opponent',score:'10:00 AM'},{id:'cancel',title:'vs. Opponent',score:'Cancelled'},{id:'tie',title:'vs. Opponent',score:'T 2-2',day:30},{id:'unknown',title:'Game',score:'W 3-2'},{id:'external',href:'https://example.com/teams/test/schedule/x',title:'vs. Opponent',score:'W 3-2'}]),base);
+assert.equal(list.games.length,3);assert.equal(list.skipped.length,5);assert.equal(list.games[0].date,'2026-08-30');assert.equal(list.games.filter(g=>g.date==='2026-08-29').length,2,'Doubleheaders retain both event IDs');
+assert.equal(C.scheduleUrl(base+'?private=1#fragment'),base);assert.throws(()=>C.scheduleUrl('https://example.com/schedule'),/GameChanger|schedule/);assert.throws(()=>C.scheduleUrl(base+'/event'),/schedule/);
+const plays=fs.readFileSync('tests/fixtures/captures/2026-10-25-dig-in-bba-capture.txt','utf8'),box=JSON.parse(fs.readFileSync('tests/fixtures/box-score/2026-10-25-dig-in-bba.json')),url=C.gameScreens(box.source_url).plays,game={eventId:box.source_event_id,url,date:'2026-10-25',title:'vs. BBA 14u East',score:'W 3-2'};
+const read=async(url,kind)=>({url,text:'Sun Oct 25, 2026, 10:00 AM ET\n'+(kind==='plays'?plays:''),data:kind==='box'?box:undefined});
+(async()=>{
+ const result=await C.captureScheduleGames([{...game,url:'https://web.gc.com/teams/test/schedule/fail/plays',eventId:'fail'},game],async(url,kind)=>{if(url.includes('/fail/'))throw Error('Plays not loaded');return read(url,kind);},{onlyTeam:'Dig In (Gribbin) 14U',assignTo:['14u-black'],tournament:'Test event'});
+ assert.equal(result.successes.length,1);assert.equal(result.failures.length,1);assert.match(result.successes[0].plays,/Import: only Dig In/);assert.match(result.successes[0].plays,/Assign to: 14u-black/);assert.match(result.successes[0].plays,/Tournament: Test event/);
+ const mismatch=await C.captureScheduleGames([{...game,date:'2026-10-24'}],read);assert.equal(mismatch.successes.length,0);assert.match(mismatch.failures[0].error,/disagree on date/);
+ const wrongTeam=await C.captureScheduleGames([game],read,{onlyTeam:'Wrong team'});assert.equal(wrongTeam.failures.length,1);
+ let stop=false;const stopped=await C.captureScheduleGames([game,game],async(...args)=>{stop=true;return read(...args);},{},()=>{},()=>stop);assert.equal(stopped.cancelled,true);assert.equal(stopped.successes.length,0);
+ const empty=await C.captureScheduleGames([game],()=>{throw Error('Must not read');},{},()=>{},()=>true);assert.equal(empty.successes.length,0);
+ const batch={schema_version:1,kind:'diamond-scout-schedule',games:result.successes,failures:result.failures},expanded=I.expandInputs([{name:'schedule.json',raw:JSON.stringify(batch)}]);assert.equal(expanded.inputs.length,1);assert.equal(expanded.options.boxInputs.length,1);assert.match(expanded.inputs[0].captureWarnings.join(' '),/failed or unfinished/);
+ assert.throws(()=>I.expandInputs([{name:'bad.json',raw:JSON.stringify({...batch,games:[...result.successes,...result.successes]})}]),/repeated games/);
+ assert.throws(()=>I.expandInputs([{name:'bad.json',raw:JSON.stringify({...batch,games:[batch]})}]),/Invalid/);
+ assert.throws(()=>I.expandInputs([{name:'bad.json',raw:JSON.stringify({...batch,games:[]})}]),/Invalid/);
+ console.log('PASS: completed-game discovery, practices/other events excluded, doubleheaders, ties, safe URLs, sequential partial failure/cancellation, date checks, team selection, assignments and batch validation. Live browser interaction remains unverified.');
+})().catch(error=>{console.error(error);process.exitCode=1;});
