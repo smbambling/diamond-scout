@@ -21,6 +21,16 @@
       "id": "shockers-14u",
       "name": "Shockers 14U",
       "data_file": "data/shockers-14u.json"
+    },
+    {
+      "id": "rawlings-tigers-nova-black-13u",
+      "name": "Rawlings Tigers NOVA - Black 13U",
+      "data_file": "data/rawlings-tigers-nova-black-13u.json"
+    },
+    {
+      "id": "forest-park-junior-varsity-bruins",
+      "name": "Forest Park Junior Varsity Bruins",
+      "data_file": "data/forest-park-junior-varsity-bruins.json"
     }
   ],
   "organization_teams": [

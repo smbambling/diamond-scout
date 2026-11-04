@@ -13,8 +13,8 @@ const clone=x=>JSON.parse(JSON.stringify(x));
 async function openApp({defaultMinimumGames=0,browserNavigator,storage={},storageBlocked=false,href='https://diamond-scout.test/',files={'teams.json':manifest,'data/shockers-14u.json':data}}={}){
  const windowListeners={},elements={},releaseRequests=[],requested=[],repository=clone(files),url=new URL(href),base=new URL('./',url),documentRoot={dataset:{}};
  for(const [,id]of html.matchAll(/\bid="([^"]+)"/g))elements[id]={id,value:'',hidden:/\bhidden(?:\s|>|=)/.test(html.match(new RegExp('<[^>]*\\bid="'+id+'"[^>]*>'))?.[0]||''),_html:'',textContent:'',attrs:{},dataset:{},listeners:{},addEventListener(k,f){this.listeners[k]=f},setAttribute(k,v){this.attrs[k]=v},scrollIntoView(){},focus(){elements.app.focusedId=this.id;},click(){return this.listeners.click?.({target:this})},set innerHTML(s){this._html=s;if(this.id.endsWith('-select'))this.value=s.match(/<option value="([^"]+)"/)?.[1]||''},get innerHTML(){return this._html}};
- for(const v of ['scout','pitching'])elements['tab-'+v].dataset.view=v;
- const context=vm.createContext({console,URL,Map,Set,Promise,localStorage:{getItem(key){if(storageBlocked)throw Error('Storage unavailable');return storage[key]??null;},setItem(key,value){if(storageBlocked)throw Error('Storage unavailable');storage[key]=value;}},location:{href:url.href,origin:url.origin,protocol:url.protocol,replace(url){elements.app.replacedUrl=url;},reload(){elements.app.reloads=(elements.app.reloads||0)+1;}},window:{navigator:browserNavigator,scrollTo(options){elements.app.lastScroll=options;},innerWidth:Number(process.env.DIAMOND_TEST_WIDTH||1280),addEventListener(type,fn){windowListeners[type]=fn;}},matchMedia(){return {matches:true}},document:{documentElement:documentRoot,getElementById(id){assert(elements[id],'Missing DOM element: '+id);return elements[id]},querySelectorAll(s){assert.equal(s,'[data-view]');return ['scout','pitching'].map(v=>elements['tab-'+v])}},fetch:async (target,options)=>{
+ for(const v of ['scout','pitching','highlights'])elements['tab-'+v].dataset.view=v;
+ const context=vm.createContext({console,URL,Map,Set,Promise,localStorage:{getItem(key){if(storageBlocked)throw Error('Storage unavailable');return storage[key]??null;},setItem(key,value){if(storageBlocked)throw Error('Storage unavailable');storage[key]=value;}},location:{href:url.href,origin:url.origin,protocol:url.protocol,replace(url){elements.app.replacedUrl=url;},reload(){elements.app.reloads=(elements.app.reloads||0)+1;}},window:{navigator:browserNavigator,scrollTo(options){elements.app.lastScroll=options;},innerWidth:Number(process.env.DIAMOND_TEST_WIDTH||1280),addEventListener(type,fn){windowListeners[type]=fn;}},matchMedia(){return {matches:true}},document:{documentElement:documentRoot,getElementById(id){assert(elements[id],'Missing DOM element: '+id);return elements[id]},querySelectorAll(s){assert.equal(s,'[data-view]');return ['scout','pitching','highlights'].map(v=>elements['tab-'+v])}},fetch:async (target,options)=>{
   (target.pathname.endsWith('/version.json')?releaseRequests:requested).push({url:target.toString(),options});
   assert.equal(target.origin,url.origin);assert(target.pathname.startsWith(base.pathname));
   assert.equal(options.cache,'no-store');assert.equal(options.redirect,'error');
@@ -71,13 +71,13 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  PE['pitching-summary'].listeners.click({target:{closest:selector=>selector==='#pitching-strike-toggle'?{}:null}});assert.equal(PE['pitching-strike-detail'].hidden,false);assert.equal(PE['pitching-strikeout-detail'].hidden,true);assert.match(PE['pitching-strike-detail'].innerHTML,/Swinging strikes/);assert.doesNotMatch(PE['pitching-tendencies'].innerHTML,/Swinging strikes/);
  assert.match(PE['pitching-avg'].innerHTML,/AVG against/);assert.doesNotMatch(PE['pitching-tendencies'].innerHTML,/AVG against/);assert.equal((PE['pitching-tendencies'].innerHTML.match(/class="pitching-metric(?: pitching-disclosure)?"/g)||[]).length,3);
  assert.match(PE['pitching-outcome-bars'].innerHTML,/Called strikes/);assert.match(PE['pitching-outcome-bars'].innerHTML,/Swing and miss/);assert.match(PE['pitching-outcome-overview'].innerHTML,/conic-gradient/);assert.match(PE['pitching-outcome-overview'].innerHTML,/Strikes/);assert.doesNotMatch(PE['pitching-outcome-bars'].innerHTML,/>Balls</);assert.match(PE['pitching-outcome-sample'].textContent,/tracked pitches/);
- assert.equal(PE['pitching-innings'].hidden,true);assert.match(PE['pitcher-leaders'].innerHTML,/<summary>Pitcher leaders<\/summary>/);
+ assert.equal(PE['pitching-innings'].hidden,true);assert.equal(PE['view-highlights'].hidden,true);
  chooseGames(PE,pitchingData.games[0].id);assert.equal(PE['pitching-innings'].hidden,false);assert.match(PE['pitching-inning-table'].innerHTML,/Strike %/);assert.match(PE['pitching-inning-table'].innerHTML,/FPS %/);assert.match(PE['pitcher-context'].textContent,/1 game · 13 batters faced · 47 pitches/);
- PE['pitcher-select'].value='all';PE['pitcher-select'].listeners.change();assert.equal(PE['pitcher-leaders'].hidden,false);assert.match(PE['pitcher-leaders'].innerHTML,/Most used/);assert.match(PE['pitcher-leaders'].innerHTML,/Strikeout leader/);
+ PE['pitcher-select'].value='all';PE['pitcher-select'].listeners.change();PE['tab-highlights'].click();assert.equal(PE['view-highlights'].hidden,false);assert.match(PE['pitcher-leaders'].innerHTML,/Most used/);assert.match(PE['pitcher-leaders'].innerHTML,/Strikeout leader/);
  assert.match(PE['pitching-inning-pitchers'].innerHTML,/Quinn Kasprzak/);assert.match(PE['pitching-inning-pitchers'].innerHTML,/data-pitcher="quinn kasprzak"/);
  PE['pitching-innings'].listeners.click({target:{closest:()=>({dataset:{pitcher:'quinn kasprzak'}})}});assert.equal(PE['pitcher-select'].value,'quinn kasprzak');assert.match(PE['pitching-inning-pitchers'].innerHTML,/Quinn Kasprzak/);assert.doesNotMatch(PE['pitching-inning-pitchers'].innerHTML,/Wesley Hurt/);
  PE['pitcher-select'].value='all';PE['pitcher-select'].listeners.change();
- PE['pitcher-leaders'].listeners.click({target:{closest:()=>({dataset:{pitcher:'quinn kasprzak'}})}});assert.equal(PE['pitcher-select'].value,'quinn kasprzak');assert.equal(PE['pitcher-leaders'].hidden,true);assert.equal(PE.app.focusedId,'pitcher-context','Leader selection must not focus and open the native select');
+ PE['pitcher-leaders'].listeners.click({target:{closest:()=>({dataset:{pitcher:'quinn kasprzak'}})}});assert.equal(PE['pitcher-select'].value,'quinn kasprzak');assert.equal(PE['view-highlights'].hidden,true);assert.equal(PE.app.focusedId,'pitcher-context','Leader selection must not focus and open the native select');
  assert.equal(PE['pitching-outcome-sample'].textContent,'41 tracked pitches');assert.match(PE['pitching-outcome-overview'].innerHTML,/>41<\/strong>/);
  PE['pitching-tendencies'].listeners.click({target:{closest:()=>({})}});assert.equal(PE['pitching-first-strike-detail'].hidden,false);assert.equal(PE['pitching-strike-detail'].hidden,true);assert.match(PE['pitching-first-strike-detail'].innerHTML,/FPSO% · Outs/);assert.match(PE['pitching-first-strike-detail'].innerHTML,/FPSW% · Walks/);assert.match(PE['pitching-first-strike-detail'].innerHTML,/FPSH% · Hits/);assert.match(PE['pitching-first-strike-detail'].innerHTML,/4\/6/);PE['pitching-tendencies'].listeners.click({target:{closest:()=>({})}});assert.equal(PE['pitching-first-strike-detail'].hidden,true);
  const twoPitchGames=[pitchingData.games[0].id,pitchingData.games[1].id];
@@ -90,7 +90,7 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  assert(!html.includes('Pitch tendencies use linked plays only.'));assert(!html.includes('0% Recorded zero'));assert.match(html,/pitching-summary-group:has\(>#pitching-strike-detail:not\(\[hidden\]\)\)/);
  assert(!/type="file"|Open JSON files|localData|FileReader/.test(html),'No manual import interface or fallback');
  const {elements:E,requested}=await openApp();
- for(const view of ['scout','pitching']){assert.equal(E['tab-'+view].hidden,false);assert.equal(E['tab-'+view].disabled,false);}
+ for(const view of ['scout','pitching','highlights']){assert.equal(E['tab-'+view].hidden,false);assert.equal(E['tab-'+view].disabled,false);}
  E['tab-scout'].click();
  assert(html.indexOf('id="scout-field"')<html.indexOf('id="hitting-contact-bars"'));assert.doesNotMatch(E['batting-stats'].innerHTML,/H \/ AB/);assert.match(E['batting-stats'].innerHTML,/5\/23<\/small>/);assert.equal(E['sample-label'].hidden,true);
  assert.equal(E['tab-scout'].tabIndex,0);assert.equal(E['view-scout'].hidden,false);
@@ -296,8 +296,23 @@ function checkAttempts(elements,n){tapMetric(elements,'quick-read','quick-stealt
  togglePitch('pitching-strike-toggle');assert.equal(DE['pitching-strike-detail'].hidden,false);DE['pitcher-next'].click();assertClosed();
  togglePitch('pitching-strikeout-toggle');assert.equal(DE['pitching-strikeout-detail'].hidden,false);DE['pitcher-previous'].click();assertClosed();
  togglePitch('pitching-first-strike-toggle');assert.equal(DE['pitching-first-strike-detail'].hidden,false);DE['pitcher-select'].value='all';DE['pitcher-select'].listeners.change();assertClosed();
- togglePitch('pitching-first-strike-toggle');const leaderId=DE['pitcher-leaders'].innerHTML.match(/data-pitcher="([^"]+)"/)[1];DE['pitcher-leaders'].listeners.click({target:{closest:()=>({dataset:{pitcher:leaderId}})}});assertClosed();
+ togglePitch('pitching-first-strike-toggle');DE['tab-highlights'].click();const leaderId=DE['pitcher-leaders'].innerHTML.match(/data-pitcher="([^"]+)"/)[1];DE['pitcher-leaders'].listeners.click({target:{closest:()=>({dataset:{pitcher:leaderId}})}});assertClosed();
  togglePitch('pitching-strikeout-toggle');DE['tab-scout'].click();assertClosed();DE['tab-pitching'].click();assertClosed();
+ const fieldingData=clone(data);
+ fieldingData.games[0].batting_half='top';
+ fieldingData.games[0].source_play_by_play=[
+  'Top 1st - Shockers 14U','Hitter reaches on an error by third baseman A.',
+  'Bottom 1st - Opponent','Hitter reaches on a throwing error by shortstop A.',
+  'Hitter reaches on a fielding error by shortstop A.',
+  'Hitter flies out to second baseman B.','Hitter lines out to second baseman B.','Hitter pops out to second baseman B.'
+ ].join('\n');
+ const HE=(await openApp({files:{'teams.json':manifest,'data/shockers-14u.json':fieldingData}})).elements;
+ HE['tab-highlights'].click();
+ assert.match(HE['fielding-highlights'].innerHTML,/All shortstops · 2 recorded errors/);
+ assert.match(HE['fielding-highlights'].innerHTML,/All second basemen · 3 recorded catches/);
+ assert.doesNotMatch(HE['fielding-highlights'].innerHTML,/third baseman/);
+ HE['games-clear'].click();
+ assert.match(HE['fielding-highlights'].innerHTML,/No fielding standouts/);
  // Full repository history includes September without changing earlier regression fixtures.
  const metroApp=await openApp({files:{'teams.json':manifest,'data/shockers-14u.json':history}}),M=metroApp.elements;
  assert.match(M['scout-field'].innerHTML,/61 fair contacts/);assert.match(M['quick-read'].innerHTML,/Steal tendency: 14%; 7\/50 trips; show details/);

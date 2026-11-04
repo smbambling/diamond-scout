@@ -182,7 +182,7 @@ function isContext(token) {
   if(/^Score changed to \d+-\d+$/i.test(token)||/^\(Play Edit\) .+ in for .+$/i.test(token))return true;
   if(/^Outs changed to [0-3]$/i.test(token))return true;
   if(/^\S(?:.*\S)? in for pitcher(?: \S(?:.*\S)?)?$/i.test(token))return true;
-  if (/^Balk(?: by pitcher .+)?$/i.test(token)) return true;
+  if (/^Balk(?: by pitcher(?: .+)?)?$/i.test(token)) return true;
   if (/^.+ gets placed on (?:1st|2nd|3rd)$/i.test(token)) return true;
   return /^(?:Pickoff attempt at (?:1st|2nd|3rd)|Lineup changed: .+|(?:Courtesy|Pinch) runner .+ in for .+|.+ (?:advances to |remains at |held up at |did not score|scores\b|steals\b|caught stealing\b|is caught stealing\b|out (?:at |advancing |due to )|attempts to steal\b|picked off\b))/i.test(token);
 }
@@ -241,7 +241,15 @@ function isScore(text) {
 
 function parseBlock(block, diagnostics=null) {
   const segments=[]; let current=null;
-  for (const line of block.lines) {
+  for (const line of block.lines.flatMap(line=>{
+    const text=norm(line.raw);
+    const separator=text.indexOf('|');
+    if (separator<0) return [line];
+    const label=text.slice(0,separator).trim();
+    const score=text.slice(separator+1).trim();
+    if ((!labels.has(label) && !/^.+ at bat$/.test(label)) || !isScore(score)) return [line];
+    return [{...line,raw:label},{...line,raw:score}];
+  })) {
     const text=norm(line.raw);
     // Recovery boundaries are diagnostic only. Unknown headings are never accepted for import.
     const possibleHeading=diagnostics&&!labels.has(text)&&/^[A-Z][A-Za-z' –-]{1,49}$/.test(text)&&!batterMatch(text)&&!isContext(text)&&!['Foul','Foul tip','In play','Ball','Strike looking','Strike swinging','Hit by pitch'].includes(text)&&!/^.+ at bat$/.test(text);
@@ -271,7 +279,15 @@ function parseBlock(block, diagnostics=null) {
         if(pitches.length)warnings.push('Unfinished at-bat has listed pitches but no completed result; retained as incomplete.');
         return {...segment, kind:'pa', name:norm(lines[0].raw).replace(/ at bat$/, ''), status:'incomplete', result:'unknown', pitches, context, warnings, source_text:lines[0].raw, source_pitch_sequence:pitchLines.length?pitchLines.map(line=>line.raw).join('\n'):null};
       }
-      if(segment.label==='Inning Ended'){if(lines.some(l=>!['Inning Ended','3 Outs','Half-inning ended by scorekeeper.'].includes(norm(l.raw))))fail('Unrecognized inning-end context.');return {...segment,kind:'administrative',context:[],warnings};}
+      if (segment.label==='Inning Ended') {
+        const content=lines.slice(1).filter(line=>{
+          const text=norm(line.raw);
+          return !isScore(text) && text!=='Half-inning ended by scorekeeper.';
+        });
+        const {pitches,context}=parsePitches(content,'unknown',warnings,diagnostics);
+        if (pitches.length) warnings.push('Inning ended with recorded pitches and no identified batter. Pitches retained in the game control event.');
+        return {...segment,kind:'administrative',pitches,context,warnings};
+      }
       if (['Runner Out','Caught Stealing'].includes(segment.label)) {
         const content=lines.filter(line=>norm(line.raw)!==segment.label&&!isScore(norm(line.raw))&&!/^Half-inning ended by out on the base paths\.$/.test(norm(line.raw)));
         const tokens=content.flatMap(line=>splitEvents(line.raw.replace(/\.$/,'')));
@@ -449,7 +465,7 @@ function buildTeam(capture, teamName, data, gameId, opponent, D) {
     }
     for (const message of record.warnings) warnings.push('Line '+record.lines[0].line+': '+message);
   }
-  const game={id:gameId,...(capture.tournament?{tournament:capture.tournament}:{}),date:capture.date,start_time:capture.time,timezone:capture.timezone,opponent,batting_half:half,label:'vs. '+opponent,source:'Local GameChanger text converter',source_url:capture.url,source_event_id:capture.eventId,source_capture_coverage:capture.coverage,...(capture.captureVersion?{source_capture_version:capture.captureVersion}:{}),source_control_events:timeline.filter(r=>r.kind==='administrative').map(r=>({inning:r.inning,half:r.half,source_events:r.lines.map(l=>l.raw)})),source_scope:'Supplied '+half+' innings '+blocks.map(b=>b.inning).join(', ')+' only; completeness not verified',source_play_by_play:capture.source,source_sha256:capture.sourceHash,source_canonical_sha256:hash(canonical(capture.source)),notes:['No final score, missing innings or unlisted pitches were inferred. Original capture text retained.']};
+  const game={id:gameId,...(capture.tournament?{tournament:capture.tournament}:{}),date:capture.date,start_time:capture.time,timezone:capture.timezone,opponent,batting_half:half,label:'vs. '+opponent,source:'Local GameChanger text converter',source_url:capture.url,source_event_id:capture.eventId,source_capture_coverage:capture.coverage,...(capture.captureVersion?{source_capture_version:capture.captureVersion}:{}),source_control_events:timeline.filter(r=>r.kind==='administrative').map(r=>({inning:r.inning,half:r.half,source_events:r.lines.map(l=>l.raw),...(r.pitches?.length?{pitches:r.pitches}:{})})),source_scope:'Supplied '+half+' innings '+blocks.map(b=>b.inning).join(', ')+' only; completeness not verified',source_play_by_play:capture.source,source_sha256:capture.sourceHash,source_canonical_sha256:hash(canonical(capture.source)),notes:['No final score, missing innings or unlisted pitches were inferred. Original capture text retained.']};
   if(capture.footer){game.source_capture_footer=capture.footer;warnings.push('Recognized trailing GameChanger site footer excluded from play parsing; original footer retained.');}
   data.games.push(game); data.plate_appearances.push(...pas);
   data.baserunning_events=(data.baserunning_events||[]).concat(events);
