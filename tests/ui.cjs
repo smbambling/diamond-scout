@@ -21,7 +21,7 @@ async function openApp({defaultMinimumGames=0,browserNavigator,storage={},storag
   const key=target.pathname.slice(base.pathname.length),value=repository[key];
   return {ok:value!==undefined,status:value===undefined?404:200,json:async()=>clone(value)};
  }});
- for(const [,code]of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g))vm.runInContext(code.replace('minimumGames:5,minimumSamples:', 'minimumGames:'+defaultMinimumGames+',minimumSamples:'),context);
+ for(const [,code]of html.matchAll(/<script[^>]*>([\s\S]*?)<\/script>/g))vm.runInContext(code.replace('const defaultMinimumGames=5;', 'const defaultMinimumGames='+defaultMinimumGames+';'),context);
  await new Promise(setImmediate);
  return {elements,requested,repository,documentRoot,storage,context,windowListeners,releaseRequests};
 }

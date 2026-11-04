@@ -573,8 +573,9 @@
 'use strict';
 (() => {
  const D=globalThis.DiamondScout,$=id=>document.getElementById(id),e=D.esc;
- const releaseVersion='f7702ba5af0c4bf8';
- const state={view:'scout',batter:'all',game:'all',type:'all',pitcher:'all',organizationTeam:'all',minimumGames:5,minimumSamples:{scout:0,pitching:0},sorts:{scout:'avg',pitching:'avg'}},cache=new Map();
+ const releaseVersion='a6b24d8f7bf72861';
+ const defaultMinimumGames=5;
+ const state={view:'scout',batter:'all',game:'all',type:'all',pitcher:'all',organizationTeam:'all',minimumGames:defaultMinimumGames,minimumSamples:{scout:0,pitching:0},sorts:{scout:'avg',pitching:'avg'}},cache=new Map();
  let metricSortMode=false;
  let manifest=null,data=null,loadGeneration=0,expandedMetric=null,pitchingStrikeoutsOpen=false,pitchingStrikesOpen=false,pitchingFirstStrikesOpen=false;
  const metricItems=new Map();
@@ -672,7 +673,7 @@
   return {strike:'pitches',avg:'AB against',games:'appearances',efficiency:'batters faced',firstStrike:'tracked first pitches',ground:'fair contacts'}[key]||'batters faced';
  }
  function renderSortPicker(){
-  $('minimum-sample-filter').hidden=state.sorts[state.view]==='jersey';
+  $('minimum-sample-filter').hidden=state.view==='scout'&&state.sorts.scout==='jersey';
   const rankingLabel='Minimum '+(sampleUnit()||'sample')+' for ranking';$('minimum-ranking-label').textContent=rankingLabel;$('minimum-sample-select').setAttribute('aria-label',rankingLabel);
   $('minimum-sample-select').innerHTML=minimumOptions.map(n=>'<option value="'+n+'">'+(n?n+' '+sampleUnit():'Any size')+'</option>').join('');
   $('minimum-sample-select').value=String(state.minimumSamples[state.view==='highlights'?'scout':state.view]);
@@ -777,6 +778,12 @@
  function setGames(games){
   const ids=new Set(games),valid=data.games.filter(g=>ids.has(g.id)).map(g=>g.id);
   state.game=valid.length===data.games.length?'all':valid;
+  state.minimumGames=state.game==='all'?defaultMinimumGames:Math.min(defaultMinimumGames,valid.length);
+  if(valid.length!==3){
+   const minimum=valid.length<3?0:5;
+   state.minimumSamples.scout=minimum;
+   state.minimumSamples.pitching=minimum;
+  }
   closeMetricDetails();
   const scrollTop=$('game-select').scrollTop;renderGamePicker();$('game-select').scrollTop=scrollTop;render();
  }
@@ -854,11 +861,16 @@
   const best=(eligible,value)=>rows.filter(eligible).sort((a,b)=>value(b)-value(a)||a.name.localeCompare(b.name))[0];
   const power=best(p=>p.xbh>=2,p=>p.xbh),obp=best(p=>p.b.obp!==null&&p.b.obpDenominator>=5&&p.b.obp>0,p=>p.b.obp);
   const runner=best(p=>p.r.onBase>=3&&p.r.stealTendency>0,p=>p.r.stealTendency);
+  const hitterEmpty=!players.length&&D.participatingPlayers(data,state.game).length?
+   'No hitters meet the minimum games played filter. Lower it to include more players.':
+   players.length&&!rows.length&&state.minimumSamples.scout?
+   'No hitters reached '+state.minimumSamples.scout+' AB in the selected games. Set Minimum AB for ranking to Any size to include smaller samples.':
+   'No qualifying hitter highlights for this selection.';
   $('hitting-highlights').innerHTML=[
    power&&playerCard('Extra-base threat',power.name,power.xbh+' XBH',power.b.ab+' AB · '+power.doubles+' doubles, '+power.triples+' triples, '+power.homers+' HR',power.id),
    obp&&playerCard('On-base leader',obp.name,obp.b.obp.toFixed(3).replace(/^0/,'')+' OBP',(obp.b.hits+obp.b.walks+obp.b.hbp)+'/'+obp.b.obpDenominator+' OBP opportunities · '+obp.b.hits+' hits, '+obp.b.walks+' walks, '+obp.b.hbp+' HBP',obp.id),
    runner&&playerCard('Active baserunner',runner.name,runner.r.stolen+' SB',runner.r.attemptedVisits+'/'+runner.r.onBase+' recorded trips with an attempt · '+runner.r.caught+' caught',runner.id)
-  ].filter(Boolean).join('')||'<p class="note">No qualifying hitter highlights for this selection.</p>';
+  ].filter(Boolean).join('')||'<p class="note">'+e(hitterEmpty)+'</p>';
   const fielders=new Map();
   const selectedGames=data.games.filter(g=>D.gameSelected(state.game,g.id));
   let doublePlays=0;
@@ -929,7 +941,9 @@
    (s.strikeoutLeaders.length?s.strikeoutLeaders.map(p=>playerCard('Strikeout leader'+(s.strikeoutLeaders.length>1?' · tied':''),(p.jersey?'#'+p.jersey+' ':'')+p.name,p.strikeouts+' K',
     p.games+' '+(p.games===1?'appearance':'appearances')+' · '+(p.bf?D.pct(p.k,p.bf)+' K rate · '+p.k+'/'+p.bf+' BF'+(p.rateOutings<p.outings?' · partial sample':''):'K rate unavailable'),p.id,null,true)).join(''):'<p class="note">No positive complete strikeout totals available.</p>')+
    (s.incompleteStrikeouts?'<p class="note">Pitchers with missing strikeout totals are excluded from the strikeout leaders.</p>':''):
-   '<p class="note">No qualifying pitching summaries for the selected games.</p>';
+   '<p class="note">'+(D.pitchingSummary(data,{game:state.game}).rows.length?
+    'Pitching data is available, but no pitchers meet the minimum games played filter. Lower it to include more pitchers.':
+    'No pitching summaries were recorded for the selected games.')+'</p>';
   const strikeLeader=s.roster.map(p=>({p,rate:D.pitchingSummary(scoped,{game:state.game,pitcher:p.id}).rates.strike}))
    .filter(({rate})=>rate.d>=30&&rate.outings>0)
    .sort((a,b)=>b.rate.n/b.rate.d-a.rate.n/a.rate.d||b.rate.d-a.rate.d)[0];
@@ -944,7 +958,8 @@
   if(state.pitcher!=='all'&&!roster.some(p=>p.id===state.pitcher)){state.pitcher='all';return renderPitching();}
   $('pitcher-select').innerHTML='<option value="all">All pitchers</option>'+roster.map(p=>'<option value="'+e(p.id)+'">'+e((p.jersey?'#'+p.jersey+' ':'')+p.name)+'</option>').join('');$('pitcher-select').value=state.pitcher;
   updatePlayerArrows('pitcher',roster,state.pitcher);
-  $('pitcher-context').textContent=s.rows.length?s.games+' game'+(s.games===1?'':'s')+(s.bf!==null?' · '+s.bf+' batters faced':'')+(s.pitches!==null?' · '+s.pitches+' pitches':''):(state.minimumGames>0&&D.pitchingSummary(data,{game:state.game}).roster.length?'No pitchers meet the minimum games filter.':'No pitching summary captured for this selection.');
+  const pitchersFilteredOut=!s.rows.length&&state.minimumGames>0&&D.pitchingSummary(data,{game:state.game}).roster.length>0;
+  $('pitcher-context').textContent=s.rows.length?s.games+' game'+(s.games===1?'':'s')+(s.bf!==null?' · '+s.bf+' batters faced':'')+(s.pitches!==null?' · '+s.pitches+' pitches':''):(pitchersFilteredOut?'Pitching data is available, but no pitchers meet the minimum games played filter. Set Minimum games played to 0 to include everyone.':'No pitching summary captured for this selection.');
   const singleGame=data.games.filter(g=>D.gameSelected(state.game,g.id)).length===1;
   $('pitching-innings').hidden=!singleGame;
   if(singleGame){
@@ -957,7 +972,7 @@
    const total={pitches:0,strikes:0,first:0,first_strikes:0};
    for(const row of inningRows){total.pitches+=row.pitches;total.strikes=total.strikes===null||row.strikes===null?null:total.strikes+row.strikes;total.first+=row.first;total.first_strikes+=row.first_strikes;}
    const numbers=row=>'<td class="num">'+row.pitches+'</td><td class="num">'+cellRate(row.strikes,row.pitches)+'</td><td class="num">'+cellRate(row.first_strikes,row.first)+'</td>';
-   $('pitching-inning-table').innerHTML=inningRows.length?'<table class="inning-table"><caption>Linked pitches'+(incomplete?' · some pitcher detail unavailable':'')+'</caption><thead><tr><th scope="col">Inn</th>'+(allPitchers?'<th scope="col">Pitcher</th>':'')+'<th scope="col">Pitches</th><th scope="col">Strike %</th><th scope="col"><abbr title="First-pitch strike percentage">FPS %</abbr></th></tr></thead><tbody>'+inningRows.map((row,i)=>'<tr'+(i&&row.name!==inningRows[i-1].name?' class="pitcher-change"':'')+'><th scope="row">'+row.inning+'</th>'+(allPitchers?'<td class="inning-pitcher">'+pitcherLink(row)+'</td>':'')+numbers(row)+'</tr>').join('')+'</tbody><tfoot><tr><th scope="row"'+(allPitchers?' colspan="2"':'')+'>'+(incomplete?'Tracked total':'Total')+'</th>'+numbers(total)+'</tr></tfoot></table>':'<p class="note">Inning detail unavailable for this selection.</p>';
+   $('pitching-inning-table').innerHTML=inningRows.length?'<table class="inning-table"><caption>Linked pitches'+(incomplete?' · some pitcher detail unavailable':'')+'</caption><thead><tr><th scope="col">Inn</th>'+(allPitchers?'<th scope="col">Pitcher</th>':'')+'<th scope="col">Pitches</th><th scope="col">Strike %</th><th scope="col"><abbr title="First-pitch strike percentage">FPS %</abbr></th></tr></thead><tbody>'+inningRows.map((row,i)=>'<tr'+(i&&row.name!==inningRows[i-1].name?' class="pitcher-change"':'')+'><th scope="row">'+row.inning+'</th>'+(allPitchers?'<td class="inning-pitcher">'+pitcherLink(row)+'</td>':'')+numbers(row)+'</tr>').join('')+'</tbody><tfoot><tr><th scope="row"'+(allPitchers?' colspan="2"':'')+'>'+(incomplete?'Tracked total':'Total')+'</th>'+numbers(total)+'</tr></tfoot></table>':'<p class="note">'+(pitchersFilteredOut?'No pitchers included by the minimum games played filter.':'Inning detail unavailable for this selection.')+'</p>';
   }else {$('pitching-inning-table').innerHTML='';$('pitching-inning-pitchers').innerHTML='';}
   const fraction=(n,d)=>n===null||d===null||!d?'Unavailable':n+'/'+d;
   const rate=(n,d)=>n===null||d===null?'—':D.pct(n,d);
@@ -983,7 +998,7 @@
   const strikeEnd=s.outcomePitches?outcomeStrikes/s.outcomePitches*100:0,ballEnd=s.outcomePitches?(outcomeStrikes+outcomeBalls)/s.outcomePitches*100:0;
   $('pitching-outcome-overview').innerHTML=s.outcomePitches?'<div class="outcome-overview"><div class="outcome-donut" aria-hidden="true" style="background:conic-gradient(#0052CC 0% '+strikeEnd+'%,#0A192F '+strikeEnd+'% '+ballEnd+'%,#94a3b8 '+ballEnd+'% 100%)"><div><strong class="num">'+s.outcomePitches+'</strong><span>tracked pitches</span></div></div><div class="outcome-legend">'+outcomeLegend('Strikes',outcomeStrikes,'#0052CC')+outcomeLegend('Balls',outcomeBalls,'#0A192F')+(otherPitches?outcomeLegend('Other',otherPitches,'#94a3b8'):'')+'</div></div>':'';
   const outcomeLabels={called_strike:'Called strikes',swinging_strike:'Swing and miss',foul:'Fouls',in_play:'In play',foul_tip:'Foul tips',foul_out:'Foul catches',hit_by_pitch:'Hit by pitch',unknown:'Unclassified'};
-  $('pitching-outcome-bars').innerHTML=s.outcomePitches?Object.entries(outcomeLabels).filter(([key])=>(s.pitchOutcomes[key]||0)>0).map(([key,label])=>{const n=s.pitchOutcomes[key];return '<div class="pitching-outcome-row"><span>'+e(label)+'</span><div class="track" aria-hidden="true"><div class="fill" style="width:'+n/s.outcomePitches*100+'%"></div></div><span class="num">'+D.pct(n,s.outcomePitches)+' · '+n+'</span></div>';}).join(''):'<p class="note">No tracked pitch outcomes available.</p>';
+  $('pitching-outcome-bars').innerHTML=s.outcomePitches?Object.entries(outcomeLabels).filter(([key])=>(s.pitchOutcomes[key]||0)>0).map(([key,label])=>{const n=s.pitchOutcomes[key];return '<div class="pitching-outcome-row"><span>'+e(label)+'</span><div class="track" aria-hidden="true"><div class="fill" style="width:'+n/s.outcomePitches*100+'%"></div></div><span class="num">'+D.pct(n,s.outcomePitches)+' · '+n+'</span></div>';}).join(''):'<p class="note">'+(pitchersFilteredOut?'No pitchers included by the minimum games played filter.':'No tracked pitch outcomes available.')+'</p>';
 
 
  }
